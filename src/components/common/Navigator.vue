@@ -1,5 +1,8 @@
 <template>
-  <div :direction="direction" :class="['navigator', { collapsed: direction === 'column', 'is-mac': isMacOS() && !isFullscreen }]">
+  <div
+    :direction="direction"
+    :class="['navigator', { collapsed: direction === 'column', 'is-mac': isMacOS() && !isFullscreen }]"
+  >
     <div v-if="direction === 'column'" class="brand">
       <logo collapsed @click.stop="onHome" />
     </div>
@@ -101,6 +104,8 @@ import {
   ROUTE_FISH_MODEL_INDEX,
   ROUTE_KIMI_CONVERSATION,
   ROUTE_KIMI_CONVERSATION_NEW,
+  ROUTE_GLM_CONVERSATION,
+  ROUTE_GLM_CONVERSATION_NEW,
   ROUTE_WEBEXTRATOR_INDEX,
   ROUTE_CODING_BRIDGE_INDEX
 } from '@/router/constants';
@@ -133,7 +138,8 @@ import {
   WAN_LOGO,
   PRODUCER_LOGO,
   FISH_LOGO,
-  CHAT_MODEL_ICON_KIMI
+  CHAT_MODEL_ICON_KIMI,
+  CHAT_MODEL_ICON_GLM
 } from '@/constants';
 import Logo from './Logo.vue';
 import UserCenter from '@/components/user/Center.vue';
@@ -235,6 +241,15 @@ export default defineComponent({
           displayName: this.$t('common.nav.kimi'),
           logo: CHAT_MODEL_ICON_KIMI,
           routes: [ROUTE_KIMI_CONVERSATION, ROUTE_KIMI_CONVERSATION_NEW],
+          category: 'chat'
+        });
+      }
+      if (this.$store?.state?.site?.features?.glm?.enabled) {
+        result.push({
+          route: { name: ROUTE_GLM_CONVERSATION_NEW },
+          displayName: this.$t('common.nav.glm'),
+          logo: CHAT_MODEL_ICON_GLM,
+          routes: [ROUTE_GLM_CONVERSATION, ROUTE_GLM_CONVERSATION_NEW],
           category: 'chat'
         });
       }
@@ -485,9 +500,10 @@ export default defineComponent({
     }
     // Native fullscreen state from the Electron main process (canonical signal
     // for the macOS green button / setFullScreen; undefined off desktop).
-    this.offFullscreen = desktopBridge()?.onFullscreenChange((v) => {
-      this.isFullscreen = v;
-    }) ?? null;
+    this.offFullscreen =
+      desktopBridge()?.onFullscreenChange((v) => {
+        this.isFullscreen = v;
+      }) ?? null;
   },
   beforeUnmount() {
     if (this.resizeObserver) {

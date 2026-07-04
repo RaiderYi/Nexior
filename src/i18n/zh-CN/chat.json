@@ -23,247 +23,247 @@
     "message": "编辑消息",
     "description": "编辑发送的消息"
   },
-  "modelGroup.chatgpt": {
+  "chat.modelGroup.chatgpt": {
     "message": "ChatGPT",
     "description": "服务的模型名称，即 GPT"
   },
-  "modelGroup.chatgptDescription": {
+  "chat.modelGroup.chatgptDescription": {
     "message": "OpenAI 公司开发的 AI 模型",
     "description": "ChatGPT 模型的描述"
   },
-  "modelGroup.deepseek": {
+  "chat.modelGroup.deepseek": {
     "message": "DeepSeek",
     "description": "服务的模型名称，即 DeepSeek"
   },
-  "modelGroup.deepseekDescription": {
+  "chat.modelGroup.deepseekDescription": {
     "message": "深度求索公司开发的 AI 模型",
     "description": "DeepSeek 模型的描述"
   },
-  "modelGroup.grok": {
+  "chat.modelGroup.grok": {
     "message": "Grok",
     "description": "服务的模型名称，即 Grok"
   },
-  "modelGroup.grokDescription": {
+  "chat.modelGroup.grokDescription": {
     "message": "xAI 公司开发的 AI 模型",
     "description": "Grok3 模型的描述"
   },
-  "modelGroup.gemini": {
+  "chat.modelGroup.gemini": {
     "message": "Gemini",
     "description": "服务的模型名称，即 Gemini"
   },
-  "modelGroup.geminiDescription": {
+  "chat.modelGroup.geminiDescription": {
     "message": "Google 开发的 AI 模型",
     "description": "Gemini 模型组的描述"
   },
-  "modelGroup.claude": {
+  "chat.modelGroup.claude": {
     "message": "Claude",
     "description": "服务的模型名称，即 Claude"
   },
-  "modelGroup.claudeDescription": {
+  "chat.modelGroup.claudeDescription": {
     "message": "Anthropic 公司开发的 AI 模型",
     "description": "Claude 模型组的描述"
   },
-  "modelGroup.kimi": {
+  "chat.modelGroup.kimi": {
     "message": "Kimi",
     "description": "服务的模型名称，即 Kimi"
   },
-  "modelGroup.kimiDescription": {
+  "chat.modelGroup.kimiDescription": {
     "message": "月之暗面公司开发的 AI 模型",
     "description": "Kimi 模型组的描述"
   },
-  "modelGroup.glm": {
+  "chat.modelGroup.glm": {
     "message": "GLM",
     "description": "服务的模型名称，即 GLM"
   },
-  "modelGroup.glmDescription": {
+  "chat.modelGroup.glmDescription": {
     "message": "智谱 AI 开发的大语言模型",
     "description": "GLM 模型组的描述"
   },
-  "model.55": {
+  "chat.model.55": {
     "message": "gpt-5.5",
     "description": "服务的模型名称，即 GPT 5.5"
   },
-  "model.55Description": {
+  "chat.model.55Description": {
     "message": "最新一代旗舰 GPT 5.5 模型",
     "description": "GPT 5.5 模型的描述"
   },
-  "model.54": {
+  "chat.model.54": {
     "message": "gpt-5.4",
     "description": "服务的模型名称，即 GPT 5.4"
   },
-  "model.54Description": {
+  "chat.model.54Description": {
     "message": "最新一代旗舰 GPT 5.4 模型",
     "description": "GPT 5.4 模型的描述"
   },
-  "model.54Mini": {
+  "chat.model.54Mini": {
     "message": "gpt-5.4-mini",
     "description": "服务的模型名称，即 GPT 5.4 Mini"
   },
-  "model.54MiniDescription": {
+  "chat.model.54MiniDescription": {
     "message": "更快更轻量的 GPT 5.4 模型",
     "description": "GPT 5.4 Mini 模型的描述"
   },
-  "model.freeTag": {
+  "chat.model.freeTag": {
     "message": "免费",
     "description": "模型选择器中免费模型旁的角标文案"
   },
-  "model.deepseekChat": {
+  "chat.model.deepseekChat": {
     "message": "3.0",
     "description": "服务的模型名称，即 DeepSeek 聊天"
   },
-  "model.deepseekChatDescription": {
+  "chat.model.deepseekChatDescription": {
     "message": "适用于日常任务",
     "description": "DeepSeek 聊天模型的描述"
   },
-  "model.deepseekReasoner": {
+  "chat.model.deepseekReasoner": {
     "message": "R1",
     "description": "服务的模型名称，即 DeepSeek 推理"
   },
-  "model.deepseekReasonerDescription": {
+  "chat.model.deepseekReasonerDescription": {
     "message": "适用于推理和深度思考问题",
     "description": "DeepSeek 推理模型的描述"
   },
-  "model.deepseekChat32": {
+  "chat.model.deepseekChat32": {
     "message": "3.2",
     "description": "服务的模型名称，即 DeepSeek V3.2 Exp"
   },
-  "model.deepseekChat32Description": {
+  "chat.model.deepseekChat32Description": {
     "message": "最新实验版本",
     "description": "DeepSeek V3.2 实验模型的描述"
   },
-  "model.deepseekV4Flash": {
+  "chat.model.deepseekV4Flash": {
     "message": "4.0",
     "description": "服务的模型名称，即 DeepSeek V4 Flash"
   },
-  "model.deepseekV4FlashDescription": {
+  "chat.model.deepseekV4FlashDescription": {
     "message": "最新一代轻量旗舰，1M 上下文",
     "description": "DeepSeek V4 Flash 模型的描述"
   },
-  "model.grok4": {
+  "chat.model.grok4": {
     "message": "grok-4",
     "description": "服务的模型名称，即 Grok 4"
   },
-  "model.grok4Description": {
+  "chat.model.grok4Description": {
     "message": "目前最先进的模型",
     "description": "Grok 4 模型的描述"
   },
-  "model.grok3": {
+  "chat.model.grok3": {
     "message": "grok-3",
     "description": "服务的模型名称"
   },
-  "model.grok3Description": {
+  "chat.model.grok3Description": {
     "message": "适用于大多数任务",
     "description": "Grok3 模型的描述"
   },
-  "model.gemini30Pro": {
+  "chat.model.gemini30Pro": {
     "message": "gemini-3.0-pro",
     "description": "服务的模型名称，即 Gemini 3.0 Pro"
   },
-  "model.gemini30ProDescription": {
+  "chat.model.gemini30ProDescription": {
     "message": "目前最先进的模型",
     "description": "Gemini 3.0 Pro 模型的描述"
   },
-  "model.gemini31Pro": {
+  "chat.model.gemini31Pro": {
     "message": "gemini-3.1-pro",
     "description": "服务的模型名称，即 Gemini 3.0 Pro"
   },
-  "model.gemini31ProDescription": {
+  "chat.model.gemini31ProDescription": {
     "message": "目前最先进的模型",
     "description": "Gemini 3.0 Pro 模型的描述"
   },
-  "model.gemini25Pro": {
+  "chat.model.gemini25Pro": {
     "message": "gemini-2.5-pro",
     "description": "服务的模型名称，即 Gemini 2.5 Pro"
   },
-  "model.gemini25ProDescription": {
+  "chat.model.gemini25ProDescription": {
     "message": "适用于复杂推理任务",
     "description": "Gemini 2.5 Pro 模型的描述"
   },
-  "model.gemini25Flash": {
+  "chat.model.gemini25Flash": {
     "message": "gemini-2.5-flash",
     "description": "服务的模型名称，即 Gemini 2.5 Flash"
   },
-  "model.gemini25FlashDescription": {
+  "chat.model.gemini25FlashDescription": {
     "message": "更快更轻量的模型",
     "description": "Gemini 2.5 Flash 模型的描述"
   },
-  "model.gemini35Flash": {
+  "chat.model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "服务的模型名称，即 Gemini 2.5 Flash"
   },
-  "model.gemini35FlashDescription": {
+  "chat.model.gemini35FlashDescription": {
     "message": "更快更轻量的模型",
     "description": "Gemini 2.5 Flash 模型的描述"
   },
-  "model.claudeOpus48": {
+  "chat.model.claudeOpus48": {
     "message": "claude-opus-4.8",
     "description": "服务的模型名称，即 Claude Opus 4.8"
   },
-  "model.claudeOpus48Description": {
+  "chat.model.claudeOpus48Description": {
     "message": "目前最先进的模型",
     "description": "Claude Opus 4.8 模型的描述"
   },
-  "model.claudeSonnet46": {
+  "chat.model.claudeSonnet46": {
     "message": "claude-sonnet-4.6",
     "description": "服务的模型名称，即 Claude Sonnet 4.6"
   },
-  "model.claudeSonnet46Description": {
+  "chat.model.claudeSonnet46Description": {
     "message": "适用于大多数任务",
     "description": "Claude Sonnet 4.6 模型的描述"
   },
-  "model.claudeHaiku45": {
+  "chat.model.claudeHaiku45": {
     "message": "claude-haiku-4.5",
     "description": "服务的模型名称，即 Claude Haiku 4.5"
   },
-  "model.claudeHaiku45Description": {
+  "chat.model.claudeHaiku45Description": {
     "message": "轻量快速的模型",
     "description": "Claude Haiku 4.5 模型的描述"
   },
-  "model.claudeFable5": {
+  "chat.model.claudeFable5": {
     "message": "claude-fable-5",
     "description": "服务模型名称，即 Claude Fable 5"
   },
-  "model.claudeFable5Description": {
+  "chat.model.claudeFable5Description": {
     "message": "在长上下文、复杂推理与创意写作场景下表现出色",
     "description": "Claude Fable 5 模型的描述"
   },
-  "model.kimiK25": {
+  "chat.model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "服务的模型名称，即 Kimi K2.5"
   },
-  "model.kimiK25Description": {
+  "chat.model.kimiK25Description": {
     "message": "目前最先进的模型",
     "description": "Kimi K2.5 模型的描述"
   },
-  "model.kimiK2Thinking": {
+  "chat.model.kimiK2Thinking": {
     "message": "kimi-k2 推理",
     "description": "服务的模型名称，即 Kimi K2 推理"
   },
-  "model.kimiK2ThinkingDescription": {
+  "chat.model.kimiK2ThinkingDescription": {
     "message": "适用于推理和深度思考问题",
     "description": "Kimi K2 推理模型的描述"
   },
-  "model.kimiK2ThinkingTurbo": {
+  "chat.model.kimiK2ThinkingTurbo": {
     "message": "kimi-k2 极速推理",
     "description": "服务的模型名称，即 Kimi K2 极速推理"
   },
-  "model.kimiK2ThinkingTurboDescription": {
+  "chat.model.kimiK2ThinkingTurboDescription": {
     "message": "更快速的推理模型",
     "description": "Kimi K2 极速推理模型的描述"
   },
-  "model.glm51": {
+  "chat.model.glm51": {
     "message": "glm-5.1",
     "description": "服务的模型名称，即 GLM 5.1"
   },
-  "model.glm51Description": {
+  "chat.model.glm51Description": {
     "message": "智谱最新旗舰模型",
     "description": "GLM 5.1 模型的描述"
   },
-  "model.glm47": {
+  "chat.model.glm47": {
     "message": "glm-4.7",
     "description": "服务的模型名称，即 GLM 4.7"
   },
-  "model.glm47Description": {
+  "chat.model.glm47Description": {
     "message": "均衡性能与成本",
     "description": "GLM 4.7 模型的描述"
   },
@@ -583,55 +583,372 @@
     "message": "已跳过连接器授权",
     "description": "用户跳过授权后的卡片底部说明"
   },
-  "scheduledTasks.navTitle": { "message": "定时任务", "description": "侧边栏定时任务入口" },
-  "scheduledTasks.title": { "message": "定时任务", "description": "页面标题" },
-  "scheduledTasks.create": { "message": "新建", "description": "创建定时任务按钮" },
-  "scheduledTasks.edit": { "message": "编辑任务", "description": "编辑对话框标题" },
-  "scheduledTasks.empty": { "message": "还没有定时任务，点击「新建」创建一个", "description": "空状态提示" },
-  "scheduledTasks.noRuns": { "message": "尚未运行", "description": "没有运行历史" },
-  "scheduledTasks.loadError": { "message": "加载失败", "description": "加载错误提示" },
-  "scheduledTasks.deleteConfirm": { "message": "确认删除「{name}」？删除后任务将停止运行。", "description": "删除确认" },
-  "scheduledTasks.viewResult": { "message": "查看结果", "description": "跳转到对话" },
-  "scheduledTasks.viewRuns": { "message": "运行记录", "description": "卡片底部查看运行历史" },
-  "scheduledTasks.noConversation": { "message": "无对话记录", "description": "运行未关联对话（旧版本运行）" },
-  "scheduledTasks.jitterHint": { "message": "±60s 抖动", "description": "运行时间抖动说明" },
-  "scheduledTasks.runCount": { "message": "已运行 {count} 次", "description": "运行次数" },
-  "scheduledTasks.state.enabled": { "message": "运行中", "description": "启用状态" },
-  "scheduledTasks.state.disabled": { "message": "已暂停", "description": "禁用状态" },
-  "scheduledTasks.state.error": { "message": "出错", "description": "错误状态" },
-  "scheduledTasks.run.queued": { "message": "排队", "description": "排队状态" },
-  "scheduledTasks.run.running": { "message": "运行中", "description": "运行中状态" },
-  "scheduledTasks.run.success": { "message": "成功", "description": "成功状态" },
-  "scheduledTasks.run.failed": { "message": "失败", "description": "失败状态" },
-  "scheduledTasks.run.needs_user_input": { "message": "需要操作", "description": "需要用户操作状态" },
-  "scheduledTasks.scheduleType.daily": { "message": "每天", "description": "每天执行" },
-  "scheduledTasks.scheduleType.minutely": { "message": "每分钟", "description": "每分钟执行" },
-  "scheduledTasks.scheduleType.hourly": { "message": "每小时", "description": "每小时执行" },
-  "scheduledTasks.scheduleType.weekly": { "message": "每周", "description": "每周执行" },
-  "scheduledTasks.scheduleType.cron": { "message": "Cron 表达式", "description": "自定义 cron" },
-  "scheduledTasks.form.name": { "message": "任务名称", "description": "名称字段" },
-  "scheduledTasks.form.namePlaceholder": { "message": "例：每日资讯汇总", "description": "名称占位符" },
-  "scheduledTasks.form.model": { "message": "模型", "description": "模型选择" },
-  "scheduledTasks.form.prompt": { "message": "提示词", "description": "提示词字段" },
-  "scheduledTasks.form.promptPlaceholder": { "message": "输入要定时执行的问题或指令，支持 {'{{date}}'}、{'{{run_count}}'}、{'{{last_output}}'} 变量", "description": "提示词占位符" },
-  "scheduledTasks.form.promptHint": { "message": "支持模板变量：{'{{date}}'} 今日日期，{'{{run_count}}'} 第几次运行，{'{{last_output}}'} 上次结果摘要", "description": "提示词说明" },
-  "scheduledTasks.form.schedule": { "message": "执行频率", "description": "频率选择" },
-  "scheduledTasks.form.time": { "message": "执行时间", "description": "时间字段" },
-  "scheduledTasks.form.weekday": { "message": "星期", "description": "星期字段" },
-  "scheduledTasks.form.cron": { "message": "Cron 表达式", "description": "cron 表达式字段" },
-  "scheduledTasks.form.skills": { "message": "授权 Skills", "description": "定时任务无人值守授权 skill 多选" },
-  "scheduledTasks.form.skillsPlaceholder": { "message": "选择允许此任务自动执行的 Skills", "description": "授权 skill 占位符" },
-  "scheduledTasks.form.skillsHint": { "message": "选中的 Skills 可在定时任务后台执行时跳过人工确认；未选中的 Skills 仍只能预览或等待确认。", "description": "授权 skill 说明" },
-  "scheduledTasks.form.skillMissing": { "message": "未连接", "description": "skill 缺少连接" },
-  "scheduledTasks.form.mcpServers": { "message": "授权 MCP", "description": "定时任务无人值守授权 MCP server 多选" },
-  "scheduledTasks.form.mcpServersPlaceholder": { "message": "选择允许此任务自动加载的 MCP Servers", "description": "授权 MCP server 占位符" },
-  "scheduledTasks.form.mcpServersHint": { "message": "选中的 MCP Servers 可在定时任务后台加载并执行；未选中的 MCP Servers 不会在无人值守模式下加载。", "description": "授权 MCP server 说明" },
-  "scheduledTasks.form.maxTurns": { "message": "最大轮次", "description": "定时任务单次运行的最大 agent 轮次上限" },
-  "scheduledTasks.form.maxTurnsHint": { "message": "任务单次运行允许的最大对话轮次（1–50）。上限太低会让多步骤任务（如需多次执行 Bash、查文档的技能）在完成前被强制停止、没有最终结果。默认 50。", "description": "最大轮次说明" },
-  "scheduledTasks.form.skillsConfirmTitle": { "message": "确认无人值守授权", "description": "授权确认标题" },
+  "scheduledTasks.navTitle": {
+    "message": "定时任务",
+    "description": "侧边栏定时任务入口"
+  },
+  "scheduledTasks.title": {
+    "message": "定时任务",
+    "description": "页面标题"
+  },
+  "scheduledTasks.create": {
+    "message": "新建",
+    "description": "创建定时任务按钮"
+  },
+  "scheduledTasks.edit": {
+    "message": "编辑任务",
+    "description": "编辑对话框标题"
+  },
+  "scheduledTasks.empty": {
+    "message": "还没有定时任务，点击「新建」创建一个",
+    "description": "空状态提示"
+  },
+  "scheduledTasks.noRuns": {
+    "message": "尚未运行",
+    "description": "没有运行历史"
+  },
+  "scheduledTasks.loadError": {
+    "message": "加载失败",
+    "description": "加载错误提示"
+  },
+  "scheduledTasks.deleteConfirm": {
+    "message": "确认删除「{name}」？删除后任务将停止运行。",
+    "description": "删除确认"
+  },
+  "scheduledTasks.viewResult": {
+    "message": "查看结果",
+    "description": "跳转到对话"
+  },
+  "scheduledTasks.viewRuns": {
+    "message": "运行记录",
+    "description": "卡片底部查看运行历史"
+  },
+  "scheduledTasks.noConversation": {
+    "message": "无对话记录",
+    "description": "运行未关联对话（旧版本运行）"
+  },
+  "scheduledTasks.jitterHint": {
+    "message": "±60s 抖动",
+    "description": "运行时间抖动说明"
+  },
+  "scheduledTasks.runCount": {
+    "message": "已运行 {count} 次",
+    "description": "运行次数"
+  },
+  "scheduledTasks.state.enabled": {
+    "message": "运行中",
+    "description": "启用状态"
+  },
+  "scheduledTasks.state.disabled": {
+    "message": "已暂停",
+    "description": "禁用状态"
+  },
+  "scheduledTasks.state.error": {
+    "message": "出错",
+    "description": "错误状态"
+  },
+  "scheduledTasks.run.queued": {
+    "message": "排队",
+    "description": "排队状态"
+  },
+  "scheduledTasks.run.running": {
+    "message": "运行中",
+    "description": "运行中状态"
+  },
+  "scheduledTasks.run.success": {
+    "message": "成功",
+    "description": "成功状态"
+  },
+  "scheduledTasks.run.failed": {
+    "message": "失败",
+    "description": "失败状态"
+  },
+  "scheduledTasks.run.needs_user_input": {
+    "message": "需要操作",
+    "description": "需要用户操作状态"
+  },
+  "scheduledTasks.scheduleType.daily": {
+    "message": "每天",
+    "description": "每天执行"
+  },
+  "scheduledTasks.scheduleType.minutely": {
+    "message": "每分钟",
+    "description": "每分钟执行"
+  },
+  "scheduledTasks.scheduleType.hourly": {
+    "message": "每小时",
+    "description": "每小时执行"
+  },
+  "scheduledTasks.scheduleType.weekly": {
+    "message": "每周",
+    "description": "每周执行"
+  },
+  "scheduledTasks.scheduleType.cron": {
+    "message": "Cron 表达式",
+    "description": "自定义 cron"
+  },
+  "scheduledTasks.form.name": {
+    "message": "任务名称",
+    "description": "名称字段"
+  },
+  "scheduledTasks.form.namePlaceholder": {
+    "message": "例：每日资讯汇总",
+    "description": "名称占位符"
+  },
+  "scheduledTasks.form.model": {
+    "message": "模型",
+    "description": "模型选择"
+  },
+  "scheduledTasks.form.prompt": {
+    "message": "提示词",
+    "description": "提示词字段"
+  },
+  "scheduledTasks.form.promptPlaceholder": {
+    "message": "输入要定时执行的问题或指令，支持 {'{{date}}'}、{'{{run_count}}'}、{'{{last_output}}'} 变量",
+    "description": "提示词占位符"
+  },
+  "scheduledTasks.form.promptHint": {
+    "message": "支持模板变量：{'{{date}}'} 今日日期，{'{{run_count}}'} 第几次运行，{'{{last_output}}'} 上次结果摘要",
+    "description": "提示词说明"
+  },
+  "scheduledTasks.form.schedule": {
+    "message": "执行频率",
+    "description": "频率选择"
+  },
+  "scheduledTasks.form.time": {
+    "message": "执行时间",
+    "description": "时间字段"
+  },
+  "scheduledTasks.form.weekday": {
+    "message": "星期",
+    "description": "星期字段"
+  },
+  "scheduledTasks.form.cron": {
+    "message": "Cron 表达式",
+    "description": "cron 表达式字段"
+  },
+  "scheduledTasks.form.skills": {
+    "message": "授权 Skills",
+    "description": "定时任务无人值守授权 skill 多选"
+  },
+  "scheduledTasks.form.skillsPlaceholder": {
+    "message": "选择允许此任务自动执行的 Skills",
+    "description": "授权 skill 占位符"
+  },
+  "scheduledTasks.form.skillsHint": {
+    "message": "选中的 Skills 可在定时任务后台执行时跳过人工确认；未选中的 Skills 仍只能预览或等待确认。",
+    "description": "授权 skill 说明"
+  },
+  "scheduledTasks.form.skillMissing": {
+    "message": "未连接",
+    "description": "skill 缺少连接"
+  },
+  "scheduledTasks.form.mcpServers": {
+    "message": "授权 MCP",
+    "description": "定时任务无人值守授权 MCP server 多选"
+  },
+  "scheduledTasks.form.mcpServersPlaceholder": {
+    "message": "选择允许此任务自动加载的 MCP Servers",
+    "description": "授权 MCP server 占位符"
+  },
+  "scheduledTasks.form.mcpServersHint": {
+    "message": "选中的 MCP Servers 可在定时任务后台加载并执行；未选中的 MCP Servers 不会在无人值守模式下加载。",
+    "description": "授权 MCP server 说明"
+  },
+  "scheduledTasks.form.maxTurns": {
+    "message": "最大轮次",
+    "description": "定时任务单次运行的最大 agent 轮次上限"
+  },
+  "scheduledTasks.form.maxTurnsHint": {
+    "message": "任务单次运行允许的最大对话轮次（1–50）。上限太低会让多步骤任务（如需多次执行 Bash、查文档的技能）在完成前被强制停止、没有最终结果。默认 50。",
+    "description": "最大轮次说明"
+  },
+  "scheduledTasks.form.skillsConfirmTitle": {
+    "message": "确认无人值守授权",
+    "description": "授权确认标题"
+  },
   "scheduledTasks.form.skillsConfirm": {
     "message": "此任务将允许 {count} 个 Skill/MCP 在后台执行时跳过人工确认或加载限制：{skills}。它们可能会发送消息、发布内容或写入外部服务，请确认。",
     "description": "授权确认正文"
   },
-  "scheduledTasks.form.required": { "message": "请填写任务名称和提示词", "description": "必填项验证" }
+  "scheduledTasks.form.required": {
+    "message": "请填写任务名称和提示词",
+    "description": "必填项验证"
+  },
+  "chat.model.gpt41": {
+    "message": "GPT-4.1",
+    "description": "Model display name"
+  },
+  "chat.model.gpt41Description": {
+    "message": "通用中等规模模型，综合性能均衡。",
+    "description": "Model description"
+  },
+  "chat.model.gpt4o": {
+    "message": "GPT-4o",
+    "description": "Model display name"
+  },
+  "chat.model.gpt4oDescription": {
+    "message": "OpenAI 多模态旗舰，支持文本、图像与音频。",
+    "description": "Model description"
+  },
+  "chat.model.51": {
+    "message": "GPT-5.1",
+    "description": "Model display name"
+  },
+  "chat.model.51Description": {
+    "message": "均衡的 GPT-5.1 日常任务模型。",
+    "description": "Model description"
+  },
+  "chat.model.52": {
+    "message": "GPT-5.2",
+    "description": "Model display name"
+  },
+  "chat.model.52Description": {
+    "message": "增强型 GPT-5.2，推理能力更优。",
+    "description": "Model description"
+  },
+  "chat.model.5Mini": {
+    "message": "GPT-5 Mini",
+    "description": "Model display name"
+  },
+  "chat.model.5MiniDescription": {
+    "message": "轻量且高性价比的 GPT-5 模型。",
+    "description": "Model description"
+  },
+  "chat.model.5Nano": {
+    "message": "GPT-5 Nano",
+    "description": "Model display name"
+  },
+  "chat.model.5NanoDescription": {
+    "message": "最快的 GPT-5 模型，适合简单任务。",
+    "description": "Model description"
+  },
+  "chat.model.o1": {
+    "message": "o1",
+    "description": "Model display name"
+  },
+  "chat.model.o1Description": {
+    "message": "针对复杂理科问题优化的推理模型。",
+    "description": "Model description"
+  },
+  "chat.model.o3": {
+    "message": "o3",
+    "description": "Model display name"
+  },
+  "chat.model.o3Description": {
+    "message": "高级推理模型，编程能力突出。",
+    "description": "Model description"
+  },
+  "chat.model.deepseekR10528": {
+    "message": "DeepSeek-R1-0528",
+    "description": "Model display name"
+  },
+  "chat.model.deepseekR10528Description": {
+    "message": "DeepSeek 更新的推理模型。",
+    "description": "Model description"
+  },
+  "chat.model.deepseekV3250324": {
+    "message": "DeepSeek-V3-250324",
+    "description": "Model display name"
+  },
+  "chat.model.deepseekV3250324Description": {
+    "message": "DeepSeek 通用对话模型。",
+    "description": "Model description"
+  },
+  "chat.model.gemini20Flash": {
+    "message": "Gemini 2.0 Flash",
+    "description": "Model display name"
+  },
+  "chat.model.gemini20FlashDescription": {
+    "message": "快速高效的 Gemini 模型。",
+    "description": "Model description"
+  },
+  "chat.model.gemini25FlashLite": {
+    "message": "Gemini 2.5 Flash Lite",
+    "description": "Model display name"
+  },
+  "chat.model.gemini25FlashLiteDescription": {
+    "message": "Gemini 2.5 Flash 的轻量版本。",
+    "description": "Model description"
+  },
+  "chat.model.gemini30FlashPreview": {
+    "message": "Gemini 3 Flash Preview",
+    "description": "Model display name"
+  },
+  "chat.model.gemini30FlashPreviewDescription": {
+    "message": "Gemini 3 Flash 系列预览版。",
+    "description": "Model description"
+  },
+  "chat.model.claudeSonnet5": {
+    "message": "Claude Sonnet 5",
+    "description": "Model display name"
+  },
+  "chat.model.claudeSonnet5Description": {
+    "message": "快速且能力均衡的 Claude 模型。",
+    "description": "Model description"
+  },
+  "chat.model.claudeOpus46": {
+    "message": "Claude Opus 4.6",
+    "description": "Model display name"
+  },
+  "chat.model.claudeOpus46Description": {
+    "message": "高性能 Claude Opus 模型。",
+    "description": "Model description"
+  },
+  "chat.model.claudeOpus47": {
+    "message": "Claude Opus 4.7",
+    "description": "Model display name"
+  },
+  "chat.model.claudeOpus47Description": {
+    "message": "具备更强推理能力的 Claude Opus。",
+    "description": "Model description"
+  },
+  "chat.model.claude37Sonnet": {
+    "message": "Claude 3.7 Sonnet",
+    "description": "Model display name"
+  },
+  "chat.model.claude37SonnetDescription": {
+    "message": "上一代 Claude Sonnet，推理能力出色。",
+    "description": "Model description"
+  },
+  "chat.model.kimiK2Instruct0905": {
+    "message": "Kimi K2 Instruct 0905",
+    "description": "Model display name"
+  },
+  "chat.model.kimiK2Instruct0905Description": {
+    "message": "指令微调的 Kimi K2 变体。",
+    "description": "Model description"
+  },
+  "chat.model.kimiK2TurboPreview": {
+    "message": "Kimi K2 Turbo Preview",
+    "description": "Model display name"
+  },
+  "chat.model.kimiK2TurboPreviewDescription": {
+    "message": "更快的 Kimi K2 预览版本。",
+    "description": "Model description"
+  },
+  "chat.model.glm5": {
+    "message": "GLM-5",
+    "description": "Model display name"
+  },
+  "chat.model.glm5Description": {
+    "message": "通用 GLM-5 模型。",
+    "description": "Model description"
+  },
+  "chat.model.glm5Turbo": {
+    "message": "GLM-5 Turbo",
+    "description": "Model display name"
+  },
+  "chat.model.glm5TurboDescription": {
+    "message": "加速版 GLM-5，响应更快。",
+    "description": "Model description"
+  },
+  "chat.model.glm46": {
+    "message": "GLM-4.6",
+    "description": "Model display name"
+  },
+  "chat.model.glm46Description": {
+    "message": "具备推理能力的 GLM 模型。",
+    "description": "Model description"
+  }
 }

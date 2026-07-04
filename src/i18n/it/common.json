@@ -1335,5 +1335,9 @@
   "settings.cuConsentDeny": {
     "message": "Deny",
     "description": "Deny button of the on-demand consent dialog."
+  },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
   }
 }

@@ -100,3 +100,6 @@ export const ROUTE_CONSOLE_USAGE_LIST = 'console-usage-list';
 export const ROUTE_CONSOLE_CREDENTIALS = 'console-credentials';
 
 export const ROUTE_NOT_FOUND = 'not-found';
+
+export const ROUTE_GLM_CONVERSATION = 'glm-conversation';
+export const ROUTE_GLM_CONVERSATION_NEW = 'glm-conversation-new';

@@ -43,7 +43,8 @@ import {
   CHAT_MODEL_GROUP_GROK,
   CHAT_MODEL_GROUP_GEMINI,
   CHAT_MODEL_GROUP_CLAUDE,
-  CHAT_MODEL_GROUP_KIMI
+  CHAT_MODEL_GROUP_KIMI,
+  CHAT_MODEL_GROUP_GLM
 } from '@/constants';
 
 interface IData {
@@ -67,7 +68,8 @@ export default defineComponent({
         CHAT_MODEL_GROUP_GROK,
         CHAT_MODEL_GROUP_GEMINI,
         CHAT_MODEL_GROUP_CLAUDE,
-        CHAT_MODEL_GROUP_KIMI
+        CHAT_MODEL_GROUP_KIMI,
+        CHAT_MODEL_GROUP_GLM
       ]
     };
   },
