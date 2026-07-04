@@ -29,6 +29,11 @@
           @click="openTab('https://platform.acedata.cloud')"
         ></el-menu-item>
         <el-menu-item
+          v-t="'common.nav.document'"
+          @route="undefined"
+          @click="openTab('https://docs.acedata.cloud')"
+        ></el-menu-item>
+        <el-menu-item
           v-t="'common.nav.support'"
           @route="undefined"
           @click="openTab('https://platform.acedata.cloud/support')"

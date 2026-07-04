@@ -25,6 +25,10 @@
             <font-awesome-icon icon="fa-solid fa-compass" class="mr-2" />
             {{ $t('common.nav.console') }}
           </el-dropdown-item>
+          <el-dropdown-item class="py-2" @click="onDocs">
+            <font-awesome-icon icon="fa-solid fa-book" class="mr-2" />
+            {{ $t('common.nav.document') }}
+          </el-dropdown-item>
           <el-dropdown-item v-if="isIOS" class="py-2" @click="onDeleteAccount">
             <font-awesome-icon icon="fa-solid fa-user-xmark" class="mr-2" />
             {{ $t('common.nav.deleteAccount') }}
@@ -119,6 +123,9 @@ export default defineComponent({
     },
     onConsole() {
       this.$router.push({ name: ROUTE_CONSOLE_ROOT });
+    },
+    onDocs() {
+      window.open('https://docs.acedata.cloud', '_blank', 'noopener');
     },
     onDistribution() {
       this.$router.push({
