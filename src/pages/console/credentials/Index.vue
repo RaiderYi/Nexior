@@ -1,36 +1,36 @@
 <template>
   <el-row class="credentials-page">
     <el-col :span="24">
-      <h2 class="title">{{ $t('credentials.title') }}</h2>
+      <h2 class="title">{{ $t('console.credentials.title') }}</h2>
 
       <!-- Quick Start Guide Card -->
       <el-card shadow="hover" class="mb-4">
         <div class="guide-card">
           <div class="guide-header">
             <font-awesome-icon icon="fa-solid fa-rocket" class="guide-icon" />
-            <h3>{{ $t('credentials.guide.title') }}</h3>
+            <h3>{{ $t('console.credentials.guide.title') }}</h3>
           </div>
           <div class="guide-steps">
             <div class="guide-step">
               <span class="step-number">1</span>
               <div class="step-content">
-                <p class="step-title">{{ $t('credentials.guide.step1Title') }}</p>
-                <p class="step-desc">{{ $t('credentials.guide.step1Desc') }}</p>
+                <p class="step-title">{{ $t('console.credentials.guide.step1Title') }}</p>
+                <p class="step-desc">{{ $t('console.credentials.guide.step1Desc') }}</p>
                 <code class="step-code">https://api.acedata.cloud/v1/chat/completions</code>
               </div>
             </div>
             <div class="guide-step">
               <span class="step-number">2</span>
               <div class="step-content">
-                <p class="step-title">{{ $t('credentials.guide.step2Title') }}</p>
-                <p class="step-desc">{{ $t('credentials.guide.step2Desc') }}</p>
+                <p class="step-title">{{ $t('console.credentials.guide.step2Title') }}</p>
+                <p class="step-desc">{{ $t('console.credentials.guide.step2Desc') }}</p>
               </div>
             </div>
             <div class="guide-step">
               <span class="step-number">3</span>
               <div class="step-content">
-                <p class="step-title">{{ $t('credentials.guide.step3Title') }}</p>
-                <p class="step-desc">{{ $t('credentials.guide.step3Desc') }}</p>
+                <p class="step-title">{{ $t('console.credentials.guide.step3Title') }}</p>
+                <p class="step-desc">{{ $t('console.credentials.guide.step3Desc') }}</p>
               </div>
             </div>
           </div>
@@ -40,23 +40,23 @@
       <!-- API Keys Table -->
       <el-card shadow="hover">
         <div slot="header" class="keys-header">
-          <span class="keys-title">{{ $t('credentials.keys.title') }}</span>
+          <span class="keys-title">{{ $t('console.credentials.keys.title') }}</span>
           <el-button type="primary" size="small" round @click="onRefresh" :loading="loading">
             <font-awesome-icon icon="fa-solid fa-rotate" class="mr-1 text-[12px]" />
-            {{ $t('credentials.button.refresh') }}
+            {{ $t('console.credentials.button.refresh') }}
           </el-button>
         </div>
 
         <el-skeleton v-if="loading && credentials.length === 0" :rows="4" animated />
 
-        <el-empty v-else-if="credentials.length === 0" :description="$t('credentials.keys.empty')">
+        <el-empty v-else-if="credentials.length === 0" :description="$t('console.credentials.keys.empty')">
           <el-button type="primary" round @click="onStartUsing">
-            {{ $t('credentials.keys.startUsing') }}
+            {{ $t('console.credentials.keys.startUsing') }}
           </el-button>
         </el-empty>
 
         <el-table v-else :data="credentials" stripe table-layout="fixed">
-          <el-table-column :label="$t('credentials.field.service')" min-width="140px">
+          <el-table-column :label="$t('console.credentials.field.service')" min-width="140px">
             <template #default="scope">
               <div class="service-cell">
                 <font-awesome-icon :icon="getServiceIcon(scope.row.serviceTitle)" class="service-icon" />
@@ -65,7 +65,7 @@
             </template>
           </el-table-column>
 
-          <el-table-column :label="$t('credentials.field.apiKey')" min-width="220px">
+          <el-table-column :label="$t('console.credentials.field.apiKey')" min-width="220px">
             <template #default="scope">
               <div class="key-cell">
                 <code class="key-value">{{ scope.row.token }}</code>
@@ -74,13 +74,13 @@
             </template>
           </el-table-column>
 
-          <el-table-column :label="$t('credentials.field.balance')" width="120px" class-name="text-center">
+          <el-table-column :label="$t('console.credentials.field.balance')" width="120px" class-name="text-center">
             <template #default="scope">
               <span class="balance">{{ scope.row.remainingAmount }}</span>
             </template>
           </el-table-column>
 
-          <el-table-column :label="$t('credentials.field.createdAt')" width="160px" class-name="hidden sm:table-cell">
+          <el-table-column :label="$t('console.credentials.field.createdAt')" width="160px" class-name="hidden sm:table-cell">
             <template #default="scope">
               <span class="text-sm">{{ scope.row.createdAt }}</span>
             </template>
@@ -93,7 +93,7 @@
         <div class="example-card">
           <div class="example-header">
             <font-awesome-icon icon="fa-solid fa-code" class="example-icon" />
-            <h3>{{ $t('credentials.example.title') }}</h3>
+            <h3>{{ $t('console.credentials.example.title') }}</h3>
           </div>
           <pre class="code-block"><code>curl https://api.acedata.cloud/v1/chat/completions \
   -H "Authorization: Bearer {{ firstToken }}" \
@@ -104,7 +104,7 @@
       {"role": "user", "content": "Hello!"}
     ]
   }'</code></pre>
-          <p class="example-hint">{{ $t('credentials.example.hint') }}</p>
+          <p class="example-hint">{{ $t('console.credentials.example.hint') }}</p>
         </div>
       </el-card>
 
@@ -113,7 +113,7 @@
         <div class="models-card">
           <div class="models-header">
             <font-awesome-icon icon="fa-solid fa-list" class="models-icon" />
-            <h3>{{ $t('credentials.models.title') }}</h3>
+            <h3>{{ $t('console.credentials.models.title') }}</h3>
           </div>
           <div class="models-grid">
             <div v-for="modelGroup in modelGroups" :key="modelGroup.name" class="model-group">
@@ -126,7 +126,7 @@
               </div>
             </div>
           </div>
-          <p class="models-hint">{{ $t('credentials.models.hint') }}</p>
+          <p class="models-hint">{{ $t('console.credentials.models.hint') }}</p>
         </div>
       </el-card>
     </el-col>
@@ -261,7 +261,7 @@ export default defineComponent({
             ) {
               allCreds.push({
                 applicationId: cred.application_id || '',
-                serviceTitle: cred.name || this.$t('credentials.keys.general'),
+                serviceTitle: cred.name || this.$t('console.credentials.keys.general'),
                 token: cred.token,
                 remainingAmount: '—',
                 createdAt: cred.created_at || ''
@@ -274,7 +274,7 @@ export default defineComponent({
 
         this.credentials = allCreds;
       } catch {
-        ElMessage.error(this.$t('credentials.message.loadFailed').toString());
+        ElMessage.error(this.$t('console.credentials.message.loadFailed').toString());
       } finally {
         this.loading = false;
       }
