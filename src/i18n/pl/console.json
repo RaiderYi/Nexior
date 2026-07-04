@@ -39,6 +39,10 @@
     "message": "Historia użycia",
     "description": "Tekst w menu strony, historia użycia odnosi się do historii korzystania z usług API przez użytkownika"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Poświadczenia",
     "description": "Tekst w menu strony, poświadczenia odnoszą się do danych dostępowych do API"

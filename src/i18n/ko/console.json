@@ -39,6 +39,10 @@
     "message": "사용 기록",
     "description": "웹사이트 메뉴의 텍스트, 사용 기록은 사용자가 API 서비스를 사용한 기록을 의미"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "자격 증명",
     "description": "웹사이트 메뉴의 텍스트, 자격 증명은 API 접근을 위한 자격 증명을 의미"

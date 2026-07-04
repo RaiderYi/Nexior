@@ -39,6 +39,10 @@
     "message": "使用履歴",
     "description": "ウェブサイトメニューのテキスト、使用履歴はユーザーのAPIサービスの使用履歴を指します"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "認証情報",
     "description": "ウェブサイトメニューのテキスト、認証情報はAPIへのアクセスに必要な情報を指します"

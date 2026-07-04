@@ -39,6 +39,10 @@
     "message": "Historique d'utilisation",
     "description": "Texte dans le menu du site, historique d'utilisation fait référence à l'historique d'utilisation des services API par l'utilisateur"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Identifiants",
     "description": "Texte dans le menu du site, identifiants fait référence aux informations d'accès à l'API"

@@ -39,6 +39,10 @@
     "message": "Historial de uso",
     "description": "Texto en el menú del sitio web, donde 'historial de uso' se refiere al registro de uso de los servicios API por parte del usuario"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Credenciales",
     "description": "Texto en el menú del sitio web, donde 'credenciales' se refiere a las credenciales para acceder a la API"

@@ -39,6 +39,10 @@
     "message": "使用歷史",
     "description": "網站菜單中的文本，使用歷史指的是用戶對API服務的使用歷史"
   },
+  "menu.credentials": {
+    "message": "API 金鑰",
+    "description": "控制台側邊欄選單項"
+  },
   "menu.credentialIndex": {
     "message": "憑證",
     "description": "網站菜單中的文本，憑證指的是訪問API的憑證"

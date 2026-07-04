@@ -39,6 +39,10 @@
     "message": "Käyttöhistoria",
     "description": "Verkkosivuston valikossa oleva teksti, käyttöhistoria viittaa käyttäjän API-palvelun käyttöön"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Todistukset",
     "description": "Verkkosivuston valikossa oleva teksti, todistukset viittaavat API:n käyttöön tarvittaviin todistuksiin"

@@ -39,6 +39,10 @@
     "message": "Användningshistorik",
     "description": "Text i webbplatsens meny, användningshistorik avser användarens historik för API-tjänster"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Referenser",
     "description": "Text i webbplatsens meny, referenser avser autentisering för att få tillgång till API"

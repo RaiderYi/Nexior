@@ -39,6 +39,10 @@
     "message": "Ιστορικό χρήσης",
     "description": "Κείμενο μενού ιστοσελίδας, το ιστορικό χρήσης αναφέρεται στην ιστορία χρήσης των υπηρεσιών API από τον χρήστη"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Διαπιστευτήρια",
     "description": "Κείμενο μενού ιστοσελίδας, τα διαπιστευτήρια αναφέρονται στα διαπιστευτήρια πρόσβασης στο API"

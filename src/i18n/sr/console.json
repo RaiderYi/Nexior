@@ -39,6 +39,10 @@
     "message": "Istorija korišćenja",
     "description": "Tekst u meniju sajta, istorija korišćenja se odnosi na istoriju korišćenja API usluga od strane korisnika"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Akreditivi",
     "description": "Tekst u meniju sajta, akreditivi se odnose na akreditive za pristup API-ju"

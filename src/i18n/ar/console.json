@@ -39,6 +39,10 @@
     "message": "سجل الاستخدام",
     "description": "نص في قائمة الموقع، سجل الاستخدام يشير إلى تاريخ استخدام المستخدم لخدمات API"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "المصادقات",
     "description": "نص في قائمة الموقع، المصادقات تشير إلى بيانات الوصول إلى API"

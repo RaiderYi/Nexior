@@ -39,6 +39,10 @@
     "message": "Nutzungsverlauf",
     "description": "Text im Website-Menü, Nutzungsverlauf bezieht sich auf die Nutzungshistorie der API-Dienste durch den Benutzer"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Zugangsdaten",
     "description": "Text im Website-Menü, Zugangsdaten beziehen sich auf die Zugangsdaten für die API"

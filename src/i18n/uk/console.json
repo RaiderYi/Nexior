@@ -39,6 +39,10 @@
     "message": "Історія використання",
     "description": "Текст у меню сайту, що вказує на історію використання API послугами користувача"
   },
+  "menu.credentials": {
+    "message": "API Keys",
+    "description": "Console sidebar menu item for API key management"
+  },
   "menu.credentialIndex": {
     "message": "Облікові дані",
     "description": "Текст у меню сайту, що вказує на облікові дані для доступу до API"
