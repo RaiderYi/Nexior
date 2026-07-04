@@ -23,247 +23,247 @@
     "message": "编辑消息",
     "description": "编辑发送的消息"
   },
-  "chat.modelGroup.chatgpt": {
+  "modelGroup.chatgpt": {
     "message": "ChatGPT",
     "description": "服务的模型名称，即 GPT"
   },
-  "chat.modelGroup.chatgptDescription": {
+  "modelGroup.chatgptDescription": {
     "message": "OpenAI 公司开发的 AI 模型",
     "description": "ChatGPT 模型的描述"
   },
-  "chat.modelGroup.deepseek": {
+  "modelGroup.deepseek": {
     "message": "DeepSeek",
     "description": "服务的模型名称，即 DeepSeek"
   },
-  "chat.modelGroup.deepseekDescription": {
+  "modelGroup.deepseekDescription": {
     "message": "深度求索公司开发的 AI 模型",
     "description": "DeepSeek 模型的描述"
   },
-  "chat.modelGroup.grok": {
+  "modelGroup.grok": {
     "message": "Grok",
     "description": "服务的模型名称，即 Grok"
   },
-  "chat.modelGroup.grokDescription": {
+  "modelGroup.grokDescription": {
     "message": "xAI 公司开发的 AI 模型",
     "description": "Grok3 模型的描述"
   },
-  "chat.modelGroup.gemini": {
+  "modelGroup.gemini": {
     "message": "Gemini",
     "description": "服务的模型名称，即 Gemini"
   },
-  "chat.modelGroup.geminiDescription": {
+  "modelGroup.geminiDescription": {
     "message": "Google 开发的 AI 模型",
     "description": "Gemini 模型组的描述"
   },
-  "chat.modelGroup.claude": {
+  "modelGroup.claude": {
     "message": "Claude",
     "description": "服务的模型名称，即 Claude"
   },
-  "chat.modelGroup.claudeDescription": {
+  "modelGroup.claudeDescription": {
     "message": "Anthropic 公司开发的 AI 模型",
     "description": "Claude 模型组的描述"
   },
-  "chat.modelGroup.kimi": {
+  "modelGroup.kimi": {
     "message": "Kimi",
     "description": "服务的模型名称，即 Kimi"
   },
-  "chat.modelGroup.kimiDescription": {
+  "modelGroup.kimiDescription": {
     "message": "月之暗面公司开发的 AI 模型",
     "description": "Kimi 模型组的描述"
   },
-  "chat.modelGroup.glm": {
+  "modelGroup.glm": {
     "message": "GLM",
     "description": "服务的模型名称，即 GLM"
   },
-  "chat.modelGroup.glmDescription": {
+  "modelGroup.glmDescription": {
     "message": "智谱 AI 开发的大语言模型",
     "description": "GLM 模型组的描述"
   },
-  "chat.model.55": {
+  "model.55": {
     "message": "gpt-5.5",
     "description": "服务的模型名称，即 GPT 5.5"
   },
-  "chat.model.55Description": {
+  "model.55Description": {
     "message": "最新一代旗舰 GPT 5.5 模型",
     "description": "GPT 5.5 模型的描述"
   },
-  "chat.model.54": {
+  "model.54": {
     "message": "gpt-5.4",
     "description": "服务的模型名称，即 GPT 5.4"
   },
-  "chat.model.54Description": {
+  "model.54Description": {
     "message": "最新一代旗舰 GPT 5.4 模型",
     "description": "GPT 5.4 模型的描述"
   },
-  "chat.model.54Mini": {
+  "model.54Mini": {
     "message": "gpt-5.4-mini",
     "description": "服务的模型名称，即 GPT 5.4 Mini"
   },
-  "chat.model.54MiniDescription": {
+  "model.54MiniDescription": {
     "message": "更快更轻量的 GPT 5.4 模型",
     "description": "GPT 5.4 Mini 模型的描述"
   },
-  "chat.model.freeTag": {
+  "model.freeTag": {
     "message": "免费",
     "description": "模型选择器中免费模型旁的角标文案"
   },
-  "chat.model.deepseekChat": {
+  "model.deepseekChat": {
     "message": "3.0",
     "description": "服务的模型名称，即 DeepSeek 聊天"
   },
-  "chat.model.deepseekChatDescription": {
+  "model.deepseekChatDescription": {
     "message": "适用于日常任务",
     "description": "DeepSeek 聊天模型的描述"
   },
-  "chat.model.deepseekReasoner": {
+  "model.deepseekReasoner": {
     "message": "R1",
     "description": "服务的模型名称，即 DeepSeek 推理"
   },
-  "chat.model.deepseekReasonerDescription": {
+  "model.deepseekReasonerDescription": {
     "message": "适用于推理和深度思考问题",
     "description": "DeepSeek 推理模型的描述"
   },
-  "chat.model.deepseekChat32": {
+  "model.deepseekChat32": {
     "message": "3.2",
     "description": "服务的模型名称，即 DeepSeek V3.2 Exp"
   },
-  "chat.model.deepseekChat32Description": {
+  "model.deepseekChat32Description": {
     "message": "最新实验版本",
     "description": "DeepSeek V3.2 实验模型的描述"
   },
-  "chat.model.deepseekV4Flash": {
+  "model.deepseekV4Flash": {
     "message": "4.0",
     "description": "服务的模型名称，即 DeepSeek V4 Flash"
   },
-  "chat.model.deepseekV4FlashDescription": {
+  "model.deepseekV4FlashDescription": {
     "message": "最新一代轻量旗舰，1M 上下文",
     "description": "DeepSeek V4 Flash 模型的描述"
   },
-  "chat.model.grok4": {
+  "model.grok4": {
     "message": "grok-4",
     "description": "服务的模型名称，即 Grok 4"
   },
-  "chat.model.grok4Description": {
+  "model.grok4Description": {
     "message": "目前最先进的模型",
     "description": "Grok 4 模型的描述"
   },
-  "chat.model.grok3": {
+  "model.grok3": {
     "message": "grok-3",
     "description": "服务的模型名称"
   },
-  "chat.model.grok3Description": {
+  "model.grok3Description": {
     "message": "适用于大多数任务",
     "description": "Grok3 模型的描述"
   },
-  "chat.model.gemini30Pro": {
+  "model.gemini30Pro": {
     "message": "gemini-3.0-pro",
     "description": "服务的模型名称，即 Gemini 3.0 Pro"
   },
-  "chat.model.gemini30ProDescription": {
+  "model.gemini30ProDescription": {
     "message": "目前最先进的模型",
     "description": "Gemini 3.0 Pro 模型的描述"
   },
-  "chat.model.gemini31Pro": {
+  "model.gemini31Pro": {
     "message": "gemini-3.1-pro",
     "description": "服务的模型名称，即 Gemini 3.0 Pro"
   },
-  "chat.model.gemini31ProDescription": {
+  "model.gemini31ProDescription": {
     "message": "目前最先进的模型",
     "description": "Gemini 3.0 Pro 模型的描述"
   },
-  "chat.model.gemini25Pro": {
+  "model.gemini25Pro": {
     "message": "gemini-2.5-pro",
     "description": "服务的模型名称，即 Gemini 2.5 Pro"
   },
-  "chat.model.gemini25ProDescription": {
+  "model.gemini25ProDescription": {
     "message": "适用于复杂推理任务",
     "description": "Gemini 2.5 Pro 模型的描述"
   },
-  "chat.model.gemini25Flash": {
+  "model.gemini25Flash": {
     "message": "gemini-2.5-flash",
     "description": "服务的模型名称，即 Gemini 2.5 Flash"
   },
-  "chat.model.gemini25FlashDescription": {
+  "model.gemini25FlashDescription": {
     "message": "更快更轻量的模型",
     "description": "Gemini 2.5 Flash 模型的描述"
   },
-  "chat.model.gemini35Flash": {
+  "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "服务的模型名称，即 Gemini 2.5 Flash"
   },
-  "chat.model.gemini35FlashDescription": {
+  "model.gemini35FlashDescription": {
     "message": "更快更轻量的模型",
     "description": "Gemini 2.5 Flash 模型的描述"
   },
-  "chat.model.claudeOpus48": {
+  "model.claudeOpus48": {
     "message": "claude-opus-4.8",
     "description": "服务的模型名称，即 Claude Opus 4.8"
   },
-  "chat.model.claudeOpus48Description": {
+  "model.claudeOpus48Description": {
     "message": "目前最先进的模型",
     "description": "Claude Opus 4.8 模型的描述"
   },
-  "chat.model.claudeSonnet46": {
+  "model.claudeSonnet46": {
     "message": "claude-sonnet-4.6",
     "description": "服务的模型名称，即 Claude Sonnet 4.6"
   },
-  "chat.model.claudeSonnet46Description": {
+  "model.claudeSonnet46Description": {
     "message": "适用于大多数任务",
     "description": "Claude Sonnet 4.6 模型的描述"
   },
-  "chat.model.claudeHaiku45": {
+  "model.claudeHaiku45": {
     "message": "claude-haiku-4.5",
     "description": "服务的模型名称，即 Claude Haiku 4.5"
   },
-  "chat.model.claudeHaiku45Description": {
+  "model.claudeHaiku45Description": {
     "message": "轻量快速的模型",
     "description": "Claude Haiku 4.5 模型的描述"
   },
-  "chat.model.claudeFable5": {
+  "model.claudeFable5": {
     "message": "claude-fable-5",
     "description": "服务模型名称，即 Claude Fable 5"
   },
-  "chat.model.claudeFable5Description": {
+  "model.claudeFable5Description": {
     "message": "在长上下文、复杂推理与创意写作场景下表现出色",
     "description": "Claude Fable 5 模型的描述"
   },
-  "chat.model.kimiK25": {
+  "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "服务的模型名称，即 Kimi K2.5"
   },
-  "chat.model.kimiK25Description": {
+  "model.kimiK25Description": {
     "message": "目前最先进的模型",
     "description": "Kimi K2.5 模型的描述"
   },
-  "chat.model.kimiK2Thinking": {
+  "model.kimiK2Thinking": {
     "message": "kimi-k2 推理",
     "description": "服务的模型名称，即 Kimi K2 推理"
   },
-  "chat.model.kimiK2ThinkingDescription": {
+  "model.kimiK2ThinkingDescription": {
     "message": "适用于推理和深度思考问题",
     "description": "Kimi K2 推理模型的描述"
   },
-  "chat.model.kimiK2ThinkingTurbo": {
+  "model.kimiK2ThinkingTurbo": {
     "message": "kimi-k2 极速推理",
     "description": "服务的模型名称，即 Kimi K2 极速推理"
   },
-  "chat.model.kimiK2ThinkingTurboDescription": {
+  "model.kimiK2ThinkingTurboDescription": {
     "message": "更快速的推理模型",
     "description": "Kimi K2 极速推理模型的描述"
   },
-  "chat.model.glm51": {
+  "model.glm51": {
     "message": "glm-5.1",
     "description": "服务的模型名称，即 GLM 5.1"
   },
-  "chat.model.glm51Description": {
+  "model.glm51Description": {
     "message": "智谱最新旗舰模型",
     "description": "GLM 5.1 模型的描述"
   },
-  "chat.model.glm47": {
+  "model.glm47": {
     "message": "glm-4.7",
     "description": "服务的模型名称，即 GLM 4.7"
   },
-  "chat.model.glm47Description": {
+  "model.glm47Description": {
     "message": "均衡性能与成本",
     "description": "GLM 4.7 模型的描述"
   },
@@ -775,179 +775,179 @@
     "message": "请填写任务名称和提示词",
     "description": "必填项验证"
   },
-  "chat.model.gpt41": {
+  "model.gpt41": {
     "message": "GPT-4.1",
     "description": "Model display name"
   },
-  "chat.model.gpt41Description": {
+  "model.gpt41Description": {
     "message": "通用中等规模模型，综合性能均衡。",
     "description": "Model description"
   },
-  "chat.model.gpt4o": {
+  "model.gpt4o": {
     "message": "GPT-4o",
     "description": "Model display name"
   },
-  "chat.model.gpt4oDescription": {
+  "model.gpt4oDescription": {
     "message": "OpenAI 多模态旗舰，支持文本、图像与音频。",
     "description": "Model description"
   },
-  "chat.model.51": {
+  "model.51": {
     "message": "GPT-5.1",
     "description": "Model display name"
   },
-  "chat.model.51Description": {
+  "model.51Description": {
     "message": "均衡的 GPT-5.1 日常任务模型。",
     "description": "Model description"
   },
-  "chat.model.52": {
+  "model.52": {
     "message": "GPT-5.2",
     "description": "Model display name"
   },
-  "chat.model.52Description": {
+  "model.52Description": {
     "message": "增强型 GPT-5.2，推理能力更优。",
     "description": "Model description"
   },
-  "chat.model.5Mini": {
+  "model.5Mini": {
     "message": "GPT-5 Mini",
     "description": "Model display name"
   },
-  "chat.model.5MiniDescription": {
+  "model.5MiniDescription": {
     "message": "轻量且高性价比的 GPT-5 模型。",
     "description": "Model description"
   },
-  "chat.model.5Nano": {
+  "model.5Nano": {
     "message": "GPT-5 Nano",
     "description": "Model display name"
   },
-  "chat.model.5NanoDescription": {
+  "model.5NanoDescription": {
     "message": "最快的 GPT-5 模型，适合简单任务。",
     "description": "Model description"
   },
-  "chat.model.o1": {
+  "model.o1": {
     "message": "o1",
     "description": "Model display name"
   },
-  "chat.model.o1Description": {
+  "model.o1Description": {
     "message": "针对复杂理科问题优化的推理模型。",
     "description": "Model description"
   },
-  "chat.model.o3": {
+  "model.o3": {
     "message": "o3",
     "description": "Model display name"
   },
-  "chat.model.o3Description": {
+  "model.o3Description": {
     "message": "高级推理模型，编程能力突出。",
     "description": "Model description"
   },
-  "chat.model.deepseekR10528": {
+  "model.deepseekR10528": {
     "message": "DeepSeek-R1-0528",
     "description": "Model display name"
   },
-  "chat.model.deepseekR10528Description": {
+  "model.deepseekR10528Description": {
     "message": "DeepSeek 更新的推理模型。",
     "description": "Model description"
   },
-  "chat.model.deepseekV3250324": {
+  "model.deepseekV3250324": {
     "message": "DeepSeek-V3-250324",
     "description": "Model display name"
   },
-  "chat.model.deepseekV3250324Description": {
+  "model.deepseekV3250324Description": {
     "message": "DeepSeek 通用对话模型。",
     "description": "Model description"
   },
-  "chat.model.gemini20Flash": {
+  "model.gemini20Flash": {
     "message": "Gemini 2.0 Flash",
     "description": "Model display name"
   },
-  "chat.model.gemini20FlashDescription": {
+  "model.gemini20FlashDescription": {
     "message": "快速高效的 Gemini 模型。",
     "description": "Model description"
   },
-  "chat.model.gemini25FlashLite": {
+  "model.gemini25FlashLite": {
     "message": "Gemini 2.5 Flash Lite",
     "description": "Model display name"
   },
-  "chat.model.gemini25FlashLiteDescription": {
+  "model.gemini25FlashLiteDescription": {
     "message": "Gemini 2.5 Flash 的轻量版本。",
     "description": "Model description"
   },
-  "chat.model.gemini30FlashPreview": {
+  "model.gemini30FlashPreview": {
     "message": "Gemini 3 Flash Preview",
     "description": "Model display name"
   },
-  "chat.model.gemini30FlashPreviewDescription": {
+  "model.gemini30FlashPreviewDescription": {
     "message": "Gemini 3 Flash 系列预览版。",
     "description": "Model description"
   },
-  "chat.model.claudeSonnet5": {
+  "model.claudeSonnet5": {
     "message": "Claude Sonnet 5",
     "description": "Model display name"
   },
-  "chat.model.claudeSonnet5Description": {
+  "model.claudeSonnet5Description": {
     "message": "快速且能力均衡的 Claude 模型。",
     "description": "Model description"
   },
-  "chat.model.claudeOpus46": {
+  "model.claudeOpus46": {
     "message": "Claude Opus 4.6",
     "description": "Model display name"
   },
-  "chat.model.claudeOpus46Description": {
+  "model.claudeOpus46Description": {
     "message": "高性能 Claude Opus 模型。",
     "description": "Model description"
   },
-  "chat.model.claudeOpus47": {
+  "model.claudeOpus47": {
     "message": "Claude Opus 4.7",
     "description": "Model display name"
   },
-  "chat.model.claudeOpus47Description": {
+  "model.claudeOpus47Description": {
     "message": "具备更强推理能力的 Claude Opus。",
     "description": "Model description"
   },
-  "chat.model.claude37Sonnet": {
+  "model.claude37Sonnet": {
     "message": "Claude 3.7 Sonnet",
     "description": "Model display name"
   },
-  "chat.model.claude37SonnetDescription": {
+  "model.claude37SonnetDescription": {
     "message": "上一代 Claude Sonnet，推理能力出色。",
     "description": "Model description"
   },
-  "chat.model.kimiK2Instruct0905": {
+  "model.kimiK2Instruct0905": {
     "message": "Kimi K2 Instruct 0905",
     "description": "Model display name"
   },
-  "chat.model.kimiK2Instruct0905Description": {
+  "model.kimiK2Instruct0905Description": {
     "message": "指令微调的 Kimi K2 变体。",
     "description": "Model description"
   },
-  "chat.model.kimiK2TurboPreview": {
+  "model.kimiK2TurboPreview": {
     "message": "Kimi K2 Turbo Preview",
     "description": "Model display name"
   },
-  "chat.model.kimiK2TurboPreviewDescription": {
+  "model.kimiK2TurboPreviewDescription": {
     "message": "更快的 Kimi K2 预览版本。",
     "description": "Model description"
   },
-  "chat.model.glm5": {
+  "model.glm5": {
     "message": "GLM-5",
     "description": "Model display name"
   },
-  "chat.model.glm5Description": {
+  "model.glm5Description": {
     "message": "通用 GLM-5 模型。",
     "description": "Model description"
   },
-  "chat.model.glm5Turbo": {
+  "model.glm5Turbo": {
     "message": "GLM-5 Turbo",
     "description": "Model display name"
   },
-  "chat.model.glm5TurboDescription": {
+  "model.glm5TurboDescription": {
     "message": "加速版 GLM-5，响应更快。",
     "description": "Model description"
   },
-  "chat.model.glm46": {
+  "model.glm46": {
     "message": "GLM-4.6",
     "description": "Model display name"
   },
-  "chat.model.glm46Description": {
+  "model.glm46Description": {
     "message": "具备推理能力的 GLM 模型。",
     "description": "Model description"
   }
