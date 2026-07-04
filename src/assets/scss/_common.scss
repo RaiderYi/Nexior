@@ -218,6 +218,7 @@ w3m-modal {
 .el-button--primary:not(.is-link, .is-text, .is-plain, .is-disabled) {
   background: var(--el-color-primary);
   border: none;
+  color: var(--el-color-primary-light-9);
   &:hover,
   &:focus {
     background: var(--el-color-primary-dark-2);
@@ -227,6 +228,16 @@ w3m-modal {
     background: var(--el-color-primary-dark-2);
     box-shadow: var(--app-glow-primary-lg);
   }
+}
+
+// When the brand colour is light (e.g. amber #f59e0b), use dark text on
+// filled buttons for WCAG contrast. The threshold is based on relative
+// luminance: colours with lightness > 60% need dark labels.
+html:not(.dark) .el-button--primary:not(.is-link, .is-text, .is-plain, .is-disabled) {
+  color: #1a1a1a;
+}
+html.dark .el-button--primary:not(.is-link, .is-text, .is-plain, .is-disabled) {
+  color: #0d1117;
 }
 
 .el-button + .el-button {
