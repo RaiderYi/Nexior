@@ -151,13 +151,9 @@ import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
 import { applicationOperator, credentialOperator } from '@/operators';
 import {
   IApplication,
-  IApplicationListResponse,
-  ICredential,
-  ICredentialListResponse,
   IApplicationType
 } from '@/models';
 import {
-  CHAT_MODELS,
   CHAT_MODEL_GROUPS
 } from '@/constants';
 
