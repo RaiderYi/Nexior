@@ -146,5 +146,93 @@
   "menu.revenueAnalysis": {
     "message": "收益分析",
     "description": "网站菜单中的文本，仅管理员可见的收益分析入口"
+  },
+  "credentials.title": {
+    "message": "API 密钥",
+    "description": "API 密钥页面标题"
+  },
+  "credentials.guide.title": {
+    "message": "快速开始",
+    "description": "快速入门指南标题"
+  },
+  "credentials.guide.step1Title": {
+    "message": "API 地址",
+    "description": "步骤1标题"
+  },
+  "credentials.guide.step1Desc": {
+    "message": "向我们的统一 API 接口发送请求：",
+    "description": "步骤1描述"
+  },
+  "credentials.guide.step2Title": {
+    "message": "身份验证",
+    "description": "步骤2标题"
+  },
+  "credentials.guide.step2Desc": {
+    "message": "在 Authorization 请求头中使用您的 API Key 作为 Bearer token。",
+    "description": "步骤2描述"
+  },
+  "credentials.guide.step3Title": {
+    "message": "选择模型",
+    "description": "步骤3标题"
+  },
+  "credentials.guide.step3Desc": {
+    "message": "在请求体中指定模型名称，可用模型见下方列表。",
+    "description": "步骤3描述"
+  },
+  "credentials.keys.title": {
+    "message": "您的 API 密钥",
+    "description": "API 密钥区域标题"
+  },
+  "credentials.keys.empty": {
+    "message": "还没有 API 密钥。开始使用服务后将自动生成。",
+    "description": "空状态提示"
+  },
+  "credentials.keys.startUsing": {
+    "message": "开始使用",
+    "description": "跳转到服务页面的按钮"
+  },
+  "credentials.keys.general": {
+    "message": "通用",
+    "description": "通用凭证标签"
+  },
+  "credentials.button.refresh": {
+    "message": "刷新",
+    "description": "刷新按钮"
+  },
+  "credentials.field.service": {
+    "message": "服务",
+    "description": "表格列标题"
+  },
+  "credentials.field.apiKey": {
+    "message": "API 密钥",
+    "description": "表格列标题"
+  },
+  "credentials.field.balance": {
+    "message": "余额",
+    "description": "表格列标题"
+  },
+  "credentials.field.createdAt": {
+    "message": "创建时间",
+    "description": "表格列标题"
+  },
+  "credentials.example.title": {
+    "message": "代码示例",
+    "description": "代码示例区域标题"
+  },
+  "credentials.example.hint": {
+    "message": "将 YOUR_API_KEY 替换为上方您的实际密钥。",
+    "description": "代码示例下方提示"
+  },
+  "credentials.models.title": {
+    "message": "可用模型",
+    "description": "可用模型区域标题"
+  },
+  "credentials.models.hint": {
+    "message": "在 API 请求的 \"model\" 字段中使用这些模型名称。",
+    "description": "模型列表下方提示"
+  },
+  "credentials.message.loadFailed": {
+    "message": "加载 API 密钥失败，请稍后重试。",
+    "description": "错误提示"
   }
 }

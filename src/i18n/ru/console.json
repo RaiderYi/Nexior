@@ -146,5 +146,93 @@
   "menu.revenueAnalysis": {
     "message": "Анализ доходов",
     "description": "Текст в меню сайта, вход для анализа доходов, виден только администраторам"
+  },
+  "credentials.title": {
+    "message": "API ключи",
+    "description": "Заголовок страницы API ключей"
+  },
+  "credentials.guide.title": {
+    "message": "Быстрый старт",
+    "description": "Заголовок руководства"
+  },
+  "credentials.guide.step1Title": {
+    "message": "API эндпоинт",
+    "description": "Заголовок шага 1"
+  },
+  "credentials.guide.step1Desc": {
+    "message": "Отправляйте запросы на наш единый API эндпоинт:",
+    "description": "Описание шага 1"
+  },
+  "credentials.guide.step2Title": {
+    "message": "Аутентификация",
+    "description": "Заголовок шага 2"
+  },
+  "credentials.guide.step2Desc": {
+    "message": "Используйте ваш API ключ в заголовке Authorization как Bearer token.",
+    "description": "Описание шага 2"
+  },
+  "credentials.guide.step3Title": {
+    "message": "Выбор модели",
+    "description": "Заголовок шага 3"
+  },
+  "credentials.guide.step3Desc": {
+    "message": "Укажите имя модели в теле запроса. Доступные модели — см. ниже.",
+    "description": "Описание шага 3"
+  },
+  "credentials.keys.title": {
+    "message": "Ваши API ключи",
+    "description": "Заголовок раздела API ключей"
+  },
+  "credentials.keys.empty": {
+    "message": "API ключей пока нет. Начните использовать сервис для генерации.",
+    "description": "Сообщение пустого состояния"
+  },
+  "credentials.keys.startUsing": {
+    "message": "Начать",
+    "description": "Кнопка перехода к сервисам"
+  },
+  "credentials.keys.general": {
+    "message": "Общий",
+    "description": "Метка общего credential"
+  },
+  "credentials.button.refresh": {
+    "message": "Обновить",
+    "description": "Кнопка обновления"
+  },
+  "credentials.field.service": {
+    "message": "Сервис",
+    "description": "Заголовок колонки"
+  },
+  "credentials.field.apiKey": {
+    "message": "API ключ",
+    "description": "Заголовок колонки"
+  },
+  "credentials.field.balance": {
+    "message": "Баланс",
+    "description": "Заголовок колонки"
+  },
+  "credentials.field.createdAt": {
+    "message": "Создан",
+    "description": "Заголовок колонки"
+  },
+  "credentials.example.title": {
+    "message": "Пример кода",
+    "description": "Заголовок раздела примера кода"
+  },
+  "credentials.example.hint": {
+    "message": "Замените YOUR_API_KEY на ваш фактический ключ выше.",
+    "description": "Подсказка под примером"
+  },
+  "credentials.models.title": {
+    "message": "Доступные модели",
+    "description": "Заголовок раздела моделей"
+  },
+  "credentials.models.hint": {
+    "message": "Используйте эти имена моделей в поле \"model\" ваших API запросов.",
+    "description": "Подсказка под списком моделей"
+  },
+  "credentials.message.loadFailed": {
+    "message": "Не удалось загрузить API ключи, попробуйте позже.",
+    "description": "Сообщение об ошибке"
   }
 }

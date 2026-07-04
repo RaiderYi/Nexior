@@ -146,5 +146,93 @@
   "menu.revenueAnalysis": {
     "message": "Intäktsanalys",
     "description": "Text i webbplatsens meny, en ingång för intäktsanalys som endast är synlig för administratörer"
+  },
+  "credentials.title": {
+    "message": "API Keys",
+    "description": "Title of the API credentials page"
+  },
+  "credentials.guide.title": {
+    "message": "Quick Start",
+    "description": "Title of the quick start guide"
+  },
+  "credentials.guide.step1Title": {
+    "message": "API Endpoint",
+    "description": "Step 1 title"
+  },
+  "credentials.guide.step1Desc": {
+    "message": "Send requests to our unified API endpoint:",
+    "description": "Step 1 description"
+  },
+  "credentials.guide.step2Title": {
+    "message": "Authentication",
+    "description": "Step 2 title"
+  },
+  "credentials.guide.step2Desc": {
+    "message": "Use your API key in the Authorization header as Bearer token.",
+    "description": "Step 2 description"
+  },
+  "credentials.guide.step3Title": {
+    "message": "Choose a Model",
+    "description": "Step 3 title"
+  },
+  "credentials.guide.step3Desc": {
+    "message": "Specify the model name in the request body. See available models below.",
+    "description": "Step 3 description"
+  },
+  "credentials.keys.title": {
+    "message": "Your API Keys",
+    "description": "Title of the API keys section"
+  },
+  "credentials.keys.empty": {
+    "message": "No API keys yet. Start using a service to generate one.",
+    "description": "Empty state message"
+  },
+  "credentials.keys.startUsing": {
+    "message": "Start Using",
+    "description": "Button to go to services"
+  },
+  "credentials.keys.general": {
+    "message": "General",
+    "description": "Label for general-purpose credential"
+  },
+  "credentials.button.refresh": {
+    "message": "Refresh",
+    "description": "Refresh button"
+  },
+  "credentials.field.service": {
+    "message": "Service",
+    "description": "Table column header"
+  },
+  "credentials.field.apiKey": {
+    "message": "API Key",
+    "description": "Table column header"
+  },
+  "credentials.field.balance": {
+    "message": "Balance",
+    "description": "Table column header"
+  },
+  "credentials.field.createdAt": {
+    "message": "Created",
+    "description": "Table column header"
+  },
+  "credentials.example.title": {
+    "message": "Code Example",
+    "description": "Title of code example section"
+  },
+  "credentials.example.hint": {
+    "message": "Replace YOUR_API_KEY with your actual key above.",
+    "description": "Hint under code example"
+  },
+  "credentials.models.title": {
+    "message": "Available Models",
+    "description": "Title of available models section"
+  },
+  "credentials.models.hint": {
+    "message": "Use these model names in the \"model\" field of your API requests.",
+    "description": "Hint under model list"
+  },
+  "credentials.message.loadFailed": {
+    "message": "Failed to load API keys, please try again later.",
+    "description": "Error message"
   }
 }

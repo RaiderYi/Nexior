@@ -2,6 +2,7 @@ import {
   ROUTE_CONSOLE_APPLICATION_EXTRA,
   ROUTE_CONSOLE_APPLICATION_LIST,
   ROUTE_CONSOLE_APPLICATION_SUBSCRIBE,
+  ROUTE_CONSOLE_CREDENTIALS,
   ROUTE_CONSOLE_ORDER_DETAIL,
   ROUTE_CONSOLE_ORDER_LIST,
   ROUTE_CONSOLE_ROOT,
@@ -51,6 +52,11 @@ export default {
       path: 'usages',
       name: ROUTE_CONSOLE_USAGE_LIST,
       component: () => import('@/pages/console/usage/List.vue')
+    },
+    {
+      path: 'credentials',
+      name: ROUTE_CONSOLE_CREDENTIALS,
+      component: () => import('@/pages/console/credentials/Index.vue')
     }
   ]
 };

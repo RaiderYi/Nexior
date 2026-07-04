@@ -1335,5 +1335,9 @@
   "settings.cuConsentDeny": {
     "message": "Deny",
     "description": "Deny button of the on-demand consent dialog."
+  },
+  "console.menu.credentials": {
+    "message": "API 金鑰",
+    "description": "控制台側邊欄選單項"
   }
 }

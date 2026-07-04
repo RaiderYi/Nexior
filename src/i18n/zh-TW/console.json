@@ -146,5 +146,93 @@
   "menu.revenueAnalysis": {
     "message": "收益分析",
     "description": "網站菜單中的文本，僅管理員可見的收益分析入口"
+  },
+  "credentials.title": {
+    "message": "API 金鑰",
+    "description": "API 金鑰頁面標題"
+  },
+  "credentials.guide.title": {
+    "message": "快速開始",
+    "description": "快速入門指南標題"
+  },
+  "credentials.guide.step1Title": {
+    "message": "API 位址",
+    "description": "步驟1標題"
+  },
+  "credentials.guide.step1Desc": {
+    "message": "向我們的統一 API 端點發送請求：",
+    "description": "步驟1描述"
+  },
+  "credentials.guide.step2Title": {
+    "message": "身分驗證",
+    "description": "步驟2標題"
+  },
+  "credentials.guide.step2Desc": {
+    "message": "在 Authorization 請求頭中使用您的 API Key 作為 Bearer token。",
+    "description": "步驟2描述"
+  },
+  "credentials.guide.step3Title": {
+    "message": "選擇模型",
+    "description": "步驟3標題"
+  },
+  "credentials.guide.step3Desc": {
+    "message": "在請求體中指定模型名稱，可用模型見下方列表。",
+    "description": "步驟3描述"
+  },
+  "credentials.keys.title": {
+    "message": "您的 API 金鑰",
+    "description": "API 金鑰區域標題"
+  },
+  "credentials.keys.empty": {
+    "message": "還沒有 API 金鑰。開始使用服務後將自動生成。",
+    "description": "空狀態提示"
+  },
+  "credentials.keys.startUsing": {
+    "message": "開始使用",
+    "description": "跳轉到服務頁面的按鈕"
+  },
+  "credentials.keys.general": {
+    "message": "通用",
+    "description": "通用憑證標籤"
+  },
+  "credentials.button.refresh": {
+    "message": "重新整理",
+    "description": "重新整理按鈕"
+  },
+  "credentials.field.service": {
+    "message": "服務",
+    "description": "表格列標題"
+  },
+  "credentials.field.apiKey": {
+    "message": "API 金鑰",
+    "description": "表格列標題"
+  },
+  "credentials.field.balance": {
+    "message": "餘額",
+    "description": "表格列標題"
+  },
+  "credentials.field.createdAt": {
+    "message": "建立時間",
+    "description": "表格列標題"
+  },
+  "credentials.example.title": {
+    "message": "程式碼範例",
+    "description": "程式碼範例區域標題"
+  },
+  "credentials.example.hint": {
+    "message": "將 YOUR_API_KEY 替換為上方您的實際金鑰。",
+    "description": "程式碼範例下方提示"
+  },
+  "credentials.models.title": {
+    "message": "可用模型",
+    "description": "可用模型區域標題"
+  },
+  "credentials.models.hint": {
+    "message": "在 API 請求的 \"model\" 欄位中使用這些模型名稱。",
+    "description": "模型列表下方提示"
+  },
+  "credentials.message.loadFailed": {
+    "message": "載入 API 金鑰失敗，請稍後重試。",
+    "description": "錯誤提示"
   }
 }

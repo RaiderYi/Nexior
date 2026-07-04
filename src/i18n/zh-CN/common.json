@@ -1335,5 +1335,9 @@
   "settings.cuConsentDeny": {
     "message": "拒绝",
     "description": "按需授权对话框的拒绝按钮。"
+  },
+  "console.menu.credentials": {
+    "message": "API 密钥",
+    "description": "控制台侧边栏菜单项"
   }
 }

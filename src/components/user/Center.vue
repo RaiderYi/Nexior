@@ -25,6 +25,10 @@
             <font-awesome-icon icon="fa-solid fa-compass" class="mr-2" />
             {{ $t('common.nav.console') }}
           </el-dropdown-item>
+          <el-dropdown-item class="py-2" @click="onCredentials">
+            <font-awesome-icon icon="fa-solid fa-key" class="mr-2" />
+            {{ $t('console.menu.credentials') }}
+          </el-dropdown-item>
           <el-dropdown-item class="py-2" @click="onDocs">
             <font-awesome-icon icon="fa-solid fa-book" class="mr-2" />
             {{ $t('common.nav.document') }}
@@ -51,7 +55,7 @@ import UserAvatar from '@/components/user/Avatar.vue';
 import UserSetting from '@/components/user/Setting.vue';
 import DeleteAccountDialog from '@/components/user/DeleteAccountDialog.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { ROUTE_CONSOLE_ROOT, ROUTE_DISTRIBUTION_INDEX, ROUTE_DOWNLOAD } from '@/router';
+import { ROUTE_CONSOLE_CREDENTIALS, ROUTE_CONSOLE_ROOT, ROUTE_DISTRIBUTION_INDEX, ROUTE_DOWNLOAD } from '@/router';
 import { isIOS as isIOSSurface, isNative as isNativeSurface } from '@/utils/surface';
 import { ElDivider } from 'element-plus';
 import { ElDropdownMenu, ElDropdownItem, ElDropdown } from 'element-plus';
@@ -123,6 +127,9 @@ export default defineComponent({
     },
     onConsole() {
       this.$router.push({ name: ROUTE_CONSOLE_ROOT });
+    },
+    onCredentials() {
+      this.$router.push({ name: ROUTE_CONSOLE_CREDENTIALS });
     },
     onDocs() {
       window.open('https://docs.acedata.cloud', '_blank', 'noopener');
