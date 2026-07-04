@@ -200,7 +200,7 @@
     "description": "Visar typen av enhet"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "Webbplatsens namn, ingen översättning behövs, behåll som 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "Visar det belopp som har använts för tjänsten"
   },
   "message.mobileAppDescription": {
-    "message": "Använd AceData direkt på mobilen, för närvarande tillgänglig för nedladdning av Android APK, iOS-installationspaket kommer att göras tillgängligt efter signering.",
+    "message": "Använd BigPlayer AI direkt på mobilen, för närvarande tillgänglig för nedladdning av Android APK, iOS-installationspaket kommer att göras tillgängligt efter signering.",
     "description": "Beskrivning på nedladdningssidan för mobilapplikationen"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "Kundens yrke"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud har gett vårt team utmärkt service och hjälpt oss att öka produktiviteten. Mycket nöjd!",
+    "message": "BigPlayer AI har gett vårt team utmärkt service och hjälpt oss att öka produktiviteten. Mycket nöjd!",
     "description": "Kundens omdöme"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "Kundens yrke"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud är en fantastisk integrationsplattform med utmärkt servicekvalitet.",
+    "message": "BigPlayer AI är en fantastisk integrationsplattform med utmärkt servicekvalitet.",
     "description": "Kundens omdöme"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "Kundens yrke"
   },
   "customers.comment3": {
-    "message": "Jag älskar Ace Data Clouds tjänster, de är användarvänliga och prisvärda. Hoppas de blir ännu bättre!",
+    "message": "Jag älskar BigPlayer AIs tjänster, de är användarvänliga och prisvärda. Hoppas de blir ännu bättre!",
     "description": "Kundens omdöme"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "Rubriken som visar vilken öppen källkodsprojekt webbplatsen är baserad på på om-sidan"
   },
   "settings.poweredByTip": {
-    "message": "Denna webbplats är baserad på Nexior öppen källkodsprojekt, koden är helt öppen källkod.",
+    "message": "Denna webbplats är baserad på BigPlayer AI öppen källkodsprojekt, koden är helt öppen källkod.",
     "description": "Beskrivningen av vilket öppen källkodsprojekt webbplatsen är baserad på på om-sidan"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "Rubriken som visar API-tjänsteleverantören på om-sidan"
   },
   "settings.apiServiceTip": {
-    "message": "Denna webbplats API-tjänst tillhandahålls av Ace Data Cloud.",
+    "message": "Denna webbplats API-tjänst tillhandahålls av BigPlayer AI.",
     "description": "Beskrivningen av API-tjänsteleverantören på om-sidan"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "Rubriken för 404-sidan"
   },
   "message.notFound": {
-    "message": "Sidan du besöker finns inte, länken kan ha ändrats eller tagits bort. Gå till startsidan för att fortsätta utforska AceData's AI-tjänster.",
+    "message": "Sidan du besöker finns inte, länken kan ha ändrats eller tagits bort. Gå till startsidan för att fortsätta utforska BigPlayer AI's AI-tjänster.",
     "description": "Underrubriken för 404-sidan"
   },
   "message.notFoundEyebrow": {

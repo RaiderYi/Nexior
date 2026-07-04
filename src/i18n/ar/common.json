@@ -200,7 +200,7 @@
     "description": "لإظهار نوع الكيان"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "اسم الموقع، لا حاجة للترجمة، احتفظ بـ 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "لإظهار المبلغ الذي تم استخدامه من الخدمة"
   },
   "message.mobileAppDescription": {
-    "message": "استخدم AceData مباشرة على الهاتف، يتوفر حاليًا تنزيل APK لنظام Android، وسيتم فتح تنزيل حزمة iOS بعد إكمال التوقيع.",
+    "message": "استخدم BigPlayer AI مباشرة على الهاتف، يتوفر حاليًا تنزيل APK لنظام Android، وسيتم فتح تنزيل حزمة iOS بعد إكمال التوقيع.",
     "description": "نص توضيحي لصفحة تنزيل التطبيق المحمول"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "مهنة العميل"
   },
   "customers.comment1": {
-    "message": "قدمت Ace Data Cloud خدمة رائعة لفريقنا وساعدتنا في زيادة الإنتاجية. أحببت ذلك!",
+    "message": "قدمت BigPlayer AI خدمة رائعة لفريقنا وساعدتنا في زيادة الإنتاجية. أحببت ذلك!",
     "description": "تقييم العميل"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "مهنة العميل"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud هي منصة تكامل رائعة، جودة الخدمة ممتازة.",
+    "message": "BigPlayer AI هي منصة تكامل رائعة، جودة الخدمة ممتازة.",
     "description": "تقييم العميل"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "مهنة العميل"
   },
   "customers.comment3": {
-    "message": "أحببت خدمة Ace Data Cloud، سهلة الاستخدام، وسعرها معقول، آمل أن تتحسن أكثر!",
+    "message": "أحببت خدمة BigPlayer AI، سهلة الاستخدام، وسعرها معقول، آمل أن تتحسن أكثر!",
     "description": "تقييم العميل"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "عنوان عرض المشروع المفتوح المصدر الذي يعتمد عليه هذا الموقع في صفحة حول"
   },
   "settings.poweredByTip": {
-    "message": "هذا الموقع يعتمد على مشروع Nexior مفتوح المصدر، الشيفرة مفتوحة بالكامل.",
+    "message": "هذا الموقع يعتمد على مشروع BigPlayer AI مفتوح المصدر، الشيفرة مفتوحة بالكامل.",
     "description": "شرح عرض المشروع المفتوح المصدر الذي يعتمد عليه هذا الموقع في صفحة حول"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "عنوان عرض مزود خدمة API في صفحة حول"
   },
   "settings.apiServiceTip": {
-    "message": "خدمة API لهذا الموقع مقدمة من Ace Data Cloud.",
+    "message": "خدمة API لهذا الموقع مقدمة من BigPlayer AI.",
     "description": "شرح عرض مزود خدمة API في صفحة حول"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "عنوان صفحة 404"
   },
   "message.notFound": {
-    "message": "الصفحة التي زرتها غير موجودة، قد يكون الرابط قد تغير أو تم إزالته. عد إلى الصفحة الرئيسية لاستكشاف خدمات AceData AI.",
+    "message": "الصفحة التي زرتها غير موجودة، قد يكون الرابط قد تغير أو تم إزالته. عد إلى الصفحة الرئيسية لاستكشاف خدمات BigPlayer AI AI.",
     "description": "وصف فرعي لصفحة 404"
   },
   "message.notFoundEyebrow": {

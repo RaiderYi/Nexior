@@ -68,7 +68,7 @@
     "description": "Tytuł sekcji uprawnień narzędzi"
   },
   "detail.toolPermissions.help": {
-    "message": "Wybierz, kiedy pozwolić Nexiorowi na korzystanie z tych narzędzi.",
+    "message": "Wybierz, kiedy pozwolić BigPlayer AIowi na korzystanie z tych narzędzi.",
     "description": "Opis sekcji uprawnień narzędzi"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "Etykieta Beta"
   },
   "custom.intro": {
-    "message": "Połącz Nexior z danymi i narzędziami.",
+    "message": "Połącz BigPlayer AI z danymi i narzędziami.",
     "description": "Wprowadzenie do okna dialogowego niestandardowego łącznika"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "Placeholder dla tokenu Bearer"
   },
   "custom.warning": {
-    "message": "Dodawaj tylko konektory od zaufanych deweloperów. Nexior nie kontroluje narzędzi dostarczanych przez deweloperów i nie może zagwarantować, że będą działać zgodnie z oczekiwaniami lub że nie ulegną zmianie.",
+    "message": "Dodawaj tylko konektory od zaufanych deweloperów. BigPlayer AI nie kontroluje narzędzi dostarczanych przez deweloperów i nie może zagwarantować, że będą działać zgodnie z oczekiwaniami lub że nie ulegną zmianie.",
     "description": "Ostrzeżenie o niestandardowym konektorze"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "Placeholder w polu wyszukiwania katalogu"
   },
   "browse.subtitle": {
-    "message": "Dostarczone przez AceDataCloud i partnerów",
+    "message": "Dostarczone przez BigPlayer AICloud i partnerów",
     "description": "Podtytuł strony katalogu"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "Tytuł grupy wbudowanych MCP"
   },
   "browse.builtinDesc": {
-    "message": "Dostarczone przez AceDataCloud, gotowe do użycia po jednokrotnym kliknięciu.",
+    "message": "Dostarczone przez BigPlayer AICloud, gotowe do użycia po jednokrotnym kliknięciu.",
     "description": "Opis grupy wbudowanych MCP"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "Tytuł grupy niestandardowych MCP"
   },
   "browse.customDesc": {
-    "message": "Dodaj własne serwery MCP do użycia w Nexior.",
+    "message": "Dodaj własne serwery MCP do użycia w BigPlayer AI.",
     "description": "Opis grupy niestandardowych MCP"
   },
   "browse.installSuccess": {

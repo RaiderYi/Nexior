@@ -68,7 +68,7 @@
     "description": "Title for the tool permissions section"
   },
   "detail.toolPermissions.help": {
-    "message": "Choose when to allow Nexior to use these tools.",
+    "message": "Choose when to allow BigPlayer AI to use these tools.",
     "description": "Description for the tool permissions section"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "Beta label"
   },
   "custom.intro": {
-    "message": "Connect Nexior to your data and tools.",
+    "message": "Connect BigPlayer AI to your data and tools.",
     "description": "Introduction for the custom connector dialog"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "Placeholder for Bearer token"
   },
   "custom.warning": {
-    "message": "Only add connectors from developers you trust. Nexior does not control the tools provided by developers and cannot guarantee they will work as expected or will not change.",
+    "message": "Only add connectors from developers you trust. BigPlayer AI does not control the tools provided by developers and cannot guarantee they will work as expected or will not change.",
     "description": "Custom connector warning"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "Directory search box placeholder"
   },
   "browse.subtitle": {
-    "message": "Provided by AceDataCloud and partners",
+    "message": "Provided by BigPlayer AICloud and partners",
     "description": "Directory page subtitle"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "Built-in MCP group title"
   },
   "browse.builtinDesc": {
-    "message": "Provided by AceDataCloud, ready to use with one-click installation.",
+    "message": "Provided by BigPlayer AICloud, ready to use with one-click installation.",
     "description": "Built-in MCP group description"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "Custom MCP group title"
   },
   "browse.customDesc": {
-    "message": "Add your own MCP servers for use in Nexior.",
+    "message": "Add your own MCP servers for use in BigPlayer AI.",
     "description": "Custom MCP group description"
   },
   "browse.installSuccess": {

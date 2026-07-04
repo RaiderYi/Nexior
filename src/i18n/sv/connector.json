@@ -68,7 +68,7 @@
     "description": "Rubrik för avsnitt om verktygsbehörigheter"
   },
   "detail.toolPermissions.help": {
-    "message": "Välj när Nexior får använda dessa verktyg.",
+    "message": "Välj när BigPlayer AI får använda dessa verktyg.",
     "description": "Beskrivning av avsnitt om verktygsbehörigheter"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "Beta-märke"
   },
   "custom.intro": {
-    "message": "Anslut Nexior till dina data och verktyg.",
+    "message": "Anslut BigPlayer AI till dina data och verktyg.",
     "description": "Inledning för dialogrutan för anpassad anslutare"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "Platshållare för Bearer token"
   },
   "custom.warning": {
-    "message": "Lägg endast till anslutningar från betrodda utvecklare. Nexior kontrollerar inte verktyg som tillhandahålls av utvecklare och kan inte garantera att de fungerar som förväntat eller att de inte ändras.",
+    "message": "Lägg endast till anslutningar från betrodda utvecklare. BigPlayer AI kontrollerar inte verktyg som tillhandahålls av utvecklare och kan inte garantera att de fungerar som förväntat eller att de inte ändras.",
     "description": "Varning för anpassad anslutning"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "Platshållare för sökfält i katalogen"
   },
   "browse.subtitle": {
-    "message": "Tillhandahålls av AceDataCloud och partners",
+    "message": "Tillhandahålls av BigPlayer AICloud och partners",
     "description": "Undertitel på katalogsidan"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "Titel på inbyggd MCP-grupp"
   },
   "browse.builtinDesc": {
-    "message": "Tillhandahålls av AceDataCloud, enkel installation.",
+    "message": "Tillhandahålls av BigPlayer AICloud, enkel installation.",
     "description": "Beskrivning av inbyggd MCP-grupp"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "Titel på anpassad MCP-grupp"
   },
   "browse.customDesc": {
-    "message": "Lägg till din egen MCP-server för användning i Nexior.",
+    "message": "Lägg till din egen MCP-server för användning i BigPlayer AI.",
     "description": "Beskrivning av anpassad MCP-grupp"
   },
   "browse.installSuccess": {

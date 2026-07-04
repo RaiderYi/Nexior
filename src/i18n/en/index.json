@@ -28,11 +28,11 @@
     "description": "Customer reviews section title"
   },
   "title.introduction": {
-    "message": "Our Services",
+    "message": "All-in-one AI creation service",
     "description": "Site introduction"
   },
   "subtitle.banner": {
-    "message": "Empower with AI, enhance your productivity comprehensively.",
+    "message": "AI creation engine — your journey starts here.",
     "description": "Site subtitle"
   },
   "subtitle.chat": {
@@ -64,7 +64,7 @@
     "description": "Customer reviews section subtitle"
   },
   "subtitle.introduction": {
-    "message": "We offer one-stop AI services, including Q&A, drawing, QR codes, music, and more, to meet your diverse needs.",
+    "message": "BigPlayer AI provides AI chat, AI image, AI music, AI video and more — everything you need in one platform.",
     "description": "Site introduction"
   },
   "button.try": {

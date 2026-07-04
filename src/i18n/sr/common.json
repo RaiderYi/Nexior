@@ -200,7 +200,7 @@
     "description": "Tip entiteta"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "Ime sajta, ne treba prevoditi, ostaviti kao 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "Za prikaz iznosa koji je usluga već iskoristila"
   },
   "message.mobileAppDescription": {
-    "message": "Koristite AceData direktno na telefonu, trenutno je dostupan Android APK za preuzimanje i instalaciju, iOS instalacioni paket će biti dostupan nakon potpisivanja.",
+    "message": "Koristite BigPlayer AI direktno na telefonu, trenutno je dostupan Android APK za preuzimanje i instalaciju, iOS instalacioni paket će biti dostupan nakon potpisivanja.",
     "description": "Opis na stranici za preuzimanje mobilne aplikacije"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "Zanimanje klijenta"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud nam je pružio odličnu uslugu i pomogao nam da povećamo produktivnost. Veoma smo zadovoljni!",
+    "message": "BigPlayer AI nam je pružio odličnu uslugu i pomogao nam da povećamo produktivnost. Veoma smo zadovoljni!",
     "description": "Komentar klijenta"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "Zanimanje klijenta"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud je odlična integracijska platforma, kvalitet usluge je izvanredan.",
+    "message": "BigPlayer AI je odlična integracijska platforma, kvalitet usluge je izvanredan.",
     "description": "Komentar klijenta"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "Zanimanje klijenta"
   },
   "customers.comment3": {
-    "message": "Sviđa mi se usluga Ace Data Cloud, jednostavna za korišćenje i povoljna cena, nadam se da će biti još bolja!",
+    "message": "Sviđa mi se usluga BigPlayer AI, jednostavna za korišćenje i povoljna cena, nadam se da će biti još bolja!",
     "description": "Komentar klijenta"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "Naslov koji prikazuje na kojem otvorenom projektu je zasnovana ova stranica na stranici o aplikaciji"
   },
   "settings.poweredByTip": {
-    "message": "Ova stranica je zasnovana na Nexior otvorenom projektu, kod je potpuno otvoren.",
+    "message": "Ova stranica je zasnovana na BigPlayer AI otvorenom projektu, kod je potpuno otvoren.",
     "description": "Objašnjenje na stranici o aplikaciji o kojem otvorenom projektu je zasnovana ova stranica"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "Naslov koji prikazuje pružatelja API usluga na stranici o aplikaciji"
   },
   "settings.apiServiceTip": {
-    "message": "API uslugu pruža Ace Data Cloud.",
+    "message": "API uslugu pruža BigPlayer AI.",
     "description": "Objašnjenje na stranici o aplikaciji o pružatelju API usluga"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "Naslov 404 stranice"
   },
   "message.notFound": {
-    "message": "Stranica koju ste tražili ne postoji, možda je link promenjen ili uklonjen. Vratite se na početnu stranicu i nastavite istraživanje AI usluga AceData.",
+    "message": "Stranica koju ste tražili ne postoji, možda je link promenjen ili uklonjen. Vratite se na početnu stranicu i nastavite istraživanje AI usluga BigPlayer AI.",
     "description": "Opis podnaslova 404 stranice"
   },
   "message.notFoundEyebrow": {

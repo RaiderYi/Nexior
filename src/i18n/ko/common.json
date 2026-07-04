@@ -200,7 +200,7 @@
     "description": "엔티티의 유형을 표시하는 데 사용"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "웹사이트 이름, 번역할 필요 없이 'Ace Data Cloud'로 유지"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "서비스에서 사용된 금액을 표시하는 데 사용"
   },
   "message.mobileAppDescription": {
-    "message": "휴대폰에서 AceData를 직접 사용하세요. 현재 Android APK를 다운로드하여 설치할 수 있으며, iOS 설치 패키지는 서명 후 다운로드 가능합니다.",
+    "message": "휴대폰에서 BigPlayer AI를 직접 사용하세요. 현재 Android APK를 다운로드하여 설치할 수 있으며, iOS 설치 패키지는 서명 후 다운로드 가능합니다.",
     "description": "모바일 애플리케이션 다운로드 페이지의 설명 문구"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "고객의 직업"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud는 우리 팀에 훌륭한 서비스를 제공하여 생산성을 높이는 데 도움을 주었습니다. 매우 만족합니다!",
+    "message": "BigPlayer AI는 우리 팀에 훌륭한 서비스를 제공하여 생산성을 높이는 데 도움을 주었습니다. 매우 만족합니다!",
     "description": "고객의 평가"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "고객의 직업"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud는 훌륭한 통합 플랫폼이며 서비스 품질이 뛰어납니다.",
+    "message": "BigPlayer AI는 훌륭한 통합 플랫폼이며 서비스 품질이 뛰어납니다.",
     "description": "고객의 평가"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "고객의 직업"
   },
   "customers.comment3": {
-    "message": "Ace Data Cloud의 서비스가 마음에 듭니다. 사용하기 편리하고 가격도 합리적입니다. 점점 더 좋아지길 바랍니다!",
+    "message": "BigPlayer AI의 서비스가 마음에 듭니다. 사용하기 편리하고 가격도 합리적입니다. 점점 더 좋아지길 바랍니다!",
     "description": "고객의 평가"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "정보 페이지에서 본 사이트가 기반한 오픈 소스 프로젝트 제목"
   },
   "settings.poweredByTip": {
-    "message": "본 사이트는 Nexior 오픈 소스 프로젝트를 기반으로 구축되었습니다. 코드가 완전히 오픈 소스입니다.",
+    "message": "본 사이트는 BigPlayer AI 오픈 소스 프로젝트를 기반으로 구축되었습니다. 코드가 완전히 오픈 소스입니다.",
     "description": "정보 페이지에서 본 사이트가 기반한 오픈 소스 프로젝트에 대한 설명"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "정보 페이지에서 API 서비스 제공자의 제목"
   },
   "settings.apiServiceTip": {
-    "message": "본 사이트의 API 서비스는 Ace Data Cloud에서 제공합니다.",
+    "message": "본 사이트의 API 서비스는 BigPlayer AI에서 제공합니다.",
     "description": "정보 페이지에서 API 서비스 제공자에 대한 설명"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "404 페이지 제목"
   },
   "message.notFound": {
-    "message": "접속하신 페이지가 존재하지 않습니다. 링크가 변경되었거나 삭제되었을 수 있습니다. AceData의 AI 서비스를 계속 탐색하려면 홈으로 돌아가세요.",
+    "message": "접속하신 페이지가 존재하지 않습니다. 링크가 변경되었거나 삭제되었을 수 있습니다. BigPlayer AI의 AI 서비스를 계속 탐색하려면 홈으로 돌아가세요.",
     "description": "404 페이지의 부제 설명"
   },
   "message.notFoundEyebrow": {

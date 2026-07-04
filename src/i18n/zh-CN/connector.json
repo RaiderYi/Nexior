@@ -68,7 +68,7 @@
     "description": "工具权限分区标题"
   },
   "detail.toolPermissions.help": {
-    "message": "选择何时允许 Nexior 使用这些工具。",
+    "message": "选择何时允许 BigPlayer AI 使用这些工具。",
     "description": "工具权限分区说明"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "Beta 标签"
   },
   "custom.intro": {
-    "message": "连接 Nexior 至您的数据与工具。",
+    "message": "连接 BigPlayer AI 至您的数据与工具。",
     "description": "自定义连接器对话框引言"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "Bearer token 占位符"
   },
   "custom.warning": {
-    "message": "仅添加来自您信任的开发者的连接器。Nexior 不控制开发者提供的工具，无法保证它们能按预期工作或不会发生变化。",
+    "message": "仅添加来自您信任的开发者的连接器。BigPlayer AI 不控制开发者提供的工具，无法保证它们能按预期工作或不会发生变化。",
     "description": "自定义连接器警告"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "目录搜索框占位符"
   },
   "browse.subtitle": {
-    "message": "由 AceDataCloud 与合作伙伴提供",
+    "message": "由 BigPlayer AICloud 与合作伙伴提供",
     "description": "目录页副标题"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "内置 MCP 分组标题"
   },
   "browse.builtinDesc": {
-    "message": "由 AceDataCloud 提供，一键安装即可使用。",
+    "message": "由 BigPlayer AICloud 提供，一键安装即可使用。",
     "description": "内置 MCP 分组描述"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "自定义 MCP 分组标题"
   },
   "browse.customDesc": {
-    "message": "添加您自己的 MCP 服务器，以便在 Nexior 中使用。",
+    "message": "添加您自己的 MCP 服务器，以便在 BigPlayer AI 中使用。",
     "description": "自定义 MCP 分组描述"
   },
   "browse.installSuccess": {

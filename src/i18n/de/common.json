@@ -200,7 +200,7 @@
     "description": "Typ der Entität anzeigen"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "Website-Name, keine Übersetzung erforderlich, bleibt 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "Zur Anzeige des bereits verwendeten Betrags für den Dienst"
   },
   "message.mobileAppDescription": {
-    "message": "Verwenden Sie AceData direkt auf Ihrem Handy. Derzeit steht die Android APK zum Download zur Verfügung, das iOS-Installationspaket wird nach der Signierung zum Download freigegeben.",
+    "message": "Verwenden Sie BigPlayer AI direkt auf Ihrem Handy. Derzeit steht die Android APK zum Download zur Verfügung, das iOS-Installationspaket wird nach der Signierung zum Download freigegeben.",
     "description": "Beschreibung auf der Download-Seite der mobilen Anwendung"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "Beruf des Kunden"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud hat unserem Team großartige Dienste geleistet und unsere Produktivität gesteigert. Sehr zufrieden!",
+    "message": "BigPlayer AI hat unserem Team großartige Dienste geleistet und unsere Produktivität gesteigert. Sehr zufrieden!",
     "description": "Bewertung des Kunden"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "Beruf des Kunden"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud ist eine großartige Integrationsplattform mit hervorragender Servicequalität.",
+    "message": "BigPlayer AI ist eine großartige Integrationsplattform mit hervorragender Servicequalität.",
     "description": "Bewertung des Kunden"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "Beruf des Kunden"
   },
   "customers.comment3": {
-    "message": "Ich liebe den Service von Ace Data Cloud, er ist benutzerfreundlich und preiswert. Ich hoffe, es wird immer besser!",
+    "message": "Ich liebe den Service von BigPlayer AI, er ist benutzerfreundlich und preiswert. Ich hoffe, es wird immer besser!",
     "description": "Bewertung des Kunden"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "Titel, der auf der Über-Seite anzeigt, auf welchem Open-Source-Projekt diese Seite basiert"
   },
   "settings.poweredByTip": {
-    "message": "Diese Seite basiert auf dem Open-Source-Projekt Nexior, der Code ist vollständig Open-Source.",
+    "message": "Diese Seite basiert auf dem Open-Source-Projekt BigPlayer AI, der Code ist vollständig Open-Source.",
     "description": "Erklärung auf der Über-Seite, auf welchem Open-Source-Projekt diese Seite basiert"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "Titel, der auf der Über-Seite den Anbieter des API-Dienstes anzeigt"
   },
   "settings.apiServiceTip": {
-    "message": "Der API-Dienst dieser Seite wird von Ace Data Cloud bereitgestellt.",
+    "message": "Der API-Dienst dieser Seite wird von BigPlayer AI bereitgestellt.",
     "description": "Erklärung auf der Über-Seite, die den Anbieter des API-Dienstes anzeigt"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "Titel der 404-Seite"
   },
   "message.notFound": {
-    "message": "Die von Ihnen aufgerufene Seite existiert nicht, möglicherweise wurde der Link geändert oder entfernt. Kehren Sie zur Startseite zurück, um die AI-Dienste von AceData weiter zu erkunden.",
+    "message": "Die von Ihnen aufgerufene Seite existiert nicht, möglicherweise wurde der Link geändert oder entfernt. Kehren Sie zur Startseite zurück, um die AI-Dienste von BigPlayer AI weiter zu erkunden.",
     "description": "Untertitelbeschreibung der 404-Seite"
   },
   "message.notFoundEyebrow": {

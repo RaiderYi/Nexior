@@ -7,19 +7,8 @@
             <p>
               <a href="/download">{{ $t('common.nav.mobileApp') }}</a>
               ·
-              <a href="https://platform.acedata.cloud">{{ $t('common.entity.website') }}</a> ©
-              {{ new Date().getFullYear() }}
-              {{ $t('common.entity.copyright') }}
-              ·
-              <a
-                href="https://github.com/AceDataCloud/Nexior"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="github-link"
-                :title="$t('common.nav.github')"
-              >
-                <font-awesome-icon :icon="faGithub" />
-              </a>
+              © {{ new Date().getFullYear() }} BigPlayer AI
+              · All Rights Reserved
             </p>
           </el-col>
         </el-row>
@@ -31,24 +20,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { ElContainer, ElRow, ElCol } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default defineComponent({
   name: 'BottomFooter',
   components: {
     ElContainer,
     ElRow,
-    ElCol,
-    FontAwesomeIcon
-  },
-  data() {
-    return {
-      faGithub
-    };
-  },
-  computed: {},
-  methods: {}
+    ElCol
+  }
 });
 </script>
 
@@ -73,17 +52,6 @@ export default defineComponent({
   a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.9);
-    transition: color 0.2s;
-
-    &:hover {
-      color: #93b8c3;
-    }
-  }
-
-  .github-link {
-    display: inline-flex;
-    align-items: center;
-    margin-left: 4px;
     transition: color 0.2s;
 
     &:hover {

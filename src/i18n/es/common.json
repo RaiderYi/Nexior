@@ -200,7 +200,7 @@
     "description": "Tipo de entidad a mostrar"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "Nombre del sitio web, no necesita traducción, mantener como 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "Para mostrar el monto utilizado del servicio"
   },
   "message.mobileAppDescription": {
-    "message": "Usa AceData directamente en tu teléfono, actualmente se ofrece la descarga del APK de Android. El paquete de instalación de iOS estará disponible después de completar la firma.",
+    "message": "Usa BigPlayer AI directamente en tu teléfono, actualmente se ofrece la descarga del APK de Android. El paquete de instalación de iOS estará disponible después de completar la firma.",
     "description": "Texto descriptivo en la página de descarga de la aplicación móvil"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "Profesión del cliente"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud ha brindado un excelente servicio a nuestro equipo, ayudándonos a aumentar la productividad. ¡Me encanta!",
+    "message": "BigPlayer AI ha brindado un excelente servicio a nuestro equipo, ayudándonos a aumentar la productividad. ¡Me encanta!",
     "description": "Comentario del cliente"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "Profesión del cliente"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud es una gran plataforma de integración, con un servicio de calidad excepcional.",
+    "message": "BigPlayer AI es una gran plataforma de integración, con un servicio de calidad excepcional.",
     "description": "Comentario del cliente"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "Profesión del cliente"
   },
   "customers.comment3": {
-    "message": "Me encanta el servicio de Ace Data Cloud, es fácil de usar y a buen precio, ¡espero que siga mejorando!",
+    "message": "Me encanta el servicio de BigPlayer AI, es fácil de usar y a buen precio, ¡espero que siga mejorando!",
     "description": "Comentario del cliente"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "Título que muestra en qué proyecto de código abierto se basa este sitio en la página 'Acerca de'"
   },
   "settings.poweredByTip": {
-    "message": "Este sitio se basa en el proyecto de código abierto Nexior, el código es completamente abierto.",
+    "message": "Este sitio se basa en el proyecto de código abierto BigPlayer AI, el código es completamente abierto.",
     "description": "Descripción que muestra en qué proyecto de código abierto se basa este sitio en la página 'Acerca de'"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "Título que muestra el proveedor del servicio API en la página 'Acerca de'"
   },
   "settings.apiServiceTip": {
-    "message": "El servicio API de este sitio es proporcionado por Ace Data Cloud.",
+    "message": "El servicio API de este sitio es proporcionado por BigPlayer AI.",
     "description": "Descripción que muestra el proveedor del servicio API en la página 'Acerca de'"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "Título de la página 404"
   },
   "message.notFound": {
-    "message": "La página que buscas no existe, es posible que el enlace haya cambiado o haya sido eliminado. Regresa a la página de inicio para seguir explorando los servicios de IA de AceData.",
+    "message": "La página que buscas no existe, es posible que el enlace haya cambiado o haya sido eliminado. Regresa a la página de inicio para seguir explorando los servicios de IA de BigPlayer AI.",
     "description": "Descripción secundaria de la página 404"
   },
   "message.notFoundEyebrow": {

@@ -144,11 +144,11 @@
     "description": "Visas som en varning när den globala ansökan misslyckas."
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 Välkommen till Nexior! Vi har gett dig {credits} krediter som du kan använda för att uppleva alla tjänster på plattformen.",
+    "message": "🎉 Välkommen till BigPlayer AI! Vi har gett dig {credits} krediter som du kan använda för att uppleva alla tjänster på plattformen.",
     "description": "Visas som en välkomstmeddelande efter en lyckad global ansökan eller vid första inloggning. {credits} är det kvarvarande beloppet av den globala ansökan."
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 Välkommen till Nexior! Ditt konto är klart, och du kan använda alla tjänster på plattformen.",
+    "message": "🎉 Välkommen till BigPlayer AI! Ditt konto är klart, och du kan använda alla tjänster på plattformen.",
     "description": "Visas som en välkomstmeddelande när det inte finns några tillgängliga gratis krediter."
   },
   "message.notApplied": {
@@ -244,7 +244,7 @@
     "description": "Titeln på sidan när användaren vill köpa en tjänst."
   },
   "title.globalBuy": {
-    "message": "Ace Data Cloud Allmänna poängpåfyllning",
+    "message": "BigPlayer AI Allmänna poängpåfyllning",
     "description": "Titeln på sidan när användaren vill köpa en allmän tjänst."
   },
   "title.applicationRemainingCount": {

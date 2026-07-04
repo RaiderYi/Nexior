@@ -200,7 +200,7 @@
     "description": "Typ wyświetlający encję"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "Nazwa strony, nie wymaga tłumaczenia, pozostaje 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "Tekst wyświetlający kwotę wykorzystaną w usłudze"
   },
   "message.mobileAppDescription": {
-    "message": "Bezpośrednio korzystaj z AceData na telefonie, obecnie dostępne do pobrania Android APK, pakiet instalacyjny iOS będzie dostępny po podpisaniu.",
+    "message": "Bezpośrednio korzystaj z BigPlayer AI na telefonie, obecnie dostępne do pobrania Android APK, pakiet instalacyjny iOS będzie dostępny po podpisaniu.",
     "description": "Opis na stronie pobierania aplikacji mobilnej"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "Zawód klienta"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud zapewnił naszemu zespołowi doskonałą obsługę, pomagając nam zwiększyć wydajność. Bardzo polecam!",
+    "message": "BigPlayer AI zapewnił naszemu zespołowi doskonałą obsługę, pomagając nam zwiększyć wydajność. Bardzo polecam!",
     "description": "Ocena klienta"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "Zawód klienta"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud to świetna platforma integracyjna, jakość usług jest doskonała.",
+    "message": "BigPlayer AI to świetna platforma integracyjna, jakość usług jest doskonała.",
     "description": "Ocena klienta"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "Zawód klienta"
   },
   "customers.comment3": {
-    "message": "Uwielbiam usługi Ace Data Cloud, są łatwe w użyciu i w przystępnej cenie, mam nadzieję, że będą coraz lepsze!",
+    "message": "Uwielbiam usługi BigPlayer AI, są łatwe w użyciu i w przystępnej cenie, mam nadzieję, że będą coraz lepsze!",
     "description": "Ocena klienta"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "Tytuł sekcji na stronie o aplikacji, która pokazuje, na jakim projekcie open source oparta jest ta strona"
   },
   "settings.poweredByTip": {
-    "message": "Ta strona oparta jest na projekcie open source Nexior, kod jest całkowicie otwarty.",
+    "message": "Ta strona oparta jest na projekcie open source BigPlayer AI, kod jest całkowicie otwarty.",
     "description": "Opis na stronie o aplikacji, który pokazuje, na jakim projekcie open source oparta jest ta strona"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "Tytuł sekcji na stronie o aplikacji, która pokazuje dostawcę usługi API"
   },
   "settings.apiServiceTip": {
-    "message": "Usługa API tej strony jest dostarczana przez Ace Data Cloud.",
+    "message": "Usługa API tej strony jest dostarczana przez BigPlayer AI.",
     "description": "Opis na stronie o aplikacji, który pokazuje dostawcę usługi API"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "Tytuł strony 404"
   },
   "message.notFound": {
-    "message": "Strona, którą próbujesz odwiedzić, nie istnieje, być może link został zmieniony lub usunięty. Wróć na stronę główną, aby kontynuować odkrywanie usług AI AceData.",
+    "message": "Strona, którą próbujesz odwiedzić, nie istnieje, być może link został zmieniony lub usunięty. Wróć na stronę główną, aby kontynuować odkrywanie usług AI BigPlayer AI.",
     "description": "Opis podtytułu na stronie 404"
   },
   "message.notFoundEyebrow": {

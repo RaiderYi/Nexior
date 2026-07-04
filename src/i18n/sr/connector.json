@@ -68,7 +68,7 @@
     "description": "Naslov sekcije za dozvole alata"
   },
   "detail.toolPermissions.help": {
-    "message": "Izaberite kada dozvoliti Nexior-u korišćenje ovih alata.",
+    "message": "Izaberite kada dozvoliti BigPlayer AI-u korišćenje ovih alata.",
     "description": "Objašnjenje sekcije za dozvole alata"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "Beta oznaka"
   },
   "custom.intro": {
-    "message": "Povežite Nexior sa vašim podacima i alatima.",
+    "message": "Povežite BigPlayer AI sa vašim podacima i alatima.",
     "description": "Uvod u dijalog za prilagođeni konektor"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "Placeholder za Bearer token"
   },
   "custom.warning": {
-    "message": "Dodajte samo konektore od poverljivih developera. Nexior ne kontroliše alate koje pružaju developeri i ne može garantovati da će raditi kako se očekuje ili da se neće promeniti.",
+    "message": "Dodajte samo konektore od poverljivih developera. BigPlayer AI ne kontroliše alate koje pružaju developeri i ne može garantovati da će raditi kako se očekuje ili da se neće promeniti.",
     "description": "Upozorenje o prilagođenim konektorima"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "Placeholder za pretragu u katalogu"
   },
   "browse.subtitle": {
-    "message": "Pruža AceDataCloud u saradnji sa partnerima",
+    "message": "Pruža BigPlayer AICloud u saradnji sa partnerima",
     "description": "Podnaslov stranice kataloga"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "Naslov grupe ugrađenih MCP-a"
   },
   "browse.builtinDesc": {
-    "message": "Pruža AceDataCloud, jednostavna instalacija.",
+    "message": "Pruža BigPlayer AICloud, jednostavna instalacija.",
     "description": "Opis grupe ugrađenih MCP-a"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "Naslov grupe prilagođenih MCP-a"
   },
   "browse.customDesc": {
-    "message": "Dodajte svoj MCP server za korišćenje u Nexior-u.",
+    "message": "Dodajte svoj MCP server za korišćenje u BigPlayer AI-u.",
     "description": "Opis grupe prilagođenih MCP-a"
   },
   "browse.installSuccess": {

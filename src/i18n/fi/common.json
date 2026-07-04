@@ -200,7 +200,7 @@
     "description": "Näyttää entiteetin tyypin"
   },
   "entity.website": {
-    "message": "Ace Data Cloud",
+    "message": "BigPlayer AI",
     "description": "Verkkosivuston nimi, ei tarvitse kääntää, pidä 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +268,7 @@
     "description": "Näyttää käytetyn palvelumäärän"
   },
   "message.mobileAppDescription": {
-    "message": "Käytä AceData suoraan puhelimella, tällä hetkellä saatavilla Android APK:n lataaminen, iOS-asennuspaketti avataan latausta varten, kun se on allekirjoitettu.",
+    "message": "Käytä BigPlayer AI suoraan puhelimella, tällä hetkellä saatavilla Android APK:n lataaminen, iOS-asennuspaketti avataan latausta varten, kun se on allekirjoitettu.",
     "description": "Mobiilisovelluksen lataussivun selitys"
   },
   "message.mobileAndroidHint": {
@@ -888,7 +888,7 @@
     "description": "Asiakkaan ammatti"
   },
   "customers.comment1": {
-    "message": "Ace Data Cloud on tarjonnut erinomaisia palveluja tiimillemme ja auttanut meitä parantamaan tuottavuutta. Erittäin tyytyväinen!",
+    "message": "BigPlayer AI on tarjonnut erinomaisia palveluja tiimillemme ja auttanut meitä parantamaan tuottavuutta. Erittäin tyytyväinen!",
     "description": "Asiakkaan arvio"
   },
   "customers.name2": {
@@ -900,7 +900,7 @@
     "description": "Asiakkaan ammatti"
   },
   "customers.comment2": {
-    "message": "Ace Data Cloud on loistava integrointialusta, palvelun laatu on erinomaista.",
+    "message": "BigPlayer AI on loistava integrointialusta, palvelun laatu on erinomaista.",
     "description": "Asiakkaan arvio"
   },
   "customers.name3": {
@@ -912,7 +912,7 @@
     "description": "Asiakkaan ammatti"
   },
   "customers.comment3": {
-    "message": "Pidän Ace Data Cloudin palveluista, ne ovat helppokäyttöisiä ja kohtuuhintaisia, toivon niiden paranevan entisestään!",
+    "message": "Pidän BigPlayer AIin palveluista, ne ovat helppokäyttöisiä ja kohtuuhintaisia, toivon niiden paranevan entisestään!",
     "description": "Asiakkaan arvio"
   },
   "nav.github": {
@@ -1157,7 +1157,7 @@
     "description": "Tietoja-sivulla esitettävä otsikko, joka kertoo, mihin avoimen lähdekoodin projektiin tämä sivusto perustuu"
   },
   "settings.poweredByTip": {
-    "message": "Tämä sivusto perustuu Nexior-avoimen lähdekoodin projektiin, koodi on täysin avointa.",
+    "message": "Tämä sivusto perustuu BigPlayer AI-avoimen lähdekoodin projektiin, koodi on täysin avointa.",
     "description": "Tietoja-sivulla esitettävä selitys, joka kertoo, mihin avoimen lähdekoodin projektiin tämä sivusto perustuu"
   },
   "settings.apiService": {
@@ -1165,7 +1165,7 @@
     "description": "Tietoja-sivulla esitettävä otsikko, joka kertoo API-palvelun tarjoajasta"
   },
   "settings.apiServiceTip": {
-    "message": "Tämän sivuston API-palvelun tarjoaa Ace Data Cloud.",
+    "message": "Tämän sivuston API-palvelun tarjoaa BigPlayer AI.",
     "description": "Tietoja-sivulla esitettävä selitys, joka kertoo API-palvelun tarjoajasta"
   },
   "settings.buildYourOwn": {
@@ -1189,7 +1189,7 @@
     "description": "404-sivun otsikko"
   },
   "message.notFound": {
-    "message": "Käyttämäsi sivu ei ole olemassa, linkki on saattanut muuttua tai poistettu. Palaa etusivulle jatkaaksesi AceData AI -palveluiden tutkimista.",
+    "message": "Käyttämäsi sivu ei ole olemassa, linkki on saattanut muuttua tai poistettu. Palaa etusivulle jatkaaksesi BigPlayer AI AI -palveluiden tutkimista.",
     "description": "404-sivun alaotsikon kuvaus"
   },
   "message.notFoundEyebrow": {
