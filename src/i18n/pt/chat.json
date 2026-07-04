@@ -219,6 +219,14 @@
     "message": "Modelo leve e rápido",
     "description": "Descrição do modelo Claude Haiku 4.5"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "Nome do modelo de serviço, ou seja, Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "Excelente para contexto longo, raciocínio complexo e escrita criativa",
+    "description": "Descrição do modelo Claude Fable 5"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "Nome do modelo do serviço, ou seja, Kimi K2.5"

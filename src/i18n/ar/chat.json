@@ -219,6 +219,14 @@
     "message": "نموذج خفيف وسريع",
     "description": "وصف نموذج Claude Haiku 4.5"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "اسم نموذج الخدمة، أي Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "ممتاز للسياق الطويل والاستدلال المعقد والكتابة الإبداعية",
+    "description": "وصف نموذج Claude Fable 5"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "اسم النموذج للخدمة، وهو Kimi K2.5"

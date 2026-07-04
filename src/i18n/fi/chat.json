@@ -219,6 +219,14 @@
     "message": "Kevyt ja nopea malli",
     "description": "Claude Haiku 4.5 mallin kuvaus"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "Palvelumallin nimi, eli Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "Erinomainen pitkään kontekstiin, monimutkaiseen päättelyyn ja luovaan kirjoittamiseen",
+    "description": "Kuvaus Claude Fable 5 -mallista"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "Palvelun mallin nimi, eli Kimi K2.5"

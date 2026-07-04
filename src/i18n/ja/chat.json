@@ -219,6 +219,14 @@
     "message": "軽量で高速なモデル",
     "description": "Claude Haiku 4.5 モデルの説明"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "サービモデル名、すなわち Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "長文コンテキスト、複雑な推論、クリエイティブライティングに最適",
+    "description": "Claude Fable 5 モデルの説明"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "サービスのモデル名、つまり Kimi K2.5"

@@ -219,6 +219,14 @@
     "message": "경량 빠른 모델",
     "description": "Claude Haiku 4.5 모델의 설명"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "서비스 모델 이름, 즉 Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "긴 문맥, 복잡한 추론 및 창의적 글쓰기에 탁월",
+    "description": "Claude Fable 5 모델 설명"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "서비스의 모델 이름, 즉 Kimi K2.5"

@@ -219,6 +219,14 @@
     "message": "Lagani i brzi model",
     "description": "Opis Claude Haiku 4.5 modela"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "Име модела услуга, тј. Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "Одличан за дуг контекст, сложено резоновање и креативно писање",
+    "description": "Опис модела Claude Fable 5"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "Naziv modela usluge, tj. Kimi K2.5"

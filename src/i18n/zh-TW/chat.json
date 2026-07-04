@@ -219,6 +219,14 @@
     "message": "輕量快速的模型",
     "description": "Claude Haiku 4.5 模型的描述"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "服務模型名稱，即 Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "在長上下文、複雜推理與創意寫作場景下表現出色",
+    "description": "Claude Fable 5 模型的描述"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "服務的模型名稱，即 Kimi K2.5"

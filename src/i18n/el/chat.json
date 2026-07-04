@@ -219,6 +219,14 @@
     "message": "Ελαφρύ και γρήγορο μοντέλο",
     "description": "Περιγραφή του μοντέλου Claude Haiku 4.5"
   },
+  "model.claudeFable5": {
+    "message": "claude-fable-5",
+    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Claude Fable 5"
+  },
+  "model.claudeFable5Description": {
+    "message": "Εξαιρετικό για μακρύ πλαίσιο, σύνθετη συλλογισμό και δημιουργική γραφή",
+    "description": "Περιγραφή του μοντέλου Claude Fable 5"
+  },
   "model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2.5"
