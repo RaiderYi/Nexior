@@ -23,247 +23,247 @@
     "message": "Modifica messaggio",
     "description": "Modifica il messaggio inviato"
   },
-  "modelGroup.chatgpt": {
+  "chat.modelGroup.chatgpt": {
     "message": "ChatGPT",
     "description": "Nome del modello del servizio, ovvero GPT"
   },
-  "modelGroup.chatgptDescription": {
+  "chat.modelGroup.chatgptDescription": {
     "message": "Modello AI sviluppato da OpenAI",
     "description": "Descrizione del modello ChatGPT"
   },
-  "modelGroup.deepseek": {
+  "chat.modelGroup.deepseek": {
     "message": "DeepSeek",
     "description": "Nome del modello del servizio, ovvero DeepSeek"
   },
-  "modelGroup.deepseekDescription": {
+  "chat.modelGroup.deepseekDescription": {
     "message": "Modello AI sviluppato da DeepSeek",
     "description": "Descrizione del modello DeepSeek"
   },
-  "modelGroup.grok": {
+  "chat.modelGroup.grok": {
     "message": "Grok",
     "description": "Nome del modello del servizio, ovvero Grok"
   },
-  "modelGroup.grokDescription": {
+  "chat.modelGroup.grokDescription": {
     "message": "Modello AI sviluppato da xAI",
     "description": "Descrizione del modello Grok3"
   },
-  "modelGroup.gemini": {
+  "chat.modelGroup.gemini": {
     "message": "Gemini",
     "description": "Nome del modello del servizio, ovvero Gemini"
   },
-  "modelGroup.geminiDescription": {
+  "chat.modelGroup.geminiDescription": {
     "message": "Modello AI sviluppato da Google",
     "description": "Descrizione del gruppo di modelli Gemini"
   },
-  "modelGroup.claude": {
+  "chat.modelGroup.claude": {
     "message": "Claude",
     "description": "Nome del modello del servizio, ovvero Claude"
   },
-  "modelGroup.claudeDescription": {
+  "chat.modelGroup.claudeDescription": {
     "message": "Modello AI sviluppato da Anthropic",
     "description": "Descrizione del gruppo di modelli Claude"
   },
-  "modelGroup.kimi": {
+  "chat.modelGroup.kimi": {
     "message": "Kimi",
     "description": "Nome del modello del servizio, ovvero Kimi"
   },
-  "modelGroup.kimiDescription": {
+  "chat.modelGroup.kimiDescription": {
     "message": "Modello AI sviluppato da Moonlight",
     "description": "Descrizione del gruppo di modelli Kimi"
   },
-  "modelGroup.glm": {
+  "chat.modelGroup.glm": {
     "message": "GLM",
     "description": "Nome del modello del servizio, ovvero GLM"
   },
-  "modelGroup.glmDescription": {
+  "chat.modelGroup.glmDescription": {
     "message": "Modello di linguaggio sviluppato da Zhipu AI",
     "description": "Descrizione del gruppo di modelli GLM"
   },
-  "model.55": {
+  "chat.model.55": {
     "message": "gpt-5.5",
     "description": "Nome del modello del servizio, ovvero GPT 5.5"
   },
-  "model.55Description": {
+  "chat.model.55Description": {
     "message": "Modello di punta di ultima generazione GPT 5.5",
     "description": "Descrizione del modello GPT 5.5"
   },
-  "model.54": {
+  "chat.model.54": {
     "message": "gpt-5.4",
     "description": "Nome del modello del servizio, ovvero GPT 5.4"
   },
-  "model.54Description": {
+  "chat.model.54Description": {
     "message": "Modello di punta di ultima generazione GPT 5.4",
     "description": "Descrizione del modello GPT 5.4"
   },
-  "model.54Mini": {
+  "chat.model.54Mini": {
     "message": "gpt-5.4-mini",
     "description": "Nome del modello del servizio, ovvero GPT 5.4 Mini"
   },
-  "model.54MiniDescription": {
+  "chat.model.54MiniDescription": {
     "message": "Modello GPT 5.4 più veloce e leggero",
     "description": "Descrizione del modello GPT 5.4 Mini"
   },
-  "model.freeTag": {
+  "chat.model.freeTag": {
     "message": "Gratis",
     "description": "Badge mostrato accanto ai modelli gratuiti nel selettore modello"
   },
-  "model.deepseekChat": {
+  "chat.model.deepseekChat": {
     "message": "3.0",
     "description": "Nome del modello del servizio, ovvero DeepSeek Chat"
   },
-  "model.deepseekChatDescription": {
+  "chat.model.deepseekChatDescription": {
     "message": "Adatto per compiti quotidiani",
     "description": "Descrizione del modello DeepSeek Chat"
   },
-  "model.deepseekReasoner": {
+  "chat.model.deepseekReasoner": {
     "message": "R1",
     "description": "Nome del modello del servizio, ovvero DeepSeek Reasoner"
   },
-  "model.deepseekReasonerDescription": {
+  "chat.model.deepseekReasonerDescription": {
     "message": "Adatto per inferenze e domande di pensiero profondo",
     "description": "Descrizione del modello DeepSeek Reasoner"
   },
-  "model.deepseekChat32": {
+  "chat.model.deepseekChat32": {
     "message": "3.2",
     "description": "Nome del modello del servizio, ovvero DeepSeek V3.2 Exp"
   },
-  "model.deepseekChat32Description": {
+  "chat.model.deepseekChat32Description": {
     "message": "Ultima versione sperimentale",
     "description": "Descrizione del modello sperimentale DeepSeek V3.2"
   },
-  "model.deepseekV4Flash": {
+  "chat.model.deepseekV4Flash": {
     "message": "4.0",
     "description": "Nome del modello del servizio, ovvero DeepSeek V4 Flash"
   },
-  "model.deepseekV4FlashDescription": {
+  "chat.model.deepseekV4FlashDescription": {
     "message": "Modello di punta leggero di ultima generazione, 1M contesto",
     "description": "Descrizione del modello DeepSeek V4 Flash"
   },
-  "model.grok4": {
+  "chat.model.grok4": {
     "message": "grok-4",
     "description": "Nome del modello del servizio, ovvero Grok 4"
   },
-  "model.grok4Description": {
+  "chat.model.grok4Description": {
     "message": "Modello più avanzato attualmente disponibile",
     "description": "Descrizione del modello Grok 4"
   },
-  "model.grok3": {
+  "chat.model.grok3": {
     "message": "grok-3",
     "description": "Nome del modello del servizio"
   },
-  "model.grok3Description": {
+  "chat.model.grok3Description": {
     "message": "Adatto per la maggior parte dei compiti",
     "description": "Descrizione del modello Grok3"
   },
-  "model.gemini30Pro": {
+  "chat.model.gemini30Pro": {
     "message": "gemini-3.0-pro",
     "description": "Nome del modello del servizio, ovvero Gemini 3.0 Pro"
   },
-  "model.gemini30ProDescription": {
+  "chat.model.gemini30ProDescription": {
     "message": "Modello più avanzato attualmente disponibile",
     "description": "Descrizione del modello Gemini 3.0 Pro"
   },
-  "model.gemini31Pro": {
+  "chat.model.gemini31Pro": {
     "message": "gemini-3.1-pro",
     "description": "Nome del modello del servizio, ovvero Gemini 3.0 Pro"
   },
-  "model.gemini31ProDescription": {
+  "chat.model.gemini31ProDescription": {
     "message": "Modello più avanzato attualmente disponibile",
     "description": "Descrizione del modello Gemini 3.0 Pro"
   },
-  "model.gemini25Pro": {
+  "chat.model.gemini25Pro": {
     "message": "gemini-2.5-pro",
     "description": "Nome del modello del servizio, ovvero Gemini 2.5 Pro"
   },
-  "model.gemini25ProDescription": {
+  "chat.model.gemini25ProDescription": {
     "message": "Adatto per compiti di inferenza complessi",
     "description": "Descrizione del modello Gemini 2.5 Pro"
   },
-  "model.gemini25Flash": {
+  "chat.model.gemini25Flash": {
     "message": "gemini-2.5-flash",
     "description": "Nome del modello del servizio, ovvero Gemini 2.5 Flash"
   },
-  "model.gemini25FlashDescription": {
+  "chat.model.gemini25FlashDescription": {
     "message": "Modello più veloce e leggero",
     "description": "Descrizione del modello Gemini 2.5 Flash"
   },
-  "model.gemini35Flash": {
+  "chat.model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Nome del modello del servizio, ovvero Gemini 2.5 Flash"
   },
-  "model.gemini35FlashDescription": {
+  "chat.model.gemini35FlashDescription": {
     "message": "Modello più veloce e leggero",
     "description": "Descrizione del modello Gemini 2.5 Flash"
   },
-  "model.claudeOpus48": {
+  "chat.model.claudeOpus48": {
     "message": "claude-opus-4.8",
     "description": "Nome del modello del servizio, ovvero Claude Opus 4.8"
   },
-  "model.claudeOpus48Description": {
+  "chat.model.claudeOpus48Description": {
     "message": "Il modello più avanzato attualmente",
     "description": "Descrizione del modello Claude Opus 4.8"
   },
-  "model.claudeSonnet46": {
+  "chat.model.claudeSonnet46": {
     "message": "claude-sonnet-4.6",
     "description": "Nome del modello del servizio, ovvero Claude Sonnet 4.6"
   },
-  "model.claudeSonnet46Description": {
+  "chat.model.claudeSonnet46Description": {
     "message": "Adatto per la maggior parte dei compiti",
     "description": "Descrizione del modello Claude Sonnet 4.6"
   },
-  "model.claudeHaiku45": {
+  "chat.model.claudeHaiku45": {
     "message": "claude-haiku-4.5",
     "description": "Nome del modello del servizio, ovvero Claude Haiku 4.5"
   },
-  "model.claudeHaiku45Description": {
+  "chat.model.claudeHaiku45Description": {
     "message": "Modello leggero e veloce",
     "description": "Descrizione del modello Claude Haiku 4.5"
   },
-  "model.claudeFable5": {
+  "chat.model.claudeFable5": {
     "message": "claude-fable-5",
     "description": "Nome del modello di servizio, ovvero Claude Fable 5"
   },
-  "model.claudeFable5Description": {
+  "chat.model.claudeFable5Description": {
     "message": "Eccellente per contesto lungo, ragionamento complesso e scrittura creativa",
     "description": "Descrizione del modello Claude Fable 5"
   },
-  "model.kimiK25": {
+  "chat.model.kimiK25": {
     "message": "kimi-k2.5",
     "description": "Nome del modello del servizio, ovvero Kimi K2.5"
   },
-  "model.kimiK25Description": {
+  "chat.model.kimiK25Description": {
     "message": "Modello all'avanguardia",
     "description": "Descrizione del modello Kimi K2.5"
   },
-  "model.kimiK2Thinking": {
+  "chat.model.kimiK2Thinking": {
     "message": "kimi-k2 inferenza",
     "description": "Nome del modello del servizio, ovvero Kimi K2 inferenza"
   },
-  "model.kimiK2ThinkingDescription": {
+  "chat.model.kimiK2ThinkingDescription": {
     "message": "Adatto per inferenze e pensiero profondo",
     "description": "Descrizione del modello Kimi K2 inferenza"
   },
-  "model.kimiK2ThinkingTurbo": {
+  "chat.model.kimiK2ThinkingTurbo": {
     "message": "kimi-k2 inferenza turbo",
     "description": "Nome del modello del servizio, ovvero Kimi K2 inferenza turbo"
   },
-  "model.kimiK2ThinkingTurboDescription": {
+  "chat.model.kimiK2ThinkingTurboDescription": {
     "message": "Modello di inferenza più veloce",
     "description": "Descrizione del modello Kimi K2 inferenza turbo"
   },
-  "model.glm51": {
+  "chat.model.glm51": {
     "message": "glm-5.1",
     "description": "Nome del modello del servizio, ovvero GLM 5.1"
   },
-  "model.glm51Description": {
+  "chat.model.glm51Description": {
     "message": "Ultimo modello di punta di Zhipu",
     "description": "Descrizione del modello GLM 5.1"
   },
-  "model.glm47": {
+  "chat.model.glm47": {
     "message": "glm-4.7",
     "description": "Nome del modello del servizio, ovvero GLM 4.7"
   },
-  "model.glm47Description": {
+  "chat.model.glm47Description": {
     "message": "Equilibrio tra prestazioni e costi",
     "description": "Descrizione del modello GLM 4.7"
   },
@@ -739,12 +739,180 @@
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
   },
-  "model.claudeOpus47": {
-    "message": "claude-opus-4.7",
-    "description": "Nome del modello del servizio, ovvero Claude Opus 4.7"
+  "chat.model.claudeOpus47": {
+    "message": "Claude Opus 4.7",
+    "description": "Model display name"
   },
-  "model.claudeOpus47Description": {
-    "message": "Modello più avanzato attualmente disponibile",
-    "description": "Descrizione del modello Claude Opus 4.7"
+  "chat.model.claudeOpus47Description": {
+    "message": "Advanced Claude Opus with enhanced reasoning.",
+    "description": "Model description"
+  },
+  "chat.model.gpt41": {
+    "message": "GPT-4.1",
+    "description": "Model display name"
+  },
+  "chat.model.gpt41Description": {
+    "message": "Versatile mid-tier model with strong general performance.",
+    "description": "Model description"
+  },
+  "chat.model.gpt4o": {
+    "message": "GPT-4o",
+    "description": "Model display name"
+  },
+  "chat.model.gpt4oDescription": {
+    "message": "OpenAI multimodal flagship supporting text, image and audio.",
+    "description": "Model description"
+  },
+  "chat.model.51": {
+    "message": "GPT-5.1",
+    "description": "Model display name"
+  },
+  "chat.model.51Description": {
+    "message": "Balanced GPT-5.1 model for everyday tasks.",
+    "description": "Model description"
+  },
+  "chat.model.52": {
+    "message": "GPT-5.2",
+    "description": "Model display name"
+  },
+  "chat.model.52Description": {
+    "message": "Enhanced GPT-5.2 with improved reasoning.",
+    "description": "Model description"
+  },
+  "chat.model.5Mini": {
+    "message": "GPT-5 Mini",
+    "description": "Model display name"
+  },
+  "chat.model.5MiniDescription": {
+    "message": "Lightweight and cost-effective GPT-5 model.",
+    "description": "Model description"
+  },
+  "chat.model.5Nano": {
+    "message": "GPT-5 Nano",
+    "description": "Model display name"
+  },
+  "chat.model.5NanoDescription": {
+    "message": "Fastest GPT-5 model for simple tasks.",
+    "description": "Model description"
+  },
+  "chat.model.o1": {
+    "message": "o1",
+    "description": "Model display name"
+  },
+  "chat.model.o1Description": {
+    "message": "Reasoning model optimized for complex STEM problems.",
+    "description": "Model description"
+  },
+  "chat.model.o3": {
+    "message": "o3",
+    "description": "Model display name"
+  },
+  "chat.model.o3Description": {
+    "message": "Advanced reasoning model with strong coding capabilities.",
+    "description": "Model description"
+  },
+  "chat.model.deepseekR10528": {
+    "message": "DeepSeek-R1-0528",
+    "description": "Model display name"
+  },
+  "chat.model.deepseekR10528Description": {
+    "message": "Updated reasoning model from DeepSeek.",
+    "description": "Model description"
+  },
+  "chat.model.deepseekV3250324": {
+    "message": "DeepSeek-V3-250324",
+    "description": "Model display name"
+  },
+  "chat.model.deepseekV3250324Description": {
+    "message": "General-purpose chat model from DeepSeek.",
+    "description": "Model description"
+  },
+  "chat.model.gemini20Flash": {
+    "message": "Gemini 2.0 Flash",
+    "description": "Model display name"
+  },
+  "chat.model.gemini20FlashDescription": {
+    "message": "Fast and efficient Gemini model.",
+    "description": "Model description"
+  },
+  "chat.model.gemini25FlashLite": {
+    "message": "Gemini 2.5 Flash Lite",
+    "description": "Model display name"
+  },
+  "chat.model.gemini25FlashLiteDescription": {
+    "message": "Lightweight version of Gemini 2.5 Flash.",
+    "description": "Model description"
+  },
+  "chat.model.gemini30FlashPreview": {
+    "message": "Gemini 3 Flash Preview",
+    "description": "Model display name"
+  },
+  "chat.model.gemini30FlashPreviewDescription": {
+    "message": "Preview of Gemini 3 Flash series.",
+    "description": "Model description"
+  },
+  "chat.model.claudeSonnet5": {
+    "message": "Claude Sonnet 5",
+    "description": "Model display name"
+  },
+  "chat.model.claudeSonnet5Description": {
+    "message": "Fast and capable Claude model for most tasks.",
+    "description": "Model description"
+  },
+  "chat.model.claudeOpus46": {
+    "message": "Claude Opus 4.6",
+    "description": "Model display name"
+  },
+  "chat.model.claudeOpus46Description": {
+    "message": "High-performance Claude Opus model.",
+    "description": "Model description"
+  },
+  "chat.model.claude37Sonnet": {
+    "message": "Claude 3.7 Sonnet",
+    "description": "Model display name"
+  },
+  "chat.model.claude37SonnetDescription": {
+    "message": "Previous-generation Claude Sonnet with strong reasoning.",
+    "description": "Model description"
+  },
+  "chat.model.kimiK2Instruct0905": {
+    "message": "Kimi K2 Instruct 0905",
+    "description": "Model display name"
+  },
+  "chat.model.kimiK2Instruct0905Description": {
+    "message": "Instruction-tuned Kimi K2 variant.",
+    "description": "Model description"
+  },
+  "chat.model.kimiK2TurboPreview": {
+    "message": "Kimi K2 Turbo Preview",
+    "description": "Model display name"
+  },
+  "chat.model.kimiK2TurboPreviewDescription": {
+    "message": "Faster preview version of Kimi K2.",
+    "description": "Model description"
+  },
+  "chat.model.glm5": {
+    "message": "GLM-5",
+    "description": "Model display name"
+  },
+  "chat.model.glm5Description": {
+    "message": "General-purpose GLM-5 model.",
+    "description": "Model description"
+  },
+  "chat.model.glm5Turbo": {
+    "message": "GLM-5 Turbo",
+    "description": "Model display name"
+  },
+  "chat.model.glm5TurboDescription": {
+    "message": "Accelerated GLM-5 model for faster responses.",
+    "description": "Model description"
+  },
+  "chat.model.glm46": {
+    "message": "GLM-4.6",
+    "description": "Model display name"
+  },
+  "chat.model.glm46Description": {
+    "message": "Reasoning-capable GLM model.",
+    "description": "Model description"
   }
 }

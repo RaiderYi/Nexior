@@ -7,6 +7,7 @@ import gemini from './gemini';
 import claude from './claude';
 import deepseek from './deepseek';
 import kimi from './kimi';
+import glm from './glm';
 import chatgpt from './chatgpt';
 import midjourney from './midjourney';
 import distribution from './distribution';
@@ -124,6 +125,12 @@ const ROUTE_SEO: Record<string, { title: string; description: string; keywords: 
     title: 'Kimi',
     description: 'Chat with Kimi AI — advanced AI conversations powered by Moonshot AI.',
     keywords: ['Kimi', 'Moonshot AI', 'AI Chat', 'Kimi AI'],
+    category: 'AI Chat'
+  },
+  glm: {
+    title: 'GLM',
+    description: 'Chat with GLM AI — advanced AI assistant powered by Zhipu AI.',
+    keywords: ['GLM', 'Zhipu AI', 'ChatGLM', 'AI Chat', 'GLM AI'],
     category: 'AI Chat'
   },
   midjourney: {
@@ -307,6 +314,7 @@ const FEATURE_ROUTE_PRIORITY: Array<[string, string]> = [
   ['grok', ROUTE_GROK_CONVERSATION_NEW],
   ['deepseek', ROUTE_DEEPSEEK_CONVERSATION_NEW],
   ['kimi', ROUTE_KIMI_CONVERSATION_NEW],
+  ['glm', ROUTE_GLM_CONVERSATION_NEW],
   ['midjourney', ROUTE_MIDJOURNEY_INDEX],
   ['nanobanana', ROUTE_NANOBANANA_INDEX],
   ['flux', ROUTE_FLUX_INDEX],
@@ -359,6 +367,7 @@ export const routes = [
   claude,
   deepseek,
   kimi,
+  glm,
   qrart,
   luma,
   pika,
