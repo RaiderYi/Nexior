@@ -80,7 +80,7 @@
     "description": "Опис групи моделей GLM"
   },
   "model.55": {
-    "message": "gpt-5.5",
+    "message": "GPT-5.5",
     "description": "Назва моделі сервісу, тобто GPT 5.5"
   },
   "model.55Description": {
@@ -88,7 +88,7 @@
     "description": "Опис моделі GPT 5.5"
   },
   "model.54": {
-    "message": "gpt-5.4",
+    "message": "GPT-5.4",
     "description": "Назва моделі сервісу, тобто GPT 5.4"
   },
   "model.54Description": {
@@ -96,7 +96,7 @@
     "description": "Опис моделі GPT 5.4"
   },
   "model.54Mini": {
-    "message": "gpt-5.4-mini",
+    "message": "GPT-5.4 Mini",
     "description": "Назва моделі сервісу, тобто GPT 5.4 Mini"
   },
   "model.54MiniDescription": {
@@ -108,7 +108,7 @@
     "description": "Значок, що відображається поруч із безкоштовними моделями в селекторі моделей"
   },
   "model.deepseekChat": {
-    "message": "3.0",
+    "message": "DeepSeek-V3",
     "description": "Назва моделі сервісу, тобто DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Опис моделі DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "R1",
+    "message": "DeepSeek-R1",
     "description": "Назва моделі сервісу, тобто DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Опис моделі DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "3.2",
+    "message": "DeepSeek-V3.2",
     "description": "Назва моделі сервісу, тобто DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Опис експериментальної моделі DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "4.0",
+    "message": "DeepSeek-V4 Flash",
     "description": "Назва моделі сервісу, тобто DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Опис моделі DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "grok-4",
+    "message": "Grok-4",
     "description": "Назва моделі сервісу, тобто Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Опис моделі Grok 4"
   },
   "model.grok3": {
-    "message": "grok-3",
+    "message": "Grok-3",
     "description": "Назва моделі сервісу"
   },
   "model.grok3Description": {
@@ -228,7 +228,7 @@
     "description": "Опис моделі Claude Fable 5"
   },
   "model.kimiK25": {
-    "message": "kimi-k2.5",
+    "message": "Kimi K2.5",
     "description": "Назва моделі сервісу, тобто Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +236,7 @@
     "description": "Опис моделі Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "kimi-k2 інтерпретація",
+    "message": "Kimi K2 Thinking",
     "description": "Назва моделі сервісу, тобто Kimi K2 інтерпретація"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +244,7 @@
     "description": "Опис моделі Kimi K2 інтерпретація"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "kimi-k2 швидка інтерпретація",
+    "message": "Kimi K2 Thinking Turbo",
     "description": "Назва моделі сервісу, тобто Kimi K2 швидка інтерпретація"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +252,7 @@
     "description": "Опис моделі Kimi K2 швидка інтерпретація"
   },
   "model.glm51": {
-    "message": "glm-5.1",
+    "message": "GLM-5.1",
     "description": "Назва моделі сервісу, тобто GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +260,7 @@
     "description": "Опис моделі GLM 5.1"
   },
   "model.glm47": {
-    "message": "glm-4.7",
+    "message": "GLM-4.7",
     "description": "Назва моделі сервісу, тобто GLM 4.7"
   },
   "model.glm47Description": {

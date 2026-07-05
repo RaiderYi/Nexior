@@ -80,7 +80,7 @@
     "description": "Beskrivning av GLM-modellgruppen"
   },
   "model.55": {
-    "message": "gpt-5.5",
+    "message": "GPT-5.5",
     "description": "Modellnamnet för tjänsten, det vill säga GPT 5.5"
   },
   "model.55Description": {
@@ -88,7 +88,7 @@
     "description": "Beskrivning av GPT 5.5-modellen"
   },
   "model.54": {
-    "message": "gpt-5.4",
+    "message": "GPT-5.4",
     "description": "Modellnamnet för tjänsten, det vill säga GPT 5.4"
   },
   "model.54Description": {
@@ -96,7 +96,7 @@
     "description": "Beskrivning av GPT 5.4-modellen"
   },
   "model.54Mini": {
-    "message": "gpt-5.4-mini",
+    "message": "GPT-5.4 Mini",
     "description": "Modellnamnet för tjänsten, det vill säga GPT 5.4 Mini"
   },
   "model.54MiniDescription": {
@@ -108,7 +108,7 @@
     "description": "Märke som visas bredvid gratismodeller i modellväljaren"
   },
   "model.deepseekChat": {
-    "message": "3.0",
+    "message": "DeepSeek-V3",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Beskrivning av DeepSeek Chat-modellen"
   },
   "model.deepseekReasoner": {
-    "message": "R1",
+    "message": "DeepSeek-R1",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Beskrivning av DeepSeek Reasoner-modellen"
   },
   "model.deepseekChat32": {
-    "message": "3.2",
+    "message": "DeepSeek-V3.2",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Beskrivning av DeepSeek V3.2 experimentella modellen"
   },
   "model.deepseekV4Flash": {
-    "message": "4.0",
+    "message": "DeepSeek-V4 Flash",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Beskrivning av DeepSeek V4 Flash-modellen"
   },
   "model.grok4": {
-    "message": "grok-4",
+    "message": "Grok-4",
     "description": "Modellnamnet för tjänsten, det vill säga Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Beskrivning av Grok 4-modellen"
   },
   "model.grok3": {
-    "message": "grok-3",
+    "message": "Grok-3",
     "description": "Modellnamnet för tjänsten"
   },
   "model.grok3Description": {
@@ -228,7 +228,7 @@
     "description": "Beskrivning av Claude Fable 5-modellen"
   },
   "model.kimiK25": {
-    "message": "kimi-k2.5",
+    "message": "Kimi K2.5",
     "description": "Modellnamn för tjänsten, dvs Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +236,7 @@
     "description": "Beskrivning av Kimi K2.5-modellen"
   },
   "model.kimiK2Thinking": {
-    "message": "kimi-k2 resonemang",
+    "message": "Kimi K2 Thinking",
     "description": "Modellnamn för tjänsten, dvs Kimi K2 resonemang"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +244,7 @@
     "description": "Beskrivning av Kimi K2 resonemangsmodellen"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "kimi-k2 turbo resonemang",
+    "message": "Kimi K2 Thinking Turbo",
     "description": "Modellnamn för tjänsten, dvs Kimi K2 turbo resonemang"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +252,7 @@
     "description": "Beskrivning av Kimi K2 turbo resonemangsmodellen"
   },
   "model.glm51": {
-    "message": "glm-5.1",
+    "message": "GLM-5.1",
     "description": "Modellnamn för tjänsten, dvs GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +260,7 @@
     "description": "Beskrivning av GLM 5.1-modellen"
   },
   "model.glm47": {
-    "message": "glm-4.7",
+    "message": "GLM-4.7",
     "description": "Modellnamn för tjänsten, dvs GLM 4.7"
   },
   "model.glm47Description": {

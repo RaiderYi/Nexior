@@ -80,7 +80,7 @@
     "description": "Opis GLM model grupe"
   },
   "model.55": {
-    "message": "gpt-5.5",
+    "message": "GPT-5.5",
     "description": "Naziv modela usluge, tj. GPT 5.5"
   },
   "model.55Description": {
@@ -88,7 +88,7 @@
     "description": "Opis GPT 5.5 modela"
   },
   "model.54": {
-    "message": "gpt-5.4",
+    "message": "GPT-5.4",
     "description": "Naziv modela usluge, tj. GPT 5.4"
   },
   "model.54Description": {
@@ -96,7 +96,7 @@
     "description": "Opis GPT 5.4 modela"
   },
   "model.54Mini": {
-    "message": "gpt-5.4-mini",
+    "message": "GPT-5.4 Mini",
     "description": "Naziv modela usluge, tj. GPT 5.4 Mini"
   },
   "model.54MiniDescription": {
@@ -108,7 +108,7 @@
     "description": "Ознака приказана поред бесплатних модела у бирачу модела"
   },
   "model.deepseekChat": {
-    "message": "3.0",
+    "message": "DeepSeek-V3",
     "description": "Naziv modela usluge, tj. DeepSeek chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Opis DeepSeek chat modela"
   },
   "model.deepseekReasoner": {
-    "message": "R1",
+    "message": "DeepSeek-R1",
     "description": "Naziv modela usluge, tj. DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Opis DeepSeek Reasoner modela"
   },
   "model.deepseekChat32": {
-    "message": "3.2",
+    "message": "DeepSeek-V3.2",
     "description": "Naziv modela usluge, tj. DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Opis DeepSeek V3.2 eksperimentalnog modela"
   },
   "model.deepseekV4Flash": {
-    "message": "4.0",
+    "message": "DeepSeek-V4 Flash",
     "description": "Naziv modela usluge, tj. DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Opis DeepSeek V4 Flash modela"
   },
   "model.grok4": {
-    "message": "grok-4",
+    "message": "Grok-4",
     "description": "Naziv modela usluge, tj. Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Opis Grok 4 modela"
   },
   "model.grok3": {
-    "message": "grok-3",
+    "message": "Grok-3",
     "description": "Naziv modela usluge"
   },
   "model.grok3Description": {
@@ -228,7 +228,7 @@
     "description": "Опис модела Claude Fable 5"
   },
   "model.kimiK25": {
-    "message": "kimi-k2.5",
+    "message": "Kimi K2.5",
     "description": "Naziv modela usluge, tj. Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +236,7 @@
     "description": "Opis Kimi K2.5 modela"
   },
   "model.kimiK2Thinking": {
-    "message": "kimi-k2 razmišljanje",
+    "message": "Kimi K2 Thinking",
     "description": "Naziv modela usluge, tj. Kimi K2 razmišljanje"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +244,7 @@
     "description": "Opis Kimi K2 razmišljanje modela"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "kimi-k2 turbo razmišljanje",
+    "message": "Kimi K2 Thinking Turbo",
     "description": "Naziv modela usluge, tj. Kimi K2 turbo razmišljanje"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +252,7 @@
     "description": "Opis Kimi K2 turbo razmišljanje modela"
   },
   "model.glm51": {
-    "message": "glm-5.1",
+    "message": "GLM-5.1",
     "description": "Naziv modela usluge, tj. GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +260,7 @@
     "description": "Opis GLM 5.1 modela"
   },
   "model.glm47": {
-    "message": "glm-4.7",
+    "message": "GLM-4.7",
     "description": "Naziv modela usluge, tj. GLM 4.7"
   },
   "model.glm47Description": {
