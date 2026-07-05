@@ -80,7 +80,7 @@
     "description": "Descrição do grupo de modelos GLM"
   },
   "model.55": {
-    "message": "gpt-5.5",
+    "message": "GPT-5.5",
     "description": "Nome do modelo do serviço, ou seja, GPT 5.5"
   },
   "model.55Description": {
@@ -88,7 +88,7 @@
     "description": "Descrição do modelo GPT 5.5"
   },
   "model.54": {
-    "message": "gpt-5.4",
+    "message": "GPT-5.4",
     "description": "Nome do modelo do serviço, ou seja, GPT 5.4"
   },
   "model.54Description": {
@@ -96,7 +96,7 @@
     "description": "Descrição do modelo GPT 5.4"
   },
   "model.54Mini": {
-    "message": "gpt-5.4-mini",
+    "message": "GPT-5.4 Mini",
     "description": "Nome do modelo do serviço, ou seja, GPT 5.4 Mini"
   },
   "model.54MiniDescription": {
@@ -108,7 +108,7 @@
     "description": "Selo exibido ao lado de modelos gratuitos no seletor de modelos"
   },
   "model.deepseekChat": {
-    "message": "3.0",
+    "message": "DeepSeek-V3",
     "description": "Nome do modelo do serviço, ou seja, DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Descrição do modelo DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "R1",
+    "message": "DeepSeek-R1",
     "description": "Nome do modelo do serviço, ou seja, DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Descrição do modelo DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "3.2",
+    "message": "DeepSeek-V3.2",
     "description": "Nome do modelo do serviço, ou seja, DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Descrição do modelo experimental DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "4.0",
+    "message": "DeepSeek-V4 Flash",
     "description": "Nome do modelo do serviço, ou seja, DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Descrição do modelo DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "grok-4",
+    "message": "Grok-4",
     "description": "Nome do modelo do serviço, ou seja, Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Descrição do modelo Grok 4"
   },
   "model.grok3": {
-    "message": "grok-3",
+    "message": "Grok-3",
     "description": "Nome do modelo do serviço"
   },
   "model.grok3Description": {
@@ -228,7 +228,7 @@
     "description": "Descrição do modelo Claude Fable 5"
   },
   "model.kimiK25": {
-    "message": "kimi-k2.5",
+    "message": "Kimi K2.5",
     "description": "Nome do modelo do serviço, ou seja, Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +236,7 @@
     "description": "Descrição do modelo Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "kimi-k2 raciocínio",
+    "message": "Kimi K2 Thinking",
     "description": "Nome do modelo do serviço, ou seja, Kimi K2 raciocínio"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +244,7 @@
     "description": "Descrição do modelo Kimi K2 raciocínio"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "kimi-k2 raciocínio turbo",
+    "message": "Kimi K2 Thinking Turbo",
     "description": "Nome do modelo do serviço, ou seja, Kimi K2 raciocínio turbo"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +252,7 @@
     "description": "Descrição do modelo Kimi K2 raciocínio turbo"
   },
   "model.glm51": {
-    "message": "glm-5.1",
+    "message": "GLM-5.1",
     "description": "Nome do modelo do serviço, ou seja, GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +260,7 @@
     "description": "Descrição do modelo GLM 5.1"
   },
   "model.glm47": {
-    "message": "glm-4.7",
+    "message": "GLM-4.7",
     "description": "Nome do modelo do serviço, ou seja, GLM 4.7"
   },
   "model.glm47Description": {

@@ -80,7 +80,7 @@
     "description": "Περιγραφή της ομάδας μοντέλων GLM"
   },
   "model.55": {
-    "message": "gpt-5.5",
+    "message": "GPT-5.5",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.5"
   },
   "model.55Description": {
@@ -88,7 +88,7 @@
     "description": "Περιγραφή του μοντέλου GPT 5.5"
   },
   "model.54": {
-    "message": "gpt-5.4",
+    "message": "GPT-5.4",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.4"
   },
   "model.54Description": {
@@ -96,7 +96,7 @@
     "description": "Περιγραφή του μοντέλου GPT 5.4"
   },
   "model.54Mini": {
-    "message": "gpt-5.4-mini",
+    "message": "GPT-5.4 Mini",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.4 Mini"
   },
   "model.54MiniDescription": {
@@ -108,7 +108,7 @@
     "description": "Σήμα που εμφανίζεται δίπλα στα δωρεάν μοντέλα στον επιλογέα μοντέλων"
   },
   "model.deepseekChat": {
-    "message": "3.0",
+    "message": "DeepSeek-V3",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Περιγραφή του μοντέλου DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "R1",
+    "message": "DeepSeek-R1",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Περιγραφή του μοντέλου DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "3.2",
+    "message": "DeepSeek-V3.2",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Περιγραφή του πειραματικού μοντέλου DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "4.0",
+    "message": "DeepSeek-V4 Flash",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Περιγραφή του μοντέλου DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "grok-4",
+    "message": "Grok-4",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Περιγραφή του μοντέλου Grok 4"
   },
   "model.grok3": {
-    "message": "grok-3",
+    "message": "Grok-3",
     "description": "Όνομα του μοντέλου υπηρεσίας"
   },
   "model.grok3Description": {
@@ -228,7 +228,7 @@
     "description": "Περιγραφή του μοντέλου Claude Fable 5"
   },
   "model.kimiK25": {
-    "message": "kimi-k2.5",
+    "message": "Kimi K2.5",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +236,7 @@
     "description": "Περιγραφή του μοντέλου Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "kimi-k2 σκέψη",
+    "message": "Kimi K2 Thinking",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2 σκέψη"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +244,7 @@
     "description": "Περιγραφή του μοντέλου Kimi K2 σκέψη"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "kimi-k2 ταχύτατη σκέψη",
+    "message": "Kimi K2 Thinking Turbo",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2 ταχύτατη σκέψη"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +252,7 @@
     "description": "Περιγραφή του μοντέλου Kimi K2 ταχύτατη σκέψη"
   },
   "model.glm51": {
-    "message": "glm-5.1",
+    "message": "GLM-5.1",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +260,7 @@
     "description": "Περιγραφή του μοντέλου GLM 5.1"
   },
   "model.glm47": {
-    "message": "glm-4.7",
+    "message": "GLM-4.7",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GLM 4.7"
   },
   "model.glm47Description": {
