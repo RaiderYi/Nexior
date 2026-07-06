@@ -1339,5 +1339,14 @@
   "nav.glm": {
     "message": "GLM",
     "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  },
+  "contact": {
+    "buttonLabel": "Contact",
+    "title": "Technical Support / Feedback",
+    "scanTip": "Scan to add tech support",
+    "benefit1": "Ask anytime",
+    "benefit2": "Early access to new models",
+    "benefit3": "1-on-1 response",
+    "email": "Email"
   }
 }

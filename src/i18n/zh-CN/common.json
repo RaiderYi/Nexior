@@ -1339,5 +1339,14 @@
   "nav.glm": {
     "message": "智谱 GLM",
     "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  },
+  "contact": {
+    "buttonLabel": "联系",
+    "title": "技术支持 / 问题反馈",
+    "scanTip": "扫码添加技术支持",
+    "benefit1": "遇到问题随时问",
+    "benefit2": "新模型优先体验",
+    "benefit3": "一对一响应",
+    "email": "邮件"
   }
 }

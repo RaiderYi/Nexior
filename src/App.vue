@@ -3,6 +3,7 @@
     <auth-panel v-if="authPopup" />
     <desktop-drag-bar />
     <router-view />
+    <floating-contact />
     <el-tag v-if="isTest" size="large" class="fixed bottom-4 right-4 z-50" type="warning">
       {{ $t('index.button.testEnv') }}
     </el-tag>
@@ -14,6 +15,7 @@ import { defineComponent } from 'vue';
 import { ElConfigProvider, ElTag } from 'element-plus';
 import AuthPanel from './components/common/AuthPanel.vue';
 import DesktopDragBar from './components/common/DesktopDragBar.vue';
+import FloatingContact from './components/common/FloatingContact.vue';
 import { isTest } from '@/constants/endpoint';
 import { getLocale } from './i18n';
 import { App as CapApp } from '@capacitor/app';
@@ -51,7 +53,8 @@ export default defineComponent({
     ElConfigProvider,
     ElTag,
     AuthPanel,
-    DesktopDragBar
+    DesktopDragBar,
+    FloatingContact
   },
   data() {
     return {
