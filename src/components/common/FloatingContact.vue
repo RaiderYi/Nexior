@@ -3,14 +3,14 @@
     <!-- Collapsed: circular button -->
     <div v-if="!expanded" class="contact-fab" :class="{ pulse: shouldPulse }" @click="toggleExpand">
       <el-icon :size="24"><ChatDotRound /></el-icon>
-      <span class="fab-label">{{ $t('common.contact.buttonLabel') }}</span>
+      <span class="fab-label">联系</span>
     </div>
 
     <!-- Expanded: popup card -->
     <transition name="contact-card">
       <div v-if="expanded" class="contact-card">
         <div class="card-header">
-          <span class="card-title">{{ $t('common.contact.title') }}</span>
+          <span class="card-title">技术支持 / 问题反馈</span>
           <el-icon class="card-close" :size="18" @click="toggleExpand"><Close /></el-icon>
         </div>
         <div class="card-body">
@@ -18,16 +18,16 @@
             <img src="/wechat-qr.jpg" alt="WeChat QR" class="qr-img" />
           </div>
           <div class="info-section">
-            <p class="scan-tip">{{ $t('common.contact.scanTip') }}</p>
+            <p class="scan-tip">扫码添加技术支持</p>
             <ul class="benefit-list">
-              <li><span class="check">✅</span> {{ $t('common.contact.benefit1') }}</li>
-              <li><span class="check">✅</span> {{ $t('common.contact.benefit2') }}</li>
-              <li><span class="check">✅</span> {{ $t('common.contact.benefit3') }}</li>
+              <li><span class="check">✅</span> 遇到问题随时问</li>
+              <li><span class="check">✅</span> 新模型优先体验</li>
+              <li><span class="check">✅</span> 一对一响应</li>
             </ul>
           </div>
         </div>
         <div class="card-footer">
-          <span class="email-label">📧 {{ $t('common.contact.email') }}：</span>
+          <span class="email-label">📧 邮箱：</span>
           <a :href="'mailto:' + emailAddress" class="email-link">{{ emailAddress }}</a>
         </div>
       </div>
