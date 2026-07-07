@@ -831,6 +831,42 @@
     "message": "APIキー",
     "description": "設定ページのサイドバーのAPIキーラベル - ユーザー持参（BYOK）の上流サービスプロバイダーAPIキー管理"
   },
+  "settings.memory": {
+    "message": "記憶",
+    "description": "設定ポップアップサイドバーの「記憶」タブ。ユーザーはここでアシスタントが覚えている自分に関する情報を確認・管理します。"
+  },
+  "settings.memoryIntro": {
+    "message": "アシスタントは、あなたが対話中に言及した有用な情報を記憶し、異なる対話でよりあなたに合ったパーソナライズされた返信を提供します。あなたは完全なコントロールを持っており、保存された内容を確認し、覚えてほしくない部分を削除できます。",
+    "description": "記憶設定タブの上部にある紹介文です。"
+  },
+  "settings.memoryNeedsChat": {
+    "message": "記憶機能を有効にするには、まず対話を開始してください。",
+    "description": "チャットアプリ/トークンがまだ読み込まれていない場合、記憶設定タブに表示されます。"
+  },
+  "settings.memoryStored": {
+    "message": "保存された記憶",
+    "description": "保存された記憶エントリーリストの上部にあるセクションタイトルです。"
+  },
+  "settings.memoryEmpty": {
+    "message": "保存された記憶はありません。使用するにつれて、アシスタントはここに持続的な好みや情報を記憶します。",
+    "description": "ユーザーに保存された記憶がない場合に表示される空の状態です。"
+  },
+  "settings.memoryForget": {
+    "message": "忘れる",
+    "description": "記憶エントリー行上でその単一の記憶を削除するボタンです。"
+  },
+  "settings.memoryClearAll": {
+    "message": "すべてクリア",
+    "description": "保存されたすべての記憶を一度に削除するボタンです。"
+  },
+  "settings.memoryClearConfirm": {
+    "message": "これにより、アシスタントがあなたについて覚えているすべての情報が永久に削除され、元に戻すことはできません。",
+    "description": "すべての記憶をクリアする前の確認ポップアップの内容です。"
+  },
+  "settings.memoryError": {
+    "message": "操作に失敗しました。再試行してください。",
+    "description": "記憶の削除/クリア操作が失敗したときに表示されるエラーメッセージです。"
+  },
   "field.operations": {
     "message": "操作",
     "description": "一般的な列タイトル：表の行の操作ボタン列（編集、削除など）"
@@ -951,8 +987,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "電話自動化スキル",
+    "description": "コンピュータ操作を介して電話のアプリを操作するスキルをインストールするAndroid専用セクションの見出し。"
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "アシスタントがローカルアプリを操作するためのスキルをインストールします。これらは「コンピュータ操作」で実行されるため、上部でアクセシビリティ権限を付与し、コンピュータ操作を有効にしてください。各アクションは、あなたのコンピュータ操作確認設定に従います。",
+    "description": "電話自動化スキルの見出しの下にあるヘルプテキスト。"
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "小紅書ダイレクトメッセージ自動返信",
+    "description": "小紅書（RED）のダイレクトメッセージ自動返信スキルの表示名。"
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "小紅書アプリ内の新しいダイレクトメッセージを読み取り、返信を下書きします。送信前に確認を求めます。",
+    "description": "小紅書のDMスキルの一行説明。"
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "インストール",
+    "description": "ユーザーのアカウントにスキルをインストールするボタン。"
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "インストール済み",
+    "description": "スキルがすでにインストールされているときに表示されるタグ。"
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "利用可能なスキルを読み込んでいます……",
+    "description": "スキルディレクトリが取得されている間のプレースホルダー。"
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "インストール可能な電話スキルはありません。",
+    "description": "インストール可能な電話スキルが見つからないときの空の状態。"
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "インストールする前に、アクセシビリティ権限を付与し、上部でコンピュータ操作を有効にしてください。",
+    "description": "前提条件が不足しているためインストールボタンが無効になっているときに表示されるヒント。"
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "インストール済みです。次回の会話で有効になります。",
+    "description": "インストールが成功した後に表示される確認メッセージ。"
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "インストールに失敗しました。再試行してください。",
+    "description": "インストールリクエストが失敗したときに表示されるエラー。"
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "利用可能なスキルの読み込みに失敗しました。再試行してください。",
+    "description": "スキルディレクトリの取得に失敗したときに表示されるエラー。"
+  },
   "settings.localToolsPreauthorizeAll": "すべてのコンピュータ操作を事前に許可",
   "settings.localToolsPreauthorizeHint": "スクリーンショット、クリック、入力、キー操作などすべての操作を一度に許可し、必要なシステム権限を要求します。",
+  "settings.localToolsCuA11yLabel": {
+    "message": "アクセシビリティサービス",
+    "description": "Computer Useの可用性状態行のラベルで、アクセシビリティサービスが実際に動作しているかどうかを示します。"
+  },
+  "settings.localToolsCuReady": {
+    "message": "準備完了、利用可能",
+    "description": "アクセシビリティサービスが動作しており、Computer Useが実際に利用可能なときに表示される緑の状態です。"
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "未起動、Computer Useは利用できません",
+    "description": "スイッチがオンになっているが、アクセシビリティサービスが動作していないときに表示される赤い警告です。"
+  },
   "settings.localToolsCuActionsTitle": "操作を個別に許可",
   "settings.localToolsCuActionsHint": "毎回確認せずに AI に実行させてよい操作だけをオンにします。各項目はここでいつでも取り消せます。",
   "settings.localToolsCuScreenshot": "スクリーンショット",

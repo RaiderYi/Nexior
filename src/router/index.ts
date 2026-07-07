@@ -38,6 +38,7 @@ import fish from './fish';
 import webextrator from './webextrator';
 import codingBridge from './codingBridge';
 import settings from './settings';
+import share from './share';
 
 import {
   ROUTE_CHATGPT_CONVERSATION_NEW,
@@ -397,6 +398,7 @@ export const routes = [
   distribution,
   download,
   settings,
+  share,
   {
     // Standalone full-screen 404 — no header/footer chrome.
     path: '/:pathMatch(.*)*',

@@ -1,8 +1,288 @@
 # Change Log - @acedatacloud/nexior
 
-<!-- This log was last generated on Fri, 03 Jul 2026 14:43:26 GMT and should not be manually modified. -->
+<!-- This log was last generated on Tue, 07 Jul 2026 13:24:40 GMT and should not be manually modified. -->
 
 <!-- Start content -->
+
+## 3.318.7
+
+Tue, 07 Jul 2026 13:24:40 GMT
+
+### Patches
+
+- sync maestro scenarios to backend taxonomy (drop slideshow, add captions) + real-frame preview thumbnails (dev@acedata.cloud)
+
+## 3.318.6
+
+Tue, 07 Jul 2026 09:48:13 GMT
+
+### Patches
+
+- fix(nanobanana): render result whenever image data exists, not only when response.success===true, so a failover-dropped success flag no longer hides a valid image (dev@acedata.cloud)
+
+## 3.318.5
+
+Mon, 06 Jul 2026 16:32:13 GMT
+
+### Patches
+
+- Fix custom domain DNS guidance (dev@acedata.cloud)
+
+## 3.318.4
+
+Mon, 06 Jul 2026 15:42:15 GMT
+
+### Patches
+
+- fix(chat): don't wipe selected application on transient getApplications failure — fixes intermittently greyed-out send button (dev@acedata.cloud)
+
+## 3.318.3
+
+Mon, 06 Jul 2026 14:21:19 GMT
+
+### Patches
+
+- feat: site-wide markup pricing for white-label sub-sites (display consistency + site-owner-only config) (dev@acedata.cloud)
+
+## 3.318.2
+
+Mon, 06 Jul 2026 12:53:06 GMT
+
+### Patches
+
+- Restyle the Memory settings list with a bordered card and dividers for readability (dev@acedata.cloud)
+
+## 3.318.1
+
+Sun, 05 Jul 2026 16:34:48 GMT
+
+### Patches
+
+- Show input reference files (images/video/audio/documents) in the Maestro task history (dev@acedata.cloud)
+
+## 3.318.0
+
+Sun, 05 Jul 2026 16:04:36 GMT
+
+### Minor changes
+
+- feat(maestro): scenario picker as preview-image cards instead of a dropdown (dev@acedata.cloud)
+
+## 3.317.1
+
+Sun, 05 Jul 2026 16:00:59 GMT
+
+### Patches
+
+- fix(aichat2): render desktop client-tool screenshots live during streaming instead of only after a page reload (dev@acedata.cloud)
+
+## 3.317.0
+
+Sun, 05 Jul 2026 15:29:10 GMT
+
+### Minor changes
+
+- feat(maestro): align video config UI with refactored scenario set (auto/narrated/drama/avatar/motion/slideshow) + add style control (dev@acedata.cloud)
+
+## 3.316.3
+
+Sun, 05 Jul 2026 15:05:07 GMT
+
+### Patches
+
+- Android: the Google Play build now excludes Computer Use / Local Tools entirely — a compile-time Gradle flavor (play vs full) drops the AccessibilityService + native code, and VITE_COMPUTER_USE=false tree-shakes the Local Tools UI entry + adapter out of the Play web bundle. This unblocks Play submission (Google was rejecting it with an accessibility-declaration policy error). The full/sideload GitHub Release APK keeps the complete Computer Use feature. (dev@acedata.cloud)
+
+## 3.316.2
+
+Sun, 05 Jul 2026 13:24:06 GMT
+
+### Patches
+
+- fix(nexior-android): Local Tools reflects real Computer Use usability + guides accessibility enable on toggle (cqc@cuiqingcai.com)
+
+## 3.316.1
+
+Sun, 05 Jul 2026 09:43:02 GMT
+
+### Patches
+
+- fix(chat): register fa-share-nodes so the share menu item shows its icon (dev@acedata.cloud)
+
+## 3.316.0
+
+Sun, 05 Jul 2026 09:36:22 GMT
+
+### Minor changes
+
+- feat(settings): install Xiaohongshu DM skill from Android Local Tools (cqc@cuiqingcai.com)
+
+## 3.315.3
+
+Sun, 05 Jul 2026 07:32:09 GMT
+
+### Patches
+
+- feat(scheduled-tasks): surface skill_not_active binding error with Save-anyway (force) retry (cqc@cuiqingcai.com)
+
+## 3.315.2
+
+Sun, 05 Jul 2026 07:29:18 GMT
+
+### Patches
+
+- Refine the maestro step-checklist: drop the connector line, smaller consistent icons, round native loading (dev@acedata.cloud)
+
+## 3.315.1
+
+Sun, 05 Jul 2026 06:41:16 GMT
+
+### Patches
+
+- Polish the maestro in-progress step-checklist: native vertical stepper + bordered card matching success/failure (dev@acedata.cloud)
+
+## 3.315.0
+
+Sun, 05 Jul 2026 05:11:32 GMT
+
+### Minor changes
+
+- Add a friendly step-checklist for in-progress maestro video tasks (dev@acedata.cloud)
+
+## 3.314.3
+
+Sat, 04 Jul 2026 15:27:29 GMT
+
+### Patches
+
+- fix(flux): send required size (aspect ratio) param from studio config so generation no longer fails with 'size is required' (dev@acedata.cloud)
+
+## 3.314.2
+
+Sat, 04 Jul 2026 10:46:36 GMT
+
+### Patches
+
+- feat(openaiimage): 在 studio 图像模型下拉中新增 gpt-image-2 官方直连（gpt-image-2:official）选项，复用 gpt-image-2 的尺寸预设与自定义尺寸支持，并补全 17 种语言的 i18n 文案。 (dev@acedata.cloud)
+
+## 3.314.1
+
+Sat, 04 Jul 2026 10:26:14 GMT
+
+### Patches
+
+- feat(artifacts): 将 Output/产出 统一改名为 Artifacts；新增 Show hidden 开关与 Unhide 按钮，让被隐藏的 Artifact 可再次找到；reload/loadMore 增加请求 token 防止并发竞态。 (dev@acedata.cloud)
+
+## 3.314.0
+
+Sat, 04 Jul 2026 09:16:33 GMT
+
+### Minor changes
+
+- feat(chat): 支持匿名分享对话，生成 /share/:id 只读链接 (dev@acedata.cloud)
+
+## 3.313.19
+
+Sat, 04 Jul 2026 07:32:47 GMT
+
+### Patches
+
+- fix(scheduled-tasks): update task list in place instead of full reload (no page-refresh flash) (dev@acedata.cloud)
+
+## 3.313.18
+
+Sat, 04 Jul 2026 07:30:25 GMT
+
+### Patches
+
+- style: apply the elegant thin scrollbar globally (desktop/mouse only) (dev@acedata.cloud)
+
+## 3.313.17
+
+Sat, 04 Jul 2026 07:21:57 GMT
+
+### Patches
+
+- feat(settings): add Memory tab to manage assistant long-term memory (list/forget/clear) (dev@acedata.cloud)
+
+## 3.313.16
+
+Sat, 04 Jul 2026 07:17:54 GMT
+
+### Patches
+
+- Fallback failed chat media previews to file links. (dev@acedata.cloud)
+
+## 3.313.15
+
+Sat, 04 Jul 2026 06:51:18 GMT
+
+### Patches
+
+- style(chat): remove conversation-list horizontal scroll and add elegant thin scrollbar (dev@acedata.cloud)
+
+## 3.313.14
+
+Sat, 04 Jul 2026 06:39:50 GMT
+
+### Patches
+
+- fix(chat): 让用户发送与历史消息也显示复制按钮 (dev@acedata.cloud)
+
+## 3.313.13
+
+Sat, 04 Jul 2026 06:30:27 GMT
+
+### Patches
+
+- Fix chat conversation restore when cached summaries contain empty messages. (dev@acedata.cloud)
+
+## 3.313.12
+
+Sat, 04 Jul 2026 06:23:45 GMT
+
+### Patches
+
+- feat(chat): artifacts 产出物汇总页 + operator (dev@acedata.cloud)
+
+## 3.313.11
+
+Sat, 04 Jul 2026 05:32:52 GMT
+
+### Patches
+
+- fix(download): drop hardcoded version labels; Windows/macOS link to the GitHub Releases page (cqc@cuiqingcai.com)
+
+## 3.313.10
+
+Sat, 04 Jul 2026 04:48:46 GMT
+
+### Patches
+
+- fix(chat): repair connector install return_to so cookie/BYOC auth returns to a real conversation route instead of 404 (dev@acedata.cloud)
+
+## 3.313.9
+
+Sat, 04 Jul 2026 04:23:54 GMT
+
+### Patches
+
+- fix(download): add a back button to the chrome-less /download page (dev@acedata.cloud)
+
+## 3.313.8
+
+Sat, 04 Jul 2026 02:15:33 GMT
+
+### Patches
+
+- feat(scheduled-tasks): add editable task title field (dev@acedata.cloud)
+
+## 3.313.7
+
+Fri, 03 Jul 2026 16:48:58 GMT
+
+### Patches
+
+- fix(desktop): resolve node/npx for local MCP servers on Windows even when a GUI-launched app inherited a stale PATH (augment PATH with the standard Node install dirs) (dev@acedata.cloud)
 
 ## 3.313.6
 

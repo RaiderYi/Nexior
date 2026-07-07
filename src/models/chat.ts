@@ -140,6 +140,10 @@ export interface IChatMessageContentItem {
   file_url?: { url: string } | string;
   name?: string;
   mimeType?: string;
+  // Alt text for an `image_url` block. The aichat2 worker sets this on a
+  // tool-result screenshot (`<tool_id> screenshot`); the frontend reuses it as
+  // a dedupe key when folding the same block locally on client-tool resume.
+  alt?: string;
   // Tool-calling fields (type='tool_use')
   tool_id?: string;
   tool_name?: string;
@@ -317,6 +321,15 @@ export interface IChatConversation {
   editing?: boolean;
   new?: boolean;
   updated_at?: number;
+  /**
+   * Public share token when the owner has shared this conversation (via the
+   * `share` action), else absent. Present on side-panel summaries so the UI
+   * can show a "shared" affordance and build the /share/<id> link without a
+   * second round-trip. Cleared by `unshare`.
+   */
+  share_id?: string;
+  /** Unix seconds when the share snapshot was last (re)generated. */
+  shared_at?: number;
 }
 
 export interface IChatConversationOptions {
@@ -405,7 +418,15 @@ export enum IChatConversationAction {
   RETRIEVE = 'retrieve',
   UPDATE = 'update',
   DELETE = 'delete',
-  RETRIEVE_BATCH = 'retrieve_batch'
+  RETRIEVE_BATCH = 'retrieve_batch',
+  SHARE = 'share',
+  UNSHARE = 'unshare'
+}
+
+export interface IChatShareResponse {
+  id?: string;
+  share_id?: string;
+  shared_at?: number;
 }
 
 // ===== Tool Calling Types (aichat2 orchestrator) =====

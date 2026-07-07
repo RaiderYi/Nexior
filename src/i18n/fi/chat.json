@@ -736,183 +736,203 @@
     "message": "Tämä tehtävä sallii {count} taidon suorittaa taustalla ilman manuaalista vahvistusta: {skills}. Nämä taidot voivat lähettää viestejä, julkaista sisältöä tai kirjoittaa ulkoisiin palveluihin, vahvista tämä.",
     "description": "Valtuutuksen vahvistusteksti"
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "Bind the skill first",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "Save anyway",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
+  },
+  "artifacts.navTitle": {
+    "message": "Tuotokset",
+    "description": "Sivupalkin tuotosten sisäänkäynti"
+  },
+  "artifacts.title": {
+    "message": "Omat tuotokset",
+    "description": "Tuotossivun otsikko"
+  },
+  "artifacts.summaryTotal": {
+    "message": "Tällä kertaa tuotoksia yhteensä {count} kappaletta",
+    "description": "Tuotosten yhteenvedon kokonaismäärä"
+  },
+  "artifacts.filterAll": {
+    "message": "Kaikki",
+    "description": "Tuotostyyppien suodatus - kaikki"
+  },
+  "artifacts.empty": {
+    "message": "Ei vielä mitään tuotoksia. Anna AI:n auttaa sinua kirjoittamaan artikkeleita, luomaan kuvia tai lähettämään sähköposteja, niin tuotokset ilmestyvät tänne automaattisesti.",
+    "description": "Tuotokset ovat tyhjät ilmoitus"
+  },
+  "artifacts.loadError": {
+    "message": "Tuotosten lataaminen epäonnistui",
+    "description": "Tuotosten latausvirheen ilmoitus"
+  },
+  "artifacts.actionError": {
+    "message": "Toiminto epäonnistui, yritä uudelleen",
+    "description": "Tuotteen toimintavirheen ilmoitus"
+  },
+  "artifacts.open": {
+    "message": "Avaa",
+    "description": "Avaa tuotteen alkuperäinen linkkipainike"
+  },
+  "artifacts.hide": {
+    "message": "Piilota",
+    "description": "Tuotteen piilottamispainike"
+  },
+  "artifacts.delete": {
+    "message": "Poista",
+    "description": "Tuotteen poistopainike"
+  },
+  "artifacts.deleteConfirm": {
+    "message": "Haluatko varmasti poistaa tämän tuotteen pysyvästi?",
+    "description": "Tuotteen poistamisen vahvistusilmoitus"
+  },
+  "artifacts.loadMore": {
+    "message": "Lataa lisää",
+    "description": "Lisää tuotoksia lataava painike"
+  },
+  "artifacts.sourceAuto": {
+    "message": "Automaattinen tallennus",
+    "description": "Automaattisen tallennuksen lähteen merkintä"
+  },
+  "artifacts.kind.article": {
+    "message": "Artikkeli",
+    "description": "Tuotostyyppi - artikkeli"
+  },
+  "artifacts.kind.image": {
+    "message": "Kuva",
+    "description": "Tuotostyyppi - kuva"
+  },
+  "artifacts.kind.video": {
+    "message": "Video",
+    "description": "Tuotostyyppi - video"
+  },
+  "artifacts.kind.audio": {
+    "message": "Ääni",
+    "description": "Tuotostyyppi - ääni"
+  },
+  "artifacts.kind.document": {
+    "message": "Dokumentti",
+    "description": "Tuotostyyppi - dokumentti"
+  },
+  "artifacts.kind.email": {
+    "message": "Sähköposti",
+    "description": "Tuotostyyppi - sähköposti"
+  },
+  "artifacts.kind.message": {
+    "message": "Viesti",
+    "description": "Tuotostyyppi - viesti"
+  },
+  "artifacts.kind.dataset": {
+    "message": "Tietoaineisto",
+    "description": "Tuotostyyppi - tietoaineisto"
+  },
+  "artifacts.kind.link": {
+    "message": "Linkki",
+    "description": "Tuotostyyppi - linkki"
+  },
+  "artifacts.kind.other": {
+    "message": "Muu",
+    "description": "Tuotostyyppi - muu"
+  },
+  "share.menu": {
+    "message": "Jaa",
+    "description": "Valikkokohta, joka avaa jakamisdialogin sivupalkissa/työkalupalkissa"
+  },
+  "share.dialogTitle": {
+    "message": "Jaa keskustelu",
+    "description": "Jakamisdialogin otsikko"
+  },
+  "share.description": {
+    "message": "Kuka tahansa, joka saa linkin, voi nähdä tämän keskustelun, mutta ei voi jatkaa keskustelua.",
+    "description": "Selittää, mitä tapahtuu, kun keskustelu jaetaan"
+  },
+  "share.createLink": {
+    "message": "Luo jakamislinkki",
+    "description": "Painike, joka luo julkisen jakamislinkin keskustelulle"
+  },
+  "share.copy": {
+    "message": "Kopioi linkki",
+    "description": "Painike, joka kopioi jakamislinkin leikepöydälle"
+  },
+  "share.copied": {
+    "message": "Kopioitu",
+    "description": "Lyhyt ilmoitus, joka näkyy painikkeessa kopioinnin onnistumisen jälkeen"
+  },
+  "share.disable": {
+    "message": "Poista linkin käyttö",
+    "description": "Painike, joka peruuttaa jakamislinkin ja tekee URL-osoitteesta voimattoman"
+  },
+  "share.disabled": {
+    "message": "Jakamislinkki on poistettu käytöstä.",
+    "description": "Ilmoitus, kun jakamislinkki on poistettu käytöstä"
+  },
+  "share.needLogin": {
+    "message": "Kirjaudu ensin sisään, ennen kuin jaat tämän keskustelun.",
+    "description": "Ilmoitus, kun kirjautumattomat kävijät yrittävät jakaa keskustelua"
+  },
+  "share.noConversation": {
+    "message": "Avaa ensin keskustelu ennen jakamista.",
+    "description": "Ilmoitus, kun jakamispainiketta klikataan ilman aktiivista keskustelua"
+  },
+  "share.createFailed": {
+    "message": "Jakamislinkin luominen epäonnistui, yritä myöhemmin uudelleen.",
+    "description": "Virheilmoitus, kun jakamislinkin luominen epäonnistuu"
+  },
+  "share.disableFailed": {
+    "message": "Jakamislinkin poistaminen epäonnistui, yritä myöhemmin uudelleen.",
+    "description": "Virheilmoitus, kun jakamislinkin poistaminen epäonnistuu"
+  },
+  "share.startYourOwn": {
+    "message": "Aloita oma keskusteluni",
+    "description": "Toimintakehotus jaetulla julkisella sivulla, joka ohjaa nimettömiä kävijöitä sovelluksen etusivulle"
+  },
+  "share.unavailableTitle": {
+    "message": "Tämä jaettu keskustelu ei ole käytettävissä.",
+    "description": "Jakamislinkin voimattomuuden tai virheellisyyden ilmoitus jaetun julkisen sivun otsikossa"
+  },
+  "share.unavailableHint": {
+    "message": "Vastaanottaja on saattanut poistaa linkin käytöstä tai URL-osoite on virheellinen.",
+    "description": "Ilmoitus, kun jakamislinkki on voimaton tai virheellinen"
+  },
+  "share.viewOnly": {
+    "message": "Vain luku -jaettu keskustelu",
+    "description": "Tunniste, joka osoittaa, että keskustelu on vain luku -jaetulla julkisella sivulla"
+  },
+  "share.untitled": {
+    "message": "Nimeämätön keskustelu",
+    "description": "Paikkamerkki, jota käytetään, kun jaettavalla keskustelulla ei ole otsikkoa"
+  },
+  "share.footerNote": {
+    "message": "Olet katsomassa jaettua keskustelua. Klikkaa ylhäältä keskustellaksesi itse AI:n kanssa.",
+    "description": "Selitys jaetun julkisen sivun keskustelun alapuolella"
   },
   "model.claudeOpus47": {
     "message": "Claude Opus 4.7",
     "description": "Model display name"
   },
   "model.claudeOpus47Description": {
-    "message": "Advanced Claude Opus with enhanced reasoning.",
-    "description": "Model description"
+    "message": "Tällä hetkellä edistyksellisin malli",
+    "description": "Claude Opus 4.7 -mallin kuvaus"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.unhide": {
+    "message": "Unhide",
+    "description": "Restore a hidden artifact"
   },
-  "model.gpt41Description": {
-    "message": "Versatile mid-tier model with strong general performance.",
-    "description": "Model description"
+  "artifacts.showHidden": {
+    "message": "Show hidden",
+    "description": "Toggle in the filter bar to include hidden artifacts"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
-  },
-  "model.gpt4oDescription": {
-    "message": "OpenAI multimodal flagship supporting text, image and audio.",
-    "description": "Model description"
-  },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
-  },
-  "model.51Description": {
-    "message": "Balanced GPT-5.1 model for everyday tasks.",
-    "description": "Model description"
-  },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
-  },
-  "model.52Description": {
-    "message": "Enhanced GPT-5.2 with improved reasoning.",
-    "description": "Model description"
-  },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
-  },
-  "model.5MiniDescription": {
-    "message": "Lightweight and cost-effective GPT-5 model.",
-    "description": "Model description"
-  },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
-  },
-  "model.5NanoDescription": {
-    "message": "Fastest GPT-5 model for simple tasks.",
-    "description": "Model description"
-  },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
-  },
-  "model.o1Description": {
-    "message": "Reasoning model optimized for complex STEM problems.",
-    "description": "Model description"
-  },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
-  },
-  "model.o3Description": {
-    "message": "Advanced reasoning model with strong coding capabilities.",
-    "description": "Model description"
-  },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
-  },
-  "model.deepseekR10528Description": {
-    "message": "Updated reasoning model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
-  },
-  "model.deepseekV3250324Description": {
-    "message": "General-purpose chat model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
-  },
-  "model.gemini20FlashDescription": {
-    "message": "Fast and efficient Gemini model.",
-    "description": "Model description"
-  },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
-  },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Lightweight version of Gemini 2.5 Flash.",
-    "description": "Model description"
-  },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
-  },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Preview of Gemini 3 Flash series.",
-    "description": "Model description"
-  },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
-  },
-  "model.claudeSonnet5Description": {
-    "message": "Fast and capable Claude model for most tasks.",
-    "description": "Model description"
-  },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
-  },
-  "model.claudeOpus46Description": {
-    "message": "High-performance Claude Opus model.",
-    "description": "Model description"
-  },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
-  },
-  "model.claude37SonnetDescription": {
-    "message": "Previous-generation Claude Sonnet with strong reasoning.",
-    "description": "Model description"
-  },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
-  },
-  "model.kimiK2Instruct0905Description": {
-    "message": "Instruction-tuned Kimi K2 variant.",
-    "description": "Model description"
-  },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
-  },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "Faster preview version of Kimi K2.",
-    "description": "Model description"
-  },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
-  },
-  "model.glm5Description": {
-    "message": "General-purpose GLM-5 model.",
-    "description": "Model description"
-  },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
-  },
-  "model.glm5TurboDescription": {
-    "message": "Accelerated GLM-5 model for faster responses.",
-    "description": "Model description"
-  },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
-  },
-  "model.glm46Description": {
-    "message": "Reasoning-capable GLM model.",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "Hidden",
+    "description": "Badge shown on artifacts that are currently hidden"
   }
 }

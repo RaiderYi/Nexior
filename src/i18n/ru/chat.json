@@ -736,183 +736,203 @@
     "message": "Эта задача позволит {count} Skill выполнять действия в фоновом режиме без подтверждения: {skills}. Эти Skill могут отправлять сообщения, публиковать контент или записывать в внешние сервисы, пожалуйста, подтвердите.",
     "description": "Текст подтверждения разрешения"
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "Bind the skill first",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "Save anyway",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
+  },
+  "artifacts.navTitle": {
+    "message": "Результаты",
+    "description": "Вход в боковую панель результатов"
+  },
+  "artifacts.title": {
+    "message": "Мои результаты",
+    "description": "Заголовок страницы результатов"
+  },
+  "artifacts.summaryTotal": {
+    "message": "Всего создано {count} результатов в этом периоде",
+    "description": "Общее количество результатов"
+  },
+  "artifacts.filterAll": {
+    "message": "Все",
+    "description": "Фильтр по типу результата - все"
+  },
+  "artifacts.empty": {
+    "message": "Пока нет никаких результатов. После того, как AI поможет вам написать статью, создать изображение или отправить электронное письмо, результаты автоматически появятся здесь.",
+    "description": "Сообщение о пустом результате"
+  },
+  "artifacts.loadError": {
+    "message": "Не удалось загрузить результаты",
+    "description": "Сообщение об ошибке загрузки результата"
+  },
+  "artifacts.actionError": {
+    "message": "Операция не удалась, пожалуйста, попробуйте еще раз",
+    "description": "Сообщение об ошибке операции"
+  },
+  "artifacts.open": {
+    "message": "Открыть",
+    "description": "Кнопка открытия оригинальной ссылки результата"
+  },
+  "artifacts.hide": {
+    "message": "Скрыть",
+    "description": "Кнопка скрытия результата"
+  },
+  "artifacts.delete": {
+    "message": "Удалить",
+    "description": "Кнопка удаления результата"
+  },
+  "artifacts.deleteConfirm": {
+    "message": "Вы уверены, что хотите навсегда удалить эту запись результата?",
+    "description": "Подтверждение удаления результата"
+  },
+  "artifacts.loadMore": {
+    "message": "Загрузить больше",
+    "description": "Кнопка загрузки дополнительных результатов"
+  },
+  "artifacts.sourceAuto": {
+    "message": "Автоматический захват",
+    "description": "Метка источника автоматического захвата"
+  },
+  "artifacts.kind.article": {
+    "message": "Статья",
+    "description": "Тип результата - статья"
+  },
+  "artifacts.kind.image": {
+    "message": "Изображение",
+    "description": "Тип результата - изображение"
+  },
+  "artifacts.kind.video": {
+    "message": "Видео",
+    "description": "Тип результата - видео"
+  },
+  "artifacts.kind.audio": {
+    "message": "Аудио",
+    "description": "Тип результата - аудио"
+  },
+  "artifacts.kind.document": {
+    "message": "Документ",
+    "description": "Тип результата - документ"
+  },
+  "artifacts.kind.email": {
+    "message": "Электронная почта",
+    "description": "Тип результата - электронная почта"
+  },
+  "artifacts.kind.message": {
+    "message": "Сообщение",
+    "description": "Тип результата - сообщение"
+  },
+  "artifacts.kind.dataset": {
+    "message": "Данные",
+    "description": "Тип результата - данные"
+  },
+  "artifacts.kind.link": {
+    "message": "Ссылка",
+    "description": "Тип результата - ссылка"
+  },
+  "artifacts.kind.other": {
+    "message": "Другие",
+    "description": "Тип результата - другие"
+  },
+  "share.menu": {
+    "message": "Поделиться",
+    "description": "Элемент меню для открытия диалогового окна общего доступа в боковой панели/инструментах"
+  },
+  "share.dialogTitle": {
+    "message": "Поделиться разговором",
+    "description": "Заголовок диалогового окна для общего доступа"
+  },
+  "share.description": {
+    "message": "Любой, кто получит ссылку, сможет просмотреть этот разговор, но не сможет продолжить чат.",
+    "description": "Объяснение того, что произойдет после того, как разговор будет поделён"
+  },
+  "share.createLink": {
+    "message": "Создать ссылку для общего доступа",
+    "description": "Кнопка для создания публичной ссылки для разговора"
+  },
+  "share.copy": {
+    "message": "Скопировать ссылку",
+    "description": "Кнопка для копирования ссылки на общий доступ в буфер обмена"
+  },
+  "share.copied": {
+    "message": "Скопировано",
+    "description": "Краткое уведомление, появляющееся на кнопке после успешного копирования"
+  },
+  "share.disable": {
+    "message": "Отключить ссылку",
+    "description": "Кнопка для отмены ссылки для общего доступа, делая этот URL недействительным"
+  },
+  "share.disabled": {
+    "message": "Ссылка для общего доступа отключена.",
+    "description": "Уведомление после отключения ссылки для общего доступа"
+  },
+  "share.needLogin": {
+    "message": "Пожалуйста, войдите в систему, прежде чем делиться этим разговором.",
+    "description": "Уведомление для незарегистрированных пользователей, пытающихся поделиться разговором"
+  },
+  "share.noConversation": {
+    "message": "Пожалуйста, откройте разговор перед тем, как делиться.",
+    "description": "Уведомление при нажатии кнопки общего доступа без активного разговора"
+  },
+  "share.createFailed": {
+    "message": "Не удалось создать ссылку для общего доступа, пожалуйста, попробуйте позже.",
+    "description": "Сообщение об ошибке при неудачном создании ссылки для общего доступа"
+  },
+  "share.disableFailed": {
+    "message": "Не удалось отключить ссылку для общего доступа, пожалуйста, попробуйте позже.",
+    "description": "Сообщение об ошибке при неудачном отключении ссылки для общего доступа"
+  },
+  "share.startYourOwn": {
+    "message": "Начать свой собственный разговор",
+    "description": "Призыв к действию на публичной странице общего доступа, направляющий анонимных посетителей на главную страницу приложения"
+  },
+  "share.unavailableTitle": {
+    "message": "Этот общий разговор недоступен.",
+    "description": "Заголовок публичной страницы общего доступа при недействительности или неработоспособности ссылки"
+  },
+  "share.unavailableHint": {
+    "message": "Ссылка могла быть отключена, или URL неверен.",
+    "description": "Уведомление при недействительности или неработоспособности ссылки для общего доступа"
+  },
+  "share.viewOnly": {
+    "message": "Только для чтения общий разговор",
+    "description": "Метка на публичной странице общего доступа, указывающая, что разговор только для чтения"
+  },
+  "share.untitled": {
+    "message": "Безымянный разговор",
+    "description": "Заполнитель, используемый, когда разговор для общего доступа не имеет заголовка"
+  },
+  "share.footerNote": {
+    "message": "Вы просматриваете часть общего разговора. Нажмите выше, чтобы начать разговор с AI.",
+    "description": "Объяснение под разговором на публичной странице общего доступа"
   },
   "model.claudeOpus47": {
     "message": "Claude Opus 4.7",
     "description": "Model display name"
   },
   "model.claudeOpus47Description": {
-    "message": "Продвинутый Claude Opus с улучшенным рассуждением.",
-    "description": "Model description"
+    "message": "На данный момент самая продвинутая модель",
+    "description": "Описание модели Claude Opus 4.7"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.unhide": {
+    "message": "Unhide",
+    "description": "Restore a hidden artifact"
   },
-  "model.gpt41Description": {
-    "message": "Универсальная модель среднего класса.",
-    "description": "Model description"
+  "artifacts.showHidden": {
+    "message": "Show hidden",
+    "description": "Toggle in the filter bar to include hidden artifacts"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
-  },
-  "model.gpt4oDescription": {
-    "message": "Флагман OpenAI для текста, изображений и аудио.",
-    "description": "Model description"
-  },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
-  },
-  "model.51Description": {
-    "message": "Сбалансированная модель GPT-5.1.",
-    "description": "Model description"
-  },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
-  },
-  "model.52Description": {
-    "message": "Улучшенная GPT-5.2 с лучшим рассуждением.",
-    "description": "Model description"
-  },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
-  },
-  "model.5MiniDescription": {
-    "message": "Лёгкая и экономичная модель GPT-5.",
-    "description": "Model description"
-  },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
-  },
-  "model.5NanoDescription": {
-    "message": "Самая быстрая модель GPT-5 для простых задач.",
-    "description": "Model description"
-  },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
-  },
-  "model.o1Description": {
-    "message": "Модель рассуждений для сложных STEM-задач.",
-    "description": "Model description"
-  },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
-  },
-  "model.o3Description": {
-    "message": "Продвинутая модель рассуждений с сильным кодингом.",
-    "description": "Model description"
-  },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
-  },
-  "model.deepseekR10528Description": {
-    "message": "Обновлённая модель рассуждений DeepSeek.",
-    "description": "Model description"
-  },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
-  },
-  "model.deepseekV3250324Description": {
-    "message": "Универсальная диалоговая модель DeepSeek.",
-    "description": "Model description"
-  },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
-  },
-  "model.gemini20FlashDescription": {
-    "message": "Быстрая и эффективная модель Gemini.",
-    "description": "Model description"
-  },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
-  },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Лёгкая версия Gemini 2.5 Flash.",
-    "description": "Model description"
-  },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
-  },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Предварительная версия Gemini 3 Flash.",
-    "description": "Model description"
-  },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
-  },
-  "model.claudeSonnet5Description": {
-    "message": "Быстрая и способная модель Claude.",
-    "description": "Model description"
-  },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
-  },
-  "model.claudeOpus46Description": {
-    "message": "Высокопроизводительная модель Claude Opus.",
-    "description": "Model description"
-  },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
-  },
-  "model.claude37SonnetDescription": {
-    "message": "Предыдущее поколение Claude Sonnet.",
-    "description": "Model description"
-  },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
-  },
-  "model.kimiK2Instruct0905Description": {
-    "message": "Вариант Kimi K2 с инструкционной настройкой.",
-    "description": "Model description"
-  },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
-  },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "Более быстрая предварительная версия Kimi K2.",
-    "description": "Model description"
-  },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
-  },
-  "model.glm5Description": {
-    "message": "Универсальная модель GLM-5.",
-    "description": "Model description"
-  },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
-  },
-  "model.glm5TurboDescription": {
-    "message": "Ускоренная версия GLM-5.",
-    "description": "Model description"
-  },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
-  },
-  "model.glm46Description": {
-    "message": "Модель GLM с возможностями рассуждения.",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "Hidden",
+    "description": "Badge shown on artifacts that are currently hidden"
   }
 }

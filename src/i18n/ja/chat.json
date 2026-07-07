@@ -736,183 +736,203 @@
     "message": "このタスクは {count} 個の Skill がバックグラウンドで実行される際に人工確認をスキップすることを許可します：{skills}。これらの Skill はメッセージを送信したり、コンテンツを公開したり、外部サービスに書き込んだりする可能性がありますので、ご確認ください。",
     "description": "権限付与確認の本文"
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "Bind the skill first",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "Save anyway",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
+  },
+  "artifacts.navTitle": {
+    "message": "出力",
+    "description": "サイドバーの出力入口"
+  },
+  "artifacts.title": {
+    "message": "私の出力",
+    "description": "出力ページのタイトル"
+  },
+  "artifacts.summaryTotal": {
+    "message": "今期の出力は {count} 件です。",
+    "description": "出力の合計数を示すメッセージ"
+  },
+  "artifacts.filterAll": {
+    "message": "すべて",
+    "description": "出力タイプフィルター - すべて"
+  },
+  "artifacts.empty": {
+    "message": "まだ出力はありません。AIに記事を作成させたり、画像を生成したり、メールを送信したりすると、出力がここに自動的に表示されます。",
+    "description": "出力が空であることを示すメッセージ"
+  },
+  "artifacts.loadError": {
+    "message": "出力の読み込みに失敗しました。",
+    "description": "出力読み込みエラーの通知"
+  },
+  "artifacts.actionError": {
+    "message": "操作に失敗しました。再試行してください。",
+    "description": "出力操作エラーの通知"
+  },
+  "artifacts.open": {
+    "message": "開く",
+    "description": "出力の元リンクを開くボタン"
+  },
+  "artifacts.hide": {
+    "message": "非表示",
+    "description": "出力を非表示にするボタン"
+  },
+  "artifacts.delete": {
+    "message": "削除",
+    "description": "出力を削除するボタン"
+  },
+  "artifacts.deleteConfirm": {
+    "message": "この出力記録を永久に削除してもよろしいですか？",
+    "description": "出力削除の確認メッセージ"
+  },
+  "artifacts.loadMore": {
+    "message": "もっと読み込む",
+    "description": "さらに出力を読み込むボタン"
+  },
+  "artifacts.sourceAuto": {
+    "message": "自動キャプチャ",
+    "description": "自動キャプチャのソースマーク"
+  },
+  "artifacts.kind.article": {
+    "message": "記事",
+    "description": "出力タイプ - 記事"
+  },
+  "artifacts.kind.image": {
+    "message": "画像",
+    "description": "出力タイプ - 画像"
+  },
+  "artifacts.kind.video": {
+    "message": "動画",
+    "description": "出力タイプ - 動画"
+  },
+  "artifacts.kind.audio": {
+    "message": "音声",
+    "description": "出力タイプ - 音声"
+  },
+  "artifacts.kind.document": {
+    "message": "文書",
+    "description": "出力タイプ - 文書"
+  },
+  "artifacts.kind.email": {
+    "message": "メール",
+    "description": "出力タイプ - メール"
+  },
+  "artifacts.kind.message": {
+    "message": "メッセージ",
+    "description": "出力タイプ - メッセージ"
+  },
+  "artifacts.kind.dataset": {
+    "message": "データ",
+    "description": "出力タイプ - データ"
+  },
+  "artifacts.kind.link": {
+    "message": "リンク",
+    "description": "出力タイプ - リンク"
+  },
+  "artifacts.kind.other": {
+    "message": "その他",
+    "description": "出力タイプ - その他"
+  },
+  "share.menu": {
+    "message": "共有",
+    "description": "サイドバー/ツールバーで共有ダイアログを開くメニュー項目"
+  },
+  "share.dialogTitle": {
+    "message": "会話を共有",
+    "description": "共有ダイアログのタイトル"
+  },
+  "share.description": {
+    "message": "リンクを持っている人は誰でもこの会話を閲覧できますが、チャットを続けることはできません。",
+    "description": "会話が共有された後に何が起こるかを説明"
+  },
+  "share.createLink": {
+    "message": "共有リンクを作成",
+    "description": "会話の公開共有リンクを作成するボタン"
+  },
+  "share.copy": {
+    "message": "リンクをコピー",
+    "description": "共有リンクをクリップボードにコピーするボタン"
+  },
+  "share.copied": {
+    "message": "コピーされました",
+    "description": "コピー成功後にボタンに短時間表示されるヒント"
+  },
+  "share.disable": {
+    "message": "リンクを無効にする",
+    "description": "共有リンクを取り消し、そのURLを無効にするボタン"
+  },
+  "share.disabled": {
+    "message": "共有リンクは無効化されました。",
+    "description": "共有リンクが無効化された後のメッセージ"
+  },
+  "share.needLogin": {
+    "message": "先にログインしてください。その後、この会話を共有できます。",
+    "description": "未ログインの訪問者が会話を共有しようとした際のメッセージ"
+  },
+  "share.noConversation": {
+    "message": "先に会話を開いてから共有してください。",
+    "description": "アクティブな会話がない時に共有ボタンをクリックした際のメッセージ"
+  },
+  "share.createFailed": {
+    "message": "共有リンクの作成に失敗しました。後でもう一度お試しください。",
+    "description": "共有リンクの作成に失敗した際のエラーメッセージ"
+  },
+  "share.disableFailed": {
+    "message": "共有リンクの無効化に失敗しました。後でもう一度お試しください。",
+    "description": "共有リンクの無効化に失敗した際のエラーメッセージ"
+  },
+  "share.startYourOwn": {
+    "message": "自分の会話を始める",
+    "description": "共有公開ページでの行動喚起、匿名訪問者をアプリのホームページに誘導する"
+  },
+  "share.unavailableTitle": {
+    "message": "この共有会話は利用できません。",
+    "description": "共有リンクが無効または無効な場合の共有公開ページのタイトル"
+  },
+  "share.unavailableHint": {
+    "message": "相手がリンクを無効にした可能性があります、またはURLが間違っています。",
+    "description": "共有リンクが無効または無効な場合のメッセージ"
+  },
+  "share.viewOnly": {
+    "message": "閲覧専用の共有会話",
+    "description": "共有公開ページ上で会話が閲覧専用であることを示すラベル"
+  },
+  "share.untitled": {
+    "message": "無題の会話",
+    "description": "共有会話にタイトルがない場合に使用されるプレースホルダーテキスト"
+  },
+  "share.footerNote": {
+    "message": "あなたは共有された会話を見ています。上をクリックすると自分でAIと会話できます。",
+    "description": "共有公開ページの会話の下にある説明"
   },
   "model.claudeOpus47": {
     "message": "Claude Opus 4.7",
     "description": "Model display name"
   },
   "model.claudeOpus47Description": {
-    "message": "Advanced Claude Opus with enhanced reasoning.",
-    "description": "Model description"
+    "message": "現在最も先進的なモデル",
+    "description": "Claude Opus 4.7モデルの説明"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.unhide": {
+    "message": "Unhide",
+    "description": "Restore a hidden artifact"
   },
-  "model.gpt41Description": {
-    "message": "Versatile mid-tier model with strong general performance.",
-    "description": "Model description"
+  "artifacts.showHidden": {
+    "message": "Show hidden",
+    "description": "Toggle in the filter bar to include hidden artifacts"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
-  },
-  "model.gpt4oDescription": {
-    "message": "OpenAI multimodal flagship supporting text, image and audio.",
-    "description": "Model description"
-  },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
-  },
-  "model.51Description": {
-    "message": "Balanced GPT-5.1 model for everyday tasks.",
-    "description": "Model description"
-  },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
-  },
-  "model.52Description": {
-    "message": "Enhanced GPT-5.2 with improved reasoning.",
-    "description": "Model description"
-  },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
-  },
-  "model.5MiniDescription": {
-    "message": "Lightweight and cost-effective GPT-5 model.",
-    "description": "Model description"
-  },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
-  },
-  "model.5NanoDescription": {
-    "message": "Fastest GPT-5 model for simple tasks.",
-    "description": "Model description"
-  },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
-  },
-  "model.o1Description": {
-    "message": "Reasoning model optimized for complex STEM problems.",
-    "description": "Model description"
-  },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
-  },
-  "model.o3Description": {
-    "message": "Advanced reasoning model with strong coding capabilities.",
-    "description": "Model description"
-  },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
-  },
-  "model.deepseekR10528Description": {
-    "message": "Updated reasoning model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
-  },
-  "model.deepseekV3250324Description": {
-    "message": "General-purpose chat model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
-  },
-  "model.gemini20FlashDescription": {
-    "message": "Fast and efficient Gemini model.",
-    "description": "Model description"
-  },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
-  },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Lightweight version of Gemini 2.5 Flash.",
-    "description": "Model description"
-  },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
-  },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Preview of Gemini 3 Flash series.",
-    "description": "Model description"
-  },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
-  },
-  "model.claudeSonnet5Description": {
-    "message": "Fast and capable Claude model for most tasks.",
-    "description": "Model description"
-  },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
-  },
-  "model.claudeOpus46Description": {
-    "message": "High-performance Claude Opus model.",
-    "description": "Model description"
-  },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
-  },
-  "model.claude37SonnetDescription": {
-    "message": "Previous-generation Claude Sonnet with strong reasoning.",
-    "description": "Model description"
-  },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
-  },
-  "model.kimiK2Instruct0905Description": {
-    "message": "Instruction-tuned Kimi K2 variant.",
-    "description": "Model description"
-  },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
-  },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "Faster preview version of Kimi K2.",
-    "description": "Model description"
-  },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
-  },
-  "model.glm5Description": {
-    "message": "General-purpose GLM-5 model.",
-    "description": "Model description"
-  },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
-  },
-  "model.glm5TurboDescription": {
-    "message": "Accelerated GLM-5 model for faster responses.",
-    "description": "Model description"
-  },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
-  },
-  "model.glm46Description": {
-    "message": "Reasoning-capable GLM model.",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "Hidden",
+    "description": "Badge shown on artifacts that are currently hidden"
   }
 }

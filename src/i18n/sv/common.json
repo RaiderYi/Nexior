@@ -831,6 +831,42 @@
     "message": "API-nyckel",
     "description": "API-nyckel etikett i sidofältet på inställningssidan - hantering av API-nycklar från uppströmsleverantörer (BYOK)"
   },
+  "settings.memory": {
+    "message": "Minne",
+    "description": "Inställning för sidofältet i popup-fönstret med etiketten 'Minne', där användaren kan se och hantera information som assistenten har kommit ihåg om sig själv."
+  },
+  "settings.memoryIntro": {
+    "message": "Assistenten kommer att komma ihåg användbar information som du nämner i konversationer för att ge mer personliga svar i olika samtal. Du har full kontroll - du kan se det sparade innehållet och ta bort det du inte vill att den ska komma ihåg.",
+    "description": "Introduktionstexten högst upp på minnesinställningssidan."
+  },
+  "settings.memoryNeedsChat": {
+    "message": "Vänligen starta en konversation för att aktivera minnesfunktionen.",
+    "description": "Visas på minnesinställningssidan när chattapplikationen/token ännu inte har laddats."
+  },
+  "settings.memoryStored": {
+    "message": "Sparade minnen",
+    "description": "Rubriken ovanför listan med sparade minnesposter."
+  },
+  "settings.memoryEmpty": {
+    "message": "Inga sparade minnen än. Med tiden kommer assistenten att komma ihåg dina bestående preferenser och information här.",
+    "description": "Visas när användaren inte har några sparade minnen."
+  },
+  "settings.memoryForget": {
+    "message": "Glöm",
+    "description": "Knappen för att ta bort en specifik minnespost på raden för minnesposten."
+  },
+  "settings.memoryClearAll": {
+    "message": "Rensa allt",
+    "description": "En knapp för att permanent ta bort all sparad information på en gång."
+  },
+  "settings.memoryClearConfirm": {
+    "message": "Detta kommer permanent att ta bort all information som assistenten har kommit ihåg om dig och kan inte ångras.",
+    "description": "Bekräftelseinnehållet innan all minnesinformation rensas."
+  },
+  "settings.memoryError": {
+    "message": "Åtgärden misslyckades, försök igen.",
+    "description": "Felmeddelande som visas när radering/rensning av minne misslyckas."
+  },
   "field.operations": {
     "message": "Åtgärder",
     "description": "Allmän kolumnrubrik: kolumn för åtgärdsknappar i tabellrader (redigera, ta bort etc.)"
@@ -951,8 +987,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "Telefonautomationsfärdigheter",
+    "description": "Rubrik för Android-endast sektionen som installerar färdigheter som styr appar på telefonen via datoranvändning."
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "Installera färdigheter som gör att assistenten kan styra inhemska appar. De körs via \"datoranvändning\", vänligen ge tillgång till tillgänglighetsbehörigheter ovan och aktivera datoranvändning. Varje åtgärd följer fortfarande dina inställningar för bekräftelse av datoranvändning.",
+    "description": "Hjälptext under rubriken för telefonautomationsfärdigheter."
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "Xiaohongshu meddelande automatisk svar",
+    "description": "Visningsnamn för Xiaohongshu (RED) direktmeddelande automatisk svar färdigheten."
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "Läsa nya meddelanden i Xiaohongshu-appen och utarbeta svar, du kommer att bekräfta innan det skickas.",
+    "description": "En rad beskrivning av Xiaohongshu DM-färdigheten."
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "Installera",
+    "description": "Knapp som installerar färdigheten i användarens konto."
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "Installerad",
+    "description": "Tagg som visas när färdigheten redan är installerad."
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "Laddar tillgängliga färdigheter…",
+    "description": "Platshållare medan färdighetskatalogen hämtas."
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "Inga telefonfärdigheter tillgängliga för installation.",
+    "description": "Tomt tillstånd när ingen installabel telefonfärdighet hittas."
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "Vänligen ge tillgång till tillgänglighetsbehörigheter och aktivera datoranvändning ovan innan installation.",
+    "description": "Hint som visas när installationsknappen är inaktiverad på grund av saknade förutsättningar."
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "Installerad, kommer att träda i kraft vid ditt nästa samtal.",
+    "description": "Bekräftelse som visas efter en lyckad installation."
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "Installationen misslyckades, vänligen försök igen.",
+    "description": "Felmeddelande som visas när installationsförfrågan misslyckas."
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "Misslyckades med att ladda tillgängliga färdigheter, vänligen försök igen.",
+    "description": "Felmeddelande som visas när hämtningen av färdighetskatalogen misslyckas."
+  },
   "settings.localToolsPreauthorizeAll": "Förgodkänn alla datoråtgärder",
   "settings.localToolsPreauthorizeHint": "Tillåt på en gång skärmbild, klick, skrivning, tangenter och alla åtgärder och begär nödvändiga systembehörigheter.",
+  "settings.localToolsCuA11yLabel": {
+    "message": "Tillgänglighetstjänster",
+    "description": "Etikett för tillgänglighetsstatusraden för Computer Use, som indikerar om tillgänglighetstjänsterna verkligen är aktiva."
+  },
+  "settings.localToolsCuReady": {
+    "message": "Redo, tillgänglig",
+    "description": "Grön status som visas när tillgänglighetstjänsterna är aktiva och Computer Use verkligen är tillgänglig."
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "Inte aktiverad, Computer Use är för tillfället inte tillgänglig",
+    "description": "Röd varning som visas när strömbrytaren är påslagen men tillgänglighetstjänsterna inte är aktiva."
+  },
   "settings.localToolsCuActionsTitle": "Tillåt enskilda åtgärder",
   "settings.localToolsCuActionsHint": "Aktivera bara de åtgärder du är bekväm med att låta AI:n utföra utan att fråga varje gång. Var och en kan återkallas här.",
   "settings.localToolsCuScreenshot": "Skärmbild",

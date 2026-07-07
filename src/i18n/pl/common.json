@@ -831,6 +831,42 @@
     "message": "Klucz API",
     "description": "Etykieta Klucz API w bocznym pasku na stronie ustawień - zarządzanie kluczem API dostawcy usług upstream (BYOK)"
   },
+  "settings.memory": {
+    "message": "Pamięć",
+    "description": "Ustawia etykietę „Pamięć” w bocznym pasku okna ustawień, gdzie użytkownik może przeglądać i zarządzać informacjami, które asystent zapamiętał o sobie."
+  },
+  "settings.memoryIntro": {
+    "message": "Asystent zapamięta przydatne informacje, które wspomnisz w rozmowach, aby w różnych rozmowach udzielać bardziej spersonalizowanych odpowiedzi. Masz pełną kontrolę — możesz przeglądać zapisane treści i usuwać te, które nie chcesz, aby były zapamiętane.",
+    "description": "Wprowadzenie na górze zakładki ustawień pamięci."
+  },
+  "settings.memoryNeedsChat": {
+    "message": "Proszę najpierw rozpocząć rozmowę, aby włączyć funkcję pamięci.",
+    "description": "Wyświetlane na zakładce ustawień pamięci, gdy aplikacja czatu/token nie została jeszcze załadowana."
+  },
+  "settings.memoryStored": {
+    "message": "Zapisana pamięć",
+    "description": "Tytuł sekcji nad listą zapisanych wpisów pamięci."
+  },
+  "settings.memoryEmpty": {
+    "message": "Brak zapisanej pamięci.",
+    "description": "Stan pusty wyświetlany, gdy użytkownik nie ma żadnych zapisanych pamięci."
+  },
+  "settings.memoryForget": {
+    "message": "Zapomnij",
+    "description": "Przycisk do usunięcia pojedynczego wpisu pamięci na liście."
+  },
+  "settings.memoryClearAll": {
+    "message": "Wyczyść wszystko",
+    "description": "Przycisk do jednorazowego usunięcia wszystkich zapisanych pamięci."
+  },
+  "settings.memoryClearConfirm": {
+    "message": "To spowoduje trwałe usunięcie wszystkich informacji, które asystent zapamiętał o Tobie, i nie można tego cofnąć.",
+    "description": "Treść okna potwierdzenia przed wyczyszczeniem wszystkich pamięci."
+  },
+  "settings.memoryError": {
+    "message": "Operacja nie powiodła się, spróbuj ponownie.",
+    "description": "Komunikat o błędzie wyświetlany, gdy operacja usunięcia/wyczyszczenia pamięci nie powiodła się."
+  },
   "field.operations": {
     "message": "Operacje",
     "description": "Ogólny tytuł kolumny: kolumna przycisków operacji w wierszach tabeli (edytuj, usuń itp.)"
@@ -951,8 +987,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "Umiejętności automatyzacji telefonu",
+    "description": "Nagłówek sekcji tylko dla Androida, która instaluje umiejętności sterujące aplikacjami na telefonie za pomocą operacji komputerowych."
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "Zainstaluj umiejętności, które pozwalają asystentowi na obsługę lokalnych aplikacji. Działają one poprzez „komputerowe operacje”, proszę najpierw przyznać dostęp do funkcji ułatwień dostępu powyżej i włączyć komputerowe operacje. Każdy krok będzie nadal zgodny z ustawieniami potwierdzenia operacji komputerowych.",
+    "description": "Tekst pomocy pod nagłówkiem umiejętności automatyzacji telefonu."
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "Automatyczna odpowiedź na wiadomości prywatne Xiaohongshu",
+    "description": "Nazwa wyświetlana umiejętności automatycznej odpowiedzi na wiadomości bezpośrednie Xiaohongshu (RED)."
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "Odczytaj nowe wiadomości prywatne w aplikacji Xiaohongshu i napisz odpowiedź, przed wysłaniem poprosi cię o potwierdzenie.",
+    "description": "Jednolinijkowy opis umiejętności DM Xiaohongshu."
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "Zainstaluj",
+    "description": "Przycisk, który instaluje umiejętność na koncie użytkownika."
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "Zainstalowane",
+    "description": "Etykieta wyświetlana, gdy umiejętność jest już zainstalowana."
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "Ładowanie dostępnych umiejętności…",
+    "description": "Zastępczy tekst podczas pobierania katalogu umiejętności."
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "Brak dostępnych umiejętności do zainstalowania.",
+    "description": "Stan pusty, gdy nie znaleziono żadnej umiejętności do zainstalowania."
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "Przed instalacją proszę najpierw przyznać dostęp do funkcji ułatwień dostępu i włączyć komputerowe operacje powyżej.",
+    "description": "Wskazówka wyświetlana, gdy przycisk instalacji jest wyłączony z powodu brakujących wymagań wstępnych."
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "Zainstalowane, wejdzie w życie przy następnej rozmowie.",
+    "description": "Potwierdzenie wyświetlane po pomyślnej instalacji."
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "Instalacja nie powiodła się, spróbuj ponownie.",
+    "description": "Błąd wyświetlany, gdy żądanie instalacji nie powiodło się."
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "Nie udało się załadować dostępnych umiejętności, spróbuj ponownie.",
+    "description": "Błąd wyświetlany, gdy pobieranie katalogu umiejętności nie powiodło się."
+  },
   "settings.localToolsPreauthorizeAll": "Wstępnie zatwierdź wszystkie działania komputera",
   "settings.localToolsPreauthorizeHint": "Zezwól od razu na zrzut ekranu, kliknięcie, pisanie, klawisze i wszystkie działania oraz poproś o wymagane uprawnienia systemowe.",
+  "settings.localToolsCuA11yLabel": {
+    "message": "Usługi dostępności",
+    "description": "Etykieta stanu użycia komputera, wskazująca, czy usługi dostępności są rzeczywiście uruchomione."
+  },
+  "settings.localToolsCuReady": {
+    "message": "Gotowe, dostępne",
+    "description": "Zielony status wyświetlany, gdy usługi dostępności są uruchomione, a użycie komputera jest rzeczywiście dostępne."
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "Nie włączone, użycie komputera chwilowo niedostępne",
+    "description": "Czerwony komunikat ostrzegawczy wyświetlany, gdy przełącznik jest włączony, ale usługi dostępności nie działają."
+  },
   "settings.localToolsCuActionsTitle": "Zezwól na pojedyncze akcje",
   "settings.localToolsCuActionsHint": "Włącz tylko te akcje, które AI może wykonywać bez pytania za każdym razem. Każdą można tu cofnąć.",
   "settings.localToolsCuScreenshot": "Zrzut ekranu",

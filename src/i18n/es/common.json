@@ -831,6 +831,42 @@
     "message": "Clave API",
     "description": "Etiqueta de la clave API en la barra lateral de la página de configuración: gestión de claves API de proveedores de servicios upstream (BYOK)"
   },
+  "settings.memory": {
+    "message": "Memoria",
+    "description": "Etiqueta 'Memoria' en la barra lateral del cuadro de configuración, donde los usuarios pueden ver y gestionar la información que el asistente ha recordado sobre ellos."
+  },
+  "settings.memoryIntro": {
+    "message": "El asistente recordará la información útil que mencionas en las conversaciones para ofrecer respuestas más personalizadas en diferentes diálogos. Tienes control total: puedes ver el contenido guardado y eliminar lo que no deseas que recuerde.",
+    "description": "Texto introductorio en la parte superior de la pestaña de configuración de memoria."
+  },
+  "settings.memoryNeedsChat": {
+    "message": "Por favor, inicia una conversación para habilitar la función de memoria.",
+    "description": "Se muestra en la pestaña de configuración de memoria cuando la aplicación de chat/token aún no se ha cargado."
+  },
+  "settings.memoryStored": {
+    "message": "Recuerdos guardados",
+    "description": "Título de la sección sobre la lista de entradas de recuerdos almacenados."
+  },
+  "settings.memoryEmpty": {
+    "message": "No hay recuerdos guardados.",
+    "description": "Estado vacío que se muestra cuando el usuario no tiene recuerdos almacenados."
+  },
+  "settings.memoryForget": {
+    "message": "Olvidar",
+    "description": "Botón para eliminar un recuerdo específico en la fila de entrada de memoria."
+  },
+  "settings.memoryClearAll": {
+    "message": "Borrar todo",
+    "description": "Botón para eliminar de una vez todos los recuerdos almacenados."
+  },
+  "settings.memoryClearConfirm": {
+    "message": "Esto eliminará permanentemente toda la información que el asistente ha recordado sobre ti y no se podrá deshacer.",
+    "description": "Contenido del cuadro de confirmación antes de borrar toda la memoria."
+  },
+  "settings.memoryError": {
+    "message": "Operación fallida, por favor intenta de nuevo.",
+    "description": "Mensaje de error que se muestra cuando falla la operación de eliminación/borrado de memoria."
+  },
   "field.operations": {
     "message": "Operaciones",
     "description": "Título de columna genérico: columna de botones de operación en las filas de la tabla (editar, eliminar, etc.)"
@@ -951,8 +987,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "Habilidades de automatización del teléfono",
+    "description": "Encabezado para la sección exclusiva de Android que instala habilidades que controlan aplicaciones en el teléfono a través del Control de computadora."
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "Instala habilidades que permiten al asistente operar aplicaciones nativas. Se ejecutan a través de 'Control de computadora', primero otorga permisos de accesibilidad arriba y activa el control de computadora. Cada acción sigue la configuración de confirmación de control de computadora.",
+    "description": "Texto de ayuda bajo el encabezado de habilidades de automatización del teléfono."
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "Respuesta automática de mensajes directos de Xiaohongshu",
+    "description": "Nombre mostrado de la habilidad de respuesta automática de mensajes directos de Xiaohongshu (RED)."
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "Lee nuevos mensajes directos en la App de Xiaohongshu y redacta respuestas, te pedirá confirmación antes de enviar.",
+    "description": "Descripción breve de la habilidad de DM de Xiaohongshu."
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "Instalar",
+    "description": "Botón que instala la habilidad en la cuenta del usuario."
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "Instalado",
+    "description": "Etiqueta mostrada cuando la habilidad ya está instalada."
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "Cargando habilidades disponibles...",
+    "description": "Marcador de posición mientras se obtiene el directorio de habilidades."
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "No hay habilidades de teléfono disponibles para instalar.",
+    "description": "Estado vacío cuando no se encuentra ninguna habilidad de teléfono instalable."
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "Por favor otorga permisos de accesibilidad y activa el control de computadora arriba antes de instalar.",
+    "description": "Sugerencia mostrada cuando el botón de instalación está deshabilitado debido a requisitos previos faltantes."
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "Instalado, se aplicará en tu próxima conversación.",
+    "description": "Confirmación mostrada después de una instalación exitosa."
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "Instalación fallida, por favor intenta de nuevo.",
+    "description": "Error mostrado cuando la solicitud de instalación falla."
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "Error al cargar habilidades disponibles, por favor intenta de nuevo.",
+    "description": "Error mostrado cuando falla la obtención del directorio de habilidades."
+  },
   "settings.localToolsPreauthorizeAll": "Autorizar previamente todas las acciones del equipo",
   "settings.localToolsPreauthorizeHint": "Permite de una vez la captura de pantalla, el clic, la escritura, las teclas y todas las acciones, y solicita los permisos del sistema necesarios.",
+  "settings.localToolsCuA11yLabel": {
+    "message": "Servicios de accesibilidad",
+    "description": "Etiqueta de la barra de estado de Usabilidad de Uso de Computadora, que indica si los servicios de accesibilidad están realmente en funcionamiento."
+  },
+  "settings.localToolsCuReady": {
+    "message": "Listo, disponible",
+    "description": "Estado verde que se muestra cuando los servicios de accesibilidad están en funcionamiento y el Uso de Computadora está realmente disponible."
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "No activado, Uso de Computadora no disponible",
+    "description": "Advertencia roja que se muestra cuando el interruptor está activado pero los servicios de accesibilidad no están en funcionamiento."
+  },
   "settings.localToolsCuActionsTitle": "Permitir acciones individuales",
   "settings.localToolsCuActionsHint": "Activa solo las acciones que quieras que la IA ejecute sin preguntar cada vez. Cada una se puede revocar aquí.",
   "settings.localToolsCuScreenshot": "Captura de pantalla",

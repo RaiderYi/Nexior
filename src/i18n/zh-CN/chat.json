@@ -771,184 +771,196 @@
     "message": "此任务将允许 {count} 个 Skill/MCP 在后台执行时跳过人工确认或加载限制：{skills}。它们可能会发送消息、发布内容或写入外部服务，请确认。",
     "description": "授权确认正文"
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "需要先绑定技能",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "技能「{name}」尚未在你的账户中绑定或激活。若不先绑定，定时任务在后台自动运行时可能无法使用它。建议先前往绑定后再保存，或点击下方按钮仍要继续保存。",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "仍要继续保存",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "请填写任务名称和提示词",
     "description": "必填项验证"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.navTitle": {
+    "message": "Artifacts",
+    "description": "侧边栏 Artifacts 入口"
   },
-  "model.gpt41Description": {
-    "message": "通用中等规模模型，综合性能均衡。",
-    "description": "Model description"
+  "artifacts.title": {
+    "message": "我的 Artifacts",
+    "description": "Artifacts 页面标题"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
+  "artifacts.summaryTotal": {
+    "message": "共 {count} 个 Artifact",
+    "description": "Artifacts 汇总总数"
   },
-  "model.gpt4oDescription": {
-    "message": "OpenAI 多模态旗舰，支持文本、图像与音频。",
-    "description": "Model description"
+  "artifacts.filterAll": {
+    "message": "全部",
+    "description": "Artifacts 类型筛选-全部"
   },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
+  "artifacts.empty": {
+    "message": "还没有任何 Artifact。让 AI 帮你发文章、生成图片或发送邮件后，产出会自动出现在这里。",
+    "description": "Artifacts 为空提示"
   },
-  "model.51Description": {
-    "message": "均衡的 GPT-5.1 日常任务模型。",
-    "description": "Model description"
+  "artifacts.loadError": {
+    "message": "加载 Artifacts 失败",
+    "description": "加载 Artifacts 错误提示"
   },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
+  "artifacts.actionError": {
+    "message": "操作失败，请重试",
+    "description": "Artifacts 操作错误提示"
   },
-  "model.52Description": {
-    "message": "增强型 GPT-5.2，推理能力更优。",
-    "description": "Model description"
+  "artifacts.open": {
+    "message": "打开",
+    "description": "打开 Artifact 原链接按钮"
   },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
+  "artifacts.hide": {
+    "message": "隐藏",
+    "description": "隐藏 Artifact 按钮"
   },
-  "model.5MiniDescription": {
-    "message": "轻量且高性价比的 GPT-5 模型。",
-    "description": "Model description"
+  "artifacts.unhide": {
+    "message": "取消隐藏",
+    "description": "恢复被隐藏 Artifact 的按钮"
   },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
+  "artifacts.showHidden": {
+    "message": "显示已隐藏",
+    "description": "筛选栏中显示已隐藏 Artifacts 的开关"
   },
-  "model.5NanoDescription": {
-    "message": "最快的 GPT-5 模型，适合简单任务。",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "已隐藏",
+    "description": "标记 Artifact 已被隐藏的徽章"
   },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
+  "artifacts.delete": {
+    "message": "删除",
+    "description": "删除 Artifact 按钮"
   },
-  "model.o1Description": {
-    "message": "针对复杂理科问题优化的推理模型。",
-    "description": "Model description"
+  "artifacts.deleteConfirm": {
+    "message": "确定要永久删除这条 Artifact 吗？",
+    "description": "删除 Artifact 确认提示"
   },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
+  "artifacts.loadMore": {
+    "message": "加载更多",
+    "description": "加载更多 Artifacts 按钮"
   },
-  "model.o3Description": {
-    "message": "高级推理模型，编程能力突出。",
-    "description": "Model description"
+  "artifacts.sourceAuto": {
+    "message": "自动捕获",
+    "description": "自动捕获来源标记"
   },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
+  "artifacts.kind.article": {
+    "message": "文章",
+    "description": "产出类型-文章"
   },
-  "model.deepseekR10528Description": {
-    "message": "DeepSeek 更新的推理模型。",
-    "description": "Model description"
+  "artifacts.kind.image": {
+    "message": "图片",
+    "description": "产出类型-图片"
   },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
+  "artifacts.kind.video": {
+    "message": "视频",
+    "description": "产出类型-视频"
   },
-  "model.deepseekV3250324Description": {
-    "message": "DeepSeek 通用对话模型。",
-    "description": "Model description"
+  "artifacts.kind.audio": {
+    "message": "音频",
+    "description": "产出类型-音频"
   },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
+  "artifacts.kind.document": {
+    "message": "文件",
+    "description": "产出类型-文件"
   },
-  "model.gemini20FlashDescription": {
-    "message": "快速高效的 Gemini 模型。",
-    "description": "Model description"
+  "artifacts.kind.email": {
+    "message": "邮件",
+    "description": "产出类型-邮件"
   },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
+  "artifacts.kind.message": {
+    "message": "消息",
+    "description": "产出类型-消息"
   },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Gemini 2.5 Flash 的轻量版本。",
-    "description": "Model description"
+  "artifacts.kind.dataset": {
+    "message": "数据",
+    "description": "产出类型-数据"
   },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
+  "artifacts.kind.link": {
+    "message": "链接",
+    "description": "产出类型-链接"
   },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Gemini 3 Flash 系列预览版。",
-    "description": "Model description"
+  "artifacts.kind.other": {
+    "message": "其他",
+    "description": "产出类型-其他"
   },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
+  "share.menu": {
+    "message": "分享",
+    "description": "侧边栏/工具栏中打开分享对话框的菜单项"
   },
-  "model.claudeSonnet5Description": {
-    "message": "快速且能力均衡的 Claude 模型。",
-    "description": "Model description"
+  "share.dialogTitle": {
+    "message": "分享对话",
+    "description": "分享对话框的标题"
   },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
+  "share.description": {
+    "message": "任何拿到链接的人都可以查看此对话，但无法继续聊天。",
+    "description": "解释对话被分享后会发生什么"
   },
-  "model.claudeOpus46Description": {
-    "message": "高性能 Claude Opus 模型。",
-    "description": "Model description"
+  "share.createLink": {
+    "message": "创建分享链接",
+    "description": "为对话创建公开分享链接的按钮"
   },
-  "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+  "share.copy": {
+    "message": "复制链接",
+    "description": "把分享链接复制到剪贴板的按钮"
   },
-  "model.claudeOpus47Description": {
-    "message": "具备更强推理能力的 Claude Opus。",
-    "description": "Model description"
+  "share.copied": {
+    "message": "已复制",
+    "description": "复制成功后短暂出现在按钮上的提示"
   },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
+  "share.disable": {
+    "message": "停用链接",
+    "description": "撤销分享链接，让该 URL 失效的按钮"
   },
-  "model.claude37SonnetDescription": {
-    "message": "上一代 Claude Sonnet，推理能力出色。",
-    "description": "Model description"
+  "share.disabled": {
+    "message": "分享链接已停用。",
+    "description": "分享链接被停用后的提示"
   },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
+  "share.needLogin": {
+    "message": "请先登录，然后再分享此对话。",
+    "description": "未登录访客尝试分享对话时的提示"
   },
-  "model.kimiK2Instruct0905Description": {
-    "message": "指令微调的 Kimi K2 变体。",
-    "description": "Model description"
+  "share.noConversation": {
+    "message": "请先打开一个对话，再进行分享。",
+    "description": "没有活跃对话时点击分享按钮的提示"
   },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
+  "share.createFailed": {
+    "message": "创建分享链接失败，请稍后再试。",
+    "description": "创建分享链接失败的错误提示"
   },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "更快的 Kimi K2 预览版本。",
-    "description": "Model description"
+  "share.disableFailed": {
+    "message": "停用分享链接失败，请稍后再试。",
+    "description": "停用分享链接失败的错误提示"
   },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
+  "share.startYourOwn": {
+    "message": "去开启我自己的对话",
+    "description": "分享公开页面上的行动号召，把匿名访客引导到应用首页"
   },
-  "model.glm5Description": {
-    "message": "通用 GLM-5 模型。",
-    "description": "Model description"
+  "share.unavailableTitle": {
+    "message": "此分享对话不可用。",
+    "description": "分享链接失效或无效时分享公开页面的标题"
   },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
+  "share.unavailableHint": {
+    "message": "对方可能已经停用了链接，或者 URL 有误。",
+    "description": "分享链接失效或无效时的提示"
   },
-  "model.glm5TurboDescription": {
-    "message": "加速版 GLM-5，响应更快。",
-    "description": "Model description"
+  "share.viewOnly": {
+    "message": "只读分享对话",
+    "description": "分享公开页面上表明对话只读的标签"
   },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
+  "share.untitled": {
+    "message": "未命名对话",
+    "description": "分享对话没有标题时使用的占位文案"
   },
-  "model.glm46Description": {
-    "message": "具备推理能力的 GLM 模型。",
-    "description": "Model description"
+  "share.footerNote": {
+    "message": "您正在查看一段分享的对话。点击上方即可自己与 AI 对话。",
+    "description": "分享公开页面对话下方的说明"
   }
 }
