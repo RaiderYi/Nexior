@@ -831,6 +831,42 @@
     "message": "Clé API",
     "description": "Étiquette de la clé API dans la barre latérale de la page des paramètres - gestion de la clé API des fournisseurs de services en amont (BYOK)"
   },
+  "settings.memory": {
+    "message": "Mémoire",
+    "description": "Étiquette « Mémoire » dans la barre latérale des paramètres, où l'utilisateur peut consulter et gérer les informations que l'assistant a retenues à son sujet."
+  },
+  "settings.memoryIntro": {
+    "message": "L'assistant retiendra les informations utiles que vous mentionnez dans les conversations, afin de fournir des réponses plus personnalisées dans différentes discussions. Vous avez un contrôle total - vous pouvez consulter le contenu enregistré et supprimer ce que vous ne souhaitez pas qu'il retienne.",
+    "description": "Texte d'introduction en haut de l'onglet des paramètres de mémoire."
+  },
+  "settings.memoryNeedsChat": {
+    "message": "Veuillez d'abord commencer une conversation pour activer la fonction de mémoire.",
+    "description": "Affiché dans l'onglet des paramètres de mémoire lorsque l'application de chat/token n'est pas encore chargée."
+  },
+  "settings.memoryStored": {
+    "message": "Mémoires enregistrées",
+    "description": "Titre de la section au-dessus de la liste des entrées de mémoire enregistrées."
+  },
+  "settings.memoryEmpty": {
+    "message": "Aucune mémoire enregistrée pour le moment. Au fur et à mesure de votre utilisation, l'assistant retiendra ici vos préférences et informations durables.",
+    "description": "État vide affiché lorsque l'utilisateur n'a aucune mémoire enregistrée."
+  },
+  "settings.memoryForget": {
+    "message": "Oublier",
+    "description": "Bouton pour supprimer une entrée de mémoire spécifique sur la ligne de l'élément de mémoire."
+  },
+  "settings.memoryClearAll": {
+    "message": "Tout effacer",
+    "description": "Bouton pour supprimer toutes les mémoires enregistrées en une seule fois."
+  },
+  "settings.memoryClearConfirm": {
+    "message": "Cela supprimera définitivement toutes les informations que l'assistant a retenues à votre sujet et ne peut pas être annulé.",
+    "description": "Contenu de la fenêtre de confirmation avant de tout effacer."
+  },
+  "settings.memoryError": {
+    "message": "Échec de l'opération, veuillez réessayer.",
+    "description": "Message d'erreur affiché lorsque la suppression ou l'effacement de la mémoire échoue."
+  },
   "field.operations": {
     "message": "Opérations",
     "description": "Titre de colonne générique : colonne des boutons d'opération des lignes de tableau (modifier, supprimer, etc.)"
@@ -951,8 +987,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "Compétences d'automatisation du téléphone",
+    "description": "Titre de la section réservée aux Android qui installe des compétences permettant de contrôler des applications sur le téléphone via le Contrôle d'ordinateur."
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "Installez des compétences qui permettent à l'assistant d'opérer des applications locales. Elles fonctionnent via « Contrôle d'ordinateur », veuillez d'abord accorder les autorisations d'accessibilité ci-dessus et activer le contrôle d'ordinateur. Chaque action suit toujours vos paramètres de confirmation de contrôle d'ordinateur.",
+    "description": "Texte d'aide sous le titre des compétences d'automatisation du téléphone."
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "Réponse automatique aux messages privés Xiaohongshu",
+    "description": "Nom affiché de la compétence de réponse automatique aux messages directs de Xiaohongshu (RED)."
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "Lire les nouveaux messages privés dans l'application Xiaohongshu et rédiger des réponses, une confirmation vous sera demandée avant l'envoi.",
+    "description": "Description en une ligne de la compétence de DM de Xiaohongshu."
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "Installer",
+    "description": "Bouton qui installe la compétence dans le compte de l'utilisateur."
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "Installé",
+    "description": "Étiquette affichée lorsque la compétence est déjà installée."
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "Chargement des compétences disponibles…",
+    "description": "Espace réservé pendant que le répertoire de compétences est en cours de récupération."
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "Aucune compétence de téléphone à installer pour le moment.",
+    "description": "État vide lorsque aucune compétence de téléphone installable n'est trouvée."
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "Veuillez d'abord accorder les autorisations d'accessibilité et activer le contrôle d'ordinateur ci-dessus avant d'installer.",
+    "description": "Indication affichée lorsque le bouton d'installation est désactivé en raison de prérequis manquants."
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "Installé, cela prendra effet lors de votre prochaine conversation.",
+    "description": "Confirmation affichée après une installation réussie."
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "Échec de l'installation, veuillez réessayer.",
+    "description": "Erreur affichée lorsque la demande d'installation échoue."
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "Échec du chargement des compétences disponibles, veuillez réessayer.",
+    "description": "Erreur affichée lorsque la récupération du répertoire de compétences échoue."
+  },
   "settings.localToolsPreauthorizeAll": "Pré-autoriser toutes les actions de l'ordinateur",
   "settings.localToolsPreauthorizeHint": "Autorisez en une fois la capture d'écran, le clic, la saisie, les touches et toutes les actions, et déclenchez les autorisations système requises.",
+  "settings.localToolsCuA11yLabel": {
+    "message": "Services d'accessibilité",
+    "description": "Étiquette de la barre d'état de l'utilisation de l'ordinateur, indiquant si les services d'accessibilité sont réellement en cours d'exécution."
+  },
+  "settings.localToolsCuReady": {
+    "message": "Prêt, disponible",
+    "description": "État vert affiché lorsque les services d'accessibilité sont en cours d'exécution et que l'utilisation de l'ordinateur est réellement disponible."
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "Non activé, l'utilisation de l'ordinateur n'est pas disponible",
+    "description": "Avertissement rouge affiché lorsque l'interrupteur est activé mais que les services d'accessibilité ne fonctionnent pas."
+  },
   "settings.localToolsCuActionsTitle": "Autoriser chaque action",
   "settings.localToolsCuActionsHint": "N'activez que les actions que vous acceptez de laisser l'IA exécuter sans confirmation. Chacune reste révocable ici.",
   "settings.localToolsCuScreenshot": "Capture d'écran",

@@ -736,183 +736,203 @@
     "message": "ستسمح هذه المهمة لـ {count} مهارة بالتنفيذ في الخلفية دون تأكيد بشري: {skills}. قد ترسل هذه المهارات رسائل، أو تنشر محتوى، أو تكتب إلى خدمات خارجية، يرجى التأكيد.",
     "description": "نص تأكيد التفويض"
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "Bind the skill first",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "Save anyway",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
+  },
+  "artifacts.navTitle": {
+    "message": "الإنتاج",
+    "description": "مدخل الإنتاج في الشريط الجانبي"
+  },
+  "artifacts.title": {
+    "message": "إنتاجي",
+    "description": "عنوان صفحة الإنتاج"
+  },
+  "artifacts.summaryTotal": {
+    "message": "إجمالي الإنتاج لهذا الشهر هو {count} عنصر",
+    "description": "إجمالي عدد الإنتاج"
+  },
+  "artifacts.filterAll": {
+    "message": "الكل",
+    "description": "تصفية نوع الإنتاج - الكل"
+  },
+  "artifacts.empty": {
+    "message": "لا يوجد أي إنتاج حتى الآن. ستظهر الإنتاج هنا تلقائيًا بعد أن تساعدك الذكاء الاصطناعي في كتابة مقالات، أو إنشاء صور، أو إرسال رسائل بريد إلكتروني.",
+    "description": "إشعار عندما يكون الإنتاج فارغًا"
+  },
+  "artifacts.loadError": {
+    "message": "فشل تحميل الإنتاج",
+    "description": "إشعار خطأ في تحميل الإنتاج"
+  },
+  "artifacts.actionError": {
+    "message": "فشل العملية، يرجى المحاولة مرة أخرى",
+    "description": "إشعار خطأ في عملية الإنتاج"
+  },
+  "artifacts.open": {
+    "message": "فتح",
+    "description": "زر فتح الرابط الأصلي للإنتاج"
+  },
+  "artifacts.hide": {
+    "message": "إخفاء",
+    "description": "زر إخفاء الإنتاج"
+  },
+  "artifacts.delete": {
+    "message": "حذف",
+    "description": "زر حذف الإنتاج"
+  },
+  "artifacts.deleteConfirm": {
+    "message": "هل تريد بالتأكيد حذف سجل الإنتاج هذا بشكل دائم؟",
+    "description": "إشعار تأكيد حذف الإنتاج"
+  },
+  "artifacts.loadMore": {
+    "message": "تحميل المزيد",
+    "description": "زر تحميل المزيد من الإنتاج"
+  },
+  "artifacts.sourceAuto": {
+    "message": "التقاط تلقائي",
+    "description": "علامة مصدر الالتقاط التلقائي"
+  },
+  "artifacts.kind.article": {
+    "message": "مقال",
+    "description": "نوع الإنتاج - مقال"
+  },
+  "artifacts.kind.image": {
+    "message": "صورة",
+    "description": "نوع الإنتاج - صورة"
+  },
+  "artifacts.kind.video": {
+    "message": "فيديو",
+    "description": "نوع الإنتاج - فيديو"
+  },
+  "artifacts.kind.audio": {
+    "message": "صوتي",
+    "description": "نوع الإنتاج - صوتي"
+  },
+  "artifacts.kind.document": {
+    "message": "وثيقة",
+    "description": "نوع الإنتاج - وثيقة"
+  },
+  "artifacts.kind.email": {
+    "message": "بريد إلكتروني",
+    "description": "نوع الإنتاج - بريد إلكتروني"
+  },
+  "artifacts.kind.message": {
+    "message": "رسالة",
+    "description": "نوع الإنتاج - رسالة"
+  },
+  "artifacts.kind.dataset": {
+    "message": "بيانات",
+    "description": "نوع الإنتاج - بيانات"
+  },
+  "artifacts.kind.link": {
+    "message": "رابط",
+    "description": "نوع الإنتاج - رابط"
+  },
+  "artifacts.kind.other": {
+    "message": "أخرى",
+    "description": "نوع الإنتاج - أخرى"
+  },
+  "share.menu": {
+    "message": "مشاركة",
+    "description": "عنصر القائمة لفتح نافذة مشاركة المحادثة في الشريط الجانبي/شريط الأدوات"
+  },
+  "share.dialogTitle": {
+    "message": "مشاركة المحادثة",
+    "description": "عنوان نافذة مشاركة المحادثة"
+  },
+  "share.description": {
+    "message": "يمكن لأي شخص يحصل على الرابط مشاهدة هذه المحادثة، لكن لا يمكنه متابعة الدردشة.",
+    "description": "تفسير ما سيحدث بعد مشاركة المحادثة"
+  },
+  "share.createLink": {
+    "message": "إنشاء رابط مشاركة",
+    "description": "زر لإنشاء رابط مشاركة عام للمحادثة"
+  },
+  "share.copy": {
+    "message": "نسخ الرابط",
+    "description": "زر لنسخ رابط المشاركة إلى الحافظة"
+  },
+  "share.copied": {
+    "message": "تم النسخ",
+    "description": "رسالة تظهر لفترة قصيرة على الزر بعد نجاح النسخ"
+  },
+  "share.disable": {
+    "message": "تعطيل الرابط",
+    "description": "زر لإلغاء رابط المشاركة وجعل هذا الرابط غير صالح"
+  },
+  "share.disabled": {
+    "message": "تم تعطيل رابط المشاركة.",
+    "description": "رسالة بعد تعطيل رابط المشاركة"
+  },
+  "share.needLogin": {
+    "message": "يرجى تسجيل الدخول أولاً، ثم مشاركة هذه المحادثة.",
+    "description": "رسالة تظهر عندما يحاول الزوار غير المسجلين مشاركة المحادثة"
+  },
+  "share.noConversation": {
+    "message": "يرجى فتح محادثة أولاً قبل المشاركة.",
+    "description": "رسالة تظهر عند النقر على زر المشاركة بدون وجود محادثة نشطة"
+  },
+  "share.createFailed": {
+    "message": "فشل إنشاء رابط المشاركة، يرجى المحاولة لاحقًا.",
+    "description": "رسالة خطأ عند فشل إنشاء رابط المشاركة"
+  },
+  "share.disableFailed": {
+    "message": "فشل تعطيل رابط المشاركة، يرجى المحاولة لاحقًا.",
+    "description": "رسالة خطأ عند فشل تعطيل رابط المشاركة"
+  },
+  "share.startYourOwn": {
+    "message": "اذهب لبدء محادثتي الخاصة",
+    "description": "دعوة للعمل على الصفحة العامة المشاركة لتوجيه الزوار المجهولين إلى الصفحة الرئيسية للتطبيق"
+  },
+  "share.unavailableTitle": {
+    "message": "هذه المحادثة المشاركة غير متاحة.",
+    "description": "عنوان الصفحة العامة المشاركة عندما يكون الرابط غير صالح أو غير فعال"
+  },
+  "share.unavailableHint": {
+    "message": "قد يكون الطرف الآخر قد قام بتعطيل الرابط، أو أن الرابط غير صحيح.",
+    "description": "رسالة تظهر عندما يكون رابط المشاركة غير صالح أو غير فعال"
+  },
+  "share.viewOnly": {
+    "message": "محادثة مشاركة للعرض فقط",
+    "description": "علامة تشير إلى أن المحادثة المشاركة للعرض فقط في الصفحة العامة"
+  },
+  "share.untitled": {
+    "message": "محادثة بلا عنوان",
+    "description": "نص بديل يستخدم عندما تكون المحادثة المشاركة بلا عنوان"
+  },
+  "share.footerNote": {
+    "message": "أنت تشاهد محادثة تم مشاركتها. انقر أعلاه للدردشة مع AI بنفسك.",
+    "description": "شرح أسفل المحادثة في الصفحة العامة المشاركة"
   },
   "model.claudeOpus47": {
     "message": "Claude Opus 4.7",
     "description": "Model display name"
   },
   "model.claudeOpus47Description": {
-    "message": "Advanced Claude Opus with enhanced reasoning.",
-    "description": "Model description"
+    "message": "النموذج الأكثر تقدمًا حاليًا",
+    "description": "وصف نموذج Claude Opus 4.7"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.unhide": {
+    "message": "Unhide",
+    "description": "Restore a hidden artifact"
   },
-  "model.gpt41Description": {
-    "message": "Versatile mid-tier model with strong general performance.",
-    "description": "Model description"
+  "artifacts.showHidden": {
+    "message": "Show hidden",
+    "description": "Toggle in the filter bar to include hidden artifacts"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
-  },
-  "model.gpt4oDescription": {
-    "message": "OpenAI multimodal flagship supporting text, image and audio.",
-    "description": "Model description"
-  },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
-  },
-  "model.51Description": {
-    "message": "Balanced GPT-5.1 model for everyday tasks.",
-    "description": "Model description"
-  },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
-  },
-  "model.52Description": {
-    "message": "Enhanced GPT-5.2 with improved reasoning.",
-    "description": "Model description"
-  },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
-  },
-  "model.5MiniDescription": {
-    "message": "Lightweight and cost-effective GPT-5 model.",
-    "description": "Model description"
-  },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
-  },
-  "model.5NanoDescription": {
-    "message": "Fastest GPT-5 model for simple tasks.",
-    "description": "Model description"
-  },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
-  },
-  "model.o1Description": {
-    "message": "Reasoning model optimized for complex STEM problems.",
-    "description": "Model description"
-  },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
-  },
-  "model.o3Description": {
-    "message": "Advanced reasoning model with strong coding capabilities.",
-    "description": "Model description"
-  },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
-  },
-  "model.deepseekR10528Description": {
-    "message": "Updated reasoning model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
-  },
-  "model.deepseekV3250324Description": {
-    "message": "General-purpose chat model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
-  },
-  "model.gemini20FlashDescription": {
-    "message": "Fast and efficient Gemini model.",
-    "description": "Model description"
-  },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
-  },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Lightweight version of Gemini 2.5 Flash.",
-    "description": "Model description"
-  },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
-  },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Preview of Gemini 3 Flash series.",
-    "description": "Model description"
-  },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
-  },
-  "model.claudeSonnet5Description": {
-    "message": "Fast and capable Claude model for most tasks.",
-    "description": "Model description"
-  },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
-  },
-  "model.claudeOpus46Description": {
-    "message": "High-performance Claude Opus model.",
-    "description": "Model description"
-  },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
-  },
-  "model.claude37SonnetDescription": {
-    "message": "Previous-generation Claude Sonnet with strong reasoning.",
-    "description": "Model description"
-  },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
-  },
-  "model.kimiK2Instruct0905Description": {
-    "message": "Instruction-tuned Kimi K2 variant.",
-    "description": "Model description"
-  },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
-  },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "Faster preview version of Kimi K2.",
-    "description": "Model description"
-  },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
-  },
-  "model.glm5Description": {
-    "message": "General-purpose GLM-5 model.",
-    "description": "Model description"
-  },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
-  },
-  "model.glm5TurboDescription": {
-    "message": "Accelerated GLM-5 model for faster responses.",
-    "description": "Model description"
-  },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
-  },
-  "model.glm46Description": {
-    "message": "Reasoning-capable GLM model.",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "Hidden",
+    "description": "Badge shown on artifacts that are currently hidden"
   }
 }

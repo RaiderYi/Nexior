@@ -724,183 +724,195 @@
   "scheduledTasks.form.skillsConfirm": {
     "message": "This task will allow {count} Skill/MCP item(s) to skip interactive confirmation or load restrictions in background runs: {skills}. They may send messages, publish content, or write to external services. Please confirm."
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "Bind the skill first",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "Save anyway",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.navTitle": {
+    "message": "Artifacts",
+    "description": "Sidebar artifacts entry"
   },
-  "model.gpt41Description": {
-    "message": "Versatile mid-tier model with strong general performance.",
-    "description": "Model description"
+  "artifacts.title": {
+    "message": "My Artifacts",
+    "description": "Artifacts page title"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
+  "artifacts.summaryTotal": {
+    "message": "{count} artifacts",
+    "description": "Artifacts summary total"
   },
-  "model.gpt4oDescription": {
-    "message": "OpenAI multimodal flagship supporting text, image and audio.",
-    "description": "Model description"
+  "artifacts.filterAll": {
+    "message": "All",
+    "description": "Artifact kind filter - all"
   },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
+  "artifacts.empty": {
+    "message": "No artifacts yet. After the AI publishes articles, generates images or sends emails for you, they will show up here automatically.",
+    "description": "Artifacts empty hint"
   },
-  "model.51Description": {
-    "message": "Balanced GPT-5.1 model for everyday tasks.",
-    "description": "Model description"
+  "artifacts.loadError": {
+    "message": "Failed to load artifacts",
+    "description": "Artifacts load error"
   },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
+  "artifacts.actionError": {
+    "message": "Action failed, please retry",
+    "description": "Artifact action error"
   },
-  "model.52Description": {
-    "message": "Enhanced GPT-5.2 with improved reasoning.",
-    "description": "Model description"
+  "artifacts.open": {
+    "message": "Open",
+    "description": "Open artifact source link"
   },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
+  "artifacts.hide": {
+    "message": "Hide",
+    "description": "Hide artifact"
   },
-  "model.5MiniDescription": {
-    "message": "Lightweight and cost-effective GPT-5 model.",
-    "description": "Model description"
+  "artifacts.unhide": {
+    "message": "Unhide",
+    "description": "Restore a hidden artifact"
   },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
+  "artifacts.showHidden": {
+    "message": "Show hidden",
+    "description": "Toggle in the filter bar to include hidden artifacts"
   },
-  "model.5NanoDescription": {
-    "message": "Fastest GPT-5 model for simple tasks.",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "Hidden",
+    "description": "Badge shown on artifacts that are currently hidden"
   },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
+  "artifacts.delete": {
+    "message": "Delete",
+    "description": "Delete artifact"
   },
-  "model.o1Description": {
-    "message": "Reasoning model optimized for complex STEM problems.",
-    "description": "Model description"
+  "artifacts.deleteConfirm": {
+    "message": "Permanently delete this artifact?",
+    "description": "Delete artifact confirm"
   },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
+  "artifacts.loadMore": {
+    "message": "Load more",
+    "description": "Load more artifacts"
   },
-  "model.o3Description": {
-    "message": "Advanced reasoning model with strong coding capabilities.",
-    "description": "Model description"
+  "artifacts.sourceAuto": {
+    "message": "Auto-captured",
+    "description": "Auto-capture source badge"
   },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
+  "artifacts.kind.article": {
+    "message": "Article",
+    "description": "Artifact kind - Article"
   },
-  "model.deepseekR10528Description": {
-    "message": "Updated reasoning model from DeepSeek.",
-    "description": "Model description"
+  "artifacts.kind.image": {
+    "message": "Image",
+    "description": "Artifact kind - Image"
   },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
+  "artifacts.kind.video": {
+    "message": "Video",
+    "description": "Artifact kind - Video"
   },
-  "model.deepseekV3250324Description": {
-    "message": "General-purpose chat model from DeepSeek.",
-    "description": "Model description"
+  "artifacts.kind.audio": {
+    "message": "Audio",
+    "description": "Artifact kind - Audio"
   },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
+  "artifacts.kind.document": {
+    "message": "Document",
+    "description": "Artifact kind - Document"
   },
-  "model.gemini20FlashDescription": {
-    "message": "Fast and efficient Gemini model.",
-    "description": "Model description"
+  "artifacts.kind.email": {
+    "message": "Email",
+    "description": "Artifact kind - Email"
   },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
+  "artifacts.kind.message": {
+    "message": "Message",
+    "description": "Artifact kind - Message"
   },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Lightweight version of Gemini 2.5 Flash.",
-    "description": "Model description"
+  "artifacts.kind.dataset": {
+    "message": "Dataset",
+    "description": "Artifact kind - Dataset"
   },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
+  "artifacts.kind.link": {
+    "message": "Link",
+    "description": "Artifact kind - Link"
   },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Preview of Gemini 3 Flash series.",
-    "description": "Model description"
+  "artifacts.kind.other": {
+    "message": "Other",
+    "description": "Artifact kind - Other"
   },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
+  "share.menu": {
+    "message": "Share",
+    "description": "Sidebar/toolbar menu item that opens the share-conversation dialog"
   },
-  "model.claudeSonnet5Description": {
-    "message": "Fast and capable Claude model for most tasks.",
-    "description": "Model description"
+  "share.dialogTitle": {
+    "message": "Share conversation",
+    "description": "Title of the share-conversation dialog"
   },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
+  "share.description": {
+    "message": "Anyone with the link can view this conversation. They cannot continue the chat.",
+    "description": "Explains what happens when a conversation is shared"
   },
-  "model.claudeOpus46Description": {
-    "message": "High-performance Claude Opus model.",
-    "description": "Model description"
+  "share.createLink": {
+    "message": "Create share link",
+    "description": "Button that creates a public share link for the conversation"
   },
-  "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+  "share.copy": {
+    "message": "Copy link",
+    "description": "Button that copies the share link to the clipboard"
   },
-  "model.claudeOpus47Description": {
-    "message": "Advanced Claude Opus with enhanced reasoning.",
-    "description": "Model description"
+  "share.copied": {
+    "message": "Copied",
+    "description": "Label shown briefly on the copy button after the link is copied"
   },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
+  "share.disable": {
+    "message": "Disable link",
+    "description": "Button that revokes the share link so the URL stops working"
   },
-  "model.claude37SonnetDescription": {
-    "message": "Previous-generation Claude Sonnet with strong reasoning.",
-    "description": "Model description"
+  "share.disabled": {
+    "message": "Share link disabled.",
+    "description": "Message shown after the share link is disabled"
   },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
+  "share.needLogin": {
+    "message": "Please sign in first to share this conversation.",
+    "description": "Error shown when a guest tries to share a conversation without signing in"
   },
-  "model.kimiK2Instruct0905Description": {
-    "message": "Instruction-tuned Kimi K2 variant.",
-    "description": "Model description"
+  "share.noConversation": {
+    "message": "Open a conversation first, then share it.",
+    "description": "Error shown when the share button is used with no active conversation"
   },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
+  "share.createFailed": {
+    "message": "Failed to create share link, please try again later.",
+    "description": "Error toast when creating a share link fails"
   },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "Faster preview version of Kimi K2.",
-    "description": "Model description"
+  "share.disableFailed": {
+    "message": "Failed to disable share link, please try again later.",
+    "description": "Error toast when revoking a share link fails"
   },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
+  "share.startYourOwn": {
+    "message": "Start your own chat",
+    "description": "Call-to-action shown on the public share page linking anonymous viewers to the app home"
   },
-  "model.glm5Description": {
-    "message": "General-purpose GLM-5 model.",
-    "description": "Model description"
+  "share.unavailableTitle": {
+    "message": "This shared conversation is unavailable.",
+    "description": "Heading shown on the public share page when the share link is invalid or revoked"
   },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
+  "share.unavailableHint": {
+    "message": "The owner may have disabled the link or the URL is incorrect.",
+    "description": "Hint shown on the public share page when the share link is invalid or revoked"
   },
-  "model.glm5TurboDescription": {
-    "message": "Accelerated GLM-5 model for faster responses.",
-    "description": "Model description"
+  "share.viewOnly": {
+    "message": "View-only shared conversation",
+    "description": "Badge shown on the public share page indicating the conversation is read-only"
   },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
+  "share.untitled": {
+    "message": "Untitled conversation",
+    "description": "Placeholder title used when a shared conversation has no title"
   },
-  "model.glm46Description": {
-    "message": "Reasoning-capable GLM model.",
-    "description": "Model description"
+  "share.footerNote": {
+    "message": "You are viewing a shared conversation. To chat with AI yourself, click above.",
+    "description": "Footer note shown on the public share page under the conversation"
   }
 }

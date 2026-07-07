@@ -2,6 +2,12 @@
   <div class="download-page">
     <div class="download-page__glow" aria-hidden="true"></div>
     <div class="download-page__inner">
+      <!-- Bare layout has no app chrome (native/desktop have no browser back) — always offer a way back. -->
+      <button type="button" class="download-back" @click="goBack">
+        <font-awesome-icon :icon="faArrowLeft" class="download-back__icon" />
+        <span>{{ $t('common.button.goBack') }}</span>
+      </button>
+
       <!-- Hero -->
       <header class="hero">
         <span class="hero__brand">
@@ -15,7 +21,6 @@
           <span class="badge badge--live">
             <span class="badge__dot"></span>{{ $t('common.message.mobileAvailableNow') }}
           </span>
-          <span class="badge">v{{ version }}</span>
           <span class="badge">{{ $t('common.message.mobileSharedAccount') }}</span>
         </div>
 
@@ -95,14 +100,14 @@
                   <font-awesome-icon :icon="faDownload" class="btn-icon" />
                   {{ $t('common.button.downloadAndroid') }}
                 </el-button>
-                <span class="platform__meta">{{ $t('common.message.mobileApkFallback') }} · v{{ version }}</span>
+                <span class="platform__meta">{{ $t('common.message.mobileApkFallback') }}</span>
               </div>
               <template v-else>
                 <el-button type="primary" round size="large" tag="a" :href="androidDownloadUrl" target="_blank">
                   <font-awesome-icon :icon="faDownload" class="btn-icon" />
                   {{ $t('common.button.downloadAndroid') }}
                 </el-button>
-                <span class="platform__meta">{{ $t('common.message.mobileDirectInstall') }} · v{{ version }}</span>
+                <span class="platform__meta">{{ $t('common.message.mobileDirectInstall') }}</span>
               </template>
             </template>
           </div>
@@ -199,11 +204,11 @@
           <p class="platform__text">{{ $t('common.message.desktopWindowsHint') }}</p>
 
           <div class="platform__foot platform__foot--stack">
-            <el-button type="primary" round size="large" tag="a" :href="windowsDownloadUrl" target="_blank">
+            <el-button type="primary" round size="large" tag="a" :href="desktopReleasesUrl" target="_blank">
               <font-awesome-icon :icon="faWindows" class="btn-icon" />
               {{ $t('common.button.downloadWindows') }}
             </el-button>
-            <span class="platform__meta">Beta · v{{ desktopVersion }}</span>
+            <span class="platform__meta">Beta</span>
           </div>
         </article>
 
@@ -219,17 +224,11 @@
           <p class="platform__text">{{ $t('common.message.desktopMacHint') }}</p>
 
           <div class="platform__foot platform__foot--stack">
-            <div class="btn-row">
-              <el-button type="primary" round size="large" tag="a" :href="macArmDownloadUrl" target="_blank">
-                <font-awesome-icon :icon="faApple" class="btn-icon" />
-                Apple Silicon
-              </el-button>
-              <el-button round size="large" class="btn-ghost" tag="a" :href="macIntelDownloadUrl" target="_blank">
-                <font-awesome-icon :icon="faApple" class="btn-icon" />
-                Intel
-              </el-button>
-            </div>
-            <span class="platform__meta">Beta · v{{ desktopVersion }}</span>
+            <el-button type="primary" round size="large" tag="a" :href="desktopReleasesUrl" target="_blank">
+              <font-awesome-icon :icon="faApple" class="btn-icon" />
+              {{ $t('common.button.downloadMac') }}
+            </el-button>
+            <span class="platform__meta">Beta · Apple Silicon &amp; Intel</span>
           </div>
         </article>
       </section>
@@ -274,16 +273,12 @@ import { ElButton } from 'element-plus';
 import QrCode from 'vue-qrcode';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faAndroid, faApple, faGooglePlay, faWindows } from '@fortawesome/free-brands-svg-icons';
-import { faDownload, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faCircleInfo, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import defaultLogo from '@/assets/images/logo.png';
 import {
-  DESKTOP_APP_VERSION,
-  DESKTOP_MAC_ARM_DOWNLOAD_URL,
-  DESKTOP_MAC_INTEL_DOWNLOAD_URL,
-  DESKTOP_WINDOWS_DOWNLOAD_URL,
+  DESKTOP_RELEASES_URL,
   MOBILE_ANDROID_DOWNLOAD_URL,
   MOBILE_ANDROID_PLAY_STORE_URL,
-  MOBILE_APP_VERSION,
   MOBILE_IOS_APP_STORE_URL,
   MOBILE_IOS_DOWNLOAD_URL,
   MOBILE_IOS_FALLBACK_URL
@@ -303,13 +298,11 @@ export default defineComponent({
       faGooglePlay,
       faWindows,
       faDownload,
-      faCircleInfo
+      faCircleInfo,
+      faArrowLeft
     };
   },
   computed: {
-    version() {
-      return MOBILE_APP_VERSION;
-    },
     brandTitle(): string {
       return this.$store.state.site?.title || 'AceData';
     },
@@ -346,20 +339,18 @@ export default defineComponent({
     hasIos() {
       return this.hasAppStore || this.hasIosDownload;
     },
-    desktopVersion() {
-      return DESKTOP_APP_VERSION;
-    },
-    windowsDownloadUrl() {
-      return DESKTOP_WINDOWS_DOWNLOAD_URL;
-    },
-    macArmDownloadUrl() {
-      return DESKTOP_MAC_ARM_DOWNLOAD_URL;
-    },
-    macIntelDownloadUrl() {
-      return DESKTOP_MAC_INTEL_DOWNLOAD_URL;
+    desktopReleasesUrl() {
+      return DESKTOP_RELEASES_URL;
     }
   },
   methods: {
+    goBack() {
+      if (window.history.length > 1) {
+        this.$router.back();
+      } else {
+        this.$router.push('/');
+      }
+    },
     openSupport() {
       window.open('https://platform.acedata.cloud/support', '_blank');
     }
@@ -395,6 +386,35 @@ export default defineComponent({
   max-width: 1080px;
   margin: 0 auto;
   padding: 72px 24px 96px;
+}
+
+.download-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 9px 16px 9px 13px;
+  border-radius: 999px;
+  background: var(--app-bg-section);
+  border: 1px solid var(--app-border-subtle);
+  color: var(--el-text-color-regular);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    color: var(--app-brand-hex);
+    border-color: rgba(var(--app-brand-rgb), 0.4);
+    transform: translateX(-2px);
+  }
+}
+
+.download-back__icon {
+  font-size: 13px;
 }
 
 /* Hero */

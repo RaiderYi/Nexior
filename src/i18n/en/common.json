@@ -811,6 +811,42 @@
     "message": "API Key",
     "description": "API Key label in the settings page sidebar - management of user-provided (BYOK) upstream service provider API Keys"
   },
+  "settings.memory": {
+    "message": "Memory",
+    "description": "Sidebar label for the Memory tab in the settings dialog, where users view and manage what the assistant remembers about them"
+  },
+  "settings.memoryIntro": {
+    "message": "The assistant remembers useful details from your chats to give you better, more personalized responses across conversations. You're in control — review anything it has saved and remove what you don't want it to keep.",
+    "description": "Intro paragraph at the top of the Memory settings tab"
+  },
+  "settings.memoryNeedsChat": {
+    "message": "Start a chat first to enable memory.",
+    "description": "Shown in the Memory settings tab when the chat application/token has not loaded yet"
+  },
+  "settings.memoryStored": {
+    "message": "Saved memories",
+    "description": "Section heading above the list of stored memory entries"
+  },
+  "settings.memoryEmpty": {
+    "message": "Nothing saved yet. As you chat, the assistant will remember durable preferences and facts here.",
+    "description": "Empty state shown when the user has no stored memories"
+  },
+  "settings.memoryForget": {
+    "message": "Forget",
+    "description": "Button on a memory row to delete that single memory entry"
+  },
+  "settings.memoryClearAll": {
+    "message": "Clear all",
+    "description": "Button to delete all stored memories at once"
+  },
+  "settings.memoryClearConfirm": {
+    "message": "This permanently deletes everything the assistant has remembered about you. This cannot be undone.",
+    "description": "Confirmation dialog message shown before clearing all memories"
+  },
+  "settings.memoryError": {
+    "message": "Something went wrong. Please try again.",
+    "description": "Error toast shown when a memory delete/clear operation fails"
+  },
   "field.operations": {
     "message": "Actions",
     "description": "Generic column title: column for action buttons in table rows (edit, delete, etc.)"
@@ -931,8 +967,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "Phone automation skills",
+    "description": "Heading for the Android-only section that installs skills which drive apps on the phone via Computer Use."
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "Install skills that let the assistant operate apps on this phone. They run through Computer Use, so enable the accessibility permission and Computer Use above first. Each action still follows your Computer Use confirmations.",
+    "description": "Help text under the phone-automation skills heading."
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "Xiaohongshu DM auto-reply",
+    "description": "Display name of the Xiaohongshu (RED) direct-message auto-reply skill."
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "Reads new private messages in the Xiaohongshu app and drafts replies. Asks you to confirm before sending.",
+    "description": "One-line description of the Xiaohongshu DM skill."
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "Install",
+    "description": "Button that installs the skill into the user's account."
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "Installed",
+    "description": "Tag shown when the skill is already installed."
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "Loading available skills…",
+    "description": "Placeholder while the skill directory is being fetched."
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "No phone skills available yet.",
+    "description": "Empty state when no installable phone skill is found."
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "Enable the accessibility permission and turn on Computer Use above before installing.",
+    "description": "Hint shown when the install button is disabled because prerequisites are missing."
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "Installed. It takes effect on your next chat.",
+    "description": "Confirmation shown after a successful install."
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "Install failed. Please try again.",
+    "description": "Error shown when the install request fails."
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "Couldn't load available skills. Please try again.",
+    "description": "Error shown when fetching the skill directory fails."
+  },
   "settings.localToolsPreauthorizeAll": "Pre-approve all computer actions",
   "settings.localToolsPreauthorizeHint": "Allow screenshot, click, type, key and every computer action at once, and trigger the required system permissions.",
+  "settings.localToolsCuA11yLabel": {
+    "message": "Accessibility service",
+    "description": "Label for the Computer Use readiness row showing whether the accessibility service is actually running."
+  },
+  "settings.localToolsCuReady": {
+    "message": "Ready to use",
+    "description": "Green status shown when the accessibility service is running and Computer Use actually works."
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "Off — turn it on for Computer Use to work",
+    "description": "Red warning shown when the Computer Use switch is on but the accessibility service is not running."
+  },
   "settings.localToolsCuActionsTitle": "Allow individual actions",
   "settings.localToolsCuActionsHint": "Turn on only the actions you're comfortable letting the AI run without asking each time. Each stays revocable here.",
   "settings.localToolsCuScreenshot": "Screenshot",

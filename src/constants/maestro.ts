@@ -14,19 +14,22 @@ export const MAESTRO_MIN_DURATION = 1;
 export const MAESTRO_MAX_DURATION = 600;
 // Production tier (effort/price): draft = fast preview, standard = balanced, premium = richer.
 export const MAESTRO_ALLOWED_QUALITIES = ['draft', 'standard', 'premium'];
-// Video type: auto lets the director pick; the rest pin a production style.
-export const MAESTRO_ALLOWED_SCENARIOS = [
-  'auto',
-  'drama',
-  'general',
-  'explainer',
-  'product',
-  'website',
-  'slides',
-  'motion',
-  'changelog',
-  'captions'
-];
+// Video type: a routing hint. `auto` lets the director pick; the rest bias the route.
+// Legacy values (general/explainer/product/website/changelog -> auto; slides/slideshow -> auto)
+// are still accepted by the API but no longer offered here.
+export const MAESTRO_ALLOWED_SCENARIOS = ['auto', 'narrated', 'drama', 'avatar', 'motion', 'captions'];
+// Preview thumbnail per scenario — real frames from generated videos (narrated/drama/avatar/captions);
+// auto/motion stay as illustrations. Hosted on the CDN like MAESTRO_LOGO.
+export const MAESTRO_SCENARIO_THUMBNAILS: Record<string, string> = {
+  auto: 'https://cdn.acedata.cloud/f61b85476e.png',
+  narrated: 'https://cdn.acedata.cloud/db6ef158be.jpg',
+  drama: 'https://cdn.acedata.cloud/af85b29164.jpg',
+  avatar: 'https://cdn.acedata.cloud/7ae3e94d5a.jpg',
+  motion: 'https://cdn.acedata.cloud/ab9dc386b6.png',
+  captions: 'https://cdn.acedata.cloud/9a6d16d9f3.jpg'
+};
+// Visual style hint (freeform on the API; these are quick presets). Orthogonal to scenario routing.
+export const MAESTRO_ALLOWED_STYLES = ['auto', 'cinematic', 'minimal', 'neon', 'corporate', 'hand-drawn'];
 
 // Accepted reference media for file_urls (images / video / audio).
 export const MAESTRO_FILE_ACCEPT = '.png,.jpg,.jpeg,.gif,.bmp,.webp,.mp4,.mov,.webm,.mp3,.wav,.m4a';
@@ -38,3 +41,4 @@ export const MAESTRO_DEFAULT_ASPECT = '9:16';
 export const MAESTRO_DEFAULT_DURATION = 30;
 export const MAESTRO_DEFAULT_QUALITY = 'standard';
 export const MAESTRO_DEFAULT_SCENARIO = 'auto';
+export const MAESTRO_DEFAULT_STYLE = 'auto';

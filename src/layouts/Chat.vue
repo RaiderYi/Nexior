@@ -57,6 +57,7 @@ export default defineComponent({
   width: 260px;
   height: 100%;
   overflow-y: auto;
+  overscroll-behavior: contain;
   flex-shrink: 0;
   background-color: var(--app-sidebar-bg);
   border-right: 1px solid var(--app-border-subtle);

@@ -831,6 +831,42 @@
     "message": "مفتاح API",
     "description": "علامة مفتاح API في الشريط الجانبي لصفحة الإعدادات - إدارة مفتاح API لمزود الخدمة العلوي (BYOK)"
   },
+  "settings.memory": {
+    "message": "الذاكرة",
+    "description": "تعيين علامة 'الذاكرة' في شريط جانبي نافذة الإعدادات، حيث يمكن للمستخدم عرض وإدارة المعلومات التي تذكرها المساعد عنه."
+  },
+  "settings.memoryIntro": {
+    "message": "سيتذكر المساعد المعلومات المفيدة التي تذكرها في المحادثات، مما يوفر ردوداً أكثر تخصيصاً في المحادثات المختلفة. لديك السيطرة الكاملة - يمكنك عرض المحتويات المحفوظة وحذف الأجزاء التي لا ترغب في تذكرها.",
+    "description": "نص تقديمي في أعلى علامة تبويب إعدادات الذاكرة."
+  },
+  "settings.memoryNeedsChat": {
+    "message": "يرجى بدء محادثة لتفعيل ميزة الذاكرة.",
+    "description": "يظهر في علامة تبويب إعدادات الذاكرة عندما لم يتم تحميل تطبيق الدردشة/التوكن بعد."
+  },
+  "settings.memoryStored": {
+    "message": "الذكريات المحفوظة",
+    "description": "عنوان القسم أعلى قائمة إدخالات الذاكرة المخزنة."
+  },
+  "settings.memoryEmpty": {
+    "message": "لا توجد ذكريات محفوظة.",
+    "description": "حالة فارغة تظهر عندما لا يكون لدى المستخدم أي ذكريات مخزنة."
+  },
+  "settings.memoryForget": {
+    "message": "نسيان",
+    "description": "زر لحذف ذاكرة معينة من قائمة الإدخالات."
+  },
+  "settings.memoryClearAll": {
+    "message": "مسح الكل",
+    "description": "زر لحذف جميع الذكريات المخزنة دفعة واحدة."
+  },
+  "settings.memoryClearConfirm": {
+    "message": "سيؤدي ذلك إلى حذف جميع المعلومات التي تذكرها المساعد عنك بشكل دائم، ولا يمكن التراجع عن ذلك.",
+    "description": "محتوى نافذة التأكيد قبل مسح جميع الذكريات."
+  },
+  "settings.memoryError": {
+    "message": "فشل العملية، يرجى المحاولة مرة أخرى.",
+    "description": "رسالة خطأ تظهر عند فشل عملية حذف/مسح الذاكرة."
+  },
   "field.operations": {
     "message": "العمليات",
     "description": "عنوان عمود عام: عمود أزرار العمليات في صفوف الجدول (تعديل، حذف، إلخ)"
@@ -951,8 +987,68 @@
     "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
     "description": "Help text under the Computer Use toggle."
   },
+  "settings.localToolsAndroidSkillsTitle": {
+    "message": "مهارات أتمتة الهاتف",
+    "description": "عنوان للقسم المخصص لنظام أندرويد الذي يثبت المهارات التي تتحكم في التطبيقات على الهاتف عبر التحكم بالكمبيوتر."
+  },
+  "settings.localToolsAndroidSkillsHint": {
+    "message": "قم بتثبيت المهارات التي تمكن المساعد من التحكم في تطبيقات الهاتف. يتم تشغيلها عبر \"التحكم بالكمبيوتر\"، يرجى منح إذن الوصول لذوي الاحتياجات الخاصة أعلاه وتفعيل التحكم بالكمبيوتر أولاً. لا تزال كل خطوة تتبع إعدادات تأكيد التحكم بالكمبيوتر الخاصة بك.",
+    "description": "نص مساعد تحت عنوان مهارات أتمتة الهاتف."
+  },
+  "settings.localToolsAndroidSkillsXhsName": {
+    "message": "الرد التلقائي على الرسائل المباشرة في 小红书",
+    "description": "اسم العرض لمهارة الرد التلقائي على الرسائل المباشرة في 小红书 (RED)."
+  },
+  "settings.localToolsAndroidSkillsXhsDesc": {
+    "message": "قراءة الرسائل الجديدة في تطبيق 小红书 وصياغة الردود، سيتم طلب تأكيدك قبل الإرسال.",
+    "description": "وصف مختصر لمهارة الرد التلقائي على الرسائل المباشرة في 小红书."
+  },
+  "settings.localToolsAndroidSkillsInstall": {
+    "message": "تثبيت",
+    "description": "زر يقوم بتثبيت المهارة في حساب المستخدم."
+  },
+  "settings.localToolsAndroidSkillsInstalled": {
+    "message": "تم التثبيت",
+    "description": "علامة تظهر عندما تكون المهارة مثبتة بالفعل."
+  },
+  "settings.localToolsAndroidSkillsLoading": {
+    "message": "جارٍ تحميل المهارات المتاحة...",
+    "description": "نص مؤقت أثناء جلب دليل المهارات."
+  },
+  "settings.localToolsAndroidSkillsUnavailable": {
+    "message": "لا توجد مهارات هاتفية قابلة للتثبيت حالياً.",
+    "description": "حالة فارغة عندما لا يتم العثور على مهارة هاتفية قابلة للتثبيت."
+  },
+  "settings.localToolsAndroidSkillsNeedComputerUse": {
+    "message": "يرجى منح إذن الوصول لذوي الاحتياجات الخاصة وتفعيل التحكم بالكمبيوتر أعلاه قبل التثبيت.",
+    "description": "تلميح يظهر عندما يكون زر التثبيت معطلاً بسبب عدم توفر المتطلبات."
+  },
+  "settings.localToolsAndroidSkillsNextTurn": {
+    "message": "تم التثبيت، وسيتم تفعيله في محادثتك القادمة.",
+    "description": "تأكيد يظهر بعد تثبيت ناجح."
+  },
+  "settings.localToolsAndroidSkillsInstallFailed": {
+    "message": "فشل التثبيت، يرجى المحاولة مرة أخرى.",
+    "description": "خطأ يظهر عندما يفشل طلب التثبيت."
+  },
+  "settings.localToolsAndroidSkillsLoadFailed": {
+    "message": "فشل تحميل المهارات المتاحة، يرجى المحاولة مرة أخرى.",
+    "description": "خطأ يظهر عند فشل جلب دليل المهارات."
+  },
   "settings.localToolsPreauthorizeAll": "السماح مسبقًا بجميع إجراءات الكمبيوتر",
   "settings.localToolsPreauthorizeHint": "اسمح دفعة واحدة بلقطة الشاشة والنقر والكتابة والمفاتيح وجميع الإجراءات، واطلب أذونات النظام المطلوبة.",
+  "settings.localToolsCuA11yLabel": {
+    "message": "خدمات الوصول",
+    "description": "علامة حالة استخدام الكمبيوتر، تشير إلى ما إذا كانت خدمات الوصول تعمل بالفعل."
+  },
+  "settings.localToolsCuReady": {
+    "message": "جاهز، متاح",
+    "description": "حالة خضراء تظهر عندما تكون خدمات الوصول قيد التشغيل، واستخدام الكمبيوتر متاح فعليًا."
+  },
+  "settings.localToolsCuA11yMissing": {
+    "message": "غير مفعل، استخدام الكمبيوتر غير متاح حالياً",
+    "description": "تحذير أحمر يظهر عندما يكون المفتاح مفعلًا ولكن خدمات الوصول لا تعمل."
+  },
   "settings.localToolsCuActionsTitle": "السماح بالإجراءات فرديًا",
   "settings.localToolsCuActionsHint": "فعّل فقط الإجراءات التي تقبل أن ينفّذها الذكاء الاصطناعي دون سؤال في كل مرة. يمكن إلغاء كل منها من هنا.",
   "settings.localToolsCuScreenshot": "لقطة شاشة",

@@ -736,183 +736,203 @@
     "message": "Diese Aufgabe erlaubt {count} Skills, im Hintergrund ohne manuelle Bestätigung auszuführen: {skills}. Diese Skills können Nachrichten senden, Inhalte veröffentlichen oder in externe Dienste schreiben, bitte bestätigen Sie.",
     "description": "Text zur Bestätigung der Autorisierung"
   },
+  "scheduledTasks.form.skillNotActiveTitle": {
+    "message": "Bind the skill first",
+    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+  },
+  "scheduledTasks.form.skillNotActiveMessage": {
+    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+  },
+  "scheduledTasks.form.skillNotActiveForce": {
+    "message": "Save anyway",
+    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+  },
   "scheduledTasks.form.required": {
     "message": "Please fill in task name and prompt"
+  },
+  "artifacts.navTitle": {
+    "message": "Ausgaben",
+    "description": "Navigationsüberschrift für Ausgaben im Seitenmenü"
+  },
+  "artifacts.title": {
+    "message": "Meine Ausgaben",
+    "description": "Titel der Ausgabenseite"
+  },
+  "artifacts.summaryTotal": {
+    "message": "In dieser Ausgabe wurden insgesamt {count} erstellt",
+    "description": "Zusammenfassung der Gesamtanzahl der Ausgaben"
+  },
+  "artifacts.filterAll": {
+    "message": "Alle",
+    "description": "Filter für alle Ausgabetypen"
+  },
+  "artifacts.empty": {
+    "message": "Es gibt noch keine Ausgaben. Lassen Sie die KI Artikel verfassen, Bilder generieren oder E-Mails senden, dann erscheinen die Ausgaben hier automatisch.",
+    "description": "Hinweis, dass keine Ausgaben vorhanden sind"
+  },
+  "artifacts.loadError": {
+    "message": "Laden der Ausgaben fehlgeschlagen",
+    "description": "Hinweis auf einen Fehler beim Laden der Ausgaben"
+  },
+  "artifacts.actionError": {
+    "message": "Aktion fehlgeschlagen, bitte erneut versuchen",
+    "description": "Hinweis auf einen Fehler bei der Ausführung der Aktion"
+  },
+  "artifacts.open": {
+    "message": "Öffnen",
+    "description": "Button zum Öffnen des Originallinks der Ausgabe"
+  },
+  "artifacts.hide": {
+    "message": "Ausblenden",
+    "description": "Button zum Ausblenden von Ausgaben"
+  },
+  "artifacts.delete": {
+    "message": "Löschen",
+    "description": "Button zum Löschen von Ausgaben"
+  },
+  "artifacts.deleteConfirm": {
+    "message": "Möchten Sie diesen Ausgabepost wirklich dauerhaft löschen?",
+    "description": "Bestätigungsaufforderung zum Löschen einer Ausgabe"
+  },
+  "artifacts.loadMore": {
+    "message": "Mehr laden",
+    "description": "Button zum Laden weiterer Ausgaben"
+  },
+  "artifacts.sourceAuto": {
+    "message": "Automatische Erfassung",
+    "description": "Kennzeichnung der Quelle für die automatische Erfassung"
+  },
+  "artifacts.kind.article": {
+    "message": "Artikel",
+    "description": "Ausgabetyp - Artikel"
+  },
+  "artifacts.kind.image": {
+    "message": "Bild",
+    "description": "Ausgabetyp - Bild"
+  },
+  "artifacts.kind.video": {
+    "message": "Video",
+    "description": "Ausgabetyp - Video"
+  },
+  "artifacts.kind.audio": {
+    "message": "Audio",
+    "description": "Ausgabetyp - Audio"
+  },
+  "artifacts.kind.document": {
+    "message": "Dokument",
+    "description": "Ausgabetyp - Dokument"
+  },
+  "artifacts.kind.email": {
+    "message": "E-Mail",
+    "description": "Ausgabetyp - E-Mail"
+  },
+  "artifacts.kind.message": {
+    "message": "Nachricht",
+    "description": "Ausgabetyp - Nachricht"
+  },
+  "artifacts.kind.dataset": {
+    "message": "Daten",
+    "description": "Ausgabetyp - Daten"
+  },
+  "artifacts.kind.link": {
+    "message": "Link",
+    "description": "Ausgabetyp - Link"
+  },
+  "artifacts.kind.other": {
+    "message": "Sonstiges",
+    "description": "Ausgabetyp - Sonstiges"
+  },
+  "share.menu": {
+    "message": "Teilen",
+    "description": "Menüpunkt zum Öffnen des Dialogfensters zum Teilen in der Seitenleiste/Werkzeugleiste"
+  },
+  "share.dialogTitle": {
+    "message": "Gespräch teilen",
+    "description": "Titel des Dialogfensters zum Teilen von Gesprächen"
+  },
+  "share.description": {
+    "message": "Jeder, der den Link hat, kann dieses Gespräch einsehen, aber nicht weiter chatten.",
+    "description": "Erklärung, was passiert, wenn das Gespräch geteilt wird"
+  },
+  "share.createLink": {
+    "message": "Freigabelink erstellen",
+    "description": "Button zum Erstellen eines öffentlichen Freigabelinks für das Gespräch"
+  },
+  "share.copy": {
+    "message": "Link kopieren",
+    "description": "Button zum Kopieren des Freigabelinks in die Zwischenablage"
+  },
+  "share.copied": {
+    "message": "Kopiert",
+    "description": "Kurze Meldung, die nach erfolgreichem Kopieren auf dem Button erscheint"
+  },
+  "share.disable": {
+    "message": "Link deaktivieren",
+    "description": "Button zum Widerrufen des Freigabelinks und Ungültigmachen der URL"
+  },
+  "share.disabled": {
+    "message": "Freigabelink wurde deaktiviert.",
+    "description": "Hinweis, nachdem der Freigabelink deaktiviert wurde"
+  },
+  "share.needLogin": {
+    "message": "Bitte zuerst einloggen und dann dieses Gespräch teilen.",
+    "description": "Hinweis für nicht eingeloggte Besucher, die versuchen, ein Gespräch zu teilen"
+  },
+  "share.noConversation": {
+    "message": "Bitte öffnen Sie zuerst ein Gespräch, bevor Sie teilen.",
+    "description": "Hinweis, wenn der Teilen-Button ohne aktives Gespräch geklickt wird"
+  },
+  "share.createFailed": {
+    "message": "Erstellen des Freigabelinks fehlgeschlagen, bitte später erneut versuchen.",
+    "description": "Fehlermeldung, wenn das Erstellen des Freigabelinks fehlschlägt"
+  },
+  "share.disableFailed": {
+    "message": "Deaktivieren des Freigabelinks fehlgeschlagen, bitte später erneut versuchen.",
+    "description": "Fehlermeldung, wenn das Deaktivieren des Freigabelinks fehlschlägt"
+  },
+  "share.startYourOwn": {
+    "message": "Mein eigenes Gespräch starten",
+    "description": "Handlungsaufforderung auf der öffentlichen Seite, um anonyme Besucher zur App-Startseite zu leiten"
+  },
+  "share.unavailableTitle": {
+    "message": "Dieses geteilte Gespräch ist nicht verfügbar.",
+    "description": "Titel der öffentlichen Seite, wenn der Freigabelink ungültig oder nicht verfügbar ist"
+  },
+  "share.unavailableHint": {
+    "message": "Der Link wurde möglicherweise deaktiviert oder die URL ist ungültig.",
+    "description": "Hinweis, wenn der Freigabelink ungültig oder nicht verfügbar ist"
+  },
+  "share.viewOnly": {
+    "message": "Nur-Lese-Freigabe des Gesprächs",
+    "description": "Label auf der öffentlichen Seite, das anzeigt, dass das Gespräch nur lesbar ist"
+  },
+  "share.untitled": {
+    "message": "Unbenanntes Gespräch",
+    "description": "Platzhaltertext für ein freigegebenes Gespräch ohne Titel"
+  },
+  "share.footerNote": {
+    "message": "Sie sehen ein freigegebenes Gespräch. Klicken Sie oben, um selbst mit der KI zu chatten.",
+    "description": "Hinweis unter dem freigegebenen Gespräch auf der öffentlichen Seite"
   },
   "model.claudeOpus47": {
     "message": "Claude Opus 4.7",
     "description": "Model display name"
   },
   "model.claudeOpus47Description": {
-    "message": "Advanced Claude Opus with enhanced reasoning.",
-    "description": "Model description"
+    "message": "Aktuell das fortschrittlichste Modell",
+    "description": "Beschreibung des Claude Opus 4.7-Modells"
   },
-  "model.gpt41": {
-    "message": "GPT-4.1",
-    "description": "Model display name"
+  "artifacts.unhide": {
+    "message": "Unhide",
+    "description": "Restore a hidden artifact"
   },
-  "model.gpt41Description": {
-    "message": "Versatile mid-tier model with strong general performance.",
-    "description": "Model description"
+  "artifacts.showHidden": {
+    "message": "Show hidden",
+    "description": "Toggle in the filter bar to include hidden artifacts"
   },
-  "model.gpt4o": {
-    "message": "GPT-4o",
-    "description": "Model display name"
-  },
-  "model.gpt4oDescription": {
-    "message": "OpenAI multimodal flagship supporting text, image and audio.",
-    "description": "Model description"
-  },
-  "model.51": {
-    "message": "GPT-5.1",
-    "description": "Model display name"
-  },
-  "model.51Description": {
-    "message": "Balanced GPT-5.1 model for everyday tasks.",
-    "description": "Model description"
-  },
-  "model.52": {
-    "message": "GPT-5.2",
-    "description": "Model display name"
-  },
-  "model.52Description": {
-    "message": "Enhanced GPT-5.2 with improved reasoning.",
-    "description": "Model description"
-  },
-  "model.5Mini": {
-    "message": "GPT-5 Mini",
-    "description": "Model display name"
-  },
-  "model.5MiniDescription": {
-    "message": "Lightweight and cost-effective GPT-5 model.",
-    "description": "Model description"
-  },
-  "model.5Nano": {
-    "message": "GPT-5 Nano",
-    "description": "Model display name"
-  },
-  "model.5NanoDescription": {
-    "message": "Fastest GPT-5 model for simple tasks.",
-    "description": "Model description"
-  },
-  "model.o1": {
-    "message": "o1",
-    "description": "Model display name"
-  },
-  "model.o1Description": {
-    "message": "Reasoning model optimized for complex STEM problems.",
-    "description": "Model description"
-  },
-  "model.o3": {
-    "message": "o3",
-    "description": "Model display name"
-  },
-  "model.o3Description": {
-    "message": "Advanced reasoning model with strong coding capabilities.",
-    "description": "Model description"
-  },
-  "model.deepseekR10528": {
-    "message": "DeepSeek-R1-0528",
-    "description": "Model display name"
-  },
-  "model.deepseekR10528Description": {
-    "message": "Updated reasoning model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.deepseekV3250324": {
-    "message": "DeepSeek-V3-250324",
-    "description": "Model display name"
-  },
-  "model.deepseekV3250324Description": {
-    "message": "General-purpose chat model from DeepSeek.",
-    "description": "Model description"
-  },
-  "model.gemini20Flash": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model display name"
-  },
-  "model.gemini20FlashDescription": {
-    "message": "Fast and efficient Gemini model.",
-    "description": "Model description"
-  },
-  "model.gemini25FlashLite": {
-    "message": "Gemini 2.5 Flash Lite",
-    "description": "Model display name"
-  },
-  "model.gemini25FlashLiteDescription": {
-    "message": "Lightweight version of Gemini 2.5 Flash.",
-    "description": "Model description"
-  },
-  "model.gemini30FlashPreview": {
-    "message": "Gemini 3 Flash Preview",
-    "description": "Model display name"
-  },
-  "model.gemini30FlashPreviewDescription": {
-    "message": "Preview of Gemini 3 Flash series.",
-    "description": "Model description"
-  },
-  "model.claudeSonnet5": {
-    "message": "Claude Sonnet 5",
-    "description": "Model display name"
-  },
-  "model.claudeSonnet5Description": {
-    "message": "Fast and capable Claude model for most tasks.",
-    "description": "Model description"
-  },
-  "model.claudeOpus46": {
-    "message": "Claude Opus 4.6",
-    "description": "Model display name"
-  },
-  "model.claudeOpus46Description": {
-    "message": "High-performance Claude Opus model.",
-    "description": "Model description"
-  },
-  "model.claude37Sonnet": {
-    "message": "Claude 3.7 Sonnet",
-    "description": "Model display name"
-  },
-  "model.claude37SonnetDescription": {
-    "message": "Previous-generation Claude Sonnet with strong reasoning.",
-    "description": "Model description"
-  },
-  "model.kimiK2Instruct0905": {
-    "message": "Kimi K2 Instruct 0905",
-    "description": "Model display name"
-  },
-  "model.kimiK2Instruct0905Description": {
-    "message": "Instruction-tuned Kimi K2 variant.",
-    "description": "Model description"
-  },
-  "model.kimiK2TurboPreview": {
-    "message": "Kimi K2 Turbo Preview",
-    "description": "Model display name"
-  },
-  "model.kimiK2TurboPreviewDescription": {
-    "message": "Faster preview version of Kimi K2.",
-    "description": "Model description"
-  },
-  "model.glm5": {
-    "message": "GLM-5",
-    "description": "Model display name"
-  },
-  "model.glm5Description": {
-    "message": "General-purpose GLM-5 model.",
-    "description": "Model description"
-  },
-  "model.glm5Turbo": {
-    "message": "GLM-5 Turbo",
-    "description": "Model display name"
-  },
-  "model.glm5TurboDescription": {
-    "message": "Accelerated GLM-5 model for faster responses.",
-    "description": "Model description"
-  },
-  "model.glm46": {
-    "message": "GLM-4.6",
-    "description": "Model display name"
-  },
-  "model.glm46Description": {
-    "message": "Reasoning-capable GLM model.",
-    "description": "Model description"
+  "artifacts.hiddenBadge": {
+    "message": "Hidden",
+    "description": "Badge shown on artifacts that are currently hidden"
   }
 }

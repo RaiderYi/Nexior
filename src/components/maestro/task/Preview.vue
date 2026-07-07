@@ -11,29 +11,44 @@
         </span>
       </div>
       <div class="info">
+        <div v-if="files.length" class="flex justify-start items-center gap-2 mt-2 w-full overflow-x-auto">
+          <template v-for="(file, idx) in files" :key="idx">
+            <image-preview v-if="file.kind === 'image'" :url="file.url" :name="file.name" :closable="false" />
+            <video-preview v-else-if="file.kind === 'video'" :url="file.url" :name="file.name" />
+            <audio-preview v-else-if="file.kind === 'audio'" :url="file.url" :name="file.name" />
+            <a
+              v-else
+              :href="file.url"
+              :title="file.name"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="shrink-0 no-underline"
+            >
+              <file-preview :name="file.name" :closable="false" />
+            </a>
+          </template>
+        </div>
         <p v-if="modelValue?.request?.prompt" class="prompt mt-2">
           {{ modelValue?.request?.prompt }}
-          <span v-if="!isTerminal"> - ({{ statusLabel }}) </span>
-        </p>
-        <p v-if="fileCount" class="text-xs text-[var(--el-text-color-secondary)] mb-1">
-          <font-awesome-icon icon="fa-solid fa-paperclip" class="mr-1" />{{ fileCount }}
+          <span v-if="!isTerminal" class="progress-pct"> · {{ progressText }}</span>
         </p>
       </div>
 
-      <!-- in-progress: task id (+ trace id) + live stage + percentage -->
+      <!-- in-progress: step checklist + overall percentage + task id, in the same bordered card as success/failure -->
       <div v-if="!isTerminal" class="content">
-        <p v-if="progressMessage" class="text-xs text-[var(--el-text-color-secondary)] mb-1">{{ progressMessage }}</p>
-        <el-progress v-if="progressPct !== undefined" :percentage="progressPct" :stroke-width="6" />
-        <p class="text-[var(--el-text-color-regular)] text-xs mb-1 mt-2">
-          <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
-          {{ $t('maestro.name.taskId') }}: {{ modelValue?.id }}
-          <copy-to-clipboard :content="modelValue?.id!" />
-        </p>
-        <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-          <font-awesome-icon icon="fa-solid fa-hashtag" class="mr-1" />
-          {{ $t('maestro.name.traceId') }}: {{ modelValue?.response?.trace_id }}
-          <copy-to-clipboard :content="modelValue?.response?.trace_id" />
-        </p>
+        <el-alert :closable="false" class="mt-2 processing">
+          <progress-steps :model-value="modelValue" />
+          <p class="text-[var(--el-text-color-regular)] text-xs mb-1 mt-3">
+            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            {{ $t('maestro.name.taskId') }}: {{ modelValue?.id }}
+            <copy-to-clipboard :content="modelValue?.id!" />
+          </p>
+          <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
+            <font-awesome-icon icon="fa-solid fa-hashtag" class="mr-1" />
+            {{ $t('maestro.name.traceId') }}: {{ modelValue?.response?.trace_id }}
+            <copy-to-clipboard :content="modelValue?.response?.trace_id" />
+          </p>
+        </el-alert>
       </div>
 
       <!-- success: one player per language variant -->
@@ -102,15 +117,28 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ElImage, ElAlert, ElButton, ElProgress, ElMessage } from 'element-plus';
+import { ElImage, ElAlert, ElButton, ElMessage } from 'element-plus';
 import { IMaestroTask, IMaestroVariant, IMaestroConfig } from '@/models';
 import { MAESTRO_LOGO, MAESTRO_ACTION_REMIX } from '@/constants';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VideoPlayer from '@/components/common/VideoPlayer.vue';
 import ApiCodeButton from '@/components/common/ApiCodeButton.vue';
+import ImagePreview from '@/components/common/ImagePreview.vue';
+import AudioPreview from '@/components/common/AudioPreview.vue';
+import VideoPreview from '@/components/common/VideoPreview.vue';
+import FilePreview from '@/components/common/FilePreview.vue';
+import { isImageUrl, isVideoUrl, isAudioUrl } from '@/utils/is';
+import ProgressSteps from './ProgressSteps.vue';
 
 const TERMINAL = ['succeeded', 'failed'];
+
+type MaestroFileKind = 'image' | 'video' | 'audio' | 'file';
+interface IMaestroInputFile {
+  url: string;
+  name: string;
+  kind: MaestroFileKind;
+}
 
 export default defineComponent({
   name: 'TaskPreview',
@@ -119,10 +147,14 @@ export default defineComponent({
     CopyToClipboard,
     FontAwesomeIcon,
     ElAlert,
-    ElProgress,
     VideoPlayer,
     ElButton,
-    ApiCodeButton
+    ApiCodeButton,
+    ImagePreview,
+    AudioPreview,
+    VideoPreview,
+    FilePreview,
+    ProgressSteps
   },
   props: {
     modelValue: {
@@ -139,21 +171,32 @@ export default defineComponent({
     variants(): IMaestroVariant[] {
       return this.modelValue?.response?.data?.variants || [];
     },
-    fileCount(): number {
-      return this.modelValue?.request?.file_urls?.length || 0;
+    files(): IMaestroInputFile[] {
+      const urls = this.modelValue?.request?.file_urls || [];
+      return urls
+        .filter((url): url is string => !!url)
+        .map((url) => {
+          const clean = url.split('?')[0].split('#')[0];
+          const kind: MaestroFileKind = isImageUrl(clean)
+            ? 'image'
+            : isVideoUrl(clean)
+              ? 'video'
+              : isAudioUrl(clean)
+                ? 'audio'
+                : 'file';
+          return { url, name: this.fileName(clean), kind };
+        });
     },
     isTerminal(): boolean {
       return TERMINAL.includes(this.modelValue?.status || '');
-    },
-    progressMessage(): string | undefined {
-      const progress = this.modelValue?.response?.data?.progress;
-      const last = progress?.length ? progress[progress.length - 1] : undefined;
-      return last?.message || last?.stage || this.modelValue?.response?.data?.stage;
     },
     progressPct(): number | undefined {
       const progress = this.modelValue?.response?.data?.progress;
       const last = progress?.length ? progress[progress.length - 1] : undefined;
       return typeof last?.pct === 'number' ? last.pct : undefined;
+    },
+    progressText(): string {
+      return this.progressPct !== undefined ? `${this.progressPct}%` : this.statusLabel;
     },
     statusLabel(): string {
       const s = this.modelValue?.status || 'pending';
@@ -168,6 +211,14 @@ export default defineComponent({
     }
   },
   methods: {
+    fileName(url: string): string {
+      const base = url.substring(url.lastIndexOf('/') + 1);
+      try {
+        return decodeURIComponent(base) || url;
+      } catch {
+        return base || url;
+      }
+    },
     onDownload(event: MouseEvent, url: string) {
       event?.stopPropagation();
       window.open(url, '_blank');
@@ -241,6 +292,11 @@ $left-width: 70px;
         white-space: normal;
         word-break: break-word;
         overflow-wrap: anywhere;
+        .progress-pct {
+          font-weight: 600;
+          color: var(--el-color-primary);
+          white-space: nowrap;
+        }
       }
     }
 
@@ -251,6 +307,9 @@ $left-width: 70px;
       .el-alert {
         border-left-width: 2px;
         border-left-style: solid;
+        &.processing {
+          border-color: var(--el-color-primary);
+        }
         &.failure {
           border-color: var(--el-color-danger);
         }

@@ -182,6 +182,17 @@
           <el-switch v-model="computerUse" :loading="savingCU" @change="onToggleComputerUse" />
         </div>
         <p class="muted">{{ $t('common.settings.localToolsComputerUseHint') }}</p>
+        <!-- Android: the switch means nothing unless the accessibility service
+             is actually running. Reflect the TRUE, live state + a fix button. -->
+        <div v-if="android && computerUse" class="perm-row cu-ready-row">
+          <span class="perm-name">{{ $t('common.settings.localToolsCuA11yLabel') }}</span>
+          <el-tag size="small" :type="a11yEnabled ? 'success' : 'danger'" effect="plain">
+            {{ a11yEnabled ? $t('common.settings.localToolsCuReady') : $t('common.settings.localToolsCuA11yMissing') }}
+          </el-tag>
+          <el-button v-if="!a11yEnabled" size="small" type="primary" @click="openAndroidAccessibility">
+            {{ $t('common.settings.localToolsOpen') }}
+          </el-button>
+        </div>
         <template v-if="computerTools.length">
           <div class="section-head sub">
             <h4>{{ $t('common.settings.localToolsCuActionsTitle') }}</h4>
@@ -206,6 +217,49 @@
             </li>
           </ul>
         </template>
+      </section>
+
+      <!-- Android: install curated phone-automation skills (computer.* based) -->
+      <section v-if="android">
+        <div class="section-head">
+          <h3>{{ $t('common.settings.localToolsAndroidSkillsTitle') }}</h3>
+        </div>
+        <p class="muted">{{ $t('common.settings.localToolsAndroidSkillsHint') }}</p>
+        <ul class="rows">
+          <li v-if="xhsSkill" class="row">
+            <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" class="row-icon" />
+            <span class="cu-action">
+              <span class="cu-action-name">{{ $t('common.settings.localToolsAndroidSkillsXhsName') }}</span>
+              <span class="cu-action-desc">{{ $t('common.settings.localToolsAndroidSkillsXhsDesc') }}</span>
+            </span>
+            <el-tag v-if="xhsSkill.installed" size="small" type="success" effect="plain">
+              {{ $t('common.settings.localToolsAndroidSkillsInstalled') }}
+            </el-tag>
+            <el-button
+              v-else
+              size="small"
+              type="primary"
+              :loading="xhsInstalling"
+              :disabled="!canInstallXhs"
+              @click="installXhs"
+            >
+              {{ $t('common.settings.localToolsAndroidSkillsInstall') }}
+            </el-button>
+          </li>
+          <li v-else-if="xhsLoading" class="row muted empty">
+            {{ $t('common.settings.localToolsAndroidSkillsLoading') }}
+          </li>
+          <li v-else-if="!xhsError" class="row muted empty">
+            {{ $t('common.settings.localToolsAndroidSkillsUnavailable') }}
+          </li>
+        </ul>
+        <p v-if="xhsSkill && !xhsSkill.installed && !canInstallXhs" class="muted">
+          {{ $t('common.settings.localToolsAndroidSkillsNeedComputerUse') }}
+        </p>
+        <p v-if="xhsSkill && xhsSkill.installed" class="muted saved-tip">
+          {{ $t('common.settings.localToolsAndroidSkillsNextTurn') }}
+        </p>
+        <p v-if="xhsError" class="mcp-error">{{ xhsError }}</p>
       </section>
 
       <!-- macOS system permissions -->
@@ -259,11 +313,23 @@ import { Plus } from '@element-plus/icons-vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { localExec, type IMcpServerStatus } from '@/utils/desktop';
 import { isAndroid } from '@/utils/surface';
+import { httpClient } from '@/operators/common';
+import { getBaseUrlAuth } from '@/utils';
+import type { AxiosResponse } from 'axios';
 
 interface GrantRow {
   key: string;
   name: string;
   input: string;
+}
+
+// One row from AuthBackend's public skill directory (subset of SkillSerializer).
+interface AndroidSkillRow {
+  id: string;
+  identifier: string;
+  name: string;
+  installed: boolean;
+  installable: boolean;
 }
 
 // Editable draft of one MCP server row. `args` / `env` are edited as free text
@@ -313,8 +379,20 @@ export default defineComponent({
       savedTip: false,
       // Android: whether the Computer Use accessibility service is enabled.
       a11yEnabled: false,
+      // Android: curated phone-automation skill (Xiaohongshu DM) + install state.
+      xhsSkill: null as null | AndroidSkillRow,
+      xhsLoading: false,
+      xhsInstalling: false,
+      xhsError: '',
       onFocus: null as null | (() => void),
-      cuOff: null as null | (() => void)
+      cuOff: null as null | (() => void),
+      // Android: interval that re-checks the REAL accessibility state while the
+      // page is visible, so the "usable" status stays honest even if the OS
+      // revokes the grant with this page open.
+      a11yPoll: null as null | number,
+      // Guards refreshA11y so overlapping poll / focus calls can't resolve out
+      // of order and write a stale a11yEnabled.
+      refreshingA11y: false
     };
   },
   computed: {
@@ -323,6 +401,11 @@ export default defineComponent({
     },
     android(): boolean {
       return isAndroid();
+    },
+    // Install only makes sense once the skill can run: accessibility granted AND
+    // Computer Use on. Gate the button on both.
+    canInstallXhs(): boolean {
+      return this.a11yEnabled && this.computerUse;
     }
   },
   async mounted() {
@@ -350,12 +433,19 @@ export default defineComponent({
     await this.loadGrants();
     if (this.android) {
       await this.refreshA11y();
+      void this.fetchXhsSkill();
       // Re-check the accessibility status when the user returns from system
       // settings so the badge/toggles reflect it without a manual reload.
       this.onFocus = () => {
         if (document.visibilityState === 'visible') void this.refreshA11y();
       };
       document.addEventListener('visibilitychange', this.onFocus);
+      // Some OEM ROMs (e.g. Huawei) silently revoke an accessibility grant.
+      // Poll while visible so the "usable" status reflects reality, not just
+      // the last focus event.
+      this.a11yPoll = window.setInterval(() => {
+        if (document.visibilityState === 'visible') void this.refreshA11y();
+      }, 3000);
     }
     // Reflect the global panic hotkey: keep the toggle in sync so a later Save
     // can't silently re-enable Computer Use after it was force-disabled.
@@ -367,14 +457,67 @@ export default defineComponent({
   beforeUnmount() {
     this.cuOff?.();
     if (this.onFocus) document.removeEventListener('visibilitychange', this.onFocus);
+    if (this.a11yPoll) clearInterval(this.a11yPoll);
   },
   methods: {
     async refreshA11y() {
-      const s = await localExec()?.perm?.status();
-      this.a11yEnabled = s?.accessibility === true;
+      // Serialize: a 3s poll and the visibilitychange handler can both call
+      // this; overlapping bridge reads could resolve out of order and write a
+      // stale a11yEnabled. One in-flight read at a time is enough.
+      if (this.refreshingA11y) return;
+      this.refreshingA11y = true;
+      try {
+        const s = await localExec()?.perm?.status();
+        this.a11yEnabled = s?.accessibility === true;
+      } finally {
+        this.refreshingA11y = false;
+      }
     },
     async openAndroidAccessibility() {
       await localExec()?.perm?.openPane('accessibility');
+    },
+    // Fetch the curated Android skill (Xiaohongshu DM auto-reply) from
+    // AuthBackend's public skill directory to show its install state. Same auth +
+    // baseURL override the connector catalog cache uses.
+    async fetchXhsSkill() {
+      this.xhsLoading = true;
+      this.xhsError = '';
+      try {
+        const resp: AxiosResponse<{ items?: AndroidSkillRow[] }> = await httpClient.get('/skills/', {
+          baseURL: `${getBaseUrlAuth()}/api/v1`,
+          params: { q: 'xhs-dm', limit: 10 }
+        });
+        const items = Array.isArray(resp.data?.items) ? resp.data.items : [];
+        this.xhsSkill = items.find((s) => s.identifier?.endsWith('/xhs-dm')) ?? null;
+      } catch (e) {
+        console.warn('[LocalTools] fetch xhs skill failed', e);
+        this.xhsSkill = null;
+        this.xhsError = this.$t('common.settings.localToolsAndroidSkillsLoadFailed');
+      } finally {
+        this.xhsLoading = false;
+      }
+    },
+    // Install the curated skill into the user's account. Takes effect next chat
+    // turn (the worker reads /internal/v1/skills/active per turn). 409 = already
+    // installed, treated as success.
+    async installXhs() {
+      const skill = this.xhsSkill;
+      if (!skill || skill.installed) return;
+      this.xhsInstalling = true;
+      this.xhsError = '';
+      try {
+        await httpClient.post(`/skills/${skill.id}/install/`, {}, { baseURL: `${getBaseUrlAuth()}/api/v1` });
+        skill.installed = true;
+      } catch (e) {
+        const httpStatus = (e as { response?: { status?: number } })?.response?.status;
+        if (httpStatus === 409) {
+          skill.installed = true;
+        } else {
+          this.xhsError = this.$t('common.settings.localToolsAndroidSkillsInstallFailed');
+        }
+      } finally {
+        this.xhsInstalling = false;
+      }
     },
     async loadGrants() {
       const ex = localExec();
@@ -570,6 +713,16 @@ export default defineComponent({
         computerUse: val === true
       });
       this.savingCU = false;
+      // Turning the switch on is meaningless until the accessibility service is
+      // actually running. Read the REAL state directly (not the polled cache,
+      // which a concurrent refresh could overwrite) and — if it isn't running —
+      // jump straight to the system Accessibility settings so "on" is usable.
+      if (val === true && this.android) {
+        const s = await localExec()?.perm?.status();
+        const granted = s?.accessibility === true;
+        this.a11yEnabled = granted;
+        if (!granted) await this.openAndroidAccessibility();
+      }
     },
     // Pre-approve every computer.* action (persistent always-allow), enable
     // Computer Use, and trigger the macOS Screen Recording / Accessibility
@@ -833,5 +986,8 @@ export default defineComponent({
 .perm-name {
   flex: 1;
   font-size: 14px;
+}
+.cu-ready-row {
+  margin-top: 4px;
 }
 </style>

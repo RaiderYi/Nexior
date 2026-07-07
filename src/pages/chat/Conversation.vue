@@ -7,6 +7,11 @@
           <byok-badge class="byok-badge" />
         </div>
         <div class="toolbar-actions">
+          <el-tooltip v-if="conversationId" :content="$t('chat.share.menu')" placement="bottom">
+            <el-button class="toolbar-btn" text @click="shareDialogVisible = true">
+              <font-awesome-icon icon="fa-solid fa-share-nodes" />
+            </el-button>
+          </el-tooltip>
           <el-tooltip v-if="false" :content="$t('chat.agent.tooltip')" placement="bottom">
             <el-button class="toolbar-btn" text @click="agentManagerVisible = true">
               <font-awesome-icon icon="fa-solid fa-desktop" />
@@ -22,6 +27,12 @@
         :agent-name="agentName"
         :tool-count="agentToolCount"
         :connected-at="agentConnectedAt"
+      />
+      <share-conversation-dialog
+        v-model="shareDialogVisible"
+        :conversation-id="conversationId"
+        :share-id="conversation?.share_id"
+        @update:share-id="onShareIdUpdated"
       />
       <div :class="{ dialogue: true, empty: messages.length === 0 }">
         <div v-if="messages.length > 0" class="messages">
@@ -77,6 +88,7 @@ import Composer from '@/components/chat/Composer.vue';
 import ModelSelector from '@/components/chat/ModelSelector.vue';
 import DesktopAgentManager from '@/components/chat/DesktopAgentManager.vue';
 import BYOKBadge from '@/components/chat/BYOKBadge.vue';
+import ShareConversationDialog from '@/components/chat/ShareConversationDialog.vue';
 import { ERROR_CODE_CANCELED, ERROR_CODE_NOT_APPLIED, ERROR_CODE_UNKNOWN } from '@/constants/errorCode';
 import { Status } from '@/models';
 import Disclaimer from '@/components/chat/Disclaimer.vue';
@@ -92,8 +104,10 @@ import {
   buildAuthorizedConsentOutput,
   findPendingConsentBlock,
   parseConsentReturnFromQuery,
+  repairInstallReturnToUrl,
   type IConsentReturn
 } from '@/components/chat/consentReturn';
+import { hasLoadedConversationMessages } from '@/components/chat/conversationRestore';
 import { chatOperator, agentOperator } from '@/operators';
 import { ElTooltip, ElButton } from 'element-plus';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -117,6 +131,7 @@ export interface IData {
   agentName: string;
   agentToolCount: number;
   agentConnectedAt: string;
+  shareDialogVisible: boolean;
   /**
    * Set right before pushing the URL for a freshly-completed chat so the
    * `conversationId` watcher can recognise the change as “already loaded
@@ -156,6 +171,7 @@ export default defineComponent({
     ModelSelector,
     DesktopAgentManager,
     'byok-badge': BYOKBadge,
+    ShareConversationDialog,
     Message,
     Layout,
     ElTooltip,
@@ -178,6 +194,7 @@ export default defineComponent({
       agentName: '',
       agentToolCount: 0,
       agentConnectedAt: '',
+      shareDialogVisible: false,
       skipNextRestoreId: undefined,
       messages: [],
       pendingConsentReturn: null
@@ -319,6 +336,12 @@ export default defineComponent({
       // Drop any deferred desktop client tool from a prior turn so a new chat
       // never auto-runs a stale tool against the wrong conversation.
       this.pendingClientTools = [];
+    },
+    onShareIdUpdated(shareId?: string) {
+      // Keep the store conversation in sync so the dialog reopens with the
+      // current link (or the "create" state after revoking).
+      if (!this.conversation) return;
+      this.$store.dispatch('chat/setConversation', { ...this.conversation, share_id: shareId });
     },
     // Idempotent restore for the URL-pinned conversation. Bails on
     // missing token (credential.token watcher will retry), missing :id
@@ -598,7 +621,7 @@ export default defineComponent({
       //    Side-panel summaries do NOT include `messages`, so we always
       //    need a `retrieve` call the first time a conversation is opened.
       let conversation: IChatConversation | undefined = this.conversations?.find((c: IChatConversation) => c.id === id);
-      if (!conversation || !conversation.messages) {
+      if (!hasLoadedConversationMessages(conversation)) {
         const fetched = await this.$store.dispatch('chat/getConversation', id);
         if (fetched) conversation = fetched;
       }
@@ -755,6 +778,13 @@ export default defineComponent({
       const lastAssistant = [...this.messages].reverse().find((m) => m.role === ROLE_ASSISTANT);
       if (lastAssistant && Array.isArray(lastAssistant.content)) {
         const content = lastAssistant.content as IChatMessageContentItem[];
+        // Collect tool-result screenshots here and append them AFTER folding
+        // every block, so they trail the tool_use blocks in the exact order
+        // the worker persists them (the worker buffers image blocks and pushes
+        // them once, post-loop — see conversations.ts). Interleaving per result
+        // would reorder images vs a reload when several parallel client tools
+        // return screenshots.
+        const imageBlocks: IChatMessageContentItem[] = [];
         for (const tr of toolResults) {
           const block = content.find((b) => b.type === 'tool_use' && b.tool_id === tr.tool_use_id);
           if (block) {
@@ -763,7 +793,26 @@ export default defineComponent({
             if (tr.is_error) block.is_error = true;
             delete block.pending_question;
           }
+          // Mirror the worker: a tool-result image (e.g. a computer.screenshot)
+          // is persisted as a trailing `image_url` block on the pause message,
+          // so a reload shows it. Buffer the same block locally so the live
+          // stream matches the reloaded view instead of only appearing after
+          // refresh. Idempotent by tool_use_id (a re-resume must not duplicate).
+          // Gate on the SAME validation the worker applies before persisting
+          // (`isValidResultImage`): if the worker would reject the value it
+          // won't persist it, so appending it locally would show live but
+          // vanish on reload — an inverse mismatch. Validating here keeps the
+          // two views identical and blocks any non-image URL from the <img>.
+          if (tr.image && this._isValidResultImage(tr.image)) {
+            const alt = `${tr.tool_use_id} screenshot`;
+            const already = content.some((b) => b.type === 'image_url' && b.alt === alt);
+            const buffered = imageBlocks.some((b) => b.alt === alt);
+            if (!already && !buffered) {
+              imageBlocks.push({ type: 'image_url', image_url: { url: tr.image }, alt });
+            }
+          }
         }
+        if (imageBlocks.length) content.push(...imageBlocks);
       }
       // Push fresh pending assistant message for the resumed turn.
       this.messages.push({
@@ -923,6 +972,21 @@ export default defineComponent({
       this._resumeWithToolResults(results, conversationId);
     },
     /**
+     * Mirror of the aichat2 worker's `isValidResultImage` guard. The worker
+     * persists a tool-result screenshot as an `image_url` block ONLY when the
+     * value is a whitespace-free `https://` URL or a base64 raster
+     * `data:image/(png|jpeg|webp)` URI within the size cap; anything else it
+     * silently drops. The local fold gates on the same rule so the live view
+     * shows exactly what a reload would (no inverse mismatch) and no non-image
+     * URL ever reaches the `<img>` sink. Keep in sync with the worker.
+     */
+    _isValidResultImage(s: string): boolean {
+      const MAX_RESULT_IMAGE_CHARS = 6_000_000;
+      if (!s || s.length > MAX_RESULT_IMAGE_CHARS) return false;
+      if (s.startsWith('https://')) return !/\s/.test(s);
+      return /^data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(s);
+    },
+    /**
      * Host a tool-result image (e.g. a computer.screenshot) on the platform
      * file store and return its short public URL — exactly how a normal
      * user-attached image is sent. A screenshot returned inline as a multi-MB
@@ -1043,7 +1107,12 @@ export default defineComponent({
         console.warn('authorize click with no install_url', payload);
         return;
       }
-      window.location.href = url;
+      // The worker builds the install `return_to` as `/chat/c/<conv>` —
+      // a path Nexior does not serve — so a cookie/BYOC bind that returns
+      // there 404s. Rewrite it to the current group's real conversation
+      // route before handing off to AuthFrontend.
+      const prefix = this.$route.matched[0]?.path ?? '';
+      window.location.href = repairInstallReturnToUrl(url, prefix);
     },
     /**
      * Stash any ``?consent=<rid>&connector=<id>`` pair on

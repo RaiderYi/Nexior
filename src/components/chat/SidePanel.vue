@@ -18,6 +18,14 @@
           {{ $t('chat.scheduledTasks.navTitle') }}
         </div>
       </div>
+      <div class="conversation" @click="onArtifacts">
+        <div class="icons">
+          <font-awesome-icon icon="fa-solid fa-box-archive" class="icon" />
+        </div>
+        <div class="title">
+          {{ $t('chat.artifacts.navTitle') }}
+        </div>
+      </div>
       <div v-for="(group, groupKey) in conversationGroups" :key="groupKey" class="group">
         <div class="key">
           {{ $t(`chat.group.${groupKey}`) }}
@@ -46,6 +54,10 @@
                   <el-dropdown-item command="rename" @click.stop>
                     <font-awesome-icon icon="fa-solid fa-pen-to-square" class="mr-2" />
                     重命名
+                  </el-dropdown-item>
+                  <el-dropdown-item command="share" @click.stop>
+                    <font-awesome-icon icon="fa-solid fa-share-nodes" class="mr-2" />
+                    {{ $t('chat.share.menu') }}
                   </el-dropdown-item>
                   <el-dropdown-item command="delete" @click.stop>
                     <font-awesome-icon icon="fa-solid fa-trash" class="mr-2" />
@@ -83,6 +95,13 @@
         </el-button>
       </template>
     </el-dialog>
+
+    <share-conversation-dialog
+      v-model="shareDialogVisible"
+      :conversation-id="actingConversation?.id"
+      :share-id="actingConversation?.share_id"
+      @update:share-id="onShareIdUpdated"
+    />
   </div>
 </template>
 
@@ -102,9 +121,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { chatOperator } from '@/operators';
 import { IChatConversation } from '@/models';
 import { Status } from '@/models';
-import { ROUTE_CHAT_SCHEDULED_TASKS } from '@/router/constants';
+import { ROUTE_CHAT_SCHEDULED_TASKS, ROUTE_CHAT_ARTIFACTS } from '@/router/constants';
+import ShareConversationDialog from './ShareConversationDialog.vue';
 
-type ConversationCommand = 'rename' | 'delete';
+type ConversationCommand = 'rename' | 'delete' | 'share';
 
 export default defineComponent({
   name: 'SidePanel',
@@ -116,7 +136,8 @@ export default defineComponent({
     ElDropdownItem,
     ElDropdownMenu,
     FontAwesomeIcon,
-    ElSkeleton
+    ElSkeleton,
+    ShareConversationDialog
   },
   props: {},
   emits: ['change-conversation'],
@@ -124,6 +145,7 @@ export default defineComponent({
     return {
       renameDialogVisible: false,
       deleteDialogVisible: false,
+      shareDialogVisible: false,
       actingConversation: undefined as IChatConversation | undefined,
       renameDraft: '',
       renameSubmitting: false,
@@ -199,6 +221,9 @@ export default defineComponent({
     onScheduledTasks() {
       this.$router.push({ name: ROUTE_CHAT_SCHEDULED_TASKS });
     },
+    onArtifacts() {
+      this.$router.push({ name: ROUTE_CHAT_ARTIFACTS });
+    },
     onClickConversation(id?: string) {
       console.debug('onClickConversation in side panel', id);
       this.$emit('change-conversation', id);
@@ -215,7 +240,20 @@ export default defineComponent({
         this.openRenameDialog(conversation);
       } else if (command === 'delete') {
         this.openDeleteDialog(conversation);
+      } else if (command === 'share') {
+        this.openShareDialog(conversation);
       }
+    },
+    openShareDialog(conversation: IChatConversation) {
+      this.actingConversation = conversation;
+      this.shareDialogVisible = true;
+    },
+    onShareIdUpdated(shareId?: string) {
+      // Reflect the new share state on the sidebar row + store so reopening
+      // the dialog shows the correct link without a refetch.
+      if (!this.actingConversation) return;
+      this.actingConversation.share_id = shareId;
+      this.$store.dispatch('chat/setConversation', { ...this.actingConversation, share_id: shareId });
     },
     openRenameDialog(conversation: IChatConversation) {
       this.actingConversation = conversation;
@@ -298,7 +336,7 @@ export default defineComponent({
   flex-direction: column;
   align-items: flex-end;
   padding: 12px;
-  width: 260px;
+  width: 100%;
   height: 100%;
   border-right: none;
 
@@ -363,6 +401,7 @@ export default defineComponent({
       }
       .title {
         flex: 1;
+        min-width: 0;
         font-size: 14px;
         line-height: 40px;
         overflow: hidden;

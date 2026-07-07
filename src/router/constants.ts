@@ -1,6 +1,8 @@
 export const ROUTE_INDEX = 'index';
 export const ROUTE_DOWNLOAD = 'download';
 
+export const ROUTE_SHARE_CONVERSATION = 'share-conversation';
+
 export const ROUTE_AUTH_LOGIN = 'auth-login';
 export const ROUTE_AUTH_CALLBACK = 'auth-callback';
 
@@ -11,6 +13,7 @@ export const ROUTE_CHATGPT_CONVERSATION = 'chatgpt-conversation';
 export const ROUTE_CHATGPT_CONVERSATION_NEW = 'chatgpt-conversation-new';
 export const ROUTE_CHATGPT_CALL = 'chatgpt-call';
 export const ROUTE_CHAT_SCHEDULED_TASKS = 'chat-scheduled-tasks';
+export const ROUTE_CHAT_ARTIFACTS = 'chat-artifacts';
 
 export const ROUTE_DEEPSEEK_CONVERSATION = 'deepseek-conversation';
 export const ROUTE_DEEPSEEK_CONVERSATION_NEW = 'deepseek-conversation-new';
