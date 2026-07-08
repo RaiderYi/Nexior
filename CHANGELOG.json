@@ -2,6 +2,141 @@
   "name": "@acedatacloud/nexior",
   "entries": [
     {
+      "date": "Wed, 08 Jul 2026 10:37:08 GMT",
+      "version": "3.321.2",
+      "tag": "@acedatacloud/nexior_v3.321.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "077ccd3b3d9f3efa4c57493b5014791bff531adf",
+            "comment": "Add nano-banana-2-lite model option."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 05:22:44 GMT",
+      "version": "3.321.1",
+      "tag": "@acedatacloud/nexior_v3.321.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3628703987fb92aa5983fe367571400d4a29395a",
+            "comment": "feat(kling): add model version selector (Kling 2.6/3.0) to Motion Control"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 05:06:27 GMT",
+      "version": "3.321.0",
+      "tag": "@acedatacloud/nexior_v3.321.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "98e304336726b30c169862f7384aa16143b6def4",
+            "comment": "feat(maestro): estimate/start API layer + remove old static cost display"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 04:14:28 GMT",
+      "version": "3.320.2",
+      "tag": "@acedatacloud/nexior_v3.320.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ea18c67bfd4298e144b7223de802490bee720190",
+            "comment": "fix(kling): show per-second price for Motion Control instead of a fixed estimate"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 04:09:52 GMT",
+      "version": "3.320.1",
+      "tag": "@acedatacloud/nexior_v3.320.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "682ed0af5b44c65e1cfed702187b61f7416acf38",
+            "comment": "fix(mobile-release): unblock Android prod promote (beta->production) + iOS review submit (adopt single editable version, self-heal, verify)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 02:29:09 GMT",
+      "version": "3.320.0",
+      "tag": "@acedatacloud/nexior_v3.320.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ecdf57e571170cb5f6b191c6ec6b9d0a4c212132",
+            "comment": "feat(maestro): narration voice selector with inline audio preview (9 curated voices + auto)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 07 Jul 2026 16:59:21 GMT",
+      "version": "3.319.0",
+      "tag": "@acedatacloud/nexior_v3.319.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cb454515d81d3ab37b00b125dce7a932d71a554b",
+            "comment": "align Console usage analytics with PlatformFrontend: three-view card (trend bar / share doughnut / breakdown table) with dynamic Top-N, auto-refresh toggle, streamed CSV export, processing tag"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 07 Jul 2026 16:50:50 GMT",
+      "version": "3.318.9",
+      "tag": "@acedatacloud/nexior_v3.318.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8e38c4b4e86f589f42e34e779beb9ec63f00ea53",
+            "comment": "add GA4 gtag.js (lazy, CN-safe) tracking tag"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 07 Jul 2026 16:12:32 GMT",
+      "version": "3.318.8",
+      "tag": "@acedatacloud/nexior_v3.318.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c8e2550a1a556a7f6a6437583a8151b0a07d98fe",
+            "comment": "sync maestro style dropdown to backend style enum (add glass/luxury/swiss/etc., drop stale minimal/corporate/hand-drawn)"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 07 Jul 2026 13:24:40 GMT",
       "version": "3.318.7",
       "tag": "@acedatacloud/nexior_v3.318.7",

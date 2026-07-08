@@ -55,6 +55,10 @@
     "message": "std — пріоритет продуктивності, pro — пріоритет якості",
     "description": "motion mode 说明"
   },
+  "description.motionModel": {
+    "message": "Kling 3.0 забезпечує вищу якість, але вищу ціну за секунду; Kling 2.6 економніший.",
+    "description": "motion model version description"
+  },
   "description.keepOriginalSound": {
     "message": "Увімкнено — зберегти оригінальний звук відео; вимкнено — без звуку",
     "description": "keep_original_sound 说明"
@@ -70,6 +74,10 @@
   "message.motionMissingInputs": {
     "message": "Завантажте зображення персонажа та відео руху",
     "description": "Motion Control 缺少输入时的提示"
+  },
+  "message.motionPricingNote": {
+    "message": "Оплата за секунду згенерованого відео; підсумкова сума залежить від довжини еталонного відео.",
+    "description": "Explains that Motion Control is billed per second"
   },
   "inspiration.title": {
     "message": "Ідеї та шаблони",
@@ -414,6 +422,14 @@
   "name.mode": {
     "message": "Режим відео",
     "description": "Режим, який використовується для генерації відео"
+  },
+  "name.motionModel": {
+    "message": "Версія моделі",
+    "description": "The Kling model version used for motion control"
+  },
+  "name.perSecond": {
+    "message": "секунда",
+    "description": "Unit suffix for per-second pricing"
   },
   "name.effect": {
     "message": "Ефект відео",

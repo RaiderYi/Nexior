@@ -1,8 +1,80 @@
 # Change Log - @acedatacloud/nexior
 
-<!-- This log was last generated on Tue, 07 Jul 2026 13:24:40 GMT and should not be manually modified. -->
+<!-- This log was last generated on Wed, 08 Jul 2026 10:37:08 GMT and should not be manually modified. -->
 
 <!-- Start content -->
+
+## 3.321.2
+
+Wed, 08 Jul 2026 10:37:08 GMT
+
+### Patches
+
+- Add nano-banana-2-lite model option. (dev@acedata.cloud)
+
+## 3.321.1
+
+Wed, 08 Jul 2026 05:22:44 GMT
+
+### Patches
+
+- feat(kling): add model version selector (Kling 2.6/3.0) to Motion Control (dev@acedata.cloud)
+
+## 3.321.0
+
+Wed, 08 Jul 2026 05:06:27 GMT
+
+### Minor changes
+
+- feat(maestro): estimate/start API layer + remove old static cost display (dev@acedata.cloud)
+
+## 3.320.2
+
+Wed, 08 Jul 2026 04:14:28 GMT
+
+### Patches
+
+- fix(kling): show per-second price for Motion Control instead of a fixed estimate (dev@acedata.cloud)
+
+## 3.320.1
+
+Wed, 08 Jul 2026 04:09:52 GMT
+
+### Patches
+
+- fix(mobile-release): unblock Android prod promote (beta->production) + iOS review submit (adopt single editable version, self-heal, verify) (dev@acedata.cloud)
+
+## 3.320.0
+
+Wed, 08 Jul 2026 02:29:09 GMT
+
+### Minor changes
+
+- feat(maestro): narration voice selector with inline audio preview (9 curated voices + auto) (dev@acedata.cloud)
+
+## 3.319.0
+
+Tue, 07 Jul 2026 16:59:21 GMT
+
+### Minor changes
+
+- align Console usage analytics with PlatformFrontend: three-view card (trend bar / share doughnut / breakdown table) with dynamic Top-N, auto-refresh toggle, streamed CSV export, processing tag (dev@acedata.cloud)
+
+## 3.318.9
+
+Tue, 07 Jul 2026 16:50:50 GMT
+
+### Patches
+
+- add GA4 gtag.js (lazy, CN-safe) tracking tag (dev@acedata.cloud)
+
+## 3.318.8
+
+Tue, 07 Jul 2026 16:12:32 GMT
+
+### Patches
+
+- sync maestro style dropdown to backend style enum (add glass/luxury/swiss/etc., drop stale minimal/corporate/hand-drawn) (dev@acedata.cloud)
 
 ## 3.318.7
 
