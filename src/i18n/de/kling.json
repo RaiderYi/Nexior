@@ -55,6 +55,10 @@
     "message": "std für Leistung, pro für Bildqualität",
     "description": "Beschreibung für motion mode"
   },
+  "description.motionModel": {
+    "message": "Kling 3.0 bietet höhere Qualität, aber einen höheren Preis pro Sekunde; Kling 2.6 ist preisgünstiger.",
+    "description": "motion model version description"
+  },
   "description.keepOriginalSound": {
     "message": "Aktiviert, um den Originalton des Referenzvideos beizubehalten; deaktiviert, um das Ausgangsvideo ohne Originalton zu erstellen.",
     "description": "Beschreibung für keep_original_sound"
@@ -70,6 +74,10 @@
   "message.motionMissingInputs": {
     "message": "Bitte lade sowohl das Personenbild als auch das Referenzvideo hoch.",
     "description": "Hinweis bei fehlenden Eingaben in der Bewegungssteuerung"
+  },
+  "message.motionPricingNote": {
+    "message": "Abrechnung pro Sekunde des generierten Videos; der Endbetrag richtet sich nach der Länge des Referenzvideos.",
+    "description": "Explains that Motion Control is billed per second"
   },
   "inspiration.title": {
     "message": "Inspiration und Voreinstellungen",
@@ -414,6 +422,14 @@
   "name.mode": {
     "message": "Videomodus",
     "description": "Der Modus, der zur Erstellung des Videos verwendet wird"
+  },
+  "name.motionModel": {
+    "message": "Modellversion",
+    "description": "The Kling model version used for motion control"
+  },
+  "name.perSecond": {
+    "message": "Sekunde",
+    "description": "Unit suffix for per-second pricing"
   },
   "name.effect": {
     "message": "Videoeffekt",

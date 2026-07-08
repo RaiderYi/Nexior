@@ -5,11 +5,17 @@
       <motion-video class="mb-3" />
       <motion-prompt-input class="mb-4" />
       <character-orientation-selector class="mb-4" />
+      <motion-model-selector class="mb-4" />
       <motion-mode-selector class="mb-4" />
       <keep-original-sound-selector class="mb-4" />
     </div>
     <div class="flex flex-col items-center justify-center px-5 pb-5">
-      <consumption :value="consumption" :service="service" />
+      <consumption
+        :value="consumption"
+        :service="service"
+        :rate-unit="$t('kling.name.perSecond')"
+        :note="$t('kling.message.motionPricingNote')"
+      />
       <el-button type="primary" class="btn w-full" round :disabled="!canGenerate" @click="onGenerate">
         <font-awesome-icon icon="fa-solid fa-magic" class="mr-2" />
         {{ $t('kling.button.generateMotion') }}
@@ -27,6 +33,7 @@ import MotionImage from './motion/MotionImage.vue';
 import MotionVideo from './motion/MotionVideo.vue';
 import MotionPromptInput from './motion/MotionPromptInput.vue';
 import CharacterOrientationSelector from './motion/CharacterOrientationSelector.vue';
+import MotionModelSelector from './motion/MotionModelSelector.vue';
 import MotionModeSelector from './motion/MotionModeSelector.vue';
 import KeepOriginalSoundSelector from './motion/KeepOriginalSoundSelector.vue';
 import { getConsumption } from '@/utils';
@@ -41,6 +48,7 @@ export default defineComponent({
     MotionVideo,
     MotionPromptInput,
     CharacterOrientationSelector,
+    MotionModelSelector,
     MotionModeSelector,
     KeepOriginalSoundSelector
   },
@@ -50,7 +58,11 @@ export default defineComponent({
       return this.$store.state.kling?.motionConfig;
     },
     consumption() {
-      return getConsumption(this.motionConfig, this.service?.cost);
+      // Motion Control is billed per second of the generated video, and the
+      // output length is not known before generation, so show the per-second
+      // rate (duration=1) instead of a fixed estimate that would understate the
+      // real charge.
+      return getConsumption({ ...this.motionConfig, duration: 1 }, this.service?.cost);
     },
     service() {
       return this.$store.state.kling?.service;

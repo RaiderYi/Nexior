@@ -55,6 +55,10 @@
     "message": "std prioritet na performansama, pro prioritet na kvalitetu slike",
     "description": "Objašnjenje za motion mode"
   },
+  "description.motionModel": {
+    "message": "Kling 3.0 има виши квалитет али вишу цену по секунди; Kling 2.6 је исплативији.",
+    "description": "motion model version description"
+  },
   "description.keepOriginalSound": {
     "message": "Ako je uključeno, zadržava originalni zvuk referentnog videa; ako je isključeno, izlazni video neće sadržati originalni zvuk",
     "description": "Objašnjenje za keep_original_sound"
@@ -70,6 +74,10 @@
   "message.motionMissingInputs": {
     "message": "Molimo vas da otpremite i referentnu sliku i referentni video",
     "description": "Poruka kada nedostaju ulazi u Kontroli pokreta"
+  },
+  "message.motionPricingNote": {
+    "message": "Наплаћује се по секунди генерисаног видеа; коначан износ зависи од дужине референтног видеа.",
+    "description": "Explains that Motion Control is billed per second"
   },
   "inspiration.title": {
     "message": "Inspiracija i predlozi",
@@ -414,6 +422,14 @@
   "name.mode": {
     "message": "Video režim",
     "description": "Režim koji se koristi za generisanje videa"
+  },
+  "name.motionModel": {
+    "message": "Верзија модела",
+    "description": "The Kling model version used for motion control"
+  },
+  "name.perSecond": {
+    "message": "секунда",
+    "description": "Unit suffix for per-second pricing"
   },
   "name.effect": {
     "message": "Video efekat",
