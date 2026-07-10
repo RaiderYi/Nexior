@@ -1,5 +1,8 @@
 <template>
-  <div class="landing-page">
+  <div class="landing-page" @mousemove="onGlobalMouseMove">
+    <!-- PARTICLE CANVAS -->
+    <canvas ref="particleCanvas" class="particle-canvas"></canvas>
+
     <!-- 1. NAVBAR -->
     <nav class="navbar" :class="{ scrolled: isScrolled }">
       <div class="navbar-inner">
@@ -74,6 +77,7 @@
             class="capability-card"
             :style="{ '--card-accent': cap.color, '--icon-bg': cap.iconBg }"
             @click="goFeature(cap.route)"
+            @mousemove="onCardMouseMove($event)"
           >
             <div class="capability-icon">{{ cap.icon }}</div>
             <h3>{{ $t(cap.titleKey) }}</h3>
@@ -158,11 +162,27 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  baseX: number;
+  baseY: number;
+  opacity: number;
+}
+
 export default defineComponent({
   name: 'Index',
   data() {
     return {
       isScrolled: false,
+      particleCanvas: null as HTMLCanvasElement | null,
+      particles: [] as Particle[],
+      animationId: 0,
+      mouseX: -9999,
+      mouseY: -9999,
       heroChips: [
         { name: 'GPT-5.5', letter: 'G', bg: '#10a37f', fg: '#fff', route: '/chatgpt' },
         { name: 'Claude', letter: 'C', bg: '#d97757', fg: '#fff', route: '/claude' },
@@ -531,13 +551,135 @@ export default defineComponent({
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.$nextTick(() => {
+      this.initParticles();
+      this.initScrollReveal();
+    });
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    if (this.animationId) cancelAnimationFrame(this.animationId);
   },
   methods: {
     onScroll() {
       this.isScrolled = window.scrollY > 20;
+    },
+    onResize() {
+      this.initParticles();
+    },
+    onGlobalMouseMove(e: MouseEvent) {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+    },
+    onCardMouseMove(e: MouseEvent) {
+      const target = e.currentTarget as HTMLElement;
+      const rect = target.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      target.style.setProperty('--mouse-x', `${x}%`);
+      target.style.setProperty('--mouse-y', `${y}%`);
+    },
+    initParticles() {
+      const canvas = this.$refs.particleCanvas as HTMLCanvasElement;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      this.particleCanvas = canvas;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 14000), 110);
+      this.particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        this.particles.push({
+          x,
+          y,
+          baseX: x,
+          baseY: y,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          radius: Math.random() * 1.8 + 0.4,
+          opacity: Math.random() * 0.5 + 0.2
+        });
+      }
+      this.animateParticles();
+      window.addEventListener('resize', this.onResize);
+    },
+    animateParticles() {
+      if (!this.particleCanvas) return;
+      const canvas = this.particleCanvas;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const maxDist = 130;
+      const mouseRadius = 180;
+      for (let i = 0; i < this.particles.length; i++) {
+        const p = this.particles[i];
+        // Drift
+        p.x += p.vx;
+        p.y += p.vy;
+        // Bounce off edges
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        // Mouse repulsion
+        const dx = p.x - this.mouseX;
+        const dy = p.y - this.mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouseRadius && dist > 0) {
+          const force = (mouseRadius - dist) / mouseRadius;
+          p.x += (dx / dist) * force * 3;
+          p.y += (dy / dist) * force * 3;
+        }
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(108, 92, 231, ${p.opacity})`;
+        ctx.fill();
+        // Draw connections
+        for (let j = i + 1; j < this.particles.length; j++) {
+          const p2 = this.particles[j];
+          const cdx = p.x - p2.x;
+          const cdy = p.y - p2.y;
+          const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
+          if (cdist < maxDist) {
+            const cOpacity = (1 - cdist / maxDist) * 0.25;
+            // Mouse proximity enhances lines
+            const midX = (p.x + p2.x) / 2;
+            const midY = (p.y + p2.y) / 2;
+            const mouseDist = Math.sqrt((midX - this.mouseX) ** 2 + (midY - this.mouseY) ** 2);
+            const boost = mouseDist < 200 ? (1 - mouseDist / 200) * 0.5 : 0;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(108, 92, 231, ${cOpacity + boost})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      this.animationId = requestAnimationFrame(this.animateParticles);
+    },
+    initScrollReveal() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('lp-revealed');
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      const els = document.querySelectorAll(
+        '.capability-card, .usecase-card, .model-group, .stat-item, .section-header'
+      );
+      els.forEach((el, i) => {
+        el.classList.add('lp-reveal');
+        (el as HTMLElement).style.transitionDelay = `${(i % 4) * 0.08}s`;
+        observer.observe(el);
+      });
     },
     scrollTo(id: string) {
       const el = document.getElementById(id);
@@ -561,6 +703,30 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+/* PARTICLE CANVAS */
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* SCROLL REVEAL */
+.lp-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.lp-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 .landing-page {
   --lp-bg-base: #08090f;
   --lp-bg-surface: #0f1119;
@@ -584,6 +750,18 @@ export default defineComponent({
   font-family: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Ensure all sections sit above particle canvas */
+.navbar,
+.hero,
+.stats-bar,
+.section,
+.bottom-cta,
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* NAVBAR */
@@ -712,6 +890,31 @@ export default defineComponent({
     background-size: 40px 40px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+
+  /* Animated aurora orbs */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: lp-aurora 8s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+}
+@keyframes lp-aurora {
+  0% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-40%) scale(1.3);
+    opacity: 0.9;
   }
 }
 .hero-content {
@@ -875,7 +1078,9 @@ export default defineComponent({
   gap: 20px;
 }
 .capability-card {
-  background: var(--lp-bg-card);
+  background: rgba(20, 24, 38, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--lp-border);
   border-radius: 20px;
   padding: 32px 28px;
@@ -884,6 +1089,20 @@ export default defineComponent({
   position: relative;
   overflow: hidden;
 
+  /* Glow on hover */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(108, 92, 231, 0.08),
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -901,6 +1120,9 @@ export default defineComponent({
     transform: translateY(-4px);
     box-shadow: var(--lp-shadow-card-hover);
     &::before {
+      opacity: 1;
+    }
+    &::after {
       opacity: 1;
     }
   }
@@ -979,7 +1201,9 @@ export default defineComponent({
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: var(--lp-bg-card);
+  background: rgba(20, 24, 38, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--lp-border);
   border-radius: 12px;
   cursor: pointer;
@@ -1028,7 +1252,9 @@ export default defineComponent({
   gap: 20px;
 }
 .usecase-card {
-  background: var(--lp-bg-card);
+  background: rgba(20, 24, 38, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--lp-border);
   border-radius: 20px;
   overflow: hidden;
