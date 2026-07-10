@@ -2,13 +2,26 @@
   <div class="landing-page" @mousemove="onGlobalMouseMove">
     <!-- PARTICLE CANVAS -->
     <canvas ref="particleCanvas" class="particle-canvas"></canvas>
+    <!-- SCI-FI GRID OVERLAY -->
+    <div class="grid-overlay"></div>
 
     <!-- 1. NAVBAR -->
     <nav class="navbar" :class="{ scrolled: isScrolled }">
       <div class="navbar-inner">
         <div class="logo" @click="goHome">
-          <div class="logo-icon">B</div>
-          <span>BigPlayer AI</span>
+          <div class="logo-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logo-grad)" stroke-width="2" />
+              <path d="M16 8L22 11.5V18.5L16 22L10 18.5V11.5L16 8Z" fill="url(#logo-grad)" />
+              <defs>
+                <linearGradient id="logo-grad" x1="4" y1="2" x2="28" y2="30">
+                  <stop stop-color="#6c5ce7" />
+                  <stop offset="1" stop-color="#00d4ff" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span>BigPlayer<span class="logo-accent">.AI</span></span>
         </div>
         <div class="nav-links">
           <a href="#capabilities" @click.prevent="scrollTo('capabilities')">{{ $t('index.landing.nav.features') }}</a>
@@ -18,7 +31,18 @@
         </div>
         <div class="nav-cta">
           <button class="btn btn-ghost" @click="goLogin">{{ $t('index.landing.nav.login') }}</button>
-          <button class="btn btn-primary" @click="goLogin">{{ $t('index.landing.nav.signup') }} →</button>
+          <button class="btn btn-primary" @click="goLogin">
+            {{ $t('index.landing.nav.signup') }}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M3 7H11M11 7L7 3M11 7L7 11"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
@@ -27,7 +51,7 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-badge">
-          <span class="dot"></span>
+          <span class="badge-pulse"></span>
           <span>{{ $t('index.landing.hero.badge') }}</span>
         </div>
         <h1>
@@ -38,7 +62,16 @@
         <p class="subtitle">{{ $t('index.landing.hero.subtitle') }}</p>
         <div class="hero-cta">
           <button class="btn btn-primary btn-large" @click="goFeature('/chatgpt')">
-            {{ $t('index.landing.hero.ctaPrimary') }} →
+            {{ $t('index.landing.hero.ctaPrimary') }}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 8H13M13 8L8 3M13 8L8 13"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
           <button class="btn btn-ghost btn-large" @click="scrollTo('models')">
             {{ $t('index.landing.hero.ctaSecondary') }}
@@ -46,7 +79,9 @@
         </div>
         <div class="hero-models-preview">
           <div v-for="chip in heroChips" :key="chip.name" class="model-chip" @click="goFeature(chip.route)">
-            <div class="chip-icon" :style="{ background: chip.bg, color: chip.fg }">{{ chip.letter }}</div>
+            <div class="chip-icon" :style="{ '--chip-color': chip.color }">
+              <span>{{ chip.letter }}</span>
+            </div>
             {{ chip.name }}
           </div>
         </div>
@@ -57,6 +92,10 @@
     <section class="stats-bar">
       <div class="stats-inner">
         <div v-for="stat in stats" :key="stat.label" class="stat-item">
+          <div class="stat-corner tl"></div>
+          <div class="stat-corner tr"></div>
+          <div class="stat-corner bl"></div>
+          <div class="stat-corner br"></div>
           <div class="stat-number">{{ stat.number }}</div>
           <div class="stat-label">{{ $t(stat.label) }}</div>
         </div>
@@ -67,6 +106,7 @@
     <section id="capabilities" class="section">
       <div class="section-inner">
         <div class="section-header">
+          <div class="section-label">// SYSTEM CAPABILITIES</div>
           <h2>{{ $t('index.landing.capabilities.title') }}</h2>
           <p>{{ $t('index.landing.capabilities.subtitle') }}</p>
         </div>
@@ -75,14 +115,29 @@
             v-for="cap in capabilities"
             :key="cap.id"
             class="capability-card"
-            :style="{ '--card-accent': cap.color, '--icon-bg': cap.iconBg }"
+            :style="{ '--card-accent': cap.color }"
             @click="goFeature(cap.route)"
             @mousemove="onCardMouseMove($event)"
           >
-            <div class="capability-icon">{{ cap.icon }}</div>
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            <div class="capability-icon" v-html="cap.svg"></div>
             <h3>{{ $t(cap.titleKey) }}</h3>
             <p>{{ $t(cap.descKey) }}</p>
-            <div class="card-count">{{ $t(cap.countKey) }} →</div>
+            <div class="card-count">
+              {{ $t(cap.countKey) }}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 6H10M10 6L6 2M10 6L6 10"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -92,23 +147,37 @@
     <section id="models" class="section model-wall">
       <div class="section-inner">
         <div class="section-header">
+          <div class="section-label">// MODEL REGISTRY</div>
           <h2>{{ $t('index.landing.models.title') }}</h2>
           <p>{{ $t('index.landing.models.subtitle') }}</p>
         </div>
         <div class="model-groups">
           <div v-for="group in modelGroups" :key="group.id" class="model-group">
             <h3>
-              <div class="group-icon" :style="{ background: group.bg, color: group.fg }">{{ group.letter }}</div>
+              <div class="group-icon" :style="{ '--group-color': group.color }">
+                <span>{{ group.letter }}</span>
+              </div>
               {{ $t(group.nameKey) }}
               <span class="group-count">{{ $t(group.countKey) }}</span>
             </h3>
             <div class="model-grid">
               <div v-for="model in group.models" :key="model.name" class="model-item" @click="goFeature(model.route)">
-                <div class="m-icon" :style="{ background: model.bg, color: model.fg }">{{ model.letter }}</div>
+                <div class="m-icon" :style="{ '--m-color': model.color }">
+                  <span>{{ model.letter }}</span>
+                </div>
                 <div class="m-info">
                   <div class="m-name">{{ model.name }}</div>
                   <div class="m-desc">{{ $t(model.descKey) }}</div>
                 </div>
+                <svg class="m-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M3 7H11M11 7L7 3M11 7L7 11"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -120,12 +189,23 @@
     <section id="usecases" class="section">
       <div class="section-inner">
         <div class="section-header">
+          <div class="section-label">// USE CASES</div>
           <h2>{{ $t('index.landing.useCases.title') }}</h2>
           <p>{{ $t('index.landing.useCases.subtitle') }}</p>
         </div>
         <div class="usecase-grid">
-          <div v-for="uc in useCases" :key="uc.id" class="usecase-card" @click="goFeature(uc.route)">
-            <div class="usecase-visual" :style="{ background: uc.gradient }">{{ uc.icon }}</div>
+          <div
+            v-for="uc in useCases"
+            :key="uc.id"
+            class="usecase-card"
+            :style="{ '--uc-color': uc.color }"
+            @click="goFeature(uc.route)"
+          >
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            <div class="usecase-visual" v-html="uc.svg"></div>
             <div class="usecase-body">
               <h4>{{ $t(uc.titleKey) }}</h4>
               <p>{{ $t(uc.descKey) }}</p>
@@ -138,17 +218,47 @@
 
     <!-- 7. BOTTOM CTA -->
     <section class="bottom-cta">
-      <h2>
-        <span class="gradient">{{ $t('index.landing.bottomCta.title') }}</span>
-      </h2>
-      <p>{{ $t('index.landing.bottomCta.subtitle') }}</p>
-      <button class="btn btn-primary btn-large" @click="goLogin">{{ $t('index.landing.bottomCta.button') }} →</button>
+      <div class="cta-rings">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+      <div class="cta-content">
+        <h2>
+          <span class="gradient">{{ $t('index.landing.bottomCta.title') }}</span>
+        </h2>
+        <p>{{ $t('index.landing.bottomCta.subtitle') }}</p>
+        <button class="btn btn-primary btn-large" @click="goLogin">
+          {{ $t('index.landing.bottomCta.button') }}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M3 8H13M13 8L8 3M13 8L8 13"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-info">© {{ new Date().getFullYear() }} BigPlayer AI · All Rights Reserved</div>
+        <div class="footer-info">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            style="vertical-align: middle; margin-right: 4px; opacity: 0.4"
+          >
+            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1" />
+            <circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.3" />
+          </svg>
+          {{ new Date().getFullYear() }} BigPlayer AI · All Rights Reserved
+        </div>
         <div class="footer-links">
           <a href="/download">{{ $t('index.landing.footer.download') }}</a>
           <a href="#" @click.prevent="showContact">{{ $t('index.landing.footer.support') }}</a>
@@ -168,10 +278,17 @@ interface Particle {
   vx: number;
   vy: number;
   radius: number;
-  baseX: number;
-  baseY: number;
   opacity: number;
 }
+
+const svgChat = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 10C8 8.89543 8.89543 8 10 8H38C39.1046 8 40 8.89543 40 10V30C40 31.1046 39.1046 32 38 32H22L14 40V32H10C8.89543 32 8 31.1046 8 30V10Z" stroke="var(--card-accent)" stroke-width="2"/><circle cx="18" cy="20" r="2" fill="var(--card-accent)"/><circle cx="24" cy="20" r="2" fill="var(--card-accent)"/><circle cx="30" cy="20" r="2" fill="var(--card-accent)"/></svg>`;
+const svgImage = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="32" height="32" rx="2" stroke="var(--card-accent)" stroke-width="2"/><circle cx="18" cy="18" r="3" stroke="var(--card-accent)" stroke-width="2"/><path d="M12 32L20 24L26 30L32 22L38 32" stroke="var(--card-accent)" stroke-width="2" stroke-linejoin="round"/></svg>`;
+const svgVideo = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="12" width="28" height="24" rx="2" stroke="var(--card-accent)" stroke-width="2"/><path d="M34 20L42 16V32L34 28V20Z" stroke="var(--card-accent)" stroke-width="2" stroke-linejoin="round"/><path d="M16 20L24 24L16 28V20Z" fill="var(--card-accent)"/></svg>`;
+const svgMusic = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10V34" stroke="var(--card-accent)" stroke-width="2" stroke-linecap="round"/><path d="M18 10L36 14V18" stroke="var(--card-accent)" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="34" r="4" stroke="var(--card-accent)" stroke-width="2"/><circle cx="32" cy="30" r="4" stroke="var(--card-accent)" stroke-width="2"/><path d="M32 26V14" stroke="var(--card-accent)" stroke-width="2"/><path d="M18 30V14" stroke="var(--card-accent)" stroke-width="2"/></svg>`;
+const svgWriting = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H32L38 12V42H12V6Z" stroke="var(--uc-color)" stroke-width="2"/><path d="M32 6V12H38" stroke="var(--uc-color)" stroke-width="2"/><path d="M18 22H32M18 28H32M18 34H26" stroke="var(--uc-color)" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+const svgDesign = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="32" height="32" rx="2" stroke="var(--uc-color)" stroke-width="2"/><circle cx="20" cy="20" r="5" stroke="var(--uc-color)" stroke-width="2"/><rect x="28" y="28" width="8" height="8" stroke="var(--uc-color)" stroke-width="2"/><path d="M12 36L24 24" stroke="var(--uc-color)" stroke-width="1.5"/></svg>`;
+const svgFilm = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="32" height="28" rx="2" stroke="var(--uc-color)" stroke-width="2"/><path d="M8 18H40M8 30H40M16 10V18M16 30V38M32 10V18M32 30V38" stroke="var(--uc-color)" stroke-width="1.5"/></svg>`;
+const svgWave = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 24C6 24 10 12 14 24C18 36 22 12 26 24C30 36 34 12 38 24C40 30 42 24 42 24" stroke="var(--uc-color)" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="24" r="2" fill="var(--uc-color)"/><circle cx="26" cy="24" r="2" fill="var(--uc-color)"/><circle cx="38" cy="24" r="2" fill="var(--uc-color)"/></svg>`;
 
 export default defineComponent({
   name: 'Index',
@@ -184,12 +301,12 @@ export default defineComponent({
       mouseX: -9999,
       mouseY: -9999,
       heroChips: [
-        { name: 'GPT-5.5', letter: 'G', bg: '#10a37f', fg: '#fff', route: '/chatgpt' },
-        { name: 'Claude', letter: 'C', bg: '#d97757', fg: '#fff', route: '/claude' },
-        { name: 'Gemini', letter: 'G', bg: '#4285f4', fg: '#fff', route: '/gemini' },
-        { name: 'DeepSeek', letter: 'D', bg: '#1c1c1c', fg: '#4ecca3', route: '/deepseek' },
-        { name: 'Midjourney', letter: 'M', bg: '#000', fg: '#ffd93d', route: '/midjourney' },
-        { name: 'Suno', letter: '♪', bg: '#000', fg: '#fff', route: '/suno' }
+        { name: 'GPT-5.5', letter: 'G', color: '#10a37f', route: '/chatgpt' },
+        { name: 'Claude', letter: 'C', color: '#d97757', route: '/claude' },
+        { name: 'Gemini', letter: 'G', color: '#4285f4', route: '/gemini' },
+        { name: 'DeepSeek', letter: 'D', color: '#4ecca3', route: '/deepseek' },
+        { name: 'Midjourney', letter: 'M', color: '#ffd93d', route: '/midjourney' },
+        { name: 'Suno', letter: 'S', color: '#00d4ff', route: '/suno' }
       ],
       stats: [
         { number: '46+', label: 'index.landing.stats.models' },
@@ -200,9 +317,8 @@ export default defineComponent({
       capabilities: [
         {
           id: 'chat',
-          icon: '💬',
+          svg: svgChat,
           color: '#6c5ce7',
-          iconBg: 'rgba(108,92,231,0.1)',
           route: '/chatgpt',
           titleKey: 'index.landing.capabilities.chat.title',
           descKey: 'index.landing.capabilities.chat.desc',
@@ -210,9 +326,8 @@ export default defineComponent({
         },
         {
           id: 'image',
-          icon: '🎨',
+          svg: svgImage,
           color: '#ff6b9d',
-          iconBg: 'rgba(255,107,157,0.1)',
           route: '/midjourney',
           titleKey: 'index.landing.capabilities.image.title',
           descKey: 'index.landing.capabilities.image.desc',
@@ -220,9 +335,8 @@ export default defineComponent({
         },
         {
           id: 'video',
-          icon: '🎬',
+          svg: svgVideo,
           color: '#00d4ff',
-          iconBg: 'rgba(0,212,255,0.1)',
           route: '/sora',
           titleKey: 'index.landing.capabilities.video.title',
           descKey: 'index.landing.capabilities.video.desc',
@@ -230,9 +344,8 @@ export default defineComponent({
         },
         {
           id: 'music',
-          icon: '🎵',
+          svg: svgMusic,
           color: '#4ecca3',
-          iconBg: 'rgba(78,204,163,0.1)',
           route: '/suno',
           titleKey: 'index.landing.capabilities.music.title',
           descKey: 'index.landing.capabilities.music.desc',
@@ -243,166 +356,140 @@ export default defineComponent({
         {
           id: 'openai',
           letter: 'G',
-          bg: '#10a37f',
-          fg: '#fff',
+          color: '#10a37f',
           nameKey: 'index.landing.models.openai.name',
           countKey: 'index.landing.models.openai.count',
           models: [
             {
               name: 'GPT-5.5',
               letter: 'G',
-              bg: '#10a37f',
-              fg: '#fff',
+              color: '#10a37f',
               route: '/chatgpt',
               descKey: 'index.landing.models.openai.gpt55'
             },
             {
               name: 'GPT-5.4',
               letter: 'G',
-              bg: '#10a37f',
-              fg: '#fff',
+              color: '#10a37f',
               route: '/chatgpt',
               descKey: 'index.landing.models.openai.gpt54'
             },
             {
               name: 'GPT-5.2',
               letter: 'G',
-              bg: '#10a37f',
-              fg: '#fff',
+              color: '#10a37f',
               route: '/chatgpt',
               descKey: 'index.landing.models.openai.gpt52'
             },
             {
               name: 'GPT-5-mini',
               letter: 'G',
-              bg: '#10a37f',
-              fg: '#fff',
+              color: '#10a37f',
               route: '/chatgpt',
               descKey: 'index.landing.models.openai.gpt5mini'
             },
-            {
-              name: 'o3',
-              letter: 'G',
-              bg: '#10a37f',
-              fg: '#fff',
-              route: '/chatgpt',
-              descKey: 'index.landing.models.openai.o3'
-            }
+            { name: 'o3', letter: 'G', color: '#10a37f', route: '/chatgpt', descKey: 'index.landing.models.openai.o3' }
           ]
         },
         {
           id: 'anthropic',
           letter: 'C',
-          bg: '#d97757',
-          fg: '#fff',
+          color: '#d97757',
           nameKey: 'index.landing.models.anthropic.name',
           countKey: 'index.landing.models.anthropic.count',
           models: [
             {
               name: 'Claude Fable-5',
               letter: 'C',
-              bg: '#d97757',
-              fg: '#fff',
+              color: '#d97757',
               route: '/claude',
               descKey: 'index.landing.models.anthropic.fable5'
             },
             {
               name: 'Claude Sonnet-5',
               letter: 'C',
-              bg: '#d97757',
-              fg: '#fff',
+              color: '#d97757',
               route: '/claude',
               descKey: 'index.landing.models.anthropic.sonnet5'
             },
             {
               name: 'Claude Opus-4.8',
               letter: 'C',
-              bg: '#d97757',
-              fg: '#fff',
+              color: '#d97757',
               route: '/claude',
               descKey: 'index.landing.models.anthropic.opus48'
             },
             {
-              name: 'Claude Haiku-4.5',
+              name: 'Claude Haiku-5',
               letter: 'C',
-              bg: '#d97757',
-              fg: '#fff',
+              color: '#d97757',
               route: '/claude',
-              descKey: 'index.landing.models.anthropic.haiku45'
+              descKey: 'index.landing.models.anthropic.haiku5'
             }
           ]
         },
         {
           id: 'google',
           letter: 'G',
-          bg: '#4285f4',
-          fg: '#fff',
+          color: '#4285f4',
           nameKey: 'index.landing.models.google.name',
           countKey: 'index.landing.models.google.count',
           models: [
             {
+              name: 'Gemini 3.5 Pro',
+              letter: 'G',
+              color: '#4285f4',
+              route: '/gemini',
+              descKey: 'index.landing.models.google.gemini35pro'
+            },
+            {
               name: 'Gemini 3.5 Flash',
               letter: 'G',
-              bg: '#4285f4',
-              fg: '#fff',
+              color: '#4285f4',
               route: '/gemini',
               descKey: 'index.landing.models.google.gemini35flash'
             },
             {
-              name: 'Gemini 3.1 Pro',
+              name: 'Gemini 3.0 Pro',
               letter: 'G',
-              bg: '#4285f4',
-              fg: '#fff',
+              color: '#4285f4',
               route: '/gemini',
-              descKey: 'index.landing.models.google.gemini31pro'
+              descKey: 'index.landing.models.google.gemini30pro'
             },
             {
-              name: 'Gemini 2.5 Pro',
+              name: 'Gemini 3.0 Flash',
               letter: 'G',
-              bg: '#4285f4',
-              fg: '#fff',
+              color: '#4285f4',
               route: '/gemini',
-              descKey: 'index.landing.models.google.gemini25pro'
-            },
-            {
-              name: 'Gemini 2.5 Flash',
-              letter: 'G',
-              bg: '#4285f4',
-              fg: '#fff',
-              route: '/gemini',
-              descKey: 'index.landing.models.google.gemini25flash'
+              descKey: 'index.landing.models.google.gemini30flash'
             }
           ]
         },
         {
           id: 'deepseek',
           letter: 'D',
-          bg: '#1c1c1c',
-          fg: '#4ecca3',
+          color: '#4ecca3',
           nameKey: 'index.landing.models.deepseek.name',
           countKey: 'index.landing.models.deepseek.count',
           models: [
             {
-              name: 'DeepSeek V4 Flash',
+              name: 'DeepSeek V4',
               letter: 'D',
-              bg: '#1c1c1c',
-              fg: '#4ecca3',
+              color: '#4ecca3',
               route: '/deepseek',
-              descKey: 'index.landing.models.deepseek.v4flash'
+              descKey: 'index.landing.models.deepseek.v4'
             },
             {
-              name: 'DeepSeek V3.2',
+              name: 'DeepSeek V3.5',
               letter: 'D',
-              bg: '#1c1c1c',
-              fg: '#4ecca3',
+              color: '#4ecca3',
               route: '/deepseek',
-              descKey: 'index.landing.models.deepseek.v32'
+              descKey: 'index.landing.models.deepseek.v35'
             },
             {
               name: 'DeepSeek R1',
               letter: 'D',
-              bg: '#1c1c1c',
-              fg: '#4ecca3',
+              color: '#4ecca3',
               route: '/deepseek',
               descKey: 'index.landing.models.deepseek.r1'
             }
@@ -411,98 +498,74 @@ export default defineComponent({
         {
           id: 'cn',
           letter: '中',
-          bg: '#6c5ce7',
-          fg: '#fff',
+          color: '#a29bfe',
           nameKey: 'index.landing.models.cn.name',
           countKey: 'index.landing.models.cn.count',
           models: [
             {
               name: 'Kimi K2.5',
               letter: 'K',
-              bg: '#1a1a2e',
-              fg: '#fff',
+              color: '#a29bfe',
               route: '/kimi',
               descKey: 'index.landing.models.cn.kimi25'
             },
             {
               name: 'Kimi K2 Thinking',
               letter: 'K',
-              bg: '#1a1a2e',
-              fg: '#fff',
+              color: '#a29bfe',
               route: '/kimi',
               descKey: 'index.landing.models.cn.kimi2think'
             },
-            {
-              name: 'GLM-5.1',
-              letter: 'Z',
-              bg: '#3b5998',
-              fg: '#fff',
-              route: '/glm',
-              descKey: 'index.landing.models.cn.glm51'
-            },
-            {
-              name: 'Grok-4',
-              letter: 'X',
-              bg: '#000',
-              fg: '#fff',
-              route: '/grok',
-              descKey: 'index.landing.models.cn.grok4'
-            }
+            { name: 'GLM-5.1', letter: 'Z', color: '#a29bfe', route: '/glm', descKey: 'index.landing.models.cn.glm51' },
+            { name: 'Grok-4', letter: 'X', color: '#a29bfe', route: '/grok', descKey: 'index.landing.models.cn.grok4' }
           ]
         },
         {
           id: 'creative',
           letter: 'A',
-          bg: 'linear-gradient(135deg,#ff6b9d,#00d4ff)',
-          fg: '#fff',
+          color: '#ff6b9d',
           nameKey: 'index.landing.models.creative.name',
           countKey: 'index.landing.models.creative.count',
           models: [
             {
               name: 'Midjourney',
               letter: 'M',
-              bg: '#000',
-              fg: '#ffd93d',
+              color: '#ffd93d',
               route: '/midjourney',
               descKey: 'index.landing.models.creative.mj'
             },
             {
               name: 'Sora',
               letter: 'S',
-              bg: '#000',
-              fg: '#fff',
+              color: '#00d4ff',
               route: '/sora',
               descKey: 'index.landing.models.creative.sora'
             },
             {
               name: 'Kling 3.0',
               letter: 'K',
-              bg: '#ff6b6b',
-              fg: '#fff',
+              color: '#ff6b6b',
               route: '/kling',
               descKey: 'index.landing.models.creative.kling'
             },
             {
               name: 'Suno',
-              letter: '♪',
-              bg: '#000',
-              fg: '#fff',
+              letter: 'S',
+              color: '#4ecca3',
               route: '/suno',
               descKey: 'index.landing.models.creative.suno'
             },
             {
               name: 'Flux',
               letter: 'F',
-              bg: '#fff',
-              fg: '#000',
+              color: '#e0e0e0',
               route: '/flux',
               descKey: 'index.landing.models.creative.flux'
             },
             {
               name: 'Luma',
               letter: 'L',
-              bg: '#0066ff',
-              fg: '#fff',
+              color: '#0066ff',
               route: '/luma',
               descKey: 'index.landing.models.creative.luma'
             }
@@ -512,8 +575,8 @@ export default defineComponent({
       useCases: [
         {
           id: 'writing',
-          icon: '📝',
-          gradient: 'linear-gradient(135deg,#6c5ce722,#00d4ff22)',
+          svg: svgWriting,
+          color: '#6c5ce7',
           route: '/chatgpt',
           titleKey: 'index.landing.useCases.writing.title',
           descKey: 'index.landing.useCases.writing.desc',
@@ -521,8 +584,8 @@ export default defineComponent({
         },
         {
           id: 'design',
-          icon: '🎨',
-          gradient: 'linear-gradient(135deg,#ff6b9d22,#ffd93d22)',
+          svg: svgDesign,
+          color: '#ff6b9d',
           route: '/midjourney',
           titleKey: 'index.landing.useCases.design.title',
           descKey: 'index.landing.useCases.design.desc',
@@ -530,8 +593,8 @@ export default defineComponent({
         },
         {
           id: 'video',
-          icon: '🎬',
-          gradient: 'linear-gradient(135deg,#00d4ff22,#4ecca322)',
+          svg: svgFilm,
+          color: '#00d4ff',
           route: '/sora',
           titleKey: 'index.landing.useCases.video.title',
           descKey: 'index.landing.useCases.video.desc',
@@ -539,8 +602,8 @@ export default defineComponent({
         },
         {
           id: 'music',
-          icon: '🎵',
-          gradient: 'linear-gradient(135deg,#4ecca322,#ffd93d22)',
+          svg: svgWave,
+          color: '#4ecca3',
           route: '/suno',
           titleKey: 'index.landing.useCases.music.title',
           descKey: 'index.landing.useCases.music.desc',
@@ -591,13 +654,9 @@ export default defineComponent({
       const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 14000), 110);
       this.particles = [];
       for (let i = 0; i < particleCount; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
         this.particles.push({
-          x,
-          y,
-          baseX: x,
-          baseY: y,
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * 0.3,
           vy: (Math.random() - 0.5) * 0.3,
           radius: Math.random() * 1.8 + 0.4,
@@ -617,13 +676,10 @@ export default defineComponent({
       const mouseRadius = 180;
       for (let i = 0; i < this.particles.length; i++) {
         const p = this.particles[i];
-        // Drift
         p.x += p.vx;
         p.y += p.vy;
-        // Bounce off edges
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        // Mouse repulsion
         const dx = p.x - this.mouseX;
         const dy = p.y - this.mouseY;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -632,12 +688,10 @@ export default defineComponent({
           p.x += (dx / dist) * force * 3;
           p.y += (dy / dist) * force * 3;
         }
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(108, 92, 231, ${p.opacity})`;
         ctx.fill();
-        // Draw connections
         for (let j = i + 1; j < this.particles.length; j++) {
           const p2 = this.particles[j];
           const cdx = p.x - p2.x;
@@ -645,7 +699,6 @@ export default defineComponent({
           const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
           if (cdist < maxDist) {
             const cOpacity = (1 - cdist / maxDist) * 0.25;
-            // Mouse proximity enhances lines
             const midX = (p.x + p2.x) / 2;
             const midY = (p.y + p2.y) / 2;
             const mouseDist = Math.sqrt((midX - this.mouseX) ** 2 + (midY - this.mouseY) ** 2);
@@ -665,9 +718,7 @@ export default defineComponent({
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('lp-revealed');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('lp-revealed');
           });
         },
         { threshold: 0.12 }
@@ -695,15 +746,14 @@ export default defineComponent({
       this.$router.push('/');
     },
     showContact() {
-      const event = new CustomEvent('open-floating-contact');
-      window.dispatchEvent(event);
+      window.dispatchEvent(new CustomEvent('open-floating-contact'));
     }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-/* PARTICLE CANVAS */
+/* ========== BASE ========== */
 .particle-canvas {
   position: fixed;
   top: 0;
@@ -713,8 +763,21 @@ export default defineComponent({
   z-index: 0;
   pointer-events: none;
 }
-
-/* SCROLL REVEAL */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(108, 92, 231, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 92, 231, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+}
 .lp-reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -728,32 +791,31 @@ export default defineComponent({
 }
 
 .landing-page {
-  --lp-bg-base: #08090f;
-  --lp-bg-surface: #0f1119;
-  --lp-bg-card: #141826;
-  --lp-bg-card-hover: #1a1f30;
-  --lp-border: #1e2438;
+  --lp-bg-base: #06070d;
+  --lp-bg-surface: #0b0d16;
+  --lp-bg-card: rgba(15, 18, 30, 0.6);
+  --lp-bg-card-hover: rgba(20, 24, 40, 0.8);
+  --lp-border: #1a1e2e;
   --lp-border-light: #2a3048;
-  --lp-text-primary: #eef1f8;
-  --lp-text-secondary: #9ba3b8;
-  --lp-text-muted: #5a6478;
+  --lp-text-primary: #e8ecf4;
+  --lp-text-secondary: #8a92a8;
+  --lp-text-muted: #4a5268;
   --lp-accent: #6c5ce7;
   --lp-accent-light: #a29bfe;
   --lp-cyan: #00d4ff;
+  --lp-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  --lp-sans: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --lp-gradient-accent: linear-gradient(135deg, #6c5ce7 0%, #00d4ff 100%);
-  --lp-gradient-text: linear-gradient(135deg, #ffffff 0%, #a29bfe 60%, #00d4ff 100%);
-  --lp-shadow-glow: 0 0 40px rgba(108, 92, 231, 0.15);
-  --lp-shadow-card-hover: 0 8px 40px rgba(108, 92, 231, 0.2);
-
+  --lp-gradient-text: linear-gradient(135deg, #ffffff 0%, #a29bfe 50%, #00d4ff 100%);
+  --lp-glow-purple: 0 0 30px rgba(108, 92, 231, 0.15);
+  --lp-glow-cyan: 0 0 30px rgba(0, 212, 255, 0.1);
   background: var(--lp-bg-base);
   color: var(--lp-text-primary);
-  font-family: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: var(--lp-sans);
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
 }
-
-/* Ensure all sections sit above particle canvas */
 .navbar,
 .hero,
 .stats-bar,
@@ -764,24 +826,66 @@ export default defineComponent({
   z-index: 1;
 }
 
-/* NAVBAR */
+/* ========== CARD CORNERS (HUD style) ========== */
+.card-corner,
+.stat-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--card-accent, var(--lp-accent));
+  border-style: solid;
+  border-width: 0;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  &.tl {
+    top: -1px;
+    left: -1px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+  }
+  &.tr {
+    top: -1px;
+    right: -1px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
+  &.bl {
+    bottom: -1px;
+    left: -1px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+  }
+  &.br {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+  }
+}
+.stat-item:hover .stat-corner,
+.capability-card:hover .card-corner,
+.usecase-card:hover .card-corner {
+  opacity: 1;
+}
+
+/* ========== NAVBAR ========== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 16px 0;
-  background: rgba(8, 9, 15, 0.7);
+  padding: 14px 0;
+  background: rgba(6, 7, 13, 0.6);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid transparent;
   transition:
     border-color 0.3s,
     background 0.3s;
-
   &.scrolled {
     border-bottom-color: var(--lp-border);
-    background: rgba(8, 9, 15, 0.9);
+    background: rgba(6, 7, 13, 0.9);
   }
 }
 .navbar-inner {
@@ -796,28 +900,30 @@ export default defineComponent({
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 700;
   letter-spacing: -0.02em;
   cursor: pointer;
 }
 .logo-icon {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 8px rgba(108, 92, 231, 0.4));
+}
+.logo-accent {
   background: var(--lp-gradient-accent);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  box-shadow: var(--lp-shadow-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--lp-mono);
+  font-size: 14px;
 }
 .nav-links {
   display: flex;
   gap: 32px;
   align-items: center;
   a {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--lp-text-secondary);
     transition: color 0.2s;
     &:hover {
@@ -831,19 +937,20 @@ export default defineComponent({
   align-items: center;
 }
 
-/* BUTTONS */
+/* ========== BUTTONS ========== */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 24px;
-  border-radius: 9999px;
-  font-size: 14px;
+  padding: 9px 22px;
+  border-radius: 8px;
+  font-size: 13px;
   font-weight: 600;
   border: none;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  font-family: var(--lp-sans);
 }
 .btn-ghost {
   background: transparent;
@@ -851,24 +958,41 @@ export default defineComponent({
   border: 1px solid var(--lp-border-light);
   &:hover {
     color: var(--lp-text-primary);
-    border-color: var(--lp-text-secondary);
+    border-color: var(--lp-accent);
+    background: rgba(108, 92, 231, 0.05);
   }
 }
 .btn-primary {
   background: var(--lp-gradient-accent);
   color: white;
-  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.25);
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s;
+  }
   &:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 28px rgba(108, 92, 231, 0.45);
+    box-shadow: 0 6px 28px rgba(108, 92, 231, 0.4);
+    &::before {
+      left: 100%;
+    }
   }
 }
 .btn-large {
-  padding: 16px 40px;
-  font-size: 16px;
+  padding: 14px 36px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 
-/* HERO */
+/* ========== HERO ========== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -877,32 +1001,28 @@ export default defineComponent({
   text-align: center;
   position: relative;
   background:
-    radial-gradient(ellipse at top, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108, 92, 231, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 212, 255, 0.06) 0%, transparent 50%);
   overflow: hidden;
   padding: 120px 24px 80px;
-
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(108, 92, 231, 0.08) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(108, 92, 231, 0.06) 1px, transparent 0);
     background-size: 40px 40px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
   }
-
-  /* Animated aurora orbs */
   &::after {
     content: '';
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 50%;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 400px;
     transform: translateX(-50%);
-    background: radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, transparent 60%);
-    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(108, 92, 231, 0.08) 0%, transparent 60%);
     animation: lp-aurora 8s ease-in-out infinite alternate;
     pointer-events: none;
   }
@@ -910,11 +1030,11 @@ export default defineComponent({
 @keyframes lp-aurora {
   0% {
     transform: translateX(-50%) scale(1);
-    opacity: 0.6;
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(-40%) scale(1.3);
-    opacity: 0.9;
+    transform: translateX(-40%) scale(1.2);
+    opacity: 0.8;
   }
 }
 .hero-content {
@@ -927,17 +1047,19 @@ export default defineComponent({
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background: rgba(108, 92, 231, 0.1);
+  background: rgba(108, 92, 231, 0.08);
   border: 1px solid rgba(108, 92, 231, 0.2);
-  border-radius: 9999px;
-  font-size: 13px;
+  border-radius: 4px;
+  font-size: 12px;
   color: var(--lp-accent-light);
+  font-family: var(--lp-mono);
   margin-bottom: 32px;
-  .dot {
+  .badge-pulse {
     width: 6px;
     height: 6px;
-    background: #4ecca3;
+    background: var(--lp-cyan);
     border-radius: 50%;
+    box-shadow: 0 0 8px var(--lp-cyan);
     animation: lp-pulse 2s infinite;
   }
 }
@@ -947,11 +1069,11 @@ export default defineComponent({
     opacity: 1;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.3;
   }
 }
 .hero h1 {
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -964,11 +1086,11 @@ export default defineComponent({
   }
 }
 .hero .subtitle {
-  font-size: 20px;
+  font-size: 19px;
   color: var(--lp-text-secondary);
   line-height: 1.6;
   margin-bottom: 40px;
-  max-width: 600px;
+  max-width: 560px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -979,26 +1101,26 @@ export default defineComponent({
   flex-wrap: wrap;
 }
 .hero-models-preview {
-  margin-top: 64px;
+  margin-top: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  opacity: 0.7;
 }
 .model-chip {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: var(--lp-bg-card);
+  gap: 8px;
+  padding: 7px 14px;
+  background: rgba(15, 18, 30, 0.5);
   border: 1px solid var(--lp-border);
-  border-radius: 9999px;
-  font-size: 13px;
+  border-radius: 6px;
+  font-size: 12px;
   color: var(--lp-text-secondary);
   transition: all 0.3s;
   cursor: pointer;
+  font-family: var(--lp-mono);
   &:hover {
     border-color: var(--lp-accent);
     color: var(--lp-text-primary);
@@ -1006,17 +1128,21 @@ export default defineComponent({
   }
 }
 .chip-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 10px;
   font-weight: 700;
+  background: color-mix(in srgb, var(--chip-color) 15%, transparent);
+  color: var(--chip-color);
+  border: 1px solid color-mix(in srgb, var(--chip-color) 30%, transparent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--chip-color) 20%, transparent);
 }
 
-/* STATS BAR */
+/* ========== STATS ========== */
 .stats-bar {
   padding: 48px 24px;
   background: var(--lp-bg-surface);
@@ -1024,31 +1150,40 @@ export default defineComponent({
   border-bottom: 1px solid var(--lp-border);
 }
 .stats-inner {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 24px;
   text-align: center;
 }
 .stat-item {
+  position: relative;
+  padding: 20px 16px;
+  .stat-corner {
+    border-color: var(--lp-accent);
+  }
   .stat-number {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 800;
     background: var(--lp-gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -0.02em;
+    font-family: var(--lp-mono);
   }
   .stat-label {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--lp-text-muted);
     margin-top: 4px;
+    font-family: var(--lp-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 }
 
-/* SECTION */
+/* ========== SECTION ========== */
 .section {
   padding: 100px 24px;
 }
@@ -1059,105 +1194,103 @@ export default defineComponent({
 .section-header {
   text-align: center;
   margin-bottom: 64px;
+  .section-label {
+    font-family: var(--lp-mono);
+    font-size: 11px;
+    color: var(--lp-accent-light);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
   h2 {
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
   }
   p {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--lp-text-secondary);
   }
 }
 
-/* CAPABILITY GRID */
+/* ========== CAPABILITY ========== */
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 .capability-card {
-  background: rgba(20, 24, 38, 0.6);
+  background: var(--lp-bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--lp-border);
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 32px 28px;
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-
-  /* Glow on hover */
   &::after {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(
       circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(108, 92, 231, 0.08),
+      color-mix(in srgb, var(--card-accent) 6%, transparent),
       transparent 50%
     );
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
   }
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--card-accent, var(--lp-accent));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
   &:hover {
     background: var(--lp-bg-card-hover);
-    border-color: var(--card-accent, var(--lp-accent));
+    border-color: var(--card-accent);
     transform: translateY(-4px);
-    box-shadow: var(--lp-shadow-card-hover);
-    &::before {
-      opacity: 1;
-    }
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--card-accent) 15%, transparent);
     &::after {
       opacity: 1;
     }
   }
 }
 .capability-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  margin-bottom: 20px;
-  background: var(--icon-bg, rgba(108, 92, 231, 0.1));
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--card-accent) 30%, transparent));
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 .capability-card {
   h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 8px;
   }
   p {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--lp-text-secondary);
     line-height: 1.6;
   }
   .card-count {
     margin-top: 16px;
-    font-size: 13px;
-    color: var(--card-accent, var(--lp-accent-light));
+    font-size: 12px;
+    color: var(--card-accent);
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--lp-mono);
   }
 }
 
-/* MODEL WALL */
+/* ========== MODEL WALL ========== */
 .model-wall {
   background: var(--lp-bg-surface);
 }
@@ -1168,7 +1301,7 @@ export default defineComponent({
 }
 .model-group {
   h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 20px;
     display: flex;
@@ -1176,19 +1309,24 @@ export default defineComponent({
     gap: 12px;
   }
   .group-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
+    background: color-mix(in srgb, var(--group-color) 12%, transparent);
+    color: var(--group-color);
+    border: 1px solid color-mix(in srgb, var(--group-color) 25%, transparent);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--group-color) 15%, transparent);
   }
   .group-count {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--lp-text-muted);
     font-weight: 400;
+    font-family: var(--lp-mono);
   }
 }
 .model-grid {
@@ -1200,37 +1338,40 @@ export default defineComponent({
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
-  background: rgba(20, 24, 38, 0.5);
+  padding: 12px 14px;
+  background: rgba(15, 18, 30, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--lp-border);
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
-
   &:hover {
     background: var(--lp-bg-card-hover);
-    border-color: var(--lp-accent);
+    border-color: var(--m-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--m-color) 12%, transparent);
   }
   .m-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    flex-shrink: 0;
+    background: color-mix(in srgb, var(--m-color) 12%, transparent);
+    color: var(--m-color);
+    border: 1px solid color-mix(in srgb, var(--m-color) 25%, transparent);
   }
   .m-info {
     flex: 1;
     min-width: 0;
   }
   .m-name {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
@@ -1243,71 +1384,121 @@ export default defineComponent({
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .m-arrow {
+    color: var(--lp-text-muted);
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+  &:hover .m-arrow {
+    color: var(--m-color);
+  }
 }
 
-/* USE CASES */
+/* ========== USE CASES ========== */
 .usecase-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 .usecase-card {
-  background: rgba(20, 24, 38, 0.6);
+  background: var(--lp-bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--lp-border);
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s;
-
+  position: relative;
   &:hover {
-    border-color: var(--lp-accent);
+    border-color: var(--uc-color);
     transform: translateY(-4px);
-    box-shadow: var(--lp-shadow-card-hover);
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--uc-color) 12%, transparent);
   }
 }
 .usecase-visual {
-  height: 140px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--uc-color) 8%, transparent), transparent);
+  border-bottom: 1px solid var(--lp-border);
+  svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--uc-color) 30%, transparent));
+  }
 }
 .usecase-body {
-  padding: 24px;
+  padding: 20px;
   h4 {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 700;
     margin-bottom: 8px;
   }
   p {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--lp-text-secondary);
     line-height: 1.6;
   }
 }
 .usecase-tag {
   display: inline-block;
-  margin-top: 12px;
-  padding: 4px 10px;
-  background: rgba(108, 92, 231, 0.1);
-  border-radius: 6px;
+  margin-top: 10px;
+  padding: 3px 10px;
+  background: color-mix(in srgb, var(--uc-color) 10%, transparent);
+  border-radius: 4px;
   font-size: 11px;
-  color: var(--lp-accent-light);
+  color: var(--uc-color);
   font-weight: 600;
+  font-family: var(--lp-mono);
 }
 
-/* BOTTOM CTA */
+/* ========== BOTTOM CTA ========== */
 .bottom-cta {
   padding: 100px 24px;
   text-align: center;
-  background:
-    radial-gradient(ellipse at top, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+  background: radial-gradient(ellipse at top, rgba(108, 92, 231, 0.12) 0%, transparent 50%);
   border-top: 1px solid var(--lp-border);
+  position: relative;
+  overflow: hidden;
+}
+.cta-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  .ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(108, 92, 231, 0.08);
+    border-radius: 50%;
+  }
+  .r1 {
+    width: 300px;
+    height: 300px;
+  }
+  .r2 {
+    width: 500px;
+    height: 500px;
+    border-color: rgba(0, 212, 255, 0.05);
+  }
+  .r3 {
+    width: 700px;
+    height: 700px;
+    border-color: rgba(108, 92, 231, 0.03);
+  }
+}
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+.bottom-cta {
   h2 {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
@@ -1319,15 +1510,15 @@ export default defineComponent({
     }
   }
   p {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--lp-text-secondary);
     margin-bottom: 40px;
   }
 }
 
-/* FOOTER */
+/* ========== FOOTER ========== */
 .footer {
-  padding: 48px 24px 32px;
+  padding: 40px 24px 32px;
   background: var(--lp-bg-surface);
   border-top: 1px solid var(--lp-border);
 }
@@ -1341,36 +1532,38 @@ export default defineComponent({
   gap: 24px;
 }
 .footer-info {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--lp-text-muted);
+  font-family: var(--lp-mono);
 }
 .footer-links {
   display: flex;
   gap: 24px;
   a {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--lp-text-muted);
     transition: color 0.2s;
+    font-family: var(--lp-mono);
     &:hover {
       color: var(--lp-text-secondary);
     }
   }
 }
 
-/* RESPONSIVE */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
   .nav-links {
     display: none;
   }
   .hero h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
   .hero .subtitle {
-    font-size: 17px;
+    font-size: 16px;
   }
   .stats-inner {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 16px;
   }
   .capability-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1382,12 +1575,12 @@ export default defineComponent({
     padding: 64px 24px;
   }
   .section-header h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 @media (max-width: 600px) {
   .hero h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
   .stats-inner {
     grid-template-columns: 1fr;
