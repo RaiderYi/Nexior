@@ -67,13 +67,22 @@ export default defineComponent({
     if (!seen) {
       window.addEventListener('scroll', this.onFirstScroll, { once: true, passive: true });
     }
+    window.addEventListener('open-floating-contact', this.onOpenRequest);
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.onFirstScroll);
+    window.removeEventListener('open-floating-contact', this.onOpenRequest);
   },
   methods: {
     toggleExpand() {
       this.expanded = !this.expanded;
+      if (this.shouldPulse) {
+        this.shouldPulse = false;
+        localStorage.setItem(HINT_KEY, '1');
+      }
+    },
+    onOpenRequest() {
+      this.expanded = true;
       if (this.shouldPulse) {
         this.shouldPulse = false;
         localStorage.setItem(HINT_KEY, '1');

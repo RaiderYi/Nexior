@@ -110,5 +110,361 @@
   "customers.comment3": {
     "message": "There are too many AI platforms, but this one is really easy to use and reasonably priced, hope it gets even better!",
     "description": "Customer's comment"
+  },
+  "landing.nav.features": {
+    "message": "Features",
+    "description": "Nav features"
+  },
+  "landing.nav.models": {
+    "message": "Models",
+    "description": "Nav models"
+  },
+  "landing.nav.useCases": {
+    "message": "Use Cases",
+    "description": "Nav use cases"
+  },
+  "landing.nav.download": {
+    "message": "Download App",
+    "description": "Nav download"
+  },
+  "landing.nav.login": {
+    "message": "Login",
+    "description": "Login"
+  },
+  "landing.nav.signup": {
+    "message": "Sign Up Free",
+    "description": "Sign up"
+  },
+  "landing.hero.badge": {
+    "message": "New · GPT-5.5 / Claude Fable-5 / Gemini 3.5 Now Available",
+    "description": "Hero badge"
+  },
+  "landing.hero.titleAccent": {
+    "message": "AI Creative Engine",
+    "description": "Hero title accent"
+  },
+  "landing.hero.titleMain": {
+    "message": "Launch From Here",
+    "description": "Hero title main"
+  },
+  "landing.hero.subtitle": {
+    "message": "46+ top AI models for chat, image, video, and music — all in one platform. No VPN, no separate subscriptions, ready to use.",
+    "description": "Hero subtitle"
+  },
+  "landing.hero.ctaPrimary": {
+    "message": "Start Free Now",
+    "description": "Hero CTA primary"
+  },
+  "landing.hero.ctaSecondary": {
+    "message": "Browse All Models",
+    "description": "Hero CTA secondary"
+  },
+  "landing.stats.models": {
+    "message": "AI Chat Models",
+    "description": "Stat models"
+  },
+  "landing.stats.features": {
+    "message": "Creative Tools",
+    "description": "Stat features"
+  },
+  "landing.stats.languages": {
+    "message": "Languages",
+    "description": "Stat languages"
+  },
+  "landing.stats.uptime": {
+    "message": "Uptime",
+    "description": "Stat uptime"
+  },
+  "landing.capabilities.title": {
+    "message": "Four Powers, One Platform",
+    "description": "Capabilities title"
+  },
+  "landing.capabilities.subtitle": {
+    "message": "From text to image, from still to motion, from idea to product",
+    "description": "Capabilities subtitle"
+  },
+  "landing.capabilities.chat.title": {
+    "message": "AI Chat",
+    "description": "Cap chat title"
+  },
+  "landing.capabilities.chat.desc": {
+    "message": "GPT, Claude, Gemini, DeepSeek — 46+ top models for writing, analysis, coding, translation.",
+    "description": "Cap chat desc"
+  },
+  "landing.capabilities.chat.count": {
+    "message": "46+ Models",
+    "description": "Cap chat count"
+  },
+  "landing.capabilities.image.title": {
+    "message": "AI Image",
+    "description": "Cap image title"
+  },
+  "landing.capabilities.image.desc": {
+    "message": "Midjourney, Flux, Seedream, QR Art — turn words into visuals. Imagination is productivity.",
+    "description": "Cap image desc"
+  },
+  "landing.capabilities.image.count": {
+    "message": "8+ Tools",
+    "description": "Cap image count"
+  },
+  "landing.capabilities.video.title": {
+    "message": "AI Video",
+    "description": "Cap video title"
+  },
+  "landing.capabilities.video.desc": {
+    "message": "Sora, Kling, Luma, Veo, Pixverse — generate video with a sentence. No editing software needed.",
+    "description": "Cap video desc"
+  },
+  "landing.capabilities.video.count": {
+    "message": "10+ Platforms",
+    "description": "Cap video count"
+  },
+  "landing.capabilities.music.title": {
+    "message": "AI Music",
+    "description": "Cap music title"
+  },
+  "landing.capabilities.music.desc": {
+    "message": "Suno generates complete songs — melody, vocals, zero music theory required.",
+    "description": "Cap music desc"
+  },
+  "landing.capabilities.music.count": {
+    "message": "Try Now",
+    "description": "Cap music count"
+  },
+  "landing.models.title": {
+    "message": "46+ Models, Always Updated",
+    "description": "Models title"
+  },
+  "landing.models.subtitle": {
+    "message": "The world's best AI models in one place. We handle integration, you create.",
+    "description": "Models subtitle"
+  },
+  "landing.models.openai.name": {
+    "message": "OpenAI",
+    "description": "OpenAI name"
+  },
+  "landing.models.openai.count": {
+    "message": "9 models",
+    "description": "OpenAI count"
+  },
+  "landing.models.openai.gpt55": {
+    "message": "Flagship, all-purpose",
+    "description": "GPT55"
+  },
+  "landing.models.openai.gpt54": {
+    "message": "Fast reasoning",
+    "description": "GPT54"
+  },
+  "landing.models.openai.gpt52": {
+    "message": "Best value",
+    "description": "GPT52"
+  },
+  "landing.models.openai.gpt5mini": {
+    "message": "Lightweight & fast",
+    "description": "GPT5mini"
+  },
+  "landing.models.openai.o3": {
+    "message": "Deep reasoning",
+    "description": "o3"
+  },
+  "landing.models.anthropic.name": {
+    "message": "Anthropic",
+    "description": "Anthropic name"
+  },
+  "landing.models.anthropic.count": {
+    "message": "7 models",
+    "description": "Anthropic count"
+  },
+  "landing.models.anthropic.fable5": {
+    "message": "Best creative writing",
+    "description": "Fable5"
+  },
+  "landing.models.anthropic.sonnet5": {
+    "message": "Balanced workhorse",
+    "description": "Sonnet5"
+  },
+  "landing.models.anthropic.opus48": {
+    "message": "Deep analysis",
+    "description": "Opus48"
+  },
+  "landing.models.anthropic.haiku45": {
+    "message": "Ultra-fast",
+    "description": "Haiku45"
+  },
+  "landing.models.google.name": {
+    "message": "Google Gemini",
+    "description": "Google name"
+  },
+  "landing.models.google.count": {
+    "message": "8 models",
+    "description": "Google count"
+  },
+  "landing.models.google.gemini35flash": {
+    "message": "Fastest response",
+    "description": "Gemini35flash"
+  },
+  "landing.models.google.gemini31pro": {
+    "message": "Flagship all-rounder",
+    "description": "Gemini31pro"
+  },
+  "landing.models.google.gemini25pro": {
+    "message": "Multimodal expert",
+    "description": "Gemini25pro"
+  },
+  "landing.models.google.gemini25flash": {
+    "message": "Efficient & light",
+    "description": "Gemini25flash"
+  },
+  "landing.models.deepseek.name": {
+    "message": "DeepSeek",
+    "description": "DeepSeek name"
+  },
+  "landing.models.deepseek.count": {
+    "message": "6 models",
+    "description": "DeepSeek count"
+  },
+  "landing.models.deepseek.v4flash": {
+    "message": "Fast & free",
+    "description": "V4flash"
+  },
+  "landing.models.deepseek.v32": {
+    "message": "Experimental",
+    "description": "V32"
+  },
+  "landing.models.deepseek.r1": {
+    "message": "Reasoning king",
+    "description": "R1"
+  },
+  "landing.models.cn.name": {
+    "message": "Chinese Models",
+    "description": "CN name"
+  },
+  "landing.models.cn.count": {
+    "message": "Kimi / GLM / Grok",
+    "description": "CN count"
+  },
+  "landing.models.cn.kimi25": {
+    "message": "Moonshot flagship",
+    "description": "Kimi25"
+  },
+  "landing.models.cn.kimi2think": {
+    "message": "Deep thinking mode",
+    "description": "Kimi2think"
+  },
+  "landing.models.cn.glm51": {
+    "message": "Zhipu all-rounder",
+    "description": "Glm51"
+  },
+  "landing.models.cn.grok4": {
+    "message": "xAI latest",
+    "description": "Grok4"
+  },
+  "landing.models.creative.name": {
+    "message": "Creative Tools",
+    "description": "Creative name"
+  },
+  "landing.models.creative.count": {
+    "message": "Image · Video · Music",
+    "description": "Creative count"
+  },
+  "landing.models.creative.mj": {
+    "message": "Best AI art",
+    "description": "Mj"
+  },
+  "landing.models.creative.sora": {
+    "message": "OpenAI video gen",
+    "description": "Sora"
+  },
+  "landing.models.creative.kling": {
+    "message": "Kuaishou video gen",
+    "description": "Kling"
+  },
+  "landing.models.creative.suno": {
+    "message": "AI music creation",
+    "description": "Suno"
+  },
+  "landing.models.creative.flux": {
+    "message": "Ultra-fast image gen",
+    "description": "Flux"
+  },
+  "landing.models.creative.luma": {
+    "message": "Dream Machine",
+    "description": "Luma"
+  },
+  "landing.useCases.title": {
+    "message": "What Can You Do With BigPlayer AI?",
+    "description": "Use cases title"
+  },
+  "landing.useCases.subtitle": {
+    "message": "Real scenarios, not feature lists",
+    "description": "Use cases subtitle"
+  },
+  "landing.useCases.writing.title": {
+    "message": "Write Papers/Reports",
+    "description": "UC writing title"
+  },
+  "landing.useCases.writing.desc": {
+    "message": "GPT-5.5 + Claude: outline to polish, 3x efficiency.",
+    "description": "UC writing desc"
+  },
+  "landing.useCases.writing.tag": {
+    "message": "GPT-5.5",
+    "description": "UC writing tag"
+  },
+  "landing.useCases.design.title": {
+    "message": "Design/Posters",
+    "description": "UC design title"
+  },
+  "landing.useCases.design.desc": {
+    "message": "Midjourney + Flux: words to images, no more stock sites.",
+    "description": "UC design desc"
+  },
+  "landing.useCases.design.tag": {
+    "message": "Midjourney",
+    "description": "UC design tag"
+  },
+  "landing.useCases.video.title": {
+    "message": "Create Videos",
+    "description": "UC video title"
+  },
+  "landing.useCases.video.desc": {
+    "message": "Sora + Kling: generate clips with one sentence.",
+    "description": "UC video desc"
+  },
+  "landing.useCases.video.tag": {
+    "message": "Sora",
+    "description": "UC video tag"
+  },
+  "landing.useCases.music.title": {
+    "message": "Make Music",
+    "description": "UC music title"
+  },
+  "landing.useCases.music.desc": {
+    "message": "Suno: full songs with zero music theory.",
+    "description": "UC music desc"
+  },
+  "landing.useCases.music.tag": {
+    "message": "Suno",
+    "description": "UC music tag"
+  },
+  "landing.bottomCta.title": {
+    "message": "Ready?",
+    "description": "Bottom CTA title"
+  },
+  "landing.bottomCta.subtitle": {
+    "message": "Sign up for free, no credit card required",
+    "description": "Bottom CTA subtitle"
+  },
+  "landing.bottomCta.button": {
+    "message": "Get Started Free",
+    "description": "Bottom CTA button"
+  },
+  "landing.footer.download": {
+    "message": "Download App",
+    "description": "Footer download"
+  },
+  "landing.footer.support": {
+    "message": "Support",
+    "description": "Footer support"
   }
 }

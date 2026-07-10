@@ -110,5 +110,361 @@
   "customers.comment3": {
     "message": "用过很多AI平台，BigPlayer AI 是最顺手的一个，模型全、速度快、价格合理。",
     "description": "客户的评论"
+  },
+  "landing.nav.features": {
+    "message": "功能",
+    "description": "Nav features"
+  },
+  "landing.nav.models": {
+    "message": "模型",
+    "description": "Nav models"
+  },
+  "landing.nav.useCases": {
+    "message": "场景",
+    "description": "Nav use cases"
+  },
+  "landing.nav.download": {
+    "message": "下载App",
+    "description": "Nav download"
+  },
+  "landing.nav.login": {
+    "message": "登录",
+    "description": "Login"
+  },
+  "landing.nav.signup": {
+    "message": "免费注册",
+    "description": "Sign up"
+  },
+  "landing.hero.badge": {
+    "message": "全新上线 · GPT-5.5 / Claude Fable-5 / Gemini 3.5 已就绪",
+    "description": "Hero badge"
+  },
+  "landing.hero.titleAccent": {
+    "message": "AI 创作引擎",
+    "description": "Hero title accent"
+  },
+  "landing.hero.titleMain": {
+    "message": "从这里启航",
+    "description": "Hero title main"
+  },
+  "landing.hero.subtitle": {
+    "message": "46+ 顶级AI模型，一站式搞定对话、绘画、视频、音乐。不用翻墙，不用分别订阅，开箱即用。",
+    "description": "Hero subtitle"
+  },
+  "landing.hero.ctaPrimary": {
+    "message": "立即免费使用",
+    "description": "Hero CTA primary"
+  },
+  "landing.hero.ctaSecondary": {
+    "message": "浏览全部模型",
+    "description": "Hero CTA secondary"
+  },
+  "landing.stats.models": {
+    "message": "AI 对话模型",
+    "description": "Stat models"
+  },
+  "landing.stats.features": {
+    "message": "创作功能",
+    "description": "Stat features"
+  },
+  "landing.stats.languages": {
+    "message": "种语言支持",
+    "description": "Stat languages"
+  },
+  "landing.stats.uptime": {
+    "message": "服务可用率",
+    "description": "Stat uptime"
+  },
+  "landing.capabilities.title": {
+    "message": "四大能力，一个平台",
+    "description": "Capabilities title"
+  },
+  "landing.capabilities.subtitle": {
+    "message": "从文字到画面，从静图到视频，从想法到成品",
+    "description": "Capabilities subtitle"
+  },
+  "landing.capabilities.chat.title": {
+    "message": "AI 对话",
+    "description": "Cap chat title"
+  },
+  "landing.capabilities.chat.desc": {
+    "message": "GPT、Claude、Gemini、DeepSeek等46+顶级模型，写作、分析、编程、翻译一站搞定。",
+    "description": "Cap chat desc"
+  },
+  "landing.capabilities.chat.count": {
+    "message": "46+ 模型",
+    "description": "Cap chat count"
+  },
+  "landing.capabilities.image.title": {
+    "message": "AI 绘画",
+    "description": "Cap image title"
+  },
+  "landing.capabilities.image.desc": {
+    "message": "Midjourney、Flux、Seedream、QR Art，文字变画面，想象力就是生产力。",
+    "description": "Cap image desc"
+  },
+  "landing.capabilities.image.count": {
+    "message": "8+ 工具",
+    "description": "Cap image count"
+  },
+  "landing.capabilities.video.title": {
+    "message": "AI 视频",
+    "description": "Cap video title"
+  },
+  "landing.capabilities.video.desc": {
+    "message": "Sora、Kling、Luma、Veo、Pixverse，一句话生成视频，告别剪辑软件。",
+    "description": "Cap video desc"
+  },
+  "landing.capabilities.video.count": {
+    "message": "10+ 平台",
+    "description": "Cap video count"
+  },
+  "landing.capabilities.music.title": {
+    "message": "AI 音乐",
+    "description": "Cap music title"
+  },
+  "landing.capabilities.music.desc": {
+    "message": "Suno一键生成完整歌曲，从旋律到人声，零乐理基础也能创作。",
+    "description": "Cap music desc"
+  },
+  "landing.capabilities.music.count": {
+    "message": "立即体验",
+    "description": "Cap music count"
+  },
+  "landing.models.title": {
+    "message": "46+ 模型，持续更新",
+    "description": "Models title"
+  },
+  "landing.models.subtitle": {
+    "message": "全球顶级AI模型齐聚一堂，我们负责接入，你负责用",
+    "description": "Models subtitle"
+  },
+  "landing.models.openai.name": {
+    "message": "OpenAI",
+    "description": "OpenAI name"
+  },
+  "landing.models.openai.count": {
+    "message": "9 个模型",
+    "description": "OpenAI count"
+  },
+  "landing.models.openai.gpt55": {
+    "message": "最强旗舰，全能型",
+    "description": "GPT55"
+  },
+  "landing.models.openai.gpt54": {
+    "message": "高速推理",
+    "description": "GPT54"
+  },
+  "landing.models.openai.gpt52": {
+    "message": "性价比之选",
+    "description": "GPT52"
+  },
+  "landing.models.openai.gpt5mini": {
+    "message": "轻量快速",
+    "description": "GPT5mini"
+  },
+  "landing.models.openai.o3": {
+    "message": "深度推理",
+    "description": "o3"
+  },
+  "landing.models.anthropic.name": {
+    "message": "Anthropic",
+    "description": "Anthropic name"
+  },
+  "landing.models.anthropic.count": {
+    "message": "7 个模型",
+    "description": "Anthropic count"
+  },
+  "landing.models.anthropic.fable5": {
+    "message": "最强创意写作",
+    "description": "Fable5"
+  },
+  "landing.models.anthropic.sonnet5": {
+    "message": "均衡主力",
+    "description": "Sonnet5"
+  },
+  "landing.models.anthropic.opus48": {
+    "message": "深度分析",
+    "description": "Opus48"
+  },
+  "landing.models.anthropic.haiku45": {
+    "message": "极速响应",
+    "description": "Haiku45"
+  },
+  "landing.models.google.name": {
+    "message": "Google Gemini",
+    "description": "Google name"
+  },
+  "landing.models.google.count": {
+    "message": "8 个模型",
+    "description": "Google count"
+  },
+  "landing.models.google.gemini35flash": {
+    "message": "最快响应",
+    "description": "Gemini35flash"
+  },
+  "landing.models.google.gemini31pro": {
+    "message": "综合旗舰",
+    "description": "Gemini31pro"
+  },
+  "landing.models.google.gemini25pro": {
+    "message": "多模态专家",
+    "description": "Gemini25pro"
+  },
+  "landing.models.google.gemini25flash": {
+    "message": "高效轻量",
+    "description": "Gemini25flash"
+  },
+  "landing.models.deepseek.name": {
+    "message": "DeepSeek",
+    "description": "DeepSeek name"
+  },
+  "landing.models.deepseek.count": {
+    "message": "6 个模型",
+    "description": "DeepSeek count"
+  },
+  "landing.models.deepseek.v4flash": {
+    "message": "极速+免费",
+    "description": "V4flash"
+  },
+  "landing.models.deepseek.v32": {
+    "message": "实验版尝鲜",
+    "description": "V32"
+  },
+  "landing.models.deepseek.r1": {
+    "message": "推理之王",
+    "description": "R1"
+  },
+  "landing.models.cn.name": {
+    "message": "国产精选",
+    "description": "CN name"
+  },
+  "landing.models.cn.count": {
+    "message": "Kimi / GLM / Grok",
+    "description": "CN count"
+  },
+  "landing.models.cn.kimi25": {
+    "message": "月之暗面旗舰",
+    "description": "Kimi25"
+  },
+  "landing.models.cn.kimi2think": {
+    "message": "深度思考模式",
+    "description": "Kimi2think"
+  },
+  "landing.models.cn.glm51": {
+    "message": "智谱全能",
+    "description": "Glm51"
+  },
+  "landing.models.cn.grok4": {
+    "message": "xAI最新",
+    "description": "Grok4"
+  },
+  "landing.models.creative.name": {
+    "message": "创作工具",
+    "description": "Creative name"
+  },
+  "landing.models.creative.count": {
+    "message": "图像 · 视频 · 音乐",
+    "description": "Creative count"
+  },
+  "landing.models.creative.mj": {
+    "message": "AI绘画天花板",
+    "description": "Mj"
+  },
+  "landing.models.creative.sora": {
+    "message": "OpenAI视频生成",
+    "description": "Sora"
+  },
+  "landing.models.creative.kling": {
+    "message": "快手视频生成",
+    "description": "Kling"
+  },
+  "landing.models.creative.suno": {
+    "message": "AI音乐创作",
+    "description": "Suno"
+  },
+  "landing.models.creative.flux": {
+    "message": "极速图像生成",
+    "description": "Flux"
+  },
+  "landing.models.creative.luma": {
+    "message": "Dream Machine",
+    "description": "Luma"
+  },
+  "landing.useCases.title": {
+    "message": "用 BigPlayer AI 可以做什么？",
+    "description": "Use cases title"
+  },
+  "landing.useCases.subtitle": {
+    "message": "真实场景，不是空谈功能",
+    "description": "Use cases subtitle"
+  },
+  "landing.useCases.writing.title": {
+    "message": "写论文/报告",
+    "description": "UC writing title"
+  },
+  "landing.useCases.writing.desc": {
+    "message": "GPT-5.5+Claude配合，从大纲到润色，效率翻3倍。",
+    "description": "UC writing desc"
+  },
+  "landing.useCases.writing.tag": {
+    "message": "GPT-5.5",
+    "description": "UC writing tag"
+  },
+  "landing.useCases.design.title": {
+    "message": "做设计/海报",
+    "description": "UC design title"
+  },
+  "landing.useCases.design.desc": {
+    "message": "Midjourney+Flux，文字描述直接出图，告别素材网站。",
+    "description": "UC design desc"
+  },
+  "landing.useCases.design.tag": {
+    "message": "Midjourney",
+    "description": "UC design tag"
+  },
+  "landing.useCases.video.title": {
+    "message": "剪短视频",
+    "description": "UC video title"
+  },
+  "landing.useCases.video.desc": {
+    "message": "Sora+Kling生成素材，一句话出视频片段。",
+    "description": "UC video desc"
+  },
+  "landing.useCases.video.tag": {
+    "message": "Sora",
+    "description": "UC video tag"
+  },
+  "landing.useCases.music.title": {
+    "message": "创作音乐",
+    "description": "UC music title"
+  },
+  "landing.useCases.music.desc": {
+    "message": "Suno一键生成歌曲，零乐理也能写BGM/歌词/配乐。",
+    "description": "UC music desc"
+  },
+  "landing.useCases.music.tag": {
+    "message": "Suno",
+    "description": "UC music tag"
+  },
+  "landing.bottomCta.title": {
+    "message": "准备好了吗？",
+    "description": "Bottom CTA title"
+  },
+  "landing.bottomCta.subtitle": {
+    "message": "注册即可免费体验，无需信用卡",
+    "description": "Bottom CTA subtitle"
+  },
+  "landing.bottomCta.button": {
+    "message": "免费开始",
+    "description": "Bottom CTA button"
+  },
+  "landing.footer.download": {
+    "message": "下载App",
+    "description": "Footer download"
+  },
+  "landing.footer.support": {
+    "message": "技术支持",
+    "description": "Footer support"
   }
 }
