@@ -15,8 +15,8 @@
               <path d="M16 8L22 11.5V18.5L16 22L10 18.5V11.5L16 8Z" fill="url(#logo-grad)" />
               <defs>
                 <linearGradient id="logo-grad" x1="4" y1="2" x2="28" y2="30">
-                  <stop stop-color="#6c5ce7" />
-                  <stop offset="1" stop-color="#00d4ff" />
+                  <stop stop-color="#5b8def" />
+                  <stop offset="1" stop-color="#6dd5d5" />
                 </linearGradient>
               </defs>
             </svg>
@@ -306,7 +306,7 @@ export default defineComponent({
         { name: 'Gemini', letter: 'G', color: '#4285f4', route: '/gemini' },
         { name: 'DeepSeek', letter: 'D', color: '#4ecca3', route: '/deepseek' },
         { name: 'Midjourney', letter: 'M', color: '#ffd93d', route: '/midjourney' },
-        { name: 'Suno', letter: 'S', color: '#00d4ff', route: '/suno' }
+        { name: 'Suno', letter: 'S', color: '#6dd5d5', route: '/suno' }
       ],
       stats: [
         { number: '46+', label: 'index.landing.stats.models' },
@@ -318,7 +318,7 @@ export default defineComponent({
         {
           id: 'chat',
           svg: svgChat,
-          color: '#6c5ce7',
+          color: '#5b8def',
           route: '/chatgpt',
           titleKey: 'index.landing.capabilities.chat.title',
           descKey: 'index.landing.capabilities.chat.desc',
@@ -336,7 +336,7 @@ export default defineComponent({
         {
           id: 'video',
           svg: svgVideo,
-          color: '#00d4ff',
+          color: '#6dd5d5',
           route: '/sora',
           titleKey: 'index.landing.capabilities.video.title',
           descKey: 'index.landing.capabilities.video.desc',
@@ -498,26 +498,26 @@ export default defineComponent({
         {
           id: 'cn',
           letter: '中',
-          color: '#a29bfe',
+          color: '#8eb3ff',
           nameKey: 'index.landing.models.cn.name',
           countKey: 'index.landing.models.cn.count',
           models: [
             {
               name: 'Kimi K2.5',
               letter: 'K',
-              color: '#a29bfe',
+              color: '#8eb3ff',
               route: '/kimi',
               descKey: 'index.landing.models.cn.kimi25'
             },
             {
               name: 'Kimi K2 Thinking',
               letter: 'K',
-              color: '#a29bfe',
+              color: '#8eb3ff',
               route: '/kimi',
               descKey: 'index.landing.models.cn.kimi2think'
             },
-            { name: 'GLM-5.1', letter: 'Z', color: '#a29bfe', route: '/glm', descKey: 'index.landing.models.cn.glm51' },
-            { name: 'Grok-4', letter: 'X', color: '#a29bfe', route: '/grok', descKey: 'index.landing.models.cn.grok4' }
+            { name: 'GLM-5.1', letter: 'Z', color: '#8eb3ff', route: '/glm', descKey: 'index.landing.models.cn.glm51' },
+            { name: 'Grok-4', letter: 'X', color: '#8eb3ff', route: '/grok', descKey: 'index.landing.models.cn.grok4' }
           ]
         },
         {
@@ -537,7 +537,7 @@ export default defineComponent({
             {
               name: 'Sora',
               letter: 'S',
-              color: '#00d4ff',
+              color: '#6dd5d5',
               route: '/sora',
               descKey: 'index.landing.models.creative.sora'
             },
@@ -576,7 +576,7 @@ export default defineComponent({
         {
           id: 'writing',
           svg: svgWriting,
-          color: '#6c5ce7',
+          color: '#5b8def',
           route: '/chatgpt',
           titleKey: 'index.landing.useCases.writing.title',
           descKey: 'index.landing.useCases.writing.desc',
@@ -594,7 +594,7 @@ export default defineComponent({
         {
           id: 'video',
           svg: svgFilm,
-          color: '#00d4ff',
+          color: '#6dd5d5',
           route: '/sora',
           titleKey: 'index.landing.useCases.video.title',
           descKey: 'index.landing.useCases.video.desc',
@@ -690,7 +690,7 @@ export default defineComponent({
         }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(108, 92, 231, ${p.opacity})`;
+        ctx.fillStyle = `rgba(91, 141, 239, ${p.opacity})`;
         ctx.fill();
         for (let j = i + 1; j < this.particles.length; j++) {
           const p2 = this.particles[j];
@@ -698,16 +698,16 @@ export default defineComponent({
           const cdy = p.y - p2.y;
           const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
           if (cdist < maxDist) {
-            const cOpacity = (1 - cdist / maxDist) * 0.25;
+            const cOpacity = (1 - cdist / maxDist) * 0.15;
             const midX = (p.x + p2.x) / 2;
             const midY = (p.y + p2.y) / 2;
             const mouseDist = Math.sqrt((midX - this.mouseX) ** 2 + (midY - this.mouseY) ** 2);
-            const boost = mouseDist < 200 ? (1 - mouseDist / 200) * 0.5 : 0;
+            const boost = mouseDist < 200 ? (1 - mouseDist / 200) * 0.4 : 0;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(108, 92, 231, ${cOpacity + boost})`;
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = `rgba(91, 141, 239, ${cOpacity + boost})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
@@ -772,8 +772,8 @@ export default defineComponent({
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(108, 92, 231, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108, 92, 231, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(91, 141, 239, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 141, 239, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
@@ -791,24 +791,25 @@ export default defineComponent({
 }
 
 .landing-page {
-  --lp-bg-base: #06070d;
-  --lp-bg-surface: #0b0d16;
-  --lp-bg-card: rgba(15, 18, 30, 0.6);
-  --lp-bg-card-hover: rgba(20, 24, 40, 0.8);
-  --lp-border: #1a1e2e;
-  --lp-border-light: #2a3048;
-  --lp-text-primary: #e8ecf4;
-  --lp-text-secondary: #8a92a8;
-  --lp-text-muted: #4a5268;
-  --lp-accent: #6c5ce7;
-  --lp-accent-light: #a29bfe;
-  --lp-cyan: #00d4ff;
-  --lp-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  --lp-bg-base: #08090e;
+  --lp-bg-surface: #0c0e15;
+  --lp-bg-card: rgba(16, 19, 28, 0.5);
+  --lp-bg-card-hover: rgba(22, 26, 38, 0.7);
+  --lp-border: #161922;
+  --lp-border-light: #222736;
+  --lp-text-primary: #f0f2f8;
+  --lp-text-secondary: #7e8694;
+  --lp-text-muted: #454d5e;
+  --lp-accent: #5b8def;
+  --lp-accent-light: #8eb3ff;
+  --lp-cyan: #6dd5d5;
+  --lp-gold: #d4a86a;
+  --lp-mono: 'SF Mono', 'JetBrains Mono', 'Consolas', monospace;
   --lp-sans: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --lp-gradient-accent: linear-gradient(135deg, #6c5ce7 0%, #00d4ff 100%);
-  --lp-gradient-text: linear-gradient(135deg, #ffffff 0%, #a29bfe 50%, #00d4ff 100%);
-  --lp-glow-purple: 0 0 30px rgba(108, 92, 231, 0.15);
-  --lp-glow-cyan: 0 0 30px rgba(0, 212, 255, 0.1);
+  --lp-gradient-accent: linear-gradient(135deg, #5b8def 0%, #6dd5d5 100%);
+  --lp-gradient-text: linear-gradient(135deg, #ffffff 0%, #8eb3ff 40%, #6dd5d5 80%, #d4a86a 100%);
+  --lp-glow-purple: 0 0 40px rgba(91, 141, 239, 0.08);
+  --lp-glow-cyan: 0 0 40px rgba(109, 213, 213, 0.06);
   background: var(--lp-bg-base);
   color: var(--lp-text-primary);
   font-family: var(--lp-sans);
@@ -908,7 +909,7 @@ export default defineComponent({
 .logo-icon {
   width: 32px;
   height: 32px;
-  filter: drop-shadow(0 0 8px rgba(108, 92, 231, 0.4));
+  filter: drop-shadow(0 0 8px rgba(91, 141, 239, 0.4));
 }
 .logo-accent {
   background: var(--lp-gradient-accent);
@@ -959,13 +960,13 @@ export default defineComponent({
   &:hover {
     color: var(--lp-text-primary);
     border-color: var(--lp-accent);
-    background: rgba(108, 92, 231, 0.05);
+    background: rgba(91, 141, 239, 0.05);
   }
 }
 .btn-primary {
   background: var(--lp-gradient-accent);
   color: white;
-  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.25);
+  box-shadow: 0 4px 20px rgba(91, 141, 239, 0.25);
   position: relative;
   overflow: hidden;
   &::before {
@@ -980,7 +981,7 @@ export default defineComponent({
   }
   &:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 28px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 6px 28px rgba(91, 141, 239, 0.4);
     &::before {
       left: 100%;
     }
@@ -1001,16 +1002,17 @@ export default defineComponent({
   text-align: center;
   position: relative;
   background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108, 92, 231, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 212, 255, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91, 141, 239, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(109, 213, 213, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 20% 60%, rgba(212, 168, 106, 0.04) 0%, transparent 50%);
   overflow: hidden;
-  padding: 120px 24px 80px;
+  padding: 140px 24px 100px;
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(108, 92, 231, 0.06) 1px, transparent 0);
-    background-size: 40px 40px;
+    background-image: radial-gradient(circle at 1px 1px, rgba(91, 141, 239, 0.04) 1px, transparent 0);
+    background-size: 50px 50px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
   }
@@ -1022,7 +1024,7 @@ export default defineComponent({
     width: 700px;
     height: 400px;
     transform: translateX(-50%);
-    background: radial-gradient(ellipse, rgba(108, 92, 231, 0.08) 0%, transparent 60%);
+    background: radial-gradient(ellipse, rgba(91, 141, 239, 0.06) 0%, transparent 60%);
     animation: lp-aurora 8s ease-in-out infinite alternate;
     pointer-events: none;
   }
@@ -1047,8 +1049,8 @@ export default defineComponent({
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background: rgba(108, 92, 231, 0.08);
-  border: 1px solid rgba(108, 92, 231, 0.2);
+  background: rgba(91, 141, 239, 0.08);
+  border: 1px solid rgba(91, 141, 239, 0.2);
   border-radius: 4px;
   font-size: 12px;
   color: var(--lp-accent-light);
@@ -1185,15 +1187,15 @@ export default defineComponent({
 
 /* ========== SECTION ========== */
 .section {
-  padding: 100px 24px;
+  padding: 120px 24px;
 }
 .section-inner {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 .section-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
   .section-label {
     font-family: var(--lp-mono);
     font-size: 11px;
@@ -1218,17 +1220,17 @@ export default defineComponent({
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 .capability-card {
   background: var(--lp-bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--lp-border);
-  border-radius: 12px;
-  padding: 32px 28px;
+  border-radius: 16px;
+  padding: 40px 32px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   &::after {
@@ -1458,7 +1460,7 @@ export default defineComponent({
 .bottom-cta {
   padding: 100px 24px;
   text-align: center;
-  background: radial-gradient(ellipse at top, rgba(108, 92, 231, 0.12) 0%, transparent 50%);
+  background: radial-gradient(ellipse at top, rgba(91, 141, 239, 0.12) 0%, transparent 50%);
   border-top: 1px solid var(--lp-border);
   position: relative;
   overflow: hidden;
@@ -1474,7 +1476,7 @@ export default defineComponent({
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid rgba(108, 92, 231, 0.08);
+    border: 1px solid rgba(91, 141, 239, 0.08);
     border-radius: 50%;
   }
   .r1 {
@@ -1484,12 +1486,12 @@ export default defineComponent({
   .r2 {
     width: 500px;
     height: 500px;
-    border-color: rgba(0, 212, 255, 0.05);
+    border-color: rgba(109, 213, 213, 0.05);
   }
   .r3 {
     width: 700px;
     height: 700px;
-    border-color: rgba(108, 92, 231, 0.03);
+    border-color: rgba(91, 141, 239, 0.03);
   }
 }
 .cta-content {
