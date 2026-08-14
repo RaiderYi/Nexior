@@ -27,6 +27,18 @@
     "message": "Primary Color",
     "description": "Displayed as the title in the editing box"
   },
+  "field.supportedLocales": {
+    "message": "Site Languages",
+    "description": "Interface languages visitors can select on this site"
+  },
+  "field.forcedLocale": {
+    "message": "Forced Language",
+    "description": "Site setting that pins the interface language site-wide"
+  },
+  "placeholder.autoDetectLocale": {
+    "message": "Detect automatically",
+    "description": "Placeholder shown when no forced language is set"
+  },
   "field.qr": {
     "message": "QR Code",
     "description": "Displayed as the title in the editing box"
@@ -39,17 +51,29 @@
     "message": "Site Admin IDs",
     "description": "Displayed as the title in the editing box"
   },
+  "field.contacts": {
+    "message": "Support Contacts",
+    "description": "Field title for the customer-service contacts in site settings"
+  },
   "field.markupRatio": {
-    "message": "Markup",
+    "message": "Site-wide uniform markup",
     "description": "Site settings: uniform markup percentage applied to all recharge packages on this site"
   },
   "message.markupRatioTip": {
-    "message": "Apply a uniform markup to every recharge package on this site (0%–500%). 0% sells at the platform's official price; the markup is your margin and affiliate commission rates are unchanged.",
+    "message": "Set a uniform markup for all services on this site (0%–500%). A custom per-service markup below overrides this value.",
     "description": "Help text for the markup ratio setting"
   },
   "message.markupExample": {
-    "message": "Example: official {from} → your price {to}",
-    "description": "Live example under the markup setting; {from} is the official price, {to} is the marked-up price"
+    "message": "For example, if the official price is $20 and you enter 10, your price is $22.",
+    "description": "Fixed example under the markup setting"
+  },
+  "field.disableRecharge": {
+    "message": "Disable recharge",
+    "description": "Site settings: when on, hide all recharge/top-up entries on this site"
+  },
+  "message.disableRechargeTip": {
+    "message": "When enabled, all recharge/top-up buttons are hidden on this site and users can no longer top up their balance.",
+    "description": "Help text for the disable-recharge toggle"
   },
   "field.distributionDefaultInviterId": {
     "message": "Default Inviter ID",
@@ -91,6 +115,102 @@
     "message": "WeChat",
     "description": "Login provider display name: WeChat OAuth."
   },
+  "field.authSmsWebhook": {
+    "message": "Custom SMS Sender",
+    "description": "Site settings / login: title for the site's own custom SMS verification-code delivery webhook"
+  },
+  "message.authSmsWebhookTip": {
+    "message": "When enabled, this site's phone verification codes are sent through your own endpoint under your own signature; disable it to use the platform default. Requires the phone-number login provider to be enabled.",
+    "description": "Explains the custom SMS sender webhook"
+  },
+  "placeholder.authSmsWebhookUrl": {
+    "message": "https://your-domain/sms-webhook",
+    "description": "Placeholder for the SMS webhook URL input"
+  },
+  "placeholder.authSmsWebhookSecret": {
+    "message": "Signing secret (leave blank to keep unchanged)",
+    "description": "Placeholder for the SMS webhook signing secret input; write-only, blank keeps existing"
+  },
+  "field.authSmsWebhookEnable": {
+    "message": "Use a custom sender",
+    "description": "Label next to the custom SMS sender toggle"
+  },
+  "field.authSmsWebhookDoc": {
+    "message": "View docs",
+    "description": "Link that opens the SMS webhook spec dialog"
+  },
+  "field.authSmsWebhookTest": {
+    "message": "Test",
+    "description": "Button that opens the SMS webhook test dialog"
+  },
+  "message.authSmsWebhookNeedsPhone": {
+    "message": "Enable the phone-number login provider first to configure a custom SMS sender.",
+    "description": "Tooltip shown when the toggle is disabled because phone login is off"
+  },
+  "field.authSmsWebhookDocTitle": {
+    "message": "Custom SMS Sender · Webhook spec",
+    "description": "Title of the SMS webhook spec dialog"
+  },
+  "message.authSmsWebhookDocIntro": {
+    "message": "This site sends a signed HTTPS POST to the URL you provide; your service is responsible for delivering the SMS. Your endpoint must meet the following requirements:",
+    "description": "Intro paragraph of the SMS webhook spec dialog"
+  },
+  "field.authSmsWebhookDocRequest": {
+    "message": "Request",
+    "description": "Heading: request section of the SMS webhook spec"
+  },
+  "message.authSmsWebhookDocRequest": {
+    "message": "Method POST, Content-Type application/json. purpose is one of login / register / test (test is a connectivity probe — you may skip actually sending). The request body looks like:",
+    "description": "Describes the request method and body of the SMS webhook"
+  },
+  "field.authSmsWebhookDocHeaders": {
+    "message": "Signature verification",
+    "description": "Heading: signature section of the SMS webhook spec"
+  },
+  "message.authSmsWebhookDocHeaders": {
+    "message": "Each request carries the headers below. Verify with your signing secret using HMAC-SHA256 per the Standard Webhooks spec and compare in constant time:",
+    "description": "Describes signature verification for the SMS webhook"
+  },
+  "field.authSmsWebhookDocResponse": {
+    "message": "Response",
+    "description": "Heading: response section of the SMS webhook spec"
+  },
+  "message.authSmsWebhookDocResponse": {
+    "message": "Return 2xx on success. To signal failure explicitly, return HTTP 200 with a JSON body whose success field is false (see the example below). Respond within 5 seconds.",
+    "description": "Describes the expected response of the SMS webhook"
+  },
+  "field.authSmsWebhookTestTitle": {
+    "message": "Test custom SMS sender",
+    "description": "Title of the SMS webhook test dialog"
+  },
+  "field.authSmsWebhookTestRegion": {
+    "message": "Country/region code",
+    "description": "Label for the region-code field in the test dialog"
+  },
+  "field.authSmsWebhookTestNumber": {
+    "message": "Test phone number (optional)",
+    "description": "Label for the phone-number field in the test dialog"
+  },
+  "field.authSmsWebhookTestSend": {
+    "message": "Send test",
+    "description": "Button that sends the SMS webhook test request"
+  },
+  "message.authSmsWebhookTestOk": {
+    "message": "The test request was delivered to your endpoint successfully.",
+    "description": "Success message after a webhook test"
+  },
+  "message.authSmsWebhookTestFailed": {
+    "message": "Test failed. Check the URL, signing secret, and your endpoint's response.",
+    "description": "Failure message after a webhook test"
+  },
+  "field.authSmsWebhookDisableTitle": {
+    "message": "Disable custom SMS sender",
+    "description": "Title of the confirm dialog shown when disabling the custom SMS sender"
+  },
+  "message.authSmsWebhookDisableConfirm": {
+    "message": "Disabling this deletes the saved sender URL and signing secret (the secret cannot be recovered), and this site falls back to the platform default signature. Disable it?",
+    "description": "Body of the confirm dialog shown when disabling the custom SMS sender"
+  },
   "field.featuresChat": {
     "message": "Chat",
     "description": "Displayed as the title in the editing box"
@@ -113,6 +233,10 @@
   },
   "field.featuresMaestro": {
     "message": "Maestro",
+    "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresPoivelle": {
+    "message": "Poivelle",
     "description": "Displayed as the title in the editing box"
   },
   "field.featuresDigitalhuman": {
@@ -159,8 +283,8 @@
     "message": "Hailuo",
     "description": "Displayed as the title in the editing box"
   },
-  "field.featuresHeadshots": {
-    "message": "AI ID Photo",
+  "field.featuresMinimax": {
+    "message": "MiniMax H3",
     "description": "Displayed as the title in the editing box"
   },
   "field.featuresSuno": {
@@ -185,6 +309,10 @@
   },
   "field.featuresSeedance": {
     "message": "SeeDance",
+    "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresOmni": {
+    "message": "Omni",
     "description": "Displayed as the title in the editing box"
   },
   "field.featuresWan": {
@@ -234,6 +362,10 @@
   "title.editAdmins": {
     "message": "Edit Admins",
     "description": "Displayed as the title in the editing box"
+  },
+  "title.editContacts": {
+    "message": "Edit Support Contacts",
+    "description": "Title of the edit-support-contacts dialog"
   },
   "title.featuresConfig": {
     "message": "Features Configuration",
@@ -371,6 +503,23 @@
     "message": "Image upload failed.",
     "description": "Error for failed upload in image cropper"
   },
+  "logoStudio.analysisReady": { "message": "Image analysis complete", "description": "Status heading in smart brand image processing" },
+  "logoStudio.analysisSummary": { "message": "{width}×{height} px · {confidence}% background confidence", "description": "Image dimensions and background confidence" },
+  "logoStudio.backgroundDetected": { "message": "Solid background detected", "description": "Status shown for a removable flat background" },
+  "logoStudio.transparentOrComplex": { "message": "Transparent or complex background", "description": "Status shown when automatic removal is not recommended" },
+  "logoStudio.removeBackground": { "message": "Remove background", "description": "Automatic background removal toggle" },
+  "logoStudio.backgroundColor": { "message": "Background color", "description": "Color targeted by background removal" },
+  "logoStudio.edgeTolerance": { "message": "Edge tolerance", "description": "Background-removal tolerance slider" },
+  "logoStudio.refreshPreview": { "message": "Update preview", "description": "Reprocess the image with changed settings" },
+  "logoStudio.modeBrand": { "message": "Brand colors", "description": "Use the color logo in both themes" },
+  "logoStudio.modeBalanced": { "message": "Smart adaptive", "description": "Use color on light and white on dark" },
+  "logoStudio.modeMono": { "message": "Monochrome", "description": "Use black on light and white on dark" },
+  "logoStudio.lightTheme": { "message": "Light theme", "description": "Light-background image preview label" },
+  "logoStudio.darkTheme": { "message": "Dark theme", "description": "Dark-background image preview label" },
+  "logoStudio.previewOutdated": { "message": "Settings changed. Update the preview before applying.", "description": "Warning when settings no longer match the preview" },
+  "logoStudio.back": { "message": "Back to crop", "description": "Return from preview to cropping" },
+  "logoStudio.analyze": { "message": "Analyze and preview", "description": "Start smart image processing" },
+  "logoStudio.apply": { "message": "Apply image", "description": "Confirm the processed brand image" },
   "message.editLogoTip": {
     "message": "Recommended Size: 200*60px",
     "description": "Tip for uploading images"
@@ -435,6 +584,30 @@
     "message": "Primary brand colour for the site. Applies to buttons, links, highlights, and accent gradients across the entire UI.",
     "description": "Tip for the per-site primary colour picker"
   },
+  "message.supportedLocalesTip": {
+    "message": "Choose the interface languages available to visitors. All languages are supported by default.",
+    "description": "Tip for the site language selection"
+  },
+  "message.forcedLocaleTip": {
+    "message": "Pin the interface language for every visitor. Visitors cannot switch languages once set. Leave empty to detect automatically.",
+    "description": "Tip for the site forced language setting"
+  },
+  "message.allLocales": {
+    "message": "All languages",
+    "description": "Summary shown when the site does not restrict languages"
+  },
+  "message.atLeastOneLocale": {
+    "message": "Keep at least one language",
+    "description": "Validation shown when the site language selection is empty"
+  },
+  "placeholder.supportedLocales": {
+    "message": "Select site languages",
+    "description": "Placeholder for the site language multi-select"
+  },
+  "title.editSupportedLocales": {
+    "message": "Edit Site Languages",
+    "description": "Title of the site language editor"
+  },
   "message.adminsTip": {
     "message": "Site admin IDs, by default, the user who first creates the site will become an admin. Only site admins can manage the site.",
     "description": "Tip for site admins"
@@ -442,6 +615,14 @@
   "message.adminsTip2": {
     "message": "You can add or remove admin IDs here. You can view user IDs at https://auth.acedata.cloud",
     "description": "Tip for site admins"
+  },
+  "message.contactsTip": {
+    "message": "Fill in your customer-service contacts (Discord, X, WeChat, phone, email). They are shown on the About page so users can reach you.",
+    "description": "Tip for the support-contacts field"
+  },
+  "message.contactsEmpty": {
+    "message": "Not set",
+    "description": "Placeholder shown when no support contact has been filled in"
   },
   "message.keywordsTip": {
     "message": "Site keywords, located in the site metadata, used for site SEO optimization.",
@@ -456,124 +637,132 @@
     "description": "Description of the Chat feature"
   },
   "message.featuresGrok": {
-    "message": "Enable or disable the Grok feature module.",
-    "description": "Description of the Grok feature"
+    "message": "xAI assistant for real-time knowledge, reasoning, writing, and coding.",
+    "description": "Concise capability introduction: xAI assistant for real-time knowledge, reasoning, writing, and coding."
   },
   "message.featuresGrokvideo": {
-    "message": "Enable or disable the Grok Video feature module.",
-    "description": "Description of the Grok Video feature"
+    "message": "xAI video generation for short clips from text prompts or reference images.",
+    "description": "Concise capability introduction: xAI video generation for short clips from text prompts or reference images."
   },
   "message.featuresMaestro": {
-    "message": "Enable or disable the Maestro feature module.",
-    "description": "Description of the Maestro feature"
+    "message": "Produce complete videos from an idea, including planning, voiceover, scenes, and delivery.",
+    "description": "Concise capability introduction: Produce complete videos from an idea, including planning, voiceover, scenes, and delivery."
+  },
+  "message.featuresPoivelle": {
+    "message": "Direct professional AI film production through a shared project graph, storyboard, timeline, review, and skill-agent workflow.",
+    "description": "Concise capability introduction: Direct professional AI film production through a shared project graph, storyboard, timeline, review, and skill-agent workflow."
   },
   "message.featuresDigitalhuman": {
-    "message": "Enable or disable the Digital Human feature module.",
-    "description": "Description of the Digital Human feature"
+    "message": "Create talking-head videos with synthesized speech and natural lip sync.",
+    "description": "Concise capability introduction: Create talking-head videos with synthesized speech and natural lip sync."
   },
   "message.featuresDeepseek": {
-    "message": "Enable or disable the Deepseek feature module.",
-    "description": "Description of the Deepseek feature"
+    "message": "DeepSeek assistant for advanced reasoning, coding, math, and everyday questions.",
+    "description": "Concise capability introduction: DeepSeek assistant for advanced reasoning, coding, math, and everyday questions."
   },
   "message.featuresChatgpt": {
-    "message": "Enable or disable the ChatGPT feature module.",
-    "description": "Description of the ChatGPT feature"
+    "message": "OpenAI assistant for writing, reasoning, coding, and multimodal conversations.",
+    "description": "Concise capability introduction: OpenAI assistant for writing, reasoning, coding, and multimodal conversations."
   },
   "message.featuresMidjourney": {
-    "message": "Enable or disable the Midjourney feature module.",
-    "description": "Description of the Midjourney feature"
+    "message": "Create polished images and creative variations from text or visual references.",
+    "description": "Concise capability introduction: Create polished images and creative variations from text or visual references."
   },
   "message.featuresChatdoc": {
     "message": "Enable or disable the Chatdoc feature module.",
     "description": "Description of the Chatdoc feature"
   },
   "message.featuresQrart": {
-    "message": "Enable or disable the Qrart feature module.",
-    "description": "Description of the Qrart feature"
+    "message": "Turn links into scannable artistic QR codes with custom styles and imagery.",
+    "description": "Concise capability introduction: Turn links into scannable artistic QR codes with custom styles and imagery."
   },
   "message.featuresVeo": {
-    "message": "Enable or disable the Veo feature module.",
-    "description": "Description of the Veo feature"
+    "message": "Google video generation for cinematic clips with strong prompt and motion control.",
+    "description": "Concise capability introduction: Google video generation for cinematic clips with strong prompt and motion control."
   },
   "message.featuresSora": {
-    "message": "Enable or disable the Sora feature module.",
-    "description": "Description of the Sora feature"
+    "message": "OpenAI video generation for realistic scenes, storytelling, and visual transformations.",
+    "description": "Concise capability introduction: OpenAI video generation for realistic scenes, storytelling, and visual transformations."
   },
   "message.featuresSuno": {
-    "message": "Enable or disable the Suno feature module.",
-    "description": "Description of the Suno feature"
+    "message": "Generate complete songs, lyrics, vocals, and instrumentals from a prompt.",
+    "description": "Concise capability introduction: Generate complete songs, lyrics, vocals, and instrumentals from a prompt."
   },
   "message.featuresPixverse": {
-    "message": "Enable or disable the Pixverse feature module.",
-    "description": "Description of the Pixverse feature"
+    "message": "Generate stylized videos from prompts and images with templates and effects.",
+    "description": "Concise capability introduction: Generate stylized videos from prompts and images with templates and effects."
   },
   "message.featuresFlux": {
-    "message": "Enable or disable the FLux feature module.",
-    "description": "Description of the FLux feature"
+    "message": "Create detailed images and edit existing visuals with natural-language instructions.",
+    "description": "Concise capability introduction: Create detailed images and edit existing visuals with natural-language instructions."
   },
   "message.featuresNanobanana": {
-    "message": "Enable or disable the Nano Banana feature module.",
-    "description": "Description of the Nano Banana feature"
+    "message": "Google-powered image generation and editing with precise instruction following.",
+    "description": "Concise capability introduction: Google-powered image generation and editing with precise instruction following."
   },
   "message.featuresOpenaiimage": {
-    "message": "Enable or disable the OpenAI image feature module.",
-    "description": "Description of the OpenAI image feature"
+    "message": "OpenAI image generation and editing for polished visuals, text, and compositions.",
+    "description": "Concise capability introduction: OpenAI image generation and editing for polished visuals, text, and compositions."
   },
   "message.featuresSeedream": {
-    "message": "Enable or disable the SeeDream feature module.",
-    "description": "Description of the SeeDream feature"
+    "message": "ByteDance image generation and editing for high-quality creative visuals.",
+    "description": "Concise capability introduction: ByteDance image generation and editing for high-quality creative visuals."
   },
   "message.featuresSeedance": {
-    "message": "Enable or disable the SeeDance feature module.",
-    "description": "Description of the SeeDance feature"
+    "message": "ByteDance video generation for dynamic scenes, camera motion, and optional audio.",
+    "description": "Concise capability introduction: ByteDance video generation for dynamic scenes, camera motion, and optional audio."
+  },
+  "message.featuresOmni": {
+    "message": "Generate or edit videos from text, images, and video references with Omni models.",
+    "description": "Concise capability introduction: Generate or edit videos from text, images, and video references with Omni models."
   },
   "message.featuresWan": {
-    "message": "Enable or disable the Wan feature module.",
-    "description": "Description of the Wan feature"
+    "message": "Alibaba video generation from text, images, or references at multiple resolutions.",
+    "description": "Concise capability introduction: Alibaba video generation from text, images, or references at multiple resolutions."
   },
   "message.featuresProducer": {
-    "message": "Enable or disable the Producer feature module.",
-    "description": "Description of the Producer feature"
+    "message": "Create songs, covers, extensions, and vocal or instrumental variations.",
+    "description": "Concise capability introduction: Create songs, covers, extensions, and vocal or instrumental variations."
   },
   "message.featuresKimi": {
-    "message": "Enable or disable the Kimi feature module.",
-    "description": "Description of the Kimi feature"
+    "message": "Moonshot AI assistant for long-context research, reasoning, writing, and coding.",
+    "description": "Concise capability introduction: Moonshot AI assistant for long-context research, reasoning, writing, and coding."
   },
   "message.featuresSerp": {
-    "message": "Enable or disable the SERP feature module.",
-    "description": "Description of the SERP feature"
+    "message": "Search the web, images, news, maps, and videos with structured Google results.",
+    "description": "Concise capability introduction: Search the web, images, news, maps, and videos with structured Google results."
   },
   "message.featuresFish": {
-    "message": "Enable or disable the Fish Audio feature module.",
-    "description": "Description of the Fish Audio feature"
+    "message": "Generate natural speech and clone voices for multilingual audio production.",
+    "description": "Concise capability introduction: Generate natural speech and clone voices for multilingual audio production."
   },
   "message.featuresCodingBridge": {
-    "message": "Enable or disable the Coding Bridge feature module.",
-    "description": "Description of the Coding Bridge feature"
+    "message": "Connect AI coding assistants to local projects for guided development workflows.",
+    "description": "Concise capability introduction: Connect AI coding assistants to local projects for guided development workflows."
   },
   "message.featuresWebextrator": {
-    "message": "Enable or disable the WebExtrator feature module.",
-    "description": "Description of the WebExtrator feature"
+    "message": "Extract clean, structured content and data from web pages.",
+    "description": "Concise capability introduction: Extract clean, structured content and data from web pages."
   },
   "message.featuresLuma": {
-    "message": "Enable or disable the Luma feature module.",
-    "description": "Description of the Luma feature"
+    "message": "Create cinematic videos from text or images with natural motion.",
+    "description": "Concise capability introduction: Create cinematic videos from text or images with natural motion."
   },
   "message.featuresPika": {
-    "message": "Enable or disable the Pika feature module.",
-    "description": "Description of the Pika feature"
+    "message": "Generate and edit short creative videos with effects, scenes, and transformations.",
+    "description": "Concise capability introduction: Generate and edit short creative videos with effects, scenes, and transformations."
   },
   "message.featuresKling": {
-    "message": "Enable or disable the Kling feature module.",
-    "description": "Description of the Kling feature"
+    "message": "Create high-quality videos from text, images, or motion references.",
+    "description": "Concise capability introduction: Create high-quality videos from text, images, or motion references."
   },
   "message.featuresHailuo": {
-    "message": "Enable or disable the Hailuo feature module.",
-    "description": "Description of the Hailuo feature"
+    "message": "Generate expressive videos from text or images with smooth character motion.",
+    "description": "Concise capability introduction: Generate expressive videos from text or images with smooth character motion."
   },
-  "message.featuresHeadshots": {
-    "message": "Enable or disable the AI ID photo feature module.",
-    "description": "Description of the AI ID photo feature"
+  "message.featuresMinimax": {
+    "message": "Generate 768P or 2K videos from text, images, and audio guidance.",
+    "description": "Concise capability introduction for MiniMax H3."
   },
   "message.featuresSupport": {
     "message": "Enable or disable customer support.",
@@ -604,16 +793,16 @@
     "description": "Displayed as the title in the editing box"
   },
   "message.featuresGemini": {
-    "message": "Enable or disable the Gemini feature module.",
-    "description": "Description of the Gemini feature"
+    "message": "Google assistant for long-context reasoning, research, coding, and multimodal work.",
+    "description": "Concise capability introduction: Google assistant for long-context reasoning, research, coding, and multimodal work."
   },
   "field.featuresClaude": {
     "message": "Claude",
     "description": "Displayed as the title in the editing box"
   },
   "message.featuresClaude": {
-    "message": "Enable or disable the Claude feature module.",
-    "description": "Description of the Claude feature"
+    "message": "Anthropic assistant for careful reasoning, writing, coding, and document analysis.",
+    "description": "Concise capability introduction: Anthropic assistant for careful reasoning, writing, coding, and document analysis."
   },
   "placeholder.admins": {
     "message": "Enter admin user ID",
@@ -670,5 +859,185 @@
   "autoTranslate.error": {
     "message": "Failed to toggle auto-translation, please retry",
     "description": "Fallback error toast when the enable/disable HTTP call fails with no detail"
+  },
+  "services.title": {
+    "message": "Per-service custom markup & display"
+  },
+  "services.tip": {
+    "message": "Hide, rename, re-price or reorder individual services. A blank markup inherits the site-wide default. Deleting a row reverts the service to its catalog defaults."
+  },
+  "services.addButton": {
+    "message": "Add override"
+  },
+  "services.empty": {
+    "message": "No overrides yet — every service uses its catalog defaults."
+  },
+  "services.field.service": {
+    "message": "Service"
+  },
+  "services.field.visible": {
+    "message": "Visible"
+  },
+  "services.field.customMarkupRatio": {
+    "message": "Custom markup per service"
+  },
+  "services.field.displayTitle": {
+    "message": "Display name"
+  },
+  "services.field.displaySummary": {
+    "message": "Display summary",
+    "description": "Per-service override: custom summary shown on this site's homepage card"
+  },
+  "services.field.sortOrder": {
+    "message": "Sort"
+  },
+  "services.field.action": {
+    "message": "Actions"
+  },
+  "services.status.visible": {
+    "message": "Shown"
+  },
+  "services.status.hidden": {
+    "message": "Hidden"
+  },
+  "services.status.inherit": {
+    "message": "Inherit"
+  },
+  "services.dialog.create": {
+    "message": "Add service override"
+  },
+  "services.dialog.edit": {
+    "message": "Edit service override"
+  },
+  "services.placeholder.service": {
+    "message": "Pick a service from the catalog"
+  },
+  "services.placeholder.markup": {
+    "message": "Blank inherits"
+  },
+  "services.placeholder.displayTitle": {
+    "message": "Leave blank to use the catalog title"
+  },
+  "services.placeholder.displaySummary": {
+    "message": "Leave blank to use the catalog description"
+  },
+  "services.tip.visible": {
+    "message": "When off, the service is hidden on this site's homepage (users who already have it keep access)."
+  },
+  "services.tip.markup": {
+    "message": "Enter a percentage markup: 10 means +10%, up to 500. Leave blank to inherit the site default."
+  },
+  "services.tip.sortOrder": {
+    "message": "Lower numbers come first."
+  },
+  "services.preview.sampleLabel": {
+    "message": "Sample base price"
+  },
+  "services.preview.inherit": {
+    "message": "(inheriting the site default markup {percent})"
+  },
+  "services.message.alreadyOverridden": {
+    "message": "Already added"
+  },
+  "services.message.serviceRequired": {
+    "message": "Please pick a service first"
+  },
+  "services.message.saved": {
+    "message": "Saved"
+  },
+  "services.message.deleted": {
+    "message": "Deleted"
+  },
+  "services.message.deleteConfirm": {
+    "message": "Delete the override for “{name}”? The service reverts to its catalog defaults."
+  },
+  "services.message.saveFailed": {
+    "message": "Save failed, please try again"
+  },
+  "services.message.deleteFailed": {
+    "message": "Delete failed, please try again"
+  },
+  "services.message.fetchFailed": {
+    "message": "Failed to load service overrides"
+  },
+  "capabilityOverride.edit": {
+    "message": "Customize app",
+    "description": "Tooltip and accessible label for editing a capability app name and icon"
+  },
+  "capabilityOverride.dialogTitle": {
+    "message": "Customize {name}",
+    "description": "Dialog title; {name} is the platform-default capability app name"
+  },
+  "capabilityOverride.displayName": {
+    "message": "Custom name",
+    "description": "Field label for a per-site capability app display name"
+  },
+  "capabilityOverride.displayNameTip": {
+    "message": "Leave blank to use {name}. Save once before enabling automatic translation.",
+    "description": "Help text; {name} is the platform-default capability app name"
+  },
+  "capabilityOverride.icon": {
+    "message": "Custom icon",
+    "description": "Field label for a per-site capability app icon"
+  },
+  "capabilityOverride.defaultIcon": {
+    "message": "Default",
+    "description": "Label above the platform-default capability icon preview"
+  },
+  "capabilityOverride.currentIcon": {
+    "message": "Current",
+    "description": "Label above the effective capability icon preview"
+  },
+  "capabilityOverride.replaceIcon": {
+    "message": "Replace icon",
+    "description": "Command to upload a replacement capability icon"
+  },
+  "capabilityOverride.uploadIcon": {
+    "message": "Upload icon",
+    "description": "Command to upload the first custom capability icon"
+  },
+  "capabilityOverride.useDefaultIcon": {
+    "message": "Use default icon",
+    "description": "Command to clear the custom icon draft"
+  },
+  "capabilityOverride.iconTip": {
+    "message": "PNG, JPEG, or WebP. The image is cropped to a square; transparent PNG is preserved.",
+    "description": "Capability icon upload requirements"
+  },
+  "capabilityOverride.editIcon": {
+    "message": "Edit app icon",
+    "description": "Title of the capability icon cropper dialog"
+  },
+  "capabilityOverride.resetAll": {
+    "message": "Restore defaults",
+    "description": "Command that removes both custom name and icon"
+  },
+  "capabilityOverride.empty": {
+    "message": "Enter a custom name or upload an icon first.",
+    "description": "Warning when attempting to create an empty override"
+  },
+  "capabilityOverride.saved": {
+    "message": "App customization saved",
+    "description": "Success message after saving a capability override"
+  },
+  "capabilityOverride.savedEnableTranslation": {
+    "message": "Saved. You can now enable automatic translation for the custom name.",
+    "description": "Success message after first save creates an override ID"
+  },
+  "capabilityOverride.saveFailed": {
+    "message": "Failed to save app customization",
+    "description": "Fallback error for capability override writes"
+  },
+  "capabilityOverride.resetConfirm": {
+    "message": "Restore the default name and icon for {name}?",
+    "description": "Confirmation message; {name} is the platform-default capability app name"
+  },
+  "capabilityOverride.resetDone": {
+    "message": "Default name and icon restored",
+    "description": "Success message after deleting a capability override"
+  },
+  "capabilityOverride.fetchFailed": {
+    "message": "Failed to load app customizations",
+    "description": "Error shown when capability override management rows cannot be loaded"
   }
 }

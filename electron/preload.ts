@@ -35,6 +35,13 @@ contextBridge.exposeInMainWorld('desktop', {
   // Open an external https link (payment Page, docs) in the system browser.
   openExternal: (url: string): Promise<void> => ipcRenderer.invoke('shell:openExternal', url),
 
+  // Open a connector's OAuth consent page in the system browser. Separate from
+  // openExternal because the host is a third-party provider, which must not be
+  // added to the external-open allowlist (that set also governs the navigation
+  // guard). Nothing returns through this bridge — the user comes back to the
+  // window and the renderer refetches.
+  openAuthorizeConnector: (url: string): Promise<void> => ipcRenderer.invoke('connections:openAuthorize', url),
+
   // Subscribe to native window fullscreen changes (macOS green button /
   // setFullScreen). Emits the current state immediately, then on every change.
   // In fullscreen the traffic lights are hidden, so the UI drops its inset.
@@ -55,7 +62,30 @@ contextBridge.exposeInMainWorld('desktop', {
 
   // Show an OS notification via the main process (reliable when the window is
   // hidden/minimized, unlike Web Notification). Resolves after dispatch.
-  notify: (title: string, body: string): Promise<void> => ipcRenderer.invoke('notify:show', { title, body })
+  notify: (title: string, body: string): Promise<void> => ipcRenderer.invoke('notify:show', { title, body }),
+
+  // Scheduled-task daemon. The token is handed INWARD only — main persists it
+  // (OS-encrypted, 0600) so tasks keep firing after the window closes, and
+  // never hands it back out.
+  scheduler: {
+    identity: (): Promise<{ device_id: string; device_name: string; open_at_login: boolean }> =>
+      ipcRenderer.invoke('scheduler:identity'),
+    setCredentials: (token: string, siteOrigin?: string): Promise<boolean> =>
+      ipcRenderer.invoke('scheduler:setCredentials', { token, siteOrigin }),
+    clearCredentials: (): Promise<boolean> => ipcRenderer.invoke('scheduler:clearCredentials'),
+    setDeviceName: (name: string): Promise<boolean> => ipcRenderer.invoke('scheduler:setDeviceName', name),
+    setOpenAtLogin: (enabled: boolean): Promise<boolean> => ipcRenderer.invoke('scheduler:setOpenAtLogin', enabled),
+    status: (): Promise<{
+      state: 'stopped' | 'running' | 'signed_out';
+      error?: string;
+      taskCount: number;
+      schedule: { id: string; name: string; nextAt: number | null }[];
+    }> => ipcRenderer.invoke('scheduler:status'),
+    // "Run now" for a task bound to this device — the cloud's trigger action
+    // cannot execute local tools.
+    runNow: (taskId: string): Promise<{ ok: boolean; reason?: string }> =>
+      ipcRenderer.invoke('scheduler:runNow', taskId)
+  }
 });
 
 // Local tool execution (desktop only): list authorized local tools and invoke
@@ -63,16 +93,22 @@ contextBridge.exposeInMainWorld('desktop', {
 contextBridge.exposeInMainWorld('localExec', {
   available: true,
   listTools: (): Promise<unknown[]> => ipcRenderer.invoke('local.tools.list'),
-  invoke: (inv: { name: string; input: object; sessionId: string }): Promise<{ output: string; is_error?: boolean; image?: string }> =>
-    ipcRenderer.invoke('local.tool.invoke', inv),
-  getConfig: (): Promise<{ roots: string[]; mcp: object[]; computerUse?: boolean }> => ipcRenderer.invoke('local.config.get'),
-  saveConfig: (cfg: { roots: string[]; mcp: object[]; computerUse?: boolean }): Promise<boolean> =>
+  invoke: (inv: {
+    name: string;
+    input: object;
+    sessionId: string;
+  }): Promise<{ output: string; is_error?: boolean; image?: string }> => ipcRenderer.invoke('local.tool.invoke', inv),
+  getConfig: (): Promise<{ roots: string[]; mcp: object[]; computerUse?: boolean; workingDir?: string }> =>
+    ipcRenderer.invoke('local.config.get'),
+  saveConfig: (cfg: { roots: string[]; mcp: object[]; computerUse?: boolean; workingDir?: string }): Promise<boolean> =>
     ipcRenderer.invoke('local.config.save', cfg),
   // Per-server MCP connection status + targeted reconnect, for Settings.
   mcp: {
     status: (): Promise<{ id: string; status: string; toolCount: number; tools: string[]; error?: string }[]> =>
       ipcRenderer.invoke('local.mcp.status'),
-    reconnect: (id: string): Promise<{ id: string; status: string; toolCount: number; tools: string[]; error?: string } | null> =>
+    reconnect: (
+      id: string
+    ): Promise<{ id: string; status: string; toolCount: number; tools: string[]; error?: string } | null> =>
       ipcRenderer.invoke('local.mcp.reconnect', id)
   },
   pickFolder: (): Promise<string | null> => ipcRenderer.invoke('local.pickFolder'),
@@ -96,6 +132,9 @@ contextBridge.exposeInMainWorld('localExec', {
   // Builtin (fs/shell) tool specs for the per-tool always-allow toggles.
   builtinTools: (): Promise<{ name: string; description: string; mutates: boolean }[]> =>
     ipcRenderer.invoke('local.tools.builtin'),
+  // Connected MCP tool specs for the per-tool always-allow toggles.
+  mcpTools: (): Promise<{ name: string; description: string; writes: boolean }[]> =>
+    ipcRenderer.invoke('local.tools.mcp'),
   // Fired when the global panic hotkey forces Computer Use off, so the Settings
   // toggle reflects reality and a later Save can't silently re-enable it.
   onComputerUseDisabled: (cb: () => void): (() => void) => {

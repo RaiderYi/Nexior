@@ -1,4 +1,8 @@
 {
+  "message.mediaPreviewUnavailable": {
+    "message": "Преглед није доступан",
+    "description": "Медијски преглед не може да се учита"
+  },
   "button.setup": {
     "message": "Podešavanje",
     "description": "Tekst u dugmetu, koji se koristi za podešavanje"
@@ -66,6 +70,46 @@
   "button.close": {
     "message": "Zatvori",
     "description": "Tekst u dugmetu, koji se koristi za zatvaranje dijaloga ili panela"
+  },
+  "button.send": {
+    "message": "Пошаљи",
+    "description": "Доступна ознака за дугме за слање садржаја"
+  },
+  "button.stop": {
+    "message": "Стоп",
+    "description": "Доступна ознака за дугме за заустављање операције"
+  },
+  "button.openMenu": {
+    "message": "Отвори мени",
+    "description": "Доступна ознака за дугме за отварање навигационог или конфигурационог менија"
+  },
+  "button.more": {
+    "message": "Више опција",
+    "description": "Доступна ознака за дугме за отварање менија опција"
+  },
+  "button.remove": {
+    "message": "Уклони",
+    "description": "Доступна ознака за дугме за уклањање ставке"
+  },
+  "player.previous": {
+    "message": "Предходна песма",
+    "description": "Доступна ознака за дугме предходне песме у плејеру"
+  },
+  "player.play": {
+    "message": "Пусти",
+    "description": "Доступна ознака за дугме за репродукцију у плејеру"
+  },
+  "player.pause": {
+    "message": "Пауза",
+    "description": "Доступна ознака за дугме за паузу у плејеру"
+  },
+  "player.next": {
+    "message": "Следећа песма",
+    "description": "Доступна ознака за дугме следеће песме у плејеру"
+  },
+  "player.volume": {
+    "message": "Запремина",
+    "description": "Доступna ознака за контролу запремине у плејеру"
   },
   "button.expand": {
     "message": "Проширити",
@@ -135,6 +179,14 @@
     "message": "Преузми за macOS",
     "description": "Text in button for downloading the macOS desktop installer"
   },
+  "button.downloadBrowserExtension": {
+    "message": "Preuzmi ekstenziju za pregledač",
+    "description": "Text in button for downloading the Chrome / Edge browser extension package"
+  },
+  "button.viewExtensionGuide": {
+    "message": "Pogledajte uputstvo za instalaciju",
+    "description": "Sekundarni dugme na kartici ekstenzije preusmerava na dokumentaciju za instalaciju dodatka"
+  },
   "button.installIos": {
     "message": "Instaliraj iOS",
     "description": "Tekst u dugmetu, koji se koristi za instalaciju iOS aplikacije"
@@ -169,7 +221,7 @@
   },
   "button.buyMore": {
     "message": "Dopuni",
-    "description": "Tekst u dugmetu, koji se koristi za omogućavanje korisniku da dopuni. Engleski mora biti preveden kao 'Top Up', a kineski kao '充值'."
+    "description": "Текст на дугмету који омогућава кориснику да допуни налог."
   },
   "button.update": {
     "message": "Ažuriraj",
@@ -200,7 +252,7 @@
     "description": "Tip entiteta"
   },
   "entity.website": {
-    "message": "BigPlayer AI",
+    "message": "Ace Data Cloud",
     "description": "Ime sajta, ne treba prevoditi, ostaviti kao 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -220,7 +272,7 @@
     "description": "Ikona entiteta"
   },
   "entity.status": {
-    "message": "Status",
+    "message": "Статус",
     "description": "Status entiteta"
   },
   "status.loading": {
@@ -232,7 +284,7 @@
     "description": "Error toast shown when native Apple sign-in fails for a reason other than user cancellation"
   },
   "error.loginLinkExpired": {
-    "message": "Login link expired. Please sign in again.",
+    "message": "Линк за пријаву је истекао. Пријавите се поново.",
     "description": "Shown on the desktop client when an OAuth callback is dropped (state mismatch or expired)."
   },
   "entity.operation": {
@@ -268,7 +320,7 @@
     "description": "Za prikaz iznosa koji je usluga već iskoristila"
   },
   "message.mobileAppDescription": {
-    "message": "Koristite BigPlayer AI direktno na telefonu, trenutno je dostupan Android APK za preuzimanje i instalaciju, iOS instalacioni paket će biti dostupan nakon potpisivanja.",
+    "message": "Koristite AceData direktno na telefonu, trenutno je dostupan Android APK za preuzimanje i instalaciju, iOS instalacioni paket će biti dostupan nakon potpisivanja.",
     "description": "Opis na stranici za preuzimanje mobilne aplikacije"
   },
   "message.mobileAndroidHint": {
@@ -299,6 +351,14 @@
     "message": "Deljenje naloga i limita sa web verzijom",
     "description": "Za objašnjenje da mobilna verzija deli nalog sa web verzijom"
   },
+  "message.extensionAvailableNow": {
+    "message": "Besplatno",
+    "description": "Status chip on the browser extension card"
+  },
+  "message.extensionHint": {
+    "message": "Ovlašćivanje naloga na društvenim mrežama, povezivanje lokalnog pretraživača za izvršavanje zadataka. Preuzmite, raspakujte i na stranici za upravljanje ekstenzijama izaberite 'Učitaj raspakovane ekstenzije' za instalaciju.",
+    "description": "Objašnjenje na kartici ekstenzije"
+  },
   "message.mobileIosHint": {
     "message": "Za iPhone i iPad, može se direktno instalirati online; ako sistem blokira, može se prvo preuzeti IPA pa distribuirati.",
     "description": "Objašnjenje za iOS preuzimanje"
@@ -312,7 +372,7 @@
     "description": "Short status label shown on a platform card (e.g. iOS) while its build is being prepared"
   },
   "message.mobileNowOnAppStore": {
-    "message": "Now on the App Store",
+    "message": "Сада на App Store-у",
     "description": "Status label shown on the iOS card when the app is live on the App Store"
   },
   "message.desktopWindowsHint": {
@@ -332,7 +392,7 @@
     "description": "Button label that opens the app's Google Play Store listing"
   },
   "button.getOnAppStore": {
-    "message": "Get it on the App Store",
+    "message": "Преузмите на App Store-у",
     "description": "Button label that opens the app's Apple App Store listing"
   },
   "message.mobileApkFallback": {
@@ -344,7 +404,7 @@
     "description": "Hint under the QR code explaining that scanning it opens the Google Play listing"
   },
   "message.mobileAppStoreHint": {
-    "message": "Scan to open the App Store",
+    "message": "Скенирајте да отворите App Store",
     "description": "Hint under the QR code explaining that scanning it opens the App Store listing"
   },
   "message.mobileInstallNote": {
@@ -398,6 +458,18 @@
   "message.confirmDelete": {
     "message": "Da li ste sigurni da želite da obrišete?",
     "description": "Poruka koja potvrđuje da korisnik želi da obriše neki sadržaj"
+  },
+  "message.deleteTaskConfirm": {
+    "message": "Да ли сте сигурни да желите да обришете ову генерисану евиденцију? Након брисања, биће уклоњена са свих уређаја и неће моћи да се поврати.",
+    "description": "Потврдна порука која се приказује пре брисања једне генерисане евиденције задатка"
+  },
+  "message.deleteTaskSuccess": {
+    "message": "Евиденција је обрисана.",
+    "description": "Порука која се приказује након успешног брисања евиденције задатка"
+  },
+  "message.deleteTaskFailed": {
+    "message": "Брисање није успело, молимо покушајте поново касније.",
+    "description": "Порука која се приказује када брисање евиденције задатка није успело"
   },
   "message.expiredAt": {
     "message": "Vreme isteka",
@@ -520,7 +592,7 @@
     "description": "Tekst u navigacionoj traci sajta koji prikazuje stranu sa Grok-om, ne prevoditi, mora ostati 'Grok'"
   },
   "nav.chat": {
-    "message": "Chat",
+    "message": "Разговор",
     "description": "Tekst u navigacionoj traci sajta koji prikazuje stranu sa chat-om, ne prevoditi, mora ostati 'Chat'"
   },
   "nav.veo": {
@@ -565,35 +637,39 @@
   },
   "nav.seedance": {
     "message": "SeeDance",
-    "description": "网站导航栏中的文本，用于显示SeeDance页面，请不要翻译此字段，必须保持为'SeeDance'"
+    "description": "Текст у навигацији сајта за страницу SeeDance; не преводити, мора остати „SeeDance“"
   },
   "nav.grokvideo": {
-    "message": "Grok Video",
-    "description": "Text in the website navigation bar to display the Grok Imagine video page"
+    "message": "Grok видео",
+    "description": "Текст у навигационом менију веб странице, који се користи за приказивање странице Grok Imagine видео"
   },
   "nav.luma": {
     "message": "Luma",
-    "description": "网站导航栏中的文本，用于显示Luma页面，请不要翻译此字段，必须保持为'Luma'"
+    "description": "Текст у навигацији сајта за страницу Luma; не преводити, мора остати „Luma“"
   },
   "nav.pika": {
     "message": "Pika",
-    "description": "网站导航栏中的文本，用于显示Pika页面，请不要翻译此字段，必须保持为'Pika'"
+    "description": "Текст у навигацији сајта за страницу Pika; не преводити, мора остати „Pika“"
   },
   "nav.kling": {
     "message": "Kling",
-    "description": "网站导航栏中的文本，用于显示Kling页面，请不要翻译此字段，必须保持为'Kling'"
+    "description": "Текст у навигацији сајта за страницу Kling; не преводити, мора остати „Kling“"
   },
   "nav.hailuo": {
     "message": "Hailuo",
-    "description": "网站导航栏中的文本，用于显示Hailuo页面，请不要翻译此字段，必须保持为'Hailuo'"
+    "description": "Текст у навигацији сајта за страницу Hailuo; не преводити, мора остати „Hailuo“"
+  },
+  "nav.minimax": {
+    "message": "MiniMax H3",
+    "description": "Navigation name for the MiniMax H3 video generation service"
   },
   "nav.wan": {
     "message": "Wan",
-    "description": "网站导航栏中的文本，用于显示Wan页面，请不要翻译此字段，必须保持为'Wan'"
+    "description": "Текст у навигацији сајта за страницу Wan; не преводити, мора остати „Wan“"
   },
   "nav.producer": {
     "message": "Producer",
-    "description": "网站导航栏中的文本，用于显示Producer页面，请不要翻译此字段，必须保持为'Producer'"
+    "description": "Текст у навигацији сајта за страницу Producer; не преводити, мора остати „Producer\""
   },
   "nav.fish": {
     "message": "Fish Audio",
@@ -601,11 +677,15 @@
   },
   "nav.kimi": {
     "message": "Kimi",
-    "description": "网站导航栏中的文本，用于显示Kimi页面，请不要翻译此字段，必须保持为'Kimi'"
+    "description": "Текст у навигацији сајта за страницу Kimi; не преводити, мора остати „Kimi“"
+  },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
   },
   "nav.serp": {
     "message": "SERP",
-    "description": "网站导航栏中的文本，用于显示SERP页面，请不要翻译此字段，必须保持为'SERP'"
+    "description": "Текст у навигацији сајта за страницу SERP; не преводити, мора остати „SERP“"
   },
   "nav.codingBridge": {
     "message": "Coding Bridge",
@@ -617,27 +697,27 @@
   },
   "nav.image": {
     "message": "Slika",
-    "description": "网站导航栏中的文本，用于显示图片页面"
+    "description": "Текст у навигацији сајта за страницу са сликама"
   },
   "nav.music": {
     "message": "Muzika",
-    "description": "网站导航栏中的文本，用于显示音乐页面"
+    "description": "Текст у навигацији сајта за страницу са музиком"
   },
   "nav.video": {
-    "message": "Video",
-    "description": "网站导航栏中的文本，用于显示视频页面"
+    "message": "Видео",
+    "description": "Текст у навигацији сајта за страницу са видеом"
   },
   "nav.distribution": {
     "message": "Preporučena dobit",
-    "description": "网站导航栏中的文本，用于显示推荐收益页面"
+    "description": "Текст у навигацији сајта за страницу са приходом од препорука"
   },
   "nav.connections": {
     "message": "Povezivanje",
-    "description": "跳转到 auth.acedata.cloud 连接管理页的菜单项"
+    "description": "Ставка менија која води на страницу управљања везама на auth.acedata.cloud"
   },
   "nav.logOut": {
     "message": "Odjavi se",
-    "description": "网站导航栏中的文本，用于退出登录"
+    "description": "Текст у навигацији сајта за одјаву"
   },
   "nav.deleteAccount": {
     "message": "Обриши налог",
@@ -645,87 +725,91 @@
   },
   "nav.site": {
     "message": "Podešavanje sajta",
-    "description": "网站导航栏中的文本，用于显示站点配置页面"
+    "description": "Текст у навигацији сајта за страницу подешавања сајта"
   },
   "nav.subsite": {
     "message": "Moja podstran",
-    "description": "侧边栏“我的分站”入口，仅在站点开启 features.subsite 时显示"
+    "description": "Улаз „Моји подсајтови“ у бочној траци, приказује се само када је омогућено features.subsite"
   },
   "nav.setting": {
     "message": "Podešavanja",
-    "description": "网站导航栏中的文本，用于显示设置页面"
-  },
-  "nav.headshots": {
-    "message": "AI Profilna slika",
-    "description": "网站导航栏中的文本，用于显示站点配置页面"
+    "description": "Текст у навигацији сајта за страницу подешавања"
   },
   "nav.more": {
     "message": "Više",
-    "description": "网站导航栏中的文本，用于展开更多服务"
+    "description": "Текст у навигацији сајта за проширивање још услуга"
+  },
+  "nav.collapseDock": {
+    "message": "Склопи траку апликација",
+    "description": " dugme za склапање траке апликација на дну мобилног екрана"
+  },
+  "nav.expandDock": {
+    "message": "Прошири траку апликација",
+    "description": " dugme za проширење траке апликација на дну мобилног екрана"
   },
   "nav.locale": {
     "message": "Podešavanje jezika",
-    "description": "网站导航栏中的文本，用于更改语言"
+    "description": "Текст у навигацији сајта за промену језика"
   },
   "nav.support": {
     "message": "Korisnička podrška",
-    "description": "网站导航栏中的文本，用于显示联系页面"
+    "description": "Текст у навигацији сајта за страницу контакта"
   },
   "nav.darkMode": {
     "message": "Tamni režim",
-    "description": "网站导航栏中的文本，用于切换到深色主题"
+    "description": "Текст у навигацији сајта за прелазак на тамну тему"
   },
   "title.alert": {
     "message": "Upozorenje",
-    "description": "警告消息的标题"
+    "description": "Наслов упозоравајуће поруке"
   },
   "title.placeholderOfSelect": {
     "message": "Molimo izaberite",
-    "description": "选择输入的占位符"
+    "description": "Место за изборни унос"
   },
   "title.placeholderOfInput": {
     "message": "Molimo unesite",
-    "description": "输入的占位符"
+    "description": "Место за текстуални унос"
   },
   "title.allApplications": {
     "message": "Sve prijave",
-    "description": "显示所有申请的页面标题"
+    "description": "Наслов странице која приказује све пријаве"
   },
   "title.allOrders": {
     "message": "Sve narudžbine",
-    "description": "显示所有订单的页面标题"
+    "description": "Наслов странице која приказује све наруџбине"
   },
   "title.orderInfo": {
     "message": "Informacije o narudžbini",
-    "description": "显示订单信息的页面标题"
+    "description": "Наслов странице која приказује податке о наруџбини"
   },
   "title.buyMore": {
     "message": "Dopuni",
-    "description": "页面标题，用于充值。英文必须翻译为“Top Up”，中文为“充值”。"
+    "description": "Наслов странице за допуну."
   },
   "title.distribution": {
     "message": "Preporučena dobit",
-    "description": "显示推荐收入的页面标题，意味着用户可以通过邀请他人使用该服务来赚钱"
+    "description": "Наслов странице са приходом од препорука, где корисник може зарадити позивањем других да користе услугу"
   },
   "title.site": {
     "message": "Podešavanje sajta",
-    "description": "显示站点配置的页面标题"
+    "description": "Наслов странице подешавања сајта"
   },
   "title.distributionHistory": {
     "message": "Istorija preporuka",
-    "description": "显示推荐历史的页面标题"
+    "description": "Наслов странице историје препорука"
   },
   "title.invitee": {
     "message": "Pozvani",
-    "description": "显示邀请人的页面标题"
+    "description": "Наслов странице са позваним корисницима"
   },
   "title.allUsages": {
     "message": "Istorija korišćenja",
-    "description": "显示API服务所有使用的页面标题"
+    "description": "Наслов странице која приказује сва коришћења API услуга"
   },
   "title.allCredentials": {
     "message": "Ključevi",
-    "description": "显示所有凭证的页面标题，凭证用于访问API"
+    "description": "Наслов странице која приказује све креденцијале за приступ API-ју"
   },
   "about.title1": {
     "message": "Kontaktirajte nas",
@@ -740,11 +824,11 @@
     "description": "Prikazuje deo naslova sa informacijama o podršci"
   },
   "about.address": {
-    "message": "131 Continental Dr, Suite 305, Newark, DE 19713, USA",
-    "description": "Adresa kompanije"
+    "message": "131. континентална улица, соба 305, Нјуарк, Делавер, Сједињене Државе, поштански број 19713",
+    "description": "адреса компаније"
   },
   "about.email": {
-    "message": "office@acedata.cloud",
+    "message": "office{'@'}acedata.cloud",
     "description": "Email kompanije"
   },
   "about.link1": {
@@ -807,6 +891,30 @@
     "message": "Tema",
     "description": "Naslov dela sa podešavanjima teme na stranici sa podešavanjima"
   },
+  "settings.sendShortcut": {
+    "message": "Слање поруке",
+    "description": "Title of the send-message shortcut row in General settings: choose Enter or modifier+Enter to send."
+  },
+  "sendShortcut.enter": {
+    "message": "Слање тастером Enter",
+    "description": "Send-shortcut option: press Enter to send the message."
+  },
+  "sendShortcut.modEnter": {
+    "message": "Слање помоћу {key} + Enter",
+    "description": "Send-shortcut option: press the platform modifier (⌘ or Ctrl) plus Enter to send. {key} is the modifier symbol."
+  },
+  "settings.loginMode": {
+    "message": "Начин пријаве",
+    "description": "Login-mode row title in general settings"
+  },
+  "loginMode.iframe": {
+    "message": "Уграђени искачући прозор",
+    "description": "Login mode option: embedded iframe popup"
+  },
+  "loginMode.redirect": {
+    "message": "Преусмеравање целе странице",
+    "description": "Login mode option: full-page redirect"
+  },
   "settings.seo": {
     "message": "SEO podešavanja",
     "description": "Naslov dela sa SEO podešavanjima na stranici sa podešavanjima"
@@ -820,11 +928,11 @@
     "description": "Naslov dela sa podešavanjima distribucije na stranici sa podešavanjima"
   },
   "settings.function": {
-    "message": "Podešavanja funkcija",
-    "description": "Naslov dela sa podešavanjima funkcija na stranici sa podešavanjima"
+    "message": "Могућности",
+    "description": "Наслов за одељак са могућностима сајта на страници подешавања"
   },
   "settings.auth": {
-    "message": "Način prijave",
+    "message": "Autentifikacija",
     "description": "Naslov taba 'Način prijave' na stranici sa podešavanjima — omogućava konfiguraciju načina prijave koji su dozvoljeni na sajtu i podrazumevanog načina prijave, vidljivo samo administratorima sajta."
   },
   "settings.apiKey": {
@@ -839,6 +947,14 @@
     "message": "Асистент ће памтити корисне информације које спомињеш у разговору, како би давао персонализованије одговоре у различитим разговорима. Имаш потпуну контролу — можеш прегледати сачуване садржаје и обрисати делове које не желиш да памти.",
     "description": "Уводни текст на врху странице са подешавањима сећања."
   },
+  "settings.memoryEnabled": {
+    "message": "Користи меморију",
+    "description": "Title for the switch that controls whether chats use saved memory and learn new memory"
+  },
+  "settings.memoryEnabledHint": {
+    "message": "Када је искључено, сачуване меморије се не користе и нови разговори не стварају меморије. Постојеће меморије се чувају.",
+    "description": "Behavior explanation shown below the memory switch"
+  },
   "settings.memoryNeedsChat": {
     "message": "Молимо вас да прво започнете разговор да бисте активирали функцију сећања.",
     "description": "Приказује се на страници подешавања сећања када апликација за ћаскање/токени још нису учитани."
@@ -846,6 +962,58 @@
   "settings.memoryStored": {
     "message": "Сачувана сећања",
     "description": "Наслов секције изнад списка сачуваних сећања."
+  },
+  "settings.memoryImport": {
+    "message": "Увези",
+    "description": "Button that opens the memory import dialog"
+  },
+  "settings.memoryImportTitle": {
+    "message": "Увези меморију из другог AI-ја",
+    "description": "Title of the memory import dialog"
+  },
+  "settings.memoryImportExportStep": {
+    "message": "1. Замолите тренутни AI да извезе своју меморију",
+    "description": "First step heading in the memory import dialog"
+  },
+  "settings.memoryImportPrompt": {
+    "message": "Прелазим на другу AI услугу. Наведи сваку сачувану меморију и трајан контекст који си научио о мени. Све стави у један блок кода, са тачно једном меморијом по реду. Формат сваког реда: [датум чувања, ако је доступан] - садржај меморије. Укључи преференције за одговоре, личне податке, пројекте, циљеве, алате, језике, оквире и исправке које сам направио. Сачувај моје речи кад год је могуће. Не укључуј тајне или осетљиве податке.",
+    "description": "Prompt users copy into another AI service to export memories"
+  },
+  "settings.memoryImportCopy": {
+    "message": "Копирај упит",
+    "description": "Button that copies the memory export prompt"
+  },
+  "settings.memoryImportCopied": {
+    "message": "Упит је копиран",
+    "description": "Toast shown after copying the memory export prompt"
+  },
+  "settings.memoryImportPasteStep": {
+    "message": "2. Налепите извезену меморију",
+    "description": "Second step heading in the memory import dialog"
+  },
+  "settings.memoryImportPlaceholder": {
+    "message": "Налепите текст меморије који је вратио ChatGPT, Claude, Gemini или други AI…",
+    "description": "Placeholder for pasted memory export text"
+  },
+  "settings.memoryImportSubmit": {
+    "message": "Додај у меморију",
+    "description": "Button that submits pasted memories for import"
+  },
+  "settings.memoryImportSuccess": {
+    "message": "Imported {count} memory entries",
+    "description": "Success toast after importing memory; count is the number of accepted entries"
+  },
+  "settings.memoryImportPartial": {
+    "message": "Обрађено {processed} ставки; {rejected} небезбедних или неважећих ставки је прескочено.",
+    "description": "Warning shown after a partial memory import"
+  },
+  "settings.memoryImportInvalid": {
+    "message": "Ниједна меморија није могла бити увезена. Уверите се да је меморија укључена и налепите по једну чињеницу у сваки ред.",
+    "description": "Actionable error shown when the memory import request is invalid"
+  },
+  "settings.memoryImportInProgress": {
+    "message": "Увоз меморије је већ у току. Оставите овај дијалог отворен и покушајте поново ускоро.",
+    "description": "Warning shown when another memory import job is active"
   },
   "settings.memoryEmpty": {
     "message": "Нема сачуваних сећања.",
@@ -916,39 +1084,39 @@
     "description": "Prikazuje naslov stranice sa rangom platforme"
   },
   "customers.name1": {
-    "message": "Mark Du",
-    "description": "Ime klijenta"
+    "message": "Марко Дуу",
+    "description": "име клијента"
   },
   "customers.job1": {
     "message": "Softverski inženjer",
     "description": "Zanimanje klijenta"
   },
   "customers.comment1": {
-    "message": "BigPlayer AI nam je pružio odličnu uslugu i pomogao nam da povećamo produktivnost. Veoma smo zadovoljni!",
+    "message": "Ace Data Cloud nam je pružio odličnu uslugu i pomogao nam da povećamo produktivnost. Veoma smo zadovoljni!",
     "description": "Komentar klijenta"
   },
   "customers.name2": {
-    "message": "Jacob Williams",
-    "description": "Ime klijenta"
+    "message": "Јаков Вилијамс",
+    "description": "име клијента"
   },
   "customers.job2": {
     "message": "Menadžer proizvoda",
     "description": "Zanimanje klijenta"
   },
   "customers.comment2": {
-    "message": "BigPlayer AI je odlična integracijska platforma, kvalitet usluge je izvanredan.",
+    "message": "Ace Data Cloud je odlična integracijska platforma, kvalitet usluge je izvanredan.",
     "description": "Komentar klijenta"
   },
   "customers.name3": {
-    "message": "Larry Henry",
-    "description": "Ime klijenta"
+    "message": "Лари Хенри",
+    "description": "име клијента"
   },
   "customers.job3": {
     "message": "Dizajner",
     "description": "Zanimanje klijenta"
   },
   "customers.comment3": {
-    "message": "Sviđa mi se usluga BigPlayer AI, jednostavna za korišćenje i povoljna cena, nadam se da će biti još bolja!",
+    "message": "Sviđa mi se usluga Ace Data Cloud, jednostavna za korišćenje i povoljna cena, nadam se da će biti još bolja!",
     "description": "Komentar klijenta"
   },
   "nav.github": {
@@ -980,11 +1148,11 @@
     "description": "Help text under the authorized-folders heading."
   },
   "settings.localToolsComputerUseTitle": {
-    "message": "Computer Use (experimental)",
+    "message": "Управљање рачунаром (експериментално)",
     "description": "Heading for the opt-in Computer Use (screen + mouse/keyboard control) toggle."
   },
   "settings.localToolsComputerUseHint": {
-    "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
+    "message": "Дозволите AI-ју да види ваш екран и управља мишем и тастатуром на овом рачунару. Подразумевано је искључено — укључите само када вам затреба. На macOS-у испод одобрите Screen Recording и Accessibility. Свака радња и даље тражи вашу потврду.",
     "description": "Help text under the Computer Use toggle."
   },
   "settings.localToolsAndroidSkillsTitle": {
@@ -1077,95 +1245,95 @@
     "description": "Save the authorized folders."
   },
   "settings.localToolsMcpTitle": {
-    "message": "MCP servers",
+    "message": "MCP сервери",
     "description": "Section title for local MCP server configuration in Local Tools settings."
   },
   "settings.localToolsMcpHint": {
-    "message": "Connect local MCP servers over stdio. Their tools become available to the AI, gated by the same per-call confirmation. Changes take effect immediately.",
+    "message": "Повежите локалне MCP сервере преко stdio. Њихови алати постају доступни AI-ју, уз исту потврду за сваки позив. Измене ступају на снагу одмах.",
     "description": "Explains what local MCP servers do and that changes apply without a restart."
   },
   "settings.localToolsMcpAdd": {
-    "message": "Add server",
+    "message": "Додај сервер",
     "description": "Button to add a new local MCP server row."
   },
   "settings.localToolsMcpName": {
-    "message": "Name",
+    "message": "Назив",
     "description": "Label for the MCP server name/id field."
   },
   "settings.localToolsMcpCommand": {
-    "message": "Command",
+    "message": "Команда",
     "description": "Label for the MCP server launch command field."
   },
   "settings.localToolsMcpArgs": {
-    "message": "Arguments",
+    "message": "Аргументи",
     "description": "Label for the MCP server command arguments field."
   },
   "settings.localToolsMcpArgsHint": {
-    "message": "One argument per line.",
+    "message": "Један аргумент по реду.",
     "description": "Placeholder/hint for the MCP arguments textarea."
   },
   "settings.localToolsMcpEnv": {
-    "message": "Environment",
+    "message": "Окружење",
     "description": "Label for the MCP server environment variables field."
   },
   "settings.localToolsMcpEnvHint": {
-    "message": "One KEY=VALUE per line.",
+    "message": "Један KEY=VALUE по реду.",
     "description": "Placeholder/hint for the MCP environment variables textarea."
   },
   "settings.localToolsMcpNoServers": {
-    "message": "No MCP servers configured.",
+    "message": "Нема подешених MCP сервера.",
     "description": "Empty state shown when no MCP servers are configured."
   },
   "settings.localToolsMcpNamePlaceholder": {
-    "message": "e.g. filesystem",
+    "message": "нпр. filesystem",
     "description": "Placeholder for the MCP server name input."
   },
   "settings.localToolsMcpCommandPlaceholder": {
-    "message": "e.g. npx",
+    "message": "нпр. npx",
     "description": "Placeholder for the MCP server command input."
   },
   "settings.localToolsMcpNameRequired": {
-    "message": "Each server needs a name and a command.",
+    "message": "Сваки сервер мора имати назив и команду.",
     "description": "Validation error when a server row is missing a name or command."
   },
   "settings.localToolsMcpDuplicateName": {
-    "message": "Server names must be unique.",
+    "message": "Називи сервера морају бити јединствени.",
     "description": "Validation error when two servers share the same name."
   },
   "settings.localToolsMcpNameInvalid": {
-    "message": "Name may only contain letters, numbers, hyphens and underscores.",
+    "message": "Назив може да садржи само слова, бројеве, цртице и доње црте.",
     "description": "Validation error when a server name contains invalid characters."
   },
   "settings.localToolsMcpEnabled": {
-    "message": "On",
+    "message": "Укључено",
     "description": "Toggle label to enable/disable a local MCP server."
   },
   "settings.localToolsMcpReconnect": {
-    "message": "Test / Reconnect",
+    "message": "Тестирај / поново повежи",
     "description": "Button to re-spawn one MCP server and refresh its status."
   },
   "settings.localToolsMcpConnecting": {
-    "message": "Connecting…",
+    "message": "Повезивање…",
     "description": "Badge while an MCP server is being (re)connected."
   },
   "settings.localToolsMcpNotSaved": {
-    "message": "Not saved yet",
+    "message": "Још није сачувано",
     "description": "Badge for an MCP server row that hasn't been saved/connected yet."
   },
   "settings.localToolsMcpConnected": {
-    "message": "Connected · {n} tools",
+    "message": "Повезано · {n} алата",
     "description": "Badge when an MCP server connected; {n} is the tool count."
   },
   "settings.localToolsMcpDisabled": {
-    "message": "Disabled",
+    "message": "Онемогућено",
     "description": "Badge when an MCP server is turned off."
   },
   "settings.localToolsMcpFailed": {
-    "message": "Failed to connect",
+    "message": "Повезивање није успело",
     "description": "Badge when an MCP server failed to start; the reason is shown below."
   },
   "settings.localToolsMcpPlatformHint": {
-    "message": "Tip: use a command on your PATH such as npx or uvx (e.g. npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). On Windows, npx/node resolve automatically. If a server shows \"spawn … ENOENT\", set the command to a full path.",
+    "message": "Савет: користите команду са свог PATH-а, као што су npx или uvx (нпр. npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). На Windows-у се npx/node аутоматски проналазе. Ако сервер прикаже „spawn … ENOENT“, поставите команду на пуну путању.",
     "description": "Cross-platform hint for configuring the MCP launch command."
   },
   "settings.localToolsSaved": {
@@ -1253,7 +1421,7 @@
     "description": "Naslov koji prikazuje na kojem otvorenom projektu je zasnovana ova stranica na stranici o aplikaciji"
   },
   "settings.poweredByTip": {
-    "message": "Ova stranica je zasnovana na BigPlayer AI otvorenom projektu, kod je potpuno otvoren.",
+    "message": "Ova stranica je zasnovana na Nexior otvorenom projektu, kod je potpuno otvoren.",
     "description": "Objašnjenje na stranici o aplikaciji o kojem otvorenom projektu je zasnovana ova stranica"
   },
   "settings.apiService": {
@@ -1261,7 +1429,7 @@
     "description": "Naslov koji prikazuje pružatelja API usluga na stranici o aplikaciji"
   },
   "settings.apiServiceTip": {
-    "message": "API uslugu pruža BigPlayer AI.",
+    "message": "API uslugu pruža Ace Data Cloud.",
     "description": "Objašnjenje na stranici o aplikaciji o pružatelju API usluga"
   },
   "settings.buildYourOwn": {
@@ -1276,6 +1444,86 @@
     "message": "Kontaktirajte podršku",
     "description": "Tekst dugmeta za kontaktiranje podrške"
   },
+  "settings.contactSupport": {
+    "message": "Контакт подршке",
+    "description": "Section title on the About page listing the site owner's customer-service channels"
+  },
+  "settings.contactSupportTip": {
+    "message": "Обратите се нашем тиму подршке путем било ког од доле наведених канала.",
+    "description": "Subtitle under the support contacts section on the About page"
+  },
+  "settings.contactInvalidUrl": {
+    "message": "{field} мора бити важећи http(s) линк",
+    "description": "Validation error shown when a contact URL is not a valid http(s) link"
+  },
+  "settings.contactInvalidPhone": {
+    "message": "Унесите важећи број телефона",
+    "description": "Validation error shown when the phone number is invalid"
+  },
+  "settings.contactInvalidEmail": {
+    "message": "Унесите важећу имејл адресу",
+    "description": "Validation error shown when the email address is invalid"
+  },
+  "settings.contactType": {
+    "message": "Тип",
+    "description": "Placeholder for the contact type picker in the editor"
+  },
+  "settings.contactType_phone": {
+    "message": "Телефон",
+    "description": "Display name for the phone contact type"
+  },
+  "settings.contactType_email": {
+    "message": "Имејл",
+    "description": "Display name for the email contact type"
+  },
+  "settings.contactType_website": {
+    "message": "Веб-сајт",
+    "description": "Display name for the website contact type"
+  },
+  "settings.contactType_wechat": {
+    "message": "ВеChat",
+    "description": "Приказно име за тип контакта WeChat"
+  },
+  "settings.contactLabelPlaceholder": {
+    "message": "Ознака (опционо), нпр. Продаја",
+    "description": "Placeholder for the optional contact label input"
+  },
+  "settings.contactValuePlaceholder": {
+    "message": "Налог / текст за приказ",
+    "description": "Placeholder for the generic contact value input"
+  },
+  "settings.contactQr": {
+    "message": "QR код",
+    "description": "Label for a contact's QR-code image"
+  },
+  "settings.contactQrTip": {
+    "message": "Отпремите QR код који корисници могу скенирати да вас додају.",
+    "description": "Tip for the contact QR-code uploader"
+  },
+  "settings.contactAdd": {
+    "message": "Додај контакт",
+    "description": "Button to add another contact entry"
+  },
+  "settings.contactEditorHint": {
+    "message": "Изаберите тип за сваки канал и попуните бар вредност, линк или QR. Додајте колико год желите.",
+    "description": "Hint at the top of the contacts editor dialog"
+  },
+  "settings.contactInvalidType": {
+    "message": "Тип може да садржи само мала слова, цифре, '-' и '_'",
+    "description": "Validation error for an invalid contact type slug"
+  },
+  "settings.contactRowNeedsValue": {
+    "message": "Сваки контакт мора имати бар вредност, линк или QR код",
+    "description": "Validation error when a contact row has no value/url/qr"
+  },
+  "settings.contactInvalidValue": {
+    "message": "Поље контакта је неважеће или предугачко",
+    "description": "Validation error when a contact value/label is invalid or too long"
+  },
+  "settings.contactTooMany": {
+    "message": "Можете додати највише {max} контаката",
+    "description": "Validation error when too many contacts are added"
+  },
   "message.viewOnGithub": {
     "message": "Pogledajte na GitHub-u",
     "description": "Tekst linka za pregled projekta na GitHub-u"
@@ -1285,7 +1533,7 @@
     "description": "Naslov 404 stranice"
   },
   "message.notFound": {
-    "message": "Stranica koju ste tražili ne postoji, možda je link promenjen ili uklonjen. Vratite se na početnu stranicu i nastavite istraživanje AI usluga BigPlayer AI.",
+    "message": "Stranica koju ste tražili ne postoji, možda je link promenjen ili uklonjen. Vratite se na početnu stranicu i nastavite istraživanje AI usluga AceData.",
     "description": "Opis podnaslova 404 stranice"
   },
   "message.notFoundEyebrow": {
@@ -1305,23 +1553,23 @@
     "description": "Tekst dugmeta za povratak na prethodnu stranicu u istoriji pregleda"
   },
   "title.apiCode": {
-    "message": "API code for this request",
+    "message": "API код за овај захтев",
     "description": "Title of the dialog that shows the equivalent API code (curl / Python / Node) that would reproduce a result generated inside the product"
   },
   "message.viewCodeHint": {
-    "message": "Show API code for this request",
+    "message": "Прикажи API код за овај захтев",
     "description": "Tooltip text on the View Code button shown alongside result-card action buttons (U1/U2/Download/Extend/...). Clicking the button opens a dialog with curl / Python / Node snippets that reproduce the same generation via the public API."
   },
   "button.viewCode": {
-    "message": "View code",
+    "message": "Прикажи код",
     "description": "Button text that opens a dialog with the equivalent API code (curl / Python / Node) for the current result, similar to the OpenAI Playground 'View code' affordance"
   },
   "button.getApiKey": {
-    "message": "Get an API key",
+    "message": "Преузми API кључ",
     "description": "Link text in the API code dialog footer that opens the platform console page where users can create an API key"
   },
   "button.apiPlatform": {
-    "message": "API Platform",
+    "message": "API платформа",
     "description": "API code dialog footer button label. Clicking opens https://platform.acedata.cloud/ in a new tab so users can manage their API keys, balance and usage."
   },
   "message.apiCodeIntro": {
@@ -1380,24 +1628,32 @@
     "message": "Otpremanje referentnih datoteka je još u toku — sačekajte trenutak.",
     "description": "Toast shown when the user clicks the Generate button while one or more reference uploads are still in flight. Asks them to wait for uploads to complete before retrying."
   },
+  "message.uploadTooLarge": {
+    "message": "Величина датотеке {size} превазилази максималну вредност {max}, молимо смањите и покушајте поново.",
+    "description": "Обавештење које се појављује када корисник изабере датотеку која превазилази ограничење величине прикачивања, указујући на тренутну величину датотеке и дозвољену максималну величину."
+  },
+  "message.dropToUpload": {
+    "message": "Драг & Дроп овде за учитавање",
+    "description": "Текст који се привремено приказује на контролу за учитавање када се датотека превуче изнад ње, обавештавајући корисника да може да отпусти за учитавање."
+  },
   "appUpgrade.title": {
-    "message": "Update required",
+    "message": "Потребно ажурирање",
     "description": "Title of the native-app version gate modal shown at startup when the installed build is older than what the backend supports."
   },
   "appUpgrade.blockMessage": {
-    "message": "This version is no longer supported. Please update from the app store to continue.",
+    "message": "Ова верзија више није подржана. Ажурирајте из продавнице апликација да наставите.",
     "description": "Body text of the hard-block upgrade modal shown when the installed version is below min_supported. The modal has no dismiss affordance — the only button opens the app store."
   },
   "appUpgrade.softMessage": {
-    "message": "A newer version is available. Update from the app store for the best experience.",
+    "message": "Доступна је новија верзија. Ажурирајте из продавнице апликација за најбоље искуство.",
     "description": "Body text of the soft upgrade prompt shown when the installed version is below latest but above min_supported. The user can dismiss and keep using the app."
   },
   "appUpgrade.openStore": {
-    "message": "Update now",
+    "message": "Ажурирај сада",
     "description": "Primary button on the upgrade modal — opens the App Store / Play Store URL in the system browser."
   },
   "appUpgrade.later": {
-    "message": "Later",
+    "message": "Касније",
     "description": "Secondary button on the soft upgrade prompt — dismisses the modal and lets the user keep using the current version. Only shown for non-forced upgrades."
   },
   "nav.maestro": {
@@ -1405,35 +1661,202 @@
     "description": "Текст на страници за претварање Maestro чланака у видео у навигационом менију, остаје 'Maestro'"
   },
   "nav.digitalhuman": {
-    "message": "Digital Human",
+    "message": "Дигитални човек",
     "description": "Text in the website navigation bar for the Digital Human talking-head page"
   },
   "settings.localToolsAndroidPermHint": {
-    "message": "Enable the accessibility service so the assistant can see and control your screen. You can pre-authorize individual actions below.",
+    "message": "Омогућите услугу приступачности да би помоћник могао да види и управља вашим екраном. Појединачне радње можете унапред одобрити испод.",
     "description": "Hint for the Android Computer Use accessibility permission section in Settings."
   },
   "settings.cuConsentTitle": {
-    "message": "Allow action?",
+    "message": "Дозволи радњу?",
     "description": "Title of the on-demand consent dialog shown when the assistant requests a screen action."
   },
   "settings.cuConsentMessage": {
-    "message": "The assistant wants to run \"{action}\" on your phone. Allow it?",
+    "message": "Помоћник жели да покрене „{action}“ на вашем телефону. Дозволити?",
     "description": "Body of the on-demand consent dialog; {action} is the computer.* action name."
   },
   "settings.cuConsentAllow": {
-    "message": "Allow once",
+    "message": "Дозволи једном",
     "description": "Allow button of the on-demand consent dialog."
   },
   "settings.cuConsentAlways": {
-    "message": "Always allow",
+    "message": "Увек дозволи",
     "description": "Always-allow button of the on-demand consent dialog; persists a grant so this action never prompts again."
   },
   "settings.cuConsentDeny": {
-    "message": "Deny",
+    "message": "Одбиј",
     "description": "Deny button of the on-demand consent dialog."
   },
-  "nav.glm": {
-    "message": "GLM",
-    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  "settings.siteServices": {
+    "message": "Цена"
+  },
+  "nav.omni": {
+    "message": "Omni видео",
+    "description": "Навигациона ознака за Omni видео модул"
+  },
+  "settings.localToolsMcpToolsTitle": {
+    "message": "MCP alati",
+    "description": "Naslov MCP alata u podešavanjima lokalnih alata."
+  },
+  "settings.localToolsMcpToolsHint": {
+    "message": "Povezani alati koje pruža MCP server. Kada se otvore, AI ih neće više pitati jedan po jedan. MCP server je treća strana program i nije ograničen na autorizovane foldere - alati označeni kao „potpuni pristup“ mogu menjati ili objavljivati podatke, budite oprezni prilikom otvaranja.",
+    "description": "Opisni tekst za MCP alat u podešavanjima, naglašava rizike trećih strana."
+  },
+  "settings.localToolsWorkingDirTitle": {
+    "message": "Радни директорijum",
+    "description": "naslov sekcije u podešavanjima lokalnih alata: folder projekta u kojem AI trenutno radi"
+  },
+  "settings.localToolsWorkingDirHint": {
+    "message": "AI подразумевано ради у овом пројекту: терминалске команде се овде извршавају, а пројектне конвенције (AGENTS.md / CLAUDE.md) се такође читају отсуд. Када се изабере, овај фолдер ће автоматски добити дозволу за читање и писање, без потребе за додатним додавањем.",
+    "description": "opisni tekst za radni direktorijum"
+  },
+  "settings.localToolsWorkingDirNone": {
+    "message": "Није изабрано",
+    "description": "prazno stanje kada radni direktorijum nije podešen"
+  },
+  "settings.localToolsWorkingDirChange": {
+    "message": "Промени",
+    "description": " dugme za promenu radnog direktorijuma"
+  },
+  "button.report": {
+    "message": "Пријави",
+    "description": "Текст на dugmetu za prijavu neprimerenog sadržaja generisanog veštačkom inteligencijom"
+  },
+  "title.reportContent": {
+    "message": "Пријава садржаја",
+    "description": "Naslov dijaloga za prijavu neprimerenog sadržaja generisanog veštačkom inteligencijom"
+  },
+  "message.reportIntro": {
+    "message": "Изаберите разлог за пријаву, ми ћемо што пре прегледати и на основу тога побољшати филтер садржаја.",
+    "description": "Уводна poruka u dijalogu za prijavu sadržaja"
+  },
+  "message.reportDetailPlaceholder": {
+    "message": "Додатно објашњење (опционо)",
+    "description": "Placeholder za opcioni tekstualni okvir za detalje u dijalogu za prijavu sadržaja"
+  },
+  "message.reportSuccess": {
+    "message": "Пријава је успешно поднета, хвала на повратним информацијама.",
+    "description": "Poruka koja se prikazuje nakon uspešne prijave sadržaja"
+  },
+  "message.reportFailed": {
+    "message": "Пријава није успела, покушајте поново касније.",
+    "description": "Poruka koja se prikazuje kada prijava sadržaja ne uspe"
+  },
+  "message.reportReasonRequired": {
+    "message": "Молимо вас да изаберете разлог за пријаву.",
+    "description": "Poruka za валидацију када није изабран разлог за пријаву"
+  },
+  "reportReason.sexual": {
+    "message": "Порнографски или сексуално сугестиван садржај",
+    "description": "Разлог за пријаву садржаја: сексуални садржај"
+  },
+  "reportReason.violence": {
+    "message": "Насилни или крвави садржај",
+    "description": "Разлог за пријаву садржаја: насиље или крв"
+  },
+  "reportReason.hate": {
+    "message": "Говор мржње или узнемиравање",
+    "description": "Разлог за пријаву садржаја: говор мржње или узнемиравање"
+  },
+  "reportReason.child_safety": {
+    "message": "Угрожавање малолетника",
+    "description": "Разлог за пријаву садржаја: безбедност деце"
+  },
+  "reportReason.self_harm": {
+    "message": "Самоповређивање или опасно понашање",
+    "description": "Разлог за пријаву садржаја: самоповређивање или опасни поступци"
+  },
+  "reportReason.deception": {
+    "message": "Лажне или обмањујуће информације",
+    "description": "Разлог за пријаву садржаја: обмањујући или лажан садржај"
+  },
+  "reportReason.illegal": {
+    "message": "Неправилан или незаконит садржај",
+    "description": "Разлог за пријаву садржаја: незаконита активност"
+  },
+  "reportReason.ip": {
+    "message": "Повреда интелектуалне својине",
+    "description": "Разлог за пријаву садржаја: повреда права интелектуалне својине"
+  },
+  "reportReason.other": {
+    "message": "Друго",
+    "description": "Разлог за пријаву садржаја: друго"
+  },
+  "x402Scenario.paymentMethod": {
+    "message": "Način plaćanja",
+    "description": "Oznaka za izbor bodova ili Solana USDC novčanika u scenariju generisanja slika."
+  },
+  "x402Scenario.credits": {
+    "message": "Bodovi",
+    "description": "Opcija plaćanja bodovima u scenariju generisanja."
+  },
+  "x402Scenario.wallet": {
+    "message": "USDC novčanik",
+    "description": "Opcija plaćanja Solana USDC novčanikom u scenariju generisanja."
+  },
+  "x402Scenario.quoteBeforeSigning": {
+    "message": "Tačna USDC cena koju daje server biće prikazana pre potpisivanja novčanika.",
+    "description": "Obaveštenje da će server pružiti zvaničnu ponudu u režimu plaćanja novčanikom."
+  },
+  "x402Scenario.connectWalletFirst": {
+    "message": "Prvo povežite Solana novčanik pre generisanja.",
+    "description": "Obaveštenje kada je izabran režim novčanika, ali novčanik još nije povezan."
+  },
+  "x402Scenario.confirmPayment": {
+    "message": "Potvrđujete da plaćate {amount} USDC (Solana) za ovu generaciju?",
+    "description": "Potvrda plaćanja nakon primanja x402 izazova; {amount} je tačna ponuda servera."
+  },
+  "x402Scenario.paymentFailed": {
+    "message": "Plaćanje novčanikom je neuspešno.",
+    "description": "Prefiks za obaveštenje o neuspehu generisanja u režimu novčanika."
+  },
+  "x402Scenario.gptEditCreditsOnly": {
+    "message": "Plaćanje novčanikom trenutno podržava samo generisanje GPT Image slika; za uređivanje referentne slike, molimo prebacite se na bodove.",
+    "description": "Obaveštenje za korisnike u MVP fazi koji pokušavaju da uređuju referentne slike u režimu novčanika."
+  },
+  "x402Scenario.payEachTime": {
+    "message": "Svaki put potvrdi",
+    "description": "Opcija koja zahteva potvrdu korisnika pre svake transakcije iz novčanika."
+  },
+  "x402Scenario.continuousPayments": {
+    "message": "Kontinuirana plaćanja",
+    "description": "Opcija za korišćenje ponovo upotrebljivih Solana USDC plaćanja."
+  },
+  "x402Scenario.continuousPaymentsDescription": {
+    "message": "Omogućava Studio da plaća stvarnu potrošnju iz Solana USDC novčanika unutar dnevnog limita koji ste postavili.",
+    "description": "Objašnjenje koje se prikazuje pre nego što se omoguće kontinuirana plaćanja iz novčanika."
+  },
+  "x402Scenario.dailyPaymentLimit": {
+    "message": "Dnevni limit plaćanja",
+    "description": "Maksimalni iznos USDC koji se može koristiti za kontinuirana plaćanja dnevno."
+  },
+  "x402Scenario.validUntil": {
+    "message": "Važi do",
+    "description": "Datum isteka autorizacije za kontinuirana plaćanja."
+  },
+  "x402Scenario.validDays": {
+    "message": "Važeći dani",
+    "description": "Broj dana do isteka autorizacije za kontinuirana plaćanja."
+  },
+  "x402Scenario.enableContinuousPayments": {
+    "message": "Omogući kontinuirana plaćanja",
+    "description": "Dugme za kreiranje ponovo upotrebljive Solana plaćanja autorizacije."
+  },
+  "x402Scenario.disableContinuousPayments": {
+    "message": "Onemogući",
+    "description": "Dugme za zaustavljanje korišćenja kontinuiranih plaćanja bez opozivanja autorizacije na lancu."
+  },
+  "x402Scenario.revokeAuthorization": {
+    "message": "Poništi autorizaciju",
+    "description": "Dugme za opozivanje ponovo upotrebljive plaćanja autorizacije na Solana."
+  },
+  "x402Scenario.continuousPaymentsEnabled": {
+    "message": "Kontinuirana plaćanja su omogućena.",
+    "description": "Obaveštenje nakon uspešnog kreiranja plaćanja autorizacije u novčaniku."
+  },
+  "error.userRestricted": {
+    "message": "Ovaj nalog je trenutno ograničen i ne može se prijaviti. Ako se ne slažete, molimo kontaktirajte korisničku podršku.",
+    "description": "Poruka koja se prikazuje kada iOS nativna prijava prepozna izolovani nalog, ne prikazuje unutrašnji razlog ograničenja."
   }
 }

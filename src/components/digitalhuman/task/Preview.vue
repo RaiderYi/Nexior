@@ -1,34 +1,56 @@
 <template>
   <div class="preview">
     <div class="left">
-      <el-image :src="DIGITALHUMAN_LOGO" class="avatar" />
+      <capability-presentation capability="digitalhuman" part="avatar" class="avatar" />
     </div>
     <div class="main">
       <div class="bot">
-        {{ $t('digitalhuman.name.bot') }}
+        <capability-presentation capability="digitalhuman" part="name" />
         <span class="datetime">
           {{ $dayjs.format('' + new Date(parseFloat((modelValue?.created_at || '').toString()) * 1000)) }}
         </span>
+        <el-tooltip effect="dark" :content="$t('common.button.delete')" placement="top">
+          <button
+            v-if="modelValue?.id"
+            type="button"
+            class="btn-delete"
+            :aria-label="$t('common.button.delete')"
+            @click.stop="onDelete"
+          >
+            <delete-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+          </button>
+        </el-tooltip>
       </div>
       <div class="info">
-        <p v-if="modelValue?.request?.text" class="prompt mt-2">
-          {{ modelValue?.request?.text }}
+        <div v-if="faceUrl || audioUrl" class="flex justify-start items-center gap-2 mt-2 w-full overflow-x-auto">
+          <image-preview v-if="faceUrl && isPhotoFace" :url="faceUrl" name="face" :closable="false" />
+          <video-preview v-else-if="faceUrl" :url="faceUrl" name="face" />
+          <audio-preview v-if="audioUrl" :url="audioUrl" name="audio" />
+        </div>
+        <p class="prompt mt-2">
+          {{ modelValue?.request?.text || voiceLabel }}
           <span v-if="!isTerminal"> - ({{ statusLabel }}) </span>
-        </p>
-        <p v-else class="prompt mt-2">
-          {{ voiceLabel }}
-          <span v-if="!isTerminal"> - ({{ statusLabel }}) </span>
-        </p>
-        <p class="text-xs text-[var(--el-text-color-secondary)] mb-1">
-          <font-awesome-icon :icon="faceIcon" class="mr-1" />{{ faceLabel }}
-          <span class="ml-2"><font-awesome-icon icon="fa-solid fa-sliders" class="mr-1" />{{ engineLabel }}</span>
         </p>
       </div>
 
-      <!-- in-progress: status + percentage -->
+      <!-- in-progress: a 40-minute render needs an ETA, not just a bar -->
       <div v-if="!isTerminal" class="content">
-        <p class="text-xs text-[var(--el-text-color-secondary)] mb-1">{{ statusLabel }}</p>
-        <el-progress :percentage="progressPct" :stroke-width="6" />
+        <el-alert :closable="false" class="info-state">
+          <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ statusLabel }}
+          </p>
+          <el-progress :percentage="progressPct" :stroke-width="6" class="mb-2" />
+          <p v-if="etaText" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.etaLabel') }}: {{ etaText }}
+          </p>
+          <p class="text-[var(--el-text-color-regular)] text-xs mb-0">
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.taskId') }}: {{ modelValue?.id }}
+            <copy-to-clipboard :content="modelValue?.id!" />
+          </p>
+        </el-alert>
       </div>
 
       <!-- success: the talking-head video -->
@@ -39,16 +61,34 @@
             {{ $t('digitalhuman.button.download') }}
           </el-button>
           <api-code-button path="/digital-human/videos" :body="modelValue?.request" />
+          <report-button
+            service="digitalhuman"
+            :target-id="modelValue?.id"
+            :snapshot="{ text: modelValue?.request?.text }"
+          />
         </div>
         <el-alert :closable="false" class="mt-2 success">
+          <p v-if="modelValue?.response?.duration" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.duration') }}: {{ modelValue?.response?.duration?.toFixed(1) }}s
+          </p>
+          <p v-if="outputSize" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <fullscreen-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.outputSize') }}: {{ outputSize }}
+          </p>
           <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-user" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('digitalhuman.name.taskId') }}: {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id!" />
           </p>
-          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-clock" class="mr-1" />
+          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('digitalhuman.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
+          </p>
+          <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
+            <channel-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.traceId') }}: {{ modelValue?.response?.trace_id }}
+            <copy-to-clipboard :content="modelValue?.response?.trace_id" />
           </p>
         </el-alert>
       </div>
@@ -57,17 +97,27 @@
       <div v-if="isFailure" class="content">
         <el-alert :closable="false" class="failure">
           <template #template>
-            <font-awesome-icon icon="fa-solid fa-exclamation-triangle" class="mr-1" />
+            <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('digitalhuman.name.failure') }}
           </template>
           <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-user" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('digitalhuman.name.taskId') }}: {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id!" />
           </p>
-          <p v-if="failureReason" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-circle-info" class="mr-1" />
+          <p v-if="failureReason" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <info-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('digitalhuman.name.failureReason') }}: {{ failureReason }}
+            <copy-to-clipboard :content="failureReason" />
+          </p>
+          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
+          </p>
+          <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
+            <channel-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('digitalhuman.name.traceId') }}: {{ modelValue?.response?.trace_id }}
+            <copy-to-clipboard :content="modelValue?.response?.trace_id" />
           </p>
         </el-alert>
       </div>
@@ -76,37 +126,58 @@
 </template>
 
 <script lang="ts">
+import {
+  ChannelIcon,
+  DeleteIcon,
+  FullscreenIcon,
+  InfoIcon,
+  MagicIcon,
+  TimeIcon,
+  WarningIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
-import { ElImage, ElAlert, ElButton, ElProgress } from 'element-plus';
+import { ElAlert, ElButton, ElProgress, ElMessageBox, ElMessage, ElTooltip } from 'element-plus';
 import { IDigitalHumanTask } from '@/models';
-import { DIGITALHUMAN_LOGO } from '@/constants';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VideoPlayer from '@/components/common/VideoPlayer.vue';
 import ApiCodeButton from '@/components/common/ApiCodeButton.vue';
+import ReportButton from '@/components/common/ReportButton.vue';
+import AudioPreview from '@/components/common/AudioPreview.vue';
+import ImagePreview from '@/components/common/ImagePreview.vue';
+import VideoPreview from '@/components/common/VideoPreview.vue';
+import { DIGITALHUMAN_ETA_SECONDS } from '@/constants';
+
+// A photo now travels in `video_url` like a clip does, so the extension is the
+// only thing that still tells the two apart (same test the worker applies).
+const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.webp', '.bmp', '.gif'];
 
 export default defineComponent({
   name: 'TaskPreview',
   components: {
-    ElImage,
+    ApiCodeButton,
+    AudioPreview,
+    ChannelIcon,
     CopyToClipboard,
-    FontAwesomeIcon,
+    DeleteIcon,
     ElAlert,
-    ElProgress,
-    VideoPlayer,
     ElButton,
-    ApiCodeButton
+    ElProgress,
+    ElTooltip,
+    FullscreenIcon,
+    ImagePreview,
+    InfoIcon,
+    MagicIcon,
+    ReportButton,
+    TimeIcon,
+    VideoPlayer,
+    VideoPreview,
+    WarningIcon
   },
   props: {
     modelValue: {
       type: Object as () => IDigitalHumanTask | undefined,
       required: true
     }
-  },
-  data() {
-    return {
-      DIGITALHUMAN_LOGO
-    };
   },
   computed: {
     status(): string {
@@ -135,16 +206,34 @@ export default defineComponent({
         ? (this.$t('digitalhuman.name.audioDriven') as string)
         : (this.$t('digitalhuman.name.textDriven') as string);
     },
-    faceLabel(): string {
-      return this.modelValue?.request?.image_url
-        ? (this.$t('digitalhuman.name.facePhoto') as string)
-        : (this.$t('digitalhuman.name.faceVideo') as string);
+    faceUrl(): string | undefined {
+      return this.modelValue?.request?.video_url || this.modelValue?.request?.image_url;
     },
-    faceIcon(): string {
-      return this.modelValue?.request?.image_url ? 'fa-solid fa-image' : 'fa-solid fa-film';
+    isPhotoFace(): boolean {
+      if (this.modelValue?.request?.image_url) return true;
+      const path = (this.faceUrl || '').split('?')[0].toLowerCase();
+      return IMAGE_EXTS.some((ext) => path.endsWith(ext));
     },
-    engineLabel(): string {
-      return this.modelValue?.request?.engine || this.modelValue?.response?.engine || 'latentsync';
+    audioUrl(): string | undefined {
+      return this.modelValue?.request?.audio_url;
+    },
+    outputSize(): string | undefined {
+      const { width, height } = this.modelValue?.response || {};
+      return width && height ? `${width}×${height}` : undefined;
+    },
+    /**
+     * Rough time remaining. The progress bar alone cannot carry expectations
+     * here: it jumps between a handful of fixed checkpoints and then sits
+     * still for many minutes.
+     */
+    etaText(): string | undefined {
+      const startedAt = parseFloat((this.modelValue?.created_at || '').toString());
+      if (!startedAt) return undefined;
+      const remaining = DIGITALHUMAN_ETA_SECONDS - (Date.now() / 1000 - startedAt);
+      if (remaining <= 60) {
+        return this.$t('digitalhuman.message.etaAlmostDone') as string;
+      }
+      return this.$t('digitalhuman.message.etaRemaining', { minutes: Math.ceil(remaining / 60) }) as string;
     },
     statusLabel(): string {
       const s = this.status;
@@ -159,6 +248,26 @@ export default defineComponent({
     }
   },
   methods: {
+    async onDelete() {
+      const id = this.modelValue?.id;
+      if (!id) return;
+      try {
+        await ElMessageBox.confirm(this.$t('common.message.deleteTaskConfirm'), this.$t('common.button.delete'), {
+          type: 'warning',
+          confirmButtonText: this.$t('common.button.delete'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          confirmButtonClass: 'el-button--danger'
+        });
+      } catch {
+        return; // user cancelled
+      }
+      try {
+        await this.$store.dispatch('digitalhuman/deleteTask', { id });
+        ElMessage.success(this.$t('common.message.deleteTaskSuccess'));
+      } catch {
+        ElMessage.error(this.$t('common.message.deleteTaskFailed'));
+      }
+    },
     onDownload(event: MouseEvent, url: string) {
       event?.stopPropagation();
       window.open(url, '_blank');
@@ -193,6 +302,8 @@ $left-width: 70px;
     padding: 10px 10px 0 10px;
 
     .bot {
+      display: flex;
+      align-items: center;
       font-size: 16px;
       font-weight: bold;
       color: var(--el-color-primary);
@@ -201,9 +312,32 @@ $left-width: 70px;
       white-space: nowrap;
       .datetime {
         font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-weight: normal;
         color: var(--el-text-color-secondary);
         margin-left: 10px;
+      }
+      .btn-delete {
+        margin-left: auto;
+        padding: 4px 6px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        line-height: 1;
+        color: var(--el-text-color-secondary);
+        // Hover-reveal on pointer devices; keep it out of the way until wanted.
+        opacity: 0;
+        transition:
+          opacity 0.15s ease,
+          color 0.15s ease;
+        &:hover {
+          color: var(--el-color-danger);
+        }
+        // Touch devices have no hover — always show the control.
+        @media (hover: none) {
+          opacity: 1;
+        }
       }
     }
 
@@ -233,11 +367,19 @@ $left-width: 70px;
         &.success {
           border-color: var(--el-color-success);
         }
+        &.info-state {
+          border-color: var(--el-color-info);
+        }
         :deep(p:last-child) {
           margin-bottom: 0;
         }
       }
     }
+  }
+
+  // Reveal the trash icon when hovering anywhere on the card.
+  &:hover .main .bot .btn-delete {
+    opacity: 1;
   }
 }
 </style>

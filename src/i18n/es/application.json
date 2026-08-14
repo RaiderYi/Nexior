@@ -8,8 +8,8 @@
     "description": "Cuota del servicio."
   },
   "badge.shared": {
-    "message": "Shared",
-    "description": "Badge on the application list marking an application that has been authorized to the current user by someone else (not owned by them)."
+    "message": "Compartido",
+    "description": "Un distintivo en la lista de aplicaciones que indica que esta aplicación ha sido autorizada para su uso por el usuario actual, en lugar de ser propiedad del usuario actual."
   },
   "field.expiredAt": {
     "message": "Fecha de expiración",
@@ -60,7 +60,7 @@
     "description": "ID de la solicitud."
   },
   "field.remainingAmount": {
-    "message": "Saldo de instancia",
+    "message": "Saldo",
     "description": "Saldo de la solicitud."
   },
   "field.usedAmount": {
@@ -105,7 +105,7 @@
   },
   "field.proxy": {
     "message": "Proxy",
-    "description": "Este es un servicio en línea, el formulario proporciona servicios al usuario a través de un proxy HTTP."
+    "description": "Este es un servicio en línea que utiliza un proxy HTTP (para la transmisión de datos) para proporcionar servicios al usuario."
   },
   "field.credential": {
     "message": "Credenciales",
@@ -144,11 +144,11 @@
     "description": "Mensaje mostrado cuando falla la creación automática de la solicitud global."
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 ¡Bienvenido a BigPlayer AI! Le hemos otorgado {credits} créditos para probar cualquier servicio del sitio.",
+    "message": "🎉 ¡Bienvenido a {brand}! Le hemos otorgado {credits} créditos para probar cualquier servicio del sitio.",
     "description": "Mensaje de bienvenida mostrado después de que la solicitud global se crea exitosamente o al ingresar por primera vez. {credits} representa los créditos restantes de la solicitud global."
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 ¡Bienvenido a BigPlayer AI! Su cuenta está lista y puede disfrutar de cualquier servicio del sitio.",
+    "message": "🎉 ¡Bienvenido a {brand}! Su cuenta está lista y puede disfrutar de cualquier servicio del sitio.",
     "description": "Mensaje de bienvenida mostrado cuando no hay créditos gratuitos disponibles para la solicitud global."
   },
   "message.notApplied": {
@@ -244,7 +244,7 @@
     "description": "Título de la página cuando el usuario desea comprar un servicio."
   },
   "title.globalBuy": {
-    "message": "Recarga de puntos generales de BigPlayer AI",
+    "message": "Recarga de puntos generales de {brand}",
     "description": "Título de la página cuando el usuario desea comprar un servicio general."
   },
   "title.applicationRemainingCount": {
@@ -256,7 +256,7 @@
     "description": "Título de la página cuando el usuario desea gestionar solicitudes."
   },
   "title.applicationBalance": {
-    "message": "Puntos exclusivos - {service}",
+    "message": "Saldo exclusivo - {service}",
     "description": "Mensaje mostrado al usuario cuando revisa el saldo de la solicitud."
   },
   "title.count": {
@@ -272,8 +272,8 @@
     "description": "Título de la página cuando el usuario revisa el saldo general."
   },
   "message.globalBalanceDescription": {
-    "message": "Al habilitar 'Permitir saldo general', el saldo de la instancia se consumirá automáticamente si es insuficiente.",
-    "description": "Mensaje que indica que el saldo de la instancia se consumirá automáticamente si es insuficiente."
+    "message": "Al habilitar 'Permitir saldo general', el saldo general se usará automáticamente cuando el saldo exclusivo sea insuficiente.",
+    "description": "Mensaje que indica que el saldo exclusivo se consumirá automáticamente si es insuficiente."
   },
   "button.service": {
     "message": "Soporte exclusivo",

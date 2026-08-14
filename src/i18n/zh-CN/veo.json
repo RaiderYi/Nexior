@@ -68,7 +68,7 @@
     "description": "参数'translation'的描述"
   },
   "description.imageUrl": {
-    "message": "在多图创建视频的任务中，它必须上传多张图片。",
+    "message": "上传 1–3 张参考图片，融合主体、风格或场景生成视频。",
     "description": "参数'imageUrl'的描述"
   },
   "description.prompt": {
@@ -143,6 +143,10 @@
     "message": "最多可上传 2 张图片",
     "description": "上传的图片数量超过限制时的错误消息"
   },
+  "message.uploadReferencesLimit": {
+    "message": "最多可上传 {limit} 张图片",
+    "description": "根据当前生成方式显示动态图片数量限制"
+  },
   "message.uploadReferencesSuccess": {
     "message": "成功上传图片",
     "description": "成功上传图片时的成功消息"
@@ -164,7 +168,7 @@
     "description": "启动绘图任务失败时的错误消息"
   },
   "message.imageRequired": {
-    "message": "请先上传至少一张参考图片，再发起图生视频任务",
+    "message": "请先上传至少一张参考图片，再发起生成任务",
     "description": "image2video 模式下未上传图片时的提示"
   },
   "message.usedUp": {
@@ -227,64 +231,20 @@
     "message": "没有历史任务，请点击左方生成视频",
     "description": "没有任务时的消息"
   },
-  "name.upsampleAction": {
-    "message": "升采样目标",
-    "description": "/veo/upsample 的目标格式（1080p/4k/gif）"
-  },
-  "name.motionType": {
-    "message": "镜头运动",
-    "description": "/veo/reshoot 的镜头运动类型"
-  },
-  "name.imageMask": {
-    "message": "区域蒙版",
-    "description": "/veo/objects 的图片蒙版（白色像素=操作区域）"
-  },
-  "name.videoId": {
-    "message": "视频 ID",
-    "description": "来源视频的 ID（来自之前一次生成任务的 data[].id）"
-  },
-  "placeholder.imageMask": {
-    "message": "蒙版图片 URL 或 base64 编码的 JPEG",
-    "description": "image_mask 输入框占位符"
-  },
-  "placeholder.videoId": {
-    "message": "粘贴视频 ID，或在右侧任务列表点击操作按钮自动填入",
-    "description": "video_id 输入框占位符"
-  },
   "button.actionIngredients": {
     "message": "多图融合视频",
     "description": "ingredients2video — 1-3 张图融合生成新场景"
   },
-  "button.actionUpsample": {
-    "message": "升采样 / GIF 预览",
-    "description": "/veo/upsample — 升 1080p/4K 或导出 GIF"
+  "button.actionTabText": {
+    "message": "文生",
+    "description": "Veo 操作标签：文生视频"
   },
-  "button.actionExtend": {
-    "message": "续写视频",
-    "description": "/veo/extend — 延长已生成视频时长"
+  "button.actionTabImage": {
+    "message": "图生",
+    "description": "Veo 操作标签：图生视频"
   },
-  "button.actionReshoot": {
-    "message": "换镜头重拍",
-    "description": "/veo/reshoot — 同内容换镜头运动重新生成"
-  },
-  "button.actionObjectInsert": {
-    "message": "添加物体",
-    "description": "/veo/objects insert — 在视频中添加物体"
-  },
-  "button.actionObjectRemove": {
-    "message": "移除物体",
-    "description": "/veo/objects remove — 通过蒙版抠除视频中的物体"
-  },
-  "button.actionUpsample1080p": {
-    "message": "升 1080P",
-    "description": "Preview 操作按钮 — 升采样到 1080P"
-  },
-  "button.actionUpsample4k": {
-    "message": "升 4K",
-    "description": "Preview 操作按钮 — 升采样到 4K"
-  },
-  "button.actionUpsampleGif": {
-    "message": "导出 GIF",
-    "description": "Preview 操作按钮 — 转 GIF 预览"
+  "button.actionTabIngredients": {
+    "message": "融合",
+    "description": "Veo 操作标签：多图融合视频"
   }
 }

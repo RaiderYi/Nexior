@@ -2,7 +2,9 @@
   <el-dialog :model-value="visible" :title="$t('order.title.x402')" :width="dialogWidth" top="8vh" class="x402-dialog">
     <section class="x402-content">
       <header class="x402-intro">
-        <el-icon :size="20" class="x402-intro-icon"><credit-card /></el-icon>
+        <el-icon :size="20" class="x402-intro-icon"
+          ><credit-card :size="'1em' as any" aria-hidden="true" focusable="false"
+        /></el-icon>
         <p class="x402-intro-text">{{ $t('order.message.x402IntroShort') }}</p>
       </header>
       <section class="x402-wallet">
@@ -141,33 +143,12 @@
       </section>
     </section>
   </el-dialog>
-  <el-dialog
+  <solana-wallet-picker-dialog
     v-model="solanaWalletModalVisible"
-    :title="$t('order.message.x402ConnectWallet')"
-    width="420px"
-    align-center
-  >
-    <div class="wallet-list">
-      <button
-        v-for="wallet in solanaWalletsOrdered"
-        :key="wallet.adapter.name"
-        class="wallet-list-item"
-        :disabled="solanaWalletConnecting"
-        @click="onSelectSolanaWallet(wallet)"
-      >
-        <img
-          v-if="wallet.adapter.icon"
-          class="wallet-list-icon"
-          :src="wallet.adapter.icon"
-          :alt="wallet.adapter.name"
-        />
-        <span class="wallet-list-name">{{ wallet.adapter.name }}</span>
-        <span v-if="wallet.readyState === 'Installed'" class="wallet-list-status">{{
-          $t('order.message.x402WalletStatusDetected')
-        }}</span>
-      </button>
-    </div>
-  </el-dialog>
+    :wallets="solanaWalletsOrdered"
+    :connecting="solanaWalletConnecting"
+    @select="onSelectSolanaWallet"
+  />
   <el-dialog v-model="evmWalletModalVisible" :title="$t('order.message.x402ConnectWallet')" width="420px" align-center>
     <div class="wallet-list">
       <button
@@ -189,6 +170,7 @@
 </template>
 
 <script lang="ts">
+import { PaymentCardIcon as CreditCard } from '@acedatacloud/core/icons/components';
 import { defineComponent, nextTick } from 'vue';
 import {
   ElAlert,
@@ -201,7 +183,8 @@ import {
   ElRadioGroup,
   ElRadioButton
 } from 'element-plus';
-import { CreditCard } from '@element-plus/icons-vue';
+
+import SolanaWalletPickerDialog from '@/components/common/SolanaWalletPickerDialog.vue';
 import { IOrder } from '@/models';
 import { httpClient, orderOperator } from '@/operators';
 import { isMobile } from '@/utils';
@@ -241,7 +224,8 @@ export default defineComponent({
     ElIcon,
     ElRadioGroup,
     ElRadioButton,
-    CreditCard
+    CreditCard,
+    SolanaWalletPickerDialog
   },
   props: {
     modelValue: { type: Object as () => IOrder, required: true },

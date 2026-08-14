@@ -1,0 +1,202 @@
+{
+  "name.bot": {
+    "message": "Omni Video Bot",
+    "description": "Name des Omni Video Generators"
+  },
+  "name.prompt": {
+    "message": "Eingabeaufforderung",
+    "description": "Eingabeaufforderung zur Videoerstellung"
+  },
+  "name.model": {
+    "message": "Modell",
+    "description": "Label für die Modellauswahl"
+  },
+  "name.ratio": {
+    "message": "Seitenverhältnis",
+    "description": "Label für das Seitenverhältnis"
+  },
+  "name.resolution": {
+    "message": "Auflösung",
+    "description": "Label für die Auflösung"
+  },
+  "name.duration": {
+    "message": "Dauer",
+    "description": "Bezeichnung für die Dauer"
+  },
+  "name.image": {
+    "message": "Bild",
+    "description": "Label für das Eingabebild"
+  },
+  "name.referenceImages": {
+    "message": "Referenzbilder",
+    "description": "Bezeichnung für Referenzbilder"
+  },
+  "name.required": {
+    "message": "Pflichtfeld",
+    "description": "Pflichtfeld-Label"
+  },
+  "name.taskId": {
+    "message": "Aufgaben-ID",
+    "description": "Label für die Aufgaben-ID"
+  },
+  "name.elapsed": {
+    "message": "Verstrichene Zeit",
+    "description": "Bezeichnung für die verstrichene Zeit"
+  },
+  "name.traceId": {
+    "message": "Verfolgungs-ID",
+    "description": "Label für die Verfolgungs-ID"
+  },
+  "name.failure": {
+    "message": "Generierung fehlgeschlagen",
+    "description": "Titel für Fehler"
+  },
+  "name.failureReason": {
+    "message": "Fehlerursache",
+    "description": "Bezeichnung für die Fehlerursache"
+  },
+  "name.status": {
+    "message": "Status",
+    "description": "Titel für den Status"
+  },
+  "description.prompt": {
+    "message": "Beschreiben Sie das Video, das Sie generieren möchten (Szene, Subjekt, Aktion, Kamera, Licht, Stil).",
+    "description": "Anweisungen zur Eingabe des Prompts"
+  },
+  "description.model": {
+    "message": "Wählen Sie das Omni Modell. omni-flash unterstützt Text-zu-Video und Bild-zu-Video; 1.5-preview unterstützt nur Bild-zu-Video.",
+    "description": "Anweisungen zur Modellauswahl"
+  },
+  "description.ratio": {
+    "message": "Wählen Sie das Ausgabe-Seitenverhältnis.",
+    "description": "Anweisungen zum Seitenverhältnis"
+  },
+  "description.resolution": {
+    "message": "Wählen Sie die Ausgabeauflösung. Höhere Auflösungen verbrauchen mehr Kontingent pro Sekunde.",
+    "description": "Anweisungen zur Auflösung"
+  },
+  "description.duration": {
+    "message": "Videodauer (Sekunden), Abrechnung nach ausgegebenen Sekunden.",
+    "description": "Anweisungen zur Dauer"
+  },
+  "description.image": {
+    "message": "Optionales Eingabebild für die Videoerstellung. omni-flash ist erforderlich.",
+    "description": "Anweisungen für die Bild-Eingabe"
+  },
+  "description.referenceImages": {
+    "message": "Optionale Referenzbilder zur Steuerung von Stil oder Inhalt des generierten Videos (nur omni-flash).",
+    "description": "Anweisungen für Referenzbilder"
+  },
+  "placeholder.prompt": {
+    "message": "Beschreibe dein Video…",
+    "description": "Platzhalter für die Eingabeaufforderung"
+  },
+  "placeholder.select": {
+    "message": "Bitte auswählen",
+    "description": "Platzhalter für Auswahlfelder"
+  },
+  "model.default": {
+    "message": "Omni Video",
+    "description": "Standardmodellbezeichnung"
+  },
+  "model.preview15": {
+    "message": "Omni 1.5 (Vorschau, Bild-zu-Video)",
+    "description": "1.5 Vorschau Modellbezeichnung"
+  },
+  "button.upload": {
+    "message": "Hochladen",
+    "description": "Upload-Button"
+  },
+  "button.generate": {
+    "message": "Generieren",
+    "description": "Generieren-Button"
+  },
+  "button.download": {
+    "message": "Herunterladen",
+    "description": "Download-Button"
+  },
+  "status.pending": {
+    "message": "Wartend",
+    "description": "Status für ausstehende Vorgänge"
+  },
+  "status.processing": {
+    "message": "Wird erstellt",
+    "description": "Status für die Verarbeitung"
+  },
+  "message.uploadExceed": {
+    "message": "Es kann nur ein Bild hochgeladen werden.",
+    "description": "Warnung, dass das Upload-Limit überschritten wurde"
+  },
+  "message.uploadReferenceExceed": {
+    "message": "Sie können bis zu 4 Referenzbilder hochladen.",
+    "description": "Warnung, dass das Upload-Limit für Referenzbilder überschritten wurde"
+  },
+  "message.uploadError": {
+    "message": "Bild-Upload fehlgeschlagen, bitte erneut versuchen.",
+    "description": "Upload-Fehler"
+  },
+  "message.downloadVideo": {
+    "message": "Video herunterladen",
+    "description": "Download-Hinweis"
+  },
+  "message.modelRequiresImage": {
+    "message": "Dieses Modell benötigt ein Eingabebild (Bild-zu-Video).",
+    "description": "Warnung, dass das Modell ein Bild benötigt"
+  },
+  "message.promptOrImageRequired": {
+    "message": "Bitte geben Sie einen Prompt ein oder laden Sie ein Bild hoch.",
+    "description": "Warnung, dass ein Prompt oder Bild erforderlich ist"
+  },
+  "message.startingTask": {
+    "message": "Videoerstellungsaufgabe wird übermittelt…",
+    "description": "Aufgabe wird gestartet"
+  },
+  "message.startTaskSuccess": {
+    "message": "Aufgabenübermittlung erfolgreich.",
+    "description": "Aufgabe erfolgreich"
+  },
+  "message.startTaskFailed": {
+    "message": "Aufgabenübermittlung fehlgeschlagen:",
+    "description": "Aufgabe fehlgeschlagen"
+  },
+  "message.usedUp": {
+    "message": "Kontingent erschöpft, bitte kaufen Sie, um fortzufahren.",
+    "description": "Erschöpft"
+  },
+  "name.referenceVideo": {
+    "message": "Referenzvideo",
+    "description": "Referenz- oder bearbeitbares Video für die Omni-Videobearbeitung"
+  },
+  "description.referenceVideo": {
+    "message": "Optionales MP4/MOV (≤200 MB) zum Bearbeiten oder Referenzieren eines vorhandenen Videos. Erfordert mindestens ein Referenzbild.",
+    "description": "Hilfetext für den Upload des Referenzvideos"
+  },
+  "button.uploadVideo": {
+    "message": "Video hochladen",
+    "description": "Schaltfläche zum Hochladen des Referenzvideos"
+  },
+  "message.uploadVideoExceed": {
+    "message": "Sie können maximal 1 Referenzvideo hochladen",
+    "description": "Fehler, wenn mehr als ein Referenzvideo hochgeladen wird"
+  },
+  "message.uploadVideoError": {
+    "message": "Upload des Referenzvideos fehlgeschlagen, bitte später erneut versuchen",
+    "description": "Fehler, wenn das Hochladen des Referenzvideos fehlschlägt"
+  },
+  "message.uploadVideoTypeFailed": {
+    "message": "Die hochgeladene Datei muss im MP4- oder MOV-Format vorliegen!",
+    "description": "Fehler, wenn das Referenzvideo nicht im MP4- oder MOV-Format vorliegt"
+  },
+  "message.uploadVideoSizeExceed": {
+    "message": "Die Dateigröße darf 200 MB nicht überschreiten!",
+    "description": "Fehler, wenn das Referenzvideo 200 MB überschreitet"
+  },
+  "message.promptRequired": {
+    "message": "Bitte einen Prompt eingeben.",
+    "description": "Validierung, wenn der Prompt leer ist"
+  },
+  "message.videoRequiresImage": {
+    "message": "Bitte mindestens ein Referenzbild hinzufügen, wenn ein Referenzvideo verwendet wird.",
+    "description": "Validierung, wenn beim Referenzvideo kein Referenzbild vorhanden ist"
+  }
+}

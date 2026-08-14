@@ -6,10 +6,12 @@
         <info-icon :content="$t('producer.description.uploadAudios')" />
       </div>
       <el-upload
+        ref="uploader"
         v-model:file-list="fileList"
         name="file"
         :limit="1"
         class="upload-wrapper inline-upload"
+        :before-upload="beforeUploadSizeGuard"
         :action="uploadUrl"
         accept=".mp3,.wav,.m4a,audio/*"
         :show-file-list="false"
@@ -19,7 +21,7 @@
         :headers="headers"
       >
         <el-button round type="primary" size="small" :loading="uploading">
-          <font-awesome-icon icon="fa-solid fa-upload" class="icon mr-1" />
+          <upload-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
           {{ $t('producer.button.uploadAudios') }}
         </el-button>
       </el-upload>
@@ -37,10 +39,10 @@
 </template>
 
 <script lang="ts">
+import { UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElUpload, ElButton, ElRadioGroup, ElRadioButton, UploadFiles, UploadFile, ElMessage } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { getBaseUrlPlatform, uploadTrackerMixin } from '@/utils';
+import { getBaseUrlPlatform, uploadTrackerMixin, dropUploadMixin, uploadSizeGuardMixin } from '@/utils';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import { IProducerUploadRequest } from '@/models';
 import { producerOperator } from '@/operators';
@@ -55,14 +57,14 @@ interface IData {
 export default defineComponent({
   name: 'UploadAudio',
   components: {
+    UploadIcon,
     ElUpload,
     ElButton,
     ElRadioGroup,
     ElRadioButton,
-    InfoIcon,
-    FontAwesomeIcon
+    InfoIcon
   },
-  mixins: [uploadTrackerMixin],
+  mixins: [dropUploadMixin, uploadTrackerMixin, uploadSizeGuardMixin],
   emits: ['change'],
   data(): IData {
     return {

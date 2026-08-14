@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Acción",
+    "description": "Selector para elegir operaciones de generación o edición."
+  },
   "name.taskId": {
     "message": "ID de tarea",
     "description": "ID de la tarea"
@@ -131,6 +135,10 @@
     "message": "Error al subir la imagen, por favor intenta de nuevo más tarde",
     "description": "Error en la subida"
   },
+  "message.referenceImageRequired": {
+    "message": "Se requiere subir al menos una imagen de referencia en modo de edición.",
+    "description": "Mensaje de validación que se muestra cuando no hay imagen de referencia en modo de edición."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Confirmación requerida",
     "description": "Título del cuadro de advertencia de conflicto de capacidades"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Opción de modelo SeeDream 5.0 (soporta generación de imágenes en grupo y salida en flujo)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Número de imágenes",

@@ -41,7 +41,7 @@
   },
   "name.style2": {
     "message": "Anime",
-    "description": "Luotavan videon tyyli"
+    "description": "Tyylilaji, jota käytetään luomaan videoita."
   },
   "name.style3": {
     "message": "Sarjakuva",

@@ -16,6 +16,7 @@
           :limit="14"
           :multiple="true"
           :show-file-list="false"
+          :before-upload="beforeUploadSizeGuard"
           :action="uploadUrl"
           :on-exceed="onExceed"
           :on-error="onError"
@@ -25,7 +26,7 @@
           :headers="headers"
         >
           <el-button size="small" type="primary" round>
-            <font-awesome-icon icon="fa-solid fa-upload" class="mr-1" />
+            <upload-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('seedream.button.uploadImageUrls') }}
           </el-button>
         </el-upload>
@@ -45,10 +46,16 @@
 </template>
 
 <script lang="ts">
+import { UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton, ElUpload, ElMessage, UploadFiles, UploadFile } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { getBaseUrlPlatform, pasteUploadMixin, uploadTrackerMixin } from '@/utils';
+import {
+  getBaseUrlPlatform,
+  pasteUploadMixin,
+  dropUploadMixin,
+  uploadTrackerMixin,
+  uploadSizeGuardMixin
+} from '@/utils';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import ImagePreview from '@/components/common/ImagePreview.vue';
 import { getSeedreamCapabilities } from '@/utils/seedream/capabilities';
@@ -62,13 +69,13 @@ interface IData {
 export default defineComponent({
   name: 'SeedreamImageInput',
   components: {
+    UploadIcon,
     ElUpload,
     ElButton,
     InfoIcon,
-    ImagePreview,
-    FontAwesomeIcon
+    ImagePreview
   },
-  mixins: [pasteUploadMixin, uploadTrackerMixin],
+  mixins: [pasteUploadMixin, dropUploadMixin, uploadTrackerMixin, uploadSizeGuardMixin],
   data(): IData {
     return {
       fileList: [],

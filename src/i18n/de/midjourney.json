@@ -9,7 +9,7 @@
   },
   "style.original": {
     "message": "Original",
-    "description": "Buttontext, der den 'Original'-Stil repräsentiert"
+    "description": "Schaltflächentext, der den 'Original'-Stil repräsentiert"
   },
   "style.scenic": {
     "message": "Landschaft",
@@ -29,7 +29,7 @@
   },
   "styleCategory.emotion": {
     "message": "Emotion",
-    "description": "Begriff zur Beschreibung und Generierung von Bildern, die diese Kategorie enthalten"
+    "description": "Begriffskategorie zur Beschreibung und Generierung von Bildern, die dieses Label enthalten sollten"
   },
   "styleCategory.camera": {
     "message": "Kamera",
@@ -49,7 +49,7 @@
   },
   "styleCategory.material": {
     "message": "Material",
-    "description": "Begriff zur Beschreibung und Generierung von Bildern, die diese Kategorie enthalten"
+    "description": "Begriffskategorie zur Beschreibung und Generierung von Bildern, die dieses Label enthalten sollten"
   },
   "styleCategory.artists": {
     "message": "Künstler",
@@ -77,7 +77,7 @@
   },
   "styleTag.gouache": {
     "message": "Gouache",
-    "description": "Begriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten"
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.filmStyle": {
     "message": "Filmstil",
@@ -89,11 +89,11 @@
   },
   "styleTag.logo": {
     "message": "Logo",
-    "description": "Begriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten"
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.cartoon": {
     "message": "Cartoon",
-    "description": "Begriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten"
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten"
   },
   "styleTag.marbleStatue": {
     "message": "Marmorskulptur",
@@ -189,11 +189,11 @@
   },
   "styleTag.16Bit": {
     "message": "16-Bit",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen, die diesen Stil enthalten sollten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten"
   },
   "styleTag.8Bit": {
     "message": "8-Bit",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen, die diesen Stil enthalten sollten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten"
   },
   "styleTag.amber": {
     "message": "Bernstein",
@@ -209,7 +209,7 @@
   },
   "styleTag.anime": {
     "message": "Anime",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen, die diesen Stil enthalten sollten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten"
   },
   "styleTag.arabic": {
     "message": "Arabisch",
@@ -257,11 +257,11 @@
   },
   "styleTag.fibonacci": {
     "message": "Fibonacci",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.cyberpunk": {
     "message": "Cyberpunk",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.diabolic": {
     "message": "Diabolisch",
@@ -333,7 +333,7 @@
   },
   "styleTag.horror": {
     "message": "Horror",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.iceAge": {
     "message": "Eiszeit",
@@ -341,7 +341,7 @@
   },
   "styleTag.jurassic": {
     "message": "Jurassic",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.knitted": {
     "message": "Gestrickt",
@@ -353,7 +353,7 @@
   },
   "styleTag.latex": {
     "message": "Latex",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.pastel": {
     "message": "Pastell",
@@ -361,7 +361,7 @@
   },
   "styleTag.mandala": {
     "message": "Mandala",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.molecular": {
     "message": "Molekular",
@@ -369,7 +369,7 @@
   },
   "styleTag.merkaba": {
     "message": "Merkaba",
-    "description": "Verwendet, um den Stil zur Beschreibung und Generierung von Bildern zu kennzeichnen. Die generierten Bilder sollten diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.mitochondria": {
     "message": "Mitochondrien",
@@ -377,7 +377,7 @@
   },
   "styleTag.graffiti": {
     "message": "Graffiti",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.graphicNovel": {
     "message": "Grafischer Roman",
@@ -385,7 +385,7 @@
   },
   "styleTag.multidimensional": {
     "message": "Multidimensional",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.nasa": {
     "message": "NASA",
@@ -397,7 +397,7 @@
   },
   "styleTag.neon": {
     "message": "Neon",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.nuclear": {
     "message": "Nuklear",
@@ -405,7 +405,7 @@
   },
   "styleTag.orbital": {
     "message": "Orbital",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.rayTracing": {
     "message": "Raytracing",
@@ -417,11 +417,11 @@
   },
   "styleTag.renaissance": {
     "message": "Renaissance",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.retro": {
     "message": "Retro",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.risograph": {
     "message": "Risographie",
@@ -429,7 +429,7 @@
   },
   "styleTag.origami": {
     "message": "Origami",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.ornamental": {
     "message": "Zierlich",
@@ -465,7 +465,7 @@
   },
   "styleTag.surreal": {
     "message": "Surreal",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.symmetric": {
     "message": "Symmetrisch",
@@ -473,7 +473,7 @@
   },
   "styleTag.synthWave": {
     "message": "Synthwave",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.technological": {
     "message": "Technologisch",
@@ -481,7 +481,7 @@
   },
   "styleTag.tron": {
     "message": "Tron",
-    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.tropical": {
     "message": "Tropisch",
@@ -673,127 +673,127 @@
   },
   "styleTag.michelangelo": {
     "message": "Michelangelo",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.monet": {
     "message": "Monet",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.paulCezanne": {
     "message": "Paul Cézanne",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.markRothko": {
     "message": "Mark Rothko",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.paulKlee": {
     "message": "Paul Klee",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.picasso": {
     "message": "Picasso",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.pietMondrian": {
     "message": "Piet Mondrian",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.pierreAugusteRer": {
     "message": "Pierre-Auguste Renoir",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.rembrandt": {
     "message": "Rembrandt",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.reneMagritte": {
     "message": "René Magritte",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.royLichtenstein": {
     "message": "Roy Lichtenstein",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.salvadorDali": {
     "message": "Salvador Dalí",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.sandroBotticelli": {
     "message": "Sandro Botticelli",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.takashiMurakami": {
     "message": "Takashi Murakami",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.vanGogh": {
-    "message": "Van Gogh",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "message": "Vincent van Gogh",
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.wassilyKandinsky": {
     "message": "Wassily Kandinsky",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.matCollishaw": {
     "message": "Mat Collishaw",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildstilen, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.yayoiKusama": {
     "message": "Yayoi Kusama",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.igorMorski": {
     "message": "Igor Morski",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.shinkaiMakoto": {
     "message": "Makoto Shinkai",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.pixar": {
     "message": "Pixar",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.kyotoAnime": {
     "message": "Kyoto Animation",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.jerryPinkney": {
     "message": "Jerry Pinkney",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.hayaoMiyazaki": {
     "message": "Hayao Miyazaki",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.beatrixPotter": {
     "message": "Beatrix Potter",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.jonKlassen": {
     "message": "Jon Klassen",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.kaySage": {
     "message": "Kay Sage",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.jeffreyCatherineJones": {
     "message": "Jeffrey Catherine Jones",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.yaacovAgam": {
     "message": "Yaacov Agam",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.davidHockney": {
     "message": "David Hockney",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.victorMoscoso": {
     "message": "Victor Moscoso",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.raphaelite": {
     "message": "Raffaelstil",
@@ -801,31 +801,31 @@
   },
   "styleTag.stefanKoidl": {
     "message": "Stefan Koidl",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.suiIshida": {
     "message": "Sui Ishida",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.swoon": {
-    "message": "Swoon",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "message": "Schwärmen",
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
   },
   "styleTag.tashaTudor": {
     "message": "Tasha Tudor",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.tintoretto": {
     "message": "Tintoretto",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.theodoreRobinsor": {
     "message": "Theodore Robinson",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.titian": {
-    "message": "Titian",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "message": "Tizian",
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
   },
   "styleTag.wlop": {
     "message": "WLOP",
@@ -833,15 +833,15 @@
   },
   "styleTag.yanjunCheng": {
     "message": "Yanjun Cheng",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.yojiShinkawa": {
     "message": "Yoji Shinkawa",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.zhelongXu": {
     "message": "Zhelong Xu",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.alenaAenami": {
     "message": "Alena Aenami",
@@ -853,7 +853,7 @@
   },
   "styleTag.charlieBowater": {
     "message": "Charlie Bowater",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.coryLoftis": {
     "message": "Cory Loftis",
@@ -921,7 +921,7 @@
   },
   "styleTag.marcChagall": {
     "message": "Marc Chagall",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.edgarDegas": {
     "message": "Edgar Degas",
@@ -937,39 +937,39 @@
   },
   "styleTag.fridaKahlo": {
     "message": "Frida Kahlo",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.garaldBrom": {
     "message": "Gerald Brom",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.gustavKlimt": {
     "message": "Gustav Klimt",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.henriMatisse": {
     "message": "Henri Matisse",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.jackKirby": {
     "message": "Jack Kirby",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.jacksonPollock": {
     "message": "Jackson Pollock",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.johannesVermeer": {
     "message": "Johannes Vermeer",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.jeanMichelBasquiat": {
     "message": "Jean-Michel Basquiat",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.marcelDuchamp": {
     "message": "Marcel Duchamp",
-    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.aluminum": {
     "message": "Aluminium",
@@ -981,7 +981,7 @@
   },
   "styleTag.bronze": {
     "message": "Bronze",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.carbonFiber": {
     "message": "Kohlenstofffaser",
@@ -1021,7 +1021,7 @@
   },
   "styleTag.gold": {
     "message": "Gold",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.gummies": {
     "message": "Gummibärchen",
@@ -1033,7 +1033,7 @@
   },
   "styleTag.magma": {
     "message": "Magma",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.metallic": {
     "message": "Metallisch",
@@ -1041,11 +1041,11 @@
   },
   "styleTag.nickel": {
     "message": "Nickel",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.nylon": {
     "message": "Nylon",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.paper": {
     "message": "Papier",
@@ -1081,7 +1081,7 @@
   },
   "styleTag.basalt": {
     "message": "Basalt",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.pine": {
     "message": "Kiefer",
@@ -1093,7 +1093,7 @@
   },
   "styleTag.amethyst": {
     "message": "Amethyst",
-    "description": "Wort für den Stil zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.ruby": {
     "message": "Rubin",
@@ -1113,7 +1113,7 @@
   },
   "styleTag.satin": {
     "message": "Satin",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern im Stil, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.sandblasted": {
     "message": "Sandgestrahlt",
@@ -1309,11 +1309,11 @@
   },
   "styleTag.brutal": {
     "message": "Brutal",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.hanfu": {
     "message": "Hanfu",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.cheongsam": {
     "message": "Qipao",
@@ -1329,7 +1329,7 @@
   },
   "styleTag.wuxia": {
     "message": "Wuxia",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollen."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.chinesePhoenix": {
     "message": "Phönix",
@@ -1337,7 +1337,7 @@
   },
   "styleTag.kungfu": {
     "message": "Kung Fu",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern im Stil, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.kunquOpera": {
     "message": "Kunqu-Oper",
@@ -1345,7 +1345,7 @@
   },
   "styleTag.cloisonne": {
     "message": "Cloisonné",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern im Stil, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Stilbegriff zur Beschreibung und Generierung von Bildern, die diesen Stil enthalten sollten."
   },
   "styleTag.porcelain": {
     "message": "Porzellan",
@@ -1357,7 +1357,7 @@
   },
   "styleTag.jade": {
     "message": "Jade",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern im Stil, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.chinesePavilion": {
     "message": "Chinesischer Pavillon",
@@ -1377,7 +1377,7 @@
   },
   "styleTag.unrealEngine": {
     "message": "Unreal Engine",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern im Stil, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.octaneRender": {
     "message": "Octane-Rendering",
@@ -1397,7 +1397,7 @@
   },
   "styleTag.vRay": {
     "message": "V-Ray",
-    "description": "Verwendet zur Beschreibung und Generierung von Bildern im Stil, das generierte Bild sollte diesen Stil enthalten."
+    "description": "Ein Stilbegriff zur Beschreibung und Generierung von Bildern, die den Stil dieses Tags enthalten sollten."
   },
   "styleTag.architecturalVisualisation": {
     "message": "Architektonische Visualisierung",
@@ -1953,7 +1953,7 @@
   },
   "name.version": {
     "message": "Version",
-    "description": "Name des Versionsparameters"
+    "description": "Der Name des Versionsparameters"
   },
   "name.imageWeight": {
     "message": "Bildgewicht",
@@ -2064,8 +2064,8 @@
     "description": "Ein Status der Aufgabe - noch nicht gestartet"
   },
   "name.hd": {
-    "message": "HD",
-    "description": "Name des HD-Parameter für hochauflösende Bilder, Version V8 unterstützt die Generierung von 2K-Bildern"
+    "message": "HD Hochauflösend",
+    "description": "Name für HD hochauflösende Bildparameter, Version V8 unterstützt die Erstellung von 2K-Bildern"
   },
   "description.hd": {
     "message": "Aktivieren Sie den HD-Modus, um Bilder mit 2K Auflösung zu generieren (nur V8), verbraucht 4-fache Punkte",
@@ -2073,7 +2073,7 @@
   },
   "button.standard": {
     "message": "Standard",
-    "description": "Button-Label für Standardbildqualität"
+    "description": "Standard-Qualität Schaltflächenbeschriftung"
   },
   "button.ultra": {
     "message": "Ultra",

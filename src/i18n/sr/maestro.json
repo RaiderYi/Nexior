@@ -8,7 +8,7 @@
     "description": "ID zadatka"
   },
   "name.status": {
-    "message": "Status",
+    "message": "Статус",
     "description": "Status zadatka"
   },
   "name.elapsed": {
@@ -27,29 +27,49 @@
     "message": "Razlog neuspeha",
     "description": "Razlog neuspeha"
   },
+  "name.mode": {
+    "message": "Режим",
+    "description": "Режим генерације / акције"
+  },
+  "option.action.generate": {
+    "message": "Генериши",
+    "description": "Опција акције генерације"
+  },
+  "option.action.remix": {
+    "message": "Ремикс",
+    "description": "Опција акције ремикса"
+  },
+  "option.action.edit": {
+    "message": "Уреди",
+    "description": "Опција акције уређивања"
+  },
+  "option.action.extend": {
+    "message": "Продужи",
+    "description": "Опција акције продужавања"
+  },
   "step.plan": {
     "message": "План и сториборд",
-    "description": "Pipeline step: plan"
+    "description": "Корак тока: планирање"
   },
   "step.source": {
     "message": "Прикупљање материјала",
-    "description": "Pipeline step: source media"
+    "description": "Корак тока: изворни медији"
   },
   "step.voice": {
     "message": "Нарација",
-    "description": "Pipeline step: voiceover"
+    "description": "Корак тока: гласовна нарација"
   },
   "step.compose": {
     "message": "Компоновање сцена",
-    "description": "Pipeline step: compose"
+    "description": "Корак тока: компоновање"
   },
   "step.render": {
     "message": "Рендеровање видеа",
-    "description": "Pipeline step: render"
+    "description": "Корак тока: рендеровање"
   },
   "step.deliver": {
     "message": "Испорука",
-    "description": "Pipeline step: deliver"
+    "description": "Корак тока: испорука"
   },
   "name.prompt": {
     "message": "Упит",
@@ -63,6 +83,14 @@
     "message": "Језици",
     "description": "Поље за излазне језике"
   },
+  "name.primaryLanguage": {
+    "message": "Главни језик",
+    "description": "Поље главног излазног језика"
+  },
+  "name.additionalLanguages": {
+    "message": "Додатни језици (опционо)",
+    "description": "Поље додатних излазних језика"
+  },
   "name.aspect": {
     "message": "Odnos stranica",
     "description": "Polje za odnos stranica"
@@ -73,19 +101,43 @@
   },
   "name.quality": {
     "message": "Квалитет",
-    "description": "Production quality tier field"
+    "description": "Поље нивоа продукционог квалитета"
   },
-  "option.quality.draft": {
-    "message": "Нацрт · брзи преглед",
-    "description": "Draft quality option"
+  "option.quality.lite": {
+    "message": "Lite lagani",
+    "description": "Opcija Lite SKU"
   },
   "option.quality.standard": {
     "message": "Стандард · уравнотежено",
-    "description": "Standard quality option"
+    "description": "Опција стандардног квалитета"
   },
-  "option.quality.premium": {
-    "message": "Премијум · више детаља",
-    "description": "Premium quality option"
+  "option.quality.pro": {
+    "message": "Pro profesionalni",
+    "description": "Opcija Pro SKU"
+  },
+  "description.quality.lite": {
+    "message": "Brzo pravite jednostavne kratke video zapise, lagani efekti, izlaz na jednom jeziku.",
+    "description": "Sažetak Lite SKU"
+  },
+  "description.quality.standard": {
+    "message": "Izbalansirana 1080p produkcija, podržava digitalnu naraciju i do dva jezika.",
+    "description": "Sažetak Standard SKU"
+  },
+  "description.quality.pro": {
+    "message": "Podržava duge video zapise, kratke drame i najpotpunije mogućnosti kreativne produkcije.",
+    "description": "Sažetak Pro SKU"
+  },
+  "name.upToSeconds": {
+    "message": "Najduže {seconds} sekundi",
+    "description": "Maksimalna trajanje SKU"
+  },
+  "name.estimatedCredits": {
+    "message": "Procena {credits} kredita",
+    "description": "Procena generisanih kredita"
+  },
+  "name.requiresSku": {
+    "message": "Potrebno {sku}",
+    "description": "Minimalni SKU za tip video zapisa"
   },
   "name.remixing": {
     "message": "Ремиксовање",
@@ -98,6 +150,10 @@
   "placeholder.select": {
     "message": "Izaberite",
     "description": "Generički placeholder za izbor"
+  },
+  "placeholder.additionalLanguages": {
+    "message": "Додај језике излаза",
+    "description": "Место за додатне језике"
   },
   "description.prompt": {
     "message": "Јасно изразите шта желите, сценарио, слике, глас, монтажу оставите Maestro-у.",
@@ -113,11 +169,11 @@
   },
   "description.duration": {
     "message": "Циљана дужина видеа; што је дужи, потребно је више времена и поена за израду.",
-    "description": "Duration help"
+    "description": "Помоћ за трајање"
   },
   "description.quality": {
     "message": "Што је виши ниво продукције, то су слика и монтажа детаљнији, али уз већи утрошак времена и поена.",
-    "description": "Quality help"
+    "description": "Помоћ за квалитет"
   },
   "status.pending": {
     "message": "Na čekanju",
@@ -187,17 +243,41 @@
     "message": "Još nema videa — kreiraj svoj prvi sa leve strane.",
     "description": "Nema zadataka"
   },
+  "name.customize": {
+    "message": "Прилагоди",
+    "description": "Прекидач за опционе креативне контроле"
+  },
+  "description.customize.auto": {
+    "message": "Аутоматски · Maestro бира тип видеа, визуелни стил и тон гласа.",
+    "description": "Стање када је прилагођавање искључено"
+  },
+  "description.customize.manual": {
+    "message": "Изаберите тип видеа, визуелни стил и тон гласа.",
+    "description": "Стање када је прилагођавање укључено"
+  },
+  "name.customizeScenario": {
+    "message": "Прилагоди тип видеа",
+    "description": "Прекидач за прилагођавање типа видеа"
+  },
+  "name.customizeStyle": {
+    "message": "Прилагоди визуелни стил",
+    "description": "Прекидач за прилагођавање визуелног стила"
+  },
+  "name.customizeVoice": {
+    "message": "Прилагоди тон гласа",
+    "description": "Прекидач за прилагођавање боје гласа"
+  },
   "name.scenario": {
     "message": "Тип видеа",
-    "description": "Video type field"
+    "description": "Поље типа видеа"
   },
   "description.scenario": {
-    "message": "Изаберите врсту видеа. „Аутоматски“ препушта Maestro-у да одлучи; или наметните стил као што су кратка драма, стварни снимци, објашњење или промоција производа.",
-    "description": "Scenario field help"
+    "message": "Укључите прилагођавање да бисте изабрали тип видеа. Када је искључено, Maestro одлучује аутоматски.",
+    "description": "Помоћ за поље сценарија"
   },
   "option.scenario.auto": {
     "message": "Аутоматски · нека одлучи Maestro",
-    "description": "Auto scenario option"
+    "description": "Опција аутоматског сценарија"
   },
   "option.scenario.narrated": {
     "message": "Нарација уз слике",
@@ -205,26 +285,30 @@
   },
   "option.scenario.drama": {
     "message": "Кратка драма",
-    "description": "Short drama scenario option"
+    "description": "Опција сценарија кратке драме"
   },
   "option.scenario.avatar": {
     "message": "Дигитална особа · Говорна глава",
     "description": "Опција за аватар / сценарио говорне главе"
   },
-  "option.scenario.motion": {
-    "message": "Покретна графика",
-    "description": "Motion graphics scenario option"
-  },
   "option.scenario.captions": {
     "message": "Додај титлове",
     "description": "Add-captions scenario option"
+  },
+  "message.captionsNeedVideo": {
+    "message": "Кинетички титлови раде на постојећем видеу говорника — прво отпремите један изнад.",
+    "description": "Упозорење када је изабран тип видеа са титловима, а није отпремљен изворни видео"
+  },
+  "message.avatarNeedsImage": {
+    "message": "Digitalna naracija zahteva sliku lica, molimo vas da je prvo otpremite gore.",
+    "description": "Upozorenje se prikazuje kada je izabran avatar video, ali nijedna slika nije otpremljena"
   },
   "name.style": {
     "message": "Визуелни стил",
     "description": "Поље за визуелни стил"
   },
   "description.style": {
-    "message": "Опционални визуелни стилски савети (који се односе на типографију, боје, анимације, ритам), независно од типа видеа. Опционални предлози или ручно унети.",
+    "message": "Укључите прилагођавање да бисте изабрали или унели визуелни стил. Када је искључено, Maestro одлучује аутоматски.",
     "description": "Помоћно поље за стил"
   },
   "option.style.auto": {
@@ -236,60 +320,60 @@
     "description": "Опција кинематографског стила"
   },
   "option.style.glass": {
-    "message": "Frosted Glass",
-    "description": "Frosted glass style option"
+    "message": "Матирано стакло",
+    "description": "Опција стила матираног стакла"
   },
   "option.style.luxury": {
-    "message": "Luxury",
-    "description": "Luxury style option"
+    "message": "Луксуз",
+    "description": "Опција луксузног стила"
   },
   "option.style.swiss": {
-    "message": "Swiss Grid",
-    "description": "Swiss grid style option"
+    "message": "Швајцарска мрежа",
+    "description": "Опција стила швајцарске мреже"
   },
   "option.style.modern": {
-    "message": "Modern",
-    "description": "Modern style option"
+    "message": "Модерно",
+    "description": "Опција модерног стила"
   },
   "option.style.editorial": {
-    "message": "Editorial",
-    "description": "Editorial style option"
+    "message": "Едиторијално",
+    "description": "Опција едиторијалног стила"
   },
   "option.style.warm": {
-    "message": "Warm",
-    "description": "Warm style option"
+    "message": "Топло",
+    "description": "Опција топлог стила"
   },
   "option.style.vibrant": {
-    "message": "Vibrant",
-    "description": "Vibrant style option"
+    "message": "Живо",
+    "description": "Опција живог стила"
   },
   "option.style.neon": {
     "message": "Неон",
     "description": "Опција неонског стила"
   },
   "option.style.mono": {
-    "message": "Monochrome",
-    "description": "Monochrome style option"
+    "message": "Монохромно",
+    "description": "Опција монохромног стила"
   },
   "option.style.pastel": {
-    "message": "Pastel",
-    "description": "Pastel style option"
+    "message": "Пастелно",
+    "description": "Опција пастелног стила"
   },
   "option.style.bold": {
-    "message": "Bold Type",
-    "description": "Bold type style option"
+    "message": "Упадљива слова",
+    "description": "Опција стила упадљивих слова"
   },
   "option.style.industrial": {
-    "message": "Industrial",
-    "description": "Industrial style option"
+    "message": "Индустријско",
+    "description": "Опција индустријског стила"
   },
   "option.style.futuristic": {
-    "message": "Futuristic",
-    "description": "Futuristic style option"
+    "message": "Футуристички",
+    "description": "Опција футуристичког стила"
   },
   "option.style.retro": {
-    "message": "Retro Film",
-    "description": "Retro film style option"
+    "message": "Ретро филм",
+    "description": "Опција ретро филмског стила"
   },
   "name.voice": {
     "message": "Тон гласа",
@@ -300,7 +384,7 @@
     "description": " dugme za pregled glasa / reprodukciju uzorka"
   },
   "description.voice": {
-    "message": "Изаберите тон гласа за нарацију. Тон није повезан са језиком — исти тон ће читати на језику изабраном горе; кликните на репродукцију за преглед.",
+    "message": "Укључите прилагођавање да бисте изабрали тон гласа. Када је искључено, Maestro га бира аутоматски. Тон не зависи од језика и може се преслушати.",
     "description": "Помоћно поље за глас"
   },
   "option.voice.auto": {

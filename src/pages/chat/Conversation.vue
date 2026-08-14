@@ -5,37 +5,66 @@
         <div class="toolbar-left">
           <model-selector class="selector" @model-group-changed="onChangeConversation(undefined)" />
           <byok-badge class="byok-badge" />
-        </div>
-        <div class="toolbar-actions">
-          <el-tooltip v-if="conversationId" :content="$t('chat.share.menu')" placement="bottom">
-            <el-button class="toolbar-btn" text @click="shareDialogVisible = true">
-              <font-awesome-icon icon="fa-solid fa-share-nodes" />
-            </el-button>
-          </el-tooltip>
-          <el-tooltip v-if="false" :content="$t('chat.agent.tooltip')" placement="bottom">
-            <el-button class="toolbar-btn" text @click="agentManagerVisible = true">
-              <font-awesome-icon icon="fa-solid fa-desktop" />
-              <span v-if="agentConnected" class="agent-dot"></span>
-            </el-button>
-          </el-tooltip>
+          <el-dropdown
+            v-if="conversationId"
+            trigger="click"
+            placement="bottom-start"
+            :teleported="true"
+            @command="onConversationCommand"
+          >
+            <span
+              class="toolbar-more"
+              role="button"
+              tabindex="0"
+              :aria-label="$t('common.button.more')"
+              :title="$t('common.button.more')"
+            >
+              <more-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item command="rename">
+                  <edit-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
+                  {{ $t('chat.actions.rename') }}
+                </el-dropdown-item>
+                <el-dropdown-item command="share">
+                  <share-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
+                  {{ $t('chat.share.menu') }}
+                </el-dropdown-item>
+                <el-dropdown-item command="delete">
+                  <delete-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
+                  {{ $t('common.button.delete') }}
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
         </div>
       </div>
-      <desktop-agent-manager
-        v-if="agentManagerVisible"
-        v-model="agentManagerVisible"
-        :connected="agentConnected"
-        :agent-name="agentName"
-        :tool-count="agentToolCount"
-        :connected-at="agentConnectedAt"
+      <conversation-actions
+        ref="actions"
+        :active-conversation-id="conversationId"
+        @change-conversation="onChangeConversation"
       />
-      <share-conversation-dialog
-        v-model="shareDialogVisible"
-        :conversation-id="conversationId"
-        :share-id="conversation?.share_id"
-        @update:share-id="onShareIdUpdated"
-      />
-      <div :class="{ dialogue: true, empty: messages.length === 0 }">
-        <div v-if="messages.length > 0" class="messages">
+      <div :class="{ dialogue: true, empty: messages.length === 0 && !restoringConversation }">
+        <div
+          v-if="restoringConversation"
+          class="conversation-loading"
+          role="status"
+          aria-live="polite"
+          :aria-label="$t('common.status.loading')"
+        >
+          <el-skeleton v-for="item in 3" :key="item" animated class="conversation-loading-row">
+            <template #template>
+              <el-skeleton-item variant="circle" class="conversation-loading-avatar" />
+              <div class="conversation-loading-content">
+                <el-skeleton-item variant="text" :style="{ width: item === 2 ? '42%' : '68%' }" />
+                <el-skeleton-item variant="text" :style="{ width: item === 2 ? '72%' : '88%' }" />
+                <el-skeleton-item variant="text" :style="{ width: item === 2 ? '56%' : '61%' }" />
+              </div>
+            </template>
+          </el-skeleton>
+        </div>
+        <div v-else-if="messages.length > 0" class="messages">
           <message
             v-for="(message, messageIndex) in messages"
             :key="messageIndex"
@@ -50,7 +79,10 @@
             @answer-ask-user-question="onAnswerAskUserQuestion"
             @skip-ask-user-question="onSkipAskUserQuestion"
             @respond-connector-consent="onRespondConnectorConsent"
+            @respond-action-confirmation="onRespondActionConfirmation"
             @authorize-connector="onAuthorizeConnector"
+            @stop-browser-session="onStopBrowserSession"
+            @browser-recovery="onBrowserRecovery"
           />
         </div>
         <div class="starter">
@@ -64,7 +96,10 @@
             @submit="onSubmit"
             @stop="onStop"
           />
-          <disclaimer class="composer-disclaimer" />
+          <div class="composer-footer">
+            <working-directory-bar />
+            <disclaimer class="composer-disclaimer" />
+          </div>
         </div>
       </div>
     </template>
@@ -72,10 +107,13 @@
 </template>
 
 <script lang="ts">
+import { DeleteIcon, EditIcon, MoreIcon, ShareIcon } from '@acedatacloud/core/icons/components';
 import axios from 'axios';
 import { defineComponent } from 'vue';
 import Message from '@/components/chat/Message.vue';
+import { shouldExecuteWithLocalExec } from '@/utils/browserToolExecution';
 import { CHAT_MODEL_GROUPS, CHAT_MODELS, ROLE_ASSISTANT, ROLE_USER } from '@/constants';
+import { BASE_URL_API } from '@/constants/endpoint';
 import {
   IChatMessageState,
   IChatConversationResponse,
@@ -86,20 +124,27 @@ import {
 } from '@/models';
 import Composer from '@/components/chat/Composer.vue';
 import ModelSelector from '@/components/chat/ModelSelector.vue';
-import DesktopAgentManager from '@/components/chat/DesktopAgentManager.vue';
 import BYOKBadge from '@/components/chat/BYOKBadge.vue';
-import ShareConversationDialog from '@/components/chat/ShareConversationDialog.vue';
+import ConversationActions, { type ConversationCommand } from '@/components/chat/ConversationActions.vue';
 import { ERROR_CODE_CANCELED, ERROR_CODE_NOT_APPLIED, ERROR_CODE_UNKNOWN } from '@/constants/errorCode';
 import { Status } from '@/models';
 import Disclaimer from '@/components/chat/Disclaimer.vue';
 import ConnectorStrip from '@/components/chat/ConnectorStrip.vue';
+import WorkingDirectoryBar from '@/components/chat/WorkingDirectoryBar.vue';
 import Layout from '@/layouts/Chat.vue';
 import { isImageUrl } from '@/utils/is';
-import { supportsClientTools } from '@/utils/surface';
+import { supportsClientTools, isDesktop, isWeb } from '@/utils/surface';
+import { openAuthorizeFlow } from '@/utils/connections/authorizeFlow';
 import { ensureLoggedIn } from '@/utils/login';
 import { localExec, type LocalToolSpec } from '@/utils/desktop';
 import { getBaseUrlPlatform } from '@/utils';
-import { IAskUserQuestionPayload, IChatMessageContentItem, IConsentRequestPayload } from '@/models';
+import {
+  IActionConfirmationPayload,
+  IActionConfirmationResult,
+  IAskUserQuestionPayload,
+  IChatMessageContentItem,
+  IConsentRequestPayload
+} from '@/models';
 import {
   buildAuthorizedConsentOutput,
   findPendingConsentBlock,
@@ -108,9 +153,9 @@ import {
   type IConsentReturn
 } from '@/components/chat/consentReturn';
 import { hasLoadedConversationMessages } from '@/components/chat/conversationRestore';
-import { chatOperator, agentOperator } from '@/operators';
-import { ElTooltip, ElButton } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { reduceBrowserToolExecution } from '@/utils/browserToolExecution';
+import { chatOperator } from '@/operators';
+import { ElDropdown, ElDropdownItem, ElDropdownMenu, ElMessage, ElSkeleton, ElSkeletonItem } from 'element-plus';
 
 export interface IData {
   drawer: boolean;
@@ -126,12 +171,7 @@ export interface IData {
   answering: boolean;
   messages: IChatMessage[];
   canceler: AbortController | undefined;
-  agentManagerVisible: boolean;
-  agentConnected: boolean;
-  agentName: string;
-  agentToolCount: number;
-  agentConnectedAt: string;
-  shareDialogVisible: boolean;
+  restoringConversationId: string | undefined;
   /**
    * Set right before pushing the URL for a freshly-completed chat so the
    * `conversationId` watcher can recognise the change as “already loaded
@@ -151,6 +191,13 @@ export interface IData {
   // worker as `client_tools` so the model can call them; the worker pauses with
   // execution:'client' and the desktop runs them. Empty on web/native.
   localTools: LocalToolSpec[];
+  // Whether the worker understands `local_mcp_servers` (deferred local MCP
+  // loading). Probed once from /health; until confirmed we ALSO inline the MCP
+  // schemas in `client_tools`, because an older worker ignores unknown body
+  // fields silently and the tools would just vanish.
+  localMcpDeferSupported: boolean;
+  // Whether the /health probe already ran this session.
+  localMcpProbed: boolean;
   // A desktop client tool the model called this turn, deferred until the paused
   // stream finalizes (so the conversation id + route are settled and the
   // `answering` flag isn't cleared mid-resume). At most one per turn — the
@@ -165,18 +212,24 @@ export interface IData {
 export default defineComponent({
   name: 'ChatConversation',
   components: {
+    DeleteIcon,
+    EditIcon,
+    MoreIcon,
+    ShareIcon,
     Composer,
     Disclaimer,
     ConnectorStrip,
+    WorkingDirectoryBar,
     ModelSelector,
-    DesktopAgentManager,
     'byok-badge': BYOKBadge,
-    ShareConversationDialog,
+    ConversationActions,
     Message,
     Layout,
-    ElTooltip,
-    ElButton,
-    FontAwesomeIcon
+    ElDropdown,
+    ElDropdownItem,
+    ElDropdownMenu,
+    ElSkeleton,
+    ElSkeletonItem
   },
   data(): IData {
     return {
@@ -184,17 +237,14 @@ export default defineComponent({
       question: '',
       references: [],
       localTools: [],
+      localMcpDeferSupported: false,
+      localMcpProbed: false,
       pendingClientTools: [],
       clientToolRunId: 0,
       upload: false,
       answering: false,
       canceler: undefined,
-      agentManagerVisible: false,
-      agentConnected: false,
-      agentName: '',
-      agentToolCount: 0,
-      agentConnectedAt: '',
-      shareDialogVisible: false,
+      restoringConversationId: undefined,
       skipNextRestoreId: undefined,
       messages: [],
       pendingConsentReturn: null
@@ -215,6 +265,9 @@ export default defineComponent({
         (conversation: IChatConversation) => conversation.id === this.conversationId
       );
     },
+    restoringConversation(): boolean {
+      return !!this.conversationId && this.restoringConversationId === this.conversationId;
+    },
     service() {
       return this.$store.state.chat.service;
     },
@@ -227,6 +280,9 @@ export default defineComponent({
     credential() {
       return this.$store.state.chat?.credential;
     },
+    memoryEnabled(): boolean {
+      return this.$store.state.chat?.memoryEnabled !== false;
+    },
     needApply() {
       return this.$store.state.chat.status.getApplications === Status.Success && !this.application;
     },
@@ -236,21 +292,28 @@ export default defineComponent({
     initializing() {
       return this.$store.state.chat.status.getApplications === Status.Request;
     },
+    /** Desktop only: the user must choose the project the AI will work in
+     *  before sending anything. Local tools operate on real files, so "which
+     *  project?" cannot be inferred — and a wrong guess edits the wrong repo.
+     *  Constant false on web/mobile (`isDesktop()` is compile-time), so their
+     *  send flow is unchanged. */
+    needsWorkingDirectory(): boolean {
+      return isDesktop() && !!localExec() && !this.$store.state.chat?.workingDirectory;
+    },
     ready(): boolean {
+      if (this.restoringConversation) return false;
       // Guests may compose & "send" — the submit handler triggers login
       // (deferred auth), so the composer must not be disabled for them.
       if (!this.$store.getters.authenticated) {
         return true;
       }
+      if (this.needsWorkingDirectory) return false;
       // Disable sending until token/application/credential are all initialized,
       // otherwise the first submit races init and hits `You have not applied for this service...`.
       return !this.initializing && !!this.credential?.token && !!this.application;
     }
   },
   watch: {
-    async references(val) {
-      console.log('references changed', val);
-    },
     /**
      * Mirror the unsubmitted composer text into vuex on every
      * keystroke so a route-level remount (clicking ChatGPT in the
@@ -281,7 +344,6 @@ export default defineComponent({
           await this.$store.dispatch('chat/getConversations');
         }
         await this.onRestoreCurrentConversation();
-        this.onCheckAgentStatus();
       }
     },
     // URL is the source of truth for which conversation is open. Side-
@@ -326,10 +388,36 @@ export default defineComponent({
     this.onApplyQueryFromUrl();
     if (supportsClientTools()) {
       this.localTools = (await localExec()?.listTools()) ?? [];
+      void this.onProbeWorkerFeatures();
     }
   },
   methods: {
+    /**
+     * Ask the worker which optional body fields it understands. Only gates the
+     * `local_mcp_servers` optimization: a worker without it silently ignores
+     * the field, so we keep inlining MCP schemas in `client_tools` until the
+     * probe succeeds. Any failure leaves the safe (eager) behaviour in place.
+     *
+     * Skipped entirely unless a local MCP server actually exists to defer —
+     * with only builtin tools the answer changes nothing, and a request nobody
+     * needs is a real cost (it also surfaces as a console error wherever the
+     * endpoint isn't reachable). Runs at most once per session.
+     */
+    async onProbeWorkerFeatures() {
+      if (this.localMcpProbed || this.localMcpDeferSupported) return;
+      if (!this.localTools.some((t) => t.source === 'mcp')) return;
+      this.localMcpProbed = true;
+      try {
+        const res = await fetch(`${BASE_URL_API}/aichat2/health`);
+        if (!res.ok) return;
+        const body = (await res.json()) as { features?: unknown };
+        this.localMcpDeferSupported = Array.isArray(body?.features) && body.features.includes('local_mcp_servers');
+      } catch {
+        /* offline / old worker / blocked — keep sending schemas eagerly */
+      }
+    },
     resetConversation() {
+      this.restoringConversationId = undefined;
       this.messages = [];
       this.question = '';
       this.references = [];
@@ -337,11 +425,12 @@ export default defineComponent({
       // never auto-runs a stale tool against the wrong conversation.
       this.pendingClientTools = [];
     },
-    onShareIdUpdated(shareId?: string) {
-      // Keep the store conversation in sync so the dialog reopens with the
-      // current link (or the "create" state after revoking).
-      if (!this.conversation) return;
-      this.$store.dispatch('chat/setConversation', { ...this.conversation, share_id: shareId });
+    onConversationCommand(command: ConversationCommand) {
+      // The dropdown only renders when the route has an :id; the store row
+      // may still be loading, so fall back to a minimal stub carrying the id.
+      const conversation = this.conversation ?? ({ id: this.conversationId } as IChatConversation);
+      if (!conversation.id) return;
+      (this.$refs.actions as InstanceType<typeof ConversationActions>)?.run(command, conversation);
     },
     // Idempotent restore for the URL-pinned conversation. Bails on
     // missing token (credential.token watcher will retry), missing :id
@@ -355,19 +444,6 @@ export default defineComponent({
         return;
       }
       await this.onRestoreConversation(id);
-    },
-    async onCheckAgentStatus() {
-      const token = this.credential?.token;
-      if (!token) return;
-      try {
-        const { data } = await agentOperator.status(token);
-        this.agentConnected = data?.connected === true;
-        this.agentName = data?.name || '';
-        this.agentToolCount = data?.tool_count || 0;
-        this.agentConnectedAt = data?.connected_at || '';
-      } catch {
-        this.agentConnected = false;
-      }
     },
     /**
      * Restore the unsubmitted composer draft after a route-level
@@ -473,6 +549,16 @@ export default defineComponent({
         this.answering = false;
       }
     },
+    async onStopBrowserSession(_browserSessionId: string) {
+      await this.onStop();
+    },
+    onBrowserRecovery(action: 'open-device-manager' | 'stop-other-session' | 'close-devtools' | 'open-consent-card') {
+      if (action === 'open-consent-card') {
+        document.querySelector('.connector-consent-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      this.$router.push({ name: 'settings-index', query: { browserRecovery: action } });
+    },
     async onRestart(targetMessage: IChatMessage) {
       // 1. Clear the following message
       const targetIndex = this.messages.findIndex((message) => message === targetMessage);
@@ -492,7 +578,16 @@ export default defineComponent({
               const ref = item.type === 'image_url' ? item.image_url : item.file_url;
               const url = typeof ref === 'string' ? ref : ref?.url;
               if (url) {
-                this.references.push(item.name ? { url, name: item.name } : { url });
+                const reference: IChatReference = item.name ? { url, name: item.name } : { url };
+                if (item.file_id && item.sha256 && item.mime && typeof item.size === 'number') {
+                  Object.assign(reference, {
+                    file_id: item.file_id,
+                    sha256: item.sha256,
+                    mime: item.mime,
+                    size: item.size
+                  });
+                }
+                this.references.push(reference);
               }
             } else if (item.type === 'text' && item.text) {
               this.question = item.text;
@@ -621,18 +716,28 @@ export default defineComponent({
       //    Side-panel summaries do NOT include `messages`, so we always
       //    need a `retrieve` call the first time a conversation is opened.
       let conversation: IChatConversation | undefined = this.conversations?.find((c: IChatConversation) => c.id === id);
-      if (!hasLoadedConversationMessages(conversation)) {
-        const fetched = await this.$store.dispatch('chat/getConversation', id);
-        if (fetched) conversation = fetched;
+      const needsFetch = !hasLoadedConversationMessages(conversation);
+      if (needsFetch) {
+        this.messages = [];
+        this.restoringConversationId = id;
       }
-      // 2. Switch model + model group to whatever this conversation used.
-      const model = conversation?.model;
-      const targetModel = CHAT_MODELS.find((m) => m.name === model);
-      const targetModelGroup = CHAT_MODEL_GROUPS.find((g) => g.name === targetModel?.modelGroup);
-      if (targetModelGroup) this.$store.dispatch('chat/setModelGroup', targetModelGroup);
-      if (targetModel) this.$store.dispatch('chat/setModel', targetModel);
-      this.messages = conversation?.messages || [];
-      this.onScrollDown();
+      try {
+        if (needsFetch) {
+          const fetched = await this.$store.dispatch('chat/getConversation', id);
+          if (fetched) conversation = fetched;
+        }
+        if (this.conversationId !== id) return;
+        // 2. Switch model + model group to whatever this conversation used.
+        const model = conversation?.model;
+        const targetModel = CHAT_MODELS.find((m) => m.name === model);
+        const targetModelGroup = CHAT_MODEL_GROUPS.find((g) => g.name === targetModel?.modelGroup);
+        if (targetModelGroup) this.$store.dispatch('chat/setModelGroup', targetModelGroup);
+        if (targetModel) this.$store.dispatch('chat/setModel', targetModel);
+        this.messages = conversation?.messages || [];
+        this.onScrollDown();
+      } finally {
+        if (this.restoringConversationId === id) this.restoringConversationId = undefined;
+      }
     },
     async onChangeConversation(id?: string) {
       console.log('onChangeConversation in conversation', id);
@@ -652,6 +757,10 @@ export default defineComponent({
       await this.$router.push(this.conversationsPath(target));
     },
     async onSubmit() {
+      if (this.restoringConversation) return;
+      // Belt-and-braces: `ready` already disables the composer, but onDraft /
+      // deep-links call onSubmit directly and would bypass it.
+      if (this.needsWorkingDirectory) return;
       // Deferred auth: a guest hitting send is sent to login here, before we
       // mutate `messages`, so they return to a clean composer post-login.
       if (!ensureLoggedIn()) {
@@ -672,6 +781,14 @@ export default defineComponent({
             ? { type: 'image_url', image_url: ref.url }
             : { type: 'file_url', file_url: ref.url };
           if (ref.name) item.name = ref.name;
+          if (ref.file_id && ref.sha256 && ref.mime && typeof ref.size === 'number') {
+            Object.assign(item, {
+              file_id: ref.file_id,
+              sha256: ref.sha256,
+              mime: ref.mime,
+              size: ref.size
+            });
+          }
           content.push(item);
         }
         this.messages.push({
@@ -701,13 +818,14 @@ export default defineComponent({
       // prompt tokens — until the chat remounts.
       if (supportsClientTools()) {
         this.localTools = (await localExec()?.listTools()) ?? [];
+        // Re-checked here, not just on mount: an MCP server added in Settings
+        // mid-session is the first moment a probe is worth making.
+        await this.onProbeWorkerFeatures();
       }
       console.debug('start to get answer', this.messages);
       const token = this.credential?.token;
       const question = this.question.trim();
-      // Wire format only takes URL strings; the names live on the
-      // rendered message item via `IChatReference.name`.
-      const references = this.references.map((r) => r.url);
+      const references = this.references.map((reference) => ({ ...reference }));
       console.debug('validated', question, references);
       // reset question and references
       this.question = '';
@@ -865,6 +983,15 @@ export default defineComponent({
      * with execution:'client', and {@link _runClientTools} runs it via
      * `localExec().invoke` then resumes with `tool_results`.
      *
+     * Builtin tools (fs.*, shell.*, computer.*) ship their schemas eagerly in
+     * `client_tools` — there are at most ten and the model needs them for the
+     * "my machine" routing to work at all. Local MCP tools do NOT: they go out
+     * as one `local_mcp_servers` summary per server, and the worker pulls a
+     * server's schemas into the registry only when the model calls
+     * `load_mcp_server`. One real server is enough to justify this —
+     * `@playwright/mcp` exposes 24 tools whose specs are ~16 KB (~4k tokens),
+     * which used to be re-sent on every turn AND every tool-result resume.
+     *
      * Local tool names are dotted (`fs.list_dir`, `mcp.srv.tool`), but OpenAI
      * function names must match `^[a-zA-Z0-9_-]+$` (no dots) or the upstream
      * 400s. So we send a sanitized wire name to the model and map it back to
@@ -877,15 +1004,59 @@ export default defineComponent({
         description: string;
         inputSchema: Record<string, unknown>;
       }[];
+      local_mcp_servers?: {
+        id: string;
+        displayName?: string;
+        tools: { name: string; displayName?: string; description: string; inputSchema: Record<string, unknown> }[];
+      }[];
+      working_directory?: string;
     } {
       if (!supportsClientTools() || !this.localTools.length) return {};
+      const workingDirectory = this.$store.state.chat?.workingDirectory;
+      const wired = this._wiredTools();
+      const asSpec = ({ spec, wire }: { spec: LocalToolSpec; wire: string }) => ({
+        name: wire,
+        displayName: spec.name,
+        description: spec.description,
+        inputSchema: spec.input_schema
+      });
+      const builtins = wired.filter((w) => w.spec.source !== 'mcp');
+      const mcp = wired.filter((w) => w.spec.source === 'mcp');
+      // Group MCP tools by their server id — the middle segment of
+      // `mcp.<serverId>.<tool>`. The server id is constrained to [A-Za-z0-9_-]
+      // by the Settings UI, so splitting at the first dot after `mcp.` is safe
+      // even when the tool name itself contains dots.
+      const byServer = new Map<string, typeof wired>();
+      for (const w of mcp) {
+        const rest = w.spec.name.slice('mcp.'.length);
+        const dot = rest.indexOf('.');
+        const id = dot < 0 ? rest : rest.slice(0, dot);
+        if (!id) continue;
+        const bucket = byServer.get(id);
+        if (bucket) bucket.push(w);
+        else byServer.set(id, [w]);
+      }
+      // A worker that predates `local_mcp_servers` ignores unknown body fields
+      // silently (no schema validation), so sending ONLY the summaries would
+      // make local MCP tools vanish with no error — the user would just see
+      // their MCP server stop working. Until `localMcpDeferSupported` is
+      // confirmed, keep the schemas in `client_tools` as well; the summaries
+      // are cheap, and a worker that understands them registers each tool
+      // exactly once either way (ToolRegistry is keyed by name).
+      const mcpSpecs = mcp.map(asSpec);
+      const eager = this.localMcpDeferSupported ? builtins.map(asSpec) : [...builtins.map(asSpec), ...mcpSpecs];
       return {
-        client_tools: this._wiredTools().map(({ spec, wire }) => ({
-          name: wire,
-          displayName: spec.name,
-          description: spec.description,
-          inputSchema: spec.input_schema
-        }))
+        ...(eager.length ? { client_tools: eager } : {}),
+        ...(byServer.size
+          ? {
+              local_mcp_servers: [...byServer].map(([id, tools]) => ({ id, tools: tools.map(asSpec) }))
+            }
+          : {}),
+        // Tells the model which project it is in, so it stops guessing paths.
+        // Sent alongside the tool payload (never on its own) because the worker
+        // renders it inside the <local_environment> block, which only exists
+        // when local tools are present.
+        ...(workingDirectory ? { working_directory: workingDirectory } : {})
       };
     },
     /**
@@ -1087,6 +1258,50 @@ export default defineComponent({
       );
     },
     /**
+     * Resume after the user confirms or cancels an irreversible action.
+     * Same fold-then-resume shape as `onRespondConnectorConsent`; the
+     * result object is what the worker re-validates before acting.
+     */
+    async onRespondActionConfirmation(payload: { tool_use_id: string; result: IActionConfirmationResult }) {
+      const token = this.credential?.token;
+      if (!token || !this.conversationId) {
+        console.error('cannot resume: no token or no conversation id');
+        return;
+      }
+      const output = JSON.stringify(payload.result);
+      const lastAssistant = [...this.messages].reverse().find((m) => m.role === ROLE_ASSISTANT);
+      if (lastAssistant && Array.isArray(lastAssistant.content)) {
+        const block = (lastAssistant.content as IChatMessageContentItem[]).find(
+          (b) => b.type === 'tool_use' && b.tool_id === payload.tool_use_id
+        );
+        if (block) {
+          block.status = 'done';
+          block.output = output;
+          // Keep `pending_action_confirmation` so the resolved card can
+          // still render its preview and title.
+        }
+      }
+      this.messages.push({
+        content: '',
+        role: ROLE_ASSISTANT,
+        state: IChatMessageState.PENDING
+      });
+      this.onScrollDown();
+      this.answering = true;
+      this.canceler = new AbortController();
+      this._streamAssistantTurn(
+        {
+          id: this.conversationId,
+          model: this.model.name,
+          stateful: true,
+          tool_results: [{ tool_use_id: payload.tool_use_id, output }],
+          ...this._localToolInjection()
+        },
+        token,
+        this.conversationId
+      );
+    },
+    /**
      * Open the connector's OAuth install URL. PR-6: navigate the
      * current tab to the AuthFrontend deep-link install page rather
      * than popping a new window. AuthFrontend completes the OAuth
@@ -1101,7 +1316,7 @@ export default defineComponent({
      * deliberately and the rest of the conversation is persisted
      * server-side and restored on return.
      */
-    onAuthorizeConnector(payload: { tool_use_id: string; entry: { connector: string; install_url?: string } }) {
+    async onAuthorizeConnector(payload: { tool_use_id: string; entry: { connector: string; install_url?: string } }) {
       const url = payload.entry?.install_url;
       if (!url) {
         console.warn('authorize click with no install_url', payload);
@@ -1112,7 +1327,26 @@ export default defineComponent({
       // there 404s. Rewrite it to the current group's real conversation
       // route before handing off to AuthFrontend.
       const prefix = this.$route.matched[0]?.path ?? '';
-      window.location.href = repairInstallReturnToUrl(url, prefix);
+      const target = repairInstallReturnToUrl(url, prefix);
+      if (isWeb()) {
+        // `return_to` navigates the tab back here, so a full-page hop is
+        // still the right shape on web.
+        window.location.href = target;
+        return;
+      }
+      // On native/desktop that same hop leaves the app shell for good: the
+      // return lands on studio.acedata.cloud in a browser, not in the app.
+      // Send it outward instead and stay put — `consentReturn` already
+      // resumes the paused tool_use when the connection shows up.
+      try {
+        await openAuthorizeFlow(target);
+      } catch (error: any) {
+        ElMessage.error(
+          error?.message === 'desktop-authorize-unsupported'
+            ? (this.$t('connection.message.desktopUpdateRequired') as string)
+            : error?.message || (this.$t('connection.message.installFailed') as string)
+        );
+      }
     },
     /**
      * Stash any ``?consent=<rid>&connector=<id>`` pair on
@@ -1197,6 +1431,10 @@ export default defineComponent({
       // Track content parts for tool-calling interleaving
       const contentParts: IChatMessageContentItem[] = [];
       const toolMap = new Map<string, IChatMessageContentItem>();
+      const pendingBrowserUpdates = new Map<
+        string,
+        Pick<IChatMessageContentItem, 'execution_state' | 'execution_sequence' | 'origin'>
+      >();
       let currentText = '';
       // The aichat2 operator emits `response.answer` as the full
       // accumulated text since the start of the turn. Whenever we flush
@@ -1206,13 +1444,25 @@ export default defineComponent({
       // *remaining* text instead of duplicating everything we already
       // pushed.
       let answerOffset = 0;
-
       chatOperator
         .chatConversation(body, {
           token,
           stream: (response: IChatConversationResponse) => {
             console.debug('stream response', response);
             const lastMessage = this.messages[targetIndex];
+            const browserToolItem = response.tool_id ? toolMap.get(response.tool_id) : undefined;
+            if (response.tool_id && response.execution === 'browser' && response.execution_state && !browserToolItem) {
+              const pending = pendingBrowserUpdates.get(response.tool_id) ?? {};
+              pendingBrowserUpdates.set(response.tool_id, reduceBrowserToolExecution(pending, response));
+            }
+            if (
+              browserToolItem &&
+              response.execution_state &&
+              (response.execution === 'browser' || browserToolItem.execution === 'browser')
+            ) {
+              browserToolItem.execution = 'browser';
+              Object.assign(browserToolItem, reduceBrowserToolExecution(browserToolItem, response));
+            }
 
             // Handle tool-calling events
             if (response.type === 'thinking' && response.content) {
@@ -1231,6 +1481,15 @@ export default defineComponent({
               if (toolItem) {
                 if (response.tool_name) toolItem.tool_name = response.tool_name;
                 if (response.tool_display_name) toolItem.tool_display_name = response.tool_display_name;
+                if (response.execution) toolItem.execution = response.execution;
+                if (response.execution === 'browser') {
+                  Object.assign(toolItem, reduceBrowserToolExecution(toolItem, response));
+                  const pending = pendingBrowserUpdates.get(response.tool_id);
+                  if (pending) {
+                    Object.assign(toolItem, reduceBrowserToolExecution(toolItem, pending));
+                    pendingBrowserUpdates.delete(response.tool_id);
+                  }
+                }
                 if (response.input && Object.keys(response.input).length > 0) {
                   toolItem.input = response.input;
                 }
@@ -1246,6 +1505,8 @@ export default defineComponent({
                   tool_id: response.tool_id,
                   tool_name: response.tool_name,
                   tool_display_name: response.tool_display_name,
+                  execution: response.execution,
+                  ...(response.execution === 'browser' ? reduceBrowserToolExecution({}, response) : {}),
                   input: response.input,
                   status: 'running'
                 };
@@ -1262,7 +1523,7 @@ export default defineComponent({
               // guard against double-enqueue across the two starts.
               if (
                 supportsClientTools() &&
-                response.execution === 'client' &&
+                shouldExecuteWithLocalExec(response.execution) &&
                 !this.pendingClientTools.some((t) => t.toolId === response.tool_id)
               ) {
                 toolItem.status = 'awaiting_input';
@@ -1318,6 +1579,14 @@ export default defineComponent({
                 toolItem.status = 'awaiting_input';
                 toolItem.pending_consent_request = response.payload as IConsentRequestPayload;
               }
+            } else if (response.type === 'action_confirmation' && response.tool_id && response.payload) {
+              // Same pause protocol as `consent_request`, but per action:
+              // the renderer swaps in <ActionConfirmationCard>.
+              const toolItem = toolMap.get(response.tool_id);
+              if (toolItem) {
+                toolItem.status = 'awaiting_input';
+                toolItem.pending_action_confirmation = response.payload as IActionConfirmationPayload;
+              }
             } else if (response.type === 'artifact' && response.artifact) {
               if (response.artifact.type === 'image' || response.artifact.mimeType?.startsWith('image/')) {
                 contentParts.push({
@@ -1363,8 +1632,13 @@ export default defineComponent({
               currentText = (response.answer || '').slice(answerOffset);
             }
 
-            // Build display content: parts + trailing text
-            const displayParts: IChatMessageContentItem[] = [...contentParts];
+            // Build display content: parts + trailing text. Clone each part
+            // (not just the array) so an in-place mutation of a persisted block
+            // — e.g. a tool_use flipping status 'running'→'done' on tool_result
+            // — yields a NEW object reference. Otherwise the child's `:item`
+            // prop ref is unchanged and Vue skips its update, leaving the tool
+            // row's spinner frozen until an unrelated re-render (expanding it).
+            const displayParts: IChatMessageContentItem[] = contentParts.map((part) => ({ ...part }));
             if (currentText) {
               displayParts.push({ type: 'text', text: currentText });
             }
@@ -1490,10 +1764,38 @@ export default defineComponent({
   justify-content: space-between;
   padding: 0 16px;
   z-index: 100;
+
+  // The desktop drag bar covers the top 32px and its hit-test beats z-index
+  // and `pointer-events`, so controls under it must opt out or they can't be
+  // clicked at all (same fix as the Credits pill in application/Status.vue).
+  .selector,
+  .byok-badge,
+  .toolbar-more {
+    -webkit-app-region: no-drag;
+  }
 }
 
 .selector {
   width: max-content;
+  // Let a long model name ellipsize instead of pushing the `…` menu — and on
+  // mobile the fixed Credits pill — out of reach. `min-width: 0` alone isn't
+  // enough: the inner name is `white-space: nowrap`, so it needs an explicit
+  // ellipsis to actually give up width.
+  min-width: 0;
+  overflow: hidden;
+
+  :deep(.trigger) {
+    max-width: 100%;
+  }
+
+  :deep(.trigger-name) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // `.trigger-name` ships line-height == font-size (15px), so its line box
+    // has no room for descenders. Clipping for the ellipsis would shear the
+    // `g`/`p` in names like `gpt-5.6-luna` flat — give the box that room back.
+    line-height: 1.4;
+  }
 }
 
 .toolbar-left {
@@ -1507,41 +1809,27 @@ export default defineComponent({
   flex-shrink: 0;
 }
 
-.toolbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.toolbar-btn {
-  position: relative;
+.toolbar-more {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
   font-size: 15px;
   color: var(--el-text-color-secondary);
-  padding: 6px 10px;
-  height: 32px;
-  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
 
   &:hover {
-    color: var(--el-color-primary);
+    background: var(--el-fill-color-light);
+    color: var(--el-text-color-primary);
   }
 
-  .agent-dot {
-    position: absolute;
-    top: 2px;
-    right: -2px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--el-color-success);
-  }
-
-  .external-icon {
-    font-size: 9px;
-    opacity: 0.55;
-    margin-left: -2px;
+  &:focus-visible {
+    outline: 2px solid var(--el-color-primary);
+    outline-offset: 1px;
   }
 }
 @media (max-width: 767px) {
@@ -1576,6 +1864,21 @@ export default defineComponent({
       display: none;
     }
   }
+  // Footer row under the composer: working directory on the left, disclaimer
+  // centered. The disclaimer stays optically centered on the composer because
+  // it is the flex item that grows; the directory chip is absolutely
+  // positioned so its width can't push the text off-center.
+  .composer-footer {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 8px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20px;
+    gap: 8px;
+  }
   .composer-disclaimer {
     width: 100%;
     max-width: 800px;
@@ -1583,6 +1886,10 @@ export default defineComponent({
     text-align: center;
     font-size: 12px;
     color: var(--el-text-color-secondary);
+  }
+  // Inside the footer the outer margin/width are already applied by the row.
+  .composer-footer .composer-disclaimer {
+    margin: 0;
   }
   &.empty {
     position: relative;
@@ -1608,6 +1915,33 @@ export default defineComponent({
       margin-bottom: 15px;
     }
   }
+  .conversation-loading {
+    width: 100%;
+    max-width: 800px;
+    margin: 72px auto 0;
+    padding: 0 12px;
+    flex: 1;
+  }
+  .conversation-loading-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 32px;
+    --el-skeleton-color: color-mix(in srgb, var(--el-text-color-primary) 16%, transparent);
+    --el-skeleton-to-color: color-mix(in srgb, var(--el-text-color-primary) 28%, transparent);
+  }
+  .conversation-loading-avatar {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+  .conversation-loading-content {
+    width: min(620px, calc(100% - 44px));
+    padding-top: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
   .starter {
     height: fit-content;
     overflow: hidden;
@@ -1625,11 +1959,10 @@ export default defineComponent({
 
 @media (max-width: 767px) {
   .toolbar {
-    padding: 0 8px 0 54px;
-  }
-
-  .toolbar-actions {
-    margin-right: 36px;
+    // Right gutter clears the fixed Credits pill (Main.vue, right: 0.5rem);
+    // left clears the hamburger. The pill drops its "Credits" unit label
+    // below 480px (application/Status.vue), so it needs less room there.
+    padding: 0 160px 0 54px;
   }
 
   .dialogue.empty .starter {

@@ -27,6 +27,18 @@
     "message": "主题色",
     "description": "在编辑框中展示的标题"
   },
+  "field.supportedLocales": {
+    "message": "站点语言",
+    "description": "站点设置中允许访客选择的界面语言"
+  },
+  "field.forcedLocale": {
+    "message": "强制语言",
+    "description": "站点设置中固定全站界面语言的选项"
+  },
+  "placeholder.autoDetectLocale": {
+    "message": "自动检测",
+    "description": "强制语言未设置时的占位文案"
+  },
   "field.qr": {
     "message": "二维码",
     "description": "展示在编辑框的标题"
@@ -39,17 +51,29 @@
     "message": "站点管理员 ID",
     "description": "展示在编辑框的标题"
   },
+  "field.contacts": {
+    "message": "客服联系方式",
+    "description": "站点设置中『客服联系方式』的字段标题"
+  },
   "field.markupRatio": {
-    "message": "加价比例",
+    "message": "全站统一加价比例",
     "description": "站点设置：对本站所有充值套餐统一加价的比例（百分比）"
   },
   "message.markupRatioTip": {
-    "message": "对本站所有充值套餐统一加价（0%~500%）。0% 表示按平台原价出售；加价部分即你赚取的差价，分销返佣比例不变。",
+    "message": "设置本站所有服务的统一加价比例（0%～500%）。下方“单个服务定制加价”会覆盖此值。",
     "description": "加价比例设置项的说明文字"
   },
   "message.markupExample": {
-    "message": "示例：官方价 {from} → 你的售价 {to}",
-    "description": "加价比例设置项下方的实时示例，{from} 是官方原价，{to} 是加价后的售价"
+    "message": "例如原价 ￥20，填写 10，则售价为 ￥22。",
+    "description": "加价比例设置项下方的固定示例"
+  },
+  "field.disableRecharge": {
+    "message": "禁用充值",
+    "description": "站点设置：开启后隐藏本站所有充值/购买入口"
+  },
+  "message.disableRechargeTip": {
+    "message": "开启后，本站将隐藏所有充值/购买按钮，用户无法自行充值额度。",
+    "description": "禁用充值开关的说明文字"
   },
   "field.distributionDefaultInviterId": {
     "message": "默认邀请人 ID",
@@ -91,6 +115,102 @@
     "message": "微信",
     "description": "登录方式名称：微信第三方登录"
   },
+  "field.authSmsWebhook": {
+    "message": "自定义短信发件地址",
+    "description": "Site settings / login: title for the site's own custom SMS verification-code delivery webhook"
+  },
+  "message.authSmsWebhookTip": {
+    "message": "开启后，本站发出的手机验证码短信将由你自己的接口用你自己的签名发送；关闭则使用平台默认签名。需先启用「手机号」登录方式。",
+    "description": "Explains the custom SMS sender webhook"
+  },
+  "placeholder.authSmsWebhookUrl": {
+    "message": "https://你的域名/sms-webhook",
+    "description": "短信 webhook URL 输入框占位"
+  },
+  "placeholder.authSmsWebhookSecret": {
+    "message": "签名密钥（留空则保持不变）",
+    "description": "Placeholder for the SMS webhook signing secret input; write-only, blank keeps existing"
+  },
+  "field.authSmsWebhookEnable": {
+    "message": "启用自定义发件地址",
+    "description": "Label next to the custom SMS sender toggle"
+  },
+  "field.authSmsWebhookDoc": {
+    "message": "查看文档",
+    "description": "Link that opens the SMS webhook spec dialog"
+  },
+  "field.authSmsWebhookTest": {
+    "message": "测试",
+    "description": "Button that opens the SMS webhook test dialog"
+  },
+  "message.authSmsWebhookNeedsPhone": {
+    "message": "需先启用「手机号」登录方式才能配置自定义短信发件地址。",
+    "description": "Tooltip shown when the toggle is disabled because phone login is off"
+  },
+  "field.authSmsWebhookDocTitle": {
+    "message": "自定义短信发件地址 · 接口说明",
+    "description": "Title of the SMS webhook spec dialog"
+  },
+  "message.authSmsWebhookDocIntro": {
+    "message": "本站会向你填写的地址发起一次带签名的 HTTPS POST 请求，由你的服务负责下发短信。请确保你的接口满足以下要求：",
+    "description": "Intro paragraph of the SMS webhook spec dialog"
+  },
+  "field.authSmsWebhookDocRequest": {
+    "message": "请求",
+    "description": "Heading: request section of the SMS webhook spec"
+  },
+  "message.authSmsWebhookDocRequest": {
+    "message": "方法为 POST，Content-Type 为 application/json。purpose 可能为 login / register / test（test 为连通性测试，可不实际下发短信）。请求体结构如下：",
+    "description": "Describes the request method and body of the SMS webhook"
+  },
+  "field.authSmsWebhookDocHeaders": {
+    "message": "签名校验",
+    "description": "Heading: signature section of the SMS webhook spec"
+  },
+  "message.authSmsWebhookDocHeaders": {
+    "message": "每次请求附带以下请求头，请用你的签名密钥按 Standard Webhooks 规范做 HMAC-SHA256 校验，并使用常量时间比较：",
+    "description": "Describes signature verification for the SMS webhook"
+  },
+  "field.authSmsWebhookDocResponse": {
+    "message": "响应",
+    "description": "Heading: response section of the SMS webhook spec"
+  },
+  "message.authSmsWebhookDocResponse": {
+    "message": "下发成功请返回 2xx；如需显式表示失败，可返回 HTTP 200，且 body 中 success 字段为 false（见下方示例）。请在 5 秒内响应。",
+    "description": "Describes the expected response of the SMS webhook"
+  },
+  "field.authSmsWebhookTestTitle": {
+    "message": "测试自定义短信发件地址",
+    "description": "Title of the SMS webhook test dialog"
+  },
+  "field.authSmsWebhookTestRegion": {
+    "message": "国家/地区区号",
+    "description": "Label for the region-code field in the test dialog"
+  },
+  "field.authSmsWebhookTestNumber": {
+    "message": "测试手机号（选填）",
+    "description": "Label for the phone-number field in the test dialog"
+  },
+  "field.authSmsWebhookTestSend": {
+    "message": "发送测试",
+    "description": "Button that sends the SMS webhook test request"
+  },
+  "message.authSmsWebhookTestOk": {
+    "message": "测试请求已成功送达你的接口。",
+    "description": "Success message after a webhook test"
+  },
+  "message.authSmsWebhookTestFailed": {
+    "message": "测试失败，请检查地址、签名密钥与接口返回。",
+    "description": "Failure message after a webhook test"
+  },
+  "field.authSmsWebhookDisableTitle": {
+    "message": "关闭自定义短信发件地址",
+    "description": "Title of the confirm dialog shown when disabling the custom SMS sender"
+  },
+  "message.authSmsWebhookDisableConfirm": {
+    "message": "关闭后将删除已保存的发件地址与签名密钥（密钥不可恢复），本站将改用平台默认签名。确定关闭吗？",
+    "description": "Body of the confirm dialog shown when disabling the custom SMS sender"
+  },
   "field.featuresChat": {
     "message": "Chat",
     "description": "展示在编辑框的标题"
@@ -114,6 +234,10 @@
   "field.featuresMaestro": {
     "message": "Maestro",
     "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresPoivelle": {
+    "message": "Poivelle",
+    "description": "展示在编辑框的标题"
   },
   "field.featuresDigitalhuman": {
     "message": "数字人",
@@ -159,8 +283,8 @@
     "message": "Hailuo",
     "description": "展示在编辑框的标题"
   },
-  "field.featuresHeadshots": {
-    "message": "AI证件照",
+  "field.featuresMinimax": {
+    "message": "MiniMax H3",
     "description": "展示在编辑框的标题"
   },
   "field.featuresSuno": {
@@ -186,6 +310,10 @@
   "field.featuresSeedance": {
     "message": "SeeDance",
     "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresOmni": {
+    "message": "Omni",
+    "description": "展示在编辑框的标题"
   },
   "field.featuresWan": {
     "message": "Wan",
@@ -234,6 +362,10 @@
   "title.editAdmins": {
     "message": "编辑管理员",
     "description": "展示在编辑框的标题"
+  },
+  "title.editContacts": {
+    "message": "编辑客服联系方式",
+    "description": "编辑客服联系方式弹窗的标题"
   },
   "title.featuresConfig": {
     "message": "功能配置",
@@ -371,6 +503,23 @@
     "message": "图片上传失败。",
     "description": "图片裁切器上传失败错误"
   },
+  "logoStudio.analysisReady": { "message": "图片检测完成", "description": "品牌图片智能处理第二步顶部状态标题" },
+  "logoStudio.analysisSummary": { "message": "{width}×{height} px · 背景置信度 {confidence}%", "description": "图片检测结果中的尺寸与背景置信度" },
+  "logoStudio.backgroundDetected": { "message": "检测到纯色背景", "description": "图片四周背景足够统一时的状态标签" },
+  "logoStudio.transparentOrComplex": { "message": "透明或复杂背景", "description": "图片已透明或背景不适合自动移除时的状态标签" },
+  "logoStudio.removeBackground": { "message": "自动去除背景", "description": "品牌图片背景移除开关标签" },
+  "logoStudio.backgroundColor": { "message": "背景色", "description": "品牌图片背景移除目标颜色标签" },
+  "logoStudio.edgeTolerance": { "message": "边缘容差", "description": "品牌图片去底色容差滑杆标签" },
+  "logoStudio.refreshPreview": { "message": "更新预览", "description": "使用新去底参数重新处理图片的按钮" },
+  "logoStudio.modeBrand": { "message": "保留品牌色", "description": "亮暗主题都使用彩色 Logo 的显示模式" },
+  "logoStudio.modeBalanced": { "message": "智能适配", "description": "亮色保留品牌色、暗色使用白色 Logo 的推荐模式" },
+  "logoStudio.modeMono": { "message": "黑白模式", "description": "亮色使用黑色、暗色使用白色 Logo 的显示模式" },
+  "logoStudio.lightTheme": { "message": "亮色主题", "description": "品牌图片亮色背景预览标签" },
+  "logoStudio.darkTheme": { "message": "暗色主题", "description": "品牌图片暗色背景预览标签" },
+  "logoStudio.previewOutdated": { "message": "参数已改变，请更新预览后再应用。", "description": "处理参数与当前预览不一致时的提示" },
+  "logoStudio.back": { "message": "返回裁剪", "description": "从处理预览返回裁剪步骤的按钮" },
+  "logoStudio.analyze": { "message": "检测并预览", "description": "完成裁剪并进入智能处理步骤的按钮" },
+  "logoStudio.apply": { "message": "应用图片", "description": "确认品牌图片处理结果的按钮" },
   "message.editLogoTip": {
     "message": "建议尺寸：200*60px",
     "description": "上传图片的提示语言"
@@ -435,6 +584,30 @@
     "message": "站点的主题品牌色，作用于全站的按钮、链接、高亮以及品牌色渐变。",
     "description": "站点主题色选择器的提示"
   },
+  "message.supportedLocalesTip": {
+    "message": "选择本站向访客提供的界面语言，默认支持全部语言。",
+    "description": "站点可选语言设置的提示"
+  },
+  "message.forcedLocaleTip": {
+    "message": "固定全站访客的界面语言，设置后访客无法自行切换。留空则自动检测。",
+    "description": "站点强制语言设置的提示"
+  },
+  "message.allLocales": {
+    "message": "全部语言",
+    "description": "站点未限制可选语言时的摘要"
+  },
+  "message.atLeastOneLocale": {
+    "message": "请至少保留一种语言",
+    "description": "站点语言多选为空时的校验提示"
+  },
+  "placeholder.supportedLocales": {
+    "message": "选择站点语言",
+    "description": "站点语言多选框的占位文字"
+  },
+  "title.editSupportedLocales": {
+    "message": "编辑站点语言",
+    "description": "站点语言编辑弹窗标题"
+  },
   "message.adminsTip": {
     "message": "站点管理员 ID，默认首次创建该站点的用户会成为管理员，只有站点管理员可以管理站点。",
     "description": "站点管理员的提示"
@@ -442,6 +615,14 @@
   "message.adminsTip2": {
     "message": "可在此处增删管理员 ID，可到 https://auth.acedata.cloud 查看用户 ID",
     "description": "站点管理员的提示"
+  },
+  "message.contactsTip": {
+    "message": "填写客服联系方式（Discord、X、微信、电话、邮箱），将展示在『关于』页面中，方便用户联系你。",
+    "description": "客服联系方式字段的提示"
+  },
+  "message.contactsEmpty": {
+    "message": "暂未设置",
+    "description": "未填写任何客服联系方式时的占位文案"
   },
   "message.keywordsTip": {
     "message": "站点关键词，位于站点元信息中，用于站点 SEO 优化。",
@@ -456,124 +637,132 @@
     "description": "Chat 功能的描述"
   },
   "message.featuresGrok": {
-    "message": "打开或关闭 Grok 功能模块。",
-    "description": "Grok 功能的描述"
+    "message": "xAI 智能助手，提供实时信息、推理、写作和编程能力。",
+    "description": "xAI 智能助手，提供实时信息、推理、写作和编程能力。的能力简介"
   },
   "message.featuresGrokvideo": {
-    "message": "启用或禁用 Grok Video 功能模块。",
-    "description": "Grok Video功能的描述"
+    "message": "xAI 视频生成服务，可根据文字提示或参考图制作短片。",
+    "description": "xAI 视频生成服务，可根据文字提示或参考图制作短片。的能力简介"
   },
   "message.featuresMaestro": {
-    "message": "启用或禁用 Maestro 功能模块。",
-    "description": "Maestro功能的描述"
+    "message": "将创意制作成完整视频，覆盖策划、配音、场景生成和交付。",
+    "description": "将创意制作成完整视频，覆盖策划、配音、场景生成和交付。的能力简介"
+  },
+  "message.featuresPoivelle": {
+    "message": "通过共享项目图、故事板、时间线、审片和 Skill Agent 工作流，统筹专业 AI 影视制作。",
+    "description": "通过共享项目图、故事板、时间线、审片和 Skill Agent 工作流，统筹专业 AI 影视制作。的能力简介"
   },
   "message.featuresDigitalhuman": {
-    "message": "启用或禁用数字人功能模块。",
-    "description": "数字人功能的描述"
+    "message": "使用合成语音和自然口型同步制作数字人口播视频。",
+    "description": "使用合成语音和自然口型同步制作数字人口播视频。的能力简介"
   },
   "message.featuresDeepseek": {
-    "message": "打开或关闭 Deepseek 功能模块。",
-    "description": "Deepseek 功能的描述"
+    "message": "DeepSeek 智能助手，擅长深度推理、编程、数学和日常问答。",
+    "description": "DeepSeek 智能助手，擅长深度推理、编程、数学和日常问答。的能力简介"
   },
   "message.featuresChatgpt": {
-    "message": "打开或关闭 ChatGPT 功能模块。",
-    "description": "ChatGPT 功能的描述"
+    "message": "OpenAI 智能助手，擅长写作、推理、编程和多模态对话。",
+    "description": "OpenAI 智能助手，擅长写作、推理、编程和多模态对话。的能力简介"
   },
   "message.featuresMidjourney": {
-    "message": "打开或关闭 Midjourney 功能模块。",
-    "description": "Midjourney 功能的描述"
+    "message": "根据文字或参考图生成精美图像与创意变体。",
+    "description": "根据文字或参考图生成精美图像与创意变体。的能力简介"
   },
   "message.featuresChatdoc": {
     "message": "打开或关闭 Chatdoc 功能模块。",
     "description": "Chatdoc 功能的描述"
   },
   "message.featuresQrart": {
-    "message": "打开或关闭 Qrart 功能模块。",
-    "description": "Qrart 功能的描述"
+    "message": "将链接制作成可扫描的艺术二维码，支持自定义风格与图像。",
+    "description": "将链接制作成可扫描的艺术二维码，支持自定义风格与图像。的能力简介"
   },
   "message.featuresVeo": {
-    "message": "打开或关闭 Veo 功能模块。",
-    "description": "Veo 功能的描述"
+    "message": "Google 视频生成服务，擅长电影感画面、提示理解和运动控制。",
+    "description": "Google 视频生成服务，擅长电影感画面、提示理解和运动控制。的能力简介"
   },
   "message.featuresSora": {
-    "message": "打开或关闭 Sora 功能模块。",
-    "description": "Sora 功能的描述"
+    "message": "OpenAI 视频生成服务，适合真实场景、故事表达和视觉变换。",
+    "description": "OpenAI 视频生成服务，适合真实场景、故事表达和视觉变换。的能力简介"
   },
   "message.featuresSuno": {
-    "message": "打开或关闭 Suno 功能模块。",
-    "description": "Suno 功能的描述"
+    "message": "根据提示生成完整歌曲、歌词、人声和纯音乐。",
+    "description": "根据提示生成完整歌曲、歌词、人声和纯音乐。的能力简介"
   },
   "message.featuresPixverse": {
-    "message": "打开或关闭 Pixverse 功能模块。",
-    "description": "Pixverse 功能的描述"
+    "message": "根据提示和图像生成风格化视频，并提供模板与特效。",
+    "description": "根据提示和图像生成风格化视频，并提供模板与特效。的能力简介"
   },
   "message.featuresFlux": {
-    "message": "打开或关闭 FLux 功能模块。",
-    "description": "FLux 功能的描述"
+    "message": "生成细节丰富的图像，并通过自然语言编辑现有画面。",
+    "description": "生成细节丰富的图像，并通过自然语言编辑现有画面。的能力简介"
   },
   "message.featuresNanobanana": {
-    "message": "打开或关闭 Nano Banana 功能模块。",
-    "description": "Nano Banana 功能的描述"
+    "message": "Google 驱动的图像生成与编辑，能够精准遵循修改指令。",
+    "description": "Google 驱动的图像生成与编辑，能够精准遵循修改指令。的能力简介"
   },
   "message.featuresOpenaiimage": {
-    "message": "打开或关闭 OpenAI 图像功能模块。",
-    "description": "OpenAI 图像功能的描述"
+    "message": "OpenAI 图像生成与编辑，擅长精美画面、文字和版式设计。",
+    "description": "OpenAI 图像生成与编辑，擅长精美画面、文字和版式设计。的能力简介"
   },
   "message.featuresSeedream": {
-    "message": "打开或关闭 SeeDream 功能模块。",
-    "description": "SeeDream 功能的描述"
+    "message": "字节跳动图像生成与编辑服务，用于创作高质量视觉内容。",
+    "description": "字节跳动图像生成与编辑服务，用于创作高质量视觉内容。的能力简介"
   },
   "message.featuresSeedance": {
-    "message": "启用或禁用SeeDance功能模块。",
-    "description": "SeeDance功能的描述"
+    "message": "字节跳动视频生成服务，支持动态场景、镜头运动和可选音频。",
+    "description": "字节跳动视频生成服务，支持动态场景、镜头运动和可选音频。的能力简介"
+  },
+  "message.featuresOmni": {
+    "message": "使用 Omni 模型根据文字、图像和视频参考生成或编辑视频。",
+    "description": "使用 Omni 模型根据文字、图像和视频参考生成或编辑视频。的能力简介"
   },
   "message.featuresWan": {
-    "message": "打开或关闭 Wan 功能模块。",
-    "description": "Wan 功能的描述"
+    "message": "阿里巴巴视频生成服务，支持文字、图像、参考素材和多种分辨率。",
+    "description": "阿里巴巴视频生成服务，支持文字、图像、参考素材和多种分辨率。的能力简介"
   },
   "message.featuresProducer": {
-    "message": "打开或关闭 Producer 功能模块。",
-    "description": "Producer 功能的描述"
+    "message": "创作歌曲、翻唱和续写，并生成不同人声或纯音乐版本。",
+    "description": "创作歌曲、翻唱和续写，并生成不同人声或纯音乐版本。的能力简介"
   },
   "message.featuresKimi": {
-    "message": "打开或关闭 Kimi 功能模块。",
-    "description": "Kimi 功能的描述"
+    "message": "月之暗面智能助手，擅长长上下文研究、推理、写作和编程。",
+    "description": "月之暗面智能助手，擅长长上下文研究、推理、写作和编程。的能力简介"
   },
   "message.featuresSerp": {
-    "message": "打开或关闭 SERP 功能模块。",
-    "description": "SERP 功能的描述"
+    "message": "搜索网页、图片、新闻、地图和视频，返回结构化 Google 结果。",
+    "description": "搜索网页、图片、新闻、地图和视频，返回结构化 Google 结果。的能力简介"
   },
   "message.featuresFish": {
-    "message": "打开或关闭 Fish Audio 功能模块。",
-    "description": "Fish Audio 功能的描述"
+    "message": "生成自然语音并克隆音色，用于多语言音频制作。",
+    "description": "生成自然语音并克隆音色，用于多语言音频制作。的能力简介"
   },
   "message.featuresCodingBridge": {
-    "message": "打开或关闭 Coding Bridge 功能模块。",
-    "description": "Coding Bridge 功能的描述"
+    "message": "将 AI 编程助手连接到本地项目，完成引导式开发工作流。",
+    "description": "将 AI 编程助手连接到本地项目，完成引导式开发工作流。的能力简介"
   },
   "message.featuresWebextrator": {
-    "message": "打开或关闭 WebExtrator 功能模块。",
-    "description": "WebExtrator 功能的描述"
+    "message": "从网页中提取干净、结构化的内容和数据。",
+    "description": "从网页中提取干净、结构化的内容和数据。的能力简介"
   },
   "message.featuresLuma": {
-    "message": "打开或关闭 Luma 功能模块。",
-    "description": "Luma 功能的描述"
+    "message": "根据文字或图像生成具有自然运动效果的电影感视频。",
+    "description": "根据文字或图像生成具有自然运动效果的电影感视频。的能力简介"
   },
   "message.featuresPika": {
-    "message": "打开或关闭 Pika 功能模块。",
-    "description": "Pika 功能的描述"
+    "message": "生成和编辑创意短视频，支持特效、场景与画面变换。",
+    "description": "生成和编辑创意短视频，支持特效、场景与画面变换。的能力简介"
   },
   "message.featuresKling": {
-    "message": "打开或关闭 Kling 功能模块。",
-    "description": "Kling 功能的描述"
+    "message": "根据文字、图像或动作参考生成高质量视频。",
+    "description": "根据文字、图像或动作参考生成高质量视频。的能力简介"
   },
   "message.featuresHailuo": {
-    "message": "打开或关闭 Hailuo 功能模块。",
-    "description": "Hailuo 功能的描述"
+    "message": "根据文字或图像生成表现力丰富、人物动作流畅的视频。",
+    "description": "根据文字或图像生成表现力丰富、人物动作流畅的视频。的能力简介"
   },
-  "message.featuresHeadshots": {
-    "message": "打开或关闭 AI证件照 功能模块。",
-    "description": "AI证件照 功能的描述"
+  "message.featuresMinimax": {
+    "message": "通过文字、图片和音频引导生成 768P 或 2K 视频。",
+    "description": "MiniMax H3 的能力简介"
   },
   "message.featuresSupport": {
     "message": "打开或关闭客服支持",
@@ -604,16 +793,16 @@
     "description": "Displayed as the title in the editing box"
   },
   "message.featuresGemini": {
-    "message": "Enable or disable the Gemini feature module.",
-    "description": "Description of the Gemini feature"
+    "message": "Google 智能助手，擅长长上下文推理、研究、编程和多模态任务。",
+    "description": "Google 智能助手，擅长长上下文推理、研究、编程和多模态任务。的能力简介"
   },
   "field.featuresClaude": {
     "message": "Claude",
     "description": "Displayed as the title in the editing box"
   },
   "message.featuresClaude": {
-    "message": "Enable or disable the Claude feature module.",
-    "description": "Description of the Claude feature"
+    "message": "Anthropic 智能助手，擅长严谨推理、写作、编程和文档分析。",
+    "description": "Anthropic 智能助手，擅长严谨推理、写作、编程和文档分析。的能力简介"
   },
   "placeholder.admins": {
     "message": "请输入管理员用户 ID",
@@ -670,5 +859,185 @@
   "autoTranslate.error": {
     "message": "切换自动翻译失败，请稍后重试",
     "description": "切换自动翻译接口返回错误时的兜底文案"
+  },
+  "services.title": {
+    "message": "单个服务定制加价与展示"
+  },
+  "services.tip": {
+    "message": "针对单个服务隐藏、改名、单独定价或排序。留空的加价将继承本站默认加价。删除某行后该服务恢复默认展示。"
+  },
+  "services.addButton": {
+    "message": "添加服务覆盖"
+  },
+  "services.empty": {
+    "message": "尚无服务覆盖，所有服务沿用目录默认展示与定价。"
+  },
+  "services.field.service": {
+    "message": "服务"
+  },
+  "services.field.visible": {
+    "message": "可见"
+  },
+  "services.field.customMarkupRatio": {
+    "message": "单个服务定制加价"
+  },
+  "services.field.displayTitle": {
+    "message": "展示名称"
+  },
+  "services.field.displaySummary": {
+    "message": "展示简介",
+    "description": "每服务覆盖项：自定义该服务在本站首页卡片上的简介"
+  },
+  "services.field.sortOrder": {
+    "message": "排序"
+  },
+  "services.field.action": {
+    "message": "操作"
+  },
+  "services.status.visible": {
+    "message": "显示"
+  },
+  "services.status.hidden": {
+    "message": "隐藏"
+  },
+  "services.status.inherit": {
+    "message": "继承"
+  },
+  "services.dialog.create": {
+    "message": "添加服务覆盖"
+  },
+  "services.dialog.edit": {
+    "message": "编辑服务覆盖"
+  },
+  "services.placeholder.service": {
+    "message": "从服务目录中选择一个服务"
+  },
+  "services.placeholder.markup": {
+    "message": "留空则继承"
+  },
+  "services.placeholder.displayTitle": {
+    "message": "留空则使用目录中的原名称"
+  },
+  "services.placeholder.displaySummary": {
+    "message": "留空则使用目录中的原描述"
+  },
+  "services.tip.visible": {
+    "message": "关闭后该服务在本站首页隐藏（已拥有的用户仍可访问）。"
+  },
+  "services.tip.markup": {
+    "message": "填写百分制加价比例：10 表示加价 10%，上限 500；留空则继承本站默认加价。"
+  },
+  "services.tip.sortOrder": {
+    "message": "数字越小越靠前。"
+  },
+  "services.preview.sampleLabel": {
+    "message": "示例原价"
+  },
+  "services.preview.inherit": {
+    "message": "（已继承本站默认加价 {percent}）"
+  },
+  "services.message.alreadyOverridden": {
+    "message": "已覆盖"
+  },
+  "services.message.serviceRequired": {
+    "message": "请先选择一个服务"
+  },
+  "services.message.saved": {
+    "message": "已保存"
+  },
+  "services.message.deleted": {
+    "message": "已删除"
+  },
+  "services.message.deleteConfirm": {
+    "message": "确定要删除「{name}」的覆盖配置吗？删除后该服务恢复默认展示与定价。"
+  },
+  "services.message.saveFailed": {
+    "message": "保存失败，请稍后重试"
+  },
+  "services.message.deleteFailed": {
+    "message": "删除失败，请稍后重试"
+  },
+  "services.message.fetchFailed": {
+    "message": "加载服务覆盖失败"
+  },
+  "capabilityOverride.edit": {
+    "message": "自定义应用",
+    "description": "编辑能力应用名称和图标的提示与无障碍标签"
+  },
+  "capabilityOverride.dialogTitle": {
+    "message": "自定义 {name}",
+    "description": "弹窗标题，{name} 为平台默认应用名称"
+  },
+  "capabilityOverride.displayName": {
+    "message": "自定义名称",
+    "description": "子站能力应用显示名称字段"
+  },
+  "capabilityOverride.displayNameTip": {
+    "message": "留空则使用 {name}。首次保存后可开启自动翻译。",
+    "description": "名称说明，{name} 为平台默认应用名称"
+  },
+  "capabilityOverride.icon": {
+    "message": "自定义图标",
+    "description": "子站能力应用图标字段"
+  },
+  "capabilityOverride.defaultIcon": {
+    "message": "默认",
+    "description": "平台默认图标预览标签"
+  },
+  "capabilityOverride.currentIcon": {
+    "message": "当前效果",
+    "description": "当前生效图标预览标签"
+  },
+  "capabilityOverride.replaceIcon": {
+    "message": "替换图标",
+    "description": "上传替换图标的命令"
+  },
+  "capabilityOverride.uploadIcon": {
+    "message": "上传图标",
+    "description": "首次上传自定义图标的命令"
+  },
+  "capabilityOverride.useDefaultIcon": {
+    "message": "使用默认图标",
+    "description": "清除自定义图标草稿的命令"
+  },
+  "capabilityOverride.iconTip": {
+    "message": "支持 PNG、JPEG 或 WebP，将裁剪为正方形；透明 PNG 会保留透明背景。",
+    "description": "能力应用图标上传要求"
+  },
+  "capabilityOverride.editIcon": {
+    "message": "编辑应用图标",
+    "description": "图标裁剪弹窗标题"
+  },
+  "capabilityOverride.resetAll": {
+    "message": "恢复默认",
+    "description": "同时删除自定义名称和图标的命令"
+  },
+  "capabilityOverride.empty": {
+    "message": "请先输入自定义名称或上传图标。",
+    "description": "尝试创建空覆盖时的提示"
+  },
+  "capabilityOverride.saved": {
+    "message": "应用自定义已保存",
+    "description": "保存能力应用覆盖后的成功提示"
+  },
+  "capabilityOverride.savedEnableTranslation": {
+    "message": "已保存，现在可以为自定义名称开启自动翻译。",
+    "description": "首次保存并获得覆盖记录 ID 后的提示"
+  },
+  "capabilityOverride.saveFailed": {
+    "message": "保存应用自定义失败",
+    "description": "能力应用覆盖写入失败的兜底错误"
+  },
+  "capabilityOverride.resetConfirm": {
+    "message": "恢复 {name} 的默认名称和图标？",
+    "description": "恢复确认文案，{name} 为平台默认应用名称"
+  },
+  "capabilityOverride.resetDone": {
+    "message": "已恢复默认名称和图标",
+    "description": "删除能力应用覆盖后的成功提示"
+  },
+  "capabilityOverride.fetchFailed": {
+    "message": "加载应用自定义失败",
+    "description": "无法读取能力应用覆盖管理记录时的错误"
   }
 }

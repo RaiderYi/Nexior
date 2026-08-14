@@ -1,4 +1,5 @@
 export const ROUTE_INDEX = 'index';
+export const ROUTE_BUSINESS = 'business';
 export const ROUTE_DOWNLOAD = 'download';
 
 export const ROUTE_SHARE_CONVERSATION = 'share-conversation';
@@ -26,6 +27,8 @@ export const ROUTE_CLAUDE_CONVERSATION = 'claude-conversation';
 export const ROUTE_CLAUDE_CONVERSATION_NEW = 'claude-conversation-new';
 export const ROUTE_KIMI_CONVERSATION = 'kimi-conversation';
 export const ROUTE_KIMI_CONVERSATION_NEW = 'kimi-conversation-new';
+export const ROUTE_GLM_CONVERSATION = 'glm-conversation';
+export const ROUTE_GLM_CONVERSATION_NEW = 'glm-conversation-new';
 
 export const ROUTE_MIDJOURNEY_INDEX = 'midjourney-index';
 
@@ -47,6 +50,7 @@ export const ROUTE_VEO_HISTORY = 'veo-history';
 export const ROUTE_SORA_INDEX = 'sora-index';
 export const ROUTE_SORA_HISTORY = 'sora-history';
 export const ROUTE_MAESTRO_INDEX = 'maestro-index';
+export const ROUTE_POIVELLE_INDEX = 'poivelle-index';
 export const ROUTE_DIGITALHUMAN_INDEX = 'digitalhuman-index';
 
 export const ROUTE_PIXVERSE_INDEX = 'pixverse-index';
@@ -57,9 +61,7 @@ export const ROUTE_FLUX_HISTORY = 'flux-history';
 
 export const ROUTE_HAILUO_INDEX = 'hailuo-index';
 export const ROUTE_HAILUO_HISTORY = 'hailuo-history';
-
-export const ROUTE_HEADSHOTS_INDEX = 'headshots-index';
-export const ROUTE_HEADSHOTS_HISTORY = 'headshots-history';
+export const ROUTE_MINIMAX_INDEX = 'minimax-index';
 
 export const ROUTE_SUNO_INDEX = 'suno-index';
 export const ROUTE_SUNO_HISTORY = 'suno-history';
@@ -74,6 +76,7 @@ export const ROUTE_SEEDREAM_INDEX = 'seedream-index';
 
 export const ROUTE_SEEDANCE_INDEX = 'seedance-index';
 export const ROUTE_GROKVIDEO_INDEX = 'grokvideo-index';
+export const ROUTE_OMNI_INDEX = 'omni-index';
 
 export const ROUTE_SERP_INDEX = 'serp-index';
 
@@ -100,9 +103,8 @@ export const ROUTE_DISTRIBUTION_HISTORY = 'distribution-history';
 export const ROUTE_DISTRIBUTION_INVITEES = 'distribution-invitees';
 
 export const ROUTE_CONSOLE_USAGE_LIST = 'console-usage-list';
-export const ROUTE_CONSOLE_CREDENTIALS = 'console-credentials';
+export const ROUTE_CONSOLE_CONNECTORS = 'console-connectors';
+export const ROUTE_CONSOLE_SKILLS = 'console-skills';
+export const ROUTE_CONSOLE_BROWSER_DEVICES = 'console-browser-devices';
 
 export const ROUTE_NOT_FOUND = 'not-found';
-
-export const ROUTE_GLM_CONVERSATION = 'glm-conversation';
-export const ROUTE_GLM_CONVERSATION_NEW = 'glm-conversation-new';

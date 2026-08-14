@@ -1,7 +1,7 @@
 {
   "name.text": {
     "message": "Text",
-    "description": "Fish TTS Textfeld Label"
+    "description": "Fish TTS Textfeld-Label"
   },
   "name.voice": {
     "message": "Stimme",
@@ -26,6 +26,18 @@
   "name.elapsed": {
     "message": "Dauer",
     "description": "Fish Aufgaben Dauer Label"
+  },
+  "name.failure": {
+    "message": "Generierung fehlgeschlagen",
+    "description": "Titel für fehlgeschlagene Aufgaben im Fish"
+  },
+  "name.failureReason": {
+    "message": "Fehlerursache",
+    "description": "Label für die Fehlerursache bei fehlgeschlagenen Aufgaben im Fish"
+  },
+  "name.traceId": {
+    "message": "Verfolgungs-ID",
+    "description": "Label für die Verfolgungs-ID der Aufgaben im Fish"
   },
   "name.fishBot": {
     "message": "Fish Audio",
@@ -91,9 +103,21 @@
     "message": "Keine Sprachmodelle verfügbar",
     "description": "Fish Sprachwähler ist leer Hinweis"
   },
+  "group.publicVoices": {
+    "message": "Öffentliche Stimmensammlung",
+    "description": "Titel der öffentlichen Stimmensammlung im Fish Stimmenauswähler"
+  },
+  "message.searching": {
+    "message": "Suche läuft…",
+    "description": "Ladehinweis für die Fernsuche im Fish Stimmenauswähler"
+  },
+  "message.searchVoiceHint": {
+    "message": "Geben Sie Schlüsselwörter ein, um öffentliche Stimmen zu suchen",
+    "description": "Hinweis für den leeren Zustand der Fernsuche im Fish Stimmenauswähler"
+  },
   "name.voiceTitle": {
     "message": "Name",
-    "description": "Fish Geräuschmodell Name Feldbezeichnung"
+    "description": "Fish Sprachmodell Name Feld-Label"
   },
   "name.voiceDescription": {
     "message": "Beschreibung",

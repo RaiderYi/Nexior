@@ -31,6 +31,8 @@ import {
   CB_ACTION_SESSIONS_LIST,
   CB_ACTION_HISTORY_LIST,
   CB_ACTION_HISTORY_GET,
+  CB_ACTION_HISTORY_MARK_READ,
+  CB_HISTORY_LIMIT,
   CB_ACTION_FS_LIST,
   CB_ACTION_CAPABILITIES_GET,
   CB_EVENT_SESSION_STARTED,
@@ -143,8 +145,29 @@ export const applyNodeEvent = (
   if (typeof seq === 'number' && sessionId) {
     const last = state.lastSeq[sessionId];
     if (last !== undefined && seq <= last) {
-      return;
+      // seq comes from the relay's IN-MEMORY log, so a relay restart (deploy,
+      // crash) begins the session's seq space again at 1 while our cursor — which
+      // outlives it, persisted — still holds the pre-restart high-water mark.
+      // Every live event then looks already-applied and the session goes silent
+      // for good. The relay is single-replica, so a restart always drops our
+      // socket: within ONE connection the first event of a healthy space is
+      // necessarily above the cursor (replay only sends seq > cursor, live only
+      // grows). So a first-since-connect event at or below it means the space
+      // restarted — re-baseline onto the new one. Afterwards, seq <= cursor is a
+      // genuine replay/live overlap and stays dropped.
+      if (state.seqChecked[sessionId]) {
+        return;
+      }
+      commit('resetLastSeq', sessionId);
+      // Re-baselining only rescues the stream from here on. Anything the new
+      // space emitted while we were disconnected sits BELOW this event and no
+      // resume can reach it (we asked from the old, far higher cursor and the
+      // relay saw a valid log, so it sent nothing and raised no truncation).
+      // Pull the device transcript to close that gap — the same recovery the
+      // relay asks for on `stream_truncated`.
+      dispatch('resyncSession', sessionId);
     }
+    commit('markSeqChecked', sessionId);
     commit('setLastSeq', { session_id: sessionId, seq });
   }
   // Keep the session's trace id current with whatever turn the node is on.
@@ -164,6 +187,7 @@ export const applyNodeEvent = (
         status: 'running',
         cwd: payload.cwd,
         model: payload.model,
+        resolved_model: payload.resolved_model,
         // The node now echoes effort/permission_mode too; only apply when present
         // so an older node that omits them doesn't wipe the session's values.
         ...(payload.effort !== undefined ? { effort: payload.effort } : {}),
@@ -326,6 +350,14 @@ export const applyNodeEvent = (
     case CB_EVENT_SESSION_CLOSED:
       commit('finalizeAllStreams', { session_id: sessionId });
       commit('updateSession', { session_id: sessionId, status: 'closed' });
+      // A closed session's relay-side log is released, and an older relay
+      // renumbers its seq space from 1 on the next event — WITHOUT dropping our
+      // socket, so `seqChecked` would keep the re-baseline branch from ever
+      // running and every later event would look already-applied. Clear only the
+      // validation, never the cursor: the first event of a renumbered space then
+      // re-baselines (and resyncs) on its own, while a plain reconnect can still
+      // resume from here instead of silently skipping what it missed.
+      commit('clearSeqCheckedFor', sessionId);
       break;
     case CB_EVENT_SESSION_REWOUND:
       // A past prompt was edited: fold the fork into the transcript by rewinding
@@ -342,7 +374,13 @@ export const applyNodeEvent = (
     case CB_EVENT_SESSION_STREAM_TRUNCATED:
       // The live stream lost events neither relay nor node could retain (cursor
       // too old / outbox overflow). Resync the session from the device transcript
-      // rather than trust the cursor — never a silent gap.
+      // rather than trust the cursor — never a silent gap. Unlike `session.closed`
+      // the cursor really is dropped here, because the relay has just declared it
+      // unreachable: keeping it would re-trigger this same truncation on every
+      // reconnect. Clear the validation too, or a renumbered space arriving on
+      // this still-open connection is dropped before it can re-baseline.
+      commit('resetLastSeq', sessionId);
+      commit('clearSeqCheckedFor', sessionId);
       dispatch('resyncSession', sessionId);
       break;
     case CB_EVENT_SESSIONS_SNAPSHOT:
@@ -351,13 +389,15 @@ export const applyNodeEvent = (
       // opening their history entry reattaches with the running state intact —
       // this is how a reload recovers the Stop button and the typewriter.
       for (const item of payload.sessions ?? []) {
+        const selector = item.model;
         commit('upsertSession', {
           session_id: item.session_id,
           node_id: fromNode,
           status: item.status ?? 'running',
           started: true,
           cwd: item.cwd,
-          model: item.model,
+          model: selector,
+          resolved_model: item.resolved_model,
           ...(item.effort !== undefined ? { effort: item.effort } : {}),
           ...(item.permission_mode !== undefined ? { permission_mode: item.permission_mode } : {})
         });
@@ -431,12 +471,17 @@ const applyHistoryDetail = (
   // its per-session sidecar. Fall back to a live value, then this device's last
   // composer setup, so a restore never silently resets to defaults.
   const prefs = state.lastComposer?.[fromNode] ?? {};
+  // New nodes send both fields; old nodes sent a resolved model in `model`.
+  // Therefore `resolved_model` is also the provenance signal for trusting `model`.
+  const historicalModel = payload.resolved_model !== undefined ? payload.model : undefined;
+  const selector = historicalModel ?? live?.model;
   commit('upsertSession', {
     session_id: sessionId,
     node_id: fromNode,
     status: isLive ? live!.status : 'idle',
     cwd: payload.cwd ?? live?.cwd ?? prefs.cwd,
-    model: payload.model ?? live?.model ?? prefs.model,
+    model: selector,
+    resolved_model: payload.resolved_model ?? live?.resolved_model,
     effort: payload.effort ?? live?.effort ?? prefs.effort,
     permission_mode: payload.permission_mode ?? live?.permission_mode ?? prefs.permissionMode,
     provider,
@@ -481,7 +526,18 @@ const normalizeHistoryProvider = (provider: unknown): ICodingBridgeHistoryProvid
   return provider === 'codex' || provider === 'copilot' ? provider : 'claude';
 };
 
+// Renames applied locally, stamped with a monotonic tick. A `getNodes` issued
+// BEFORE a rename but resolving AFTER it carries the pre-rename name and must
+// not revert it. Keyed per node so a rename of A never pins a name another
+// device set for B. A counter, not Date.now(): two events in the same
+// millisecond must still be ordered.
+let renameTick = 0;
+const locallyRenamed = new Map<string, { name: string; at: number }>();
+
 export const resetAll = ({ commit }: ActionContext<ICodingBridgeState, IRootState>): void => {
+  // Drop the rename shadows too: they are keyed by node id and a different user
+  // must not inherit them.
+  locallyRenamed.clear();
   commit('resetAll');
 };
 
@@ -490,6 +546,15 @@ export const resetAll = ({ commit }: ActionContext<ICodingBridgeState, IRootStat
 // stubs keep that contract without pulling in any billing concept. ----------
 export const getApplications = async (): Promise<void> => {};
 export const setApplication = async (): Promise<void> => {};
+
+/** Apply a `node.renamed` broadcast. Exported so the reducer is testable. */
+export const applyNodeRenamed = (
+  commit: ActionContext<ICodingBridgeState, IRootState>['commit'],
+  nodeId: string,
+  name: string
+): void => {
+  commit('setNodeName', { node_id: nodeId, name });
+};
 
 export const getNodes = async ({
   commit,
@@ -500,11 +565,19 @@ export const getNodes = async ({
     return [];
   }
   commit('updateStatus', { key: 'getNodes', value: Status.Request });
+  const requestedAt = renameTick;
   try {
     const { data } = await codingBridgeOperator.getNodes({ token });
-    commit('setNodes', data.nodes ?? []);
+    const nodes = (data.nodes ?? []).map((node) => {
+      // Protect only nodes renamed AFTER this request went out — that response
+      // was built before the rename and would revert it. A rename older than the
+      // request is already reflected server-side, so take the server's value.
+      const pending = locallyRenamed.get(node.node_id);
+      return pending && pending.at > requestedAt ? { ...node, name: pending.name } : node;
+    });
+    commit('setNodes', nodes);
     commit('updateStatus', { key: 'getNodes', value: Status.Success });
-    return data.nodes ?? [];
+    return nodes;
   } catch (error) {
     commit('updateStatus', { key: 'getNodes', value: Status.Error });
     throw error;
@@ -527,6 +600,37 @@ export const claimPair = async (
     return data.node_name;
   } catch (error) {
     commit('updateStatus', { key: 'claimPair', value: Status.Error });
+    throw error;
+  }
+};
+
+export const renameNode = async (
+  { commit, rootState }: ActionContext<ICodingBridgeState, IRootState>,
+  payload: { nodeId: string; name: string }
+): Promise<void> => {
+  const token = rootState.token?.access;
+  if (!token) {
+    throw new Error('not authenticated');
+  }
+  const name = payload.name.trim();
+  if (!name) {
+    throw new Error('name must not be empty');
+  }
+  commit('updateStatus', { key: 'renameNode', value: Status.Request });
+  try {
+    const { data } = await codingBridgeOperator.renameNode(payload.nodeId, name, { token });
+    // Trust the server's stored name — it is the value every other client gets.
+    const stored = data?.name ?? name;
+    // Bounded: a user has a handful of devices, and only the newest entries can
+    // still be newer than an in-flight request.
+    if (locallyRenamed.size >= 50) {
+      locallyRenamed.clear();
+    }
+    locallyRenamed.set(payload.nodeId, { name: stored, at: ++renameTick });
+    commit('setNodeName', { node_id: payload.nodeId, name: stored });
+    commit('updateStatus', { key: 'renameNode', value: Status.Success });
+  } catch (error) {
+    commit('updateStatus', { key: 'renameNode', value: Status.Error });
     throw error;
   }
 };
@@ -573,6 +677,10 @@ export const connect = ({
   socket = new CodingBridgeSocket(token, {
     onOpen: () => {
       commit('setConnection', 'connected');
+      // A dropped socket is the only way the relay can have restarted (it is
+      // single-replica), so this is where a renumbered seq space becomes
+      // detectable — see the cursor guard in `applyNodeEvent`.
+      commit('clearSeqChecked');
       // Reconnect: resume each session's live stream from the seq we last saw,
       // so in-flight output is replayed instead of lost. Empty after a full page
       // reload (lastSeq is in-memory) — there the history restore below rebuilds
@@ -598,6 +706,11 @@ export const connect = ({
       // Merge live online flags onto the REST-sourced list without dropping
       // offline nodes the snapshot omits.
       commit('mergeNodeSnapshot', nodes);
+      // Then re-read the full list: a rename made elsewhere while this client
+      // was disconnected never arrived as `node.renamed`, and the snapshot
+      // above only covers ONLINE nodes. Dispatched here rather than in onOpen
+      // so the REST response can't land before — and overwrite — the snapshot.
+      dispatch('getNodes');
     },
     onNodeStatus: (nodeId, status) => {
       commit('setNodeStatus', { node_id: nodeId, status });
@@ -607,6 +720,10 @@ export const connect = ({
         dispatch('requestSessions', nodeId);
         dispatch('requestPendingPermissions', nodeId);
       }
+    },
+    onNodeRenamed: (nodeId, name) => {
+      // Renamed from another tab / the phone — mirror it here without a reload.
+      applyNodeRenamed(commit, nodeId, name);
     },
     onRelayError: (code, message) => console.warn('[codingBridge] relay error', code, message)
   });
@@ -955,7 +1072,7 @@ export const getHistory = ({ commit, state }: ActionContext<ICodingBridgeState, 
     return;
   }
   commit('updateStatus', { key: 'getHistory', value: Status.Request });
-  socket.sendToNode(target, { action: CB_ACTION_HISTORY_LIST, limit: 200 });
+  socket.sendToNode(target, { action: CB_ACTION_HISTORY_LIST, limit: CB_HISTORY_LIMIT });
 };
 
 // Ask a node to replay one past transcript so it can be viewed / resumed.
@@ -977,6 +1094,26 @@ export const getHistoryDetail = (
   // Safety net: never leave the skeleton spinning if the reply is lost (node
   // went offline mid-request). The transcript falls back to its empty hint.
   setTimeout(() => commit('updateStatus', { key: 'getHistoryDetail', value: Status.Success }), 12000);
+};
+
+// Clear one session's unread dot. `updated_at` is what this browser actually
+// rendered — the node stores that as the watermark, so output appended during
+// the round trip stays unread. The reply is a refreshed history snapshot.
+export const markHistoryRead = (
+  _ctx: ActionContext<ICodingBridgeState, IRootState>,
+  payload: ICodingBridgeHistoryRef & { updated_at?: number }
+): void => {
+  if (!payload?.node_id || !payload?.session_id || !payload?.provider || !socket) {
+    return;
+  }
+  socket.sendToNode(payload.node_id, {
+    action: CB_ACTION_HISTORY_MARK_READ,
+    provider: payload.provider,
+    session_id: payload.session_id,
+    updated_at: payload.updated_at,
+    // Same page size as getHistory, so the refreshed listing isn't truncated.
+    limit: CB_HISTORY_LIMIT
+  });
 };
 
 // Re-establish a conversation as fully LIVE — used when restoring after a reload
@@ -1006,9 +1143,16 @@ export const reattachSession = (
   dispatch('getHistoryDetail', ref);
   dispatch('requestSessions', ref.node_id);
   dispatch('requestPendingPermissions', ref.node_id);
-  // Replay the live stream from the last event we applied (0 = from the start of
-  // the relay's buffer). The relay and the browser both dedupe by seq.
-  socket?.resume({ [ref.session_id]: state.lastSeq[ref.session_id] ?? 0 });
+  // Resume the live stream ONLY for a session this tab already followed. The
+  // relay broadcasts new events to every browser unconditionally, so `resume` is
+  // pure backfill — and with no cursor it replayed the relay's ENTIRE retained
+  // buffer for that session (up to 5000 events, oldest first, one message each)
+  // on top of the transcript we just asked for. That is what made an opened
+  // conversation crawl in from the oldest message instead of showing the newest.
+  const cursor = state.lastSeq[ref.session_id];
+  if (cursor !== undefined) {
+    socket?.resume({ [ref.session_id]: cursor });
+  }
 };
 
 // Resync a live session from the device transcript after the live stream lost
@@ -1137,6 +1281,7 @@ export default {
   getNodes,
   claimPair,
   deleteNode,
+  renameNode,
   connect,
   disconnect,
   selectNode,
@@ -1154,6 +1299,7 @@ export default {
   answerQuestion,
   getHistory,
   getHistoryDetail,
+  markHistoryRead,
   reattachSession,
   resyncSession,
   browseDir,

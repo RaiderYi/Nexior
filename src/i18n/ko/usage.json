@@ -19,6 +19,10 @@
     "message": "API",
     "description": "호출된 API, 번역할 필요 없음"
   },
+  "field.credential": {
+    "message": "자격 증명",
+    "description": "이 사용 내역을 생성한 API 키(자격 증명)"
+  },
   "field.usedAmount": {
     "message": "사용된 수량",
     "description": "사용된 자원의 수량입니다."
@@ -121,42 +125,102 @@
   },
   "field.consumed": {
     "message": "소비량",
-    "description": "Column header in the usage breakdown table for the total points a single API consumed within the selected time range."
+    "description": "사용량 세부 내역 탭의 열 헤더"
   },
   "field.share": {
     "message": "비율",
-    "description": "Column header in the usage breakdown table for a single API's percentage of the total consumption."
+    "description": "사용량 세부 내역 탭의 비율 열 헤더"
   },
   "field.autoRefresh": {
     "message": "자동 새로고침",
-    "description": "Toggle label at the top-right of the usage table; when on, the latest records refresh automatically on an interval."
+    "description": "사용량 페이지 우측 상단의 자동 새로고침 토글 레이블"
   },
   "value.processing": {
     "message": "처리 중",
-    "description": "Placeholder shown in the status code column while an async task has not yet returned a final status code."
+    "description": "상태 코드 열의 처리 중 자리 표시자"
   },
   "value.others": {
     "message": "기타",
-    "description": "Series name in the usage-trend chart that aggregates all APIs outside the top spenders."
+    "description": "사용량 추세 차트의 기타 시리즈 이름"
   },
   "title.usageAnalytics": {
     "message": "사용량 분석",
-    "description": "Title of the usage analytics card, which contains trend, share, and breakdown view tabs."
+    "description": "사용량 분석 카드 제목"
   },
   "view.trend": {
     "message": "추세",
-    "description": "View switch button in the usage analytics card: stacked bar chart of per-API consumption over time."
+    "description": "사용량 분석 뷰 전환 버튼"
   },
   "view.distribution": {
     "message": "비율",
-    "description": "View switch button in the usage analytics card: doughnut chart of each API's consumption share."
+    "description": "사용량 분석 뷰 전환 버튼"
   },
   "view.breakdown": {
     "message": "세부 내역",
-    "description": "View switch button in the usage analytics card: a table listing every API's exact consumption and share."
+    "description": "사용량 분석 뷰 전환 버튼"
   },
   "message.exportFailed": {
     "message": "내보내기에 실패했습니다. 기간을 좁혀 다시 시도하세요.",
-    "description": "Error toast shown when the CSV export request fails (network or server error)."
+    "description": "CSV 내보내기 실패 시 표시되는 오류 토스트"
+  },
+  "field.paidAmount": {
+    "message": "지불 금액",
+    "description": "체인 상에서 실제로 정산된 금액입니다."
+  },
+  "field.network": {
+    "message": "지불 네트워크",
+    "description": "체인 상에서 지불에 사용되는 네트워크입니다."
+  },
+  "field.transaction": {
+    "message": "거래 ID",
+    "description": "체인 상 지불의 거래 해시 또는 서명입니다."
+  },
+  "field.payer": {
+    "message": "지불 주소",
+    "description": "체인 상 지불을 시작한 지갑 주소입니다."
+  },
+  "button.viewTransaction": {
+    "message": "거래 보기",
+    "description": "신뢰할 수 있는 블록 탐색기에서 거래를 확인합니다."
+  },
+  "dialog.payment": {
+    "message": "지불",
+    "description": "세부 정보 팝업의 지불 정보 탭을 사용합니다."
+  },
+  "value.balanceNotApplicable": {
+    "message": "해당 없음 (체인 상 지불)",
+    "description": "체인 상 지불에 플랫폼 포인트 잔액이 사용되지 않을 때 표시됩니다."
+  },
+  "value.paymentUnavailable": {
+    "message": "지불 정보 사용 불가",
+    "description": "기록 또는 미확인 정산에 신뢰할 수 있는 지불 정보가 없을 때 표시됩니다."
+  },
+  "value.paymentSettled": {
+    "message": "결제 완료",
+    "description": "체인 상에서 결제가 확인되었습니다."
+  },
+  "value.paymentUnconfirmed": {
+    "message": "확인 대기",
+    "description": "체인 상에서 결제가 성공적으로 반환되었지만 결제 사실은 여전히 조정이 필요합니다."
+  },
+  "value.paymentFailed": {
+    "message": "결제 실패",
+    "description": "체인 상에서 결제가 실패했거나 건너뛰어졌습니다."
+  },
+  "value.attemptTransaction": {
+    "message": "거래 시도",
+    "description": "아직 성공적으로 확인되지 않은 결제 시도 거래."
+  },
+  "value.onChainBalanceNote": {
+    "message": "체인 상의 결제, 포인트 잔액 미사용",
+    "description": "x402 사용 기록에서 포인트 잔액이 차감되지 않음을 설명합니다."
+  },
+  "value.aceDiscount": {
+    "message": "ACE 할인 {percent}%",
+    "description": "ACE 보유 시 API 사용에 대한 할인 레이블입니다."
+  },
+  "value.accountDiscount": {
+    "message": "계정 할인 {percent}%",
+    "description": "수동 계정 사용 시 할인에 대한 중립적인 레이블입니다."
   }
 }

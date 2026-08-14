@@ -3,13 +3,14 @@
     <router-view class="main" />
     <navigator class="navigator" :direction="mobile ? 'row' : 'column'" />
     <application-status
-      v-if="application"
+      v-if="application || x402Scenario"
       class="status-floating fixed right-2 z-[200]"
       :application="application"
       :applications="applications"
       :show-price="false"
       :authenticated="!!$store.state.token.access"
       :service="service"
+      :scenario="x402Scenario"
       @select="$store.dispatch(`${appName}/setApplication`, $event)"
     />
     <application-confirm v-model.visible="applying" @apply="onApply" />
@@ -27,6 +28,7 @@ import { applicationOperator } from '@/operators';
 import { ERROR_CODE_DUPLICATION } from '@/constants';
 import ApplicationConfirm from '@/components/application/Confirm.vue';
 import { getFinalApplication } from '@/utils';
+import { isScenarioX402Enabled } from '@/utils/x402/scenarioPayment';
 
 // How often the floating Credits pill re-syncs the selected application's
 // balance. Generations spend credits server-side at task-creation time, so
@@ -57,6 +59,39 @@ export default defineComponent({
   computed: {
     appName(): keyof IAppState {
       return this.$route.meta.appName as keyof IAppState;
+    },
+    x402Scenario(): string | undefined {
+      if (this.appName === 'kling' && this.$store.state.kling?.taskType === 'motion') return undefined;
+      return this.x402ScenarioEnabled ? String(this.appName) : undefined;
+    },
+    x402ScenarioEnabled(): boolean {
+      return (
+        [
+          'nanobanana',
+          'openaiimage',
+          'flux',
+          'qrart',
+          'luma',
+          'pika',
+          'pixverse',
+          'hailuo',
+          'veo',
+          'seedance',
+          'sora',
+          'wan',
+          'omni',
+          'grokvideo',
+          'minimax',
+          'maestro',
+          'kling',
+          'digitalhuman',
+          'serp',
+          'suno',
+          'midjourney',
+          'producer',
+          'chat'
+        ].includes(String(this.appName)) && isScenarioX402Enabled()
+      );
     },
     application() {
       // Global application and individual application can be used here
@@ -207,10 +242,11 @@ export default defineComponent({
       // free-credit grant. No localStorage gate needed.
       const globalApp = this.$store.state.applications?.[0];
       const credits = Math.floor(globalApp?.remaining_amount ?? 0);
+      const brand = this.$store.state.site?.title || 'AceData';
       const message =
         credits > 0
-          ? this.$t('application.message.welcomeWithCredits', { credits })
-          : this.$t('application.message.welcomeNoCredits');
+          ? this.$t('application.message.welcomeWithCredits', { credits, brand })
+          : this.$t('application.message.welcomeNoCredits', { brand });
       ElMessage({ message: message as string, type: 'success', duration: 6000, showClose: true });
     }
   }
@@ -263,14 +299,15 @@ html.surface-desktop .status-floating {
     // the layout wrapper so every routed service page inherits it.
     padding-top: var(--app-safe-area-top);
     .main {
-      height: calc(100% - 60px - var(--app-safe-area-bottom) - var(--app-safe-area-top));
+      height: calc(100% - var(--app-dock-height) - var(--app-safe-area-bottom) - var(--app-safe-area-top));
       width: 100%;
       flex: 1;
     }
     .navigator {
       width: 100%;
-      height: calc(60px + var(--app-safe-area-bottom));
+      height: calc(var(--app-dock-height) + var(--app-safe-area-bottom));
       padding-bottom: var(--app-safe-area-bottom);
+      transition: height 0.18s ease;
     }
   }
 }

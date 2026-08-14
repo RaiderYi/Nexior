@@ -6,7 +6,8 @@
         <p class="settings-title">{{ $t('subsite.title.index') }}</p>
         <p class="settings-tip">{{ $t('subsite.message.indexTip') }}</p>
       </div>
-      <el-button type="primary" round :icon="Plus" :disabled="!canCreate" @click="onOpenCreate">
+      <el-button type="primary" round :disabled="!canCreate" @click="onOpenCreate">
+        <plus :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('subsite.button.create') }}
       </el-button>
     </div>
@@ -133,6 +134,7 @@
 </template>
 
 <script lang="ts">
+import { AddIcon as Plus } from '@acedatacloud/core/icons/components';
 import { defineComponent, markRaw } from 'vue';
 import {
   ElCard,
@@ -149,7 +151,7 @@ import {
   ElTag,
   vLoading
 } from 'element-plus';
-import { Plus } from '@element-plus/icons-vue';
+
 import { siteOperator, siteDomainOperator } from '@/operators';
 import SectionNotice from '@/components/setting/SectionNotice.vue';
 import { SiteDomainStatus, type ISite, type ISiteDomain } from '@/models';
@@ -435,6 +437,10 @@ export default defineComponent({
     },
     onManageSite(row: ISite) {
       if (!row.origin) return;
+      const activeDomain = this.customDomainsFor(row).find(
+        (domain) => domain.status === SiteDomainStatus.Active && domain.hostname
+      );
+      const hostname = activeDomain?.hostname || row.origin;
       // Open the subsite at its root and signal the user-settings dialog
       // to auto-open via the `?dialog=settings` query flag. The root
       // route still redirects to whatever the subsite's default landing
@@ -443,7 +449,7 @@ export default defineComponent({
       // pops the settings dialog. This avoids the blank `/settings`
       // page race where SettingsIndex dispatches `open-user-settings`
       // before UserCenter's listener is registered.
-      window.open(`https://${row.origin}/?dialog=settings`, '_blank', 'noopener');
+      window.open(`https://${hostname}/?dialog=settings`, '_blank', 'noopener');
     },
     async onDeleteSite(row: ISite) {
       if (!row.id || !row.origin) return;

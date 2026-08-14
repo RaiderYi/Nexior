@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Azione",
+    "description": "Selettore per generare o modificare un'azione."
+  },
   "name.taskId": {
     "message": "ID attività",
     "description": "ID dell'attività"
@@ -131,6 +135,10 @@
     "message": "Caricamento immagine fallito, riprova più tardi",
     "description": "Caricamento fallito"
   },
+  "message.referenceImageRequired": {
+    "message": "È necessario caricare almeno un'immagine di riferimento in modalità di modifica.",
+    "description": "Messaggio di verifica mostrato quando non ci sono immagini di riferimento in modalità di modifica."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Richiesta di conferma",
     "description": "Titolo della finestra di avviso per conflitti di capacità"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Opzione modello SeeDream 5.0 (supporta output a gruppi e in streaming)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Numero di immagini",

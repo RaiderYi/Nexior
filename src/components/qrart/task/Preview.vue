@@ -1,19 +1,33 @@
 <template>
   <div class="preview w-full h-fit text-left flex flex-row mb-[15px]">
     <div class="left">
-      <el-image
-        src="https://cdn.acedata.cloud/bcml67.png"
+      <capability-presentation
+        capability="qrart"
+        part="avatar"
         class="avatar bg-[var(--el-bg-color)] p-[2px] w-[50px] h-[50px] m-[10px] rounded-full"
       />
     </div>
     <div class="main flex-1 w-[calc(100%-70px)] min-w-0 pt-[10px] pr-[10px] pb-0 pl-[10px]">
       <div
-        class="bot text-[16px] font-bold text-[var(--el-color-primary)] overflow-hidden text-ellipsis whitespace-nowrap"
+        class="bot flex items-center text-[16px] font-bold text-[var(--el-color-primary)] overflow-hidden whitespace-nowrap"
       >
-        {{ $t('qrart.name.qrartBot') }}
-        <span class="datetime text-[12px] font-normal text-[var(--el-text-color-secondary)] ml-[10px]">
+        <capability-presentation capability="qrart" part="name" />
+        <span
+          class="datetime text-[12px] font-normal text-[var(--el-text-color-secondary)] ml-[10px] overflow-hidden text-ellipsis"
+        >
           {{ $dayjs.format('' + new Date(parseFloat((modelValue?.created_at || '').toString()) * 1000)) }}
         </span>
+        <el-tooltip effect="dark" :content="$t('common.button.delete')" placement="top">
+          <button
+            v-if="modelValue?.id"
+            type="button"
+            class="btn-delete ml-auto shrink-0 cursor-pointer border-none bg-transparent p-[4px_6px] leading-none"
+            :aria-label="$t('common.button.delete')"
+            @click.stop="onDelete"
+          >
+            <delete-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+          </button>
+        </el-tooltip>
       </div>
       <div class="info">
         <p
@@ -32,37 +46,46 @@
         />
         <div :class="{ operations: true, 'mt-2': true, 'mb-2': true }">
           <api-code-button path="/qrart/generate" :body="modelValue?.request" />
+          <report-button
+            service="qrart"
+            :target-id="modelValue?.id"
+            :snapshot="{ prompt: modelValue?.request?.prompt }"
+          />
         </div>
         <el-alert :closable="false" class="mt-2 success">
           <p class="description">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.taskId') }}:
             {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id!" class="btn-copy" />
           </p>
           <p class="description">
-            <font-awesome-icon icon="fa-solid fa-diamond" class="mr-1" />
+            <reward-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.type') }}:
             {{ $t('qrart.type.' + modelValue?.request?.type) }}
             <copy-to-clipboard :content="modelValue?.request?.type!" class="btn-copy" />
           </p>
           <p v-if="modelValue?.request?.content" class="description">
-            <font-awesome-icon icon="fa-regular fa-message" class="mr-1" />
+            <message-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.content') }}:
             {{ modelValue?.request?.content }}
             <copy-to-clipboard :content="modelValue?.request?.content!" class="btn-copy" />
           </p>
           <p v-if="modelValue?.request?.content_image_url" class="description">
-            <font-awesome-icon icon="fa-regular fa-message" class="mr-1" />
+            <message-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.contentImageUrl') }}:
-            <font-awesome-icon
-              icon="fa-solid fa-up-right-from-square"
-              class="mr-1 cursor-pointer"
+            <button
+              type="button"
+              class="icon-button mr-1 cursor-pointer"
+              :aria-label="$t('common.button.view')"
+              :title="$t('common.button.view')"
               @click="onOpenLink(modelValue?.request?.content_image_url)"
-            />
+            >
+              <external-link-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+            </button>
           </p>
           <p v-if="modelValue?.request?.seed || modelValue?.response?.seed" class="description">
-            <font-awesome-icon icon="fa-solid fa-seedling" class="mr-1" />
+            <growth-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.seed') }}:
             {{ modelValue?.request?.seed || modelValue?.response?.seed }}
             <copy-to-clipboard
@@ -71,7 +94,7 @@
             />
           </p>
           <p v-if="modelValue?.elapsed" class="description">
-            <font-awesome-icon icon="fa-solid fa-clock" class="mr-1" />
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
           </p>
         </el-alert>
@@ -79,27 +102,27 @@
       <div v-if="modelValue?.response?.success === false" :class="{ content: true }">
         <el-alert :closable="false" class="failure">
           <template #template>
-            <font-awesome-icon icon="fa-solid fa-exclamation-triangle" class="mr-1" />
+            <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.failure') }}
           </template>
           <p class="description">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.taskId') }}:
             {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id!" class="btn-copy" />
           </p>
           <p class="description">
-            <font-awesome-icon icon="fa-solid fa-circle-info" class="mr-1" />
+            <info-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.failureReason') }}:
             {{ modelValue?.response?.error?.message }}
             <copy-to-clipboard :content="modelValue?.response?.error?.message!" class="btn-copy" />
           </p>
           <p v-if="modelValue?.elapsed" class="description">
-            <font-awesome-icon icon="fa-solid fa-clock" class="mr-1" />
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
           </p>
           <p class="description">
-            <font-awesome-icon icon="fa-solid fa-hashtag" class="mr-1" />
+            <channel-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.traceId') }}:
             {{ modelValue?.response?.trace_id }}
             <copy-to-clipboard :content="modelValue?.response?.trace_id" class="btn-copy" />
@@ -109,11 +132,11 @@
       <div v-if="!modelValue?.response" :class="{ content: true }">
         <el-alert :closable="false" class="info">
           <template #template>
-            <font-awesome-icon icon="fa-solid fa-exclamation-triangle" class="mr-1" />
+            <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.failure') }}
           </template>
           <p class="description">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('qrart.name.taskId') }}:
             {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id!" class="btn-copy" />
@@ -125,23 +148,45 @@
 </template>
 
 <script lang="ts">
+import {
+  ChannelIcon,
+  DeleteIcon,
+  ExternalLinkIcon,
+  GrowthIcon,
+  InfoIcon,
+  MagicIcon,
+  MessageIcon,
+  RewardIcon,
+  TimeIcon,
+  WarningIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
-import { ElImage, ElAlert } from 'element-plus';
+import { ElAlert, ElMessageBox, ElMessage, ElTooltip } from 'element-plus';
 import { IQrartTask } from '@/models';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ImageWrapper from '@/components/common/ImageWrapper.vue';
 import ApiCodeButton from '@/components/common/ApiCodeButton.vue';
+import ReportButton from '@/components/common/ReportButton.vue';
 
 export default defineComponent({
   name: 'TaskPreview',
   components: {
-    ElImage,
+    ChannelIcon,
+    DeleteIcon,
+    ExternalLinkIcon,
+    GrowthIcon,
+    InfoIcon,
+    MagicIcon,
+    MessageIcon,
+    RewardIcon,
+    TimeIcon,
+    WarningIcon,
     CopyToClipboard,
-    FontAwesomeIcon,
     ElAlert,
+    ElTooltip,
     ImageWrapper,
-    ApiCodeButton
+    ApiCodeButton,
+    ReportButton
   },
   props: {
     modelValue: {
@@ -158,6 +203,26 @@ export default defineComponent({
     }
   },
   methods: {
+    async onDelete() {
+      const id = this.modelValue?.id;
+      if (!id) return;
+      try {
+        await ElMessageBox.confirm(this.$t('common.message.deleteTaskConfirm'), this.$t('common.button.delete'), {
+          type: 'warning',
+          confirmButtonText: this.$t('common.button.delete'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          confirmButtonClass: 'el-button--danger'
+        });
+      } catch {
+        return; // user cancelled
+      }
+      try {
+        await this.$store.dispatch('qrart/deleteTask', { id });
+        ElMessage.success(this.$t('common.message.deleteTaskSuccess'));
+      } catch {
+        ElMessage.error(this.$t('common.message.deleteTaskFailed'));
+      }
+    },
     onOpenLink(url: string) {
       window.open(url, '_blank');
     },
@@ -196,13 +261,21 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 $left-width: 70px;
+.icon-button {
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
 .preview {
   width: 100%;
   height: fit-content;
   text-align: left;
   display: flex;
   flex-direction: row;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   .left {
     width: $left-width;
     .avatar {
@@ -235,6 +308,22 @@ $left-width: 70px;
         font-weight: normal;
         color: var(--el-text-color-secondary);
         margin-left: 10px;
+      }
+      .btn-delete {
+        margin-left: auto;
+        color: var(--el-text-color-secondary);
+        // Hover-reveal on pointer devices; keep it out of the way until wanted.
+        opacity: 0;
+        transition:
+          opacity 0.15s ease,
+          color 0.15s ease;
+        &:hover {
+          color: var(--el-color-danger);
+        }
+        // Touch devices have no hover — always show the control.
+        @media (hover: none) {
+          opacity: 1;
+        }
       }
     }
 
@@ -279,6 +368,11 @@ $left-width: 70px;
       font-size: 12px;
       margin-bottom: 8px;
     }
+  }
+
+  // Reveal the trash icon when hovering anywhere on the card.
+  &:hover .main .bot .btn-delete {
+    opacity: 1;
   }
 }
 </style>

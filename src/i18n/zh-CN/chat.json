@@ -79,36 +79,36 @@
     "message": "智谱 AI 开发的大语言模型",
     "description": "GLM 模型组的描述"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "服务的模型名称，即 GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "服务的模型名称，即 GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "最新一代旗舰 GPT 5.5 模型",
-    "description": "GPT 5.5 模型的描述"
+  "model.56SolDescription": {
+    "message": "面向高要求任务的旗舰 GPT 5.6 模型",
+    "description": "GPT 5.6 Sol 模型的描述"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "服务的模型名称，即 GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "服务的模型名称，即 GPT 5.6 Terra"
   },
-  "model.54Description": {
-    "message": "最新一代旗舰 GPT 5.4 模型",
-    "description": "GPT 5.4 模型的描述"
+  "model.56TerraDescription": {
+    "message": "适合日常工作的均衡 GPT 5.6 模型",
+    "description": "GPT 5.6 Terra 模型的描述"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "服务的模型名称，即 GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "服务的模型名称，即 GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "更快更轻量的 GPT 5.4 模型",
-    "description": "GPT 5.4 Mini 模型的描述"
+  "model.56LunaDescription": {
+    "message": "快速轻量的 GPT 5.6 模型",
+    "description": "GPT 5.6 Luna 模型的描述"
   },
   "model.freeTag": {
     "message": "免费",
     "description": "模型选择器中免费模型旁的角标文案"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "服务的模型名称，即 DeepSeek 聊天"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "DeepSeek 聊天模型的描述"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "服务的模型名称，即 DeepSeek 推理"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "DeepSeek 推理模型的描述"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "服务的模型名称，即 DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "DeepSeek V3.2 实验模型的描述"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "服务的模型名称，即 DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "DeepSeek V4 Flash 模型的描述"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "服务的模型名称，即 Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Grok 4 模型的描述"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "服务的模型名称"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "更快更轻量的模型",
     "description": "Gemini 2.5 Flash 模型的描述"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "服务的模型名称，即 Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "最新的快速模型，支持推理、视觉和工具调用",
+    "description": "Gemini 3.6 Flash 模型的描述"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "服务的模型名称，即 Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "更快更轻量的模型",
     "description": "Gemini 2.5 Flash 模型的描述"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "服务的模型名称，即 Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "目前最先进的模型",
+    "description": "Claude Opus 5 模型的描述"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,24 +235,32 @@
     "message": "轻量快速的模型",
     "description": "Claude Haiku 4.5 模型的描述"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "服务模型名称，即 Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "月之暗面 Kimi K3 旗舰模型名称"
   },
-  "model.claudeFable5Description": {
-    "message": "在长上下文、复杂推理与创意写作场景下表现出色",
-    "description": "Claude Fable 5 模型的描述"
+  "model.kimiK3Description": {
+    "message": "支持推理、视觉和 100 万 Token 上下文的旗舰模型",
+    "description": "Kimi K3 模型的描述"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Kimi K2.6 模型名称"
+  },
+  "model.kimiK26Description": {
+    "message": "适合兼容 K2 工作流的推理与视觉模型",
+    "description": "Kimi K2.6 模型的描述"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "服务的模型名称，即 Kimi K2.5"
   },
   "model.kimiK25Description": {
-    "message": "目前最先进的模型",
+    "message": "适合兼容工作流的通用 K2 模型",
     "description": "Kimi K2.5 模型的描述"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 推理",
     "description": "服务的模型名称，即 Kimi K2 推理"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Kimi K2 推理模型的描述"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 极速推理",
     "description": "服务的模型名称，即 Kimi K2 极速推理"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Kimi K2 极速推理模型的描述"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "服务的模型名称，即 GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "GLM 5.1 模型的描述"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "服务的模型名称，即 GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "文件上传失败，请稍后重试",
     "description": "网页中的消息，告诉用户文件上传失败，请稍后重试"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "文件大小 {size} 超过上限 {max}，请压缩后重试",
+    "description": "网页中的消息，告诉用户文件超过上传大小上限，需要压缩后重试"
   },
   "message.notApplied": {
     "message": "您尚未申请此服务，请先申请",
@@ -348,8 +376,8 @@
     "description": "网页中的消息，告诉用户对话不存在或已过期，请开始新对话"
   },
   "message.errorContentTooLarge": {
-    "message": "问题内容过长，请缩短后重试",
-    "description": "网页中的消息，告诉用户问题内容过长，请缩短后重试"
+    "message": "上传的图片或对话内容过大，请压缩图片、减少图片数量或缩短内容后重试",
+    "description": "网页中的消息，告诉用户上传的图片或对话内容过大，需要压缩或减少内容后重试"
   },
   "message.errorTooManyRequests": {
     "message": "您的操作过于频繁，请稍后重试",
@@ -583,9 +611,83 @@
     "message": "已跳过连接器授权",
     "description": "用户跳过授权后的卡片底部说明"
   },
+  "browserTool.title": {
+    "message": "浏览器活动",
+    "description": "BrowserDevice 工具活动的默认标题"
+  },
+  "browserTool.state.starting_session": {
+    "message": "正在启动浏览器会话"
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "正在连接浏览器标签页"
+  },
+  "browserTool.state.ready": {
+    "message": "浏览器已就绪"
+  },
+  "browserTool.state.device_offline": {
+    "message": "浏览器设备已离线",
+    "description": "所选浏览器设备不在线"
+  },
+  "browserTool.state.device_busy": {
+    "message": "浏览器设备正忙"
+  },
+  "browserTool.state.authorization_required": {
+    "message": "需要在 Studio 中确认授权"
+  },
+  "browserTool.state.executing": {
+    "message": "正在浏览器中执行",
+    "description": "浏览器设备正在执行工具"
+  },
+  "browserTool.state.completed": {
+    "message": "已完成",
+    "description": "浏览器工具执行完成"
+  },
+  "browserTool.state.stopped": {
+    "message": "浏览器会话已停止"
+  },
+  "browserTool.state.expired": {
+    "message": "浏览器请求已过期",
+    "description": "浏览器工具执行请求已过期"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "请关闭开发者工具后继续"
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "执行结果未知，请核实后再重试"
+  },
+  "browserTool.state.failed": {
+    "message": "浏览器操作失败"
+  },
+  "browserTool.stop": {
+    "message": "停止"
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "管理设备"
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "停止其他会话"
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "关闭开发者工具"
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "查看授权"
+  },
   "scheduledTasks.navTitle": {
     "message": "定时任务",
     "description": "侧边栏定时任务入口"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "定时任务",
+    "description": "定时任务页-任务标签页"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "运行记录",
+    "description": "定时任务页-全部运行记录标签页"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "全部",
+    "description": "运行记录状态筛选-全部"
   },
   "scheduledTasks.title": {
     "message": "定时任务",
@@ -598,6 +700,10 @@
   "scheduledTasks.edit": {
     "message": "编辑任务",
     "description": "编辑对话框标题"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "复制任务",
+    "description": "复制任务按钮，基于已有任务预填新建表单"
   },
   "scheduledTasks.empty": {
     "message": "还没有定时任务，点击「新建」创建一个",
@@ -614,6 +720,18 @@
   "scheduledTasks.deleteConfirm": {
     "message": "确认删除「{name}」？删除后任务将停止运行。",
     "description": "删除确认"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "立即触发",
+    "description": "手动立刻运行一次任务"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "已触发，稍后可在运行记录中查看结果。",
+    "description": "手动触发成功提示"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "触发失败，请稍后重试。",
+    "description": "手动触发失败提示"
   },
   "scheduledTasks.viewResult": {
     "message": "查看结果",
@@ -663,9 +781,75 @@
     "message": "失败",
     "description": "失败状态"
   },
+  "scheduledTasks.run.indeterminate": {
+    "message": "待确认",
+    "description": "结果待确认状态（判定无法证实，非失败）"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "达到步数上限",
+    "description": "达到最大步数"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "达到预算上限",
+    "description": "达到最大预算"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "检测到工具调用循环",
+    "description": "工具调用陷入循环"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "提示词过长",
+    "description": "提示词超出长度"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "已中断",
+    "description": "流式响应被中断"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "已中断",
+    "description": "工具执行被中断"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "等待你的输入",
+    "description": "等待用户输入"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "出错",
+    "description": "运行出错"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "未知错误",
+    "description": "未知失败原因"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "余额不足",
+    "description": "账户余额不足"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "计费授权失败",
+    "description": "凭证无效或余额不足导致计费授权失败"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "未授权",
+    "description": "凭证未授权"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "超时",
+    "description": "请求超时"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "内部错误",
+    "description": "服务内部错误"
+  },
   "scheduledTasks.run.needs_user_input": {
     "message": "需要操作",
     "description": "需要用户操作状态"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "浏览器设备已离线"
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "浏览器授权已变更，请编辑此任务"
   },
   "scheduledTasks.scheduleType.daily": {
     "message": "每天",
@@ -686,6 +870,74 @@
   "scheduledTasks.scheduleType.cron": {
     "message": "Cron 表达式",
     "description": "自定义 cron"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "每隔",
+    "description": "每隔固定间隔执行"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "分钟",
+    "description": "间隔单位：分钟"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "小时",
+    "description": "间隔单位：小时"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "天",
+    "description": "间隔单位：天"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "触发分钟",
+    "description": "每小时第几分钟触发"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "每小时的第几分钟触发（0–59）",
+    "description": "每小时分钟说明"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "从上次运行起，每隔固定时间执行一次（最短 1 分钟）",
+    "description": "固定间隔说明"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "标准 5 段 Cron 表达式：分 时 日 月 周",
+    "description": "Cron 说明"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "执行频率：{text}",
+    "description": "频率预览"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "每 {n} 分钟",
+    "description": "人类可读：每 N 分钟"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "每 {n} 小时",
+    "description": "人类可读：每 N 小时"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "每 {n} 天",
+    "description": "人类可读：每 N 天"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "每小时第 {n} 分钟",
+    "description": "人类可读：每小时第 N 分钟"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "每天 {time}",
+    "description": "人类可读：每天某时刻"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "每周 {weekday} {time}",
+    "description": "人类可读：每周某天某时刻"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron：{cron}",
+    "description": "人类可读：原始 Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "一次性 {time}",
+    "description": "人类可读：一次性"
   },
   "scheduledTasks.form.name": {
     "message": "任务名称",
@@ -719,6 +971,18 @@
     "message": "执行时间",
     "description": "时间字段"
   },
+  "scheduledTasks.form.timezone": {
+    "message": "时区",
+    "description": "定时任务时区字段"
+  },
+  "scheduledTasks.form.timezoneHint": {
+    "message": "新任务默认使用当前设备时区：{timezone}。保存后固定到任务，不会随设备位置自动改变。",
+    "description": "定时任务时区说明"
+  },
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "请选择有效的 IANA 时区",
+    "description": "无效时区提示"
+  },
   "scheduledTasks.form.weekday": {
     "message": "星期",
     "description": "星期字段"
@@ -739,6 +1003,21 @@
     "message": "选中的 Skills 可在定时任务后台执行时跳过人工确认；未选中的 Skills 仍只能预览或等待确认。",
     "description": "授权 skill 说明"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "浏览器连接"
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "可能执行以下外部副作用：{effects}"
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "无人值守授权到期时间：{time}"
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "保存前请选择在线且兼容的浏览器连接"
+  },
+  "scheduledTasks.form.connectionAccount": "{connector} 使用的账号",
+  "scheduledTasks.form.connectionAccountDefault": "使用默认账号",
+  "scheduledTasks.form.accountIsDefault": "默认",
   "scheduledTasks.form.skillMissing": {
     "message": "未连接",
     "description": "skill 缺少连接"
@@ -962,5 +1241,507 @@
   "share.footerNote": {
     "message": "您正在查看一段分享的对话。点击上方即可自己与 AI 对话。",
     "description": "分享公开页面对话下方的说明"
+  },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "未达成目标"
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "结果待确认"
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "运行状态未知",
+    "description": "工作进程未报告最终状态，运行可能已完成也可能已中断"
+  },
+  "actions.rename": {
+    "message": "重命名",
+    "description": "会话操作菜单中的重命名菜单项"
+  },
+  "actions.renameTitle": {
+    "message": "重命名会话",
+    "description": "重命名会话对话框的标题"
+  },
+  "actions.renameEmpty": {
+    "message": "请输入名称",
+    "description": "重命名时名称为空的提示"
+  },
+  "actions.renameSuccess": {
+    "message": "已重命名",
+    "description": "重命名会话成功的提示"
+  },
+  "actions.renameFailed": {
+    "message": "重命名失败，请稍后重试",
+    "description": "重命名会话失败的提示"
+  },
+  "actions.deleteConfirm": {
+    "message": "确认删除该会话？删除后不可恢复。",
+    "description": "删除会话前的确认说明"
+  },
+  "actions.deleteSuccess": {
+    "message": "已删除",
+    "description": "删除会话成功的提示"
+  },
+  "actions.deleteFailed": {
+    "message": "删除失败，请稍后重试",
+    "description": "删除会话失败的提示"
+  },
+  "actions.tokenMissing": {
+    "message": "Token 不存在，请重新登录",
+    "description": "会话操作时缺少凭证的错误提示"
+  },
+  "actions.conversationMissing": {
+    "message": "会话不存在",
+    "description": "会话操作时目标会话不存在的错误提示"
+  },
+  "scheduledTasks.form.execution": {
+    "message": "运行位置",
+    "description": "选择任务在云端还是本机运行"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "云端",
+    "description": "云端运行模式"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "这台设备",
+    "description": "本机运行模式"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "这台设备（{device}）",
+    "description": "本机运行模式，带设备名"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "由平台按时触发，关掉电脑也会照常运行。",
+    "description": "云端模式说明"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "由这台设备按时触发，可以读写本机文件、跑本机命令。设备关机或退出应用时不会运行，错过的次数只做记录，不会补跑。",
+    "description": "本机模式说明"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "手机端暂不支持本机运行",
+    "description": "移动端不支持本地执行的原因"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "本机运行需要桌面版应用",
+    "description": "网页端不支持本地执行的原因"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "无法获取本机信息，请重启应用后重试",
+    "description": "桌面端设备信息不可用"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "本机工具授权",
+    "description": "本地工具授权字段"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "选择允许这个任务使用的本机工具",
+    "description": "本地工具选择占位符"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "无人值守运行时不会弹出授权确认，只有在这里勾选的工具才可用。",
+    "description": "本地工具授权说明"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "已跳过",
+    "description": "运行状态：设备当时不在线，未运行"
+  },
+  "workingDir.choose": {
+    "message": "选择工作目录",
+    "description": "桌面端聊天输入框上方按钮：选择 AI 操作的项目文件夹；未选择前无法发送消息"
+  },
+  "workingDir.switchHint": {
+    "message": "点击切换工作目录",
+    "description": "已选工作目录时，路径胶囊的悬浮提示"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "这是本机任务，只能在绑定的那台设备的桌面版里手动运行",
+    "description": "本机任务在非绑定设备上无法手动触发"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "这个任务绑定在另一台设备上",
+    "description": "本机任务不属于当前设备"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "本机调度未登录，请重新登录后重试",
+    "description": "daemon 未持有凭据"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "这个任务正在运行中",
+    "description": "任务已在执行"
+  },
+  "actionConfirmation.confirm": {
+    "message": "确认",
+    "description": "执行前确认卡片的确认按钮"
+  },
+  "actionConfirmation.cancel": {
+    "message": "取消",
+    "description": "执行前确认卡片的取消按钮"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "已确认，正在执行",
+    "description": "执行前确认卡片：用户已确认，后续动作正在执行"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "已取消",
+    "description": "执行前确认卡片：用户取消后的折叠提示"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "正在加载媒体预览…",
+    "description": "执行前确认卡片：媒体加载状态"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "无法在此处播放预览",
+    "description": "执行前确认卡片：媒体播放失败标题"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "媒体链接可能已过期，或当前浏览器不支持该格式。发布前请先打开原文件确认。",
+    "description": "执行前确认卡片：媒体播放失败说明"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "打开原文件",
+    "description": "执行前确认卡片：打开媒体链接"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "发布前确认",
+    "description": "TikTok 发布确认卡片状态标签"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "发布到 TikTok",
+    "description": "TikTok 发布确认卡片标题"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "确认后将把此视频发布到你的 TikTok 账号。",
+    "description": "TikTok 发布确认卡片摘要"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "发布",
+    "description": "TikTok 发布确认卡片的提交按钮"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "发布到此账号",
+    "description": "TikTok 发布确认：账号标签"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "已连接",
+    "description": "TikTok 发布确认：账号连接状态"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "账号信息不可用",
+    "description": "TikTok 发布确认：缺少账号昵称时的占位文案"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "发布设置尚未准备好",
+    "description": "TikTok 发布确认：创作者信息缺失标题"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "未能读取该账号支持的可见范围。请取消并让助手重新获取 TikTok 发布设置。",
+    "description": "TikTok 发布确认：创作者信息缺失说明"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "视频时长不符合账号限制",
+    "description": "TikTok 发布确认：视频超长标题"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "发布内容",
+    "description": "TikTok 发布确认：内容设置分组标题"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* 必填",
+    "description": "TikTok 发布确认：必填说明"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "文案",
+    "description": "TikTok 发布确认：文案输入框标签"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "填写文案，支持话题标签与提及好友",
+    "description": "TikTok 发布确认：文案占位符"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "谁可以看",
+    "description": "TikTok 发布确认：可见范围下拉标签"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "请选择可见范围",
+    "description": "TikTok 发布确认：可见范围占位符，按 TikTok 要求不能有默认值"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "未获取到可用的可见范围，暂不能发布",
+    "description": "TikTok 发布确认：可见范围为空"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "所有人",
+    "description": "TikTok 可见范围：公开"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "互相关注的朋友",
+    "description": "TikTok 可见范围：互关好友"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "我的粉丝",
+    "description": "TikTok 可见范围：粉丝可见"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "仅自己",
+    "description": "TikTok 可见范围：仅自己可见"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "互动权限",
+    "description": "TikTok 发布确认：互动开关分组标签"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "仅可开启该账号当前允许的互动方式；默认全部关闭。",
+    "description": "TikTok 发布确认：互动开关说明"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "此账号已关闭：{list}",
+    "description": "TikTok 发布确认：账号禁用的互动能力"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "评论",
+    "description": "TikTok 互动开关：允许评论"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "合拍",
+    "description": "TikTok 互动开关：允许合拍"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "拼接",
+    "description": "TikTok 互动开关：允许拼接"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "内容披露",
+    "description": "TikTok 发布确认：商业内容分组标题"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "这是商业内容",
+    "description": "TikTok 发布确认：商业内容披露开关"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "如果内容推广品牌、产品或服务，请按实际情况披露。",
+    "description": "TikTok 发布确认：商业内容披露说明"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "推广自己的品牌",
+    "description": "TikTok 商业内容：推广自有业务"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "推广您本人或您经营的业务",
+    "description": "TikTok 商业内容：推广自有业务说明"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "品牌合作内容",
+    "description": "TikTok 商业内容：付费合作"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "因付款、赠品或其他利益而推广第三方",
+    "description": "TikTok 商业内容：付费合作说明"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "视频将被标记为「推广内容」",
+    "description": "TikTok 商业内容：选择你的品牌后的标记提示"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "视频将被标记为「付费合作」",
+    "description": "TikTok 商业内容：选择品牌内容后的标记提示"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "品牌内容的可见范围不能设为「仅自己」",
+    "description": "TikTok 发布确认：品牌内容与仅自己可见互斥的提示"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "视频超过该账号的时长上限（{max} 秒）",
+    "description": "TikTok 发布确认：视频超长错误"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "发布前请确认",
+    "description": "TikTok 发布确认：政策说明标题"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "点击“发布”即表示您确认拥有内容与音乐的使用权，并同意 TikTok 的音乐使用条款。",
+    "description": "TikTok 发布确认：普通内容政策说明"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "点击“发布”即表示您确认披露信息准确，并同意 TikTok 的品牌内容政策与音乐使用条款。",
+    "description": "TikTok 发布确认：品牌内容政策说明"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "查看《音乐使用确认》",
+    "description": "TikTok 发布确认：音乐使用确认链接"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "查看《品牌内容政策》",
+    "description": "TikTok 发布确认：品牌内容政策链接"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "发布信息不完整，请取消后重新生成确认卡",
+    "description": "TikTok 发布确认：详情缺失时的按钮禁用原因"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "请换用符合该账号时长限制的视频",
+    "description": "TikTok 发布确认：视频超长时的按钮禁用原因"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "请选择谁可以看此视频",
+    "description": "TikTok 发布确认：未选可见范围时的按钮禁用原因"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "请选择商业内容类型",
+    "description": "TikTok 发布确认：未选商业披露类型时的按钮禁用原因"
+  },
+  "scheduledTemplates.title": {
+    "message": "自动化模板",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "从模板新建",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "自定义创建",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "让 AI 按时替你完成工作",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "选择一个官方模板并连接所需账号。任务创建后可在卡片上立即运行。",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.browse": {
+    "message": "浏览模板",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "选择模板",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "简单配置",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "连接账号",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.search": {
+    "message": "搜索模板",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.featured": {
+    "message": "推荐",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.ready": {
+    "message": "可立即使用",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "需要连接 {count} 项",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "执行时间",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "准备所需连接",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "无需连接其他账号",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.connected": {
+    "message": "已连接",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "尚未连接",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "选择账号",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.connect": {
+    "message": "去连接",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.create": {
+    "message": "创建任务",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "任务创建失败，请检查配置或连接",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "任务已创建并保持关闭。请先在卡片上立即运行，成功后再启用。",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "暂时无法启用。请先立即运行任务并确认成功；部分模板还需要生成指定草稿。",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "模板加载失败，请稍后重试",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "全部",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "营销增长",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "内容创作",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "工作效率",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "情报与研究",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "开发与运维",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "个人助理",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.previous": {
+    "message": "上一步",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.next": {
+    "message": "下一步",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "我们只会使用此模板需要的连接；已连接的账号会自动复用。",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "此模板只使用内置能力，可以直接创建任务。",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "完成连接后即可继续。",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "这个任务会固定使用你选择的账号。",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "通过已授权的 MCP 连接运行，无需额外绑定账号。",
+    "description": "Scheduled template wizard navigation and connection guidance"
   }
 }

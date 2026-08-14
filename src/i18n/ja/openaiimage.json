@@ -51,6 +51,10 @@
     "message": "サイズ",
     "description": "出力画像サイズ"
   },
+  "size.auto": {
+    "message": "自動",
+    "description": "サイズオプション：自動、モデルがプロンプトに基づいて適切なアスペクト比を選択します"
+  },
   "description.size": {
     "message": "画像生成のための出力サイズ。一般的な値：1024x1024、1536x1024、1024x1536。",
     "description": "サイズ説明"
@@ -112,7 +116,7 @@
     "description": "model パラメータ説明"
   },
   "description.imageUrls": {
-    "message": "1〜5枚の参考画像をアップロードして編集モードに入ります。",
+    "message": "1〜16枚の参考画像をアップロードして編集モードに入ります。",
     "description": "image_urls パラメータ説明"
   },
   "status.pending": {
@@ -156,7 +160,7 @@
     "description": "使い切れたメッセージ"
   },
   "message.uploadImageExceed": {
-    "message": "最大5枚の画像をアップロードできます",
+    "message": "最大{count}枚の画像をアップロードできます",
     "description": "画像数が制限を超えています"
   },
   "message.uploadImageError": {

@@ -27,6 +27,18 @@
     "message": "Tempo gasto",
     "description": "Etiqueta de tempo gasto da tarefa Fish"
   },
+  "name.failure": {
+    "message": "Falha na Geração",
+    "description": "Título de falha de tarefa no Fish"
+  },
+  "name.failureReason": {
+    "message": "Razão da Falha",
+    "description": "Rótulo da razão da falha da tarefa no Fish"
+  },
+  "name.traceId": {
+    "message": "ID de Rastreamento",
+    "description": "Rótulo do ID de rastreamento da tarefa no Fish"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Etiqueta do cartão de tarefa do robô Fish"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Nenhum modelo de voz disponível",
     "description": "Mensagem de aviso quando o seletor de voz do Fish está vazio"
+  },
+  "group.publicVoices": {
+    "message": "Biblioteca de Voz Pública",
+    "description": "Título do grupo de vozes públicas do seletor de sons Fish"
+  },
+  "message.searching": {
+    "message": "Buscando…",
+    "description": "Indicação de carregamento para busca remota no seletor de sons Fish"
+  },
+  "message.searchVoiceHint": {
+    "message": "Digite palavras-chave para buscar vozes públicas",
+    "description": "Dica de estado vazio para busca remota no seletor de sons Fish"
   },
   "name.voiceTitle": {
     "message": "Nome",

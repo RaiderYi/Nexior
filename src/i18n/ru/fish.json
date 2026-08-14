@@ -27,6 +27,18 @@
     "message": "Затраченное время",
     "description": "Метка затраченного времени задачи Fish"
   },
+  "name.failure": {
+    "message": "Ошибка генерации",
+    "description": "Заголовок ошибки задачи Fish"
+  },
+  "name.failureReason": {
+    "message": "Причина ошибки",
+    "description": "Метка причины ошибки задачи Fish"
+  },
+  "name.traceId": {
+    "message": "ID отслеживания",
+    "description": "Метка ID отслеживания задачи Fish"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Метка робота карточки задачи Fish"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Нет доступных голосовых моделей",
     "description": "Подсказка, когда выбор голосов Fish пуст"
+  },
+  "group.publicVoices": {
+    "message": "Общая библиотека звуков",
+    "description": "Заголовок группы общих звуков в выборщике звуков Fish"
+  },
+  "message.searching": {
+    "message": "Поиск…",
+    "description": "Подсказка о загрузке удаленного поиска в выборщике звуков Fish"
+  },
+  "message.searchVoiceHint": {
+    "message": "Введите ключевое слово для поиска общих звуков",
+    "description": "Подсказка о пустом состоянии удаленного поиска в выборщике звуков Fish"
   },
   "name.voiceTitle": {
     "message": "Название",

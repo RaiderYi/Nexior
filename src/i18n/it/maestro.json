@@ -27,6 +27,26 @@
     "message": "Motivo del fallimento",
     "description": "Motivo del fallimento"
   },
+  "name.mode": {
+    "message": "Modalità",
+    "description": "Modalità di generazione / azione"
+  },
+  "option.action.generate": {
+    "message": "Genera",
+    "description": "Opzione di azione per generare"
+  },
+  "option.action.remix": {
+    "message": "Remixa",
+    "description": "Opzione di azione per remixare"
+  },
+  "option.action.edit": {
+    "message": "Modifica",
+    "description": "Opzione di azione per modificare"
+  },
+  "option.action.extend": {
+    "message": "Estendi",
+    "description": "Opzione di azione per estendere"
+  },
   "step.plan": {
     "message": "Piano e storyboard",
     "description": "Pipeline step: plan"
@@ -63,6 +83,14 @@
     "message": "Lingue",
     "description": "Campo per le lingue di output"
   },
+  "name.primaryLanguage": {
+    "message": "Lingua principale",
+    "description": "Campo per la lingua di output principale"
+  },
+  "name.additionalLanguages": {
+    "message": "Lingue aggiuntive (opzionale)",
+    "description": "Campo per lingue di output aggiuntive"
+  },
   "name.aspect": {
     "message": "Rapporto d'aspetto",
     "description": "Campo per il rapporto d'aspetto"
@@ -75,17 +103,41 @@
     "message": "Qualità",
     "description": "Production quality tier field"
   },
-  "option.quality.draft": {
-    "message": "Bozza · anteprima rapida",
-    "description": "Draft quality option"
+  "option.quality.lite": {
+    "message": "Lite Leggero",
+    "description": "Opzione SKU Lite"
   },
   "option.quality.standard": {
     "message": "Standard · bilanciato",
     "description": "Standard quality option"
   },
-  "option.quality.premium": {
-    "message": "Premium · più dettagli",
-    "description": "Premium quality option"
+  "option.quality.pro": {
+    "message": "Pro Professionale",
+    "description": "Opzione SKU Pro"
+  },
+  "description.quality.lite": {
+    "message": "Crea rapidamente video brevi e semplici, con effetti leggeri e output in un'unica lingua.",
+    "description": "Riepilogo SKU Lite"
+  },
+  "description.quality.standard": {
+    "message": "Produzione equilibrata in 1080p, supporta la narrazione digitale e fino a due lingue.",
+    "description": "Riepilogo SKU Standard"
+  },
+  "description.quality.pro": {
+    "message": "Supporta video lunghi, cortometraggi e la massima capacità creativa.",
+    "description": "Riepilogo SKU Pro"
+  },
+  "name.upToSeconds": {
+    "message": "Massimo {seconds} secondi",
+    "description": "Durata massima dello SKU"
+  },
+  "name.estimatedCredits": {
+    "message": "Stimati {credits} crediti",
+    "description": "Crediti di generazione stimati"
+  },
+  "name.requiresSku": {
+    "message": "Richiede {sku}",
+    "description": "SKU minimo per un tipo di video"
   },
   "name.remixing": {
     "message": "Remix",
@@ -98,6 +150,10 @@
   "placeholder.select": {
     "message": "Seleziona",
     "description": "Segnaposto generico per la selezione"
+  },
+  "placeholder.additionalLanguages": {
+    "message": "Aggiungi altre lingue di output",
+    "description": "Segnaposto per lingue aggiuntive"
   },
   "description.prompt": {
     "message": "Spiega chiaramente cosa desideri, lascia a Maestro la sceneggiatura, le immagini, il doppiaggio e il montaggio.",
@@ -148,7 +204,7 @@
     "description": "Pulsante per caricare file di riferimento"
   },
   "button.remix": {
-    "message": "Remix",
+    "message": "Remixa",
     "description": "Pulsante per remixare questo video"
   },
   "button.cancelRemix": {
@@ -187,12 +243,36 @@
     "message": "Non ci sono video — crea il tuo primo a sinistra.",
     "description": "Nessun compito"
   },
+  "name.customize": {
+    "message": "Personalizza",
+    "description": "Optional creative controls toggle"
+  },
+  "description.customize.auto": {
+    "message": "Auto · Maestro sceglie il tipo di video, lo stile visivo e il timbro della voce.",
+    "description": "Customization disabled state"
+  },
+  "description.customize.manual": {
+    "message": "Scegli il tipo di video, lo stile visivo e il timbro della voce.",
+    "description": "Customization enabled state"
+  },
+  "name.customizeScenario": {
+    "message": "Personalizza il tipo di video",
+    "description": "Video type customization toggle"
+  },
+  "name.customizeStyle": {
+    "message": "Personalizza lo stile visivo",
+    "description": "Visual style customization toggle"
+  },
+  "name.customizeVoice": {
+    "message": "Personalizza il timbro della voce",
+    "description": "Voice timbre customization toggle"
+  },
   "name.scenario": {
     "message": "Tipo di video",
     "description": "Video type field"
   },
   "description.scenario": {
-    "message": "Scegli il tipo di video da creare. Auto lascia decidere a Maestro; oppure imponi uno stile come dramma breve, riprese reali, esplicativo o promo prodotto.",
+    "message": "Attiva la personalizzazione per scegliere il tipo di video; lasciala disattivata per far decidere automaticamente a Maestro.",
     "description": "Scenario field help"
   },
   "option.scenario.auto": {
@@ -211,20 +291,24 @@
     "message": "Persona digitale · Voce narrante",
     "description": "Opzione scenario avatar / testa parlante"
   },
-  "option.scenario.motion": {
-    "message": "Grafica animata",
-    "description": "Motion graphics scenario option"
-  },
   "option.scenario.captions": {
     "message": "Aggiungi sottotitoli",
     "description": "Add-captions scenario option"
+  },
+  "message.captionsNeedVideo": {
+    "message": "I sottotitoli cinetici lavorano su un video con volto parlante esistente: caricane uno sopra prima.",
+    "description": "Warning shown when captions video type is selected but no source video is uploaded"
+  },
+  "message.avatarNeedsImage": {
+    "message": "La narrazione digitale richiede un ritratto, caricalo sopra prima.",
+    "description": "Avviso mostrato quando viene selezionato un video avatar ma non è stato caricato alcun ritratto"
   },
   "name.style": {
     "message": "Stile visivo",
     "description": "Campo per lo stile visivo"
   },
   "description.style": {
-    "message": "Suggerimenti di stile visivo opzionali (applicabili a tipografia, colori, animazioni, ritmo), indipendenti dal tipo di video. Preset opzionali o input manuale.",
+    "message": "Attiva la personalizzazione per scegliere o inserire lo stile visivo; lasciala disattivata per far decidere automaticamente a Maestro.",
     "description": "Aiuto per il campo stile"
   },
   "option.style.auto": {
@@ -236,60 +320,60 @@
     "description": "Opzione stile cinematografico"
   },
   "option.style.glass": {
-    "message": "Frosted Glass",
-    "description": "Frosted glass style option"
+    "message": "Vetro smerigliato · Vetro liquido",
+    "description": "Opzione di stile vetro smerigliato"
   },
   "option.style.luxury": {
-    "message": "Luxury",
-    "description": "Luxury style option"
+    "message": "Lusso · Spazio bianco",
+    "description": "Opzione di stile di lusso"
   },
   "option.style.swiss": {
-    "message": "Swiss Grid",
-    "description": "Swiss grid style option"
+    "message": "Griglia svizzera · Precisione",
+    "description": "Opzione di stile griglia svizzera"
   },
   "option.style.modern": {
-    "message": "Modern",
-    "description": "Modern style option"
+    "message": "Moderno · SaaS",
+    "description": "Opzione di stile moderno"
   },
   "option.style.editorial": {
-    "message": "Editorial",
-    "description": "Editorial style option"
+    "message": "Stile editoriale",
+    "description": "Opzione di stile editoriale"
   },
   "option.style.warm": {
-    "message": "Warm",
-    "description": "Warm style option"
+    "message": "Caldo e intimo",
+    "description": "Opzione di stile caldo"
   },
   "option.style.vibrant": {
-    "message": "Vibrant",
-    "description": "Vibrant style option"
+    "message": "Vivace",
+    "description": "Opzione di stile vivace"
   },
   "option.style.neon": {
     "message": "Stile neon",
     "description": "Opzione stile neon"
   },
   "option.style.mono": {
-    "message": "Monochrome",
-    "description": "Monochrome style option"
+    "message": "Monocromatico",
+    "description": "Opzione di stile monocromatico"
   },
   "option.style.pastel": {
-    "message": "Pastel",
-    "description": "Pastel style option"
+    "message": "Pastello",
+    "description": "Opzione di stile pastello"
   },
   "option.style.bold": {
-    "message": "Bold Type",
-    "description": "Bold type style option"
+    "message": "Grassetto · Alta energia",
+    "description": "Opzione di stile tipo grassetto"
   },
   "option.style.industrial": {
-    "message": "Industrial",
-    "description": "Industrial style option"
+    "message": "Industriale",
+    "description": "Opzione di stile industriale"
   },
   "option.style.futuristic": {
-    "message": "Futuristic",
-    "description": "Futuristic style option"
+    "message": "Futuristico",
+    "description": "Opzione di stile futuristico"
   },
   "option.style.retro": {
-    "message": "Retro Film",
-    "description": "Retro film style option"
+    "message": "Retro",
+    "description": "Opzione di stile retro"
   },
   "name.voice": {
     "message": "Timbro della voce",
@@ -300,7 +384,7 @@
     "description": "Pulsante per la preview della voce / riproduzione del campione"
   },
   "description.voice": {
-    "message": "Seleziona il timbro della voce per la narrazione. Il timbro non è legato alla lingua: lo stesso timbro leggerà nella lingua selezionata sopra; fai clic su riproduci per ascoltare.",
+    "message": "Attiva la personalizzazione per scegliere il timbro della voce; altrimenti Maestro lo seleziona automaticamente. Il timbro è indipendente dalla lingua e puoi ascoltarne l'anteprima.",
     "description": "Aiuto per il campo della voce"
   },
   "option.voice.auto": {

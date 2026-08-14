@@ -1,24 +1,26 @@
 <template>
-  <div class="field">
-    <h2 class="title font-bold">{{ $t('veo.name.action') }}</h2>
-    <el-select v-model="value" class="value" :placeholder="$t('veo.placeholder.select')" clearable>
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        <span class="float-left">{{ item.label }}</span>
-      </el-option>
-    </el-select>
-  </div>
+  <el-tabs :model-value="value" class="action-tabs scenario-tabs scenario-tabs--divided" @update:model-value="onUpdate">
+    <el-tab-pane v-for="item in options" :key="item.value" :name="item.value">
+      <template #label>
+        <span class="tab-label">
+          <span class="text">{{ item.label }}</span>
+        </span>
+      </template>
+    </el-tab-pane>
+  </el-tabs>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ElSelect, ElOption } from 'element-plus';
+import { ElTabs, ElTabPane } from 'element-plus';
 import { VEO_DEFAULT_ACTION } from '@/constants';
+import { normalizeVeoConfigForAction, VeoAction } from '@/utils/veo/config';
 
 export default defineComponent({
   name: 'ActionSelector',
   components: {
-    ElSelect,
-    ElOption
+    ElTabs,
+    ElTabPane
   },
   data() {
     return {};
@@ -37,62 +39,54 @@ export default defineComponent({
         {
           value: 'ingredients2video',
           label: this.$t('veo.button.actionIngredients')
-        },
-        {
-          value: 'upsample',
-          label: this.$t('veo.button.actionUpsample')
-        },
-        {
-          value: 'extend',
-          label: this.$t('veo.button.actionExtend')
-        },
-        {
-          value: 'reshoot',
-          label: this.$t('veo.button.actionReshoot')
-        },
-        {
-          value: 'object_insert',
-          label: this.$t('veo.button.actionObjectInsert')
-        },
-        {
-          value: 'object_remove',
-          label: this.$t('veo.button.actionObjectRemove')
         }
       ];
     },
-    value: {
-      get() {
-        return this.$store.state.veo?.config?.action;
-      },
-      set(val: string) {
-        this.$store.commit('veo/setConfig', {
-          ...this.$store.state.veo?.config,
-          action: val
-        });
-      }
+    value() {
+      return this.$store.state.veo?.config?.action || VEO_DEFAULT_ACTION;
     }
   },
   mounted() {
-    if (!this.value) {
-      this.value = VEO_DEFAULT_ACTION;
+    if (!this.$store.state.veo?.config?.action) {
+      this.onUpdate(VEO_DEFAULT_ACTION);
+    }
+  },
+  methods: {
+    onUpdate(value: string | number) {
+      this.$store.commit(
+        'veo/setConfig',
+        normalizeVeoConfigForAction(this.$store.state.veo?.config, value as VeoAction)
+      );
     }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.field {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  .title {
-    font-size: 14px;
-    margin: 0;
-    width: 30%;
+// Width follows each label with fixed 16px whitespace so long locales stay on
+// one line; the nav scrolls horizontally if all tabs together overflow. This
+// tab bar sits inside ConfigPanel's p-5 column, so the wrapper adds no padding.
+.action-tabs {
+  :deep(.el-tabs__item) {
+    height: 38px;
+    line-height: 38px;
+    font-size: 13px;
+    padding: 0 16px;
+    white-space: nowrap;
   }
-  .value {
-    flex: 1;
+
+  .tab-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+
+    .text {
+      overflow: hidden;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 }
 </style>

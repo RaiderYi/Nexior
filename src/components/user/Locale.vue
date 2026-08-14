@@ -1,8 +1,8 @@
 <template>
-  <el-dropdown trigger="click" @command="onSelectLocale">
+  <el-dropdown v-if="!isForced" trigger="click" @command="onSelectLocale">
     <span class="el-dropdown-link">
       {{ currentLabel }}
-      <el-icon class="el-icon--right"><arrow-down /></el-icon>
+      <el-icon class="el-icon--right"><arrow-down :size="'1em' as any" aria-hidden="true" focusable="false" /></el-icon>
     </span>
     <template #dropdown>
       <el-dropdown-menu>
@@ -15,13 +15,14 @@
 </template>
 
 <script lang="ts">
+import { ExpandDownIcon as ArrowDown } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElDropdown, ElDropdownMenu, ElDropdownItem, ElIcon } from 'element-plus';
-import { ArrowDown } from '@element-plus/icons-vue';
+
 import { setCookie } from 'typescript-cookie';
 import { getDomain } from '@/utils';
-import { I18N_SUPPORTED_LOCALES } from '@/constants/i18n';
 import { setI18nLanguage } from '@/i18n';
+import { getForcedLocale, getSiteLocaleOptions, resolveSiteLocale } from '@/utils/siteLocales';
 
 export default defineComponent({
   name: 'Locale',
@@ -32,12 +33,16 @@ export default defineComponent({
     ElIcon,
     ArrowDown
   },
-  data() {
-    return {
-      locales: I18N_SUPPORTED_LOCALES
-    };
-  },
   computed: {
+    site() {
+      return this.$store.getters.site;
+    },
+    locales() {
+      return getSiteLocaleOptions(this.site?.supported_locales);
+    },
+    isForced(): boolean {
+      return !!getForcedLocale(this.site);
+    },
     value(): string {
       return this.$i18n.locale;
     },
@@ -46,9 +51,29 @@ export default defineComponent({
       return found ? found.label : this.value;
     }
   },
+  watch: {
+    locales: {
+      immediate: true,
+      handler() {
+        this.ensureAllowedLocale();
+      }
+    },
+    // `locales` can stay identical while the pin changes, so watch it too.
+    isForced() {
+      this.ensureAllowedLocale();
+    }
+  },
   methods: {
+    async ensureAllowedLocale() {
+      const locale = resolveSiteLocale(this.value, this.site);
+      if (locale === this.value) return;
+      await this.applyLocale(locale);
+    },
     async onSelectLocale(locale: string) {
       this.$router.push({ query: { ...this.$route.query, locale: undefined } });
+      await this.applyLocale(locale);
+    },
+    async applyLocale(locale: string) {
       await setI18nLanguage(locale);
       setCookie('LOCALE', locale, {
         path: '/',

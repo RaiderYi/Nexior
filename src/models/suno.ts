@@ -64,7 +64,7 @@ export interface ISunoConfig {
   instrumental?: boolean;
   title?: string;
   style?: string;
-  style_negative?: string;
+  negative_tags?: string;
   action?: string;
   audio?: ISunoAudio | undefined;
   audio_id?: string;
@@ -75,6 +75,7 @@ export interface ISunoConfig {
   style_influence?: number;
   variation_category?: string;
   audio_weight?: number;
+  duration?: number;
   persona_id?: string;
   replace_section_start?: number;
   replace_section_end?: number;
@@ -96,12 +97,15 @@ export interface ISunoAudioRequest {
   custom?: boolean;
   title?: string;
   style?: string;
+  negative_tags?: string;
+  /** @deprecated Read only for reusing tasks created before negative_tags. */
   style_negative?: string;
   vocal_gender?: string;
   weirdness?: number;
   style_influence?: number;
   variation_category?: string;
   audio_weight?: number;
+  duration?: number;
   persona_id?: string;
   audio_id?: string;
   mashup_audio_ids?: string[];
@@ -254,14 +258,23 @@ export interface ISunoMP4 {
   video_url?: string;
 }
 
-export interface ISunoAudioResponse {
+export interface ISunoTaskResultMeta {
   success?: boolean;
-  task_id: string;
-  data: ISunoAudio[];
+  trace_id?: string;
+  error?:
+    | string
+    | {
+        code?: string;
+        message?: string;
+      };
 }
 
-export interface ISunoLyricResponse {
-  success?: boolean;
+export interface ISunoAudioResponse extends ISunoTaskResultMeta {
+  task_id?: string;
+  data?: ISunoAudio[];
+}
+
+export interface ISunoLyricResponse extends ISunoTaskResultMeta {
   task_id: string;
   data: ISunoAudioLyric;
 }
@@ -282,6 +295,7 @@ export interface ISunoTask {
   map(arg0: (song: any) => any): any;
   id: string;
   created_at?: number;
+  trace_id?: string;
   request?: ISunoAudioRequest | ISunoLyricRequest;
   response?: ISunoAudioResponse | ISunoLyricResponse;
 }

@@ -28,8 +28,8 @@
     "description": "Мітка для введення зображення"
   },
   "name.referenceImages": {
-    "message": "Reference Images",
-    "description": "Label for reference images"
+    "message": "Референсні зображення",
+    "description": "Мітка для референсних зображень"
   },
   "name.required": {
     "message": "Обов'язково",
@@ -64,7 +64,7 @@
     "description": "Інструкції щодо введення підказки"
   },
   "description.model": {
-    "message": "Виберіть модель Grok Imagine. grok-imagine-video підтримує текстове та зображення відео; 1.5-preview підтримує лише зображення відео.",
+    "message": "Виберіть модель Grok Imagine. :reverse використовує швидкий/стандартний кінцевий пункт; :official використовує офіційний кінцевий пункт (вища якість, оплата за секунду). grok-imagine-video-1.5:official підтримує лише генерацію відео з зображення.",
     "description": "Інструкції щодо вибору моделі"
   },
   "description.ratio": {
@@ -76,16 +76,16 @@
     "description": "Інструкції щодо роздільної здатності"
   },
   "description.duration": {
-    "message": "Тривалість відео (секунди), оплата за вихідну кількість секунд.",
+    "message": "Тривалість відео (секунди). 1.5-fast (реверс) підтримує 6-30 секунд, оплата за тривалістю; інші варіанти підтримують 1-15 секунд, оплата за вихідні секунди.",
     "description": "Інструкції щодо тривалості"
   },
   "description.image": {
-    "message": "Додаткове зображення для генерації відео. grok-imagine-video-1.5-preview є обов'язковим.",
+    "message": "Додаткове зображення для генерації відео. grok-imagine-video-1.5:official є обов'язковим.",
     "description": "Інструкції щодо введення зображення"
   },
   "description.referenceImages": {
-    "message": "Optional reference images to guide the style or content of the generated video (grok-imagine-video only).",
-    "description": "Instructions for reference images"
+    "message": "Додаткові зображення для керування стилем або змістом згенерованого відео.",
+    "description": "Інструкції щодо референсних зображень"
   },
   "placeholder.prompt": {
     "message": "Опишіть ваше відео…",
@@ -95,13 +95,21 @@
     "message": "Будь ласка, виберіть",
     "description": "Заповнювач для вибору"
   },
-  "model.default": {
-    "message": "Grok Imagine відео",
-    "description": "Мітка за замовчуванням для моделі"
+  "model.fastReverse": {
+    "message": "Grok Imagine відео 1.5 Fast (швидко, 6–30 секунд)",
+    "description": "Мітка моделі 1.5-fast реверс"
   },
-  "model.preview15": {
-    "message": "Grok Imagine відео 1.5 (попередній перегляд, зображення відео)",
-    "description": "Мітка для моделі попереднього перегляду 1.5"
+  "model.reverse": {
+    "message": "Grok Imagine відео (стандартне, 1–15 секунд)",
+    "description": "Мітка моделі grok-imagine-video реверс"
+  },
+  "model.official": {
+    "message": "Grok Imagine відео · Офіційне (вища якість, оплата за секунду)",
+    "description": "Мітка офіційної моделі grok-imagine-video"
+  },
+  "model.official15": {
+    "message": "Grok Imagine відео 1.5 · Офіційне (генерація відео з зображення, до 1080p)",
+    "description": "Мітка офіційної моделі 1.5"
   },
   "button.upload": {
     "message": "Завантажити",
@@ -128,8 +136,8 @@
     "description": "Попередження про перевищення завантаження"
   },
   "message.uploadReferenceExceed": {
-    "message": "You can upload up to 4 reference images.",
-    "description": "Reference images upload exceed warning"
+    "message": "Максимум можна завантажити 4 референсні зображення.",
+    "description": "Попередження про перевищення завантаження референсних зображень"
   },
   "message.uploadError": {
     "message": "Не вдалося завантажити зображення, будь ласка, спробуйте ще раз.",

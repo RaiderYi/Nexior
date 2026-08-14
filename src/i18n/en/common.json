@@ -1,4 +1,8 @@
 {
+  "message.mediaPreviewUnavailable": {
+    "message": "Preview unavailable",
+    "description": "Media preview could not be loaded"
+  },
   "button.setup": {
     "message": "Setup",
     "description": "Text in button for performing setup"
@@ -62,6 +66,46 @@
   "button.close": {
     "message": "Close",
     "description": "Text in button for closing a dialog or panel"
+  },
+  "button.send": {
+    "message": "Send",
+    "description": "Accessible label for sending content"
+  },
+  "button.stop": {
+    "message": "Stop",
+    "description": "Accessible label for stopping an operation"
+  },
+  "button.openMenu": {
+    "message": "Open menu",
+    "description": "Accessible label for opening a navigation or configuration menu"
+  },
+  "button.more": {
+    "message": "More actions",
+    "description": "Accessible label for opening an actions menu"
+  },
+  "button.remove": {
+    "message": "Remove",
+    "description": "Accessible label for removing an item"
+  },
+  "player.previous": {
+    "message": "Previous track",
+    "description": "Accessible label for the previous-track player button"
+  },
+  "player.play": {
+    "message": "Play",
+    "description": "Accessible label for the player play button"
+  },
+  "player.pause": {
+    "message": "Pause",
+    "description": "Accessible label for the player pause button"
+  },
+  "player.next": {
+    "message": "Next track",
+    "description": "Accessible label for the next-track player button"
+  },
+  "player.volume": {
+    "message": "Volume",
+    "description": "Accessible label for the player volume control"
   },
   "button.expand": {
     "message": "Expand",
@@ -131,6 +175,14 @@
     "message": "Download for macOS",
     "description": "Text in button for downloading the macOS desktop installer"
   },
+  "button.downloadBrowserExtension": {
+    "message": "Download Browser Extension",
+    "description": "Text in button for downloading the Chrome / Edge browser extension package"
+  },
+  "button.viewExtensionGuide": {
+    "message": "View install guide",
+    "description": "Secondary button on the browser extension card that opens the installation docs"
+  },
   "button.installIos": {
     "message": "Install iOS",
     "description": "Text in button for installing the iOS app"
@@ -196,7 +248,7 @@
     "description": "The type of the entity"
   },
   "entity.website": {
-    "message": "BigPlayer AI",
+    "message": "Ace Data Cloud",
     "description": "Website name, no translation needed, keep as 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -264,7 +316,7 @@
     "description": "Used to display the amount of service that has been used"
   },
   "message.mobileAppDescription": {
-    "message": "Take the full BigPlayer AI studio everywhere — on Android, iPhone & iPad, Windows, and macOS. Install in one tap, or scan a QR code to get started.",
+    "message": "Take the full AceData studio everywhere — on Android, iPhone & iPad, Windows, and macOS. Install in one tap, or scan a QR code to get started.",
     "description": "Description text for the app download page"
   },
   "message.mobileAndroidHint": {
@@ -294,6 +346,14 @@
   "message.mobileSharedAccount": {
     "message": "Shared account and quota with the web version",
     "description": "Used to explain that the mobile version shares the account with the web version"
+  },
+  "message.extensionAvailableNow": {
+    "message": "Free to use",
+    "description": "Status chip on the browser extension card"
+  },
+  "message.extensionHint": {
+    "message": "Authorize social accounts and let AceData drive your local browser. Unzip the download, then choose Load unpacked on your browser's extensions page.",
+    "description": "Description text on the browser extension card"
   },
   "message.mobileIosHint": {
     "message": "For iPhone and iPad — install directly from the App Store, sharing your account and quota with the web app.",
@@ -348,7 +408,7 @@
     "description": "Mobile app installation prompt"
   },
   "title.mobileApp": {
-    "message": "Get the BigPlayer AI Apps",
+    "message": "Get the AceData Apps",
     "description": "Title for the app download page"
   },
   "title.mobileFastAccess": {
@@ -394,6 +454,18 @@
   "message.confirmDelete": {
     "message": "Are you sure you want to delete?",
     "description": "Message confirming that the user wants to delete an item"
+  },
+  "message.deleteTaskConfirm": {
+    "message": "Delete this generation record? It will be removed from all your devices and cannot be recovered.",
+    "description": "Confirmation message shown before deleting a single task record"
+  },
+  "message.deleteTaskSuccess": {
+    "message": "Record deleted.",
+    "description": "Message shown after a task record is successfully deleted"
+  },
+  "message.deleteTaskFailed": {
+    "message": "Failed to delete. Please try again later.",
+    "description": "Message shown when deleting a task record fails"
   },
   "message.expiredAt": {
     "message": "Expiration Time",
@@ -567,6 +639,10 @@
     "message": "Hailuo",
     "description": "Text in the website navigation bar to display the Hailuo page, must remain as 'Hailuo'"
   },
+  "nav.minimax": {
+    "message": "MiniMax H3",
+    "description": "Navigation name for the MiniMax H3 video generation service"
+  },
   "nav.wan": {
     "message": "Wan",
     "description": "Text in the website navigation bar to display the Wan page, must remain as 'Wan'"
@@ -582,6 +658,10 @@
   "nav.kimi": {
     "message": "Kimi",
     "description": "Text in the website navigation bar to display the Kimi page, must remain as 'Kimi'"
+  },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
   },
   "nav.serp": {
     "message": "SERP",
@@ -635,13 +715,17 @@
     "message": "Settings",
     "description": "Text in the website navigation bar to display the settings page"
   },
-  "nav.headshots": {
-    "message": "AI ID Photo",
-    "description": "Text in the website navigation bar to display the site configuration page"
-  },
   "nav.more": {
     "message": "More",
     "description": "Text in the website navigation bar to expand more services"
+  },
+  "nav.collapseDock": {
+    "message": "Collapse app bar",
+    "description": "Button that collapses the mobile bottom app bar"
+  },
+  "nav.expandDock": {
+    "message": "Expand app bar",
+    "description": "Button that expands the mobile bottom app bar"
   },
   "nav.locale": {
     "message": "Language Settings",
@@ -724,7 +808,7 @@
     "description": "Company's address"
   },
   "about.email": {
-    "message": "office@acedata.cloud",
+    "message": "office{'@'}acedata.cloud",
     "description": "Company's email"
   },
   "about.link1": {
@@ -787,6 +871,30 @@
     "message": "Theme",
     "description": "Title for the theme settings section in the settings page"
   },
+  "settings.sendShortcut": {
+    "message": "Send message",
+    "description": "Title of the send-message shortcut row in General settings: choose Enter or modifier+Enter to send."
+  },
+  "sendShortcut.enter": {
+    "message": "Enter to send",
+    "description": "Send-shortcut option: press Enter to send the message."
+  },
+  "sendShortcut.modEnter": {
+    "message": "{key} + Enter to send",
+    "description": "Send-shortcut option: press the platform modifier (⌘ or Ctrl) plus Enter to send. {key} is the modifier symbol."
+  },
+  "settings.loginMode": {
+    "message": "Login Mode",
+    "description": "Title for the login-mode row in the Auth settings tab: choose whether login uses an embedded popup (iframe) or a full-page redirect. Site-level, admin-only."
+  },
+  "loginMode.iframe": {
+    "message": "Embedded popup",
+    "description": "Login mode option: complete login in an embedded iframe popup without leaving the current page"
+  },
+  "loginMode.redirect": {
+    "message": "Full-page redirect",
+    "description": "Login mode option: redirect to the login page and return after signing in"
+  },
   "settings.seo": {
     "message": "SEO Settings",
     "description": "Title for the SEO settings section in the settings page"
@@ -800,12 +908,12 @@
     "description": "Title for the distribution settings section in the settings page"
   },
   "settings.function": {
-    "message": "Function Settings",
-    "description": "Title for the function settings section in the settings page"
+    "message": "Capabilities",
+    "description": "Title for the site capabilities section in the settings page"
   },
   "settings.auth": {
-    "message": "Login Methods",
-    "description": "Title for the 'Login Methods' tab in the settings sidebar — configure which authentication providers this site offers and which one is pre-selected by default. Admin-only."
+    "message": "Auth",
+    "description": "Title for the 'Auth' tab in the settings sidebar — configure which authentication providers this site offers, which one is pre-selected by default, and how login is launched (full-page redirect vs embedded popup). Admin-only."
   },
   "settings.apiKey": {
     "message": "API Key",
@@ -819,6 +927,14 @@
     "message": "The assistant remembers useful details from your chats to give you better, more personalized responses across conversations. You're in control — review anything it has saved and remove what you don't want it to keep.",
     "description": "Intro paragraph at the top of the Memory settings tab"
   },
+  "settings.memoryEnabled": {
+    "message": "Use memory",
+    "description": "Title for the switch that controls whether chats use saved memory and learn new memory"
+  },
+  "settings.memoryEnabledHint": {
+    "message": "When off, saved memories are not used and new chats do not create memories. Existing memories are kept.",
+    "description": "Behavior explanation shown below the memory switch"
+  },
   "settings.memoryNeedsChat": {
     "message": "Start a chat first to enable memory.",
     "description": "Shown in the Memory settings tab when the chat application/token has not loaded yet"
@@ -826,6 +942,58 @@
   "settings.memoryStored": {
     "message": "Saved memories",
     "description": "Section heading above the list of stored memory entries"
+  },
+  "settings.memoryImport": {
+    "message": "Import",
+    "description": "Button that opens the memory import dialog"
+  },
+  "settings.memoryImportTitle": {
+    "message": "Import memory from another AI",
+    "description": "Title of the memory import dialog"
+  },
+  "settings.memoryImportExportStep": {
+    "message": "1. Ask your current AI to export its memory",
+    "description": "First step heading in the memory import dialog"
+  },
+  "settings.memoryImportPrompt": {
+    "message": "I'm moving to another AI service. List every saved memory and durable context you have learned about me. Put everything in one code block, with exactly one memory per line. Format each line as: [date saved, if available] - memory content. Include response preferences, personal details, projects, goals, tools, languages, frameworks, and corrections I have made. Preserve my words where possible. Do not include secrets or sensitive information.",
+    "description": "Prompt users copy into another AI service to export memories"
+  },
+  "settings.memoryImportCopy": {
+    "message": "Copy prompt",
+    "description": "Button that copies the memory export prompt"
+  },
+  "settings.memoryImportCopied": {
+    "message": "Prompt copied",
+    "description": "Toast shown after copying the memory export prompt"
+  },
+  "settings.memoryImportPasteStep": {
+    "message": "2. Paste the exported memory",
+    "description": "Second step heading in the memory import dialog"
+  },
+  "settings.memoryImportPlaceholder": {
+    "message": "Paste the memory text returned by ChatGPT, Claude, Gemini, or another AI…",
+    "description": "Placeholder for pasted memory export text"
+  },
+  "settings.memoryImportSubmit": {
+    "message": "Add to memory",
+    "description": "Button that submits pasted memories for import"
+  },
+  "settings.memoryImportSuccess": {
+    "message": "Processed {count} memory entries. Review the saved memories below.",
+    "description": "Success toast after importing memory; count is the number of accepted input entries before deduplication and capacity limits"
+  },
+  "settings.memoryImportPartial": {
+    "message": "Processed {processed} entries; {rejected} unsafe or invalid entries were skipped.",
+    "description": "Warning shown after a partial memory import"
+  },
+  "settings.memoryImportInvalid": {
+    "message": "No memory could be imported. Make sure memory is on and paste one plain fact per line.",
+    "description": "Actionable error shown when the memory import request is invalid"
+  },
+  "settings.memoryImportInProgress": {
+    "message": "A memory import is already running. Keep this dialog open and try again shortly.",
+    "description": "Warning shown when another memory import job is active"
   },
   "settings.memoryEmpty": {
     "message": "Nothing saved yet. As you chat, the assistant will remember durable preferences and facts here.",
@@ -904,7 +1072,7 @@
     "description": "Customer's job title"
   },
   "customers.comment1": {
-    "message": "BigPlayer AI has provided great service to our team, helping us improve productivity. We love it!",
+    "message": "Ace Data Cloud has provided great service to our team, helping us improve productivity. We love it!",
     "description": "Customer's testimonial"
   },
   "customers.name2": {
@@ -916,7 +1084,7 @@
     "description": "Customer's job title"
   },
   "customers.comment2": {
-    "message": "BigPlayer AI is a great integration platform with excellent service quality.",
+    "message": "Ace Data Cloud is a great integration platform with excellent service quality.",
     "description": "Customer's testimonial"
   },
   "customers.name3": {
@@ -928,7 +1096,7 @@
     "description": "Customer's job title"
   },
   "customers.comment3": {
-    "message": "I love the service from BigPlayer AI, it's user-friendly and reasonably priced. I hope it keeps getting better!",
+    "message": "I love the service from Ace Data Cloud, it's user-friendly and reasonably priced. I hope it keeps getting better!",
     "description": "Customer's testimonial"
   },
   "nav.github": {
@@ -1233,7 +1401,7 @@
     "description": "Title displaying which open-source project this site is built on in the about page"
   },
   "settings.poweredByTip": {
-    "message": "BigPlayer AI — All-in-one AI creation platform.",
+    "message": "This site is built on the Nexior open-source project, with fully open-source code.",
     "description": "Description in the about page showing which open-source project this site is based on"
   },
   "settings.apiService": {
@@ -1241,7 +1409,7 @@
     "description": "Title displaying the API service provider in the about page"
   },
   "settings.apiServiceTip": {
-    "message": "Powered by BigPlayer AI.",
+    "message": "The API service for this site is provided by Ace Data Cloud.",
     "description": "Description in the about page showing the API service provider"
   },
   "settings.buildYourOwn": {
@@ -1256,6 +1424,86 @@
     "message": "Contact Support",
     "description": "Text for the contact support button"
   },
+  "settings.contactSupport": {
+    "message": "Contact Support",
+    "description": "Section title on the About page listing the site owner's customer-service channels"
+  },
+  "settings.contactSupportTip": {
+    "message": "Reach our support team through any of the channels below.",
+    "description": "Subtitle under the support contacts section on the About page"
+  },
+  "settings.contactInvalidUrl": {
+    "message": "{field} must be a valid http(s) link",
+    "description": "Validation error shown when a contact URL is not a valid http(s) link"
+  },
+  "settings.contactInvalidPhone": {
+    "message": "Please enter a valid phone number",
+    "description": "Validation error shown when the phone number is invalid"
+  },
+  "settings.contactInvalidEmail": {
+    "message": "Please enter a valid email address",
+    "description": "Validation error shown when the email address is invalid"
+  },
+  "settings.contactType": {
+    "message": "Type",
+    "description": "Placeholder for the contact type picker in the editor"
+  },
+  "settings.contactType_phone": {
+    "message": "Phone",
+    "description": "Display name for the phone contact type"
+  },
+  "settings.contactType_email": {
+    "message": "Email",
+    "description": "Display name for the email contact type"
+  },
+  "settings.contactType_website": {
+    "message": "Website",
+    "description": "Display name for the website contact type"
+  },
+  "settings.contactType_wechat": {
+    "message": "WeChat",
+    "description": "Display name for the WeChat contact type"
+  },
+  "settings.contactLabelPlaceholder": {
+    "message": "Label (optional), e.g. Sales",
+    "description": "Placeholder for the optional contact label input"
+  },
+  "settings.contactValuePlaceholder": {
+    "message": "Account / display text",
+    "description": "Placeholder for the generic contact value input"
+  },
+  "settings.contactQr": {
+    "message": "QR code",
+    "description": "Label for a contact's QR-code image"
+  },
+  "settings.contactQrTip": {
+    "message": "Upload a QR code users can scan to add you.",
+    "description": "Tip for the contact QR-code uploader"
+  },
+  "settings.contactAdd": {
+    "message": "Add contact",
+    "description": "Button to add another contact entry"
+  },
+  "settings.contactEditorHint": {
+    "message": "Pick a type for each channel and fill in at least a value, link or QR. Add as many as you like.",
+    "description": "Hint at the top of the contacts editor dialog"
+  },
+  "settings.contactInvalidType": {
+    "message": "Type may only contain lowercase letters, digits, '-' and '_'",
+    "description": "Validation error for an invalid contact type slug"
+  },
+  "settings.contactRowNeedsValue": {
+    "message": "Each contact needs at least a value, link or QR code",
+    "description": "Validation error when a contact row has no value/url/qr"
+  },
+  "settings.contactInvalidValue": {
+    "message": "A contact field is invalid or too long",
+    "description": "Validation error when a contact value/label is invalid or too long"
+  },
+  "settings.contactTooMany": {
+    "message": "You can add at most {max} contacts",
+    "description": "Validation error when too many contacts are added"
+  },
   "message.viewOnGithub": {
     "message": "View on GitHub",
     "description": "Link text to view the project on GitHub"
@@ -1265,7 +1513,7 @@
     "description": "Title for the 404 page"
   },
   "message.notFound": {
-    "message": "The page you are looking for does not exist. The link may have changed or been removed. Return to the homepage to continue exploring BigPlayer AI's AI services.",
+    "message": "The page you are looking for does not exist. The link may have changed or been removed. Return to the homepage to continue exploring AceData's AI services.",
     "description": "Subtitle description for the 404 page"
   },
   "message.notFoundEyebrow": {
@@ -1360,6 +1608,46 @@
     "message": "Reference uploads are still in progress — please wait a moment.",
     "description": "Toast warning shown when the user clicks the Generate button while reference image / video / audio uploads are still in flight. Tells them to wait for the upload to finish before re-clicking Generate."
   },
+  "message.uploadTooLarge": {
+    "message": "The file is {size}, over the {max} limit. Please compress it and try again.",
+    "description": "Toast shown when the user picks a file larger than the upload size limit, naming the file size and the allowed maximum."
+  },
+  "message.dropToUpload": {
+    "message": "Drop to upload",
+    "description": "Text on the transient overlay that appears over an uploader while a file is being dragged onto it, telling the user to release to upload."
+  },
+  "x402Scenario.paymentMethod": {
+    "message": "Payment",
+    "description": "Label for choosing Credits or a Solana USDC wallet on an image generation scenario."
+  },
+  "x402Scenario.credits": {
+    "message": "Credits",
+    "description": "Credits payment-mode option on a generation scenario."
+  },
+  "x402Scenario.wallet": {
+    "message": "USDC Wallet",
+    "description": "Solana USDC wallet payment-mode option on a generation scenario."
+  },
+  "x402Scenario.quoteBeforeSigning": {
+    "message": "The exact USDC price is shown before your wallet signs.",
+    "description": "Note under the wallet payment mode explaining that the server provides the authoritative quote."
+  },
+  "x402Scenario.connectWalletFirst": {
+    "message": "Connect a Solana wallet before generating.",
+    "description": "Warning shown when wallet mode is selected without a connected wallet."
+  },
+  "x402Scenario.confirmPayment": {
+    "message": "Pay {amount} USDC on Solana for this generation?",
+    "description": "Confirmation shown after the x402 challenge; {amount} is the exact server-quoted USDC amount."
+  },
+  "x402Scenario.paymentFailed": {
+    "message": "Wallet payment failed.",
+    "description": "Prefix for wallet-mode generation errors."
+  },
+  "x402Scenario.gptEditCreditsOnly": {
+    "message": "Wallet payment currently supports GPT Image generation only. Switch to Credits to edit reference images.",
+    "description": "MVP notice when a user tries GPT Image reference-image editing in wallet mode."
+  },
   "appUpgrade.title": {
     "message": "Update required",
     "description": "Title of the native-app version gate modal shown at startup when the installed build is older than what the backend supports."
@@ -1432,17 +1720,144 @@
     "message": "Deny",
     "description": "Deny button of the on-demand consent dialog."
   },
-  "nav.glm": {
-    "message": "GLM",
-    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  "settings.siteServices": {
+    "message": "Price",
+    "description": "Nav label for the site-wide and per-service pricing settings tab"
   },
-  "contact": {
-    "buttonLabel": "Contact",
-    "title": "Technical Support / Feedback",
-    "scanTip": "Scan to add tech support",
-    "benefit1": "Ask anytime",
-    "benefit2": "Early access to new models",
-    "benefit3": "1-on-1 response",
-    "email": "Email"
+  "nav.omni": {
+    "message": "Omni Video",
+    "description": "Nav label for the Omni video module"
+  },
+  "settings.localToolsMcpToolsTitle": {
+    "message": "MCP tools",
+    "description": "Heading of the MCP tools section in Local Tools settings"
+  },
+  "settings.localToolsMcpToolsHint": {
+    "message": "Tools provided by your connected MCP servers. Turn one on to let the AI run it without asking each time. MCP servers are third-party programs and are not limited to your authorized folders — tools marked \"Full access\" may change or publish data, so enable them deliberately.",
+    "description": "Explanatory copy for the MCP tools section, stressing third-party risk"
+  },
+  "settings.localToolsWorkingDirTitle": {
+    "message": "Working directory",
+    "description": "Local tools settings section title: the project folder the AI currently operates in"
+  },
+  "settings.localToolsWorkingDirHint": {
+    "message": "The AI works in this project by default: shell commands start here, and project conventions (AGENTS.md / CLAUDE.md) are read from here. Choosing a folder also grants read and write access to it, so you do not need to add it again.",
+    "description": "Explanatory text for the working directory section"
+  },
+  "settings.localToolsWorkingDirNone": {
+    "message": "Not chosen yet",
+    "description": "Empty state when no working directory is set"
+  },
+  "settings.localToolsWorkingDirChange": {
+    "message": "Change",
+    "description": "Button to switch the working directory"
+  },
+  "button.report": {
+    "message": "Report",
+    "description": "Text in button for reporting inappropriate AI-generated content"
+  },
+  "title.reportContent": {
+    "message": "Report content",
+    "description": "Title of the dialog for reporting inappropriate AI-generated content"
+  },
+  "message.reportIntro": {
+    "message": "Choose a reason for reporting. We review every report and use it to improve our content filtering.",
+    "description": "Introductory message in the content report dialog"
+  },
+  "message.reportDetailPlaceholder": {
+    "message": "Additional details (optional)",
+    "description": "Placeholder for the optional detail textarea in the content report dialog"
+  },
+  "message.reportSuccess": {
+    "message": "Report submitted. Thank you for your feedback.",
+    "description": "Message shown after a content report is submitted successfully"
+  },
+  "message.reportFailed": {
+    "message": "Could not submit the report. Please try again later.",
+    "description": "Message shown when submitting a content report fails"
+  },
+  "message.reportReasonRequired": {
+    "message": "Please select a reason for reporting.",
+    "description": "Validation message when no report reason is selected"
+  },
+  "reportReason.sexual": {
+    "message": "Sexual or suggestive content",
+    "description": "Content report reason: sexual content"
+  },
+  "reportReason.violence": {
+    "message": "Violence or gore",
+    "description": "Content report reason: violence or gore"
+  },
+  "reportReason.hate": {
+    "message": "Hate speech or harassment",
+    "description": "Content report reason: hate speech or harassment"
+  },
+  "reportReason.child_safety": {
+    "message": "Child safety",
+    "description": "Content report reason: child safety"
+  },
+  "reportReason.self_harm": {
+    "message": "Self-harm or dangerous acts",
+    "description": "Content report reason: self-harm or dangerous acts"
+  },
+  "reportReason.deception": {
+    "message": "False or misleading information",
+    "description": "Content report reason: deceptive or misleading content"
+  },
+  "reportReason.illegal": {
+    "message": "Illegal activity",
+    "description": "Content report reason: illegal activity"
+  },
+  "reportReason.ip": {
+    "message": "Intellectual property infringement",
+    "description": "Content report reason: intellectual property infringement"
+  },
+  "reportReason.other": {
+    "message": "Other",
+    "description": "Content report reason: other"
+  },
+  "x402Scenario.payEachTime": {
+    "message": "Pay each time",
+    "description": "Wallet option that asks for approval before every payment."
+  },
+  "x402Scenario.continuousPayments": {
+    "message": "Continuous payments",
+    "description": "Wallet option that uses a reusable Solana USDC payment authorization."
+  },
+  "x402Scenario.continuousPaymentsDescription": {
+    "message": "Let Studio pay actual usage from your Solana USDC wallet, within the daily limit you set.",
+    "description": "Explanation shown before enabling continuous wallet payments."
+  },
+  "x402Scenario.dailyPaymentLimit": {
+    "message": "Daily payment limit",
+    "description": "Daily USDC limit for continuous payments."
+  },
+  "x402Scenario.validUntil": {
+    "message": "Valid until",
+    "description": "Expiration date of a continuous payment authorization."
+  },
+  "x402Scenario.validDays": {
+    "message": "Valid days",
+    "description": "Number of days before a continuous payment authorization expires."
+  },
+  "x402Scenario.enableContinuousPayments": {
+    "message": "Enable continuous payments",
+    "description": "Button that creates a reusable Solana payment authorization."
+  },
+  "x402Scenario.disableContinuousPayments": {
+    "message": "Disable",
+    "description": "Button that stops using an existing continuous payment authorization without revoking it on-chain."
+  },
+  "x402Scenario.revokeAuthorization": {
+    "message": "Revoke authorization",
+    "description": "Button that revokes the reusable payment authorization on Solana."
+  },
+  "x402Scenario.continuousPaymentsEnabled": {
+    "message": "Continuous payments enabled.",
+    "description": "Success toast after a wallet creates the payment authorization."
+  },
+  "error.userRestricted": {
+    "message": "This account is currently restricted and cannot sign in. If you believe this is a mistake, please contact support.",
+    "description": "Shown when native iOS login identifies a quarantined account; never expose the internal restriction reason"
   }
 }

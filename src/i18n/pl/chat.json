@@ -79,36 +79,36 @@
     "message": "Model dużego języka opracowany przez firmę Zhipu AI",
     "description": "Opis grupy modeli GLM"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Nazwa modelu usługi, czyli GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Nazwa modelu usługi, czyli GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Najnowocześniejszy model flagowy GPT 5.5",
-    "description": "Opis modelu GPT 5.5"
+  "model.56SolDescription": {
+    "message": "Najnowocześniejszy model flagowy GPT 5.6 Sol",
+    "description": "Opis modelu GPT 5.6 Sol"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Nazwa modelu usługi, czyli GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Nazwa modelu usługi, czyli GPT 5.6"
   },
-  "model.54Description": {
-    "message": "Najnowocześniejszy model flagowy GPT 5.4",
-    "description": "Opis modelu GPT 5.4"
+  "model.56TerraDescription": {
+    "message": "Najnowocześniejszy model flagowy GPT 5.6",
+    "description": "Opis modelu GPT 5.6"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Nazwa modelu usługi, czyli GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Nazwa modelu usługi, czyli GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Szybszy i lżejszy model GPT 5.4",
-    "description": "Opis modelu GPT 5.4 Mini"
+  "model.56LunaDescription": {
+    "message": "Szybszy i lżejszy model GPT 5.6",
+    "description": "Opis modelu GPT 5.6 Luna"
   },
   "model.freeTag": {
     "message": "Bezpłatny",
     "description": "Odznaka wyświetlana obok darmowych modeli w selektorze modeli"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Nazwa modelu usługi, czyli DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Opis modelu DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Nazwa modelu usługi, czyli DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Opis modelu DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Nazwa modelu usługi, czyli DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Opis modelu DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Nazwa modelu usługi, czyli DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,15 +140,15 @@
     "description": "Opis modelu DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Nazwa modelu usługi, czyli Grok 4"
   },
   "model.grok4Description": {
-    "message": "Obecnie najnowocześniejszy model",
+    "message": "General-purpose K2 model for compatible workflows",
     "description": "Opis modelu Grok 4"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Nazwa modelu usługi"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Szybszy i lżejszy model",
     "description": "Opis modelu Gemini 2.5 Flash"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Nazwa modelu usługi, czyli Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Najnowocześniejszy szybki model, wspierający wnioskowanie, wizję i wywołania narzędzi",
+    "description": "Opis modelu Gemini 3.6 Flash"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Nazwa modelu usługi, czyli Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "Szybszy i lżejszy model",
     "description": "Opis modelu Gemini 2.5 Flash"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Najnowocześniejszy model",
+    "description": "Opis modelu Claude Opus 5"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,16 +235,24 @@
     "message": "Lekki i szybki model",
     "description": "Opis modelu Claude Haiku 4.5"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Nazwa modelu usługi, tj. Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Świetny do długiego kontekstu, złożonego rozumowania i pisania kreatywnego",
-    "description": "Opis modelu Claude Fable 5"
+  "model.kimiK3Description": {
+    "message": "Flagowy model wspierający inferencję, wizję i kontekst 1 miliona tokenów",
+    "description": "Opis modelu Kimi K3"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Model inferencyjny i wizualny kompatybilny z K2",
+    "description": "Opis modelu Kimi K2.6"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Nazwa modelu usługi, czyli Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +260,7 @@
     "description": "Opis modelu Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 myślenie",
     "description": "Nazwa modelu usługi, czyli Kimi K2 myślenie"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Opis modelu Kimi K2 myślenie"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 turbo myślenie",
     "description": "Nazwa modelu usługi, czyli Kimi K2 turbo myślenie"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Opis modelu Kimi K2 turbo myślenie"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Nazwa modelu usługi, czyli GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Opis modelu GLM 5.1"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Nazwa modelu usługi, czyli GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "Przesyłanie pliku nie powiodło się, spróbuj ponownie później",
     "description": "Wiadomość na stronie, informująca użytkownika, że przesyłanie pliku nie powiodło się, spróbuj ponownie później"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "Rozmiar pliku {size} przekracza limit {max}, proszę skompresować i spróbować ponownie",
+    "description": "Wiadomość na stronie, informująca użytkownika, że plik przekracza maksymalny rozmiar do przesłania i należy go skompresować przed ponowną próbą"
   },
   "message.notApplied": {
     "message": "Nie ubiegałeś się jeszcze o tę usługę, najpierw złóż wniosek",
@@ -583,114 +611,374 @@
     "message": "Autoryzacja konektorów pominięta",
     "description": "Informacja na dole karty po pominięciu autoryzacji przez użytkownika"
   },
+  "browserTool.title": {
+    "message": "Aktywność przeglądarki",
+    "description": "Domyślny tytuł aktywności narzędzia BrowserDevice"
+  },
+  "browserTool.state.starting_session": {
+    "message": "Uruchamianie sesji przeglądarki",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Łączenie z kartą przeglądarki",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "Przeglądarka gotowa",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "Urządzenie przeglądarki jest offline",
+    "description": "Wybrane urządzenie przeglądarki jest niedostępne"
+  },
+  "browserTool.state.device_busy": {
+    "message": "Urządzenie przeglądarki jest zajęte",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Wymagana autoryzacja w Studio",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "Wykonywanie w przeglądarce",
+    "description": "Urządzenie przeglądarki wykonuje narzędzie"
+  },
+  "browserTool.state.completed": {
+    "message": "Zakończono",
+    "description": "Wykonanie narzędzia przeglądarki zakończone"
+  },
+  "browserTool.state.stopped": {
+    "message": "Sesja przeglądarki zatrzymana",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "Żądanie przeglądarki wygasło",
+    "description": "Żądanie wykonania narzędzia przeglądarki wygasło"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Zamknij narzędzia dewelopera, aby kontynuować",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Nieznany wynik wykonania, sprawdź i spróbuj ponownie",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "Operacja przeglądarki nie powiodła się",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "Zatrzymaj",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Zarządzaj urządzeniami",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Zatrzymaj inne sesje",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Zamknij narzędzia dewelopera",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Zobacz zgodę",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "Zadania zaplanowane",
+    "description": "Wejście do zadań zaplanowanych w pasku bocznym"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Zadania zaplanowane",
+    "description": "Strona zadań zaplanowanych - zakładka zadań"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Rekordy uruchomień",
+    "description": "Strona zadań zaplanowanych - zakładka wszystkich rekordów uruchomień"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "Wszystko",
+    "description": "Filtr stanu rekordów uruchomień - Wszystko"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "Zadania zaplanowane",
+    "description": "Tytuł strony dotyczącej zaplanowanych zadań."
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "Nowy",
+    "description": "Przycisk do tworzenia zadania zaplanowanego"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "Edytuj zadanie",
+    "description": "Tytuł okna edycji"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Kopiuj zadanie",
+    "description": "Przycisk do kopiowania zadania, wypełnia nowy formularz na podstawie istniejącego zadania"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "Brak zaplanowanych zadań, kliknij „Nowy”, aby utworzyć jedno",
+    "description": "Wskazówka dla pustego stanu"
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "Brak uruchomień",
+    "description": "Brak historii uruchomień"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "Błąd ładowania",
+    "description": "Komunikat o błędzie ładowania"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "Czy na pewno chcesz usunąć „{name}”? Po usunięciu zadanie przestanie działać.",
+    "description": "Potwierdzenie usunięcia"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Uruchom teraz",
+    "description": "Opcja do ręcznego natychmiastowego uruchomienia zadania."
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Uruchomiono, wyniki będą dostępne w historii wykonania.",
+    "description": "Komunikat informujący o pomyślnym ręcznym uruchomieniu zadania."
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Nie udało się uruchomić, spróbuj później.",
+    "description": "Komunikat informujący o niepowodzeniu ręcznego uruchomienia zadania."
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "Zobacz wyniki",
+    "description": "Link do przeglądania wyników zadania."
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "Historia wykonania",
+    "description": "Opcja do przeglądania historii wykonania zadań."
   },
   "scheduledTasks.noConversation": {
     "message": "Brak historii rozmów",
     "description": "Zadania, które nie są powiązane z żadną rozmową (stara wersja działania)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60s wahanie",
+    "description": "Opis wahania czasu wykonania"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "Wykonano {count} razy",
+    "description": "Liczba razy, kiedy zadanie zostało uruchomione."
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "W trakcie",
+    "description": "Status wskazujący, że zadanie jest aktywne."
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "Wstrzymane",
+    "description": "Status wskazujący, że zadanie jest wyłączone."
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "Błąd",
+    "description": "Status wskazujący, że wystąpił błąd podczas wykonywania zadania."
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "W kolejce",
+    "description": "Stan w kolejce"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "W trakcie",
+    "description": "Status wskazujący, że zadanie jest w trakcie wykonywania."
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "Sukces",
+    "description": "Status wskazujący, że zadanie zakończyło się pomyślnie."
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "Niepowodzenie",
+    "description": "Stan niepowodzenia"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Niepotwierdzone",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Osiągnięto limit kroków"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Osiągnięto limit budżetu"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Wykryto pętlę wywołań narzędzi"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Zbyt długi prompt"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Przerwano"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Przerwano"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Oczekiwanie na Twoje dane"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Błąd"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Nieznany błąd"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Niewystarczające środki"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Autoryzacja rozliczeń nie powiodła się"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Brak autoryzacji"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Przekroczono limit czasu"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Błąd wewnętrzny"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "Wymagana interakcja",
+    "description": "Stan wymagający interakcji użytkownika"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Urządzenie przeglądarki jest offline",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Autoryzacja przeglądarki została zmieniona, proszę edytować to zadanie",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "Codziennie",
+    "description": "Zadanie wykonywane codziennie."
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "Co minutę"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "Co godzinę",
+    "description": "Zadanie wykonywane co godzinę."
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "Co tydzień",
+    "description": "Zadanie wykonywane co tydzień."
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Wyrażenie Cron",
+    "description": "Umożliwia definiowanie niestandardowego harmonogramu za pomocą wyrażenia cron."
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Co pewien czas",
+    "description": "Zadanie wykonywane w ustalonych odstępach czasu."
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "Minuta",
+    "description": "Jednostka interwału: minuty"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "Godzina",
+    "description": "Jednostka interwału: godziny"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "Dzień",
+    "description": "Jednostka interwału: dni"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "Minuta wyzwalania",
+    "description": "Która minuta w każdej godzinie wyzwala"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "Która minuta w każdej godzinie (0–59)",
+    "description": "Opis minut w każdej godzinie"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Wykonuj co określony czas od ostatniego uruchomienia (minimum 1 minuta)",
+    "description": "Opis stałego interwału"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Standardowe 5-segmentowe wyrażenie Cron: minuta godzina dzień miesiąc tydzień",
+    "description": "Opis Cron"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Częstotliwość wykonania: {text}",
+    "description": "Podgląd częstotliwości"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "Co {n} minut",
+    "description": "Czytelne dla ludzi: co N minut"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "Co {n} godzin",
+    "description": "Czytelne dla ludzi: co N godzin"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "Co {n} dni",
+    "description": "Czytelne dla ludzi: co N dni"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "Co godzinę w {n} minut",
+    "description": "Czytelne dla ludzi: co godzinę w N minut"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "Codziennie {time}",
+    "description": "Czytelne dla ludzi: codziennie o danej godzinie"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "Co tydzień {weekday} o {time}",
+    "description": "Czytelne dla ludzi: co tydzień w danym dniu o danej godzinie"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron: {cron}",
+    "description": "Czytelne dla ludzi: surowy Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "Jednorazowo {time}",
+    "description": "Czytelne dla ludzi: jednorazowo"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "Nazwa zadania",
+    "description": "Pole nazwy"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "np. Codzienne podsumowanie informacji",
+    "description": "Zastępcza nazwa"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "Model",
+    "description": "Wybór modelu"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "Wskazówka",
+    "description": "Pole wskazówki"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "Wprowadź pytanie lub polecenie do wykonania w określonym czasie, obsługuje zmienne {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'}",
+    "description": "Zastępcza wskazówka"
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "Obsługuje zmienne szablonów: {'{{date}}'} dzisiejsza data, {'{{run_count}}'} numer uruchomienia, {'{{last_output}}'} podsumowanie ostatniego wyniku",
+    "description": "Opis wskazówki"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "Częstotliwość wykonania",
+    "description": "Wybór częstotliwości"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "Czas wykonania",
+    "description": "Pole czasu"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "Dzień tygodnia",
+    "description": "Pole dnia tygodnia"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Wyrażenie Cron",
+    "description": "Pole wyrażenia cron"
   },
   "scheduledTasks.form.skills": {
     "message": "Autoryzuj umiejętności",
@@ -704,6 +992,25 @@
     "message": "Wybrane umiejętności mogą być wykonywane w tle bez potwierdzenia ręcznego; nie wybrane umiejętności mogą być jedynie podglądane lub czekać na potwierdzenie.",
     "description": "Opis autoryzacji umiejętności"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "Połączenie przeglądarki",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "Możliwe do wykonania zewnętrzne efekty: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Czas wygaśnięcia autoryzacji bez nadzoru: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Przed zapisaniem wybierz połączenie przeglądarki online i kompatybilnej",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Niepołączone",
     "description": "Brak połączenia z umiejętnością"
@@ -737,19 +1044,20 @@
     "description": "Treść potwierdzenia autoryzacji"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "Musisz najpierw powiązać umiejętność",
+    "description": "Tytuł okna dialogowego wyświetlanego, gdy umiejętność/MCP autoryzowana dla zaplanowanego zadania nie jest jeszcze powiązana z użytkownikiem."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "Umiejętność „{name}” nie jest jeszcze powiązana ani aktywowana na Twoim koncie. Jeśli nie zostanie wcześniej powiązana, zaplanowane zadanie może nie działać w tle. Zalecamy najpierw powiązać, a następnie zapisać, lub kliknąć poniższy przycisk, aby kontynuować zapis.",
+    "description": "Treść ostrzeżenia; {name} to nazwa umiejętności/MCP. Wyjaśnia, że nie jest powiązana i oferuje zapisanie mimo to."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "Czy na pewno chcesz kontynuować zapis?",
+    "description": "Przycisk potwierdzający, który zapisuje zaplanowane zadanie, omijając kontrolę powiązania (wymuszenie)."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "Proszę wypełnić nazwę zadania i słowo kluczowe",
+    "description": "Weryfikacja wymaganych pól"
   },
   "artifacts.navTitle": {
     "message": "Elementy",
@@ -787,6 +1095,18 @@
     "message": "Ukryj",
     "description": "Przycisk do ukrywania elementu"
   },
+  "artifacts.unhide": {
+    "message": "Odkryj",
+    "description": "Przycisk do przywrócenia ukrytego artefaktu"
+  },
+  "artifacts.showHidden": {
+    "message": "Pokaż ukryte",
+    "description": "Przełącznik do wyświetlania ukrytych artefaktów w pasku filtrów"
+  },
+  "artifacts.hiddenBadge": {
+    "message": "Ukryto",
+    "description": "Odznaka oznaczająca, że artefakt został ukryty"
+  },
   "artifacts.delete": {
     "message": "Usuń",
     "description": "Przycisk do usuwania elementu"
@@ -817,7 +1137,7 @@
   },
   "artifacts.kind.audio": {
     "message": "Audio",
-    "description": "Typ elementu - audio"
+    "description": "Typ zasobu - audio"
   },
   "artifacts.kind.document": {
     "message": "Dokument",
@@ -837,7 +1157,7 @@
   },
   "artifacts.kind.link": {
     "message": "Link",
-    "description": "Typ elementu - link"
+    "description": "Typ zasobu - link"
   },
   "artifacts.kind.other": {
     "message": "Inne",
@@ -915,24 +1235,532 @@
     "message": "Przeglądasz udostępnioną rozmowę. Kliknij powyżej, aby samodzielnie porozmawiać z AI.",
     "description": "Opis na dole strony z publicznie udostępnioną rozmową."
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Cel nieosiągnięty",
+    "description": "Informacja o tym, że cel nie został osiągnięty."
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Wynik do potwierdzenia",
+    "description": "Informacja, że wynik jest nieznany i wymaga potwierdzenia."
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Nieznany stan wykonania"
+  },
+  "actions.rename": {
+    "message": "Zmień nazwę",
+    "description": "Element menu zmiany nazwy w menu operacji konwersacji."
+  },
+  "actions.renameTitle": {
+    "message": "Zmień nazwę konwersacji",
+    "description": "Tytuł okna dialogowego zmiany nazwy konwersacji."
+  },
+  "actions.renameEmpty": {
+    "message": "Proszę wpisać nazwę",
+    "description": "Komunikat, gdy nazwa jest pusta podczas zmiany nazwy."
+  },
+  "actions.renameSuccess": {
+    "message": "Zmieniono nazwę",
+    "description": "Komunikat o sukcesie po zmianie nazwy konwersacji."
+  },
+  "actions.renameFailed": {
+    "message": "Zmiana nazwy nie powiodła się, spróbuj ponownie później",
+    "description": "Komunikat o błędzie, gdy zmiana nazwy konwersacji nie powiodła się."
+  },
+  "actions.deleteConfirm": {
+    "message": "Czy na pewno chcesz usunąć tę konwersację? Po usunięciu nie można jej przywrócić.",
+    "description": "Potwierdzenie przed usunięciem konwersacji."
+  },
+  "actions.deleteSuccess": {
+    "message": "Usunięto",
+    "description": "Komunikat o sukcesie po usunięciu konwersacji."
+  },
+  "actions.deleteFailed": {
+    "message": "Usunięcie nie powiodło się, spróbuj ponownie później",
+    "description": "Komunikat o błędzie, gdy usunięcie konwersacji nie powiodło się."
+  },
+  "actions.tokenMissing": {
+    "message": "Token nie istnieje, proszę zalogować się ponownie",
+    "description": "Komunikat o błędzie, gdy brakuje poświadczeń podczas operacji konwersacji."
+  },
+  "actions.conversationMissing": {
+    "message": "Konwersacja nie istnieje",
+    "description": "Komunikat o błędzie, gdy docelowa konwersacja nie istnieje podczas operacji konwersacji."
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Miejsce wykonania",
+    "description": "Wybierz, czy zadanie ma być wykonane w chmurze czy lokalnie"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Chmura",
+    "description": "Tryb wykonania w chmurze"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "To urządzenie",
+    "description": "Tryb wykonania lokalnego"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "To urządzenie ({device})",
+    "description": "Tryb wykonania lokalnego z nazwą urządzenia"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "Uruchamiane przez platformę na czas, nawet jeśli komputer jest wyłączony.",
+    "description": "Opis trybu chmurowego"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "Uruchamiane przez to urządzenie na czas, może odczytywać i zapisywać pliki lokalne, uruchamiać polecenia lokalne. Nie będzie działać, gdy urządzenie jest wyłączone lub aplikacja jest zamknięta, a pominięte uruchomienia będą tylko rejestrowane, nie będą ponownie uruchamiane.",
+    "description": "Opis trybu lokalnego"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "Obsługa lokalnego wykonania na urządzeniach mobilnych jest obecnie niedostępna",
+    "description": "Powód, dla którego mobilna wersja nie obsługuje lokalnego wykonania"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Lokalne wykonanie wymaga aplikacji na komputer",
+    "description": "Powód, dla którego wersja internetowa nie obsługuje lokalnego wykonania"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Nie można uzyskać informacji o urządzeniu lokalnym, proszę zrestartować aplikację i spróbować ponownie",
+    "description": "Informacje o urządzeniu na komputerze nie są dostępne"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Autoryzacja narzędzi lokalnych",
+    "description": "Pole autoryzacji narzędzi lokalnych"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Wybierz narzędzia lokalne, które mogą być używane przez to zadanie",
+    "description": "Placeholder dla wyboru narzędzi lokalnych"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "Podczas uruchamiania bez nadzoru nie pojawi się potwierdzenie autoryzacji, tylko narzędzia zaznaczone tutaj będą dostępne.",
+    "description": "Opis autoryzacji narzędzi lokalnych"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Pominięto",
+    "description": "Stan wykonania: urządzenie było w tym czasie offline, nie zostało uruchomione"
+  },
+  "workingDir.choose": {
+    "message": "Wybierz katalog roboczy",
+    "description": "Przycisk nad polem wejściowym czatu na komputerze: wybierz folder projektu, w którym działa AI; nie można wysłać wiadomości przed dokonaniem wyboru"
+  },
+  "workingDir.switchHint": {
+    "message": "Kliknij, aby przełączyć katalog roboczy",
+    "description": "Wskazówka wyświetlana po najechaniu na kapsułę ścieżki, gdy katalog roboczy jest już wybrany"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "To jest lokalne zadanie, można je uruchomić ręcznie tylko w wersji desktopowej na powiązanym urządzeniu",
+    "description": "Lokalne zadanie nie może być ręcznie uruchomione na niepowiązanym urządzeniu"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "To zadanie jest powiązane z innym urządzeniem",
+    "description": "Lokalne zadanie nie należy do bieżącego urządzenia"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Lokalne harmonogramowanie wymaga zalogowania, proszę zalogować się ponownie i spróbować",
+    "description": "Demon nie posiada poświadczeń"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "To zadanie jest już uruchomione",
+    "description": "Zadanie jest w trakcie wykonywania"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Potwierdź",
+    "description": "Przycisk potwierdzenia w karcie potwierdzenia przed wykonaniem."
+  },
+  "actionConfirmation.cancel": {
+    "message": "Anuluj",
+    "description": "Przycisk anulowania w karcie potwierdzenia przed wykonaniem."
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Potwierdzone, w trakcie realizacji",
+    "description": "Potwierdzenie przed wykonaniem akcji: użytkownik potwierdził, następne kroki są w trakcie realizacji"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Anulowano",
+    "description": "Karta potwierdzenia przed wykonaniem: komunikat po anulowaniu przez użytkownika."
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Ładowanie podglądu mediów...",
+    "description": "Potwierdzenie przed wykonaniem: stan ładowania mediów"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Nie można odtworzyć podglądu tutaj",
+    "description": "Potwierdzenie przed wykonaniem: tytuł błędu odtwarzania mediów"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "Link do mediów może być nieaktualny lub bieżąca przeglądarka nie obsługuje tego formatu. Proszę otworzyć oryginalny plik przed publikacją, aby potwierdzić.",
+    "description": "Potwierdzenie przed wykonaniem: opis błędu odtwarzania mediów"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Otwórz oryginalny plik",
+    "description": "Potwierdzenie przed wykonaniem: otwórz link do mediów"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Potwierdź przed publikacją",
+    "description": "Etykieta stanu karty potwierdzenia TikTok"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Opublikuj na TikTok",
+    "description": "Tytuł potwierdzenia publikacji na TikTok."
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "Po potwierdzeniu ten film zostanie opublikowany na Twoim koncie TikTok.",
+    "description": "Podsumowanie potwierdzenia publikacji na TikTok."
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Opublikuj",
+    "description": "Przycisk do potwierdzenia publikacji na TikTok."
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Publikuj do",
+    "description": "Etykieta konta w potwierdzeniu publikacji TikTok."
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Połączono",
+    "description": "Potwierdzenie publikacji TikTok: status połączenia konta"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Informacje o koncie niedostępne",
+    "description": "Potwierdzenie publikacji TikTok: tekst zastępczy przy braku nazwy użytkownika konta"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Ustawienia publikacji nie są jeszcze gotowe",
+    "description": "Potwierdzenie publikacji TikTok: brak informacji o twórcy"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "Nie udało się odczytać dostępnego zasięgu tego konta. Proszę anulować i pozwolić asystentowi ponownie uzyskać ustawienia publikacji TikTok.",
+    "description": "Potwierdzenie publikacji TikTok: opis braku informacji o twórcy"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "Czas trwania wideo nie spełnia ograniczeń konta",
+    "description": "Potwierdzenie publikacji TikTok: tytuł zbyt długiego wideo"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Treść publikacji",
+    "description": "Potwierdzenie publikacji TikTok: tytuł grupy ustawień treści"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Wymagane",
+    "description": "Potwierdzenie publikacji TikTok: wytyczne dotyczące pól obowiązkowych"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Opis",
+    "description": "Etykieta pola wprowadzania opisu w potwierdzeniu publikacji TikTok."
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Napisz opis — hashtagi i wzmianki są obsługiwane",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Kto może zobaczyć",
+    "description": "Etykieta rozwijanej listy widoczności w potwierdzeniu publikacji TikTok."
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Wybierz…",
+    "description": "Znak zastępczy w potwierdzeniu publikacji TikTok dla widoczności, nie może mieć wartości domyślnej zgodnie z wymaganiami TikTok."
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "Nie uzyskano dostępnych opcji widoczności, publikacja jest obecnie niemożliwa",
+    "description": "Potwierdzenie publikacji TikTok: brak dostępnych opcji widoczności"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Wszyscy",
+    "description": "Widoczność TikTok: publiczna."
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Wzajemnie obserwujący znajomi",
+    "description": "Widoczność TikTok: widoczne dla wzajemnych znajomych."
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "Moi obserwatorzy",
+    "description": "Widoczność TikTok: widoczne dla obserwatorów."
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Tylko ja",
+    "description": "Widoczność TikTok: widoczne tylko dla siebie."
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Zezwól na interakcje",
+    "description": "Etykieta grupy przełączników interakcji w potwierdzeniu publikacji TikTok."
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Można włączyć tylko te interakcje, które są aktualnie dozwolone dla tego konta; domyślnie wszystkie są wyłączone.",
+    "description": "Potwierdzenie publikacji TikTok: wytyczne dotyczące przełączników interakcji"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "To konto zostało wyłączone: {list}",
+    "description": "Potwierdzenie publikacji TikTok: interaktywne możliwości konta wyłączone"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Komentarze",
+    "description": "Przełącznik interakcji TikTok: zezwól na komentarze."
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Duet z filmem",
+    "description": "Przełącznik interakcji TikTok: zezwól na duet."
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Szycie",
+    "description": "Przełącznik interakcji TikTok: zezwól na szycie."
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Ujawnienie treści",
+    "description": "Potwierdzenie publikacji TikTok: tytuł grupy treści komercyjnych"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "To jest treść komercyjna",
+    "description": "Potwierdzenie publikacji TikTok: przełącznik ujawnienia treści komercyjnej."
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Jeśli treść promuje markę, produkt lub usługę, należy ujawnić to zgodnie z rzeczywistością.",
+    "description": "Potwierdzenie publikacji TikTok: wytyczne dotyczące ujawniania treści komercyjnych"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "Twoja marka",
+    "description": "Treść biznesowa TikTok: promowanie własnej działalności"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Promuj siebie lub swoją działalność",
+    "description": "Treści komercyjne TikTok: informacja o promowaniu własnej działalności"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Treść markowa",
+    "description": "Treść komercyjna TikTok: płatna współpraca."
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Promowanie osób trzecich za opłatą, w zamian za prezenty lub inne korzyści",
+    "description": "Treść komercyjna TikTok: wytyczne dotyczące płatnych współprac"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Film zostanie oznaczony jako „treść promocyjna”",
+    "description": "Treść komercyjna TikTok: komunikat po wyborze twojej marki."
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Film zostanie oznaczony jako „płatna współpraca”",
+    "description": "Treść komercyjna TikTok: komunikat po wyborze treści markowej."
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Zakres widoczności treści markowej nie może być ustawiony na „tylko ja”",
+    "description": "Potwierdzenie publikacji TikTok: komunikat o sprzeczności między treścią markową a widocznością tylko dla siebie."
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "Film przekracza maksymalny czas trwania konta ({max} sekund)",
+    "description": "Potwierdzenie publikacji TikTok: błąd z powodu zbyt długiego filmu."
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Proszę potwierdzić przed publikacją",
+    "description": "Potwierdzenie publikacji TikTok: tytuł wytycznych"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "Klikając „Publikuj”, potwierdzasz, że masz prawo do korzystania z treści i muzyki oraz zgadzasz się na warunki korzystania z muzyki TikTok.",
+    "description": "Potwierdzenie publikacji TikTok: wytyczne dotyczące standardowej polityki treści"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "Klikając „Publikuj”, potwierdzasz, że informacje ujawnione są dokładne oraz zgadzasz się na politykę treści markowych TikTok i warunki korzystania z muzyki.",
+    "description": "Potwierdzenie publikacji TikTok: wytyczne dotyczące polityki treści markowych"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Zobacz „Potwierdzenie użycia muzyki”",
+    "description": "Potwierdzenie publikacji TikTok: link do potwierdzenia użycia muzyki"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Zobacz „Politykę treści markowych”",
+    "description": "Potwierdzenie publikacji TikTok: link do polityki treści markowych"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Informacje o publikacji są niekompletne, proszę anulować i ponownie wygenerować kartę potwierdzenia",
+    "description": "Potwierdzenie publikacji TikTok: powód wyłączenia przy braku szczegółów"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Proszę użyć wideo zgodnego z ograniczeniami czasowymi tego konta",
+    "description": "Potwierdzenie publikacji TikTok: powód dezaktywacji przycisku z powodu zbyt długiego wideo"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Proszę wybrać, kto może zobaczyć to wideo",
+    "description": "Potwierdzenie publikacji TikTok: powód wyłączenia przy braku wybranej opcji widoczności"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Proszę wybrać typ treści komercyjnej",
+    "description": "Potwierdzenie publikacji TikTok: powód wyłączenia przy braku wybranego typu ujawnienia"
+  },
+  "scheduledTemplates.title": {
+    "message": "Szablony automatyzacji",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Utwórz z szablonu",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Utwórz niestandardowy",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Niech AI na czas wykona Twoją pracę",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Wybierz oficjalny szablon i połącz wymagane konto. Po utworzeniu zadania można je natychmiast uruchomić na karcie.",
+    "description": "Wskazówki dotyczące tworzenia i aktywacji szablonu zadania zaplanowanego"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Przeglądaj szablony",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Wybierz szablon",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Prosta konfiguracja",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Połącz konto",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.search": {
+    "message": "Szukaj szablonów",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Polecane",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Gotowe do użycia",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Wymagana jest łączność z {count} elementami",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Czas wykonania",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Przygotuj wymagane połączenia",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "Nie ma potrzeby łączenia z innymi kontami",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Połączono",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Nie połączono jeszcze",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Wybierz konto",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Połącz",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.create": {
+    "message": "Utwórz zadanie",
+    "description": "Wskazówki dotyczące tworzenia i aktywacji szablonu zadania zaplanowanego"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Nie udało się utworzyć zadania, sprawdź konfigurację lub połączenie",
+    "description": "Wskazówki dotyczące tworzenia i aktywacji szablonu zadania zaplanowanego"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Zadanie zostało utworzone i pozostaje wyłączone. Najpierw uruchom je natychmiast na karcie, a po sukcesie włącz je.",
+    "description": "Wskazówki dotyczące tworzenia i aktywacji szablonu zadania zaplanowanego"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "Nie można tymczasowo włączyć. Najpierw uruchom zadanie natychmiast i potwierdź sukces; niektóre szablony wymagają również wygenerowania określonego szkicu.",
+    "description": "Wskazówki dotyczące tworzenia i aktywacji szablonu zadania zaplanowanego"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Nie udało się załadować szablonów, spróbuj ponownie później",
+    "description": "Tekst w centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "Wszystko",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Marketing i wzrost",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Tworzenie treści",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Wydajność pracy",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Wywiad i badania",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Rozwój i operacje",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Asystent osobisty",
+    "description": "Kopia centrum szablonów zadań zaplanowanych"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "Publikując, zgadzasz się na „Potwierdzenie użycia muzyki” TikTok",
+    "description": "Potwierdzenie publikacji TikTok: oświadczenie dotyczące użycia muzyki."
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "Publikując, zgadzasz się na „Politykę treści markowej” i „Potwierdzenie użycia muzyki” TikTok",
+    "description": "Potwierdzenie publikacji TikTok: oświadczenie po zaznaczeniu treści markowej."
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "Nazwa modelu usługi, czyli Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "Obecnie najnowocześniejszy model",
     "description": "Opis modelu Claude Opus 4.7"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "Strefa czasowa"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "Nowe zadania domyślnie używają strefy czasowej tego urządzenia: {timezone}. Po zapisaniu pozostaje ona przypisana do zadania."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Wybierz prawidłową strefę czasową IANA"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Wstecz",
+    "description": "Nawigacja po kreatorze szablonów zaplanowanych i wskazówki dotyczące połączenia"
+  },
+  "scheduledTemplates.next": {
+    "message": "Dalej",
+    "description": "Nawigacja po kreatorze szablonów zaplanowanych i wskazówki dotyczące połączenia"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Użyjemy tylko połączeń wymaganych przez ten szablon; połączone konta będą automatycznie używane ponownie.",
+    "description": "Nawigacja po kreatorze szablonów zaplanowanych i wskazówki dotyczące połączenia"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "Ten szablon korzysta tylko z wbudowanej funkcjonalności, można go bezpośrednio utworzyć.",
+    "description": "Wskazówki dotyczące tworzenia i aktywacji szablonu zadania zaplanowanego"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Możesz kontynuować po zakończeniu połączenia.",
+    "description": "Nawigacja po kreatorze szablonów zaplanowanych i wskazówki dotyczące połączenia"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "To zadanie będzie korzystać z wybranego konta.",
+    "description": "Nawigacja po kreatorze szablonów zaplanowanych i wskazówki dotyczące połączenia"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Uruchom przez autoryzowane połączenie MCP, bez potrzeby dodatkowego wiązania konta.",
+    "description": "Nawigacja po kreatorze szablonów zaplanowanych i wskazówki dotyczące połączenia"
   }
 }

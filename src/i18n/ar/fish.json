@@ -27,6 +27,18 @@
     "message": "المدة",
     "description": "علامة مدة مهمة Fish"
   },
+  "name.failure": {
+    "message": "فشل في التوليد",
+    "description": "عنوان فشل المهمة في Fish"
+  },
+  "name.failureReason": {
+    "message": "سبب الفشل",
+    "description": "علامة سبب فشل المهمة في Fish"
+  },
+  "name.traceId": {
+    "message": "معرّف التتبع",
+    "description": "علامة معرّف تتبع المهمة في Fish"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "علامة الروبوت في بطاقة مهمة Fish"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "لا توجد نماذج صوتية",
     "description": "تنبيه عند فراغ محدد الصوت في Fish"
+  },
+  "group.publicVoices": {
+    "message": "مكتبة الأصوات العامة",
+    "description": "عنوان مجموعة الأصوات العامة لمحدد الأصوات Fish"
+  },
+  "message.searching": {
+    "message": "جارٍ البحث…",
+    "description": "提示 المستخدم أن البحث جارٍ في محدد الأصوات Fish"
+  },
+  "message.searchVoiceHint": {
+    "message": "أدخل الكلمات الرئيسية للبحث عن الأصوات العامة",
+    "description": "提示 المستخدم للبحث عن الأصوات العامة في محدد الأصوات Fish"
   },
   "name.voiceTitle": {
     "message": "الاسم",

@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Aktion",
+    "description": "Auswahl für die Generierung oder Bearbeitung von Aktionen."
+  },
   "name.taskId": {
     "message": "Aufgaben-ID",
     "description": "ID der Aufgabe"
@@ -29,7 +33,7 @@
   },
   "name.status": {
     "message": "Status",
-    "description": "Aufgabenstatus"
+    "description": "Status der Aufgabe"
   },
   "name.traceId": {
     "message": "Verfolgungs-ID",
@@ -131,6 +135,10 @@
     "message": "Bild hochladen fehlgeschlagen, bitte später erneut versuchen",
     "description": "Hochladen fehlgeschlagen"
   },
+  "message.referenceImageRequired": {
+    "message": "Im Bearbeitungsmodus muss mindestens ein Referenzbild hochgeladen werden.",
+    "description": "Überprüfungshinweis, der angezeigt wird, wenn im Bearbeitungsmodus kein Referenzbild vorhanden ist."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Bestätigung erforderlich",
     "description": "Titel im Konfliktwarnungsdialog"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Option für das SeeDream 5.0 Modell (unterstützt Gruppenbilder und Streaming-Ausgabe)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Anzahl der Bilder",

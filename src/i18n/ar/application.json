@@ -8,8 +8,8 @@
     "description": "حد الخدمة."
   },
   "badge.shared": {
-    "message": "Shared",
-    "description": "Badge on the application list marking an application that has been authorized to the current user by someone else (not owned by them)."
+    "message": "مشترك",
+    "description": "شعار في قائمة التطبيقات يشير إلى أن هذا التطبيق تم تفويضه للاستخدام من قبل المستخدم الحالي من قبل شخص آخر، وليس مملوكًا من قبل المستخدم الحالي."
   },
   "field.expiredAt": {
     "message": "تاريخ الانتهاء",
@@ -60,7 +60,7 @@
     "description": "معرف الطلب."
   },
   "field.remainingAmount": {
-    "message": "رصيد الحالة",
+    "message": "الرصيد",
     "description": "رصيد الطلب."
   },
   "field.usedAmount": {
@@ -144,11 +144,11 @@
     "description": "يُعرض هذا التنبيه عند فشل إنشاء الطلب العام تلقائيًا."
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 مرحبًا بك في BigPlayer AI! لقد أرسلنا لك {credits} نقطة لتجربة أي خدمة على الموقع.",
+    "message": "🎉 مرحبًا بك في {brand}! لقد أرسلنا لك {credits} نقطة لتجربة أي خدمة على الموقع.",
     "description": "رسالة ترحيبية تُعرض عند نجاح إنشاء الطلب العام تلقائيًا أو عند الدخول لأول مرة. {credits} هو الرصيد المتبقي للطلب العام."
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 مرحبًا بك في BigPlayer AI! حسابك جاهز لتجربة أي خدمة على الموقع.",
+    "message": "🎉 مرحبًا بك في {brand}! حسابك جاهز لتجربة أي خدمة على الموقع.",
     "description": "رسالة ترحيبية تُعرض عندما لا تتوفر أي رصيد مجاني في الطلب العام."
   },
   "message.notApplied": {
@@ -244,7 +244,7 @@
     "description": "عنوان الصفحة عندما يريد المستخدم شراء الخدمة."
   },
   "title.globalBuy": {
-    "message": "إعادة شحن نقاط BigPlayer AI العامة",
+    "message": "إعادة شحن نقاط {brand} العامة",
     "description": "عنوان الصفحة عندما يريد المستخدم شراء خدمة عامة."
   },
   "title.applicationRemainingCount": {
@@ -256,7 +256,7 @@
     "description": "عنوان الصفحة عندما يريد المستخدم إدارة الطلبات."
   },
   "title.applicationBalance": {
-    "message": "رصيد مخصص - {service}",
+    "message": "الرصيد المخصص - {service}",
     "description": "عندما يتم عرض رسالة للمستخدم الذي يرى رصيد الطلب."
   },
   "title.count": {
@@ -272,7 +272,7 @@
     "description": "عنوان الصفحة عندما يريد المستخدم رؤية الرصيد العام."
   },
   "message.globalBalanceDescription": {
-    "message": "عند تفعيل 'السماح باستخدام الرصيد العام'، سيتم استخدام الرصيد العام تلقائيًا عند نفاد رصيد المثيل.",
+    "message": "عند تفعيل 'السماح باستخدام الرصيد العام'، سيتم استخدام الرصيد العام تلقائيًا عند نفاد الرصيد المخصص.",
     "description": "نص توضيحي يوضح أنه عند نفاد رصيد المثيل سيتم استهلاك الرصيد العام تلقائيًا."
   },
   "button.service": {

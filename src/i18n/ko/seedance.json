@@ -8,7 +8,7 @@
     "description": "비디오 생성을 위한 프롬프트"
   },
   "description.prompt": {
-    "message": "생성할 비디오를 설명하고 SeeDance 매개변수를 추가할 수 있습니다(예: --rs 720p --rt 16:9 --dur 5).",
+    "message": "생성할 비디오를 설명하세요. 캐릭터가 말하게 하려면: 이미지를 아래의 '참조 이미지' 박스에 업로드(‘첫 프레임 이미지’가 아님)하고, 프롬프트에서 대사를 명확히 작성하고 따옴표로 감싸세요. 예: 이미지 1의 캐릭터가 카메라를 향해 말합니다: “당신의 대사”, 그리고 '오디오 생성'을 켭니다. 추가 매개변수(예: --rs 720p --rt 16:9 --dur 5)를 추가할 수 있습니다.",
     "description": "프롬프트 입력 설명"
   },
   "placeholder.prompt": {
@@ -40,7 +40,7 @@
     "description": "오디오 생성 여부 레이블"
   },
   "description.generateAudio": {
-    "message": "활성화하면 비디오에 오디오가 추가됩니다. seedance-1.5-pro 모델만 지원하며, 비용은 약 2배입니다.",
+    "message": "활성화하면 비디오에 소리가 포함됩니다. 캐릭터가 말하게 하려면: 인물 이미지를 '참조 이미지' 박스에 업로드 + 이 스위치를 켜기 + 프롬프트에서 대사를 따옴표로 작성하세요. seedance-1.5-pro / seedance-2.0 시리즈만 지원하며, 비용은 약 2배입니다.",
     "description": "오디오 생성 설명"
   },
   "name.resolution": {
@@ -100,19 +100,19 @@
     "description": "마지막 프레임 설명"
   },
   "name.firstFrame": {
-    "message": "첫 번째 프레임 이미지",
-    "description": "첫 번째 프레임 이미지 업로드 레이블"
+    "message": "첫 프레임 이미지(화면 효과)",
+    "description": "첫 프레임 이미지 업로드 태그"
   },
   "description.firstFrame": {
-    "message": "선택 사항입니다. 참조/첫 번째 프레임 이미지를 업로드하세요.",
-    "description": "첫 번째 프레임 이미지 설명"
+    "message": "첫 프레임 이미지: 업로드한 이 이미지는 비디오의 첫 프레임이 되며, 화면은 이 이미지에서 시작됩니다. '이미지를 움직이게 하려면' 적합하지만, 캐릭터는 말하지 않으며 입 모양이 없습니다. 캐릭터가 말하게 하려면 아래의 '참조 이미지'를 사용하세요.",
+    "description": "첫 프레임 이미지 설명"
   },
   "name.lastFrame": {
     "message": "마지막 프레임 이미지",
     "description": "마지막 프레임 이미지 업로드 레이블"
   },
   "description.lastFrame": {
-    "message": "선택 사항입니다. 마지막 프레임 이미지를 업로드하세요(첫 번째 프레임 필요).",
+    "message": "첫 마지막 프레임 이미지로 비디오 생성: 비디오의 마지막 프레임을 지정합니다(첫 프레임 이미지와 함께 사용해야 함). 특정 이미지에서 시작하여 특정 이미지에서 종료하도록 화면을 고정하는 데 사용됩니다.",
     "description": "마지막 프레임 이미지 설명"
   },
   "button.generate": {
@@ -256,31 +256,59 @@
     "description": "SeeDance 2.0 Mini 모델"
   },
   "name.referenceImage": {
-    "message": "참고 이미지",
-    "description": "참고 주체 이미지 업로드 태그(Seedance 2.0)"
+    "message": "참조 이미지(캐릭터가 말함)",
+    "description": "참조 주체 이미지 업로드 태그(Seedance 2.0)"
   },
   "description.referenceImage": {
-    "message": "선택 사항입니다. 구술 비디오에 사용할 참고 주체 이미지를 업로드하세요. Seedance 2.0에서만 지원됩니다.",
-    "description": "참고 이미지 설명"
+    "message": "비디오에서 캐릭터가 말하고 입 모양을 맞추게 하는 경로(내레이션 / 디지털 인물 우선, 캐릭터 이미지를 유지합니다). 캐릭터가 말하게 하려면 이미지를 여기 업로드하고, '첫 프레임 이미지'가 아님을 유의하세요. 프롬프트의 따옴표 대사 + '오디오 생성'과 함께 사용해야 합니다. 1~9장의 이미지를 업로드할 수 있습니다. Seedance 2.0 시리즈만 해당됩니다. 주의: '첫 프레임/마지막 프레임 이미지'와 동시에 사용할 수 없습니다.",
+    "description": "참조 이미지 설명"
   },
   "name.referenceAudio": {
-    "message": "참고 오디오",
-    "description": "참고 오디오 업로드 태그(Seedance 2.0)"
+    "message": "참조 오디오(음색/배경 음악)",
+    "description": "참조 오디오 업로드 태그(Seedance 2.0)"
   },
   "description.referenceAudio": {
-    "message": "선택 사항입니다. 구술(디지털 사람) 비디오 생성을 위해 음성/오디오를 업로드하세요. 참고 이미지를 함께 사용해야 합니다. Seedance 2.0에서만 지원됩니다.",
-    "description": "참고 오디오 설명"
+    "message": "생성된 비디오가 이 오디오의 음색이나 배경 음악을 사용할 수 있게 합니다(참조 이미지와 함께 캐릭터가 해당 음색으로 말하게 함). 참조 이미지 또는 참조 비디오와 함께 사용해야 하며, 오디오만 단독으로 업로드할 수 없습니다. 1~3개의 세그먼트를 업로드할 수 있습니다. Seedance 2.0 시리즈만 해당됩니다.",
+    "description": "참조 오디오 설명"
   },
   "name.referenceVideo": {
     "message": "참고 비디오",
     "description": "참고 비디오 업로드 태그(Seedance 2.0)"
   },
   "description.referenceVideo": {
-    "message": "선택 사항입니다. 참고 비디오를 업로드하세요. Seedance 2.0에서만 지원됩니다.",
-    "description": "참고 비디오 설명"
+    "message": "모델이 이 비디오의 동작/촬영/스타일/음향 효과를 사용하여 새로운 비디오를 생성하게 합니다. 1~3개의 세그먼트를 업로드할 수 있습니다. Seedance 2.0 시리즈만 해당됩니다.",
+    "description": "참조 비디오 설명"
   },
-  "message.audioRequiresReferenceImage": {
-    "message": "참고 오디오는 참고 이미지(구술 주체)와 함께 사용해야 하므로, 참고 이미지를 함께 업로드하세요.",
-    "description": "오디오를 제공하지만 참고 이미지가 없을 때의 알림"
+  "message.audioRequiresReference": {
+    "message": "참조 오디오는 단독으로 사용할 수 없습니다. 참조 이미지를 하나 또는 참조 비디오를 하나 동시에 업로드하세요.",
+    "description": "참조 오디오에 이미지/비디오가 없는 경우 경고"
+  },
+  "model.seedance25": {
+    "message": "doubao-seedance-2.5",
+    "description": "Seedance 2.5 model"
+  },
+  "name.taskType": {
+    "message": "작업 유형",
+    "description": "Seedance 2.5 작업 유형"
+  },
+  "description.taskType": {
+    "message": "자동 판단, 편집 참조 비디오 또는 참조 비디오 연장.",
+    "description": "작업 유형 설명"
+  },
+  "taskType.auto": {
+    "message": "자동",
+    "description": "자동 판단 작업 유형"
+  },
+  "taskType.edit": {
+    "message": "비디오 편집",
+    "description": "참조 비디오 편집"
+  },
+  "taskType.extend": {
+    "message": "비디오 연장",
+    "description": "참조 비디오 연장"
+  },
+  "name.outputFormat": {
+    "message": "출력 형식",
+    "description": "비디오 컨테이너 형식"
   }
 }

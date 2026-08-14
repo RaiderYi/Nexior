@@ -51,13 +51,17 @@
     "message": "Größe",
     "description": "Ausgabebildgröße"
   },
+  "size.auto": {
+    "message": "Automatisch",
+    "description": "Größenauswahl: Automatisch, das Modell wählt das passende Seitenverhältnis basierend auf dem Eingabetext aus"
+  },
   "description.size": {
     "message": "Ausgabemaß für die Erstellung von Bildern, gängige Werte: 1024x1024, 1536x1024, 1024x1536.",
     "description": "Größenbeschreibung"
   },
   "sizeGroup.standard1k": {
     "message": "1K Standard",
-    "description": "Überschrift für die 1K-Größengruppe"
+    "description": "Titel der 1K Größenkategorie"
   },
   "sizeGroup.preset2k": {
     "message": "2K Voreinstellungen",
@@ -112,7 +116,7 @@
     "description": "Beschreibung des model-Parameters"
   },
   "description.imageUrls": {
-    "message": "Laden Sie 1-5 Referenzbilder hoch, um in den Bearbeitungsmodus zu gelangen.",
+    "message": "Laden Sie 1-16 Referenzbilder hoch, um in den Bearbeitungsmodus zu gelangen.",
     "description": "Beschreibung des image_urls-Parameters"
   },
   "status.pending": {
@@ -156,7 +160,7 @@
     "description": "Hinweis, dass das Guthaben aufgebraucht ist"
   },
   "message.uploadImageExceed": {
-    "message": "Maximal 5 Bilder können hochgeladen werden",
+    "message": "Maximal {count} Bilder können hochgeladen werden",
     "description": "Bildanzahl überschreitet das Limit"
   },
   "message.uploadImageError": {

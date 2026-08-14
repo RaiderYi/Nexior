@@ -215,6 +215,10 @@
     "message": "Razón de fallo",
     "description": "Razón del fallo de la tarea"
   },
+  "name.failure": {
+    "message": "Generación fallida",
+    "description": "Título de error de tarea del productor"
+  },
   "name.status": {
     "message": "Estado",
     "description": "Estado de la tarea"

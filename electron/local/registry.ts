@@ -1,14 +1,23 @@
 import { McpHost } from './mcp';
 import * as fsTool from './fs';
+import * as search from './search';
 import { run_command } from './shell';
+import * as shellSession from './shellSession';
+import * as projectContext from './context';
 import * as computer from './computer';
 import type { McpServerConf, McpServerStatus, ToolInvoke, ToolResult, ToolSpec } from './types';
 
 const BUILTIN: ToolSpec[] = [
-  { name: 'fs.read_file', description: 'Read a UTF-8 file inside an authorized root', input_schema: { type: 'object', properties: { path: { type: 'string' } }, required: ['path'] }, source: 'builtin', mutates: false },
+  { name: 'fs.read_file', description: 'Read a UTF-8 file inside an authorized root. Large files are paginated: pass offset (1-based line) + limit to read a specific range.', input_schema: { type: 'object', properties: { path: { type: 'string' }, offset: { type: 'number' }, limit: { type: 'number' } }, required: ['path'] }, source: 'builtin', mutates: false },
   { name: 'fs.list_dir', description: 'List a directory inside an authorized root', input_schema: { type: 'object', properties: { path: { type: 'string' } }, required: ['path'] }, source: 'builtin', mutates: false },
-  { name: 'fs.write_file', description: 'Write a file inside an authorized root', input_schema: { type: 'object', properties: { path: { type: 'string' }, content: { type: 'string' } }, required: ['path', 'content'] }, source: 'builtin', mutates: true },
-  { name: 'shell.run_command', description: 'Run a local command (argv form)', input_schema: { type: 'object', properties: { cmd: { type: 'string' }, args: { type: 'array', items: { type: 'string' } }, cwd: { type: 'string' } }, required: ['cmd'] }, source: 'builtin', mutates: true }
+  { name: 'fs.write_file', description: 'Create or overwrite a whole file inside an authorized root. To change part of an existing file, prefer fs.edit_file.', input_schema: { type: 'object', properties: { path: { type: 'string' }, content: { type: 'string' } }, required: ['path', 'content'] }, source: 'builtin', mutates: true },
+  { name: 'fs.edit_file', description: 'Replace an exact string in an existing file inside an authorized root. old_string must match exactly (including indentation) and be unique unless replace_all is set. Preferred over fs.write_file for editing — no need to resend the whole file.', input_schema: { type: 'object', properties: { path: { type: 'string' }, old_string: { type: 'string' }, new_string: { type: 'string' }, replace_all: { type: 'boolean' } }, required: ['path', 'old_string', 'new_string'] }, source: 'builtin', mutates: true },
+  { name: 'fs.glob', description: 'Find files by name pattern inside the authorized roots (e.g. "**/*.ts", "src/**/index.*"). Searches every root when path is omitted. Skips node_modules/.git/dist and similar. Prefer this over crawling with fs.list_dir.', input_schema: { type: 'object', properties: { pattern: { type: 'string' }, path: { type: 'string' }, hidden: { type: 'boolean' }, case_insensitive: { type: 'boolean' } }, required: ['pattern'] }, source: 'builtin', mutates: false },
+  { name: 'fs.grep', description: 'Search file CONTENT by regular expression inside the authorized roots, returning "path:line: text". Optionally restrict to files matching a glob. Skips binaries and node_modules/.git/dist. Use this to locate code instead of reading files one by one.', input_schema: { type: 'object', properties: { pattern: { type: 'string' }, path: { type: 'string' }, glob: { type: 'string' }, case_insensitive: { type: 'boolean' }, hidden: { type: 'boolean' }, max_results: { type: 'number' } }, required: ['pattern'] }, source: 'builtin', mutates: false },
+  { name: 'shell.run_command', description: 'Run a single local command (argv form) in a throwaway process. For anything stateful — cd, activating a venv, exporting vars, starting a dev server — use shell.exec instead.', input_schema: { type: 'object', properties: { cmd: { type: 'string' }, args: { type: 'array', items: { type: 'string' } }, cwd: { type: 'string' } }, required: ['cmd'] }, source: 'builtin', mutates: true },
+  { name: 'shell.exec', description: "Run a shell command in this conversation's PERSISTENT shell. State survives between calls: cd, exported vars, activated virtualenvs and background processes all persist. The working directory is also the session's current project. Prefer this over shell.run_command for multi-step work.", input_schema: { type: 'object', properties: { command: { type: 'string' }, cwd: { type: 'string' }, timeout_ms: { type: 'number' } }, required: ['command'] }, source: 'builtin', mutates: true },
+  { name: 'shell.set_working_dir', description: "Set (or read, when path is omitted) the conversation's working directory — the current project. Other tools default to it, notably project.load_context. Must be inside an authorized root.", input_schema: { type: 'object', properties: { path: { type: 'string' } } }, source: 'builtin', mutates: false },
+  { name: 'project.load_context', description: "Load the current project's convention files (AGENTS.md / CLAUDE.md / CONVENTIONS.md / .cursorrules) and its slash commands (.claude/commands). ALWAYS call this before writing or modifying code — these conventions override your defaults. Defaults to the session working directory; pass path to target another project.", input_schema: { type: 'object', properties: { path: { type: 'string' } } }, source: 'builtin', mutates: false }
 ];
 
 // Computer-use POC: see + control the GUI on the user's own machine. Kept in a
@@ -29,6 +38,20 @@ const COMPUTER_TOOLS: ToolSpec[] = [
 
 function isComputerTool(name: string): boolean {
   return name.startsWith('computer.');
+}
+
+// Heuristic: does this MCP tool name look like it CHANGES remote state?
+// Used only to pick the UI default (writes ⇒ toggle starts off, harsher warning)
+// — never to relax a check, so a mis-classified read is at worst an extra
+// warning and a mis-classified write is still gated behind an explicit toggle
+// plus a native confirm dialog. Matched on the bare tool name (after the
+// `mcp.<server>.` prefix) so a server id like `post-bot` can't flip every tool.
+const WRITE_HINTS =
+  /(^|_)(publish|post|create|send|delete|remove|update|edit|write|upload|comment|reply|like|unlike|favorite|unfavorite|follow|unfollow|share|schedule|set|add)(_|$)/;
+
+function looksLikeWrite(qualifiedName: string): boolean {
+  const bare = qualifiedName.split('.').slice(2).join('.') || qualifiedName;
+  return WRITE_HINTS.test(bare);
 }
 
 // A first connect can fail on a slow machine (the MCP server exceeds its
@@ -88,6 +111,23 @@ export class Registry {
   // grant request so it can never persist an unknown/MCP/computer name.
   isBuiltinTool(name: string): boolean {
     return BUILTIN.some((s) => s.name === name);
+  }
+
+  // Currently-connected MCP tool specs, for the Settings per-tool always-allow
+  // toggles. `writes` marks the ones whose name looks like it changes remote
+  // state (publish/post/delete/…); the UI defaults those OFF and warns harder.
+  mcpToolSpecs(): { name: string; description: string; writes: boolean }[] {
+    return this.mcpSpecs.map((s) => ({
+      name: s.name,
+      description: s.description,
+      writes: looksLikeWrite(s.name)
+    }));
+  }
+
+  // Whether a name is a tool of a CURRENTLY CONNECTED MCP server — validates a
+  // tool-wide grant so a stale/unknown `mcp.*` name can never be persisted.
+  isMcpTool(name: string): boolean {
+    return this.mcpSpecs.some((s) => s.name === name);
   }
 
   async boot(servers: McpServerConf[]): Promise<void> {
@@ -224,10 +264,34 @@ export class Registry {
       if (dot < 0) return { output: `bad mcp tool name ${inv.name}`, is_error: true };
       return this.host.call(rest.slice(0, dot), rest.slice(dot + 1), inv.input);
     }
-    if (inv.name === 'fs.read_file') return fsTool.read_file(inv.input as { path: string });
+    if (inv.name === 'fs.read_file') return fsTool.read_file(inv.input as { path: string; offset?: number; limit?: number });
     if (inv.name === 'fs.list_dir') return fsTool.list_dir(inv.input as { path: string });
     if (inv.name === 'fs.write_file') return fsTool.write_file(inv.input as { path: string; content: string });
+    if (inv.name === 'fs.edit_file')
+      return fsTool.edit_file(inv.input as { path: string; old_string: string; new_string: string; replace_all?: boolean });
+    if (inv.name === 'fs.glob')
+      return search.glob(inv.input as { pattern: string; path?: string; hidden?: boolean; case_insensitive?: boolean });
+    if (inv.name === 'fs.grep')
+      return search.grep(
+        inv.input as {
+          pattern: string;
+          path?: string;
+          glob?: string;
+          case_insensitive?: boolean;
+          hidden?: boolean;
+          max_results?: number;
+        }
+      );
     if (inv.name === 'shell.run_command') return run_command(inv.input as { cmd: string; args?: string[]; cwd?: string });
+    if (inv.name === 'shell.exec')
+      return shellSession.shell_exec({
+        ...(inv.input as { command: string; cwd?: string; timeout_ms?: number }),
+        sessionId: inv.sessionId
+      });
+    if (inv.name === 'shell.set_working_dir')
+      return shellSession.set_working_dir({ ...(inv.input as { path?: string }), sessionId: inv.sessionId });
+    if (inv.name === 'project.load_context')
+      return projectContext.load_project_context({ ...(inv.input as { path?: string }), sessionId: inv.sessionId });
     if (inv.name === 'computer.screenshot') return computer.screenshot();
     if (inv.name === 'computer.click') return computer.click(inv.input as { x: number; y: number; button?: 'left' | 'right' | 'middle' });
     if (inv.name === 'computer.move') return computer.move(inv.input as { x: number; y: number });

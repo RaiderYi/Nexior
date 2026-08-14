@@ -38,12 +38,12 @@
             :headers="uploadHeaders"
           >
             <el-button type="primary" plain round :loading="uploading">
-              <font-awesome-icon icon="fa-solid fa-upload" class="icon mr-1" />
+              <upload-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
               {{ $t('fish.button.uploadAudio') }}
             </el-button>
           </el-upload>
           <el-button type="primary" round :disabled="!supportsRecorder" @click="onStartRecord">
-            <font-awesome-icon icon="fa-solid fa-microphone" class="icon mr-1" />
+            <microphone-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('fish.button.recordAudio') }}
           </el-button>
         </div>
@@ -65,7 +65,7 @@
           <audio :src="form.voicesUrl" controls preload="metadata" class="w-full" />
           <div class="ready-actions">
             <el-button link size="small" @click="clearAudio">
-              <font-awesome-icon icon="fa-solid fa-rotate-left" class="mr-1" />
+              <undo-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
               {{ $t('fish.button.replaceAudio') }}
             </el-button>
           </div>
@@ -98,25 +98,6 @@
         />
       </div>
 
-      <!-- Visibility -->
-      <div class="field-block mb-4">
-        <h2 class="title font-bold">{{ $t('fish.name.visibility') }}</h2>
-        <el-radio-group v-model="form.visibility" size="small">
-          <el-radio-button label="private" value="private">{{ $t('fish.value.private') }}</el-radio-button>
-          <el-radio-button label="unlist" value="unlist">{{ $t('fish.value.unlist') }}</el-radio-button>
-          <el-radio-button label="public" value="public">{{ $t('fish.value.public') }}</el-radio-button>
-        </el-radio-group>
-      </div>
-
-      <!-- Train mode -->
-      <div class="field-block mb-4">
-        <h2 class="title font-bold">{{ $t('fish.name.trainMode') }}</h2>
-        <el-radio-group v-model="form.trainMode" size="small">
-          <el-radio-button label="fast" value="fast">{{ $t('fish.value.trainModeFast') }}</el-radio-button>
-          <el-radio-button label="precise" value="precise">{{ $t('fish.value.trainModePrecise') }}</el-radio-button>
-        </el-radio-group>
-      </div>
-
       <!-- Toggles -->
       <div class="field-block mb-3">
         <div class="field-row">
@@ -144,7 +125,7 @@
         :loading="creating"
         @click="onCreate"
       >
-        <font-awesome-icon icon="fa-solid fa-magic" class="mr-2" />
+        <magic-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('fish.button.createModel') }}
       </el-button>
     </div>
@@ -152,19 +133,9 @@
 </template>
 
 <script lang="ts">
+import { MagicIcon, MicrophoneIcon, UndoIcon, UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
-import {
-  ElButton,
-  ElInput,
-  ElMessage,
-  ElRadioButton,
-  ElRadioGroup,
-  ElSwitch,
-  ElUpload,
-  UploadFile,
-  UploadFiles
-} from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { ElButton, ElInput, ElMessage, ElSwitch, ElUpload, UploadFile, UploadFiles } from 'element-plus';
 import { getBaseUrlPlatform, uploadTrackerMixin } from '@/utils';
 import Recorder from './model/Recorder.vue';
 
@@ -175,14 +146,13 @@ export interface IFishCreatePayload {
   voices: string;
   description?: string;
   visibility: 'public' | 'unlist' | 'private';
-  train_mode: 'fast' | 'precise';
+  train_mode: 'fast';
   texts?: string[];
   enhance_audio_quality?: boolean;
   generate_sample?: boolean;
 }
 
 type Visibility = 'public' | 'unlist' | 'private';
-type TrainMode = 'fast' | 'precise';
 
 interface IForm {
   title: string;
@@ -190,7 +160,6 @@ interface IForm {
   texts: string;
   voicesUrl: string;
   visibility: Visibility;
-  trainMode: TrainMode;
   enhanceAudio: boolean;
   generateSample: boolean;
 }
@@ -209,8 +178,7 @@ const defaultForm = (): IForm => ({
   description: '',
   texts: '',
   voicesUrl: '',
-  visibility: 'unlist',
-  trainMode: 'fast',
+  visibility: 'private',
   enhanceAudio: true,
   generateSample: false
 });
@@ -218,13 +186,14 @@ const defaultForm = (): IForm => ({
 export default defineComponent({
   name: 'FishModelConfigPanel',
   components: {
+    MagicIcon,
+    MicrophoneIcon,
+    UndoIcon,
+    UploadIcon,
     ElButton,
     ElInput,
-    ElRadioButton,
-    ElRadioGroup,
     ElSwitch,
     ElUpload,
-    FontAwesomeIcon,
     Recorder
   },
   mixins: [uploadTrackerMixin],
@@ -314,7 +283,8 @@ export default defineComponent({
       this.form.voicesUrl = '';
       this.fileList = [];
     },
-    onCreate() {
+    async onCreate() {
+      if (this.creating) return;
       const title = this.form.title.trim();
       if (!title) {
         ElMessage.warning(this.$t('fish.message.titleRequired'));
@@ -328,7 +298,7 @@ export default defineComponent({
         title,
         voices: this.form.voicesUrl,
         visibility: this.form.visibility,
-        train_mode: this.form.trainMode,
+        train_mode: 'fast',
         enhance_audio_quality: this.form.enhanceAudio,
         generate_sample: this.form.generateSample
       };
@@ -336,14 +306,17 @@ export default defineComponent({
       if (this.form.texts.trim()) payload.texts = [this.form.texts.trim()];
 
       this.creating = true;
-      this.$emit('create', payload);
-      // Re-enable the form shortly after so the spinner is visible but the
-      // user can keep working while the create call runs in the background.
-      setTimeout(() => {
-        this.creating = false;
+      try {
+        await new Promise<void>((resolve, reject) => {
+          this.$emit('create', payload, { resolve, reject });
+        });
         this.form = defaultForm();
         this.fileList = [];
-      }, 600);
+      } catch {
+        // The parent displays the request error; keep the form ready to retry.
+      } finally {
+        this.creating = false;
+      }
     }
   }
 });

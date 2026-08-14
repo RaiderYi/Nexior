@@ -6,21 +6,22 @@
       <ratio-selector class="mb-4" />
       <resolution-selector class="mb-4" />
       <duration-selector class="mb-4" />
-      <service-tier-selector class="mb-4" />
       <generate-audio-switch class="mb-4" />
       <camera-fixed-switch class="mb-4" />
       <return-last-frame-switch class="mb-4" />
+      <advanced25-settings class="mb-4" />
       <seed-input class="mb-4" />
-      <first-frame-image class="mb-2" />
-      <last-frame-image class="mb-2" />
-      <reference-image class="mb-2" />
-      <reference-audio class="mb-2" />
-      <reference-video class="mb-2" />
+      <first-frame-image class="mb-4" />
+      <last-frame-image class="mb-4" />
+      <reference-image class="mb-4" />
+      <reference-audio class="mb-4" />
+      <reference-video class="mb-4" />
     </div>
     <div class="flex flex-col items-center justify-center px-5 pb-5">
-      <consumption :value="consumption" :service="service" />
+      <scenario-payment-mode scenario="seedance" />
+      <consumption v-if="!walletMode" :value="consumption" :service="service" />
       <el-button type="primary" class="btn w-full" round @click="onGenerate">
-        <font-awesome-icon icon="fa-solid fa-magic" class="mr-2" />
+        <magic-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('seedance.button.generate') }}
       </el-button>
     </div>
@@ -28,9 +29,9 @@
 </template>
 
 <script lang="ts">
+import { MagicIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import PromptInput from './config/PromptInput.vue';
 import ModelSelector from './config/ModelSelector.vue';
 import DurationSelector from './config/DurationSelector.vue';
@@ -43,17 +44,21 @@ import LastFrameImage from './config/LastFrameImage.vue';
 import ReferenceImage from './config/ReferenceImage.vue';
 import ReferenceAudio from './config/ReferenceAudio.vue';
 import ReferenceVideo from './config/ReferenceVideo.vue';
-import ServiceTierSelector from './config/ServiceTierSelector.vue';
 import ReturnLastFrameSwitch from './config/ReturnLastFrameSwitch.vue';
+import Advanced25Settings from './config/Advanced25Settings.vue';
 import SeedInput from './config/SeedInput.vue';
 import Consumption from '../common/Consumption.vue';
 import { getConsumption } from '@/utils';
+import { normalizeSeedanceRequest } from '@/utils/seedance';
+import ScenarioPaymentMode from '../common/ScenarioPaymentMode.vue';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import { seedanceOperator } from '@/operators/seedance';
 
 export default defineComponent({
   name: 'SeedanceConfigPanel',
   components: {
+    MagicIcon,
     ElButton,
-    FontAwesomeIcon,
     PromptInput,
     ModelSelector,
     DurationSelector,
@@ -61,17 +66,21 @@ export default defineComponent({
     RatioSelector,
     GenerateAudioSwitch,
     CameraFixedSwitch,
-    ServiceTierSelector,
     ReturnLastFrameSwitch,
+    Advanced25Settings,
     SeedInput,
     FirstFrameImage,
     LastFrameImage,
     ReferenceImage,
     ReferenceAudio,
     ReferenceVideo,
-    Consumption
+    Consumption,
+    ScenarioPaymentMode
   },
   emits: ['generate'],
+  data() {
+    return { quoteTimer: 0, quoteRunId: 0 };
+  },
   computed: {
     config() {
       return this.$store.state.seedance?.config;
@@ -81,9 +90,50 @@ export default defineComponent({
     },
     service() {
       return this.$store.state.seedance?.service;
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('seedance').mode === 'wallet';
     }
   },
+  watch: {
+    walletMode: {
+      handler(enabled: boolean) {
+        if (enabled) this.scheduleQuote();
+      },
+      immediate: true
+    },
+    config: {
+      handler() {
+        if (this.walletMode) this.scheduleQuote();
+      },
+      deep: true
+    }
+  },
+  beforeUnmount() {
+    window.clearTimeout(this.quoteTimer);
+    this.quoteRunId += 1;
+  },
   methods: {
+    scheduleQuote() {
+      window.clearTimeout(this.quoteTimer);
+      this.quoteTimer = window.setTimeout(this.refreshQuote, 350);
+    },
+    async refreshQuote() {
+      const state = scenarioPaymentState('seedance');
+      const runId = ++this.quoteRunId;
+      state.quoteLoading = true;
+      state.quoteUsdc = undefined;
+      const { request } = normalizeSeedanceRequest(this.config);
+      try {
+        if (!request) return;
+        const quote = await seedanceOperator.quote(request);
+        if (runId === this.quoteRunId && state.mode === 'wallet') state.quoteUsdc = quote.amountUsdc;
+      } catch (error) {
+        console.warn('x402 quote failed', error);
+      } finally {
+        if (runId === this.quoteRunId) state.quoteLoading = false;
+      }
+    },
     onGenerate() {
       this.$emit('generate');
     }

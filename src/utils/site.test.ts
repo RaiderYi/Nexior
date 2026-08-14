@@ -1,6 +1,18 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { getSiteOrigin, getSiteMarkupRatio, applyMarkup } from './site';
+import {
+  getSiteOrigin,
+  getSiteMarkupRatio,
+  getApplicationMarkupRatio,
+  getApplicationCallerOrderDiscountRate,
+  applyMarkup,
+  isBrandingHidden,
+  getBrandName,
+  getBrandCopyright,
+  getBrandSupportUrl,
+  getBrandContacts,
+  hasBrandContacts
+} from './site';
 
 /**
  * getSiteOrigin must treat desktop (Electron, app://bundle authority "bundle")
@@ -55,6 +67,59 @@ describe('getSiteMarkupRatio', () => {
   });
 });
 
+describe('getApplicationMarkupRatio', () => {
+  const site = { id: 'site-1', metadata: { pricing: { markup_ratio: 0.1 } } } as never;
+
+  it('prefers the backend-resolved service markup', () => {
+    expect(getApplicationMarkupRatio({ effective_markup_ratio: 0.3 }, site)).toBe(0.3);
+  });
+
+  it('preserves an explicit zero override', () => {
+    expect(getApplicationMarkupRatio({ effective_markup_ratio: 0 }, site)).toBe(0);
+  });
+
+  it('does not guess a service price when an older backend omits the field', () => {
+    expect(getApplicationMarkupRatio({ service_id: 'service-1' }, site)).toBeUndefined();
+    expect(getApplicationMarkupRatio({ service: { id: 'service-1' } } as never, site)).toBeUndefined();
+    expect(getApplicationMarkupRatio(undefined, site)).toBeUndefined();
+  });
+
+  it('safely falls back for global applications', () => {
+    expect(getApplicationMarkupRatio({}, site)).toBe(0.1);
+  });
+
+  it('does not quote a global price before Site bootstrap succeeds', () => {
+    expect(getApplicationMarkupRatio({}, {} as never)).toBeUndefined();
+    expect(getApplicationMarkupRatio({}, undefined)).toBeUndefined();
+  });
+
+  it('defensively clamps malformed backend values', () => {
+    expect(getApplicationMarkupRatio({ effective_markup_ratio: -1 }, site)).toBeUndefined();
+    expect(getApplicationMarkupRatio({ effective_markup_ratio: 9 }, site)).toBe(5);
+    expect(
+      getApplicationMarkupRatio({ service_id: 'service-1', effective_markup_ratio: Number.NaN }, site)
+    ).toBeUndefined();
+  });
+});
+
+describe('getApplicationCallerOrderDiscountRate', () => {
+  it('returns the backend-resolved discount', () => {
+    expect(getApplicationCallerOrderDiscountRate({ effective_caller_order_discount_rate: 0.1 })).toBe(0.1);
+    expect(getApplicationCallerOrderDiscountRate({ effective_caller_order_discount_rate: 0 })).toBe(0);
+  });
+
+  it('falls back to zero only when a loaded application omits the legacy field', () => {
+    expect(getApplicationCallerOrderDiscountRate({})).toBe(0);
+    expect(getApplicationCallerOrderDiscountRate(undefined)).toBeUndefined();
+  });
+
+  it('fails closed when the backend returns a malformed discount', () => {
+    expect(getApplicationCallerOrderDiscountRate({ effective_caller_order_discount_rate: -1 })).toBeUndefined();
+    expect(getApplicationCallerOrderDiscountRate({ effective_caller_order_discount_rate: Number.NaN })).toBeUndefined();
+    expect(getApplicationCallerOrderDiscountRate({ effective_caller_order_discount_rate: 2 })).toBeUndefined();
+  });
+});
+
 describe('applyMarkup', () => {
   it('multiplies by (1 + ratio)', () => {
     expect(applyMarkup(10, 0.3)).toBeCloseTo(13);
@@ -67,5 +132,79 @@ describe('applyMarkup', () => {
     expect(applyMarkup(10, -1)).toBe(10);
     expect(applyMarkup(undefined, 0.3)).toBe(0);
     expect(applyMarkup(NaN, 0.3)).toBe(0);
+  });
+});
+
+describe('isBrandingHidden', () => {
+  it('returns false when site / branding / flag is unset (default = show ours)', () => {
+    expect(isBrandingHidden(null, 'powered_by')).toBe(false);
+    expect(isBrandingHidden(undefined, 'powered_by')).toBe(false);
+    expect(isBrandingHidden({} as never, 'powered_by')).toBe(false);
+    expect(isBrandingHidden({ branding: {} } as never, 'powered_by')).toBe(false);
+  });
+
+  it('hides only on an explicit boolean true (not truthy coercions)', () => {
+    expect(isBrandingHidden({ branding: { hide_powered_by: true } } as never, 'powered_by')).toBe(true);
+    expect(isBrandingHidden({ branding: { hide_powered_by: false } } as never, 'powered_by')).toBe(false);
+    expect(isBrandingHidden({ branding: { hide_powered_by: 1 } } as never, 'powered_by')).toBe(false);
+  });
+});
+
+describe('brand footer values', () => {
+  it('uses the site title and falls back to the platform brand', () => {
+    expect(getBrandName({ title: '  turboclaw  ' } as never)).toBe('turboclaw');
+    expect(getBrandName({ title: '   ' } as never)).toBe('Ace Data Cloud');
+    expect(getBrandName(null)).toBe('Ace Data Cloud');
+  });
+
+  it('returns only a non-empty custom copyright', () => {
+    expect(getBrandCopyright({ branding: { copyright: '  © TurboClaw  ' } } as never)).toBe('© TurboClaw');
+    expect(getBrandCopyright({ branding: { copyright: '   ' } } as never)).toBeUndefined();
+    expect(getBrandCopyright(null)).toBeUndefined();
+  });
+});
+
+describe('getBrandSupportUrl', () => {
+  it('prefers branding.links.support, then metadata.support_url, else empty', () => {
+    expect(
+      getBrandSupportUrl({
+        branding: { links: { support: 'https://a.com' } },
+        metadata: { support_url: 'https://b.com' }
+      } as never)
+    ).toBe('https://a.com');
+    expect(getBrandSupportUrl({ metadata: { support_url: 'https://b.com' } } as never)).toBe('https://b.com');
+    expect(getBrandSupportUrl({} as never)).toBe('');
+    expect(getBrandSupportUrl(null)).toBe('');
+  });
+});
+
+describe('getBrandContacts', () => {
+  it('returns [] when site / branding / contacts is unset or malformed', () => {
+    expect(getBrandContacts(null)).toEqual([]);
+    expect(getBrandContacts(undefined)).toEqual([]);
+    expect(getBrandContacts({} as never)).toEqual([]);
+    expect(getBrandContacts({ branding: {} } as never)).toEqual([]);
+    // non-array (legacy dict shape / garbage) is ignored
+    expect(getBrandContacts({ branding: { contacts: { discord: 'x' } } } as never)).toEqual([]);
+  });
+
+  it('returns the configured contacts list', () => {
+    const contacts = [
+      { type: 'discord', url: 'https://discord.gg/x' },
+      { type: 'email', value: 'a@b.co' }
+    ];
+    expect(getBrandContacts({ branding: { contacts } } as never)).toEqual(contacts);
+  });
+});
+
+describe('hasBrandContacts', () => {
+  it('is false when the list is missing or empty', () => {
+    expect(hasBrandContacts(null)).toBe(false);
+    expect(hasBrandContacts({ branding: { contacts: [] } } as never)).toBe(false);
+    expect(hasBrandContacts({ branding: { contacts: {} } } as never)).toBe(false);
+  });
+
+  it('is true when at least one entry is present', () => {
+    expect(hasBrandContacts({ branding: { contacts: [{ type: 'phone', value: '12345' }] } } as never)).toBe(true);
   });
 });

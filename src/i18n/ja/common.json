@@ -1,4 +1,8 @@
 {
+  "message.mediaPreviewUnavailable": {
+    "message": "プレビューは利用できません",
+    "description": "メディアプレビューが読み込めないことを示します"
+  },
   "button.setup": {
     "message": "設定",
     "description": "ボタンのテキスト、設定を行うため"
@@ -53,7 +57,7 @@
   },
   "button.deletePermanently": {
     "message": "アカウントを完全に削除",
-    "description": "Final red delete button at the bottom of the delete confirmation dialog"
+    "description": "削除確認ダイアログ下部の最終削除ボタン"
   },
   "button.confirm": {
     "message": "確認",
@@ -66,6 +70,46 @@
   "button.close": {
     "message": "閉じる",
     "description": "ボタンのテキスト、ダイアログやパネルを閉じるため"
+  },
+  "button.send": {
+    "message": "送信",
+    "description": "コンテンツを送信するボタンのアクセシビリティラベル"
+  },
+  "button.stop": {
+    "message": "停止",
+    "description": "操作を停止するボタンのアクセシビリティラベル"
+  },
+  "button.openMenu": {
+    "message": "メニューを開く",
+    "description": "ナビゲーションまたは設定メニューを開くボタンのアクセシビリティラベル"
+  },
+  "button.more": {
+    "message": "もっと操作",
+    "description": "操作メニューを開くボタンのアクセシビリティラベル"
+  },
+  "button.remove": {
+    "message": "削除",
+    "description": "アイテムを削除するボタンのアクセシビリティラベル"
+  },
+  "player.previous": {
+    "message": "前の曲",
+    "description": "プレーヤーの前の曲ボタンのアクセシビリティラベル"
+  },
+  "player.play": {
+    "message": "再生",
+    "description": "プレーヤーの再生ボタンのアクセシビリティラベル"
+  },
+  "player.pause": {
+    "message": "一時停止",
+    "description": "プレーヤーの一時停止ボタンのアクセシビリティラベル"
+  },
+  "player.next": {
+    "message": "次の曲",
+    "description": "プレーヤーの次の曲ボタンのアクセシビリティラベル"
+  },
+  "player.volume": {
+    "message": "音量",
+    "description": "プレーヤーの音量コントロールのアクセシビリティラベル"
   },
   "button.expand": {
     "message": "展開",
@@ -129,11 +173,19 @@
   },
   "button.downloadWindows": {
     "message": "Windows 版をダウンロード",
-    "description": "Text in button for downloading the Windows desktop installer"
+    "description": "Windowsデスクトップインストーラーのダウンロードボタンのテキスト"
   },
   "button.downloadMac": {
     "message": "macOS 版をダウンロード",
-    "description": "Text in button for downloading the macOS desktop installer"
+    "description": "macOSデスクトップインストーラーのダウンロードボタンのテキスト"
+  },
+  "button.downloadBrowserExtension": {
+    "message": "ブラウザ拡張をダウンロード",
+    "description": "Text in button for downloading the Chrome / Edge browser extension package"
+  },
+  "button.viewExtensionGuide": {
+    "message": "インストールガイドを見る",
+    "description": "ブラウザ拡張カードの副ボタンで、プラグインのインストールドキュメントに移動します"
   },
   "button.installIos": {
     "message": "iOSをインストール",
@@ -200,7 +252,7 @@
     "description": "エンティティのタイプを表示するために使用"
   },
   "entity.website": {
-    "message": "BigPlayer AI",
+    "message": "Ace Data Cloud",
     "description": "ウェブサイト名、翻訳不要で'Ace Data Cloud'のまま"
   },
   "entity.copyright": {
@@ -232,8 +284,8 @@
     "description": "Error toast shown when native Apple sign-in fails for a reason other than user cancellation"
   },
   "error.loginLinkExpired": {
-    "message": "Login link expired. Please sign in again.",
-    "description": "Shown on the desktop client when an OAuth callback is dropped (state mismatch or expired)."
+    "message": "ログインリンクの有効期限が切れました。もう一度サインインしてください。",
+    "description": "OAuthコールバックがドロップされた場合（状態不一致または期限切れ）にデスクトップクライアントに表示される"
   },
   "entity.operation": {
     "message": "操作",
@@ -261,14 +313,14 @@
   },
   "message.guestTasks": {
     "message": "ログインしてタスクを開始し、作品をここで確認しましょう。",
-    "description": "Prompt shown in the task list area for not-logged-in guests"
+    "description": "未ログインのゲストのタスクリストエリアに表示されるプロンプト"
   },
   "message.usedAmount": {
     "message": "使用済み金額",
     "description": "サービスで使用された金額を表示するために使用"
   },
   "message.mobileAppDescription": {
-    "message": "スマートフォンで直接BigPlayer AIを使用できます。現在、Android APKのダウンロードとインストールを提供しており、iOSインストールパッケージは署名後にダウンロード可能になります。",
+    "message": "スマートフォンで直接AceDataを使用できます。現在、Android APKのダウンロードとインストールを提供しており、iOSインストールパッケージは署名後にダウンロード可能になります。",
     "description": "モバイルアプリのダウンロードページの説明文"
   },
   "message.mobileAndroidHint": {
@@ -299,6 +351,14 @@
     "message": "ウェブ版と共用のアカウントとクレジット",
     "description": "モバイル版とウェブ版が共用のアカウントであることを説明するために使用"
   },
+  "message.extensionAvailableNow": {
+    "message": "無料で利用可能",
+    "description": "Status chip on the browser extension card"
+  },
+  "message.extensionHint": {
+    "message": "ソーシャルメディアアカウントを認証し、ローカルブラウザを接続してタスクを実行します。ダウンロード後、解凍して、拡張機能管理ページで「解凍された拡張機能を読み込む」を選択してインストールします。",
+    "description": "ブラウザ拡張カードの説明文です"
+  },
   "message.mobileIosHint": {
     "message": "iPhoneとiPadに対応、オンラインで直接インストールできます。システムがブロックする場合は、IPAをダウンロードしてから配布することもできます。",
     "description": "iOSダウンロードカードの説明"
@@ -309,43 +369,43 @@
   },
   "message.mobileComingSoon": {
     "message": "近日公開",
-    "description": "Short status label shown on a platform card (e.g. iOS) while its build is being prepared"
+    "description": "ビルドが準備中のプラットフォームカードに表示される短いステータスラベル"
   },
   "message.mobileNowOnAppStore": {
-    "message": "Now on the App Store",
-    "description": "Status label shown on the iOS card when the app is live on the App Store"
+    "message": "App Storeで公開中",
+    "description": "アプリがApp Storeで公開された場合にiOSカードに表示されるステータスラベル"
   },
   "message.desktopWindowsHint": {
     "message": "Windows 10 以降（64 ビット）向け。インストーラーをダウンロードし、ダブルクリックしてセットアップします。",
-    "description": "Windows desktop download card description"
+    "description": "Windowsデスクトップダウンロードカードの説明"
   },
   "message.desktopMacHint": {
     "message": "macOS 11 以降向け。お使いの Mac に合うビルドを選択してください —— Apple Silicon（M シリーズ）または Intel。",
-    "description": "macOS desktop download card description"
+    "description": "macOSデスクトップダウンロードカードの説明"
   },
   "message.desktopUnsignedNote": {
     "message": "デスクトップ版は未署名のベータビルドです。Windows では SmartScreen の警告で「詳細情報 → 実行」を選択してください。macOS ではアプリを右クリックして「開く」を選ぶと Gatekeeper を回避できます。",
-    "description": "Note explaining the desktop builds are unsigned betas and how to open them"
+    "description": "デスクトップビルドが未署名のベータ版であることと開き方を説明するノート"
   },
   "button.getOnGooglePlay": {
     "message": "Google Play で手に入れよう",
-    "description": "Button label that opens the app's Google Play Store listing"
+    "description": "アプリのGoogle Playストアページを開くボタンラベル"
   },
   "button.getOnAppStore": {
-    "message": "Get it on the App Store",
-    "description": "Button label that opens the app's Apple App Store listing"
+    "message": "App Storeで入手",
+    "description": "アプリのApple App Storeページを開くボタンラベル"
   },
   "message.mobileApkFallback": {
     "message": "Google Play を利用できない場合は、APK を直接ダウンロードできます。",
-    "description": "Shown next to a secondary button offering a direct APK download for users who cannot access Google Play"
+    "description": "Google Playにアクセスできないユーザー向けの直接APKダウンロードボタンの隣に表示される"
   },
   "message.mobilePlayStoreHint": {
     "message": "スキャンして Google Play を開く",
-    "description": "Hint under the QR code explaining that scanning it opens the Google Play listing"
+    "description": "QRコード下のヒント（スキャンするとGoogle Playが開くことを説明）"
   },
   "message.mobileAppStoreHint": {
-    "message": "Scan to open the App Store",
-    "description": "Hint under the QR code explaining that scanning it opens the App Store listing"
+    "message": "スキャンしてApp Storeを開く",
+    "description": "QRコード下のヒント（スキャンするとApp Storeが開くことを説明）"
   },
   "message.mobileInstallNote": {
     "message": "iOSで企業またはAd Hocパッケージを初めてインストールする際、システムが「設定 > 一般 > VPNとデバイス管理」で証明書を信頼するよう求める場合があります。",
@@ -399,6 +459,18 @@
     "message": "本当に削除しますか？",
     "description": "ユーザーがコンテンツを削除することを確認するメッセージ"
   },
+  "message.deleteTaskConfirm": {
+    "message": "この生成記録を削除してもよろしいですか？削除後はすべてのデバイスから削除され、復元できません。",
+    "description": "単一のタスク生成記録を削除する前に表示される確認メッセージ"
+  },
+  "message.deleteTaskSuccess": {
+    "message": "記録が削除されました。",
+    "description": "タスク記録を正常に削除した後に表示されるメッセージ"
+  },
+  "message.deleteTaskFailed": {
+    "message": "削除に失敗しました。後でもう一度お試しください。",
+    "description": "タスク記録の削除に失敗したときに表示されるメッセージ"
+  },
   "message.expiredAt": {
     "message": "有効期限",
     "description": "サービスの有効期限を表示するためのメッセージ"
@@ -409,31 +481,31 @@
   },
   "message.deleteAccountConfirm": {
     "message": "これにより、アカウントと関連するすべてのデータが完全に削除されます。この操作は元に戻せません。本当に続行しますか？",
-    "description": "Confirmation message shown before permanently deleting the user account"
+    "description": "ユーザーアカウントを完全に削除する前に表示される確認メッセージ"
   },
   "message.deleteAccountSuccess": {
     "message": "アカウントが削除されました。",
-    "description": "Message shown after the user account is successfully deleted"
+    "description": "アカウント削除が完了した後に表示されるメッセージ"
   },
   "message.deleteAccountFailed": {
     "message": "アカウントの削除に失敗しました。後でもう一度お試しください。",
-    "description": "Message shown when account deletion fails"
+    "description": "アカウント削除が失敗した場合に表示されるメッセージ"
   },
   "message.deleteAccountWarning": {
     "message": "この操作は取り消せません！アカウントとそのすべてのデータは完全に削除され、復元できません。",
-    "description": "Red warning banner at the top of the delete confirmation dialog"
+    "description": "削除確認ダイアログ上部の赤い警告バナー"
   },
   "message.deleteAccountConsequences": {
     "message": "完全に削除されるもの：プロフィール、残高とクレジット、アプリケーションとサブスクリプション、API キー、サードパーティのログイン連携。",
-    "description": "Explains what data will be removed in the delete confirmation dialog"
+    "description": "削除確認ダイアログで削除されるデータを説明する"
   },
   "message.deleteAccountTypePrompt": {
     "message": "削除を確認するには、ユーザー名を入力してください：",
-    "description": "Instructs the user to type their username to confirm; the username is shown separately below"
+    "description": "確認のためにユーザー名を入力するよう促す（ユーザー名は別途表示される）"
   },
   "message.deleteAccountPlaceholder": {
     "message": "ここにユーザー名を入力",
-    "description": "Placeholder for the username confirmation input"
+    "description": "ユーザー名確認入力欄のプレースホルダー"
   },
   "message.info": {
     "message": "情報",
@@ -568,8 +640,8 @@
     "description": "ウェブサイトのナビゲーションバーのテキストで、SeeDanceページを表示するためのものです。このフィールドは翻訳しないでください。'SeeDance'のままにしてください。"
   },
   "nav.grokvideo": {
-    "message": "Grok Video",
-    "description": "Text in the website navigation bar to display the Grok Imagine video page"
+    "message": "Grok ビデオ",
+    "description": "ウェブサイトのナビゲーションバーに表示されるテキストで、Grok Imagine ビデオページを示します"
   },
   "nav.luma": {
     "message": "Luma",
@@ -587,6 +659,10 @@
     "message": "Hailuo",
     "description": "ウェブサイトのナビゲーションバーのテキストで、Hailuoページを表示するためのものです。このフィールドは翻訳しないでください。'Hailuo'のままにしてください。"
   },
+  "nav.minimax": {
+    "message": "MiniMax H3",
+    "description": "Navigation name for the MiniMax H3 video generation service"
+  },
   "nav.wan": {
     "message": "Wan",
     "description": "ウェブサイトのナビゲーションバーのテキストで、Wanページを表示するためのものです。このフィールドは翻訳しないでください。'Wan'のままにしてください。"
@@ -603,17 +679,21 @@
     "message": "Kimi",
     "description": "ウェブサイトのナビゲーションバーのテキストで、Kimiページを表示するためのものです。このフィールドは翻訳しないでください。'Kimi'のままにしてください。"
   },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
+  },
   "nav.serp": {
     "message": "SERP",
     "description": "ウェブサイトのナビゲーションバーのテキストで、SERPページを表示するためのものです。このフィールドは翻訳しないでください。'SERP'のままにしてください。"
   },
   "nav.codingBridge": {
     "message": "Coding Bridge",
-    "description": "Text in the website navigation bar to display the Coding Bridge page, must remain as 'Coding Bridge'"
+    "description": "Coding Bridgeページを表示するナビゲーションバーのテキスト"
   },
   "nav.webextrator": {
     "message": "WebExtrator",
-    "description": "Text in the website navigation bar to display the WebExtrator page, must remain as 'WebExtrator'"
+    "description": "WebExtratorページを表示するナビゲーションバーのテキスト"
   },
   "nav.image": {
     "message": "画像",
@@ -641,7 +721,7 @@
   },
   "nav.deleteAccount": {
     "message": "アカウントを削除",
-    "description": "Menu item to permanently delete the current user account"
+    "description": "現在のユーザーアカウントを完全に削除するメニュー項目"
   },
   "nav.site": {
     "message": "サイト設定",
@@ -655,13 +735,17 @@
     "message": "設定",
     "description": "ウェブサイトのナビゲーションバーのテキストで、設定ページを表示するためのものです。"
   },
-  "nav.headshots": {
-    "message": "AI証明写真",
-    "description": "ウェブサイトのナビゲーションバーのテキストで、サイト設定ページを表示するためのものです。"
-  },
   "nav.more": {
     "message": "もっと見る",
     "description": "ウェブサイトのナビゲーションバーのテキストで、より多くのサービスを展開するためのものです。"
+  },
+  "nav.collapseDock": {
+    "message": "アプリバーを閉じる",
+    "description": "モバイル端末の下部にあるアプリバーを閉じるボタン"
+  },
+  "nav.expandDock": {
+    "message": "アプリバーを開く",
+    "description": "モバイル端末の下部にあるアプリバーを開くボタン"
   },
   "nav.locale": {
     "message": "言語設定",
@@ -744,7 +828,7 @@
     "description": "会社の住所"
   },
   "about.email": {
-    "message": "office@acedata.cloud",
+    "message": "office{'@'}acedata.cloud",
     "description": "会社の電子メール"
   },
   "about.link1": {
@@ -807,6 +891,30 @@
     "message": "テーマ",
     "description": "設定ページのテーマ設定部分のタイトル"
   },
+  "settings.sendShortcut": {
+    "message": "メッセージ送信",
+    "description": "全般設定のメッセージ送信ショートカット行のタイトル"
+  },
+  "sendShortcut.enter": {
+    "message": "Enter で送信",
+    "description": "送信ショートカットオプション：Enterでメッセージを送信"
+  },
+  "sendShortcut.modEnter": {
+    "message": "{key} + Enter で送信",
+    "description": "送信ショートカットオプション：プラットフォーム修飾キー（⌘またはCtrl）＋Enterで送信。{key}は修飾キーの記号"
+  },
+  "settings.loginMode": {
+    "message": "ログイン方式",
+    "description": "Login-mode row title in general settings"
+  },
+  "loginMode.iframe": {
+    "message": "埋め込みポップアップ",
+    "description": "Login mode option: embedded iframe popup"
+  },
+  "loginMode.redirect": {
+    "message": "ページ全体のリダイレクト",
+    "description": "Login mode option: full-page redirect"
+  },
   "settings.seo": {
     "message": "SEO設定",
     "description": "設定ページのSEO設定部分のタイトル"
@@ -820,11 +928,11 @@
     "description": "設定ページの配信設定部分のタイトル"
   },
   "settings.function": {
-    "message": "機能設定",
-    "description": "設定ページの機能設定部分のタイトル"
+    "message": "機能",
+    "description": "設定ページのサイト機能セクションのタイトル"
   },
   "settings.auth": {
-    "message": "ログイン方法",
+    "message": "認証",
     "description": "設定ページのサイドバーの『ログイン方法』タブのタイトル——このサイトで許可されているログイン方法とデフォルトのログイン方法を設定します。サイト管理者のみが表示可能です。"
   },
   "settings.apiKey": {
@@ -839,6 +947,14 @@
     "message": "アシスタントは、あなたが対話中に言及した有用な情報を記憶し、異なる対話でよりあなたに合ったパーソナライズされた返信を提供します。あなたは完全なコントロールを持っており、保存された内容を確認し、覚えてほしくない部分を削除できます。",
     "description": "記憶設定タブの上部にある紹介文です。"
   },
+  "settings.memoryEnabled": {
+    "message": "メモリを使用",
+    "description": "チャットで保存済みメモリを使用し新しいメモリを学習するかどうかを制御するスイッチのタイトル"
+  },
+  "settings.memoryEnabledHint": {
+    "message": "オフにすると、保存されたメモリは使用されず、新しいチャットではメモリが作成されません。既存のメモリは保持されます。",
+    "description": "メモリスイッチの下に表示される動作説明"
+  },
   "settings.memoryNeedsChat": {
     "message": "記憶機能を有効にするには、まず対話を開始してください。",
     "description": "チャットアプリ/トークンがまだ読み込まれていない場合、記憶設定タブに表示されます。"
@@ -846,6 +962,58 @@
   "settings.memoryStored": {
     "message": "保存された記憶",
     "description": "保存された記憶エントリーリストの上部にあるセクションタイトルです。"
+  },
+  "settings.memoryImport": {
+    "message": "インポート",
+    "description": "メモリインポートポップアップを開くボタン"
+  },
+  "settings.memoryImportTitle": {
+    "message": "他のAIからメモリをインポート",
+    "description": "メモリインポートダイアログのタイトル"
+  },
+  "settings.memoryImportExportStep": {
+    "message": "1. 現在のAIにメモリをエクスポートするよう依頼",
+    "description": "メモリインポートダイアログの最初のステップの見出し"
+  },
+  "settings.memoryImportPrompt": {
+    "message": "別のAIサービスに移行します。あなたが保存したすべてのメモリと永続的なコンテキストを一覧にしてください。",
+    "description": "ユーザーが別のAIサービスにコピーしてメモリをエクスポートするプロンプト"
+  },
+  "settings.memoryImportCopy": {
+    "message": "プロンプトをコピー",
+    "description": "メモリエクスポートプロンプトをコピーするボタン"
+  },
+  "settings.memoryImportCopied": {
+    "message": "コピーしました",
+    "description": "メモリエクスポートプロンプトをコピーした後のトースト"
+  },
+  "settings.memoryImportPasteStep": {
+    "message": "2. エクスポートしたメモリを貼り付け",
+    "description": "メモリインポートダイアログの2番目のステップの見出し"
+  },
+  "settings.memoryImportPlaceholder": {
+    "message": "ChatGPT、Claude、Geminiなどから返されたメモリテキストを貼り付けてください…",
+    "description": "貼り付けたメモリエクスポートテキストのプレースホルダー"
+  },
+  "settings.memoryImportSubmit": {
+    "message": "メモリに追加",
+    "description": "貼り付けたメモリをインポート送信するボタン"
+  },
+  "settings.memoryImportSuccess": {
+    "message": "Imported {count} memory entries",
+    "description": "Success toast after importing memory; count is the number of accepted entries"
+  },
+  "settings.memoryImportPartial": {
+    "message": "{processed}件を処理しました；{rejected}件の安全でないまたは無効なエントリはスキップされました",
+    "description": "部分的なメモリインポート後の警告"
+  },
+  "settings.memoryImportInvalid": {
+    "message": "メモリをインポートできませんでした。メモリがオンになっていることを確認し、1行に1つの事実を貼り付けてください。",
+    "description": "メモリインポートリクエストが無効な場合のアクション可能なエラー"
+  },
+  "settings.memoryImportInProgress": {
+    "message": "メモリのインポートが既に実行中です。このダイアログを開いたまま、しばらく後にもう一度お試しください。",
+    "description": "別のメモリインポートジョブがアクティブな場合の警告"
   },
   "settings.memoryEmpty": {
     "message": "保存された記憶はありません。使用するにつれて、アシスタントはここに持続的な好みや情報を記憶します。",
@@ -924,7 +1092,7 @@
     "description": "顧客の職業"
   },
   "customers.comment1": {
-    "message": "BigPlayer AIは私たちのチームに素晴らしいサービスを提供し、生産性を向上させてくれました。とても気に入っています！",
+    "message": "Ace Data Cloudは私たちのチームに素晴らしいサービスを提供し、生産性を向上させてくれました。とても気に入っています！",
     "description": "顧客の評価"
   },
   "customers.name2": {
@@ -936,7 +1104,7 @@
     "description": "顧客の職業"
   },
   "customers.comment2": {
-    "message": "BigPlayer AIは素晴らしい統合プラットフォームで、サービスの質が優れています。",
+    "message": "Ace Data Cloudは素晴らしい統合プラットフォームで、サービスの質が優れています。",
     "description": "顧客の評価"
   },
   "customers.name3": {
@@ -948,7 +1116,7 @@
     "description": "顧客の職業"
   },
   "customers.comment3": {
-    "message": "BigPlayer AIのサービスが好きで、使いやすく、価格も手頃です。ますます良くなってほしいです！",
+    "message": "Ace Data Cloudのサービスが好きで、使いやすく、価格も手頃です。ますます良くなってほしいです！",
     "description": "顧客の評価"
   },
   "nav.github": {
@@ -965,27 +1133,27 @@
   },
   "settings.localTools": {
     "message": "ローカルツール",
-    "description": "Desktop-only settings tab for managing local tool folders, permissions and grants."
+    "description": "ローカルツールフォルダー・権限・許可を管理するデスクトップ専用設定タブ"
   },
   "settings.localToolsDesktopOnly": {
     "message": "デスクトップアプリでのみ利用できます。",
-    "description": "Shown when the Local Tools tab is opened on web/mobile."
+    "description": "ウェブ/モバイルでローカルツールタブを開いた場合に表示される"
   },
   "settings.localToolsFoldersTitle": {
     "message": "許可済みフォルダ",
-    "description": "Heading for the list of folders the AI may read/write locally."
+    "description": "AIがローカルで読み書きできるフォルダー一覧の見出し"
   },
   "settings.localToolsFoldersHint": {
     "message": "AI がこの端末で読み書きできるフォルダです。ツールはローカルで実行され、あなたの同意なしに何も端末の外へ出ません。",
-    "description": "Help text under the authorized-folders heading."
+    "description": "許可フォルダー見出しの下のヘルプテキスト"
   },
   "settings.localToolsComputerUseTitle": {
-    "message": "Computer Use (experimental)",
-    "description": "Heading for the opt-in Computer Use (screen + mouse/keyboard control) toggle."
+    "message": "コンピュータ操作（試験的）",
+    "description": "オプトインのコンピュータ操作（画面＋マウス/キーボード制御）トグルの見出し"
   },
   "settings.localToolsComputerUseHint": {
-    "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
-    "description": "Help text under the Computer Use toggle."
+    "message": "AIが画面を見て、このコンピュータのマウスとキーボードを操作できるようにします。",
+    "description": "コンピュータ操作トグルの下のヘルプテキスト"
   },
   "settings.localToolsAndroidSkillsTitle": {
     "message": "電話自動化スキル",
@@ -1062,171 +1230,171 @@
   "settings.localToolsBuiltinRisky": "フルアクセス",
   "settings.localToolsAddFolder": {
     "message": "フォルダを追加",
-    "description": "Button to pick a folder to authorize."
+    "description": "許可するフォルダーを選択するボタン"
   },
   "settings.localToolsRemove": {
     "message": "削除",
-    "description": "Button to remove an authorized folder."
+    "description": "許可済みフォルダーを削除するボタン"
   },
   "settings.localToolsNoFolders": {
     "message": "まだフォルダが許可されていません。",
-    "description": "Empty state for the authorized-folders list."
+    "description": "許可フォルダー一覧の空の状態"
   },
   "settings.localToolsSave": {
     "message": "保存",
-    "description": "Save the authorized folders."
+    "description": "許可フォルダーを保存する"
   },
   "settings.localToolsMcpTitle": {
-    "message": "MCP servers",
-    "description": "Section title for local MCP server configuration in Local Tools settings."
+    "message": "MCPサーバー",
+    "description": "ローカルツール設定のローカルMCPサーバー設定セクションのタイトル"
   },
   "settings.localToolsMcpHint": {
-    "message": "Connect local MCP servers over stdio. Their tools become available to the AI, gated by the same per-call confirmation. Changes take effect immediately.",
-    "description": "Explains what local MCP servers do and that changes apply without a restart."
+    "message": "stdioを介してローカルMCPサーバーに接続します。それらのツールがAIで利用可能になります。",
+    "description": "ローカルMCPサーバーの機能と変更が即座に適用されることを説明"
   },
   "settings.localToolsMcpAdd": {
-    "message": "Add server",
-    "description": "Button to add a new local MCP server row."
+    "message": "サーバーを追加",
+    "description": "新しいローカルMCPサーバー行を追加するボタン"
   },
   "settings.localToolsMcpName": {
-    "message": "Name",
-    "description": "Label for the MCP server name/id field."
+    "message": "名前",
+    "description": "MCP サーバー名/識別フィールドのラベル。"
   },
   "settings.localToolsMcpCommand": {
-    "message": "Command",
-    "description": "Label for the MCP server launch command field."
+    "message": "コマンド",
+    "description": "MCP サーバー起動コマンドフィールドのラベル。"
   },
   "settings.localToolsMcpArgs": {
-    "message": "Arguments",
-    "description": "Label for the MCP server command arguments field."
+    "message": "パラメータ",
+    "description": "MCP サーバーコマンドパラメータフィールドのラベル。"
   },
   "settings.localToolsMcpArgsHint": {
-    "message": "One argument per line.",
-    "description": "Placeholder/hint for the MCP arguments textarea."
+    "message": "1行に1引数。",
+    "description": "MCP引数テキストエリアのプレースホルダー/ヒント"
   },
   "settings.localToolsMcpEnv": {
-    "message": "Environment",
-    "description": "Label for the MCP server environment variables field."
+    "message": "環境変数",
+    "description": "MCP サーバー環境変数フィールドのラベル。"
   },
   "settings.localToolsMcpEnvHint": {
-    "message": "One KEY=VALUE per line.",
-    "description": "Placeholder/hint for the MCP environment variables textarea."
+    "message": "1行にKEY=VALUE。",
+    "description": "MCP環境変数テキストエリアのプレースホルダー/ヒント"
   },
   "settings.localToolsMcpNoServers": {
-    "message": "No MCP servers configured.",
-    "description": "Empty state shown when no MCP servers are configured."
+    "message": "MCPサーバーが設定されていません。",
+    "description": "MCPサーバーが設定されていない場合の空の状態"
   },
   "settings.localToolsMcpNamePlaceholder": {
-    "message": "e.g. filesystem",
-    "description": "Placeholder for the MCP server name input."
+    "message": "例：filesystem",
+    "description": "MCPサーバー名入力欄のプレースホルダー"
   },
   "settings.localToolsMcpCommandPlaceholder": {
-    "message": "e.g. npx",
-    "description": "Placeholder for the MCP server command input."
+    "message": "例：npx",
+    "description": "MCPサーバーコマンド入力欄のプレースホルダー"
   },
   "settings.localToolsMcpNameRequired": {
-    "message": "Each server needs a name and a command.",
-    "description": "Validation error when a server row is missing a name or command."
+    "message": "各サーバーには名前とコマンドが必要です。",
+    "description": "サーバー行に名前またはコマンドがない場合のバリデーションエラー"
   },
   "settings.localToolsMcpDuplicateName": {
-    "message": "Server names must be unique.",
-    "description": "Validation error when two servers share the same name."
+    "message": "サーバー名は一意である必要があります。",
+    "description": "2つのサーバーが同じ名前を共有する場合のバリデーションエラー"
   },
   "settings.localToolsMcpNameInvalid": {
-    "message": "Name may only contain letters, numbers, hyphens and underscores.",
-    "description": "Validation error when a server name contains invalid characters."
+    "message": "名前には英字、数字、ハイフン、アンダースコアのみ使用できます。",
+    "description": "サーバー名に無効な文字が含まれる場合のバリデーションエラー"
   },
   "settings.localToolsMcpEnabled": {
-    "message": "On",
-    "description": "Toggle label to enable/disable a local MCP server."
+    "message": "有効",
+    "description": "特定のローカル MCP サーバーを有効/無効にするスイッチラベル。"
   },
   "settings.localToolsMcpReconnect": {
-    "message": "Test / Reconnect",
-    "description": "Button to re-spawn one MCP server and refresh its status."
+    "message": "テスト / 再接続",
+    "description": "MCPサーバーを再起動してステータスをリフレッシュするボタン"
   },
   "settings.localToolsMcpConnecting": {
-    "message": "Connecting…",
-    "description": "Badge while an MCP server is being (re)connected."
+    "message": "接続中…",
+    "description": "MCPサーバーが接続（再接続）中のバッジ"
   },
   "settings.localToolsMcpNotSaved": {
-    "message": "Not saved yet",
-    "description": "Badge for an MCP server row that hasn't been saved/connected yet."
+    "message": "まだ保存されていません",
+    "description": "まだ保存/接続されていないMCPサーバー行のバッジ"
   },
   "settings.localToolsMcpConnected": {
-    "message": "Connected · {n} tools",
-    "description": "Badge when an MCP server connected; {n} is the tool count."
+    "message": "接続済み · {n}ツール",
+    "description": "MCPサーバーが接続済みのバッジ。{n}はツール数"
   },
   "settings.localToolsMcpDisabled": {
-    "message": "Disabled",
-    "description": "Badge when an MCP server is turned off."
+    "message": "無効",
+    "description": "MCP サーバーがオフになっているときのラベル。"
   },
   "settings.localToolsMcpFailed": {
-    "message": "Failed to connect",
-    "description": "Badge when an MCP server failed to start; the reason is shown below."
+    "message": "接続に失敗しました",
+    "description": "MCPサーバーの起動に失敗した場合のバッジ"
   },
   "settings.localToolsMcpPlatformHint": {
-    "message": "Tip: use a command on your PATH such as npx or uvx (e.g. npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). On Windows, npx/node resolve automatically. If a server shows \"spawn … ENOENT\", set the command to a full path.",
-    "description": "Cross-platform hint for configuring the MCP launch command."
+    "message": "ヒント：npxやuvxなどPATH上のコマンドを使用してください（例：npx -y {'@'}modelcontextprotocol/server-filesystem）",
+    "description": "MCPの起動コマンド設定に関するクロスプラットフォームヒント"
   },
   "settings.localToolsSaved": {
     "message": "保存しました",
-    "description": "Transient confirmation after saving local-tool folders."
+    "description": "ローカルツールフォルダー保存後の確認表示"
   },
   "settings.localToolsActiveTools": {
     "message": "利用可能なツール",
-    "description": "Label before the list of currently available local tools."
+    "description": "現在利用可能なローカルツール一覧の前のラベル"
   },
   "settings.localToolsGrantsTitle": {
     "message": "常に許可する操作",
-    "description": "Heading for the persistent consent grants list."
+    "description": "永続的な同意許可一覧の見出し"
   },
   "settings.localToolsGrantsHint": {
     "message": "「常に許可」を選んだツール呼び出しです。再確認なしで実行されます。いずれかを取り消すと確認ダイアログが再び表示されます。",
-    "description": "Help text under the always-allowed actions heading."
+    "description": "常に許可するアクション見出しの下のヘルプテキスト"
   },
   "settings.localToolsRevoke": {
     "message": "取り消す",
-    "description": "Button to revoke a single always-allow grant."
+    "description": "単一の常時許可を取り消すボタン"
   },
   "settings.localToolsRevokeAll": {
     "message": "すべて取り消す",
-    "description": "Button to revoke every always-allow grant."
+    "description": "すべての常時許可を取り消すボタン"
   },
   "settings.localToolsNoGrants": {
     "message": "常に許可する操作はありません。ローカルツールの実行前に毎回確認されます。",
-    "description": "Empty state for the always-allowed actions list."
+    "description": "常時許可アクション一覧の空の状態"
   },
   "settings.localToolsPermsTitle": {
     "message": "システム権限",
-    "description": "Heading for the macOS system-permission section."
+    "description": "macOSシステム権限セクションの見出し"
   },
   "settings.localToolsPermsHint": {
     "message": "任意です。上のフォルダアクセスにこれらは不要です。特定の作業に必要なものだけ許可してください。",
-    "description": "Help text under the system-permissions heading."
+    "description": "システム権限見出しの下のヘルプテキスト"
   },
   "settings.localToolsPermFullDisk": {
     "message": "フルディスクアクセス",
-    "description": "macOS Full Disk Access permission row."
+    "description": "macOSフルディスクアクセス権限行"
   },
   "settings.localToolsPermScreen": {
     "message": "画面収録",
-    "description": "macOS Screen Recording permission row."
+    "description": "macOS画面収録権限行"
   },
   "settings.localToolsPermAccessibility": {
     "message": "アクセシビリティ",
-    "description": "macOS Accessibility permission row."
+    "description": "macOSアクセシビリティ権限行"
   },
   "settings.localToolsGranted": {
     "message": "許可済み",
-    "description": "Status tag when a system permission is granted."
+    "description": "システム権限が許可されている場合のステータスタグ"
   },
   "settings.localToolsNotGranted": {
     "message": "未許可",
-    "description": "Status tag when a system permission is not granted."
+    "description": "システム権限が許可されていない場合のステータスタグ"
   },
   "settings.localToolsOpen": {
     "message": "開く…",
-    "description": "Button to open the relevant macOS System Settings pane."
+    "description": "関連するmacOSシステム設定ペインを開くボタン"
   },
   "settings.subsites": {
     "message": "私のサブサイト",
@@ -1242,7 +1410,7 @@
   },
   "settings.customDomain": {
     "message": "カスタムドメイン",
-    "description": "Title for the custom-domain management tab in the settings popup. Visible only on subsites (non-main-official hosts) for site admins."
+    "description": "カスタムドメイン管理タブのタイトル（サブサイト管理者のみ表示）"
   },
   "settings.buildNow": {
     "message": "ワンクリック構築",
@@ -1253,7 +1421,7 @@
     "description": "概要ページでこのサイトがどのオープンソースプロジェクトに基づいているかを示すタイトル"
   },
   "settings.poweredByTip": {
-    "message": "このサイトはBigPlayer AIオープンソースプロジェクトに基づいて構築されており、コードは完全にオープンソースです。",
+    "message": "このサイトはNexiorオープンソースプロジェクトに基づいて構築されており、コードは完全にオープンソースです。",
     "description": "概要ページでこのサイトがどのオープンソースプロジェクトに基づいているかの説明"
   },
   "settings.apiService": {
@@ -1261,7 +1429,7 @@
     "description": "概要ページでAPIサービス提供者のタイトル"
   },
   "settings.apiServiceTip": {
-    "message": "このサイトのAPIサービスはBigPlayer AIが提供しています。",
+    "message": "このサイトのAPIサービスはAce Data Cloudが提供しています。",
     "description": "概要ページでAPIサービス提供者の説明"
   },
   "settings.buildYourOwn": {
@@ -1276,6 +1444,86 @@
     "message": "カスタマーサポートに連絡",
     "description": "カスタマーサポートボタンのテキスト"
   },
+  "settings.contactSupport": {
+    "message": "サポートに問い合わせ",
+    "description": "Aboutページのカスタマーサポート連絡先セクションのタイトル"
+  },
+  "settings.contactSupportTip": {
+    "message": "以下のいずれかのチャネルからサポートチームにご連絡ください。",
+    "description": "Aboutページのサポート連絡先セクションのサブタイトル"
+  },
+  "settings.contactInvalidUrl": {
+    "message": "{field} は有効な http(s) リンクである必要があります",
+    "description": "連絡先URLが有効なhttp(s)リンクでない場合のバリデーションエラー"
+  },
+  "settings.contactInvalidPhone": {
+    "message": "有効な電話番号を入力してください",
+    "description": "電話番号が無効な場合のバリデーションエラー"
+  },
+  "settings.contactInvalidEmail": {
+    "message": "有効なメールアドレスを入力してください",
+    "description": "メールアドレスが無効な場合のバリデーションエラー"
+  },
+  "settings.contactType": {
+    "message": "種類",
+    "description": "エディターの連絡先タイプ選択のプレースホルダー"
+  },
+  "settings.contactType_phone": {
+    "message": "電話",
+    "description": "電話連絡先タイプの表示名"
+  },
+  "settings.contactType_email": {
+    "message": "メール",
+    "description": "メール連絡先タイプの表示名"
+  },
+  "settings.contactType_website": {
+    "message": "ウェブサイト",
+    "description": "ウェブサイト連絡先タイプの表示名"
+  },
+  "settings.contactType_wechat": {
+    "message": "微信",
+    "description": "WeChatの連絡先タイプの表示名"
+  },
+  "settings.contactLabelPlaceholder": {
+    "message": "ラベル（任意）例：営業",
+    "description": "オプションの連絡先ラベル入力のプレースホルダー"
+  },
+  "settings.contactValuePlaceholder": {
+    "message": "アカウント / 表示テキスト",
+    "description": "汎用連絡先値入力のプレースホルダー"
+  },
+  "settings.contactQr": {
+    "message": "QRコード",
+    "description": "連絡先QRコード画像のラベル"
+  },
+  "settings.contactQrTip": {
+    "message": "QRコードをアップロードすると、ユーザーはスキャンして追加できます。",
+    "description": "連絡先QRコードアップローダーのヒント"
+  },
+  "settings.contactAdd": {
+    "message": "連絡先を追加",
+    "description": "別の連絡先エントリを追加するボタン"
+  },
+  "settings.contactEditorHint": {
+    "message": "各チャネルの種類を選び、値・リンク・QRのいずれかを入力してください。複数追加できます。",
+    "description": "連絡先エディターダイアログ上部のヒント"
+  },
+  "settings.contactInvalidType": {
+    "message": "種類は英小文字・数字・- ・_ のみ使用できます",
+    "description": "無効な連絡先タイプスラッグのバリデーションエラー"
+  },
+  "settings.contactRowNeedsValue": {
+    "message": "各連絡先には値・リンク・QRのいずれかが必要です",
+    "description": "連絡先行に値/URL/QRがない場合のバリデーションエラー"
+  },
+  "settings.contactInvalidValue": {
+    "message": "連絡先の入力が無効か長すぎます",
+    "description": "連絡先値/ラベルが無効または長すぎる場合のバリデーションエラー"
+  },
+  "settings.contactTooMany": {
+    "message": "連絡先は最大 {max} 件まで追加できます",
+    "description": "連絡先が多すぎる場合のバリデーションエラー"
+  },
   "message.viewOnGithub": {
     "message": "GitHubで見る",
     "description": "GitHubでプロジェクトを表示するリンクテキスト"
@@ -1285,7 +1533,7 @@
     "description": "404ページのタイトル"
   },
   "message.notFound": {
-    "message": "アクセスしたページは存在しません。リンクが変更されたか、削除された可能性があります。ホームページに戻ってBigPlayer AIのAIサービスを探索してください。",
+    "message": "アクセスしたページは存在しません。リンクが変更されたか、削除された可能性があります。ホームページに戻ってAceDataのAIサービスを探索してください。",
     "description": "404ページの副タイトル説明"
   },
   "message.notFoundEyebrow": {
@@ -1305,24 +1553,24 @@
     "description": "ブラウジング履歴の前のページに戻るためのボタンテキスト"
   },
   "title.apiCode": {
-    "message": "API code for this request",
-    "description": "Title of the dialog that shows the equivalent API code (curl / Python / Node) that would reproduce a result generated inside the product"
+    "message": "このリクエストのAPIコード",
+    "description": "結果を再現するための同等のAPIコード（curl/Python/Node）を表示するダイアログのタイトル"
   },
   "message.viewCodeHint": {
-    "message": "Show API code for this request",
-    "description": "Tooltip text on the View Code button shown alongside result-card action buttons (U1/U2/Download/Extend/...). Clicking the button opens a dialog with curl / Python / Node snippets that reproduce the same generation via the public API."
+    "message": "このリクエストのAPIコードを表示",
+    "description": "結果カードのアクションボタン横に表示される「コードを表示」ボタンのツールチップ"
   },
   "button.viewCode": {
-    "message": "View code",
-    "description": "Button text that opens a dialog with the equivalent API code (curl / Python / Node) for the current result, similar to the OpenAI Playground 'View code' affordance"
+    "message": "コードを表示",
+    "description": "同等のAPIコード（curl/Python/Node）を含むダイアログを開くボタンのテキスト"
   },
   "button.getApiKey": {
-    "message": "Get an API key",
-    "description": "Link text in the API code dialog footer that opens the platform console page where users can create an API key"
+    "message": "APIキーを取得",
+    "description": "APIコードダイアログのフッターにあるAPIキー作成ページへのリンクテキスト"
   },
   "button.apiPlatform": {
-    "message": "API Platform",
-    "description": "API code dialog footer button label. Clicking opens https://platform.acedata.cloud/ in a new tab so users can manage their API keys, balance and usage."
+    "message": "APIプラットフォーム",
+    "description": "APIコードダイアログのフッターボタンラベル（platform.acedata.cloudを新しいタブで開く）"
   },
   "message.apiCodeIntro": {
     "message": "Run this from your own code to produce the same result. Replace <YOUR_API_KEY> with a key from your platform console.",
@@ -1380,60 +1628,235 @@
     "message": "参照ファイルのアップロードがまだ進行中です。少々お待ちください。",
     "description": "Toast shown when the user clicks the Generate button while one or more reference uploads are still in flight. Asks them to wait for uploads to complete before retrying."
   },
+  "message.uploadTooLarge": {
+    "message": "ファイルサイズ {size} が上限 {max} を超えています。圧縮して再試行してください。",
+    "description": "ユーザーが選択したファイルがアップロードサイズの上限を超えたときに表示されるメッセージで、現在のファイルサイズと許可されている上限を説明します。"
+  },
+  "message.dropToUpload": {
+    "message": "ここにドラッグしてアップロード",
+    "description": "ファイルをアップロードコントロールの上にドラッグしたときに、一時的にそのコントロール上に表示されるヒントテキスト。ユーザーに手を離すとアップロードされることを知らせます。"
+  },
   "appUpgrade.title": {
-    "message": "Update required",
-    "description": "Title of the native-app version gate modal shown at startup when the installed build is older than what the backend supports."
+    "message": "アップデートが必要",
+    "description": "インストール済みビルドがバックエンドのサポート対象より古い場合に起動時に表示されるアップグレードモーダルのタイトル"
   },
   "appUpgrade.blockMessage": {
-    "message": "This version is no longer supported. Please update from the app store to continue.",
-    "description": "Body text of the hard-block upgrade modal shown when the installed version is below min_supported. The modal has no dismiss affordance — the only button opens the app store."
+    "message": "このバージョンはサポートが終了しました。続行するにはApp Storeからアップデートしてください。",
+    "description": "インストール済みバージョンがmin_supported未満の場合に表示される強制アップグレードモーダルの本文"
   },
   "appUpgrade.softMessage": {
-    "message": "A newer version is available. Update from the app store for the best experience.",
-    "description": "Body text of the soft upgrade prompt shown when the installed version is below latest but above min_supported. The user can dismiss and keep using the app."
+    "message": "新しいバージョンが利用可能です。最良のエクスペリエンスのためにApp Storeからアップデートしてください。",
+    "description": "インストール済みバージョンがlatest未満だがmin_supported以上の場合に表示されるソフトアップグレードプロンプトの本文"
   },
   "appUpgrade.openStore": {
-    "message": "Update now",
-    "description": "Primary button on the upgrade modal — opens the App Store / Play Store URL in the system browser."
+    "message": "今すぐアップデート",
+    "description": "アップグレードモーダルのプライマリボタン（App Store/Play StoreのURLを開く）"
   },
   "appUpgrade.later": {
-    "message": "Later",
-    "description": "Secondary button on the soft upgrade prompt — dismisses the modal and lets the user keep using the current version. Only shown for non-forced upgrades."
+    "message": "後で",
+    "description": "ソフトアップグレードのポップアップの次のボタン：この通知を無視して使用を続ける、強制アップグレードのシナリオでは表示されません。"
   },
   "nav.maestro": {
     "message": "マエストロ",
     "description": "ナビゲーションバーのマエストロ記事を動画に変換するページの文字で、'マエストロ'のままにします。"
   },
   "nav.digitalhuman": {
-    "message": "Digital Human",
-    "description": "Text in the website navigation bar for the Digital Human talking-head page"
+    "message": "デジタルヒューマン",
+    "description": "デジタルヒューマントーキングヘッドページのナビゲーションバーテキスト"
   },
   "settings.localToolsAndroidPermHint": {
-    "message": "Enable the accessibility service so the assistant can see and control your screen. You can pre-authorize individual actions below.",
-    "description": "Hint for the Android Computer Use accessibility permission section in Settings."
+    "message": "アシスタントが画面を見てデバイスを操作できるように、アクセシビリティサービスを有効にしてください。",
+    "description": "設定のAndroidコンピュータ操作アクセシビリティ権限セクションのヒント"
   },
   "settings.cuConsentTitle": {
-    "message": "Allow action?",
-    "description": "Title of the on-demand consent dialog shown when the assistant requests a screen action."
+    "message": "操作を許可しますか？",
+    "description": "アシスタントが画面操作を要求した場合に表示されるオンデマンド同意ダイアログのタイトル"
   },
   "settings.cuConsentMessage": {
-    "message": "The assistant wants to run \"{action}\" on your phone. Allow it?",
-    "description": "Body of the on-demand consent dialog; {action} is the computer.* action name."
+    "message": "アシスタントが「{action}」をスマートフォンで実行しようとしています。許可しますか？",
+    "description": "オンデマンド同意ダイアログの本文。{action}はcomputer.*アクション名"
   },
   "settings.cuConsentAllow": {
-    "message": "Allow once",
-    "description": "Allow button of the on-demand consent dialog."
+    "message": "1回許可",
+    "description": "オンデマンド同意ダイアログの許可ボタン"
   },
   "settings.cuConsentAlways": {
-    "message": "Always allow",
-    "description": "Always-allow button of the on-demand consent dialog; persists a grant so this action never prompts again."
+    "message": "常に許可",
+    "description": "オンデマンド同意ダイアログの常時許可ボタン（このアクションへのプロンプトが二度と表示されないように許可を保存する）"
   },
   "settings.cuConsentDeny": {
-    "message": "Deny",
-    "description": "Deny button of the on-demand consent dialog."
+    "message": "拒否",
+    "description": "オプトインのダイアログボックスの拒否ボタン。"
   },
-  "nav.glm": {
-    "message": "GLM",
-    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  "settings.siteServices": {
+    "message": "価格"
+  },
+  "nav.omni": {
+    "message": "Omni動画",
+    "description": "Omni動画モジュールのナビラベル"
+  },
+  "settings.localToolsMcpToolsTitle": {
+    "message": "MCP ツール",
+    "description": "ローカルツール設定内の MCP ツールセクションのタイトルです。"
+  },
+  "settings.localToolsMcpToolsHint": {
+    "message": "MCP サーバーが提供するツールに接続されました。開くと、AI はそれを逐次的に尋ねることはなくなります。MCP サーバーは第三者のプログラムであり、承認されたフォルダーの制限を受けません。「完全アクセス」としてマークされたツールはデータを変更または公開する可能性があるため、注意して開いてください。",
+    "description": "MCP ツールセクションの説明文で、第三者のリスクを強調しています。"
+  },
+  "settings.localToolsWorkingDirTitle": {
+    "message": "作業ディレクトリ",
+    "description": "ローカルツール設定のセクションタイトル：AIが現在操作しているプロジェクトフォルダー"
+  },
+  "settings.localToolsWorkingDirHint": {
+    "message": "AIはこのプロジェクトで作業します：ターミナルコマンドはここから実行され、プロジェクトの規約（AGENTS.md / CLAUDE.md）もここから読み取られます。選択すると、このフォルダーは自動的に読み書き権限を取得し、再度追加する必要はありません。",
+    "description": "作業ディレクトリの説明文"
+  },
+  "settings.localToolsWorkingDirNone": {
+    "message": "未選択",
+    "description": "作業ディレクトリが設定されていないときの空の状態"
+  },
+  "settings.localToolsWorkingDirChange": {
+    "message": "変更",
+    "description": "作業ディレクトリを変更するためのボタン"
+  },
+  "button.report": {
+    "message": "報告",
+    "description": "不適切なAI生成コンテンツを報告するためのボタンのテキスト"
+  },
+  "title.reportContent": {
+    "message": "コンテンツの報告",
+    "description": "不適切なAI生成コンテンツを報告するためのダイアログのタイトル"
+  },
+  "message.reportIntro": {
+    "message": "報告理由を選択してください。内容フィルタの改善のために迅速に審査します。",
+    "description": "コンテンツ報告ダイアログの導入メッセージ"
+  },
+  "message.reportDetailPlaceholder": {
+    "message": "詳細説明（任意）",
+    "description": "コンテンツ報告ダイアログのオプションの詳細テキストエリアのプレースホルダー"
+  },
+  "message.reportSuccess": {
+    "message": "報告が送信されました。フィードバックありがとうございます。",
+    "description": "コンテンツ報告が正常に送信された後に表示されるメッセージ"
+  },
+  "message.reportFailed": {
+    "message": "報告の送信に失敗しました。後でもう一度お試しください。",
+    "description": "コンテンツ報告の送信が失敗したときに表示されるメッセージ"
+  },
+  "message.reportReasonRequired": {
+    "message": "報告理由を選択してください。",
+    "description": "報告理由が選択されていないときのバリデーションメッセージ"
+  },
+  "reportReason.sexual": {
+    "message": "性的または性暗示的なコンテンツ",
+    "description": "コンテンツ報告理由：性的コンテンツ"
+  },
+  "reportReason.violence": {
+    "message": "暴力的または血なまぐさいコンテンツ",
+    "description": "コンテンツ報告理由：暴力または流血"
+  },
+  "reportReason.hate": {
+    "message": "ヘイトスピーチまたは嫌がらせ",
+    "description": "コンテンツ報告理由：ヘイトスピーチまたは嫌がらせ"
+  },
+  "reportReason.child_safety": {
+    "message": "未成年者への危害",
+    "description": "コンテンツ報告理由：子供の安全"
+  },
+  "reportReason.self_harm": {
+    "message": "自傷または危険な行為",
+    "description": "コンテンツ報告理由：自傷または危険な行為"
+  },
+  "reportReason.deception": {
+    "message": "虚偽または誤解を招く情報",
+    "description": "コンテンツ報告理由：欺瞞的または誤解を招くコンテンツ"
+  },
+  "reportReason.illegal": {
+    "message": "違法または不正なコンテンツ",
+    "description": "コンテンツ報告理由：違法行為"
+  },
+  "reportReason.ip": {
+    "message": "知的財産権の侵害",
+    "description": "コンテンツ報告理由：知的財産権の侵害"
+  },
+  "reportReason.other": {
+    "message": "その他",
+    "description": "コンテンツ報告理由：その他"
+  },
+  "x402Scenario.paymentMethod": {
+    "message": "支払い方法",
+    "description": "画像生成シーンでポイントまたはSolana USDCウォレットを選択するためのラベル。"
+  },
+  "x402Scenario.credits": {
+    "message": "ポイント",
+    "description": "生成シーンにおけるポイント支払いオプション。"
+  },
+  "x402Scenario.wallet": {
+    "message": "USDCウォレット",
+    "description": "生成シーンにおけるSolana USDCウォレット支払いオプション。"
+  },
+  "x402Scenario.quoteBeforeSigning": {
+    "message": "ウォレット署名前にサーバーからの正確なUSDC価格が表示されます。",
+    "description": "ウォレット支払いモードでサーバーが提供する権威ある見積もりの提示。"
+  },
+  "x402Scenario.connectWalletFirst": {
+    "message": "生成する前にSolanaウォレットを接続してください。",
+    "description": "ウォレットモードを選択したがまだウォレットが接続されていない時の提示。"
+  },
+  "x402Scenario.confirmPayment": {
+    "message": "今回の生成支払いは{amount} USDC（Solana）でよろしいですか？",
+    "description": "x402チャレンジを受け取った後の支払い確認；{amount}はサーバーの正確な見積もり。"
+  },
+  "x402Scenario.paymentFailed": {
+    "message": "ウォレット支払いに失敗しました。",
+    "description": "ウォレットモードでの生成失敗提示のプレフィックス。"
+  },
+  "x402Scenario.gptEditCreditsOnly": {
+    "message": "ウォレット支払いは現在GPT Image画像生成のみをサポートしています；参考画像の編集が必要な場合はポイントに切り替えてください。",
+    "description": "MVP段階のユーザーがウォレットモードでGPT Image参考画像の編集を試みた際の提示。"
+  },
+  "x402Scenario.payEachTime": {
+    "message": "毎回確認",
+    "description": "各ウォレット支払いの前にユーザーに確認を求めるオプション。"
+  },
+  "x402Scenario.continuousPayments": {
+    "message": "連続支払い",
+    "description": "再利用可能な Solana USDC 支払いの承認オプションを使用します。"
+  },
+  "x402Scenario.continuousPaymentsDescription": {
+    "message": "スタジオが設定した日次上限内で、Solana USDC ウォレットから実際の使用量を支払うことを許可します。",
+    "description": "連続ウォレット支払いを有効にする前に表示される説明。"
+  },
+  "x402Scenario.dailyPaymentLimit": {
+    "message": "日次支払い上限",
+    "description": "連続支払いで毎日使用できる USDC の上限。"
+  },
+  "x402Scenario.validUntil": {
+    "message": "有効期限",
+    "description": "連続支払いの承認の期限日。"
+  },
+  "x402Scenario.validDays": {
+    "message": "有効日数",
+    "description": "連続支払いの承認が期限切れになるまでの日数。"
+  },
+  "x402Scenario.enableContinuousPayments": {
+    "message": "連続支払いを有効化",
+    "description": "再利用可能な Solana 支払いの承認を作成するボタン。"
+  },
+  "x402Scenario.disableContinuousPayments": {
+    "message": "無効化",
+    "description": "連続支払いを停止しますが、オンチェーンの承認は撤回しないボタン。"
+  },
+  "x402Scenario.revokeAuthorization": {
+    "message": "承認を撤回",
+    "description": "Solana 上で再利用可能な支払いの承認を撤回するボタン。"
+  },
+  "x402Scenario.continuousPaymentsEnabled": {
+    "message": "連続支払いが有効になりました。",
+    "description": "ウォレットが支払い承認を成功裏に作成した後の通知。"
+  },
+  "error.userRestricted": {
+    "message": "このアカウントは現在制限されています。ログインできません。異議がある場合は、カスタマーサポートにご連絡ください。",
+    "description": "iOSネイティブログインが隔離されたアカウントを認識した際に表示されるメッセージで、内部制限の理由は表示されません。"
   }
 }

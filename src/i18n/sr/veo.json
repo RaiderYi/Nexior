@@ -20,7 +20,7 @@
     "description": "Razlog neuspeha zadatka"
   },
   "name.status": {
-    "message": "Status",
+    "message": "Статус",
     "description": "Status zadatka"
   },
   "name.traceId": {
@@ -56,7 +56,7 @@
     "description": "Verzija modela koja se koristi za generisanje videa"
   },
   "name.veoBot": {
-    "message": "Google Veo Bot",
+    "message": "Google Veo бот",
     "description": "Ime generatora Veo videa"
   },
   "name.ratio": {
@@ -180,7 +180,7 @@
     "description": "Poruka kada se slika generiše"
   },
   "message.generateFailed": {
-    "message": "生成视频失败",
+    "message": "Генерисање видеа није успело",
     "description": "Poruka kada generisanje videa nije uspelo"
   },
   "message.uploadVideoExceed": {
@@ -227,64 +227,24 @@
     "message": "Nema istorijskih zadataka, kliknite levo za generisanje videa",
     "description": "Poruka kada nema zadataka"
   },
-  "name.upsampleAction": {
-    "message": "Cilj uzorkovanja",
-    "description": "Ciljni format za /veo/upsample (1080p/4k/gif)"
-  },
-  "name.motionType": {
-    "message": "Tip pokreta kamere",
-    "description": "Tip pokreta kamere za /veo/reshoot"
-  },
-  "name.imageMask": {
-    "message": "Maska područja",
-    "description": "Maska slike za /veo/objects (bele piksela = operativna zona)"
-  },
-  "name.videoId": {
-    "message": "ID videa",
-    "description": "ID izvornog videa (iz prethodnog generisanog zadatka data[].id)"
-  },
-  "placeholder.imageMask": {
-    "message": "URL maske slike ili base64 kodirani JPEG",
-    "description": "Placeholder za unos image_mask"
-  },
-  "placeholder.videoId": {
-    "message": "Nalepite ID videa ili kliknite na dugme operacije u desnom spisku zadataka za automatsko popunjavanje",
-    "description": "Placeholder za unos video_id"
-  },
   "button.actionIngredients": {
     "message": "Video fuzija više slika",
     "description": "ingredients2video — fuzija 1-3 slike za generisanje nove scene"
   },
-  "button.actionUpsample": {
-    "message": "Uzorkovanje / GIF pregled",
-    "description": "/veo/upsample — uzorkovanje na 1080p/4K ili izvoz GIF-a"
+  "message.uploadReferencesLimit": {
+    "message": "Можете отпремити највише {limit} слика",
+    "description": "Динамичко ограничење броја слика за изабрани режим генерисања"
   },
-  "button.actionExtend": {
-    "message": "Produži video",
-    "description": "/veo/extend — produžavanje trajanja već generisanog videa"
+  "button.actionTabText": {
+    "message": "Текст",
+    "description": "Сажета Veo картица за текст-у-видео"
   },
-  "button.actionReshoot": {
-    "message": "Ponovno snimanje",
-    "description": "/veo/reshoot — ponovo generisanje sa promenom pokreta kamere"
+  "button.actionTabImage": {
+    "message": "Слика",
+    "description": "Сажета Veo картица за слика-у-видео"
   },
-  "button.actionObjectInsert": {
-    "message": "Dodaj objekat",
-    "description": "/veo/objects insert — dodavanje objekta u video"
-  },
-  "button.actionObjectRemove": {
-    "message": "Ukloni objekat",
-    "description": "/veo/objects remove — uklanjanje objekta iz videa putem maske"
-  },
-  "button.actionUpsample1080p": {
-    "message": "Uzorkovanje 1080P",
-    "description": "Dugme za pregled — uzorkovanje na 1080P"
-  },
-  "button.actionUpsample4k": {
-    "message": "Uzorkovanje 4K",
-    "description": "Dugme za pregled — uzorkovanje na 4K"
-  },
-  "button.actionUpsampleGif": {
-    "message": "Izvezi GIF",
-    "description": "Dugme za pregled — konvertovanje u GIF pregled"
+  "button.actionTabIngredients": {
+    "message": "Спајање",
+    "description": "Сажета Veo картица за спајање више слика"
   }
 }

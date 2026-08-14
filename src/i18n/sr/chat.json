@@ -79,36 +79,36 @@
     "message": "Veliki jezički model razvijen od strane ZhiPu AI",
     "description": "Opis GLM model grupe"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Naziv modela usluge, tj. GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Naziv modela usluge, tj. GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Najnovija generacija flagship GPT 5.5 modela",
-    "description": "Opis GPT 5.5 modela"
+  "model.56SolDescription": {
+    "message": "Najnovija generacija flagship GPT 5.6 Sol modela",
+    "description": "Opis GPT 5.6 Sol modela"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Naziv modela usluge, tj. GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Naziv modela usluge, tj. GPT 5.6"
   },
-  "model.54Description": {
-    "message": "Najnovija generacija flagship GPT 5.4 modela",
-    "description": "Opis GPT 5.4 modela"
+  "model.56TerraDescription": {
+    "message": "Najnovija generacija flagship GPT 5.6 modela",
+    "description": "Opis GPT 5.6 modela"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Naziv modela usluge, tj. GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Naziv modela usluge, tj. GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Brži i lakši GPT 5.4 model",
-    "description": "Opis GPT 5.4 Mini modela"
+  "model.56LunaDescription": {
+    "message": "Brži i lakši GPT 5.6 model",
+    "description": "Opis GPT 5.6 Luna modela"
   },
   "model.freeTag": {
     "message": "Бесплатно",
     "description": "Ознака приказана поред бесплатних модела у бирачу модела"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Naziv modela usluge, tj. DeepSeek chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Opis DeepSeek chat modela"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Naziv modela usluge, tj. DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Opis DeepSeek Reasoner modela"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Naziv modela usluge, tj. DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Opis DeepSeek V3.2 eksperimentalnog modela"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Naziv modela usluge, tj. DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,15 +140,15 @@
     "description": "Opis DeepSeek V4 Flash modela"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Naziv modela usluge, tj. Grok 4"
   },
   "model.grok4Description": {
-    "message": "Trenutno najnapredniji model",
+    "message": "General-purpose K2 model for compatible workflows",
     "description": "Opis Grok 4 modela"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Naziv modela usluge"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Brži i lakši model",
     "description": "Opis Gemini 2.5 Flash modela"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Ime modela usluge, tj. Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Najnoviji brzi model, podržava inferenciju, vizuelizaciju i pozivanje alata",
+    "description": "Opis Gemini 3.6 Flash modela"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Naziv modela usluge, tj. Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "Brži i lakši model",
     "description": "Opis Gemini 2.5 Flash modela"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Тренутно најнапреднији модел",
+    "description": "Опис Claude Opus 5 модела"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,16 +235,24 @@
     "message": "Lagani i brzi model",
     "description": "Opis Claude Haiku 4.5 modela"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Име модела услуга, тј. Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Одличан за дуг контекст, сложено резоновање и креативно писање",
-    "description": "Опис модела Claude Fable 5"
+  "model.kimiK3Description": {
+    "message": "Флагшип модел који подржава разматрање, визуелизацију и контекст од 1.000.000 токена",
+    "description": "Опис Kimi K3 модела"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Модел за разматрање и визуелизацију компатибилан са K2 токовима",
+    "description": "Опис Kimi K2.6 модела"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Naziv modela usluge, tj. Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +260,7 @@
     "description": "Opis Kimi K2.5 modela"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 razmišljanje",
     "description": "Naziv modela usluge, tj. Kimi K2 razmišljanje"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Opis Kimi K2 razmišljanje modela"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 turbo razmišljanje",
     "description": "Naziv modela usluge, tj. Kimi K2 turbo razmišljanje"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Opis Kimi K2 turbo razmišljanje modela"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Naziv modela usluge, tj. GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Opis GLM 5.1 modela"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Naziv modela usluge, tj. GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "Otpremanje datoteke nije uspelo, pokušajte ponovo kasnije",
     "description": "Poruka na vebu koja obaveštava korisnika da otpremanje datoteke nije uspelo, pokušajte ponovo kasnije"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "Величина датотеке {size} превазилази максималну величину {max}, молимо смањите и покушајте поново",
+    "description": "Порука на веб страници која обавештава корисника да датотека превазилази лимит величине за отпремање, потребно је смањити величину и покушати поново"
   },
   "message.notApplied": {
     "message": "Niste zatražili ovu uslugu, molimo vas da prvo zatražite",
@@ -583,114 +611,336 @@
     "message": "Овлашћење конектора је прескочено",
     "description": "Објашњење на дну картице након што је корисник прескочио овлашћење"
   },
+  "browserTool.title": {
+    "message": "Активност прегледача",
+    "description": "Fallback title for a BrowserDevice tool activity"
+  },
+  "browserTool.state.starting_session": {
+    "message": "Покрећем сесију прегледача",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Повезујем прегледач таб",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "Прегледач је спреман",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "Уређај прегледача је ван мреже"
+  },
+  "browserTool.state.device_busy": {
+    "message": "Уређај прегледача је заузет",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Потребно је потврдити овлашћење у Студију",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "Извршава се у прегледачу"
+  },
+  "browserTool.state.completed": {
+    "message": "Завршено"
+  },
+  "browserTool.state.stopped": {
+    "message": "Сесија прегледача је заустављена",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "Захтев прегледача је истекао"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Молимо затворите алате за развој и наставите",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Резултат извршења је непознат, молимо проверите и покушајте поново",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "Операција прегледача није успела",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "Заустави",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Управљајте уређајима",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Заустави друге сесије",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Затвори алате за развој",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Погледајте овлашћење",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "Заказани задаци"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Zakazani zadaci",
+    "description": "Stranica zakazanih zadataka - kartica zadataka"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Izvršenja",
+    "description": "Stranica zakazanih zadataka - kartica svih izvršenja"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "Sve",
+    "description": "Filter statusa izvršenih zadataka - Sve"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "Заказани задаци"
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "Ново"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "Уреди задатак"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Копирај задатак",
+    "description": "Кноп за копирање задатка, аутоматски попуњава нови образац на основу постојећег задатка"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "Још нема заказаних задатака. Кликните на „Ново“ да бисте направили један."
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "Још нема покретања"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "Учитавање није успело"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "Обрисати „{name}“? Задатак ће престати да се покреће."
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Покрени сада",
+    "description": "Trigger the task immediately, out of schedule"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Покренуто. Резултат ће се ускоро појавити у историји покретања.",
+    "description": "Manual trigger success"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Покретање није успело. Покушајте поново касније.",
+    "description": "Manual trigger error"
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "Прикажи резултат"
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "Историја покретања"
   },
   "scheduledTasks.noConversation": {
     "message": "Нема записа о разговору",
     "description": "Радња није повезана са разговором (стара верзија рада)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60 s одступања"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "Покренуто {count} пут(а)"
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "Активно"
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "Паузирано"
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "Грешка"
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "На чекању"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "У току"
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "Успешно"
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "Неуспело"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Nepotvrđeno",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Достигнут лимит корака"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Достигнут лимит буџета"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Откривена петља позива алата"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Упит је предугачак"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Прекинуто"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Прекинуто"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Чека се ваш унос"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Грешка"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Непозната грешка"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Недовољно средстава"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Ауторизација наплате није успела"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Неовлашћено"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Истекло време"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Интерна грешка"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "Потребна је радња"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Уређај прегледача је офлајн",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Овлашћење прегледача је промењено, молимо измените овај задатак",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "Дневно"
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "Сваког минута"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "На сат"
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "Недељно"
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Cron израз"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Сваких",
+    "description": "Run at a fixed interval"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "минута",
+    "description": "Interval unit: minutes"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "сати",
+    "description": "Interval unit: hours"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "дана",
+    "description": "Interval unit: days"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "У минуту",
+    "description": "Which minute of each hour to run"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "Ког минута сваког сата да се покрене (0–59)",
+    "description": "Hourly minute hint"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Покреће се једном по фиксном интервалу након претходног покретања (минимум 1 минут)",
+    "description": "Interval hint"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Стандардни cron израз са 5 поља: минут сат дан месец дан_у_недељи",
+    "description": "Cron hint"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Покреће се {text}",
+    "description": "Schedule preview"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "сваких {n} мин",
+    "description": "Human-readable: every N minutes"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "сваких {n} h",
+    "description": "Human-readable: every N hours"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "сваких {n} д",
+    "description": "Human-readable: every N days"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "сваког сата у {n}. минуту",
+    "description": "Human-readable: hourly at minute N"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "сваког дана у {time}",
+    "description": "Human-readable: daily at time"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "{weekday} у {time}",
+    "description": "Human-readable: weekly at weekday/time"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron: {cron}",
+    "description": "Čitljiv za ljude: originalni Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "једном у {time}",
+    "description": "Human-readable: once"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "Назив задатка"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "нпр. Дневни преглед вести"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "Модел"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "Упит"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "Унесите заказано питање или инструкцију. Подржане су променљиве {'}{{date}}{'}, {'}{{run_count}}{'}, {'}{{last_output}}{'}."
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "Променљиве: {'}{{date}}{'} данас, {'}{{run_count}}{'} број покретања, {'}{{last_output}}{'} исечак последњег излаза"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "Учесталост"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "Време"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "Дан у недељи"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Cron израз"
   },
   "scheduledTasks.form.skills": {
     "message": "Овласти Skills",
@@ -704,6 +954,25 @@
     "message": "Изабрани Skills могу се извршавати у позадини без људске потврде; неизабрани Skills и даље могу само да се прегледају или чекају потврду.",
     "description": "Објашњење за овлашћење skill"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "Веза прегледача",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "Могу извршити следеће спољне ефекте: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Време истека овлашћења без надзора: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Пре него што сачувате, изаберите онлајн и компатибилну везу прегледача",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Није повезано",
     "description": "skill недостаје веза"
@@ -737,19 +1006,19 @@
     "description": "Текст за потврду овлашћења"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
+    "message": "Прво повежите вештину",
     "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
+    "message": "Вештина „{name}“ још није повезана или активна на вашем налогу. Без повезивања је заказани задатак можда неће моћи користити током позадинског рада без надзора. Препоручујемо да је прво повежете, или је ипак можете сачувати.",
     "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
+    "message": "Ипак сачувај",
     "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "Попуните назив задатка и упит"
   },
   "artifacts.navTitle": {
     "message": "Производи",
@@ -776,7 +1045,7 @@
     "description": "Порука о грешци при учитавању производа"
   },
   "artifacts.actionError": {
-    "message": "Операција је失败，请重试",
+    "message": "Операција није успела, покушајте поново",
     "description": "Порука о грешци у операцији"
   },
   "artifacts.open": {
@@ -786,6 +1055,18 @@
   "artifacts.hide": {
     "message": "Сакриј",
     "description": "Дугме за сакривање производа"
+  },
+  "artifacts.unhide": {
+    "message": "Откриј",
+    "description": "Restore a hidden artifact"
+  },
+  "artifacts.showHidden": {
+    "message": "Прикажи скривено",
+    "description": "Toggle in the filter bar to include hidden artifacts"
+  },
+  "artifacts.hiddenBadge": {
+    "message": "Скривено",
+    "description": "Badge shown on artifacts that are currently hidden"
   },
   "artifacts.delete": {
     "message": "Избриши",
@@ -915,24 +1196,532 @@
     "message": "Гледате део дељеног разговора. Кликните горе да бисте сами ћаскали са AI.",
     "description": "Објашњење испод разговора на јавној страници"
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Cilj nije postignut",
+    "description": "Ova poruka se koristi kada korisnik nije postigao postavljeni cilj."
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Rezultat nije potvrđen",
+    "description": "Ova poruka se koristi kada rezultat još uvek nije poznat ili potvrđen."
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Непознат статус извршавања"
+  },
+  "actions.rename": {
+    "message": "Преименуј",
+    "description": "Опција за преименовање у менију операција разговора."
+  },
+  "actions.renameTitle": {
+    "message": "Преименовање разговора",
+    "description": "Наслов дијалога за преименовање разговора."
+  },
+  "actions.renameEmpty": {
+    "message": "Молимо унесите име",
+    "description": "Обавештење када је име празно током преименовања."
+  },
+  "actions.renameSuccess": {
+    "message": "Преименовано",
+    "description": "Обавештење о успешном преименовању разговора."
+  },
+  "actions.renameFailed": {
+    "message": "Преименовање није успело, покушајте поново касније",
+    "description": "Обавештење о неуспеху при преименовању разговора."
+  },
+  "actions.deleteConfirm": {
+    "message": "Да ли сте сигурни да желите да обришете овај разговор? Након брисања, не може се повратити.",
+    "description": "Потврда пре брисања разговора."
+  },
+  "actions.deleteSuccess": {
+    "message": "Обрисано",
+    "description": "Обавештење о успешном брисању разговора."
+  },
+  "actions.deleteFailed": {
+    "message": "Брисање није успело, покушајте поново касније",
+    "description": "Обавештење о неуспеху при брисању разговора."
+  },
+  "actions.tokenMissing": {
+    "message": "Токен не постоји, молимо поново се пријавите",
+    "description": "Грешка која указује на недостајућу потврду током операције разговора."
+  },
+  "actions.conversationMissing": {
+    "message": "Разговор не постоји",
+    "description": "Грешка која указује да циљани разговор не постоји током операције разговора."
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Локација извршавања",
+    "description": "Изаберите да ли ће задатак радити у облаку или локално"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Облак",
+    "description": "Режим рада у облаку"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "Овај уређај",
+    "description": "Режим локалног рада"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "Овај уређај ({device})",
+    "description": "Режим локалног рада, са именом уређаја"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "Покреће платформа на време, радиће и ако искључите рачунар.",
+    "description": "Објашњење режима облака"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "Покреће овај уређај на време, може читати и писати локалне фајлове, извршавати локалне команде. Неће се извршавати ако је уређај искључен или ако се изађе из апликације, пропуштени покушаји ће бити забележени, али неће бити поновљени.",
+    "description": "Објашњење локалног режима"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "Мобилна верзија тренутно не подржава локално извршавање",
+    "description": "Разлог зашто мобилна верзија не подржава локално извршавање"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Локално извршавање захтева десктоп верзију апликације",
+    "description": "Разлог зашто веб верзија не подржава локално извршавање"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Није могуће добити информације о локалном уређају, молимо поново покрените апликацију и покушајте поново",
+    "description": "Информације о уређају на десктопу нису доступне"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Локална алатка овлашћења",
+    "description": "Поље за овлашћење локалних алатки"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Изаберите локалне алатке које овај задатак може користити",
+    "description": "Плацехолдер за избор локалних алатки"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "Током неконтролисаног рада неће се појавити потврда о овлашћењу, само алатке које су овде означене ће бити доступне.",
+    "description": "Објашњење овлашћења локалних алатки"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Прескочено",
+    "description": "Статус извршавања: уређај није био онлајн у том тренутку, није извршено"
+  },
+  "workingDir.choose": {
+    "message": "Izaberite radni direktorijum",
+    "description": "Dugme iznad okvira za unos chat-a na desktopu: izaberite folder sa projektom za AI operacije; ne možete slati poruke pre nego što izaberete"
+  },
+  "workingDir.switchHint": {
+    "message": "Kliknite za promenu radnog direktorijuma",
+    "description": "Kada je radni direktorijum izabran, prikazuje se saveti u obliku kapsule sa putanjom"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "Ovo je lokalni zadatak, može se ručno pokrenuti samo na povezanoj uređaju putem desktop verzije",
+    "description": "Lokalni zadatak se ne može ručno pokrenuti na nepovezanim uređajima"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "Ovaj zadatak je vezan za drugi uređaj",
+    "description": "Lokalni zadatak ne pripada trenutnom uređaju"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Lokalno zakazivanje nije prijavljeno, molimo prijavite se ponovo i pokušajte ponovo",
+    "description": "daemon nema sačuvane akreditive"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "Ova zadatak se već izvršava",
+    "description": "Zadatak je već u toku"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Потврди",
+    "description": "Тастер за потврду на картици за потврду пре извршења"
+  },
+  "actionConfirmation.cancel": {
+    "message": "Отказ",
+    "description": "Тастер за отказ на картици за потврду пре извршења"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Потврђено, у току је извршење",
+    "description": "Потврда пре извршења: корисник је потврдио, следеће акције се извршавају"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Отказано",
+    "description": "Картица за потврду пре извршења: обавештење након отказа од стране корисника"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Učitavanje medijske pregleda…",
+    "description": "Potvrda pre akcije: Status učitavanja medija"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Nije moguće reprodukovati pregled ovde",
+    "description": "Potvrda pre akcije: Naslov greške pri reprodukciji medija"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "Veza do medija možda je istekao, ili trenutni pregledač ne podržava ovaj format. Molimo vas da prvo otvorite izvorni fajl za potvrdu.",
+    "description": "Potvrda pre akcije: Objašnjenje greške pri reprodukciji medija"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Otvorite izvorni fajl",
+    "description": "Potvrda pre akcije: Otvorite vezu do medija"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Potvrda pre objavljivanja",
+    "description": "TikTok potvrda pre objavljivanja: Status oznake potvrde"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Objavi na TikTok",
+    "description": "Naslov potvrde za objavljivanje na TikTok-u."
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "Potvrdom će se ovaj video objaviti na tvom TikTok nalogu.",
+    "description": "Sažetak potvrde za objavljivanje na TikTok-u."
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Objavi",
+    "description": "Dugme za potvrdu objavljivanja na TikTok-u."
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Објављује се на",
+    "description": "TikTok потврда објављивања: ознака налога"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Povezano",
+    "description": "TikTok potvrda pre objavljivanja: Status povezivanja naloga"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Informacije o nalogu nisu dostupne",
+    "description": "TikTok potvrda pre objavljivanja: Tekst za zauzeto mesto kada nedostaje nadimak naloga"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Podešavanja za objavljivanje još nisu spremna",
+    "description": "TikTok potvrda pre objavljivanja: Naslov nedostajućih informacija o kreatoru"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "Nije moguće pročitati dostupne opsege za ovaj nalog. Molimo vas da otkažete i ponovo zatražite TikTok podešavanja za objavljivanje.",
+    "description": "TikTok potvrda pre objavljivanja: Objašnjenje nedostajućih informacija o kreatoru"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "Дужина видеа не испуњава ограничење налога",
+    "description": "TikTok потврда акције: наслов за видео који је превише дуг"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Objavi sadržaj",
+    "description": "TikTok potvrda pre objavljivanja: Naslov grupe podešavanja sadržaja"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Obavezno",
+    "description": "TikTok potvrda pre objavljivanja: Objašnjenje obaveznih informacija"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Наслов",
+    "description": "TikTok потврда објављивања: ознака за унос наслова"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Напишите опис — хештагови и помињања су подржани",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Ко може да види",
+    "description": "TikTok потврда објављивања: ознака за падајући мени видљивости"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Изаберите…",
+    "description": "TikTok потврда објављивања: место за унос видљивости, према захтевима TikTok не може имати подразумевану вредност"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "Nije dostupna vidljivost, trenutno ne može da se objavi",
+    "description": "TikTok potvrda pre objavljivanja: Vidljivost je prazna"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Сви",
+    "description": "TikTok видљивост: јавна"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Пријатељи који се међусобно прате",
+    "description": "TikTok видљивост: видљивост за пријатеље који се међусобно прате"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "Моји пратиоци",
+    "description": "TikTok видљивост: видљивост за пратиоце"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Само ја",
+    "description": "TikTok видљивост: видљивост само за себе"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Дозволи интеракције",
+    "description": "TikTok потврда објављивања: ознака групе за прекидач интеракција"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Možete omogućiti samo načine interakcije koje trenutni nalog dozvoljava; podrazumevano su svi isključeni.",
+    "description": "TikTok potvrda pre objavljivanja: Objašnjenje prekidača za interakciju"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "Ovaj nalog je onemogućen: {list}",
+    "description": "TikTok potvrda pre objavljivanja: Interaktivne mogućnosti onemogućenog naloga"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Коментари",
+    "description": "TikTok интеракција: дозвољава коментаре"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Дует",
+    "description": "TikTok интеракција: дозвољава дует"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Спој",
+    "description": "TikTok интеракција: дозвољава спајање"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Otkrivanje sadržaja",
+    "description": "TikTok potvrda pre objavljivanja: Naslov grupe komercijalnog sadržaja"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "Ово је комерцијални садржај",
+    "description": "TikTok потврда објављивања: прекидач за откривање комерцијалног садржаја"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Ako sadržaj promoviše brend, proizvod ili uslugu, molimo vas da to otkrijete prema stvarnoj situaciji.",
+    "description": "TikTok potvrda pre objavljivanja: Objašnjenje otkrivanja komercijalnog sadržaja"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "Vaš brend",
+    "description": "TikTok poslovni sadržaj: promocija vlastitog biznisa"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Промовишите себе или свој посао",
+    "description": "TikTok комерцијални садржај: објашњење за промоцију сопственог посла"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Брендирани садржај",
+    "description": "TikTok комерцијални садржај: плаћена сарадња"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Promocija treće strane zbog plaćanja, poklona ili drugih koristi",
+    "description": "TikTok komercijalni sadržaj: Objašnjenje plaćenih saradnji"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Видео ће бити обележен као „промотивни садржај“",
+    "description": "TikTok комерцијални садржај: обавештење након избора вашег бренда"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Видео ће бити обележен као „плаћена сарадња“",
+    "description": "TikTok комерцијални садржај: обавештење након избора брендираног садржаја"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Видљивост брендираног садржаја не може бити постављена на „само ја“",
+    "description": "TikTok потврда објављивања: обавештење о несагласности брендираног садржаја и видљивости само за себе"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "Видео прелази максимално време налога ({max} секунди)",
+    "description": "TikTok потврда објављивања: грешка због превеликог трајања видеа"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Molimo vas da potvrdite pre objavljivanja",
+    "description": "TikTok potvrda pre objavljivanja: Naslov objašnjenja politike"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "Klikom na 'Objavi' potvrđujete da imate prava na korišćenje sadržaja i muzike, i slažete se sa uslovima korišćenja muzike TikTok-a.",
+    "description": "TikTok potvrda pre objavljivanja: Objašnjenje politike za običan sadržaj"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "Klikom na 'Objavi' potvrđujete da su informacije o otkrivanju tačne i slažete se sa politikom brendiranog sadržaja i uslovima korišćenja muzike TikTok-a.",
+    "description": "TikTok potvrda pre objavljivanja: Objašnjenje politike za brendirani sadržaj"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Pogledajte 'Potvrdu o korišćenju muzike'",
+    "description": "TikTok potvrda pre objavljivanja: Link ka potvrdi o korišćenju muzike"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Pogledajte 'Politiku brendiranog sadržaja'",
+    "description": "TikTok potvrda pre objavljivanja: Link ka politici brendiranog sadržaja"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Informacije o objavljivanju nisu potpune, molimo vas da otkažete i ponovo generišete potvrdu",
+    "description": "TikTok potvrda pre objavljivanja: Razlog onemogućavanja dugmeta kada nedostaju detalji"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Молимо вас да користите видео које испуњава ограничење трајања за овај налог",
+    "description": "TikTok потврда акције: разлог за онемогућавање дугмета када је видео превише дуг"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Molimo vas da odaberete ko može da vidi ovaj video",
+    "description": "TikTok potvrda pre objavljivanja: Razlog onemogućavanja dugmeta kada nije odabran opseg vidljivosti"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Molimo vas da odaberete tip komercijalnog sadržaja",
+    "description": "TikTok potvrda pre objavljivanja: Razlog onemogućavanja dugmeta kada nije odabran tip otkrivanja"
+  },
+  "scheduledTemplates.title": {
+    "message": "Шаблони аутоматизације",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Napravi iz šablona",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Prilagođeno kreiranje",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Neka AI na vreme završi posao za tebe",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Изаберите званични шаблон и повежите потребан налог. Након креирања задатка, можете одмах покренути на картици.",
+    "description": "Упутство за креирање и активирање шаблона за заказане задатке"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Pregledaj šablone",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Изабери шаблон",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Једноставна конфигурација",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Повежи налог",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.search": {
+    "message": "Претрага шаблона",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Preporučeno",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Спремно за употребу",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Potrebno je povezati {count} stavki",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Време извршења",
+    "description": "Копија centra za шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Priprema potrebnih veza",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "Нема потребе за повезивањем других налога",
+    "description": "Копија центра за шаблоне zakazanih zadataka"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Povezano",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Није повезано",
+    "description": "Копија centra za шабlone zakazanih zadataka"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Izaberi nalog",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Poveži se",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.create": {
+    "message": "Креирај задатак",
+    "description": "Упутство за креирање и активирање шаблона за заказане задатке"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Креирање задатка није успело, молимо проверите конфигурацију или везу",
+    "description": "Упутство за креирање и активирање шаблона за заказане задатке"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Задатак је креиран и остаје искључен. Молимо прво покрените одмах на картици, а затим активирајте након успеха.",
+    "description": "Упутство за креирање и активирање шаблона за заказане задатке"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "Тренутно није могуће активирати. Молимо прво одмах покрените задатак и потврдите успех; неки шаблони такође захтевају генерисање одређеног нацрта.",
+    "description": "Упутство за креирање и активирање шаблона за заказане задатке"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Greška pri učitavanju šablona, molimo pokušajte ponovo kasnije",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "Sve",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Marketing i rast",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Kreiranje sadržaja",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Produktivnost",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Obaveštavanje i istraživanje",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Razvoj i održavanje",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Lični asistent",
+    "description": "Kopija centra za šablone zakazanih zadataka"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "Објављивањем потврђујете да се слажете са TikTok-овом „Потврдом о коришћењу музике“",
+    "description": "TikTok потврда објављивања: изјава о коришћењу музике"
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "Објављивањем потврђујете да се слажете са TikTok-овом „Политиком брендираног садржаја“ и „Потврдом о коришћењу музике“",
+    "description": "TikTok потврда објављивања: изјава након избора брендираног садржаја"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "Naziv modela usluge, tj. Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "Trenutno najnapredniji model",
     "description": "Opis Claude Opus 4.7 modela"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "Временска зона"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "Нови задаци подразумевано користе временску зону овог уређаја: {timezone}. Након чувања она остаје везана за задатак."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Изаберите важећу IANA временску зону"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Prethodni korak",
+    "description": "Navigacija kroz čarobnjaka za zakazane šablone i uputstva za povezivanje"
+  },
+  "scheduledTemplates.next": {
+    "message": "Sledeći korak",
+    "description": "Navigacija kroz čarobnjaka za zakazane šablone i uputstva za povezivanje"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Koristićemo samo veze potrebne za ovaj šablon; povezani nalozi će se automatski ponovo koristiti.",
+    "description": "Navigacija kroz čarobnjaka za zakazane šablone i uputstva za povezivanje"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "Овај шаблон користи само уграђене могућности, можете директно креирати задатак.",
+    "description": "Упутство за креирање и активирање шаблона за заказане задатке"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Nastavite nakon završetka povezivanja.",
+    "description": "Navigacija kroz čarobnjaka za zakazane šablone i uputstva za povezivanje"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "Ova zadatak će koristiti odabrani nalog.",
+    "description": "Navigacija kroz čarobnjaka za zakazane šablone i uputstva za povezivanje"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Pokreće se putem autorizovane MCP veze, bez potrebe za dodatnim povezivanjem naloga.",
+    "description": "Navigacija kroz čarobnjaka za zakazane šablone i uputstva za povezivanje"
   }
 }

@@ -1,14 +1,25 @@
 <template>
   <div class="preview">
     <div class="left">
-      <el-image src="https://cdn.acedata.cloud/e40fccc727.png" class="avatar" />
+      <capability-presentation capability="fish" part="avatar" class="avatar" />
     </div>
     <div class="main">
       <div class="bot">
-        {{ $t('fish.name.fishBot') }}
+        <capability-presentation capability="fish" part="name" />
         <span class="datetime">
           {{ $dayjs.format('' + new Date(parseFloat((modelValue?.created_at || '').toString()) * 1000)) }}
         </span>
+        <el-tooltip effect="dark" :content="$t('common.button.delete')" placement="top">
+          <button
+            v-if="modelValue?.id"
+            type="button"
+            class="btn-delete"
+            :aria-label="$t('common.button.delete')"
+            @click.stop="onDelete"
+          >
+            <delete-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+          </button>
+        </el-tooltip>
       </div>
       <div class="info">
         <p v-if="prompt" class="prompt mt-2">
@@ -20,37 +31,66 @@
       <div v-if="audioUrl" class="content">
         <audio :src="audioUrl" controls preload="metadata" class="w-full mb-3" />
         <div class="operations mt-2">
-          <el-button type="info" size="small" class="mb-2" @click.stop="onDownload(audioUrl)">
+          <el-button type="info" size="small" class="btn-action" @click.stop="onDownload(audioUrl)">
             {{ $t('fish.button.download') }}
           </el-button>
           <api-code-button path="/fish/tts" :body="modelValue?.request" />
+          <report-button service="fish" :target-id="modelValue?.id" :snapshot="{ text: modelValue?.request?.text }" />
         </div>
         <el-alert :closable="false" class="mt-2 success">
           <p v-if="modelValue?.request?.model" class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-microchip" class="mr-1" />
+            <cpu-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('fish.name.model') }}: {{ modelValue?.request?.model }}
           </p>
           <p v-if="modelValue?.request?.reference_id" class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-microphone" class="mr-1" />
+            <microphone-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('fish.name.referenceId') }}: {{ modelValue?.request?.reference_id }}
             <copy-to-clipboard :content="modelValue?.request?.reference_id" />
           </p>
           <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('fish.name.taskId') }}: {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id" />
           </p>
           <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-clock" class="mr-1" />
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('fish.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
           </p>
         </el-alert>
       </div>
-      <!-- Pending / no audio yet -->
+      <!-- Failure -->
+      <div v-else-if="isFailure" class="content">
+        <el-alert :closable="false" class="failure">
+          <template #title>
+            <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('fish.name.failure') }}
+          </template>
+          <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('fish.name.taskId') }}: {{ modelValue?.id }}
+            <copy-to-clipboard :content="modelValue?.id" />
+          </p>
+          <p v-if="failureReason" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <info-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('fish.name.failureReason') }}: {{ failureReason }}
+            <copy-to-clipboard :content="failureReason" />
+          </p>
+          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('fish.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
+          </p>
+          <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
+            <channel-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('fish.name.traceId') }}: {{ modelValue?.response?.trace_id }}
+            <copy-to-clipboard :content="modelValue?.response?.trace_id" />
+          </p>
+        </el-alert>
+      </div>
+      <!-- Pending / no response yet -->
       <div v-else class="content">
         <el-alert :closable="false" class="info">
           <p class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('fish.name.taskId') }}: {{ modelValue?.id }}
             <copy-to-clipboard :content="modelValue?.id" />
           </p>
@@ -61,22 +101,41 @@
 </template>
 
 <script lang="ts">
+import {
+  ChannelIcon,
+  CpuIcon,
+  DeleteIcon,
+  InfoIcon,
+  MagicIcon,
+  MicrophoneIcon,
+  TimeIcon,
+  WarningIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
-import { ElImage, ElAlert, ElButton } from 'element-plus';
+import { ElAlert, ElButton, ElMessageBox, ElMessage, ElTooltip } from 'element-plus';
 import { IFishTask } from '@/models';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ApiCodeButton from '@/components/common/ApiCodeButton.vue';
+import ReportButton from '@/components/common/ReportButton.vue';
+import { humanizeFishError } from '@/utils/fish';
 
 export default defineComponent({
   name: 'FishTaskPreview',
   components: {
-    ElImage,
+    DeleteIcon,
+    ElTooltip,
+    ChannelIcon,
+    CpuIcon,
+    InfoIcon,
+    MagicIcon,
+    MicrophoneIcon,
+    TimeIcon,
+    WarningIcon,
     CopyToClipboard,
-    FontAwesomeIcon,
     ElAlert,
     ElButton,
-    ApiCodeButton
+    ApiCodeButton,
+    ReportButton
   },
   props: {
     modelValue: {
@@ -90,9 +149,45 @@ export default defineComponent({
     },
     audioUrl(): string | undefined {
       return this.modelValue?.response?.audio_url;
+    },
+    isFailure(): boolean {
+      const response = this.modelValue?.response;
+      if (!response || response.audio_url) {
+        return false;
+      }
+      // Platform-wrapped failures set success/error; Fish-native failures
+      // (worker sendFailureResult) instead carry status>=400 + message.
+      if (response.success === false || !!response.error) {
+        return true;
+      }
+      const status = Number(response.status);
+      return (!Number.isNaN(status) && status >= 400) || !!response.message;
+    },
+    failureReason(): string | undefined {
+      return humanizeFishError(this.modelValue?.response);
     }
   },
   methods: {
+    async onDelete() {
+      const id = this.modelValue?.id;
+      if (!id) return;
+      try {
+        await ElMessageBox.confirm(this.$t('common.message.deleteTaskConfirm'), this.$t('common.button.delete'), {
+          type: 'warning',
+          confirmButtonText: this.$t('common.button.delete'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          confirmButtonClass: 'el-button--danger'
+        });
+      } catch {
+        return; // user cancelled
+      }
+      try {
+        await this.$store.dispatch('fish/deleteTask', { id });
+        ElMessage.success(this.$t('common.message.deleteTaskSuccess'));
+      } catch {
+        ElMessage.error(this.$t('common.message.deleteTaskFailed'));
+      }
+    },
     onDownload(url: string) {
       window.open(url, '_blank');
     }
@@ -128,15 +223,40 @@ $left-width: 70px;
     padding: 10px 10px 0 10px;
 
     .bot {
+      display: flex;
+      align-items: center;
       font-size: 16px;
       font-weight: bold;
       color: var(--el-color-primary);
       margin-bottom: 0;
       .datetime {
         font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-weight: normal;
         color: var(--el-text-color-secondary);
         margin-left: 10px;
+      }
+      .btn-delete {
+        margin-left: auto;
+        padding: 4px 6px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        line-height: 1;
+        color: var(--el-text-color-secondary);
+        // Hover-reveal on pointer devices; keep it out of the way until wanted.
+        opacity: 0;
+        transition:
+          opacity 0.15s ease,
+          color 0.15s ease;
+        &:hover {
+          color: var(--el-color-danger);
+        }
+        // Touch devices have no hover — always show the control.
+        @media (hover: none) {
+          opacity: 1;
+        }
       }
     }
 
@@ -161,6 +281,11 @@ $left-width: 70px;
         margin-bottom: 0;
       }
     }
+  }
+
+  // Reveal the trash icon when hovering anywhere on the card.
+  &:hover .main .bot .btn-delete {
+    opacity: 1;
   }
 }
 </style>

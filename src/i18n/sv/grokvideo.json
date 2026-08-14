@@ -1,7 +1,7 @@
 {
   "name.bot": {
     "message": "Grok Video Bot",
-    "description": "Namn på Grok video-generatorn"
+    "description": "Namn på Grok videogenerator"
   },
   "name.prompt": {
     "message": "Prompt",
@@ -28,8 +28,8 @@
     "description": "Etikett för inmatningsbild"
   },
   "name.referenceImages": {
-    "message": "Reference Images",
-    "description": "Label for reference images"
+    "message": "Referensbilder",
+    "description": "Etikett för referensbilder"
   },
   "name.required": {
     "message": "Obligatorisk",
@@ -64,7 +64,7 @@
     "description": "Instruktioner för promptinmatning"
   },
   "description.model": {
-    "message": "Välj Grok Imagine-modell. grok-imagine-video stöder text-till-video och bild-till-video; 1.5-preview stöder endast bild-till-video.",
+    "message": "Välj Grok Imagine-modell. :reverse använder snabb/standard slutpunkt; :official använder officiell slutpunkt (högre kvalitet, debitering per sekund). grok-imagine-video-1.5:official stödjer endast bildgenererad video.",
     "description": "Instruktioner för modellval"
   },
   "description.ratio": {
@@ -76,16 +76,16 @@
     "description": "Instruktioner för upplösning"
   },
   "description.duration": {
-    "message": "Videons längd (sekunder), debiteras baserat på utgångssekunder.",
+    "message": "Videolängd (sekunder). 1.5-fast (omvänd) stödjer 6–30 sekunder, debitering baserat på längd; övriga varianter stödjer 1–15 sekunder, debitering baserat på utgångssekunder.",
     "description": "Instruktioner för längd"
   },
   "description.image": {
-    "message": "Valfri inmatningsbild för att generera video. grok-imagine-video-1.5-preview är obligatorisk.",
+    "message": "Valfri inmatningsbild för att generera video. grok-imagine-video-1.5:official är obligatorisk.",
     "description": "Instruktioner för bildinmatning"
   },
   "description.referenceImages": {
-    "message": "Optional reference images to guide the style or content of the generated video (grok-imagine-video only).",
-    "description": "Instructions for reference images"
+    "message": "Valfria referensbilder för att vägleda stilen eller innehållet i den genererade videon.",
+    "description": "Instruktioner för referensbilder"
   },
   "placeholder.prompt": {
     "message": "Beskriv din video…",
@@ -95,13 +95,21 @@
     "message": "Vänligen välj",
     "description": "Platsinnehåll för val"
   },
-  "model.default": {
-    "message": "Grok Imagine Video",
-    "description": "Standardmodellens etikett"
+  "model.fastReverse": {
+    "message": "Grok Imagine Video 1.5 Fast (snabb, 6–30 sekunder)",
+    "description": "Etikett för 1.5-fast omvänd modell"
   },
-  "model.preview15": {
-    "message": "Grok Imagine Video 1.5 (förhandsvisning, bild-till-video)",
-    "description": "1.5 förhandsvisningsmodellens etikett"
+  "model.reverse": {
+    "message": "Grok Imagine Video (standard, 1–15 sekunder)",
+    "description": "Etikett för grok-imagine-video omvänd modell"
+  },
+  "model.official": {
+    "message": "Grok Imagine Video · Officiell (högre kvalitet, debitering per sekund)",
+    "description": "Etikett för grok-imagine-video officiell modell"
+  },
+  "model.official15": {
+    "message": "Grok Imagine Video 1.5 · Officiell (bildgenererad video, upp till 1080p)",
+    "description": "Etikett för 1.5 officiell modell"
   },
   "button.upload": {
     "message": "Ladda upp",
@@ -128,8 +136,8 @@
     "description": "Varning för överskridning av uppladdning"
   },
   "message.uploadReferenceExceed": {
-    "message": "You can upload up to 4 reference images.",
-    "description": "Reference images upload exceed warning"
+    "message": "Maximalt 4 referensbilder kan laddas upp.",
+    "description": "Varning för överskridande av referensbilder vid uppladdning"
   },
   "message.uploadError": {
     "message": "Bilduppladdning misslyckades, försök igen.",

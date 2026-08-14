@@ -1,0 +1,210 @@
+name: Release · Desktop
+
+# Build the Nexior desktop client for GitHub downloads:
+#   - workflow_dispatch → E2E + Windows/macOS installers as Actions artifacts
+#   - workflow_call     → attach installers to the daily GitHub Release
+#   - pull_request      → E2E smoke only
+#
+# Required repo secrets:
+#   VITE_STRIPE_PUBLISHABLE_KEY                               renderer build
+#   WIN_CSC_LINK / WIN_CSC_KEY_PASSWORD                       Windows signing (optional)
+#   MAC_CSC_LINK / MAC_CSC_KEY_PASSWORD                       macOS Developer ID (optional)
+#   APP_STORE_CONNECT_KEY_BASE64 / _KEY_ID / _ISSUER_ID, IOS_TEAM_ID   notarization (reused from iOS)
+
+on:
+  pull_request:
+    paths:
+      - 'electron/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'electron-builder.yml'
+      - 'build/icon.icns'
+      - 'build/icon.ico'
+      - 'build/icon.png'
+      - 'build/trayTemplate*.png'
+      - 'playwright.config.ts'
+      - 'e2e/**'
+      - 'scripts/copy-renderer.js'
+      - 'scripts/gen-brand-icons.py'
+      - 'scripts/gen-desktop-icons.sh'
+      - 'scripts/gen-windows-icon.py'
+      - 'scripts/gen-tray-icon.py'
+      - '.github/workflows/release-desktop.yaml'
+  workflow_call:
+    inputs:
+      release_tag:
+        description: 'Existing draft Release to receive the installers.'
+        required: true
+        type: string
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.release_tag || 'manual' }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  e2e:
+    name: E2E smoke (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_tag || github.sha }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - name: Build renderer (desktop surface)
+        env:
+          VITE_STRIPE_PUBLISHABLE_KEY: ${{ secrets.VITE_STRIPE_PUBLISHABLE_KEY }}
+        run: npm run build:electron
+      - name: Compile main process + stage renderer
+        run: |
+          npm run compile:electron
+          node scripts/copy-renderer.js
+      - name: Run Electron E2E smoke (xvfb)
+        run: xvfb-run --auto-servernum npm run test:e2e:desktop
+
+  build:
+    name: Build (${{ matrix.os }})
+    needs: e2e
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            arch: x64
+          - os: macos-15-intel
+            arch: x64
+          - os: macos-14
+            arch: arm64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_tag || github.sha }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+
+      - name: Package (sign + notarize when certs present)
+        shell: bash
+        env:
+          VITE_STRIPE_PUBLISHABLE_KEY: ${{ secrets.VITE_STRIPE_PUBLISHABLE_KEY }}
+          WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+          WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
+          MAC_CSC_LINK: ${{ secrets.MAC_CSC_LINK }}
+          MAC_CSC_KEY_PASSWORD: ${{ secrets.MAC_CSC_KEY_PASSWORD }}
+          APP_STORE_CONNECT_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APPLE_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          set -euo pipefail
+          EXTRA=()
+          SIGN=false
+
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            if [ -n "$WIN_CSC_LINK" ]; then
+              export CSC_LINK="$WIN_CSC_LINK" CSC_KEY_PASSWORD="$WIN_CSC_KEY_PASSWORD"
+              SIGN=true
+            fi
+          else
+            if [ -n "$MAC_CSC_LINK" ]; then
+              export CSC_LINK="$MAC_CSC_LINK" CSC_KEY_PASSWORD="$MAC_CSC_KEY_PASSWORD"
+              SIGN=true
+              echo "$APP_STORE_CONNECT_KEY_BASE64" | base64 -d > "$RUNNER_TEMP/AuthKey.p8"
+              export APPLE_API_KEY="$RUNNER_TEMP/AuthKey.p8"
+              export APPLE_API_KEY_ID="$APP_STORE_CONNECT_KEY_ID"
+              export APPLE_API_ISSUER="$APP_STORE_CONNECT_ISSUER_ID"
+            fi
+          fi
+
+          if [ "$SIGN" = false ]; then
+            echo "::warning::no signing cert for ${{ runner.os }} — building UNSIGNED"
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
+            EXTRA+=(--config.mac.notarize=false)
+          fi
+
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            npx electron-rebuild -f -o @nut-tree-fork/libnut-win32
+          else
+            npx electron-rebuild -f -o @nut-tree-fork/libnut-darwin
+          fi
+
+          npm run build:electron
+          npm run compile:electron
+          node scripts/copy-renderer.js
+          npx electron-builder --${{ matrix.arch }} ${EXTRA[@]+"${EXTRA[@]}"} --publish never
+          echo "DESKTOP_SIGNED=$SIGN" >> "$GITHUB_ENV"
+
+      - name: Verify desktop installers
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            compgen -G 'release/*.exe' >/dev/null
+          elif [ "${{ matrix.arch }}" = arm64 ]; then
+            compgen -G 'release/*-arm64.dmg' >/dev/null
+          else
+            compgen -G 'release/AceData-[0-9]*.dmg' >/dev/null
+          fi
+
+      - name: Verify signed desktop package
+        if: env.DESKTOP_SIGNED == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            # PowerShell expands $files/$file, not Bash.
+            # shellcheck disable=SC2016
+            powershell.exe -NoProfile -Command '$files = Get-ChildItem release/*.exe; foreach ($file in $files) { if ((Get-AuthenticodeSignature $file).Status -ne "Valid") { exit 1 } }'
+          else
+            APP=$(find release/mac* -maxdepth 1 -name '*.app' | head -n1)
+            codesign --verify --deep --strict --verbose=2 "$APP"
+            xcrun stapler validate "$APP"
+          fi
+
+      - name: Upload installers as workflow artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: nexior-desktop-${{ matrix.os }}-${{ matrix.arch }}
+          path: |
+            release/*.exe
+            release/*.dmg
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Verify draft Release exists
+        if: inputs.release_tag != ''
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN || github.token }}
+          REL_TAG: ${{ inputs.release_tag }}
+        shell: bash
+        run: |
+          IS_DRAFT=$(gh release view "$REL_TAG" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)
+          test "$IS_DRAFT" = "true" || { echo "::error::$REL_TAG is missing or is not a draft"; exit 1; }
+
+      - name: Attach installer to draft GitHub Release
+        if: inputs.release_tag != ''
+        uses: softprops/action-gh-release@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN || github.token }}
+        with:
+          tag_name: ${{ inputs.release_tag }}
+          draft: true
+          files: ${{ runner.os == 'Windows' && 'release/*.exe' || 'release/*.dmg' }}
+          fail_on_unmatched_files: true

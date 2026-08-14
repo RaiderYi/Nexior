@@ -19,10 +19,6 @@
     "message": "Video AI",
     "description": "Titolo della sezione Video AI"
   },
-  "title.headshots": {
-    "message": "Foto Tessera AI",
-    "description": "Titolo della sezione Foto Tessera AI"
-  },
   "title.comments": {
     "message": "Recensioni dei Clienti",
     "description": "Titolo della sezione Recensioni dei Clienti"
@@ -54,10 +50,6 @@
   "subtitle.luma": {
     "message": "Integra l'ultimo modello Luma per generare video personalizzati con un clic e offre opzioni di estensione video flessibili.",
     "description": "Sottotitolo della sezione Video AI"
-  },
-  "subtitle.headshots": {
-    "message": "Integra l'ultimo modello AI per generare foto tessera personalizzate con un clic e supporta vari stili di foto tessera.",
-    "description": "Sottotitolo della sezione Foto Tessera AI"
   },
   "subtitle.comments": {
     "message": "Siamo lieti di aver aiutato questi clienti, che hanno dato ottime recensioni ai nostri servizi.",
@@ -110,5 +102,293 @@
   "customers.comment3": {
     "message": "Ci sono molte piattaforme AI, ma questa è davvero facile da usare e ha un prezzo ragionevole, spero che migliori ancora!",
     "description": "Commento del cliente"
+  },
+  "badge.hero": {
+    "message": "Nuovo · Piattaforma di creazione AI tutto in uno",
+    "description": "Badge Hero nella homepage"
+  },
+  "subtitle.hero": {
+    "message": "Chat · Disegno · Musica · Video, tutto in un'unica piattaforma",
+    "description": "Una frase descrittiva sotto il sottotitolo Hero nella homepage"
+  },
+  "button.explore": {
+    "message": "Scopri le funzionalità",
+    "description": "Pulsante secondario Hero nella homepage, cliccando si scorre verso la sezione di presentazione dei servizi"
+  },
+  "button.learnBusiness": {
+    "message": "Visualizza il piano completo",
+    "description": "Collegamento al documento pubblico delle capacità aziendali nella homepage"
+  },
+  "title.models": {
+    "message": "Modelli di grandi dimensioni leader a livello globale integrati",
+    "description": "Titolo del blocco dei grandi modelli nella homepage"
+  },
+  "subtitle.models": {
+    "message": "Accedi ai principali modelli globali in tempo reale, senza dover passare da uno strumento all'altro",
+    "description": "Sottotitolo del blocco dei grandi modelli nella homepage"
+  },
+  "title.cta": {
+    "message": "Inizia subito la tua creazione AI",
+    "description": "Titolo della chiamata all'azione in fondo alla homepage"
+  },
+  "subtitle.cta": {
+    "message": "Registrati gratuitamente, inizia subito a sperimentare le capacità AI tutto in uno",
+    "description": "Sottotitolo di chiamata all'azione in fondo alla homepage"
+  },
+  "stat.capabilities": {
+    "message": "Capacità AI Combinabili",
+    "description": "Descrizione del numero di capacità nella homepage"
+  },
+  "stat.subsite": {
+    "message": "Attivazione del Sottosito del Marchio Completata",
+    "description": "Descrizione sulla velocità di attivazione del sottosito nella homepage"
+  },
+  "stat.platforms": {
+    "message": "Copertura Completa Desktop e Mobile",
+    "description": "Descrizione del supporto cross-platform nella homepage"
+  },
+  "stat.commission": {
+    "message": "Commissione di Distribuzione Massima",
+    "description": "Descrizione della commissione di distribuzione massima nella homepage"
+  },
+  "note.allInOne": {
+    "message": "Un account, tutti gli strumenti AI",
+    "description": "Descrizione del pop-up nella homepage"
+  },
+  "note.customDomain": {
+    "message": "Dominio Personalizzato e Marchio",
+    "description": "Descrizione del pop-up sul dominio personalizzato nella homepage"
+  },
+  "eyebrow.business": {
+    "message": "La tua infrastruttura aziendale AI",
+    "description": "Titolo della sezione piattaforma aziendale nella homepage"
+  },
+  "title.business": {
+    "message": "Non solo strumenti AI, ma anche aiuto per costruire il tuo business AI",
+    "description": "Titolo della sezione piattaforma business nella homepage."
+  },
+  "subtitle.business": {
+    "message": "Crea sottositi, cambia marchio, collega domini, scegli capacità, configura prezzi e regole di distribuzione tutto in un'unica interfaccia, senza necessità di sviluppo e distribuzione separati.",
+    "description": "Sottotitolo della sezione sulla piattaforma aziendale nella homepage"
+  },
+  "eyebrow.subsites": {
+    "message": "Attivazione in 5 Minuti",
+    "description": "Titolo della sezione sulle funzionalità dei sottositi nella homepage"
+  },
+  "title.subsites": {
+    "message": "Crea rapidamente sottositi per il brand, con dominio indipendente",
+    "description": "Titolo della sezione funzionalità di sottositi nella homepage."
+  },
+  "subtitle.subsites": {
+    "message": "Dopo aver creato un sottosito, avrai un logo, un titolo, un insieme di funzionalità e un accesso utente indipendenti. Una volta collegato un dominio personalizzato, i clienti rimarranno nel tuo marchio dal primo accesso all'acquisto.",
+    "description": "Descrizione delle funzionalità del sottosito nella homepage"
+  },
+  "button.createSubsite": {
+    "message": "Crea il mio sottosito",
+    "description": "Pulsante per creare un sottosito nella homepage"
+  },
+  "eyebrow.capabilities": {
+    "message": "Completamente configurabile",
+    "description": "Titolo della sezione configurazione delle capacità nella homepage"
+  },
+  "title.capabilities": {
+    "message": "Brand, modelli, prezzi e modalità di accesso sono decisi da te",
+    "description": "Titolo della sezione configurazione delle capacità nella homepage."
+  },
+  "subtitle.capabilities": {
+    "message": "Enable any of 31 AI capabilities and configure service names, descriptions, pricing, homepage visibility, SEO, contacts, and authentication. New capabilities join the same management experience.",
+    "description": "Homepage capabilities description"
+  },
+  "button.configure": {
+    "message": "Visualizza configurazione delle capacità",
+    "description": "Pulsante per configurare le capacità nella homepage"
+  },
+  "eyebrow.operations": {
+    "message": "Pannello Operativo Completo",
+    "description": "Titolo della sezione sulla configurazione operativa nella homepage"
+  },
+  "title.operations": {
+    "message": "Dalla acquisizione clienti al login, ogni punto di contatto del brand può essere configurato",
+    "description": "Titolo della sezione configurazione operativa nella homepage."
+  },
+  "subtitle.operations": {
+    "message": "Gestisci in modo indipendente la visualizzazione della ricerca, contenuti multilingue, contatti e modalità di accesso degli utenti, permettendo ai sottositi di essere non solo attivati, ma anche gestiti e far crescere nel tempo.",
+    "description": "Descrizione della configurazione operativa nella homepage"
+  },
+  "button.operations": {
+    "message": "Visualizza configurazione operativa",
+    "description": "Pulsante per configurare l'operatività nella homepage"
+  },
+  "eyebrow.distribution": {
+    "message": "Crescita e Monetizzazione",
+    "description": "Titolo della sezione sulle funzionalità di distribuzione nella homepage"
+  },
+  "title.distribution": {
+    "message": "Commissioni scalari, link di invito e prelievo dei guadagni",
+    "description": "Titolo della sezione funzionalità di distribuzione nella homepage."
+  },
+  "subtitle.distribution": {
+    "message": "Every user receives a referral link and QR code. The platform tracks orders, calculates tiered commissions, and aggregates withdrawable earnings so customer growth becomes a sustainable network.",
+    "description": "Homepage referral description"
+  },
+  "button.viewDistribution": {
+    "message": "Visualizza centro distribuzione",
+    "description": "Pulsante per accedere al centro di distribuzione nella homepage"
+  },
+  "eyebrow.creation": {
+    "message": "Interfaccia prodotto reale",
+    "description": "Titolo della sezione capacità di creazione nella homepage"
+  },
+  "title.creation": {
+    "message": "Da un'idea a un'opera multimodale completa",
+    "description": "Titolo della sezione capacità di creazione nella homepage."
+  },
+  "subtitle.creation": {
+    "message": "Unico account, unico saldo, unica esperienza cross-platform, coprendo immagini, video, musica, umani digitali e flussi di lavoro.",
+    "description": "Sottotitolo della sezione sulle capacità di creazione nella homepage"
+  },
+  "eyebrow.chat": {
+    "message": "Conversazione e ricerca",
+    "description": "Titolo della sezione capacità di chat nella homepage"
+  },
+  "eyebrow.image": {
+    "message": "Creazione Immagini",
+    "description": "Titolo della sezione sulle capacità di creazione di immagini nella homepage"
+  },
+  "title.image": {
+    "message": "Disegno AI e editing di immagini professionale",
+    "description": "Titolo della sezione capacità di immagine nella homepage."
+  },
+  "subtitle.image": {
+    "message": "Coprendo generazione di immagini da testo, editing di immagini di riferimento, fusione di più immagini, ridisegno parziale, codici QR artistici e foto di identificazione, supporta modelli mainstream e formati comuni.",
+    "description": "Descrizione delle capacità di immagine nella homepage"
+  },
+  "eyebrow.video": {
+    "message": "Generazione Video",
+    "description": "Titolo della sezione sulle capacità di generazione video nella homepage"
+  },
+  "title.video": {
+    "message": "Video AI guidati da testo, immagini e video",
+    "description": "Titolo della sezione capacità video nella homepage."
+  },
+  "subtitle.video": {
+    "message": "Utilizza modelli come Kling, Veo, Sora, Seedance, Hailuo, Luma per completare generazione, estensione, riprese, sincronizzazione labiale e creazione di più materiali.",
+    "description": "Descrizione delle capacità video nella homepage"
+  },
+  "eyebrow.music": {
+    "message": "Musica e Suoni",
+    "description": "Titolo della sezione sulle capacità musicali nella homepage"
+  },
+  "title.music": {
+    "message": "Generazione di canzoni, colonne sonore, testi e suoni",
+    "description": "Titolo della sezione capacità musicali nella homepage."
+  },
+  "subtitle.music": {
+    "message": "Inizia con una descrizione o testi personalizzati per generare canzoni complete, estendere, reinterpretare, separare le voci, o sintetizzare voci naturali tramite Fish.",
+    "description": "Descrizione delle capacità musicali nella homepage"
+  },
+  "eyebrow.workflow": {
+    "message": "Umani Digitali e Flussi di Lavoro",
+    "description": "Titolo della sezione sulle capacità di flusso di lavoro nella homepage"
+  },
+  "title.workflow": {
+    "message": "Trasforma script in narrazioni digitali e video completi",
+    "description": "Titolo della sezione capacità di workflow nella homepage."
+  },
+  "subtitle.workflow": {
+    "message": "Maestro collega script, materiali, voce, riprese e rendering in un processo di produzione di contenuti ripetibile.",
+    "description": "Descrizione delle capacità di workflow nella homepage."
+  },
+  "eyebrow.digitalHuman": {
+    "message": "Umano Digitale",
+    "description": "Titolo della sezione sulla capacità degli umani digitali nella homepage"
+  },
+  "title.digitalHuman": {
+    "message": "Genera video di umani digitali da foto, suoni e script",
+    "description": "Titolo della sezione capacità di umani digitali nella homepage."
+  },
+  "subtitle.digitalHuman": {
+    "message": "Genera labbra naturali e video completi utilizzando immagini e suoni reali, adatto per corsi, marketing, presentazioni di prodotti e produzione di contenuti in massa.",
+    "description": "Descrizione delle capacità degli umani digitali nella homepage"
+  },
+  "eyebrow.coding": {
+    "message": "Collaborazione nella programmazione",
+    "description": "Titolo della sezione capacità di programmazione nella homepage"
+  },
+  "title.coding": {
+    "message": "Assistente alla programmazione AI per dispositivi locali",
+    "description": "Titolo della sezione capacità di programmazione nella homepage."
+  },
+  "subtitle.coding": {
+    "message": "Collega in sicurezza il tuo dispositivo di sviluppo tramite Coding Bridge, permettendo all'AI di leggere progetti, eseguire compiti e fornire feedback continuo con autorizzazione chiara.",
+    "description": "Descrizione delle capacità di programmazione nella homepage"
+  },
+  "eyebrow.directory": {
+    "message": "Catalogo delle Capacità",
+    "description": "Titolo della sezione sul catalogo delle capacità nella homepage"
+  },
+  "title.directory": {
+    "message": "Catalogo completo delle capacità AI, con accesso continuo ai modelli più recenti",
+    "description": "Titolo della sezione catalogo delle capacità nella homepage."
+  },
+  "subtitle.directory": {
+    "message": "Di seguito sono elencate le capacità complete attivate nel sito attuale. Il sito principale continuerà a integrare nuovi modelli, e gli amministratori dei sottositi possono decidere liberamente quali servizi mostrare ai clienti.",
+    "description": "Descrizione del catalogo delle capacità nella homepage"
+  },
+  "eyebrow.cta": {
+    "message": "Inizia subito",
+    "description": "Titolo della sezione di invito all'azione nella parte inferiore della homepage"
+  },
+  "benefit.subsites.noServer": {
+    "message": "Nessun acquisto di server o costruzione di sistemi necessari, crea e lancia un sottosito AI in 5 minuti",
+    "description": "Punto di forza dei sottositi senza server nella homepage"
+  },
+  "benefit.subsites.customDomain": {
+    "message": "Possibilità di utilizzare un sottodominio indipendente, è anche possibile collegare il proprio dominio di marca con HTTPS",
+    "description": "Punto di forza della personalizzazione del dominio per i sottositi nella homepage"
+  },
+  "benefit.subsites.branding": {
+    "message": "Logo, nome, colore principale, contatti e accesso al marchio possono essere impostati indipendentemente",
+    "description": "Punto di forza della personalizzazione del marchio per i sottositi nella homepage"
+  },
+  "benefit.capabilities.catalog": {
+    "message": "Le capacità di chat, immagini, video, musica, persone digitali, flussi di lavoro e programmazione vengono aggiornate continuamente",
+    "description": "Punto di forza del catalogo completo delle capacità nella homepage"
+  },
+  "benefit.capabilities.display": {
+    "message": "Ogni capacità può essere mostrata o nascosta, rinominata, modificata nella descrizione e riordinata",
+    "description": "Punto di forza della configurazione della visualizzazione delle capacità nella homepage"
+  },
+  "benefit.capabilities.pricing": {
+    "message": "Supporta un aumento dei prezzi uniforme per l'intero sito e prezzi indipendenti per singoli servizi, la strategia dei prezzi è nelle tue mani",
+    "description": "Punto di forza della definizione dei prezzi delle capacità nella homepage"
+  },
+  "benefit.operations.seo": {
+    "message": "Titoli SEO, parole chiave e descrizioni personalizzabili, crea il tuo marchio di ricerca",
+    "description": "Punto di forza della SEO nella homepage"
+  },
+  "benefit.operations.auth": {
+    "message": "Attiva liberamente l'accesso tramite email, telefono, GitHub, Google, WeChat, Apple e chiavi di accesso",
+    "description": "Punto di forza delle modalità di accesso nella homepage"
+  },
+  "benefit.operations.localization": {
+    "message": "Nome del servizio, descrizione e contenuti operativi supportano più lingue e traduzione automatica",
+    "description": "Punto di forza dell'operatività multilingue nella homepage"
+  },
+  "benefit.distribution.noBarrier": {
+    "message": "Nessun requisito di registrazione, gli utenti registrati ottengono automaticamente un link di invito esclusivo e un codice QR",
+    "description": "Punto di forza della distribuzione senza barriere nella homepage"
+  },
+  "benefit.distribution.levels": {
+    "message": "Sistema di crescita a 13 livelli, le commissioni aumentano con le prestazioni, fino a un massimo del 24%",
+    "description": "Punto di forza dei livelli di distribuzione nella homepage"
+  },
+  "benefit.distribution.withdrawal": {
+    "message": "Ordini, numero di inviti e premi vengono automaticamente conteggiati, i guadagni possono essere richiesti in modo unificato",
+    "description": "Punto di forza del prelievo nella distribuzione nella homepage"
+  },
+  "nav.business": {
+    "message": "Collaborazione commerciale",
+    "description": "Navigazione per la pagina di collaborazione commerciale e creazione di siti web in white label"
   }
 }

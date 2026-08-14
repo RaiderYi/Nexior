@@ -39,13 +39,15 @@
 
       <!-- API Keys Table -->
       <el-card shadow="hover">
-        <div slot="header" class="keys-header">
-          <span class="keys-title">{{ $t('console.credentials.keys.title') }}</span>
-          <el-button type="primary" size="small" round @click="onRefresh" :loading="loading">
-            <font-awesome-icon icon="fa-solid fa-rotate" class="mr-1 text-[12px]" />
-            {{ $t('console.credentials.button.refresh') }}
-          </el-button>
-        </div>
+        <template #header>
+          <div class="keys-header">
+            <span class="keys-title">{{ $t('console.credentials.keys.title') }}</span>
+            <el-button type="primary" size="small" round :loading="loading" @click="onRefresh">
+              <font-awesome-icon icon="fa-solid fa-rotate" class="mr-1 text-[12px]" />
+              {{ $t('console.credentials.button.refresh') }}
+            </el-button>
+          </div>
+        </template>
 
         <el-skeleton v-if="loading && credentials.length === 0" :rows="4" animated />
 
@@ -80,7 +82,11 @@
             </template>
           </el-table-column>
 
-          <el-table-column :label="$t('console.credentials.field.createdAt')" width="160px" class-name="hidden sm:table-cell">
+          <el-table-column
+            :label="$t('console.credentials.field.createdAt')"
+            width="160px"
+            class-name="hidden sm:table-cell"
+          >
             <template #default="scope">
               <span class="text-sm">{{ scope.row.createdAt }}</span>
             </template>
@@ -135,27 +141,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import {
-  ElRow,
-  ElCol,
-  ElCard,
-  ElTable,
-  ElTableColumn,
-  ElButton,
-  ElSkeleton,
-  ElEmpty,
-  ElMessage
-} from 'element-plus';
+import { ElRow, ElCol, ElCard, ElTable, ElTableColumn, ElButton, ElSkeleton, ElEmpty, ElMessage } from 'element-plus';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
 import { applicationOperator, credentialOperator } from '@/operators';
-import {
-  IApplication,
-  IApplicationType
-} from '@/models';
-import {
-  CHAT_MODEL_GROUPS
-} from '@/constants';
+import { IApplication, IApplicationType } from '@/models';
+import { CHAT_MODEL_GROUPS } from '@/constants';
 
 interface IDisplayCredential {
   applicationId: string;
@@ -200,9 +191,7 @@ export default defineComponent({
         name: group.name,
         displayName: group.getDisplayName(),
         icon: group.icon,
-        models: group.models
-          .filter((m: any) => m.enabled)
-          .map((m: any) => m.name)
+        models: group.models.filter((m: any) => m.enabled).map((m: any) => m.name)
       }));
     }
   },
@@ -236,10 +225,7 @@ export default defineComponent({
                   applicationId: app.id || '',
                   serviceTitle: app.service?.title || '',
                   token: cred.token,
-                  remainingAmount:
-                    app.remaining_amount !== undefined
-                      ? app.remaining_amount.toFixed(6)
-                      : '—',
+                  remainingAmount: app.remaining_amount !== undefined ? app.remaining_amount.toFixed(6) : '—',
                   createdAt: cred.created_at || ''
                 });
               }
@@ -255,10 +241,7 @@ export default defineComponent({
             user_id: this.$store.getters.user.id
           });
           for (const cred of globalCredData.items) {
-            if (
-              cred.token &&
-              !allCreds.some((c) => c.token === cred.token)
-            ) {
+            if (cred.token && !allCreds.some((c) => c.token === cred.token)) {
               allCreds.push({
                 applicationId: cred.application_id || '',
                 serviceTitle: cred.name || this.$t('console.credentials.keys.general'),
@@ -289,11 +272,9 @@ export default defineComponent({
       if (!title) return 'fa-solid fa-cube';
       const lower = title.toLowerCase();
       if (lower.includes('chat') || lower.includes('gpt')) return 'fa-solid fa-comments';
-      if (lower.includes('image') || lower.includes('midjourney') || lower.includes('flux'))
-        return 'fa-solid fa-image';
+      if (lower.includes('image') || lower.includes('midjourney') || lower.includes('flux')) return 'fa-solid fa-image';
       if (lower.includes('video')) return 'fa-solid fa-video';
-      if (lower.includes('music') || lower.includes('audio') || lower.includes('suno'))
-        return 'fa-solid fa-music';
+      if (lower.includes('music') || lower.includes('audio') || lower.includes('suno')) return 'fa-solid fa-music';
       return 'fa-solid fa-cube';
     }
   }

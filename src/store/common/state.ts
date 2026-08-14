@@ -12,14 +12,15 @@ import digitalhumanState from '../digitalhuman/state';
 import pixverseState from '../pixverse/state';
 import fluxState from '../flux/state';
 import hailuoState from '../hailuo/state';
+import minimaxState from '../minimax/state';
 import sunoState from '../suno/state';
 import producerState from '../producer/state';
-import headshotsState from '../headshots/state';
 import nanobananaState from '../nanobanana/state';
 import openaiimageState from '../openaiimage/state';
 import seedreamState from '../seedream/state';
 import seedanceState from '../seedance/state';
 import grokvideoState from '../grokvideo/state';
+import omniState from '../omni/state';
 import serpState from '../serp/state';
 import wanState from '../wan/state';
 import fishState from '../fish/state';
@@ -35,7 +36,8 @@ export default (): IRootState => {
     user: {},
     auth: {
       flow: 'redirect',
-      visible: false
+      visible: false,
+      action: 'login'
     },
     config: undefined,
     token: {
@@ -63,14 +65,15 @@ export default (): IRootState => {
     pixverse: pixverseState(),
     flux: fluxState(),
     hailuo: hailuoState(),
+    minimax: minimaxState(),
     suno: sunoState(),
     producer: producerState(),
-    headshots: headshotsState(),
     nanobanana: nanobananaState(),
     openaiimage: openaiimageState(),
     seedream: seedreamState(),
     seedance: seedanceState(),
     grokvideo: grokvideoState(),
+    omni: omniState(),
     serp: serpState(),
     wan: wanState(),
     fish: fishState(),

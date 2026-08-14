@@ -12,7 +12,7 @@
             <el-skeleton v-if="loading" />
             <div v-else>
               <div class="icon-wrapper">
-                <font-awesome-icon icon="fa-solid fa-wallet" class="icon" />
+                <wallet-icon class="icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
               </div>
               <div class="text-left">
                 <p class="description">{{ $t('distribution.title.price') }}</p>
@@ -29,7 +29,7 @@
             <el-skeleton v-if="loading" />
             <div v-else>
               <div class="icon-wrapper">
-                <font-awesome-icon icon="fa-solid fa-coins" class="icon" />
+                <credits-icon class="icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
               </div>
               <div class="text-left">
                 <p class="description">{{ $t('distribution.title.reward') }}</p>
@@ -48,7 +48,7 @@
             <el-skeleton v-if="loading" />
             <div v-else>
               <div class="icon-wrapper">
-                <font-awesome-icon icon="fa-solid fa-percent" class="icon" />
+                <percent-icon class="icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
               </div>
               <div class="text-left">
                 <p class="description">{{ $t('distribution.title.percentage') }}</p>
@@ -62,7 +62,7 @@
             <el-skeleton v-if="loading" />
             <div v-else>
               <div class="icon-wrapper">
-                <font-awesome-icon icon="fa-regular fa-user" class="icon" />
+                <user-icon class="icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
               </div>
               <div class="text-left">
                 <p class="description">{{ $t('distribution.title.inviteesCount') }}</p>
@@ -72,6 +72,19 @@
                 >{{ $t('distribution.button.detail') }}
               </el-button>
             </div>
+          </el-card>
+        </el-col>
+      </el-row>
+      <el-row :gutter="15" class="mb-4">
+        <el-col :span="24">
+          <el-card shadow="hover" class="automation-card">
+            <div>
+              <h3>{{ $t('distribution.title.promotionAutomation') }}</h3>
+              <p>{{ $t('distribution.message.promotionAutomation') }}</p>
+            </div>
+            <el-button type="primary" round @click="goPromotionTemplates">
+              {{ $t('distribution.button.browseTemplates') }}
+            </el-button>
           </el-card>
         </el-col>
       </el-row>
@@ -139,7 +152,7 @@
               </h4>
               <el-divider />
               <div class="link-wrapper text-center">
-                <font-awesome-icon v-if="false" icon="fa-solid fa-link" class="icon" />
+                <link-icon v-if="false" class="icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
                 <a :href="distributionLink" class="link">
                   {{ distributionLink }}
                 </a>
@@ -180,6 +193,7 @@
 </template>
 
 <script lang="ts">
+import { CreditsIcon, LinkIcon, PercentIcon, UserIcon, WalletIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
 import {
@@ -195,12 +209,11 @@ import {
   ElSkeleton
 } from 'element-plus';
 import { distributionLevelOperator, distributionStatusOperator, shortUrlOperator } from '@/operators';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { userOperator } from '@/operators';
 import QrCode from 'vue-qrcode';
-import { ROUTE_DISTRIBUTION_HISTORY, ROUTE_DISTRIBUTION_INVITEES } from '@/router';
+import { ROUTE_CHAT_SCHEDULED_TASKS, ROUTE_DISTRIBUTION_HISTORY, ROUTE_DISTRIBUTION_INVITEES } from '@/router';
 import { IDistributionLevel, IDistributionStatus, IUser } from '@/models';
-import { getPriceString } from '@/utils';
+import { getPriceString, isOfficial } from '@/utils';
 
 interface IData {
   invitees: IUser[];
@@ -214,8 +227,12 @@ interface IData {
 export default defineComponent({
   name: 'ConsoleDistributionList',
   components: {
+    CreditsIcon,
+    LinkIcon,
+    PercentIcon,
+    UserIcon,
+    WalletIcon,
     CopyToClipboard,
-    FontAwesomeIcon,
     QrCode,
     ElProgress,
     ElRow,
@@ -272,6 +289,9 @@ export default defineComponent({
   },
   methods: {
     getPriceString,
+    goPromotionTemplates() {
+      this.$router.push({ name: ROUTE_CHAT_SCHEDULED_TASKS, query: { template_category: 'marketing' } });
+    },
     goHistory() {
       this.$router.push({
         name: ROUTE_DISTRIBUTION_HISTORY
@@ -315,7 +335,12 @@ export default defineComponent({
       const link = `${origin}?inviter_id=${this.$store.getters.user.id}`;
       try {
         const url = (await shortUrlOperator.create(link))?.data?.data?.url;
-        this.distributionLink = (url || link).replace('surl.id', 'share.acedata.cloud');
+        const short = url || link;
+        // Only rebrand the shortener domain to our `share.acedata.cloud` on
+        // first-party sites. On a white-label site keep the neutral short URL
+        // the shortener returned (surl.id) so the shared link doesn't carry
+        // our brand. `link` (the long fallback) is already same-origin.
+        this.distributionLink = isOfficial() ? short.replace('surl.id', 'share.acedata.cloud') : short;
       } catch (error) {
         this.distributionLink = link;
       }
@@ -358,12 +383,15 @@ export default defineComponent({
   .icon-wrapper {
     height: 40px;
     width: 40px;
-    line-height: 40px;
+    display: grid;
+    place-items: center;
     border-radius: 50%;
     background-color: var(--el-color-primary-light-9);
-    text-align: center;
     margin-bottom: 10px;
     .icon {
+      display: block;
+      width: 18px;
+      height: 18px;
       color: var(--el-color-primary);
     }
   }
@@ -378,12 +406,31 @@ export default defineComponent({
   .value {
     font-weight: 600;
     font-size: 30px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
     margin: 0;
   }
   .description {
     color: var(--el-text-color-regular);
     font-size: 14px;
     margin-bottom: 5px;
+  }
+}
+
+.automation-card {
+  :deep(.el-card__body) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  h3 {
+    margin: 0 0 6px;
+    color: var(--el-text-color-primary);
+  }
+  p {
+    margin: 0;
+    color: var(--el-text-color-secondary);
   }
 }
 

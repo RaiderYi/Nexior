@@ -51,6 +51,10 @@
     "message": "크기",
     "description": "출력 이미지 크기"
   },
+  "size.auto": {
+    "message": "자동",
+    "description": "크기 옵션: 자동, 모델이 프롬프트에 따라 적절한 가로 세로 비율을 선택합니다."
+  },
   "description.size": {
     "message": "이미지 생성을 위한 출력 크기, 일반적인 값: 1024x1024, 1536x1024, 1024x1536.",
     "description": "크기 설명"
@@ -112,7 +116,7 @@
     "description": "모델 매개변수 설명"
   },
   "description.imageUrls": {
-    "message": "1-5개의 참조 이미지를 업로드하여 편집 모드로 들어갈 수 있습니다.",
+    "message": "1-16개의 참조 이미지를 업로드하여 편집 모드로 들어갈 수 있습니다.",
     "description": "image_urls 매개변수 설명"
   },
   "status.pending": {
@@ -156,7 +160,7 @@
     "description": "소진 알림"
   },
   "message.uploadImageExceed": {
-    "message": "최대 5장의 이미지를 업로드할 수 있습니다.",
+    "message": "최대 {count}장의 이미지를 업로드할 수 있습니다.",
     "description": "이미지 수 초과 제한"
   },
   "message.uploadImageError": {

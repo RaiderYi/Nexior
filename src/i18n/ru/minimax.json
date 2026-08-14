@@ -1,0 +1,142 @@
+{
+  "name.model": {
+    "message": "Модель",
+    "description": "Модель для генерации видео"
+  },
+  "name.prompt": {
+    "message": "Подсказка",
+    "description": "Описание содержания видео, действий, кадров и стиля"
+  },
+  "name.referenceImages": {
+    "message": "Изображения-ссылки",
+    "description": "Поле для загрузки изображений-ссылок"
+  },
+  "name.referenceAudios": {
+    "message": "Аудио-ссылки",
+    "description": "Поле для загрузки аудио-ссылок"
+  },
+  "name.ratio": {
+    "message": "Соотношение сторон",
+    "description": "Соотношение сторон выходного видео"
+  },
+  "name.duration": {
+    "message": "Длительность (сек)",
+    "description": "Длительность выходного видео"
+  },
+  "name.resolution": {
+    "message": "Разрешение",
+    "description": "Разрешение выходного видео."
+  },
+  "name.watermark": {
+    "message": "Водяной знак AIGC",
+    "description": "Добавить ли водяной знак с идентификатором AIGC."
+  },
+  "name.taskId": {
+    "message": "Идентификатор задачи",
+    "description": "Идентификатор задачи"
+  },
+  "name.failure": {
+    "message": "Ошибка",
+    "description": "Статус ошибки задачи"
+  },
+  "name.failureReason": {
+    "message": "Причина ошибки",
+    "description": "Причина, по которой задача завершилась с ошибкой"
+  },
+  "placeholder.prompt": {
+    "message": "Опишите сцену, действия, кадры и стиль (независимо от того, загружаете ли вы референсные материалы, подсказки обязательны)",
+    "description": "Текст-заполнитель для подсказок"
+  },
+  "description.model": {
+    "message": "Модель генерации видео MiniMax H3.",
+    "description": "Описание модели"
+  },
+  "description.prompt": {
+    "message": "Опишите сцены, действия, кадры и стиль видео, все режимы генерации требуют заполнения.",
+    "description": "Описание подсказки"
+  },
+  "description.referenceImages": {
+    "message": "Загрузите 1–9 изображений. Одно изображение используется как первый кадр, несколько изображений как ссылки.",
+    "description": "Описание изображений-ссылок"
+  },
+  "description.referenceAudios": {
+    "message": "Загрузите 1–3 аудиофайла. При использовании аудио-ссылок необходимо загрузить как минимум одно изображение-ссылку.",
+    "description": "Описание аудио-ссылок"
+  },
+  "description.resolution": {
+    "message": "Выберите четкость выходного видео.",
+    "description": "Описание разрешения"
+  },
+  "description.ratio": {
+    "message": "Выберите горизонтальный или вертикальный формат.",
+    "description": "Описание соотношения сторон"
+  },
+  "description.duration": {
+    "message": "Установите длительность видео от 4 до 15 секунд.",
+    "description": "Описание длительности"
+  },
+  "description.watermark": {
+    "message": "Добавьте водяной знак AIGC в видео.",
+    "description": "Описание водяного знака"
+  },
+  "status.pending": {
+    "message": "В ожидании",
+    "description": "Состояние ожидания задачи"
+  },
+  "status.processing": {
+    "message": "В процессе",
+    "description": "Состояние обработки задачи"
+  },
+  "button.generate": {
+    "message": "Сгенерировать видео",
+    "description": "Кнопка для генерации"
+  },
+  "button.upload": {
+    "message": "Загрузить",
+    "description": "Кнопка загрузки материалов"
+  },
+  "button.download": {
+    "message": "Скачать видео",
+    "description": "Кнопка для скачивания"
+  },
+  "message.startingTask": {
+    "message": "Запуск задачи...",
+    "description": "Подсказка о начале задачи"
+  },
+  "message.startTaskSuccess": {
+    "message": "Задача успешно запущена",
+    "description": "Успешная отправка задачи"
+  },
+  "message.startTaskFailed": {
+    "message": "Не удалось запустить задачу, пожалуйста, попробуйте позже",
+    "description": "Ошибка при отправке задачи"
+  },
+  "message.usedUp": {
+    "message": "Недостаточно средств, пожалуйста, пополните баланс для продолжения использования",
+    "description": "Предупреждение о недостаточном балансе"
+  },
+  "message.downloadVideo": {
+    "message": "Скачать это видео",
+    "description": "Подсказка для скачивания видео"
+  },
+  "message.promptRequired": {
+    "message": "Все режимы генерации должны содержать подсказку.",
+    "description": "Отсутствует подсказка."
+  },
+  "message.textRatioRequired": {
+    "message": "Для видео с текстом необходимо выбрать конкретное соотношение сторон, отличное от адаптивного",
+    "description": "Соотношение сторон видео с текстом недействительно"
+  },
+  "message.imageLimit": {
+    "message": "Максимум 9 изображений для ссылки",
+    "description": "Превышен лимит количества изображений"
+  },
+  "message.audioLimit": {
+    "message": "Максимум 3 аудио для ссылки",
+    "description": "Превышен лимит количества аудио"
+  },
+  "message.uploadError": {
+    "message": "Ошибка загрузки, пожалуйста, попробуйте позже",
+    "description": "Сообщение об ошибке загрузки материалов"
+  }
+}

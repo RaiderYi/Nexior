@@ -112,7 +112,7 @@
     "description": "Опис параметра model"
   },
   "description.imageUrls": {
-    "message": "Завантажте 1-5 зображень для переходу в режим редагування.",
+    "message": "Завантажте 1-16 зображень для переходу в режим редагування.",
     "description": "Опис параметра image_urls"
   },
   "status.pending": {
@@ -156,7 +156,7 @@
     "description": "Повідомлення про вичерпані бали"
   },
   "message.uploadImageExceed": {
-    "message": "Максимум можна завантажити 5 зображень",
+    "message": "Максимум можна завантажити {count} зображень",
     "description": "Кількість зображень перевищує ліміт"
   },
   "message.uploadImageError": {
@@ -182,5 +182,9 @@
   "model.gptImage2Official": {
     "message": "gpt-image-2 (Офіційний)",
     "description": "Варіант моделі gpt-image-2 (офіційний релей)"
+  },
+  "size.auto": {
+    "message": "Автоматично",
+    "description": "Параметр розміру: автоматично — модель обирає співвідношення сторін за вашим запитом"
   }
 }

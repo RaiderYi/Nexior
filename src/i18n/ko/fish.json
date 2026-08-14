@@ -27,6 +27,18 @@
     "message": "소요 시간",
     "description": "Fish 작업 소요 시간 레이블"
   },
+  "name.failure": {
+    "message": "생성 실패",
+    "description": "Fish 작업 실패 제목"
+  },
+  "name.failureReason": {
+    "message": "실패 원인",
+    "description": "Fish 작업 실패 원인 레이블"
+  },
+  "name.traceId": {
+    "message": "추적 ID",
+    "description": "Fish 작업 추적 ID 레이블"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Fish 작업 카드 로봇 레이블"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "음성 모델이 없습니다",
     "description": "Fish 음성 선택기가 비어있음을 알리는 메시지"
+  },
+  "group.publicVoices": {
+    "message": "공공 음색 라이브러리",
+    "description": "Fish 음성 선택기 공공 음색 그룹 제목"
+  },
+  "message.searching": {
+    "message": "검색 중…",
+    "description": "Fish 음성 선택기 원격 검색 로딩提示"
+  },
+  "message.searchVoiceHint": {
+    "message": "키워드를 입력하여 공공 음색 검색",
+    "description": "Fish 음성 선택기 원격 검색 빈 상태提示"
   },
   "name.voiceTitle": {
     "message": "이름",

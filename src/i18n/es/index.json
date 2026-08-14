@@ -19,10 +19,6 @@
     "message": "Video de IA",
     "description": "Título del capítulo de Video de IA"
   },
-  "title.headshots": {
-    "message": "Fotos de identificación de IA",
-    "description": "Título del capítulo de Fotos de identificación de IA"
-  },
   "title.comments": {
     "message": "Comentarios de clientes",
     "description": "Título del capítulo de Comentarios de clientes"
@@ -54,10 +50,6 @@
   "subtitle.luma": {
     "message": "Conecta con el último modelo de Luma, generando videos personalizados con un solo clic y ofrece opciones flexibles para la extensión de los videos.",
     "description": "Subtítulo del capítulo de Video de IA"
-  },
-  "subtitle.headshots": {
-    "message": "Conecta con el último modelo de IA, generando fotos de identificación personalizadas con plantillas y soportando múltiples estilos de fotos de identificación.",
-    "description": "Subtítulo del capítulo de Fotos de identificación de IA"
   },
   "subtitle.comments": {
     "message": "Nos complace ayudar a estos clientes, quienes han dado una alta valoración a nuestros servicios.",
@@ -110,5 +102,293 @@
   "customers.comment3": {
     "message": "Hay muchas plataformas de IA, pero esta realmente es fácil de usar y a un precio razonable, ¡espero que mejore aún más!",
     "description": "Comentario del cliente"
+  },
+  "badge.hero": {
+    "message": "Nuevo · Plataforma de creación AI todo en uno",
+    "description": "Insignia Hero en la página de inicio"
+  },
+  "subtitle.hero": {
+    "message": "Chat · Dibujo · Música · Video, todo en una plataforma",
+    "description": "Una frase explicativa debajo del subtítulo Hero en la página de inicio"
+  },
+  "button.explore": {
+    "message": "Conocer funciones",
+    "description": "Botón secundario Hero en la página de inicio, hace scroll a la sección de introducción de servicios"
+  },
+  "button.learnBusiness": {
+    "message": "Ver plan completo",
+    "description": "Enlace a la documentación pública de capacidades comerciales en la página de inicio"
+  },
+  "title.models": {
+    "message": "Modelos grandes líderes a nivel mundial integrados",
+    "description": "Título del bloque de modelos grandes en la página de inicio"
+  },
+  "subtitle.models": {
+    "message": "Accede a los principales modelos globales al instante, sin necesidad de cambiar entre múltiples herramientas",
+    "description": "Subtítulo del bloque de modelos grandes en la página de inicio"
+  },
+  "title.cta": {
+    "message": "Comienza tu creación AI ahora",
+    "description": "Título de llamada a la acción en la parte inferior de la página de inicio"
+  },
+  "subtitle.cta": {
+    "message": "Regístrate gratis y experimenta las capacidades AI todo en uno",
+    "description": "Subtítulo de llamada a la acción en la parte inferior de la página de inicio"
+  },
+  "stat.capabilities": {
+    "message": "Capacidades de IA combinables libremente",
+    "description": "Descripción de la cantidad de capacidades en la página de inicio"
+  },
+  "stat.subsite": {
+    "message": "Subpágina de marca lanzada",
+    "description": "Descripción de la velocidad de lanzamiento de subpáginas en la página de inicio"
+  },
+  "stat.platforms": {
+    "message": "Cobertura completa en escritorio y móvil",
+    "description": "Descripción del soporte multiplataforma en la página de inicio"
+  },
+  "stat.commission": {
+    "message": "Comisión de distribución más alta",
+    "description": "Descripción de la comisión de distribución más alta en la página de inicio"
+  },
+  "note.allInOne": {
+    "message": "Una cuenta, todas las herramientas de IA",
+    "description": "Descripción de la superposición de captura de pantalla en la página de inicio"
+  },
+  "note.customDomain": {
+    "message": "Dominio personalizado y marca",
+    "description": "Descripción de la superposición de dominio personalizado en la página de inicio"
+  },
+  "eyebrow.business": {
+    "message": "Tu infraestructura de negocio de IA",
+    "description": "Título de sección de la plataforma de negocios en la página de inicio"
+  },
+  "title.business": {
+    "message": "No solo proporcionamos herramientas de IA, también te ayudamos a construir tu propio negocio de IA",
+    "description": "Título del capítulo de la plataforma de negocios en la página de inicio"
+  },
+  "subtitle.business": {
+    "message": "Crear subpáginas, cambiar marcas, vincular dominios, seleccionar capacidades, configurar precios y reglas de distribución todo desde un solo backend, sin necesidad de desarrollo y despliegue por separado.",
+    "description": "Subtítulo del capítulo de la plataforma de negocios en la página de inicio"
+  },
+  "eyebrow.subsites": {
+    "message": "Lanzamiento en 5 minutos",
+    "description": "Título de la función de subpáginas en la página de inicio"
+  },
+  "title.subsites": {
+    "message": "Crea rápidamente sub-sitios de marca con dominio independiente",
+    "description": "Título de funciones de sub-sitios en la página de inicio"
+  },
+  "subtitle.subsites": {
+    "message": "Después de crear una subpágina, tendrás un logo, título, conjunto de funciones y acceso de usuario independientes. Una vez vinculado un dominio personalizado, los clientes permanecerán en tu marca desde la visita hasta la compra.",
+    "description": "Descripción de la función de subpáginas en la página de inicio"
+  },
+  "button.createSubsite": {
+    "message": "Crear mi subsitio",
+    "description": "Botón para crear un subsitio en la página de inicio"
+  },
+  "eyebrow.capabilities": {
+    "message": "Totalmente configurable",
+    "description": "Título de sección de configuración de capacidades en la página de inicio"
+  },
+  "title.capabilities": {
+    "message": "Marca, modelo, precio y método de inicio de sesión son decididos por ti",
+    "description": "Título de configuración de capacidades en la página de inicio"
+  },
+  "subtitle.capabilities": {
+    "message": "Enable any of 31 AI capabilities and configure service names, descriptions, pricing, homepage visibility, SEO, contacts, and authentication. New capabilities join the same management experience.",
+    "description": "Homepage capabilities description"
+  },
+  "button.configure": {
+    "message": "Ver configuración de capacidades",
+    "description": "Botón de configuración de capacidades en la página de inicio"
+  },
+  "eyebrow.operations": {
+    "message": "Backend de operaciones completo",
+    "description": "Título de la configuración de operaciones en la página de inicio"
+  },
+  "title.operations": {
+    "message": "Desde la adquisición de clientes hasta el inicio de sesión, cada punto de contacto de la marca se puede configurar",
+    "description": "Título de configuración de operaciones en la página de inicio"
+  },
+  "subtitle.operations": {
+    "message": "Gestiona de forma independiente la presentación de búsqueda, contenido multilingüe, información de contacto y métodos de inicio de sesión de usuarios, permitiendo que las subpáginas no solo se lancen, sino que también operen y crezcan a largo plazo.",
+    "description": "Descripción de la configuración de operaciones en la página de inicio"
+  },
+  "button.operations": {
+    "message": "Ver configuración de operaciones",
+    "description": "Botón de configuración de operaciones en la página de inicio"
+  },
+  "eyebrow.distribution": {
+    "message": "Crecimiento y monetización",
+    "description": "Título de la función de distribución en la página de inicio"
+  },
+  "title.distribution": {
+    "message": "Comisiones escalonadas, enlaces de invitación y retiros de ganancias",
+    "description": "Título de funciones de distribución en la página de inicio"
+  },
+  "subtitle.distribution": {
+    "message": "Every user receives a referral link and QR code. The platform tracks orders, calculates tiered commissions, and aggregates withdrawable earnings so customer growth becomes a sustainable network.",
+    "description": "Homepage referral description"
+  },
+  "button.viewDistribution": {
+    "message": "Ver centro de distribución",
+    "description": "Botón para acceder al centro de distribución en la página de inicio"
+  },
+  "eyebrow.creation": {
+    "message": "Interfaz de producto real",
+    "description": "Título de sección de capacidades de creación en la página de inicio"
+  },
+  "title.creation": {
+    "message": "De una idea a una obra multimodal completa",
+    "description": "Título del capítulo de capacidades de creación en la página de inicio"
+  },
+  "subtitle.creation": {
+    "message": "Una sola cuenta, un solo saldo, una experiencia multiplataforma, abarcando imágenes, videos, música, humanos digitales y flujos de trabajo.",
+    "description": "Subtítulo del capítulo de capacidades creativas en la página de inicio"
+  },
+  "eyebrow.chat": {
+    "message": "Conversación y búsqueda",
+    "description": "Título de sección de capacidades de chat en la página de inicio"
+  },
+  "eyebrow.image": {
+    "message": "Creación de imágenes",
+    "description": "Título de la capacidad de imágenes en la página de inicio"
+  },
+  "title.image": {
+    "message": "Dibujo AI y edición de imágenes profesional",
+    "description": "Título de capacidades de imagen en la página de inicio"
+  },
+  "subtitle.image": {
+    "message": "Cubre generación de imágenes a partir de texto, edición de imágenes de referencia, fusión de múltiples imágenes, redibujo parcial, códigos QR artísticos y fotos de identificación, compatible con modelos populares y formatos comunes.",
+    "description": "Descripción de la capacidad de imágenes en la página de inicio"
+  },
+  "eyebrow.video": {
+    "message": "Generación de video",
+    "description": "Título de la capacidad de video en la página de inicio"
+  },
+  "title.video": {
+    "message": "Videos AI impulsados por texto, imágenes y videos",
+    "description": "Título de capacidades de video en la página de inicio"
+  },
+  "subtitle.video": {
+    "message": "Utiliza modelos como Kling, Veo, Sora, Seedance, Hailuo, Luma para completar generación, extensión, encuadre, sincronización de labios y creación de múltiples materiales.",
+    "description": "Descripción de la capacidad de video en la página de inicio"
+  },
+  "eyebrow.music": {
+    "message": "Música y sonido",
+    "description": "Título de la capacidad musical en la página de inicio"
+  },
+  "title.music": {
+    "message": "Generación de canciones, música de fondo, letras y voces",
+    "description": "Título de capacidades musicales en la página de inicio"
+  },
+  "subtitle.music": {
+    "message": "Comienza con una descripción o letras personalizadas para generar canciones completas, continuar extendiendo, remezclando, separando voces, o sintetizando voz natural a través de Fish.",
+    "description": "Descripción de la capacidad musical en la página de inicio"
+  },
+  "eyebrow.workflow": {
+    "message": "Humanos digitales y flujo de trabajo",
+    "description": "Título de la capacidad de flujo de trabajo en la página de inicio"
+  },
+  "title.workflow": {
+    "message": "Convierte guiones en locuciones digitales y videos completos",
+    "description": "Título de capacidades de flujo de trabajo en la página de inicio"
+  },
+  "subtitle.workflow": {
+    "message": "Maestro y la capacidad de humanos digitales conectan guiones, materiales, voces, tomas y renderizado en un proceso de producción de contenido repetible.",
+    "description": "Descripción de la capacidad de flujo de trabajo en la página de inicio"
+  },
+  "eyebrow.digitalHuman": {
+    "message": "Locución de humano digital",
+    "description": "Título de sección de capacidades de humano digital en la página de inicio"
+  },
+  "title.digitalHuman": {
+    "message": "Genera videos de personas digitales con fotos, sonido y guiones",
+    "description": "Título de capacidades de personas digitales en la página de inicio"
+  },
+  "subtitle.digitalHuman": {
+    "message": "Genera labios naturales y videos completos con imágenes y sonidos reales, ideal para cursos, marketing, presentaciones de productos y producción de contenido en masa.",
+    "description": "Descripción de la capacidad de humanos digitales en la página de inicio"
+  },
+  "eyebrow.coding": {
+    "message": "Colaboración en programación",
+    "description": "Título de sección de capacidades de programación en la página de inicio"
+  },
+  "title.coding": {
+    "message": "Asistente de programación AI para conectar dispositivos locales",
+    "description": "Título de capacidades de programación en la página de inicio"
+  },
+  "subtitle.coding": {
+    "message": "Conecta de forma segura tus dispositivos de desarrollo a través de Coding Bridge, permitiendo que la IA lea proyectos, ejecute tareas y proporcione retroalimentación continua con autorización clara.",
+    "description": "Descripción de la capacidad de programación en la página de inicio"
+  },
+  "eyebrow.directory": {
+    "message": "Catálogo de capacidades",
+    "description": "Título de sección del catálogo de capacidades en la página de inicio"
+  },
+  "title.directory": {
+    "message": "Directorio completo de capacidades AI, con acceso continuo a los últimos modelos",
+    "description": "Título del directorio de capacidades en la página de inicio"
+  },
+  "subtitle.directory": {
+    "message": "A continuación se presentan las capacidades completas actualmente habilitadas en el sitio. La página principal seguirá integrando nuevos modelos, y los administradores de subpáginas pueden decidir libremente qué servicios mostrar a los clientes.",
+    "description": "Descripción del directorio de capacidades en la página de inicio"
+  },
+  "eyebrow.cta": {
+    "message": "Comienza ahora",
+    "description": "Título de llamada a la acción en la parte inferior de la página de inicio"
+  },
+  "benefit.subsites.noServer": {
+    "message": "No es necesario comprar servidores o construir sistemas, crea y lanza un subsitio de IA en 5 minutos",
+    "description": "Punto de venta de subsitios sin servidor en la página de inicio"
+  },
+  "benefit.subsites.customDomain": {
+    "message": "Trae tu propio subdominio independiente, también puedes vincular tu propio dominio de marca y HTTPS",
+    "description": "Punto de venta de dominio personalizado para subsitios en la página de inicio"
+  },
+  "benefit.subsites.branding": {
+    "message": "Logo, nombre, color principal, información de contacto y acceso a la marca se pueden configurar de forma independiente",
+    "description": "Punto de venta de personalización de marca para subsitios en la página de inicio"
+  },
+  "benefit.capabilities.catalog": {
+    "message": "Capacidades de chat, imagen, video, música, humano digital, flujo de trabajo y programación se actualizan continuamente",
+    "description": "Punto de venta del catálogo completo de capacidades en la página de inicio"
+  },
+  "benefit.capabilities.display": {
+    "message": "Cada capacidad se puede mostrar u ocultar de forma independiente, renombrar, modificar la descripción y ajustar el orden de presentación",
+    "description": "Punto de venta de la configuración de presentación de capacidades en la página de inicio"
+  },
+  "benefit.capabilities.pricing": {
+    "message": "Soporta aumento de precio unificado en todo el sitio y precios independientes para cada servicio, la estrategia de precios la decides tú",
+    "description": "Punto de venta de precios de capacidades en la página de inicio"
+  },
+  "benefit.operations.seo": {
+    "message": "Título SEO, palabras clave y descripción personalizables, construye tu propia marca de búsqueda",
+    "description": "Punto de venta de SEO en la página de inicio"
+  },
+  "benefit.operations.auth": {
+    "message": "Habilita libremente el inicio de sesión con correo electrónico, teléfono, GitHub, Google, WeChat, Apple y claves de acceso",
+    "description": "Punto de venta de métodos de inicio de sesión en la página de inicio"
+  },
+  "benefit.operations.localization": {
+    "message": "Nombres de servicios, descripciones y contenido operativo soportan múltiples idiomas y traducción automática",
+    "description": "Punto de venta de operaciones multilingües en la página de inicio"
+  },
+  "benefit.distribution.noBarrier": {
+    "message": "Sin barreras de solicitud, los usuarios registrados obtienen automáticamente un enlace de invitación exclusivo y un código QR",
+    "description": "Punto de venta de distribución sin barreras en la página de inicio"
+  },
+  "benefit.distribution.levels": {
+    "message": "Sistema de crecimiento de 13 niveles, comisiones aumentan con el rendimiento, hasta un 24%",
+    "description": "Punto de venta de niveles de distribución en la página de inicio"
+  },
+  "benefit.distribution.withdrawal": {
+    "message": "Órdenes, número de invitaciones y recompensas se contabilizan automáticamente, los ingresos se pueden solicitar para retiro de forma unificada",
+    "description": "Punto de venta de retiro de distribución en la página de inicio"
+  },
+  "nav.business": {
+    "message": "Colaboración Comercial",
+    "description": "Navegación a la página de colaboración comercial y creación de sitios web de marca blanca"
   }
 }

@@ -27,6 +27,18 @@
     "message": "Kulunut aika",
     "description": "Fish-tehtävän kesto"
   },
+  "name.failure": {
+    "message": "Generointi epäonnistui",
+    "description": "Fish tehtävän epäonnistumisen otsikko"
+  },
+  "name.failureReason": {
+    "message": "Epäonnistumisen syy",
+    "description": "Fish tehtävän epäonnistumisen syy-merkintä"
+  },
+  "name.traceId": {
+    "message": "Seurantatunnus",
+    "description": "Fish tehtävän seurantatunnus-merkintä"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Fish-tehtäväkortin bottinimi"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Äänimalleja ei ole saatavilla",
     "description": "Ilmoitus, kun Fish-äänenvalitsin on tyhjä"
+  },
+  "group.publicVoices": {
+    "message": "Julkinen äänenväri kirjasto",
+    "description": "Fish äänenvalitsimen julkisen äänenväri ryhmän otsikko"
+  },
+  "message.searching": {
+    "message": "Etsitään…",
+    "description": "Fish äänenvalitsimen etähaun lataustiedot"
+  },
+  "message.searchVoiceHint": {
+    "message": "Syötä avainsana etsiäksesi julkista äänenväriä",
+    "description": "Fish äänenvalitsimen etähaun tyhjät tilatiedot"
   },
   "name.voiceTitle": {
     "message": "Nimi",

@@ -1,7 +1,7 @@
 {
   "name.text": {
     "message": "Text",
-    "description": "Fish TTS textfält etikett"
+    "description": "Fish TTS textfältets etikett"
   },
   "name.voice": {
     "message": "Röst",
@@ -26,6 +26,18 @@
   "name.elapsed": {
     "message": "Tidsåtgång",
     "description": "Fish uppgift tidsåtgång etikett"
+  },
+  "name.failure": {
+    "message": "Generering misslyckades",
+    "description": "Fish uppgift misslyckades titel"
+  },
+  "name.failureReason": {
+    "message": "Orsak till misslyckande",
+    "description": "Fish uppgift misslyckande orsak etikett"
+  },
+  "name.traceId": {
+    "message": "Spårnings-ID",
+    "description": "Fish uppgift spårnings-ID etikett"
   },
   "name.fishBot": {
     "message": "Fish Audio",
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Inga ljudmodeller tillgängliga",
     "description": "Fish ljudväljare är tomt meddelande"
+  },
+  "group.publicVoices": {
+    "message": "Offentliga röstbibliotek",
+    "description": "Fish ljudväljare offentlig röstgrupps titel"
+  },
+  "message.searching": {
+    "message": "Söker…",
+    "description": "Fish ljudväljare fjärrsökning laddningsmeddelande"
+  },
+  "message.searchVoiceHint": {
+    "message": "Skriv in nyckelord för att söka i offentliga röster",
+    "description": "Fish ljudväljare fjärrsökning tomt tillståndsmeddelande"
   },
   "name.voiceTitle": {
     "message": "Namn",
@@ -220,8 +244,8 @@
     "description": "Fish ljudklon träningsläge: snabb"
   },
   "value.trainModePrecise": {
-    "message": "Precise",
-    "description": "Fish ljudklon träningsläge: precis"
+    "message": "Precist",
+    "description": "Fish röstkloning träningsläge: precist"
   },
   "button.recordAudio": {
     "message": "Spela in ljud",

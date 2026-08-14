@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Дія",
+    "description": "Вибірник для генерації або редагування дій."
+  },
   "name.taskId": {
     "message": "ID завдання",
     "description": "ID завдання"
@@ -131,6 +135,10 @@
     "message": "Не вдалося завантажити зображення, будь ласка, спробуйте ще раз пізніше",
     "description": "Помилка завантаження"
   },
+  "message.referenceImageRequired": {
+    "message": "В режимі редагування потрібно завантажити принаймні одне зображення для посилання.",
+    "description": "Підказка для перевірки, яка відображається, коли в режимі редагування немає зображення для посилання."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Потрібне підтвердження",
     "description": "Заголовок вікна конфлікту можливостей"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Опція моделі SeeDream 5.0 (підтримує групові зображення та потоковий вихід)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Кількість зображень",

@@ -27,29 +27,53 @@
     "message": "Cor do tema",
     "description": "Título exibido na caixa de edição"
   },
+  "field.supportedLocales": {
+    "message": "Idioma do site",
+    "description": "Idioma da interface que os visitantes podem escolher nas configurações do site"
+  },
+  "field.forcedLocale": {
+    "message": "Idioma Forçado",
+    "description": "Opção para definir um idioma fixo para toda a interface do site"
+  },
+  "placeholder.autoDetectLocale": {
+    "message": "Detecção Automática",
+    "description": "Texto de espaço reservado quando o idioma forçado não está definido"
+  },
   "field.qr": {
     "message": "Código QR",
     "description": "Exibido como o título na caixa de edição"
   },
   "field.url": {
     "message": "Link",
-    "description": "Exibido como o título na caixa de edição"
+    "description": "Título exibido na caixa de edição"
   },
   "field.admins": {
     "message": "ID dos administradores do site",
     "description": "Exibido como o título na caixa de edição"
   },
+  "field.contacts": {
+    "message": "Contatos de suporte",
+    "description": "Field title for the customer-service contacts in site settings"
+  },
   "field.markupRatio": {
-    "message": "Proporção de aumento",
+    "message": "Acréscimo uniforme em todo o site",
     "description": "Configuração do site: proporção de aumento unificada para todos os pacotes de recarga deste site (percentagem)"
   },
   "message.markupRatioTip": {
-    "message": "Aumento unificado para todos os pacotes de recarga (0%~500%). 0% significa vender pelo preço original da plataforma; a parte do aumento é o lucro que você ganha, a proporção de comissão de revenda permanece inalterada.",
+    "message": "Defina um acréscimo uniforme para todos os serviços deste site (0%–500%). Um acréscimo personalizado por serviço abaixo substitui este valor.",
     "description": "Texto explicativo da configuração da proporção de aumento"
   },
   "message.markupExample": {
     "message": "Exemplo: preço oficial {from} → seu preço {to}",
     "description": "Exemplo em tempo real abaixo da configuração da proporção de aumento, {from} é o preço original oficial, {to} é o preço após o aumento"
+  },
+  "field.disableRecharge": {
+    "message": "Desativar recarga",
+    "description": "Site settings: when on, hide all recharge/top-up entries on this site"
+  },
+  "message.disableRechargeTip": {
+    "message": "Quando ativado, todos os botões de recarga ficam ocultos neste site e os usuários não podem mais recarregar o saldo.",
+    "description": "Help text for the disable-recharge toggle"
   },
   "field.distributionDefaultInviterId": {
     "message": "ID do convidador padrão",
@@ -91,6 +115,102 @@
     "message": "WeChat",
     "description": "Nome do método de login: Login de terceiros com WeChat"
   },
+  "field.authSmsWebhook": {
+    "message": "Endereço de envio de SMS personalizado",
+    "description": "Configurações do site / login: título para o webhook de entrega de código de verificação SMS personalizado do site"
+  },
+  "message.authSmsWebhookTip": {
+    "message": "Ao ativar, os SMS de verificação enviados pelo site serão enviados pela sua própria interface com sua própria assinatura; ao desativar, será usada a assinatura padrão da plataforma. É necessário ativar o método de login por 'número de telefone'.",
+    "description": "Explica o webhook do remetente SMS personalizado"
+  },
+  "placeholder.authSmsWebhookUrl": {
+    "message": "https://seu-dominio/sms-webhook",
+    "description": "Placeholder para o campo de entrada da URL do webhook SMS"
+  },
+  "placeholder.authSmsWebhookSecret": {
+    "message": "Chave de Assinatura (deixe em branco para manter inalterada)",
+    "description": "Placeholder para a entrada da chave de assinatura do webhook SMS; somente para escrita, em branco mantém o existente"
+  },
+  "field.authSmsWebhookEnable": {
+    "message": "Ativar Endereço de Remetente Personalizado",
+    "description": "Rótulo ao lado do botão de alternância do remetente SMS personalizado"
+  },
+  "field.authSmsWebhookDoc": {
+    "message": "Ver documentação",
+    "description": "Link que abre o diálogo da especificação do webhook SMS"
+  },
+  "field.authSmsWebhookTest": {
+    "message": "Testar",
+    "description": "Botão que abre o diálogo de teste do webhook SMS"
+  },
+  "message.authSmsWebhookNeedsPhone": {
+    "message": "É necessário ativar o método de login por 'número de telefone' para configurar o endereço de remetente SMS personalizado.",
+    "description": "Dica exibida quando a alternância está desativada porque o login por telefone está desligado"
+  },
+  "field.authSmsWebhookDocTitle": {
+    "message": "Endereço de Remetente SMS Personalizado · Descrição da Interface",
+    "description": "Título do diálogo da especificação do webhook SMS"
+  },
+  "message.authSmsWebhookDocIntro": {
+    "message": "Este site fará uma requisição HTTPS POST com assinatura para o endereço que você preencher, e seu serviço será responsável por enviar a mensagem SMS. Certifique-se de que sua interface atenda aos seguintes requisitos:",
+    "description": "Parágrafo introdutório do diálogo da especificação do webhook SMS"
+  },
+  "field.authSmsWebhookDocRequest": {
+    "message": "Requisição",
+    "description": "Cabeçalho: seção de requisição da especificação do webhook SMS"
+  },
+  "message.authSmsWebhookDocRequest": {
+    "message": "O método é POST, e o Content-Type é application/json. O propósito pode ser login / registro / teste (teste é para verificação de conectividade, não precisa enviar realmente a mensagem SMS). A estrutura do corpo da requisição é a seguinte:",
+    "description": "Descreve o método de requisição e o corpo do webhook SMS"
+  },
+  "field.authSmsWebhookDocHeaders": {
+    "message": "Verificação de Assinatura",
+    "description": "Cabeçalho: seção de assinatura da especificação do webhook SMS"
+  },
+  "message.authSmsWebhookDocHeaders": {
+    "message": "Anexe os seguintes cabeçalhos de requisição a cada requisição, use sua chave de assinatura para verificar HMAC-SHA256 conforme a especificação dos Webhooks Padrão, e utilize comparação em tempo constante:",
+    "description": "Descreve a verificação de assinatura para o webhook SMS"
+  },
+  "field.authSmsWebhookDocResponse": {
+    "message": "Resposta",
+    "description": "Cabeçalho: seção de resposta da especificação do webhook SMS"
+  },
+  "message.authSmsWebhookDocResponse": {
+    "message": "Para sucesso, retorne 2xx; para indicar falha explicitamente, retorne HTTP 200, e o campo success no corpo deve ser false (veja o exemplo abaixo). Responda dentro de 5 segundos.",
+    "description": "Descreve a resposta esperada do webhook SMS"
+  },
+  "field.authSmsWebhookTestTitle": {
+    "message": "Testar Endereço de Remetente SMS Personalizado",
+    "description": "Título do diálogo de teste do webhook SMS"
+  },
+  "field.authSmsWebhookTestRegion": {
+    "message": "Código de Área do País/Região",
+    "description": "Rótulo para o campo de código de região no diálogo de teste"
+  },
+  "field.authSmsWebhookTestNumber": {
+    "message": "Número de Telefone para Teste (opcional)",
+    "description": "Rótulo para o campo de número de telefone no diálogo de teste"
+  },
+  "field.authSmsWebhookTestSend": {
+    "message": "Enviar Teste",
+    "description": "Botão que envia a requisição de teste do webhook SMS"
+  },
+  "message.authSmsWebhookTestOk": {
+    "message": "A requisição de teste foi entregue com sucesso à sua interface.",
+    "description": "Mensagem de sucesso após um teste do webhook"
+  },
+  "message.authSmsWebhookTestFailed": {
+    "message": "Teste falhou, por favor verifique o endereço, a chave de assinatura e a resposta da interface.",
+    "description": "Mensagem de falha após um teste do webhook"
+  },
+  "field.authSmsWebhookDisableTitle": {
+    "message": "Desativar endereço de envio de SMS personalizado",
+    "description": "Título da janela de confirmação exibida ao desativar o remetente de SMS personalizado"
+  },
+  "message.authSmsWebhookDisableConfirm": {
+    "message": "Desativar irá excluir os endereços de remetente e a chave de assinatura salvos (a chave não pode ser recuperada), e o site usará a assinatura padrão da plataforma. Você tem certeza que deseja desativar?",
+    "description": "Corpo do diálogo de confirmação exibido ao desativar o remetente SMS personalizado"
+  },
   "field.featuresChat": {
     "message": "Chat",
     "description": "Exibido como o título na caixa de edição"
@@ -115,9 +235,13 @@
     "message": "Maestro",
     "description": "Exibido como o título na caixa de edição"
   },
-  "field.featuresDigitalhuman": {
-    "message": "Digital Human",
+  "field.featuresPoivelle": {
+    "message": "Poivelle",
     "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresDigitalhuman": {
+    "message": "Humano Digital",
+    "description": "Exibido como o título na caixa de edição"
   },
   "field.featuresDeepseek": {
     "message": "Deepseek",
@@ -159,9 +283,9 @@
     "message": "Hailuo",
     "description": "Exibido como o título na caixa de edição"
   },
-  "field.featuresHeadshots": {
-    "message": "Foto de identificação AI",
-    "description": "Exibido como o título na caixa de edição"
+  "field.featuresMinimax": {
+    "message": "MiniMax H3",
+    "description": "Displayed as the title in the editing box"
   },
   "field.featuresSuno": {
     "message": "Suno",
@@ -186,6 +310,10 @@
   "field.featuresSeedance": {
     "message": "SeeDance",
     "description": "Exibido como o título na caixa de edição"
+  },
+  "field.featuresOmni": {
+    "message": "Omni",
+    "description": "Exibido como título na caixa de edição"
   },
   "field.featuresWan": {
     "message": "Wan",
@@ -234,6 +362,10 @@
   "title.editAdmins": {
     "message": "Editar administradores",
     "description": "Exibido como o título na caixa de edição"
+  },
+  "title.editContacts": {
+    "message": "Editar contatos de suporte",
+    "description": "Title of the edit-support-contacts dialog"
   },
   "title.featuresConfig": {
     "message": "Configuração de funcionalidades",
@@ -371,6 +503,74 @@
     "message": "Falha no envio da imagem.",
     "description": "Erro de falha no upload do cortador de imagens"
   },
+  "logoStudio.analysisReady": {
+    "message": "Detecção de imagem concluída",
+    "description": "Título do estado no topo da segunda etapa do processamento inteligente da imagem da marca"
+  },
+  "logoStudio.analysisSummary": {
+    "message": "{width}×{height} px · Confiança do fundo {confidence}%",
+    "description": "Dimensões e confiança do fundo nos resultados da detecção de imagem"
+  },
+  "logoStudio.backgroundDetected": {
+    "message": "Fundo de cor sólida detectado",
+    "description": "Rótulo de estado quando o fundo ao redor da imagem é suficientemente uniforme"
+  },
+  "logoStudio.transparentOrComplex": {
+    "message": "Fundo transparente ou complexo",
+    "description": "Rótulo de estado quando a imagem é transparente ou o fundo não é adequado para remoção automática"
+  },
+  "logoStudio.removeBackground": {
+    "message": "Remover fundo automaticamente",
+    "description": "Rótulo da chave para remoção automática do fundo da imagem da marca"
+  },
+  "logoStudio.backgroundColor": {
+    "message": "Cor de fundo",
+    "description": "Rótulo da cor alvo para remoção do fundo da imagem da marca"
+  },
+  "logoStudio.edgeTolerance": {
+    "message": "Tolerância de borda",
+    "description": "Rótulo do controle deslizante de tolerância para remoção do fundo da imagem da marca"
+  },
+  "logoStudio.refreshPreview": {
+    "message": "Atualizar visualização",
+    "description": "Botão para reprocessar a imagem com novos parâmetros de remoção de fundo"
+  },
+  "logoStudio.modeBrand": {
+    "message": "Manter cor da marca",
+    "description": "Modo de exibição que usa o logo colorido em temas claros e escuros"
+  },
+  "logoStudio.modeBalanced": {
+    "message": "Adaptação inteligente",
+    "description": "Modo recomendado onde cores claras mantêm a cor da marca e cores escuras usam o logo branco"
+  },
+  "logoStudio.modeMono": {
+    "message": "Modo monocromático",
+    "description": "Modo de exibição que usa logo preto em fundo claro e logo branco em fundo escuro"
+  },
+  "logoStudio.lightTheme": {
+    "message": "Tema claro",
+    "description": "Rótulo de visualização da imagem da marca com fundo claro"
+  },
+  "logoStudio.darkTheme": {
+    "message": "Tema escuro",
+    "description": "Rótulo de visualização da imagem da marca com fundo escuro"
+  },
+  "logoStudio.previewOutdated": {
+    "message": "Os parâmetros foram alterados, atualize a visualização antes de aplicar.",
+    "description": "Mensagem quando os parâmetros de processamento não correspondem à visualização atual"
+  },
+  "logoStudio.back": {
+    "message": "Voltar ao recorte",
+    "description": "Botão para retornar à etapa de recorte a partir da visualização do processamento"
+  },
+  "logoStudio.analyze": {
+    "message": "Detectar e visualizar",
+    "description": "Botão para concluir o recorte e entrar na etapa de processamento inteligente"
+  },
+  "logoStudio.apply": {
+    "message": "Aplicar imagem",
+    "description": "Botão para confirmar os resultados do processamento da imagem da marca"
+  },
   "message.editLogoTip": {
     "message": "Tamanho recomendado: 200*60px",
     "description": "Mensagem de dica para o envio da imagem"
@@ -435,6 +635,30 @@
     "message": "A cor do tema da marca do site, utilizada em botões, links, destaques e gradientes de cor da marca em todo o site.",
     "description": "Dica para o seletor de cor do tema do site"
   },
+  "message.supportedLocalesTip": {
+    "message": "Escolha o idioma da interface que o site oferece aos visitantes, o suporte padrão é para todos os idiomas.",
+    "description": "Dica sobre as configurações de idiomas disponíveis no site"
+  },
+  "message.forcedLocaleTip": {
+    "message": "Defina o idioma da interface para todos os visitantes; após a configuração, os visitantes não poderão mudar. Deixe em branco para detecção automática.",
+    "description": "Dica para a configuração de idioma forçado do site"
+  },
+  "message.allLocales": {
+    "message": "Todos os idiomas",
+    "description": "Resumo quando não há restrições nos idiomas disponíveis no site"
+  },
+  "message.atLeastOneLocale": {
+    "message": "Por favor, mantenha pelo menos um idioma",
+    "description": "Mensagem de validação quando a seleção de idiomas do site está vazia"
+  },
+  "placeholder.supportedLocales": {
+    "message": "Escolher idioma do site",
+    "description": "Texto de espaço reservado para a caixa de seleção de idiomas do site"
+  },
+  "title.editSupportedLocales": {
+    "message": "Editar idiomas do site",
+    "description": "Título da janela pop-up para editar os idiomas do site"
+  },
   "message.adminsTip": {
     "message": "IDs dos administradores do site. O usuário que cria o site pela primeira vez se torna o administrador. Apenas administradores podem gerenciar o site.",
     "description": "Mensagem de dica para os administradores do site"
@@ -442,6 +666,14 @@
   "message.adminsTip2": {
     "message": "Você pode adicionar ou remover IDs de administradores aqui. Veja os IDs de usuários em https://auth.acedata.cloud",
     "description": "Mensagem de dica para os administradores do site"
+  },
+  "message.contactsTip": {
+    "message": "Preencha seus contatos de atendimento (Discord, X, WeChat, telefone, e-mail). Eles aparecem na página Sobre para os usuários falarem com você.",
+    "description": "Tip for the support-contacts field"
+  },
+  "message.contactsEmpty": {
+    "message": "Não definido",
+    "description": "Placeholder shown when no support contact has been filled in"
   },
   "message.keywordsTip": {
     "message": "Palavras-chave do site, localizadas nas metainformações do site, usadas para otimização de SEO.",
@@ -456,124 +688,132 @@
     "description": "Descrição da funcionalidade de Chat"
   },
   "message.featuresGrok": {
-    "message": "Ativar ou desativar o módulo de Grok.",
-    "description": "Descrição da funcionalidade de Grok"
+    "message": "Assistente da xAI para conhecimento em tempo real, raciocínio, escrita e programação.",
+    "description": "Concise capability introduction: xAI assistant for real-time knowledge, reasoning, writing, and coding."
   },
   "message.featuresGrokvideo": {
-    "message": "Ativar ou desativar o módulo de funcionalidades do Grok Video.",
-    "description": "Descrição da funcionalidade do Grok Video"
+    "message": "Geração de vídeo da xAI para clipes curtos a partir de prompts de texto ou imagens de referência.",
+    "description": "Concise capability introduction: xAI video generation for short clips from text prompts or reference images."
   },
   "message.featuresMaestro": {
-    "message": "Ativar ou desativar o módulo de funcionalidades do Maestro.",
-    "description": "Descrição da funcionalidade do Maestro"
+    "message": "Produza vídeos completos a partir de uma ideia, incluindo planejamento, narração, cenas e entrega.",
+    "description": "Concise capability introduction: Produce complete videos from an idea, including planning, voiceover, scenes, and delivery."
+  },
+  "message.featuresPoivelle": {
+    "message": "Coordene a produção profissional de filmes com IA através do compartilhamento de gráficos de projeto, storyboards, cronogramas, revisões e fluxos de trabalho do Skill Agent.",
+    "description": "Descrição das capacidades de coordenação da produção profissional de filmes com IA"
   },
   "message.featuresDigitalhuman": {
-    "message": "Enable or disable the Digital Human feature module.",
-    "description": "Description of the Digital Human feature"
+    "message": "Crie vídeos de apresentador com fala sintetizada e sincronização labial natural.",
+    "description": "Concise capability introduction: Create talking-head videos with synthesized speech and natural lip sync."
   },
   "message.featuresDeepseek": {
-    "message": "Ativar ou desativar o módulo de Deepseek.",
-    "description": "Descrição da funcionalidade de Deepseek"
+    "message": "Assistente do DeepSeek para raciocínio avançado, programação, matemática e perguntas do dia a dia.",
+    "description": "Concise capability introduction: DeepSeek assistant for advanced reasoning, coding, math, and everyday questions."
   },
   "message.featuresChatgpt": {
-    "message": "Ativar ou desativar o módulo de ChatGPT.",
-    "description": "Descrição da funcionalidade de ChatGPT"
+    "message": "Assistente da OpenAI para escrita, raciocínio, programação e conversas multimodais.",
+    "description": "Concise capability introduction: OpenAI assistant for writing, reasoning, coding, and multimodal conversations."
   },
   "message.featuresMidjourney": {
-    "message": "Ativar ou desativar o módulo de Midjourney.",
-    "description": "Descrição da funcionalidade de Midjourney"
+    "message": "Crie imagens refinadas e variações criativas a partir de texto ou referências visuais.",
+    "description": "Concise capability introduction: Create polished images and creative variations from text or visual references."
   },
   "message.featuresChatdoc": {
     "message": "Ativar ou desativar o módulo de Chatdoc.",
     "description": "Descrição da funcionalidade de Chatdoc"
   },
   "message.featuresQrart": {
-    "message": "Ativar ou desativar o módulo de Qrart.",
-    "description": "Descrição da funcionalidade de Qrart"
+    "message": "Transforme links em QR codes artísticos, escaneáveis, com estilos e imagens personalizados.",
+    "description": "Concise capability introduction: Turn links into scannable artistic QR codes with custom styles and imagery."
   },
   "message.featuresVeo": {
-    "message": "Ativar ou desativar o módulo de Veo.",
-    "description": "Descrição da funcionalidade de Veo"
+    "message": "Geração de vídeo do Google para clipes cinematográficos com forte controle de prompt e movimento.",
+    "description": "Concise capability introduction: Google video generation for cinematic clips with strong prompt and motion control."
   },
   "message.featuresSora": {
-    "message": "Ativar ou desativar o módulo de Sora.",
-    "description": "Descrição da funcionalidade de Sora"
+    "message": "Geração de vídeo da OpenAI para cenas realistas, narrativa e transformações visuais.",
+    "description": "Concise capability introduction: OpenAI video generation for realistic scenes, storytelling, and visual transformations."
   },
   "message.featuresSuno": {
-    "message": "Ativar ou desativar o módulo de recursos do Suno.",
-    "description": "Descrição da funcionalidade do Suno"
+    "message": "Gere músicas completas, letras, vocais e instrumentais a partir de um prompt.",
+    "description": "Concise capability introduction: Generate complete songs, lyrics, vocals, and instrumentals from a prompt."
   },
   "message.featuresPixverse": {
-    "message": "Ativar ou desativar o módulo de recursos do Pixverse.",
-    "description": "Descrição da funcionalidade do Pixverse"
+    "message": "Gere vídeos estilizados a partir de prompts e imagens com templates e efeitos.",
+    "description": "Concise capability introduction: Generate stylized videos from prompts and images with templates and effects."
   },
   "message.featuresFlux": {
-    "message": "Ativar ou desativar o módulo de recursos do FLux.",
-    "description": "Descrição da funcionalidade do FLux"
+    "message": "Crie imagens detalhadas e edite visuais existentes com instruções em linguagem natural.",
+    "description": "Concise capability introduction: Create detailed images and edit existing visuals with natural-language instructions."
   },
   "message.featuresNanobanana": {
-    "message": "Ativar ou desativar o módulo de recursos do Nano Banana.",
-    "description": "Descrição da funcionalidade do Nano Banana"
+    "message": "Geração e edição de imagens com tecnologia Google e seguimento preciso de instruções.",
+    "description": "Concise capability introduction: Google-powered image generation and editing with precise instruction following."
   },
   "message.featuresOpenaiimage": {
-    "message": "Ativar ou desativar o módulo de recursos de imagem do OpenAI.",
-    "description": "Descrição da funcionalidade de imagem do OpenAI"
+    "message": "Geração e edição de imagens da OpenAI para visuais, textos e composições refinados.",
+    "description": "Concise capability introduction: OpenAI image generation and editing for polished visuals, text, and compositions."
   },
   "message.featuresSeedream": {
-    "message": "Ativar ou desativar o módulo de recursos do SeeDream.",
-    "description": "Descrição da funcionalidade do SeeDream"
+    "message": "Geração e edição de imagens da ByteDance para visuais criativos de alta qualidade.",
+    "description": "Concise capability introduction: ByteDance image generation and editing for high-quality creative visuals."
   },
   "message.featuresSeedance": {
-    "message": "Ativar ou desativar o módulo de recursos do SeeDance.",
-    "description": "Descrição da funcionalidade do SeeDance"
+    "message": "Geração de vídeo da ByteDance para cenas dinâmicas, movimento de câmera e áudio opcional.",
+    "description": "Concise capability introduction: ByteDance video generation for dynamic scenes, camera motion, and optional audio."
+  },
+  "message.featuresOmni": {
+    "message": "Gere ou edite vídeos com modelos Omni a partir de texto, imagens e referências de vídeo.",
+    "description": "Gere ou edite vídeos com modelos Omni a partir de texto, imagens e referências de vídeo."
   },
   "message.featuresWan": {
-    "message": "Ativar ou desativar o módulo de recursos do Wan.",
-    "description": "Descrição da funcionalidade do Wan"
+    "message": "Geração de vídeo da Alibaba a partir de texto, imagens ou referências em várias resoluções.",
+    "description": "Concise capability introduction: Alibaba video generation from text, images, or references at multiple resolutions."
   },
   "message.featuresProducer": {
-    "message": "Ativar ou desativar o módulo de recursos do Producer.",
-    "description": "Descrição da funcionalidade do Producer"
+    "message": "Crie músicas, covers, extensões e variações vocais ou instrumentais.",
+    "description": "Concise capability introduction: Create songs, covers, extensions, and vocal or instrumental variations."
   },
   "message.featuresKimi": {
-    "message": "Ativar ou desativar o módulo de recursos do Kimi.",
-    "description": "Descrição da funcionalidade do Kimi"
+    "message": "Assistente da Moonshot AI para pesquisa com longo contexto, raciocínio, escrita e programação.",
+    "description": "Concise capability introduction: Moonshot AI assistant for long-context research, reasoning, writing, and coding."
   },
   "message.featuresSerp": {
-    "message": "Ativar ou desativar o módulo de recursos do SERP.",
-    "description": "Descrição da funcionalidade do SERP"
+    "message": "Pesquise na web, imagens, notícias, mapas e vídeos com resultados estruturados do Google.",
+    "description": "Concise capability introduction: Search the web, images, news, maps, and videos with structured Google results."
   },
   "message.featuresFish": {
-    "message": "Ative ou desative o módulo de recursos Áudio Fish.",
-    "description": "Descrição da funcionalidade Áudio Fish"
+    "message": "Gere fala natural e clone vozes para produção de áudio multilíngue.",
+    "description": "Concise capability introduction: Generate natural speech and clone voices for multilingual audio production."
   },
   "message.featuresCodingBridge": {
-    "message": "Enable or disable the Coding Bridge feature module.",
-    "description": "Description of the Coding Bridge feature"
+    "message": "Conecte assistentes de código de IA a projetos locais para fluxos de desenvolvimento guiados.",
+    "description": "Concise capability introduction: Connect AI coding assistants to local projects for guided development workflows."
   },
   "message.featuresWebextrator": {
-    "message": "Enable or disable the WebExtrator feature module.",
-    "description": "Description of the WebExtrator feature"
+    "message": "Extraia conteúdo e dados limpos e estruturados de páginas da web.",
+    "description": "Concise capability introduction: Extract clean, structured content and data from web pages."
   },
   "message.featuresLuma": {
-    "message": "Ativar ou desativar o módulo de recursos do Luma.",
-    "description": "Descrição da funcionalidade do Luma"
+    "message": "Crie vídeos cinematográficos a partir de texto ou imagens com movimento natural.",
+    "description": "Concise capability introduction: Create cinematic videos from text or images with natural motion."
   },
   "message.featuresPika": {
-    "message": "Ativar ou desativar o módulo de recursos do Pika.",
-    "description": "Descrição da funcionalidade do Pika"
+    "message": "Gere e edite vídeos curtos criativos com efeitos, cenas e transformações.",
+    "description": "Concise capability introduction: Generate and edit short creative videos with effects, scenes, and transformations."
   },
   "message.featuresKling": {
-    "message": "Ativar ou desativar o módulo de recursos do Kling.",
-    "description": "Descrição da funcionalidade do Kling"
+    "message": "Crie vídeos de alta qualidade a partir de texto, imagens ou referências de movimento.",
+    "description": "Concise capability introduction: Create high-quality videos from text, images, or motion references."
   },
   "message.featuresHailuo": {
-    "message": "Ativar ou desativar o módulo de recursos do Hailuo.",
-    "description": "Descrição da funcionalidade do Hailuo"
+    "message": "Gere vídeos expressivos a partir de texto ou imagens com movimento suave de personagens.",
+    "description": "Concise capability introduction: Generate expressive videos from text or images with smooth character motion."
   },
-  "message.featuresHeadshots": {
-    "message": "Ativar ou desativar o módulo de recursos de foto de identificação AI.",
-    "description": "Descrição da funcionalidade de foto de identificação AI"
+  "message.featuresMinimax": {
+    "message": "Gere vídeos de 768P ou 2K com texto, imagens e áudio.",
+    "description": "Introdução às capacidades do MiniMax H3."
   },
   "message.featuresSupport": {
     "message": "Ativar ou desativar o suporte ao cliente",
@@ -604,16 +844,16 @@
     "description": "Exibido como o título na caixa de edição"
   },
   "message.featuresGemini": {
-    "message": "Ativar ou desativar o módulo de recursos do Gemini.",
-    "description": "Descrição da funcionalidade do Gemini"
+    "message": "Assistente do Google para raciocínio com longo contexto, pesquisa, programação e trabalho multimodal.",
+    "description": "Concise capability introduction: Google assistant for long-context reasoning, research, coding, and multimodal work."
   },
   "field.featuresClaude": {
     "message": "Claude",
     "description": "Exibido como o título na caixa de edição"
   },
   "message.featuresClaude": {
-    "message": "Ativar ou desativar o módulo de recursos do Claude.",
-    "description": "Descrição da funcionalidade do Claude"
+    "message": "Assistente da Anthropic para raciocínio cuidadoso, escrita, programação e análise de documentos.",
+    "description": "Concise capability introduction: Anthropic assistant for careful reasoning, writing, coding, and document analysis."
   },
   "placeholder.admins": {
     "message": "Digite o ID do usuário administrador",
@@ -670,5 +910,184 @@
   "autoTranslate.error": {
     "message": "Falha ao alternar a tradução automática, tente novamente",
     "description": "Fallback error toast when the enable/disable HTTP call fails with no detail"
+  },
+  "services.title": {
+    "message": "Acréscimo personalizado e exibição por serviço"
+  },
+  "services.tip": {
+    "message": "Oculte, renomeie, precifique ou reordene serviços individuais. Um acréscimo vazio herda o padrão do site. Excluir uma linha restaura os padrões do catálogo."
+  },
+  "services.addButton": {
+    "message": "Adicionar"
+  },
+  "services.empty": {
+    "message": "Sem substituições — cada serviço usa seus padrões."
+  },
+  "services.field.service": {
+    "message": "Serviço"
+  },
+  "services.field.visible": {
+    "message": "Visível"
+  },
+  "services.field.customMarkupRatio": {
+    "message": "Acréscimo personalizado por serviço"
+  },
+  "services.field.displayTitle": {
+    "message": "Nome exibido"
+  },
+  "services.field.displaySummary": {
+    "message": "Resumo exibido"
+  },
+  "services.field.sortOrder": {
+    "message": "Ordem"
+  },
+  "services.field.action": {
+    "message": "Ações"
+  },
+  "services.status.visible": {
+    "message": "Exibido"
+  },
+  "services.status.hidden": {
+    "message": "Oculto"
+  },
+  "services.status.inherit": {
+    "message": "Herdado"
+  },
+  "services.dialog.create": {
+    "message": "Adicionar substituição de serviço"
+  },
+  "services.dialog.edit": {
+    "message": "Editar substituição de serviço"
+  },
+  "services.placeholder.service": {
+    "message": "Escolha um serviço do catálogo"
+  },
+  "services.placeholder.markup": {
+    "message": "Deixe vazio para herdar o padrão do site"
+  },
+  "services.placeholder.displayTitle": {
+    "message": "Deixe vazio para usar o nome do catálogo"
+  },
+  "services.placeholder.displaySummary": {
+    "message": "Deixe vazio para usar a descrição do catálogo"
+  },
+  "services.tip.visible": {
+    "message": "Desativado, o serviço fica oculto na página inicial (quem já tem mantém o acesso)."
+  },
+  "services.tip.markup": {
+    "message": "0% = preço da plataforma; 0,5 = +50%; até +500%. Vazio = padrão do site."
+  },
+  "services.tip.sortOrder": {
+    "message": "Números menores vêm primeiro."
+  },
+  "services.preview.sampleLabel": {
+    "message": "Preço base de exemplo"
+  },
+  "services.preview.inherit": {
+    "message": "(herda o acréscimo padrão do site {percent})"
+  },
+  "services.message.alreadyOverridden": {
+    "message": "Já adicionado"
+  },
+  "services.message.serviceRequired": {
+    "message": "Escolha um serviço primeiro"
+  },
+  "services.message.saved": {
+    "message": "Salvo"
+  },
+  "services.message.deleted": {
+    "message": "Excluído"
+  },
+  "services.message.deleteConfirm": {
+    "message": "Excluir a substituição de “{name}”? O serviço volta aos padrões do catálogo."
+  },
+  "services.message.saveFailed": {
+    "message": "Falha ao salvar, tente novamente"
+  },
+  "services.message.deleteFailed": {
+    "message": "Falha ao excluir, tente novamente"
+  },
+  "services.message.fetchFailed": {
+    "message": "Falha ao carregar as substituições de serviço"
+  },
+  "capabilityOverride.edit": {
+    "message": "Aplicativo personalizado",
+    "description": "Dica e etiqueta de acessibilidade para editar o nome e o ícone do aplicativo de capacidade"
+  },
+  "capabilityOverride.dialogTitle": {
+    "message": "Personalizar {name}",
+    "description": "Título da janela pop-up, {name} é o nome do aplicativo padrão da plataforma"
+  },
+  "capabilityOverride.displayName": {
+    "message": "Nome personalizado",
+    "description": "Campo para o nome exibido do aplicativo de capacidade do subsite"
+  },
+  "capabilityOverride.displayNameTip": {
+    "message": "Deixe em branco para usar {name}. Após a primeira salvamento, a tradução automática pode ser ativada.",
+    "description": "Descrição do nome, {name} é o nome do aplicativo padrão da plataforma"
+  },
+  "capabilityOverride.icon": {
+    "message": "Ícone personalizado",
+    "description": "Campo para o ícone do aplicativo de capacidade do subsite"
+  },
+  "capabilityOverride.defaultIcon": {
+    "message": "Padrão",
+    "description": "Etiqueta de visualização do ícone padrão da plataforma"
+  },
+  "capabilityOverride.currentIcon": {
+    "message": "Efeito atual",
+    "description": "Etiqueta de visualização do ícone atual em vigor"
+  },
+  "capabilityOverride.replaceIcon": {
+    "message": "Substituir ícone",
+    "description": "Comando para fazer upload de um ícone substituto"
+  },
+  "capabilityOverride.uploadIcon": {
+    "message": "Fazer upload do ícone",
+    "description": "Comando para fazer upload do ícone personalizado pela primeira vez"
+  },
+  "capabilityOverride.useDefaultIcon": {
+    "message": "Usar ícone padrão",
+    "description": "Comando para limpar o rascunho do ícone personalizado"
+  },
+  "capabilityOverride.iconTip": {
+    "message": "Suporta PNG, JPEG ou WebP, será recortado para quadrado; PNG transparente manterá o fundo transparente.",
+    "description": "Requisitos para upload do ícone do aplicativo de capacidade"
+  },
+  "capabilityOverride.editIcon": {
+    "message": "Editar ícone do aplicativo",
+    "description": "Título da janela pop-up para recortar ícones"
+  },
+  "capabilityOverride.resetAll": {
+    "message": "Restaurar padrão",
+    "description": "Comando para excluir simultaneamente o nome e o ícone personalizados"
+  },
+  "capabilityOverride.empty": {
+    "message": "Por favor, insira um nome personalizado ou faça upload de um ícone primeiro.",
+    "description": "Dica ao tentar criar uma sobreposição vazia"
+  },
+  "capabilityOverride.saved": {
+    "message": "Personalização do aplicativo salva",
+    "description": "Dica de sucesso após salvar a sobreposição do aplicativo de capacidade"
+  },
+  "capabilityOverride.savedEnableTranslation": {
+    "message": "Salvo, agora você pode ativar a tradução automática para o nome personalizado.",
+    "description": "Dica após o primeiro salvamento e obtenção do ID do registro de sobreposição"
+  },
+  "capabilityOverride.saveFailed": {
+    "message": "Falha ao salvar personalização do aplicativo",
+    "description": "Erro genérico ao tentar gravar a sobreposição do aplicativo de capacidade"
+  },
+  "capabilityOverride.resetConfirm": {
+    "message": "Restaurar o nome e o ícone padrão de {name}?",
+    "description": "Texto de confirmação para restauração, {name} é o nome do aplicativo padrão da plataforma"
+  },
+  "capabilityOverride.resetDone": {
+    "message": "Nome e ícone padrão restaurados",
+    "description": "Dica de sucesso após excluir a sobreposição do aplicativo de capacidade"
+  },
+  "capabilityOverride.fetchFailed": {
+    "message": "Falha ao carregar personalização do aplicativo",
+    "description": "Erro ao tentar ler os registros de gerenciamento de sobreposição do aplicativo de capacidade"
   }
 }

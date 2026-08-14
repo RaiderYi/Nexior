@@ -3,19 +3,25 @@ import { Capacitor } from '@capacitor/core';
 import App from './App.vue';
 import { routes, setupRouterGuards, setActiveRouter } from './router';
 import store from './store';
-import i18n, { setI18nLanguage } from './i18n';
+import i18n, { setI18nLanguage, getLocale } from './i18n';
 import { I18N_DEFAULT_LOCALE } from '@/constants/i18n';
+import { getCookie, setCookie } from 'typescript-cookie';
 import { handleChunkLoadError, initializeChunkLoadErrorHandler } from './utils/chunkLoadError';
 import { initTelemetry, setUser, captureError } from './plugins/telemetry';
+import '@acedatacloud/core/styles.css';
 import './assets/scss/style.scss';
 import './assets/css/tailwind.css';
+import '@acedatacloud/core/controls.css';
 import 'mac-scrollbar/dist/mac-scrollbar.css';
 import dayjs from './plugins/dayjs';
 import './plugins/font-awesome';
 import { MotionPlugin } from '@vueuse/motion';
 import { vLoading } from 'element-plus';
+import CapabilityPresentation from '@/components/common/CapabilityPresentation.vue';
 import { getSurface, isNative, isDesktop, isMacOS, isWindows } from '@/utils/surface';
 import { resolveDeferredInviterId } from '@/utils/attribution';
+import { getDomain } from '@/utils';
+import { resolveBootLocale } from '@/utils/siteLocales';
 import { syncFeaturesFromUrl } from '@/utils/featureFlag';
 import { runVersionGate } from '@/utils/versionGate';
 import { runLiveUpdate } from '@/utils/liveUpdate';
@@ -45,6 +51,7 @@ export const createApp = ViteSSG(App, { routes, base: import.meta.env.BASE_URL }
   app.use(i18n);
   app.use(MotionPlugin);
   app.use(dayjs, { formatString: 'YYYY-MM-DD HH:mm:ss' });
+  app.component('CapabilityPresentation', CapabilityPresentation);
   app.directive('loading', vLoading);
   setupRouterGuards(router);
   setActiveRouter(router);
@@ -102,6 +109,15 @@ export const createApp = ViteSSG(App, { routes, base: import.meta.env.BASE_URL }
   await resolveDeferredInviterId();
   await initializeToken();
   await Promise.all([initializeUser(), initializeSite(), initializeConfig()]);
+  // Resolve against the saved LOCALE cookie, not `i18n.global.locale`: the
+  // router guard that applies the cookie runs after this hook, so the live
+  // locale is still the vue-i18n default and we'd clobber the user's choice.
+  const savedLocale = getLocale(getCookie('LOCALE') || I18N_DEFAULT_LOCALE);
+  const siteLocale = resolveBootLocale(savedLocale, store.state.site);
+  if (siteLocale !== savedLocale) {
+    await setI18nLanguage(siteLocale);
+    setCookie('LOCALE', siteLocale, { path: '/', domain: getDomain() });
+  }
 
   if (isNative() || isDesktop()) {
     const blocked = await runVersionGate();

@@ -1,154 +1,338 @@
 {
   "name.bot": {
-    "message": "Digital Human",
-    "description": "Bot display name"
+    "message": "Personaggio digitale",
+    "description": "Nome visualizzato del bot"
   },
   "name.taskId": {
-    "message": "Task ID",
-    "description": "Task id"
+    "message": "ID attività",
+    "description": "ID dell'attività"
   },
   "name.elapsed": {
-    "message": "Elapsed Time",
-    "description": "Elapsed seconds"
+    "message": "Tempo trascorso",
+    "description": "Secondi trascorsi"
   },
   "name.failure": {
-    "message": "Failed",
-    "description": "Failure status"
+    "message": "Fallito",
+    "description": "Stato di fallimento"
   },
   "name.failureReason": {
-    "message": "Failure Reason",
-    "description": "Failure reason"
+    "message": "Motivo del fallimento",
+    "description": "Motivo del fallimento"
+  },
+  "name.audioDriven": {
+    "message": "Audio guidato",
+    "description": "Etichetta audio guidato"
+  },
+  "name.textDriven": {
+    "message": "Guidato da testo",
+    "description": "Etichetta guidata da testo"
+  },
+  "status.pending": {
+    "message": "In attesa",
+    "description": "In attesa"
+  },
+  "status.processing": {
+    "message": "In elaborazione",
+    "description": "In elaborazione"
+  },
+  "status.succeed": {
+    "message": "Completato",
+    "description": "Riuscito"
+  },
+  "status.failed": {
+    "message": "Fallito",
+    "description": "Fallito"
+  },
+  "button.download": {
+    "message": "Scarica video",
+    "description": "Pulsante per scaricare il video"
+  },
+  "button.uploadSample": {
+    "message": "Carica campione",
+    "description": "Pulsante per caricare un campione vocale"
+  },
+  "message.startingTask": {
+    "message": "Invio del compito video in corso...",
+    "description": "Toast di invio"
+  },
+  "message.startTaskSuccess": {
+    "message": "Compito inviato! Verrà visualizzato qui sotto dopo la generazione.",
+    "description": "Successo nell'invio"
+  },
+  "message.startTaskFailed": {
+    "message": "Invio del compito fallito, riprova.",
+    "description": "Errore di invio"
+  },
+  "message.usedUp": {
+    "message": "Credito insufficiente per completare questa richiesta.",
+    "description": "Toast di credito esaurito"
+  },
+  "message.uploadError": {
+    "message": "Caricamento fallito, riprova.",
+    "description": "Toast di errore di caricamento"
+  },
+  "message.voiceCloneSuccess": {
+    "message": "Clonazione della voce riuscita! Ora puoi generare con il testo.",
+    "description": "Successo nella clonazione vocale"
+  },
+  "message.voiceCloneFailed": {
+    "message": "Clonazione della voce fallita, prova con un campione più pulito.",
+    "description": "Errore nella clonazione vocale"
+  },
+  "name.step1": {
+    "message": "Chi parla",
+    "description": "Titolo passo 1: il volto"
+  },
+  "name.step2": {
+    "message": "Cosa dire",
+    "description": "Titolo passo 2: la voce"
+  },
+  "name.required": {
+    "message": "Obbligatorio",
+    "description": "Badge campo obbligatorio"
+  },
+  "name.faceModeVideo": {
+    "message": "Clip video",
+    "description": "Modalità faccia: video"
+  },
+  "name.faceModePhoto": {
+    "message": "Una foto",
+    "description": "Modalità faccia: foto"
+  },
+  "name.voiceModeText": {
+    "message": "Leggi questo testo",
+    "description": "Modalità voce: da testo a parlato"
+  },
+  "name.voiceModeAudio": {
+    "message": "Usa la mia registrazione",
+    "description": "Modalità voce: carica audio"
+  },
+  "name.speech": {
+    "message": "Testo parlato",
+    "description": "Titolo del campo testo parlato"
+  },
+  "name.timbre": {
+    "message": "Timbro",
+    "description": "Campo voce clonata"
+  },
+  "name.advanced": {
+    "message": "Opzioni avanzate",
+    "description": "Sezione avanzata"
+  },
+  "name.speed": {
+    "message": "Velocità",
+    "description": "Campo velocità del parlato"
+  },
+  "name.cloneVoice": {
+    "message": "Clona voce",
+    "description": "Titolo della finestra di dialogo per clonare la voce"
+  },
+  "name.voiceName": {
+    "message": "Nome voce",
+    "description": "Campo per il soprannome della voce"
+  },
+  "name.voiceLang": {
+    "message": "Lingua",
+    "description": "Campo lingua della voce"
+  },
+  "name.myVoice": {
+    "message": "La mia voce",
+    "description": "Nome della voce clonata predefinita"
+  },
+  "name.lang_zh": {
+    "message": "Cinese",
+    "description": "Opzione lingua cinese"
+  },
+  "name.lang_en": {
+    "message": "Inglese",
+    "description": "Opzione lingua inglese"
+  },
+  "description.step1": {
+    "message": "Carica un video chiaro e frontale di almeno 5 secondi; è possibile utilizzare anche solo una foto frontale.",
+    "description": "Aiuto per il campo del viso"
+  },
+  "description.step2": {
+    "message": "Inserisci il testo da pronunciare e scegli un timbro, oppure carica direttamente una registrazione già pronta.",
+    "description": "Aiuto per il campo della voce"
+  },
+  "description.speed": {
+    "message": "1.0 è la velocità normale, può essere regolata tra 0.5 e 2.0.",
+    "description": "Aiuto sulla velocità del parlato"
+  },
+  "placeholder.speech": {
+    "message": "Inserisci il contenuto che il personaggio digitale deve leggere...",
+    "description": "Segnaposto copione"
+  },
+  "placeholder.pickTimbre": {
+    "message": "Seleziona un timbro",
+    "description": "Segnaposto selezione voce"
+  },
+  "placeholder.voiceName": {
+    "message": "Dai un nome a questo timbro",
+    "description": "Segnaposto nome voce"
+  },
+  "button.uploadFaceVideo": {
+    "message": "Carica video del viso",
+    "description": "Pulsante per caricare un video del viso"
+  },
+  "button.uploadFacePhoto": {
+    "message": "Carica foto del viso",
+    "description": "Pulsante per caricare una foto del viso"
+  },
+  "button.uploadSpeechAudio": {
+    "message": "Carica registrazione",
+    "description": "Pulsante per caricare un audio di guida"
+  },
+  "button.cloneNewVoice": {
+    "message": "Clona nuova voce",
+    "description": "Apri la finestra di dialogo per clonare la voce"
+  },
+  "button.startClone": {
+    "message": "Inizia clonazione",
+    "description": "Inizia il processo di clonazione della voce"
+  },
+  "button.replace": {
+    "message": "Sostituisci",
+    "description": "Sostituisci un file caricato"
+  },
+  "button.generateVideo": {
+    "message": "Genera video",
+    "description": "Pulsante per generare"
+  },
+  "message.faceVideoHint": {
+    "message": "Supporta MP4 / MOV / WEBM",
+    "description": "Suggerimento per l'accettazione del video del viso"
+  },
+  "message.facePhotoHint": {
+    "message": "Supporta PNG / JPG / WEBP",
+    "description": "Suggerimento per l'accettazione della foto del viso"
+  },
+  "message.audioHint": {
+    "message": "Supporta WAV / MP3 / M4A",
+    "description": "Suggerimento per l'accettazione audio"
+  },
+  "message.missingFace": {
+    "message": "Manca: carica un video o una foto del viso",
+    "description": "Viso mancante"
+  },
+  "message.missingText": {
+    "message": "Manca: inserisci il testo da pronunciare",
+    "description": "Testo mancante"
+  },
+  "message.missingTimbre": {
+    "message": "Manca: scegli o clona un timbro",
+    "description": "Voce mancante"
+  },
+  "message.missingAudio": {
+    "message": "Manca: carica una registrazione",
+    "description": "Audio mancante"
+  },
+  "message.eta": {
+    "message": "La generazione richiede solitamente 30–45 minuti, puoi occuparti di altro nel frattempo",
+    "description": "Suggerimento sul tempo stimato di generazione"
+  },
+  "message.voiceCloneHint": {
+    "message": "Carica un campione di voce pulita di 10–20 secondi, più il background è silenzioso, migliore sarà il risultato",
+    "description": "Suggerimento per il campione vocale"
+  },
+  "message.voiceCloneRunning": {
+    "message": "Clonazione in corso, solitamente richiede 1–2 minuti…",
+    "description": "Clonazione della voce in corso"
+  },
+  "message.voiceStoredLocally": {
+    "message": "La voce è salvata nel browser attuale, sarà necessario clonarla di nuovo cambiando dispositivo o cancellando i dati",
+    "description": "Il libro delle voci è locale al browser"
+  },
+  "message.noVoiceYet": {
+    "message": "Non ci sono voci, clona prima una voce",
+    "description": "Elenco voci vuoto"
+  },
+  "name.etaLabel": {
+    "message": "Tempo stimato rimanente",
+    "description": "Tempo stimato rimanente"
+  },
+  "name.duration": {
+    "message": "Durata video",
+    "description": "Durata del video renderizzato"
+  },
+  "name.outputSize": {
+    "message": "Dimensione del fotogramma",
+    "description": "Dimensione del fotogramma renderizzato"
+  },
+  "name.traceId": {
+    "message": "ID di tracciamento",
+    "description": "ID di tracciamento per assistenza"
+  },
+  "message.etaRemaining": {
+    "message": "Circa {minutes} minuti",
+    "description": "Minuti rimanenti"
+  },
+  "message.etaAlmostDone": {
+    "message": "Quasi completato",
+    "description": "Quasi finito"
   },
   "name.face": {
-    "message": "Face Source",
-    "description": "Face source field"
-  },
-  "name.faceVideo": {
-    "message": "Video",
-    "description": "Face video option"
-  },
-  "name.facePhoto": {
-    "message": "Photo",
-    "description": "Face photo option"
+    "message": "Fonte del volto",
+    "description": "Campo della fonte del volto"
   },
   "name.voice": {
-    "message": "Voice",
-    "description": "Voice source field"
+    "message": "Voce",
+    "description": "Campo sorgente della voce"
   },
   "name.voiceAudio": {
     "message": "Audio",
-    "description": "Audio-driven voice option"
+    "description": "Opzione vocale basata su audio"
   },
   "name.voiceText": {
-    "message": "Text",
-    "description": "Text-driven voice option"
-  },
-  "name.audioDriven": {
-    "message": "Audio-driven",
-    "description": "Audio-driven label"
-  },
-  "name.textDriven": {
-    "message": "Text-driven",
-    "description": "Text-driven label"
+    "message": "Testo",
+    "description": "Opzione di voce guidata da testo"
   },
   "name.engine": {
-    "message": "Engine",
-    "description": "Lip-sync engine field"
+    "message": "Motore",
+    "description": "Campo del motore di sincronizzazione labiale"
   },
   "name.resolution": {
-    "message": "Resolution",
-    "description": "Output resolution field"
+    "message": "Risoluzione",
+    "description": "Campo di risoluzione in output"
   },
   "name.voiceReady": {
-    "message": "Voice ready",
-    "description": "Cloned voice ready label"
+    "message": "Voce clonata pronta",
+    "description": "Etichetta della voce clonata pronta"
   },
   "placeholder.text": {
-    "message": "Type what the avatar should say…",
-    "description": "Spoken text placeholder"
+    "message": "Inserisci il contenuto che il personaggio digitale deve dire...",
+    "description": "Segnaposto per il testo parlato"
   },
   "description.face": {
-    "message": "Upload a clear, front-facing face video (preferred) or a single photo to drive the talking head.",
-    "description": "Face field help"
+    "message": "Carica un video chiaro di fronte (consigliato) o una foto per guidare il personaggio digitale.",
+    "description": "Aiuto per il campo del volto"
   },
   "description.voiceClone": {
-    "message": "Upload a clean 10–20s voice sample to clone a voice, then reuse it to speak your text.",
-    "description": "Voice clone help"
-  },
-  "status.pending": {
-    "message": "Pending",
-    "description": "Pending"
-  },
-  "status.processing": {
-    "message": "Processing",
-    "description": "Processing"
-  },
-  "status.succeed": {
-    "message": "Succeeded",
-    "description": "Succeeded"
-  },
-  "status.failed": {
-    "message": "Failed",
-    "description": "Failed"
+    "message": "Carica un campione vocale pulito di 10–20 secondi per clonare la voce, poi usalo per leggere il tuo testo.",
+    "description": "Aiuto per la clonazione vocale"
   },
   "button.generate": {
-    "message": "Generate Video",
-    "description": "Generate button"
-  },
-  "button.download": {
-    "message": "Download Video",
-    "description": "Download video button"
+    "message": "Genera video",
+    "description": "Pulsante per generare"
   },
   "button.uploadVideo": {
-    "message": "Upload Face Video",
-    "description": "Upload face video button"
+    "message": "Carica video del volto",
+    "description": "Pulsante per caricare un video del volto"
   },
   "button.uploadPhoto": {
-    "message": "Upload Face Photo",
-    "description": "Upload face photo button"
+    "message": "Carica foto del volto",
+    "description": "Pulsante per caricare una foto del volto"
   },
   "button.uploadAudio": {
-    "message": "Upload Audio",
-    "description": "Upload driving audio button"
-  },
-  "button.uploadSample": {
-    "message": "Upload Sample",
-    "description": "Upload voice sample button"
+    "message": "Carica audio",
+    "description": "Pulsante per caricare l'audio di guida"
   },
   "button.clone": {
-    "message": "Clone Voice",
-    "description": "Clone voice button"
+    "message": "Clona voce",
+    "description": "Pulsante per clonare la voce"
   },
   "button.cloning": {
-    "message": "Cloning…",
-    "description": "Cloning in progress button"
-  },
-  "message.startingTask": {
-    "message": "Submitting your video task…",
-    "description": "Submit toast"
-  },
-  "message.startTaskSuccess": {
-    "message": "Task submitted! It will appear below as it renders.",
-    "description": "Submit success"
-  },
-  "message.startTaskFailed": {
-    "message": "Failed to submit the task. Please try again.",
-    "description": "Submit fail"
-  },
-  "message.usedUp": {
-    "message": "Your balance is not sufficient for this request.",
-    "description": "Used-up toast"
-  },
-  "message.uploadError": {
-    "message": "Upload failed. Please try again.",
-    "description": "Upload error toast"
-  },
-  "message.voiceCloneSuccess": {
-    "message": "Voice cloned! You can now generate with your text.",
-    "description": "Voice clone success"
-  },
-  "message.voiceCloneFailed": {
-    "message": "Voice clone failed. Please try a cleaner sample.",
-    "description": "Voice clone fail"
+    "message": "Clonazione in corso...",
+    "description": "Pulsante per indicare che la clonazione è in corso"
   }
 }

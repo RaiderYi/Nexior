@@ -79,36 +79,36 @@
     "message": "智谱AIが開発した大規模言語モデル",
     "description": "GLMモデルグループの説明"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "サービスのモデル名、すなわち GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "サービスのモデル名、すなわち GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "最新世代のフラッグシップGPT 5.5モデル",
-    "description": "GPT 5.5モデルの説明"
+  "model.56SolDescription": {
+    "message": "最新世代のフラッグシップGPT 5.6 Solモデル",
+    "description": "GPT 5.6 Solモデルの説明"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "サービスのモデル名、すなわち GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "サービスのモデル名、すなわち GPT 5.6"
   },
-  "model.54Description": {
-    "message": "最新世代のフラッグシップGPT 5.4モデル",
-    "description": "GPT 5.4モデルの説明"
+  "model.56TerraDescription": {
+    "message": "最新世代のフラッグシップGPT 5.6モデル",
+    "description": "GPT 5.6モデルの説明"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "サービスのモデル名、すなわち GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "サービスのモデル名、すなわち GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "より速く、軽量なGPT 5.4モデル",
-    "description": "GPT 5.4 Miniモデルの説明"
+  "model.56LunaDescription": {
+    "message": "より速く、軽量なGPT 5.6モデル",
+    "description": "GPT 5.6 Lunaモデルの説明"
   },
   "model.freeTag": {
     "message": "無料",
     "description": "モデルセレクターで無料モデルの横に表示されるバッジ"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "サービスのモデル名、すなわち DeepSeek チャット"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "DeepSeekチャットモデルの説明"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "サービスのモデル名、すなわち DeepSeek 推論"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "DeepSeek推論モデルの説明"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "サービスのモデル名、すなわち DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "DeepSeek V3.2実験モデルの説明"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "サービスのモデル名、すなわち DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "DeepSeek V4 Flashモデルの説明"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "サービスのモデル名、すなわち Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Grok 4モデルの説明"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "サービスのモデル名"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "より速く、軽量なモデル",
     "description": "Gemini 2.5 Flashモデルの説明"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "サービスのモデル名、つまり Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "最新の高速モデルで、推論、視覚、ツール呼び出しをサポート",
+    "description": "Gemini 3.6 Flash モデルの説明"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "サービスのモデル名、すなわち Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "より速く、軽量なモデル",
     "description": "Gemini 2.5 Flashモデルの説明"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "現在の最先端モデル",
+    "description": "Claude Opus 5モデルの説明"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,24 +235,32 @@
     "message": "軽量で高速なモデル",
     "description": "Claude Haiku 4.5 モデルの説明"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "サービモデル名、すなわち Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "長文コンテキスト、複雑な推論、クリエイティブライティングに最適",
-    "description": "Claude Fable 5 モデルの説明"
+  "model.kimiK3Description": {
+    "message": "推論、視覚、100万Tokenのコンテキストをサポートするフラッグシップモデル",
+    "description": "Kimi K3モデルの説明"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "K2ワークフローに適した推論と視覚モデル",
+    "description": "Kimi K2.6モデルの説明"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "サービスのモデル名、つまり Kimi K2.5"
   },
   "model.kimiK25Description": {
-    "message": "現在の最先端モデル",
-    "description": "Kimi K2.5 モデルの説明"
+    "message": "互換性のあるワークフローに適した汎用K2モデル",
+    "description": "Kimi K2.5モデルの説明"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 推論",
     "description": "サービスのモデル名、つまり Kimi K2 推論"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Kimi K2 推論モデルの説明"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 高速推論",
     "description": "サービスのモデル名、つまり Kimi K2 高速推論"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Kimi K2 高速推論モデルの説明"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "サービスのモデル名、つまり GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "GLM 5.1 モデルの説明"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "サービスのモデル名、つまり GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "ファイルのアップロードに失敗しました。後で再試行してください",
     "description": "ウェブページのメッセージ、ユーザーにファイルのアップロードに失敗したことを伝える"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "ファイルサイズ {size} は上限 {max} を超えています。圧縮して再試行してください。",
+    "description": "ウェブページのメッセージで、ユーザーにファイルがアップロードサイズの上限を超えていることを伝え、圧縮して再試行するように促します。"
   },
   "message.notApplied": {
     "message": "このサービスをまだ申請していません。先に申請してください",
@@ -557,15 +585,15 @@
   },
   "consent.selectScopes": {
     "message": "{provider}の権限範囲を選択",
-    "description": "Title of the scope picker dialog opened from the consent card; {provider} is the upstream provider name (e.g. Gmail)."
+    "description": "コンセントカードから開くスコープ選択ダイアログのタイトル。{provider} は上流プロバイダー名（例：Gmail）"
   },
   "consent.selectScopesHint": {
     "message": "付与したい権限範囲を選択してください。複数選択可能で、未選択の場合は基本的なログイン情報のみが付与されます。",
-    "description": "Body copy explaining that the user can opt out of specific scopes; rendered above the checkbox group."
+    "description": "ユーザーが特定のスコープをオプトアウトできることを説明する本文。チェックボックスグループの上に表示される"
   },
   "consent.installFailed": {
     "message": "認証に失敗しました。もう一度お試しください。",
-    "description": "Toast shown when the AuthBackend install endpoint returns an error from the consent card."
+    "description": "コンセントカードから AuthBackend のインストールエンドポイントがエラーを返した際に表示されるトースト"
   },
   "consent.statusConnected": {
     "message": "接続済み",
@@ -583,114 +611,336 @@
     "message": "コネクタ認可をスキップしました",
     "description": "ユーザーが認可をスキップした後のカード下部の説明"
   },
+  "browserTool.title": {
+    "message": "ブラウザ操作",
+    "description": "BrowserDeviceツール操作のフォールバックタイトル"
+  },
+  "browserTool.state.starting_session": {
+    "message": "ブラウザセッションを起動中",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "ブラウザタブに接続中",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "ブラウザが準備完了です",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "ブラウザデバイスがオフラインです"
+  },
+  "browserTool.state.device_busy": {
+    "message": "ブラウザデバイスが忙しい",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Studioで承認を確認する必要があります",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "ブラウザで実行中"
+  },
+  "browserTool.state.completed": {
+    "message": "完了"
+  },
+  "browserTool.state.stopped": {
+    "message": "ブラウザセッションが停止しました",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "ブラウザリクエストの期限切れ"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "開発者ツールを閉じてから続行してください",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "実行結果が不明です。確認後再試行してください",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "ブラウザ操作に失敗しました",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "停止",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "デバイスを管理する",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "他のセッションを停止する",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "開発者ツールを閉じる",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "承認を確認する",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "スケジュールタスク"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "定期タスク",
+    "description": "定期タスクページ - タスクタブ"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "実行記録",
+    "description": "定期タスクページ - すべての実行記録タブ"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "すべて",
+    "description": "実行記録の状態フィルタ - すべて"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "スケジュールタスク"
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "新規"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "タスクを編集"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "タスクをコピー",
+    "description": "既存のタスクに基づいて新しいフォームをプリフィルするタスクコピーのボタン"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "スケジュールタスクがありません。「新規」をクリックして作成してください。"
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "まだ実行履歴がありません"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "読み込みに失敗しました"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "「{name}」を削除しますか？タスクの実行が停止されます。"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "今すぐ実行",
+    "description": "スケジュールに関係なく、タスクを即時トリガーする"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "実行をトリガーしました。結果は間もなく実行履歴に表示されます。",
+    "description": "手動トリガー成功"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "トリガーに失敗しました。後でもう一度お試しください。",
+    "description": "手動トリガーエラー"
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "結果を表示"
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "実行履歴"
   },
   "scheduledTasks.noConversation": {
     "message": "対話記録がありません",
     "description": "実行中のタスクに関連する対話がないことを示します（旧バージョンの実行）。"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60秒のジッター"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "{count}回実行済み"
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "アクティブ"
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "一時停止"
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "エラー"
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "待機中"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "実行中"
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "成功"
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "失敗"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "未確認",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "ステップ上限に到達"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "予算上限に到達"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "ツール呼び出しループを検出"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "プロンプトが長すぎます"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "中断されました"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "中断されました"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "入力待ちです"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "エラー"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "不明なエラー"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "残高不足"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "請求認証に失敗しました"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "認証エラー"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "タイムアウト"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "内部エラー"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "操作が必要"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "ブラウザデバイスがオフラインです",
+    "description": "ブラウザがインターネットに接続されていない状態を示します。"
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "ブラウザの承認が変更されました。このタスクを編集してください",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "毎日"
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "毎分"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "毎時"
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "毎週"
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Cron式"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "間隔",
+    "description": "固定間隔で実行"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "分",
+    "description": "間隔単位：分"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "時間",
+    "description": "間隔単位：時間"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "日",
+    "description": "間隔単位：日"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "〇分",
+    "description": "毎時何分に実行するか"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "毎時何分に実行するか（0〜59）",
+    "description": "毎時分ヒント"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "前回の実行から一定間隔ごとに1回実行（最短1分）",
+    "description": "間隔ヒント"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "標準5フィールドのCron式：分 時 日 月 曜日",
+    "description": "Cronヒント"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "{text}に実行",
+    "description": "スケジュールプレビュー"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "{n}分ごと",
+    "description": "人間が読める表示：N分ごと"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "{n}時間ごと",
+    "description": "人間が読める表示：N時間ごと"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "{n}日ごと",
+    "description": "人間が読める表示：N日ごと"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "毎時{n}分",
+    "description": "人間が読める表示：毎時N分"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "毎日{time}",
+    "description": "人間が読める表示：毎日〇時"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "{weekday} {time}",
+    "description": "人間が読める表示：毎週〇曜日〇時"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron：{cron}",
+    "description": "人間が読みやすい：原始的なCron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "{time}に1回",
+    "description": "人間が読める表示：1回のみ"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "タスク名"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "例：毎日のニュースまとめ"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "モデル"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "プロンプト"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "スケジュールされた質問や指示を入力してください。{'{{date}}'}、{'{{run_count}}'}、{'{{last_output}}'}変数が使えます。"
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "変数：{'{{date}}'}今日の日付、{'{{run_count}}'}実行回数、{'{{last_output}}'}前回の出力スニペット"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "頻度"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "時刻"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "曜日"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Cron式"
   },
   "scheduledTasks.form.skills": {
     "message": "権限を付与する Skills",
@@ -704,6 +954,25 @@
     "message": "選択した Skills は定期タスクのバックグラウンド実行時に人工確認をスキップできます；未選択の Skills はプレビューまたは確認待ちのままとなります。",
     "description": "権限付与の skill 説明"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "ブラウザ接続",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "以下の外部副作用が発生する可能性があります：{effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "無人承認の有効期限：{time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "保存前にオンラインで互換性のあるブラウザ接続を選択してください",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "未接続",
     "description": "skill が接続されていません"
@@ -722,11 +991,11 @@
   },
   "scheduledTasks.form.maxTurns": {
     "message": "最大ターン数",
-    "description": "Scheduled task per-run agent turn cap"
+    "description": "定期タスクの1回の実行あたりのエージェントターン上限"
   },
   "scheduledTasks.form.maxTurnsHint": {
     "message": "1 回の実行で許可されるエージェントの最大ターン数（1–50）。上限が低すぎると、複数ステップのタスク（Bash やドキュメント検索を何度も実行するスキルなど）が完了前に強制停止され、最終結果が残りません。デフォルトは 50。",
-    "description": "Scheduled task per-run agent turn cap"
+    "description": "定期タスクの1回の実行あたりのエージェントターン上限"
   },
   "scheduledTasks.form.skillsConfirmTitle": {
     "message": "無人権限付与の確認",
@@ -737,19 +1006,19 @@
     "description": "権限付与確認の本文"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "まずスキルを連携してください",
+    "description": "定期タスクで認可されたスキル/MCPがまだユーザーに連携されていない場合に表示されるダイアログタイトル"
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "スキル「{name}」はまだアカウントに連携またはアクティブになっていません。連携しない場合、バックグラウンド実行時にこのタスクが使用できない場合があります。先に連携することをお勧めします。",
+    "description": "警告本文。{name}はスキル/MCP名。連携されていないことを説明し、このまま保存するオプションを提供する"
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "このまま保存",
+    "description": "連携チェックをスキップして定期タスクを保存する確認ボタン"
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "タスク名とプロンプトを入力してください"
   },
   "artifacts.navTitle": {
     "message": "出力",
@@ -786,6 +1055,18 @@
   "artifacts.hide": {
     "message": "非表示",
     "description": "出力を非表示にするボタン"
+  },
+  "artifacts.unhide": {
+    "message": "再表示",
+    "description": "非表示にした出力を元に戻す"
+  },
+  "artifacts.showHidden": {
+    "message": "非表示を表示",
+    "description": "フィルターバーで非表示の出力を含めるトグル"
+  },
+  "artifacts.hiddenBadge": {
+    "message": "非表示",
+    "description": "現在非表示になっている出力に表示されるバッジ"
   },
   "artifacts.delete": {
     "message": "削除",
@@ -915,24 +1196,532 @@
     "message": "あなたは共有された会話を見ています。上をクリックすると自分でAIと会話できます。",
     "description": "共有公開ページの会話の下にある説明"
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "目標が達成されていません",
+    "description": "設定した目標が達成されなかったことを示します。"
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "結果は未確認です",
+    "description": "結果がまだ確認されていない状態を示します。"
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "実行状態が不明です"
+  },
+  "actions.rename": {
+    "message": "名前を変更",
+    "description": "会話操作メニュー内の名前を変更する項目"
+  },
+  "actions.renameTitle": {
+    "message": "会話の名前を変更",
+    "description": "会話の名前を変更するダイアログのタイトル"
+  },
+  "actions.renameEmpty": {
+    "message": "名前を入力してください",
+    "description": "名前を変更する際に名前が空であることを示すメッセージ"
+  },
+  "actions.renameSuccess": {
+    "message": "名前が変更されました",
+    "description": "会話の名前変更が成功したことを示すメッセージ"
+  },
+  "actions.renameFailed": {
+    "message": "名前の変更に失敗しました。後でもう一度お試しください。",
+    "description": "会話の名前変更に失敗した際のメッセージ"
+  },
+  "actions.deleteConfirm": {
+    "message": "この会話を削除してもよろしいですか？削除後は復元できません。",
+    "description": "会話を削除する前の確認メッセージ"
+  },
+  "actions.deleteSuccess": {
+    "message": "削除されました",
+    "description": "会話の削除が成功したことを示すメッセージ"
+  },
+  "actions.deleteFailed": {
+    "message": "削除に失敗しました。後でもう一度お試しください。",
+    "description": "会話の削除に失敗した際のメッセージ"
+  },
+  "actions.tokenMissing": {
+    "message": "トークンが存在しません。再度ログインしてください。",
+    "description": "会話操作時に認証情報が不足しているエラーメッセージ"
+  },
+  "actions.conversationMissing": {
+    "message": "会話が存在しません",
+    "description": "会話操作時に対象の会話が存在しないエラーメッセージ"
+  },
+  "scheduledTasks.form.execution": {
+    "message": "実行場所",
+    "description": "タスクをクラウドまたはローカルで実行する場所を選択"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "クラウド",
+    "description": "クラウド実行モード"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "このデバイス",
+    "description": "ローカル実行モード"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "このデバイス（{device}）",
+    "description": "ローカル実行モード、デバイス名付き"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "プラットフォームが定期的にトリガーし、コンピュータをオフにしても実行されます。",
+    "description": "クラウドモードの説明"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "このデバイスが定期的にトリガーし、ローカルファイルを読み書きし、ローカルコマンドを実行できます。デバイスがシャットダウンまたはアプリを終了すると実行されず、逃した回数は記録されますが、補完実行はありません。",
+    "description": "ローカルモードの説明"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "モバイルではローカル実行がサポートされていません",
+    "description": "モバイル端末でローカル実行がサポートされていない理由"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "ローカル実行にはデスクトップアプリが必要です",
+    "description": "ウェブ版でローカル実行がサポートされていない理由"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "ローカル情報を取得できません。アプリを再起動して再試行してください。",
+    "description": "デスクトップデバイス情報が利用できない"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "ローカルツールの承認",
+    "description": "ローカルツールの承認フィールド"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "このタスクで使用を許可するローカルツールを選択",
+    "description": "ローカルツール選択のプレースホルダー"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "無人運転時には承認確認が表示されず、ここでチェックしたツールのみが使用可能です。",
+    "description": "ローカルツール承認の説明"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "スキップされました",
+    "description": "実行状態：デバイスがその時オンラインでなく、実行されなかった"
+  },
+  "workingDir.choose": {
+    "message": "作業ディレクトリを選択",
+    "description": "デスクトップチャット入力ボックス上部のボタン：AIが操作するプロジェクトフォルダーを選択します。未選択の場合、メッセージを送信できません。"
+  },
+  "workingDir.switchHint": {
+    "message": "作業ディレクトリを切り替える",
+    "description": "作業ディレクトリが選択されているとき、パスカプセルのホバーツールチップ"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "これはローカルタスクで、バインドされたデバイスのデスクトップ版でのみ手動実行できます",
+    "description": "ローカルタスクは非バインドデバイスで手動でトリガーできません"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "このタスクは別のデバイスにバインドされています",
+    "description": "ローカルタスクは現在のデバイスに属していません"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "ローカルスケジュールに未ログインです。再ログインしてから再試行してください",
+    "description": "daemonは資格情報を保持していません"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "このタスクは実行中です",
+    "description": "タスクはすでに実行されています"
+  },
+  "actionConfirmation.confirm": {
+    "message": "確認",
+    "description": "执行前确认卡片的确认按钮"
+  },
+  "actionConfirmation.cancel": {
+    "message": "キャンセル",
+    "description": "执行前确认卡片的取消按钮"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "確認されました。実行中です。",
+    "description": "実行前の確認カード：ユーザーが確認済みで、後続のアクションが実行中であることを示します。"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "キャンセルしました",
+    "description": "执行前确认卡片：用户取消后的折叠提示"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "メディアプレビューを読み込んでいます…",
+    "description": "実行前確認カード：メディアの読み込み状態"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "ここでプレビューを再生できません",
+    "description": "実行前確認カード：メディア再生失敗のタイトル"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "メディアリンクが期限切れの可能性があります。または、現在のブラウザがその形式をサポートしていません。公開前に元のファイルを開いて確認してください。",
+    "description": "実行前確認カード：メディア再生失敗の説明"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "元のファイルを開く",
+    "description": "実行前確認カード：メディアリンクを開く"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "公開前に確認",
+    "description": "TikTok 公開確認カードの状態ラベル"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "TikTok に公開",
+    "description": "TikTok 公開確認カードのタイトル"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "確認後、この動画をあなたの TikTok アカウントに公開します。",
+    "description": "TikTok 公開確認カードの概要"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "公開",
+    "description": "TikTok 公開確認カードの送信ボタン"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "投稿先",
+    "description": "TikTok 发布确认：账号标签"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "接続済み",
+    "description": "TikTok 公開確認：アカウント接続状態"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "アカウント情報が利用できません",
+    "description": "TikTok 公開確認：アカウントのニックネームが欠けている時のプレースホルダ文"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "公開設定がまだ準備できていません",
+    "description": "TikTok 公開確認：クリエイター情報が欠けているタイトル"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "そのアカウントがサポートする可視範囲を読み取れませんでした。キャンセルして、アシスタントにTikTok公開設定を再取得させてください。",
+    "description": "TikTok 公開確認：クリエイター情報が欠けている説明"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "動画の長さがアカウントの制限に合っていません",
+    "description": "TikTok 発表確認：動画が長すぎるタイトル"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "公開コンテンツ",
+    "description": "TikTok 公開確認：コンテンツ設定のグループタイトル"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* 必須",
+    "description": "TikTok 公開確認：必須の説明"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "キャプション",
+    "description": "TikTok 发布确认：文案输入框标签"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "キャプションを入力（ハッシュタグとメンションが使えます）",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "公開範囲",
+    "description": "TikTok 发布确认：可见范围下拉标签"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "選択してください…",
+    "description": "TikTok 发布确认：可见范围占位符，按 TikTok 要求不能有默认值"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "利用可能な可視範囲が取得できず、現在公開できません",
+    "description": "TikTok 公開確認：可視範囲が空"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "全員",
+    "description": "TikTok 可见范围：公开"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "相互フォローの友達",
+    "description": "TikTok 可见范围：互关好友"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "フォロワー",
+    "description": "TikTok 可见范围：粉丝可见"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "自分のみ",
+    "description": "TikTok 可见范围：仅自己可见"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "インタラクションを許可",
+    "description": "TikTok 发布确认：互动开关分组标签"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "このアカウントで現在許可されているインタラクション方法のみを有効にできます。デフォルトではすべて無効です。",
+    "description": "TikTok 公開確認：インタラクションスイッチの説明"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "このアカウントは無効です：{list}",
+    "description": "TikTok 公開確認：アカウントの無効なインタラクション機能"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "コメント",
+    "description": "TikTok 互动开关：允许评论"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "デュエット",
+    "description": "TikTok 互动开关：允许合拍"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "リミックス",
+    "description": "TikTok 互动开关：允许拼接"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "コンテンツの開示",
+    "description": "TikTok 公開確認：商業コンテンツのグループタイトル"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "これは商用コンテンツです",
+    "description": "TikTok 发布确认：商业内容披露开关"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "コンテンツがブランド、製品、またはサービスを宣伝する場合は、実際の状況を開示してください。",
+    "description": "TikTok 公開確認：商業コンテンツの開示説明"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "自分のブランド",
+    "description": "TikTok 商业内容：推广自有业务"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "あなた自身またはあなたのビジネスを宣伝する",
+    "description": "TikTok 商業コンテンツ：自社ビジネスの宣伝に関する説明"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "ブランドコンテンツ",
+    "description": "TikTok 商业内容：付费合作"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "支払い、贈り物、またはその他の利益のために第三者を宣伝する",
+    "description": "TikTok 商業コンテンツ：有料コラボレーションの説明"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "動画は「プロモーションコンテンツ」として表示されます",
+    "description": "TikTok 商业内容：选择你的品牌后的标记提示"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "動画は「タイアップ投稿」として表示されます",
+    "description": "TikTok 商业内容：选择品牌内容后的标记提示"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "ブランドコンテンツの公開範囲を「自分のみ」にはできません",
+    "description": "TikTok 发布确认：品牌内容与仅自己可见互斥的提示"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "動画がアカウントの上限（{max} 秒）を超えています",
+    "description": "TikTok 发布确认：视频超长错误"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "公開前に確認してください",
+    "description": "TikTok 公開確認：ポリシー説明のタイトル"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "「公開」をクリックすることで、コンテンツと音楽の使用権を確認し、TikTokの音楽使用規約に同意したことになります。",
+    "description": "TikTok 公開確認：一般的なコンテンツポリシーの説明"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "「公開」をクリックすることで、開示情報が正確であることを確認し、TikTokのブランドコンテンツポリシーと音楽使用規約に同意したことになります。",
+    "description": "TikTok 公開確認：ブランドコンテンツポリシーの説明"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "「音楽使用確認」を確認する",
+    "description": "TikTok 公開確認：音楽使用確認のリンク"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "「ブランドコンテンツポリシー」を確認する",
+    "description": "TikTok 公開確認：ブランドコンテンツポリシーのリンク"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "公開情報が不完全です。キャンセルしてから確認カードを再生成してください。",
+    "description": "TikTok 公開確認：詳細が欠けている時のボタン無効の理由"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "このアカウントの時間制限に合った短い動画を使用してください",
+    "description": "TikTok 発表確認：動画が長すぎるためボタンが無効になっています"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "この動画を誰が見ることができるかを選択してください",
+    "description": "TikTok 公開確認：可視範囲が選択されていない時のボタン無効の理由"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "商業コンテンツの種類を選択してください",
+    "description": "TikTok 公開確認：商業開示タイプが選択されていない時のボタン無効の理由"
+  },
+  "scheduledTemplates.title": {
+    "message": "自動化テンプレート",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "テンプレートから新規作成",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "カスタム作成",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "AIに時間通りに仕事を完了させる",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "公式テンプレートを選択し、必要なアカウントを接続してください。タスク作成後はカード上で即座に実行できます。",
+    "description": "スケジュールされたタスクテンプレートの作成とアクティベーションのガイダンス"
+  },
+  "scheduledTemplates.browse": {
+    "message": "テンプレートをブラウズ",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "テンプレートを選択",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "簡単な設定",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "アカウントを接続",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.search": {
+    "message": "テンプレートを検索",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.featured": {
+    "message": "おすすめ",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.ready": {
+    "message": "すぐに使用可能",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "{count}項目を接続する必要があります",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "実行時間",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "必要な接続を準備",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "他のアカウントを接続する必要はありません",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.connected": {
+    "message": "接続済み",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "接続されていません",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "アカウントを選択",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.connect": {
+    "message": "接続する",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.create": {
+    "message": "タスクを作成",
+    "description": "スケジュールされたタスクテンプレートの作成とアクティベーションのガイダンス"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "タスクの作成に失敗しました。設定または接続を確認してください。",
+    "description": "スケジュールされたタスクテンプレートの作成とアクティベーションのガイダンス"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "タスクは作成されましたが、無効のままです。カード上で即座に実行し、成功した後に有効にしてください。",
+    "description": "スケジュールされたタスクテンプレートの作成とアクティベーションのガイダンス"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "一時的に有効にできません。タスクを即座に実行し、成功を確認してください；一部のテンプレートは指定されたドラフトを生成する必要があります。",
+    "description": "スケジュールされたタスクテンプレートの作成とアクティベーションのガイダンス"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "テンプレートの読み込みに失敗しました。後でもう一度お試しください。",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "すべて",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "マーケティング成長",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "コンテンツ作成",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "生産性",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "情報と研究",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "開発と運用",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "パーソナルアシスタント",
+    "description": "スケジュールされたタスクテンプレートセンターのコピー"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "サービスのモデル名、すなわち Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "現在最も先進的なモデル",
     "description": "Claude Opus 4.7モデルの説明"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "actionConfirmation.tiktok.music": {
+    "message": "投稿すると、TikTok の音楽利用確認に同意したことになります",
+    "description": "TikTok 发布确认：音乐使用声明"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "投稿すると、TikTok のブランドコンテンツポリシーおよび音楽利用確認に同意したことになります",
+    "description": "TikTok 发布确认：勾选品牌内容后的声明"
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezone": {
+    "message": "タイムゾーン"
+  },
+  "scheduledTasks.form.timezoneHint": {
+    "message": "新しいタスクでは、このデバイスのタイムゾーン（{timezone}）が既定で使用されます。保存後はタスクに固定されます。"
+  },
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "有効な IANA タイムゾーンを選択してください"
+  },
+  "scheduledTemplates.previous": {
+    "message": "前へ",
+    "description": "スケジュールされたテンプレートウィザードのナビゲーションと接続ガイダンス"
+  },
+  "scheduledTemplates.next": {
+    "message": "次へ",
+    "description": "スケジュールされたテンプレートウィザードのナビゲーションと接続ガイダンス"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "このテンプレートに必要な接続のみを使用します。接続されたアカウントは自動的に再利用されます。",
+    "description": "スケジュールされたテンプレートウィザードのナビゲーションと接続ガイダンス"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "このテンプレートは内蔵機能のみを使用しており、直接タスクを作成できます。",
+    "description": "スケジュールされたタスクテンプレートの作成とアクティベーションのガイダンス"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "接続を完了した後に続行できます。",
+    "description": "スケジュールされたテンプレートウィザードのナビゲーションと接続ガイダンス"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "このタスクは選択したアカウントを固定して使用します。",
+    "description": "スケジュールされたテンプレートウィザードのナビゲーションと接続ガイダンス"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "承認されたMCP接続を通じて実行し、追加のアカウントのバインドは不要です。",
+    "description": "スケジュールされたテンプレートウィザードのナビゲーションと接続ガイダンス"
   }
 }

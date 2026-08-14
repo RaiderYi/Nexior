@@ -12,7 +12,7 @@
             <el-skeleton v-if="loading" />
             <div v-else class="summary-card">
               <div class="icon-wrapper">
-                <font-awesome-icon icon="fa-solid fa-cubes-stacked" />
+                <applications-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
               </div>
               <p class="label">
                 {{ $t('application.title.count') }}
@@ -31,7 +31,7 @@
               <div class="summary-card min-w-0 flex-1">
                 <div class="flex justify-start items-center gap-2 mb-2 w-full">
                   <div class="icon-wrapper !mb-0">
-                    <font-awesome-icon icon="fa-solid fa-wallet" />
+                    <wallet-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
                   </div>
                   <span class="text-[var(--el-text-color-regular)] text-[14px] truncate">
                     {{ $t('application.field.id') }}: {{ globalApplications?.[0]?.id }}
@@ -53,7 +53,7 @@
               </div>
               <div class="flex flex-col items-end gap-2 shrink-0">
                 <el-button class="!m-0 !px-2" size="small" round @click="onGoUsage(globalApplications?.[0])">
-                  <font-awesome-icon icon="fa-solid fa-chart-line" class="mr-1 text-[12px]" />
+                  <analytics-icon class="mr-1 text-[12px]" :size="'1em' as any" aria-hidden="true" focusable="false" />
                   {{ $t('application.button.usage') }}
                 </el-button>
                 <el-button
@@ -64,7 +64,7 @@
                   size="small"
                   @click="onBuyMore(globalApplications?.[0])"
                 >
-                  <font-awesome-icon icon="fa-solid fa-coins" class="mr-1 text-[12px]" />
+                  <credits-icon class="mr-1 text-[12px]" :size="'1em' as any" aria-hidden="true" focusable="false" />
                   {{ $t('application.button.buyMore') }}
                 </el-button>
               </div>
@@ -144,7 +144,7 @@
               >
                 <template #default="scope">
                   <el-switch
-                    v-if="scope.row.service?.type === serviceType.API"
+                    v-if="scope.row.service?.type === serviceType.API && scope.row.type === applicationType.USAGE"
                     v-model="scope.row.allow_consume_global"
                     :active-value="true"
                     :inactive-value="false"
@@ -165,8 +165,19 @@
               <el-table-column fixed="right" width="200px">
                 <template #default="scope">
                   <div class="flex flex-wrap items-center justify-end gap-1">
-                    <el-button class="!m-0 !px-2" size="small" round @click="onGoUsage(scope?.row)">
-                      <font-awesome-icon icon="fa-solid fa-chart-line" class="mr-1 text-[12px]" />
+                    <el-button
+                      v-if="scope.row?.service?.type === serviceType.API"
+                      class="!m-0 !px-2"
+                      size="small"
+                      round
+                      @click="onGoUsage(scope?.row)"
+                    >
+                      <analytics-icon
+                        class="mr-1 text-[12px]"
+                        :size="'1em' as any"
+                        aria-hidden="true"
+                        focusable="false"
+                      />
                       {{ $t('application.button.usage') }}
                     </el-button>
                     <el-button
@@ -177,7 +188,12 @@
                       size="small"
                       @click="onBuyMore(scope?.row)"
                     >
-                      <font-awesome-icon icon="fa-solid fa-coins" class="mr-1 text-[12px]" />
+                      <credits-icon
+                        class="mr-1 text-[12px]"
+                        :size="'1em' as any"
+                        aria-hidden="true"
+                        focusable="false"
+                      />
                       {{ $t('application.button.buyMore') }}
                     </el-button>
                   </div>
@@ -221,7 +237,10 @@
                   <span class="label">{{ $t('application.field.expiredAt') }}</span>
                   <span class="value">{{ $dayjs.format(app.expired_at) }}</span>
                 </div>
-                <div v-if="app.service?.type === serviceType.API" class="application-card__row">
+                <div
+                  v-if="app.service?.type === serviceType.API && app.type === applicationType.USAGE"
+                  class="application-card__row"
+                >
                   <span class="label">{{ $t('application.field.allowConsumeGlobal') }}</span>
                   <el-switch
                     v-model="app.allow_consume_global"
@@ -231,8 +250,19 @@
                   />
                 </div>
                 <div class="flex items-center justify-end gap-2 mt-3">
-                  <el-button class="!m-0 !px-3" size="small" round @click="onGoUsage(app)">
-                    <font-awesome-icon icon="fa-solid fa-chart-line" class="mr-1 text-[12px]" />
+                  <el-button
+                    v-if="app?.service?.type === serviceType.API"
+                    class="!m-0 !px-3"
+                    size="small"
+                    round
+                    @click="onGoUsage(app)"
+                  >
+                    <analytics-icon
+                      class="mr-1 text-[12px]"
+                      :size="'1em' as any"
+                      aria-hidden="true"
+                      focusable="false"
+                    />
                     {{ $t('application.button.usage') }}
                   </el-button>
                   <el-button
@@ -243,7 +273,7 @@
                     size="small"
                     @click="onBuyMore(app)"
                   >
-                    <font-awesome-icon icon="fa-solid fa-coins" class="mr-1 text-[12px]" />
+                    <credits-icon class="mr-1 text-[12px]" :size="'1em' as any" aria-hidden="true" focusable="false" />
                     {{ $t('application.button.buyMore') }}
                   </el-button>
                 </div>
@@ -270,9 +300,10 @@
 </template>
 
 <script lang="ts">
+import { AnalyticsIcon, ApplicationsIcon, CreditsIcon, WalletIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { applicationOperator } from '@/operators';
-import Pagination from '@/components/common/Pagination.vue';
+import { Pagination } from '@acedatacloud/core/components';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
 import {
   ElTable,
@@ -287,18 +318,18 @@ import {
   ElEmpty,
   ElMessage
 } from 'element-plus';
-import { ROUTE_CONSOLE_APPLICATION_EXTRA, ROUTE_CONSOLE_USAGE_LIST } from '@/router/constants';
-import { isIOS } from '@/utils';
+import { ROUTE_CONSOLE_USAGE_LIST } from '@/router/constants';
+import { getApplicationPurchaseRoute, isIOS, isRechargeDisabled } from '@/utils';
 import {
   IApplication,
   IApplicationListResponse,
   IApplicationScope,
   IApplicationType,
   ICredentialType,
+  IPackageType,
   IService,
   IServiceType
 } from '@/models';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 interface IData {
   individualApplications: IApplication[];
@@ -308,6 +339,7 @@ interface IData {
   globalApplicationsTotal: number | undefined;
   limit: number;
   buying: boolean;
+  applicationType: typeof IApplicationType;
   form: {
     amount: number | undefined;
   };
@@ -322,6 +354,10 @@ interface IData {
 export default defineComponent({
   name: 'ConsoleApplicationList',
   components: {
+    AnalyticsIcon,
+    ApplicationsIcon,
+    CreditsIcon,
+    WalletIcon,
     Pagination,
     CopyToClipboard,
     ElTable,
@@ -333,13 +369,13 @@ export default defineComponent({
     ElSwitch,
     ElEmpty,
     ElTableColumn,
-    ElCard,
-    FontAwesomeIcon
+    ElCard
   },
   data(): IData {
     return {
       credentialType: ICredentialType,
       serviceType: IServiceType,
+      applicationType: IApplicationType,
       individualApplications: [],
       globalApplications: [],
       individualApplicationsTotal: undefined,
@@ -367,6 +403,9 @@ export default defineComponent({
     // the mapped consumable packages), so its top-up entry is shown on every
     // surface. The card itself is still gated on having a global application.
     showGlobalPayment(): boolean {
+      if (isRechargeDisabled(this.$store.getters.site)) {
+        return false;
+      }
       return true;
     }
   },
@@ -385,10 +424,18 @@ export default defineComponent({
     // A per-service app row shows "Buy More" on every surface, but on iOS
     // only when it has an Apple-buyable package (apple_product_id mapped).
     rowCanPay(application: IApplication): boolean {
+      if (application.role === 'grantee' || isRechargeDisabled(this.$store.getters.site)) {
+        return false;
+      }
       if (!isIOS()) {
         return true;
       }
-      return ((application as any)?.packages || []).some((p: any) => p?.metadata?.apple_product_id);
+      if (application.type === IApplicationType.PERIOD) {
+        return false;
+      }
+      return ((application as any)?.packages || []).some(
+        (p: any) => p.type === IPackageType.USAGE && p?.metadata?.apple_product_id
+      );
     },
     updateAllowConsumeGlobal(application: IApplication, value: any) {
       if (!application || !application.id) {
@@ -407,19 +454,13 @@ export default defineComponent({
       this.$router.push({
         name: ROUTE_CONSOLE_USAGE_LIST,
         query: {
-          application_id: application.id,
-          type: application?.service?.type
+          application_id: application.id
         }
       });
     },
     onBuyMore(application: IApplication | undefined) {
-      if (!application?.id) return;
-      this.$router.push({
-        name: ROUTE_CONSOLE_APPLICATION_EXTRA,
-        params: {
-          id: application.id
-        }
-      });
+      const target = getApplicationPurchaseRoute(application);
+      if (target) this.$router.push(target);
     },
     onPageChange(page: number) {
       this.$router.push({
@@ -442,7 +483,10 @@ export default defineComponent({
               : {}),
             user_id: this.$store.getters.user.id,
             ordering: '-created_at',
-            type: IApplicationType.USAGE,
+            type:
+              scope === IApplicationScope.INDIVIDUAL
+                ? [IApplicationType.USAGE, IApplicationType.PERIOD]
+                : IApplicationType.USAGE,
             scope: scope
           })
           .then(({ data }: { data: IApplicationListResponse }) => {
@@ -512,13 +556,19 @@ export default defineComponent({
   .icon-wrapper {
     height: 40px;
     width: 40px;
-    line-height: 40px;
+    display: grid;
+    place-items: center;
     border-radius: 50%;
     background-color: var(--el-bg-color-page);
-    text-align: center;
     margin-bottom: 6px;
     color: var(--el-color-primary);
     flex-shrink: 0;
+
+    :deep(svg) {
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
   }
   .label {
     color: var(--el-text-color-regular);
@@ -531,7 +581,8 @@ export default defineComponent({
     font-size: 30px;
     margin: 0;
     line-height: 36px;
-    word-break: break-all;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
   .description {
     color: var(--el-text-color-secondary);

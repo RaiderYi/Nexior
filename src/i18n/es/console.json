@@ -39,10 +39,6 @@
     "message": "Historial de uso",
     "description": "Texto en el menú del sitio web, donde 'historial de uso' se refiere al registro de uso de los servicios API por parte del usuario"
   },
-  "menu.credentials": {
-    "message": "API Keys",
-    "description": "Console sidebar menu item for API key management"
-  },
   "menu.credentialIndex": {
     "message": "Credenciales",
     "description": "Texto en el menú del sitio web, donde 'credenciales' se refiere a las credenciales para acceder a la API"
@@ -131,10 +127,6 @@
     "message": "Token de plataforma",
     "description": "Texto en el menú del sitio web, el token de plataforma se refiere al token utilizado para acceder a la plataforma Ace Data Cloud"
   },
-  "menu.publishIndex": {
-    "message": "Centro de Publicación",
-    "description": "Texto en el menú del sitio web, el centro de publicación se refiere al lugar donde los usuarios publican contenido"
-  },
   "menu.platformRankIndex": {
     "message": "Ranking de Plataforma",
     "description": "Texto en el menú del sitio web, el ranking de plataforma se refiere a la lista de ganancias recomendadas por los usuarios"
@@ -151,92 +143,16 @@
     "message": "Análisis de Ingresos",
     "description": "Texto en el menú del sitio web, acceso al análisis de ingresos visible solo para administradores"
   },
-  "credentials.title": {
-    "message": "API Keys",
-    "description": "Title of the API credentials page"
+  "menu.connectors": {
+    "message": "Conectores",
+    "description": "Texto en el menú del sitio web, los conectores se refieren a los servicios de terceros a los que el usuario se conecta."
   },
-  "credentials.guide.title": {
-    "message": "Quick Start",
-    "description": "Title of the quick start guide"
+  "menu.skills": {
+    "message": "Habilidades",
+    "description": "Texto en el menú del sitio web, habilidades se refiere a las habilidades de agente que el usuario ha instalado."
   },
-  "credentials.guide.step1Title": {
-    "message": "API Endpoint",
-    "description": "Step 1 title"
-  },
-  "credentials.guide.step1Desc": {
-    "message": "Send requests to our unified API endpoint:",
-    "description": "Step 1 description"
-  },
-  "credentials.guide.step2Title": {
-    "message": "Authentication",
-    "description": "Step 2 title"
-  },
-  "credentials.guide.step2Desc": {
-    "message": "Use your API key in the Authorization header as Bearer token.",
-    "description": "Step 2 description"
-  },
-  "credentials.guide.step3Title": {
-    "message": "Choose a Model",
-    "description": "Step 3 title"
-  },
-  "credentials.guide.step3Desc": {
-    "message": "Specify the model name in the request body. See available models below.",
-    "description": "Step 3 description"
-  },
-  "credentials.keys.title": {
-    "message": "Your API Keys",
-    "description": "Title of the API keys section"
-  },
-  "credentials.keys.empty": {
-    "message": "No API keys yet. Start using a service to generate one.",
-    "description": "Empty state message"
-  },
-  "credentials.keys.startUsing": {
-    "message": "Start Using",
-    "description": "Button to go to services"
-  },
-  "credentials.keys.general": {
-    "message": "General",
-    "description": "Label for general-purpose credential"
-  },
-  "credentials.button.refresh": {
-    "message": "Refresh",
-    "description": "Refresh button"
-  },
-  "credentials.field.service": {
-    "message": "Service",
-    "description": "Table column header"
-  },
-  "credentials.field.apiKey": {
-    "message": "API Key",
-    "description": "Table column header"
-  },
-  "credentials.field.balance": {
-    "message": "Balance",
-    "description": "Table column header"
-  },
-  "credentials.field.createdAt": {
-    "message": "Created",
-    "description": "Table column header"
-  },
-  "credentials.example.title": {
-    "message": "Code Example",
-    "description": "Title of code example section"
-  },
-  "credentials.example.hint": {
-    "message": "Replace YOUR_API_KEY with your actual key above.",
-    "description": "Hint under code example"
-  },
-  "credentials.models.title": {
-    "message": "Available Models",
-    "description": "Title of available models section"
-  },
-  "credentials.models.hint": {
-    "message": "Use these model names in the \"model\" field of your API requests.",
-    "description": "Hint under model list"
-  },
-  "credentials.message.loadFailed": {
-    "message": "Failed to load API keys, please try again later.",
-    "description": "Error message"
+  "menu.browserDevices": {
+    "message": "Dispositivos del navegador",
+    "description": "Texto en el menú del sitio web, los dispositivos del navegador se refieren a las extensiones del navegador que el usuario ha emparejado."
   }
 }

@@ -1,4 +1,8 @@
 {
+  "message.mediaPreviewUnavailable": {
+    "message": "预览不可用",
+    "description": "媒体预览无法加载"
+  },
   "button.setup": {
     "message": "设置",
     "description": "按钮中的文本，用于进行设置"
@@ -66,6 +70,46 @@
   "button.close": {
     "message": "关闭",
     "description": "按钮中的文本，用于关闭对话框或面板"
+  },
+  "button.send": {
+    "message": "发送",
+    "description": "发送内容按钮的无障碍标签"
+  },
+  "button.stop": {
+    "message": "停止",
+    "description": "停止操作按钮的无障碍标签"
+  },
+  "button.openMenu": {
+    "message": "打开菜单",
+    "description": "打开导航或配置菜单按钮的无障碍标签"
+  },
+  "button.more": {
+    "message": "更多操作",
+    "description": "打开操作菜单按钮的无障碍标签"
+  },
+  "button.remove": {
+    "message": "移除",
+    "description": "移除项目按钮的无障碍标签"
+  },
+  "player.previous": {
+    "message": "上一首",
+    "description": "播放器上一首按钮的无障碍标签"
+  },
+  "player.play": {
+    "message": "播放",
+    "description": "播放器播放按钮的无障碍标签"
+  },
+  "player.pause": {
+    "message": "暂停",
+    "description": "播放器暂停按钮的无障碍标签"
+  },
+  "player.next": {
+    "message": "下一首",
+    "description": "播放器下一首按钮的无障碍标签"
+  },
+  "player.volume": {
+    "message": "音量",
+    "description": "播放器音量控件的无障碍标签"
   },
   "button.expand": {
     "message": "展开",
@@ -135,6 +179,14 @@
     "message": "下载 macOS 版",
     "description": "Text in button for downloading the macOS desktop installer"
   },
+  "button.downloadBrowserExtension": {
+    "message": "下载浏览器扩展",
+    "description": "按钮中的文本，用于下载 Chrome / Edge 浏览器扩展安装包"
+  },
+  "button.viewExtensionGuide": {
+    "message": "查看安装教程",
+    "description": "浏览器扩展卡片上的次要按钮，跳转到插件安装文档"
+  },
   "button.installIos": {
     "message": "安装 iOS",
     "description": "按钮中的文本，用于安装 iOS 应用"
@@ -200,7 +252,7 @@
     "description": "用于显示实体的类型"
   },
   "entity.website": {
-    "message": "BigPlayer AI",
+    "message": "Ace Data Cloud",
     "description": "网站名称，无需翻译，保持为'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -268,7 +320,7 @@
     "description": "用于显示服务已使用的金额"
   },
   "message.mobileAppDescription": {
-    "message": "随时随地使用完整的 BigPlayer AI 创作工具 —— 支持 Android、iPhone、iPad、Windows 与 macOS。一键安装，或扫码前往。",
+    "message": "随时随地使用完整的 AceData 创作工具 —— 支持 Android、iPhone、iPad、Windows 与 macOS。一键安装，或扫码前往。",
     "description": "应用下载页的说明文案"
   },
   "message.mobileAndroidHint": {
@@ -298,6 +350,14 @@
   "message.mobileSharedAccount": {
     "message": "与网页端共用账号和额度",
     "description": "用于说明移动端与网页端共用账号"
+  },
+  "message.extensionAvailableNow": {
+    "message": "免费使用",
+    "description": "浏览器扩展卡片右上角的状态标签"
+  },
+  "message.extensionHint": {
+    "message": "授权社交媒体账号、连接本地浏览器执行任务。下载后解压，在扩展管理页面选择「加载已解压的扩展程序」即可安装。",
+    "description": "浏览器扩展卡片的说明文字"
   },
   "message.mobileIosHint": {
     "message": "适用于 iPhone 和 iPad，可直接从 App Store 安装，与网页端共用账号和额度。",
@@ -352,7 +412,7 @@
     "description": "移动应用安装提示"
   },
   "title.mobileApp": {
-    "message": "获取 BigPlayer AI 客户端",
+    "message": "获取 AceData 客户端",
     "description": "应用下载页标题"
   },
   "title.mobileFastAccess": {
@@ -398,6 +458,18 @@
   "message.confirmDelete": {
     "message": "您确定要删除吗？",
     "description": "确认用户要删除某项内容的消息"
+  },
+  "message.deleteTaskConfirm": {
+    "message": "确定要删除这条生成记录吗？删除后将从所有设备移除，且无法恢复。",
+    "description": "删除单条任务生成记录前显示的确认消息"
+  },
+  "message.deleteTaskSuccess": {
+    "message": "记录已删除。",
+    "description": "成功删除任务记录后显示的消息"
+  },
+  "message.deleteTaskFailed": {
+    "message": "删除失败，请稍后重试。",
+    "description": "删除任务记录失败时显示的消息"
   },
   "message.expiredAt": {
     "message": "过期时间",
@@ -587,6 +659,10 @@
     "message": "Hailuo",
     "description": "网站导航栏中的文本，用于显示Hailuo页面，请不要翻译此字段，必须保持为'Hailuo'"
   },
+  "nav.minimax": {
+    "message": "MiniMax H3",
+    "description": "网站导航栏中的 MiniMax H3 视频生成服务名称"
+  },
   "nav.wan": {
     "message": "Wan",
     "description": "网站导航栏中的文本，用于显示Wan页面，请不要翻译此字段，必须保持为'Wan'"
@@ -602,6 +678,10 @@
   "nav.kimi": {
     "message": "Kimi",
     "description": "网站导航栏中的文本，用于显示Kimi页面，请不要翻译此字段，必须保持为'Kimi'"
+  },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
   },
   "nav.serp": {
     "message": "SERP",
@@ -655,13 +735,17 @@
     "message": "设置",
     "description": "网站导航栏中的文本，用于显示设置页面"
   },
-  "nav.headshots": {
-    "message": "AI证件照",
-    "description": "网站导航栏中的文本，用于显示站点配置页面"
-  },
   "nav.more": {
     "message": "更多",
     "description": "网站导航栏中的文本，用于展开更多服务"
+  },
+  "nav.collapseDock": {
+    "message": "收起应用栏",
+    "description": "移动端底部应用栏的收起按钮"
+  },
+  "nav.expandDock": {
+    "message": "展开应用栏",
+    "description": "移动端底部应用栏的展开按钮"
   },
   "nav.locale": {
     "message": "语言设置",
@@ -744,7 +828,7 @@
     "description": "公司的地址"
   },
   "about.email": {
-    "message": "office@acedata.cloud",
+    "message": "office{'@'}acedata.cloud",
     "description": "公司的电子邮件"
   },
   "about.link1": {
@@ -807,6 +891,30 @@
     "message": "主题",
     "description": "设置页面中的主题设置部分的标题"
   },
+  "settings.sendShortcut": {
+    "message": "发送消息快捷键",
+    "description": "设置页面中的发送消息快捷键行标题：选择按 Enter 发送还是按修饰键+Enter 发送"
+  },
+  "sendShortcut.enter": {
+    "message": "Enter 发送",
+    "description": "发送快捷键选项：按 Enter 键直接发送消息"
+  },
+  "sendShortcut.modEnter": {
+    "message": "{key} + Enter 发送",
+    "description": "发送快捷键选项：按修饰键（⌘ 或 Ctrl）加 Enter 发送消息，{key} 是平台修饰键符号"
+  },
+  "settings.loginMode": {
+    "message": "登录跳转方式",
+    "description": "Auth 设置 tab 中的登录跳转方式行标题：选择登录时用弹窗嵌入（iframe）还是整页跳转。站点级配置，仅管理员可见"
+  },
+  "loginMode.iframe": {
+    "message": "弹窗嵌入",
+    "description": "登录方式选项：在当前页面内以内嵌 iframe 弹窗完成登录，不跳走"
+  },
+  "loginMode.redirect": {
+    "message": "整页跳转",
+    "description": "登录方式选项：跳转到登录页面完成登录后再返回"
+  },
   "settings.seo": {
     "message": "SEO设置",
     "description": "设置页面中的SEO设置部分的标题"
@@ -820,12 +928,12 @@
     "description": "设置页面中的分发设置部分的标题"
   },
   "settings.function": {
-    "message": "功能设置",
-    "description": "设置页面中的功能设置部分的标题"
+    "message": "能力",
+    "description": "设置页面中的站点能力部分标题"
   },
   "settings.auth": {
-    "message": "登录方式",
-    "description": "设置页面侧边栏的『登录方式』tab 标题——配置本站允许使用的登录方式及默认登录方式，仅站点管理员可见"
+    "message": "认证",
+    "description": "设置页面侧边栏的『Auth』tab 标题——配置本站允许使用的登录方式、默认登录方式，以及登录跳转方式（整页跳转 / 内嵌弹窗），仅站点管理员可见"
   },
   "settings.apiKey": {
     "message": "API Key",
@@ -839,6 +947,14 @@
     "message": "助手会记住你在对话中提到的有用信息，从而在不同对话里给出更贴合你的个性化回复。你拥有完全的控制权——可以查看已保存的内容，并删除不希望它记住的部分。",
     "description": "记忆设置标签页顶部的介绍文字"
   },
+  "settings.memoryEnabled": {
+    "message": "使用记忆",
+    "description": "控制助手是否在聊天中使用已保存的记忆并继续学习新记忆的开关标题"
+  },
+  "settings.memoryEnabledHint": {
+    "message": "关闭后，助手不会读取已保存的记忆，也不会从新对话中保存记忆。已有内容不会被删除。",
+    "description": "记忆开关下方的行为说明"
+  },
   "settings.memoryNeedsChat": {
     "message": "请先开始一次对话以启用记忆功能。",
     "description": "当聊天应用/令牌尚未加载时，在记忆设置标签页显示"
@@ -846,6 +962,58 @@
   "settings.memoryStored": {
     "message": "已保存的记忆",
     "description": "已存储记忆条目列表上方的分区标题"
+  },
+  "settings.memoryImport": {
+    "message": "导入",
+    "description": "打开记忆导入弹窗的按钮"
+  },
+  "settings.memoryImportTitle": {
+    "message": "从其他 AI 导入记忆",
+    "description": "记忆导入弹窗标题"
+  },
+  "settings.memoryImportExportStep": {
+    "message": "1. 让当前使用的 AI 导出记忆",
+    "description": "记忆导入弹窗第一步标题"
+  },
+  "settings.memoryImportPrompt": {
+    "message": "我要迁移到另一个 AI 服务。请列出你保存的关于我的每一条记忆，以及从过往对话中学到的持久信息。把全部内容放在一个代码块中，每行只写一条记忆，格式为：[保存日期，如有] - 记忆内容。请包括回复偏好、个人信息、项目、目标、常用工具、语言、框架，以及我对你做过的纠正。尽量保留我的原话，不要包含密码、密钥等敏感信息。",
+    "description": "复制到其他 AI 服务中用于导出记忆的提示词"
+  },
+  "settings.memoryImportCopy": {
+    "message": "复制提示词",
+    "description": "复制记忆导出提示词的按钮"
+  },
+  "settings.memoryImportCopied": {
+    "message": "提示词已复制",
+    "description": "成功复制记忆导出提示词后的提示"
+  },
+  "settings.memoryImportPasteStep": {
+    "message": "2. 粘贴导出的记忆",
+    "description": "记忆导入弹窗第二步标题"
+  },
+  "settings.memoryImportPlaceholder": {
+    "message": "粘贴 ChatGPT、Claude、Gemini 或其他 AI 返回的记忆内容…",
+    "description": "粘贴导出记忆内容的输入框占位文字"
+  },
+  "settings.memoryImportSubmit": {
+    "message": "添加到记忆",
+    "description": "提交粘贴内容进行导入的按钮"
+  },
+  "settings.memoryImportSuccess": {
+    "message": "已处理 {count} 条记忆，请在下方检查保存结果。",
+    "description": "记忆导入成功提示，count 为去重和容量限制前通过校验的输入条目数"
+  },
+  "settings.memoryImportPartial": {
+    "message": "已处理 {processed} 条内容，另有 {rejected} 条不安全或无效内容已跳过。",
+    "description": "部分记忆导入成功时显示的警告"
+  },
+  "settings.memoryImportInvalid": {
+    "message": "未能导入记忆。请确认记忆已开启，并按每行一条普通事实的格式粘贴。",
+    "description": "记忆导入请求无效时显示的可操作错误提示"
+  },
+  "settings.memoryImportInProgress": {
+    "message": "已有记忆导入任务正在运行，请保持弹窗打开并稍后重试。",
+    "description": "已有另一个记忆导入任务运行时显示的警告"
   },
   "settings.memoryEmpty": {
     "message": "暂无保存的记忆。随着你的使用，助手会在这里记住持久的偏好和信息。",
@@ -924,7 +1092,7 @@
     "description": "客户的职业"
   },
   "customers.comment1": {
-    "message": "BigPlayer AI 为我们的团队提供了很好的服务，帮助我们提高了生产力。非常喜欢！",
+    "message": "Ace Data Cloud 为我们的团队提供了很好的服务，帮助我们提高了生产力。非常喜欢！",
     "description": "客户的评价"
   },
   "customers.name2": {
@@ -936,7 +1104,7 @@
     "description": "客户的职业"
   },
   "customers.comment2": {
-    "message": "BigPlayer AI 是一个很好的集成平台，服务质量优秀。",
+    "message": "Ace Data Cloud 是一个很好的集成平台，服务质量优秀。",
     "description": "客户的评价"
   },
   "customers.name3": {
@@ -948,7 +1116,7 @@
     "description": "客户的职业"
   },
   "customers.comment3": {
-    "message": "我喜欢 BigPlayer AI 的服务，使用方便，价格合理，希望能越来越好！",
+    "message": "我喜欢 Ace Data Cloud 的服务，使用方便，价格合理，希望能越来越好！",
     "description": "客户的评价"
   },
   "nav.github": {
@@ -1253,7 +1421,7 @@
     "description": "关于页面中展示本站基于哪个开源项目搭建的标题"
   },
   "settings.poweredByTip": {
-    "message": "BigPlayer AI — 一站式 AI 创作平台。",
+    "message": "本站基于 Nexior 开源项目搭建，代码完全开源。",
     "description": "关于页面中展示本站基于哪个开源项目的说明"
   },
   "settings.apiService": {
@@ -1261,7 +1429,7 @@
     "description": "关于页面中展示API服务提供方的标题"
   },
   "settings.apiServiceTip": {
-    "message": "本站由 BigPlayer AI 提供技术服务。",
+    "message": "本站 API 服务由 Ace Data Cloud 提供。",
     "description": "关于页面中展示API服务提供方的说明"
   },
   "settings.buildYourOwn": {
@@ -1269,12 +1437,92 @@
     "description": "关于页面中提示用户可以搭建同款站点的标题"
   },
   "settings.buildYourOwnTip": {
-    "message": "想了解更多？请联系我们。",
+    "message": "想搭建同样的 AI 站点？联系我们获取部署支持。",
     "description": "关于页面中搭建同款的说明"
   },
   "settings.contactUs": {
     "message": "联系客服",
     "description": "联系客服按钮的文本"
+  },
+  "settings.contactSupport": {
+    "message": "联系客服",
+    "description": "关于页面中展示站长客服渠道的栏目标题"
+  },
+  "settings.contactSupportTip": {
+    "message": "可通过以下任一方式联系我们的客服。",
+    "description": "关于页面客服栏目下方的副标题"
+  },
+  "settings.contactInvalidUrl": {
+    "message": "{field} 需要是有效的 http(s) 链接",
+    "description": "联系方式链接无效时的校验错误提示"
+  },
+  "settings.contactInvalidPhone": {
+    "message": "请输入有效的电话号码",
+    "description": "电话号码无效时的校验错误提示"
+  },
+  "settings.contactInvalidEmail": {
+    "message": "请输入有效的邮箱地址",
+    "description": "邮箱地址无效时的校验错误提示"
+  },
+  "settings.contactType": {
+    "message": "类型",
+    "description": "Placeholder for the contact type picker in the editor"
+  },
+  "settings.contactType_phone": {
+    "message": "电话",
+    "description": "Display name for the phone contact type"
+  },
+  "settings.contactType_email": {
+    "message": "邮箱",
+    "description": "Display name for the email contact type"
+  },
+  "settings.contactType_website": {
+    "message": "网站",
+    "description": "Display name for the website contact type"
+  },
+  "settings.contactType_wechat": {
+    "message": "微信",
+    "description": "Display name for the WeChat contact type"
+  },
+  "settings.contactLabelPlaceholder": {
+    "message": "备注（可选），如：售前",
+    "description": "Placeholder for the optional contact label input"
+  },
+  "settings.contactValuePlaceholder": {
+    "message": "账号 / 展示文本",
+    "description": "Placeholder for the generic contact value input"
+  },
+  "settings.contactQr": {
+    "message": "二维码",
+    "description": "Label for a contact's QR-code image"
+  },
+  "settings.contactQrTip": {
+    "message": "上传一张二维码，用户扫码即可添加你。",
+    "description": "Tip for the contact QR-code uploader"
+  },
+  "settings.contactAdd": {
+    "message": "添加联系方式",
+    "description": "Button to add another contact entry"
+  },
+  "settings.contactEditorHint": {
+    "message": "为每个渠道选择类型，并至少填写 值 / 链接 / 二维码 之一；可添加多条。",
+    "description": "Hint at the top of the contacts editor dialog"
+  },
+  "settings.contactInvalidType": {
+    "message": "类型只能包含小写字母、数字、- 和 _",
+    "description": "Validation error for an invalid contact type slug"
+  },
+  "settings.contactRowNeedsValue": {
+    "message": "每条联系方式至少填写 值、链接 或 二维码 之一",
+    "description": "Validation error when a contact row has no value/url/qr"
+  },
+  "settings.contactInvalidValue": {
+    "message": "联系方式内容无效或过长",
+    "description": "Validation error when a contact value/label is invalid or too long"
+  },
+  "settings.contactTooMany": {
+    "message": "最多可添加 {max} 条联系方式",
+    "description": "Validation error when too many contacts are added"
   },
   "message.viewOnGithub": {
     "message": "在 GitHub 上查看",
@@ -1285,7 +1533,7 @@
     "description": "404 页面的标题"
   },
   "message.notFound": {
-    "message": "你访问的页面不存在，可能链接已经更换或被移除。回首页继续探索 BigPlayer AI 吧。",
+    "message": "你访问的页面不存在，可能链接已经更换或被移除。回首页继续探索 AceData 的 AI 服务吧。",
     "description": "404 页面的副标题描述"
   },
   "message.notFoundEyebrow": {
@@ -1380,6 +1628,46 @@
     "message": "参考文件正在上传，请稍候再生成",
     "description": "用户在参考图/视频/音频还未上传完成时点击生成按钮，会弹出的轻量提示，要求用户等待上传完成后再次点击生成。"
   },
+  "message.uploadTooLarge": {
+    "message": "文件大小 {size} 超过上限 {max}，请压缩后重试",
+    "description": "用户选择的文件超过上传大小上限时弹出的提示，说明当前文件大小和允许的上限。"
+  },
+  "message.dropToUpload": {
+    "message": "拖放到此处上传",
+    "description": "拖拽文件到某个上传控件上方时，临时浮现在该控件上的提示层文字，告诉用户松手即可上传。"
+  },
+  "x402Scenario.paymentMethod": {
+    "message": "支付方式",
+    "description": "图片生成场景中选择积分或 Solana USDC 钱包的标签。"
+  },
+  "x402Scenario.credits": {
+    "message": "积分",
+    "description": "生成场景中的积分支付选项。"
+  },
+  "x402Scenario.wallet": {
+    "message": "USDC 钱包",
+    "description": "生成场景中的 Solana USDC 钱包支付选项。"
+  },
+  "x402Scenario.quoteBeforeSigning": {
+    "message": "钱包签名前会显示服务端给出的准确 USDC 价格。",
+    "description": "钱包支付模式下说明服务端会提供权威报价的提示。"
+  },
+  "x402Scenario.connectWalletFirst": {
+    "message": "请先连接 Solana 钱包再生成。",
+    "description": "选择钱包模式但尚未连接钱包时的提示。"
+  },
+  "x402Scenario.confirmPayment": {
+    "message": "确认为本次生成支付 {amount} USDC（Solana）？",
+    "description": "收到 x402 challenge 后的付款确认；{amount} 为服务端准确报价。"
+  },
+  "x402Scenario.paymentFailed": {
+    "message": "钱包支付失败。",
+    "description": "钱包模式生成失败提示的前缀。"
+  },
+  "x402Scenario.gptEditCreditsOnly": {
+    "message": "钱包支付当前仅支持 GPT Image 图片生成；如需编辑参考图，请切换到积分。",
+    "description": "MVP 阶段用户在钱包模式尝试 GPT Image 参考图编辑时的提示。"
+  },
   "appUpgrade.title": {
     "message": "需要升级",
     "description": "原生 App 启动时的版本闸门弹窗标题。当客户端版本低于服务端要求时显示，告知用户需要升级 App。"
@@ -1432,17 +1720,144 @@
     "message": "拒绝",
     "description": "按需授权对话框的拒绝按钮。"
   },
-  "nav.glm": {
-    "message": "智谱 GLM",
-    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  "settings.siteServices": {
+    "message": "价格",
+    "description": "用户设置弹窗中「全站与服务价格」Tab 的导航标签"
   },
-  "contact": {
-    "buttonLabel": "联系",
-    "title": "技术支持 / 问题反馈",
-    "scanTip": "扫码添加技术支持",
-    "benefit1": "遇到问题随时问",
-    "benefit2": "新模型优先体验",
-    "benefit3": "一对一响应",
-    "email": "邮件"
+  "nav.omni": {
+    "message": "Omni 视频",
+    "description": "Omni 视频模块的导航标签"
+  },
+  "settings.localToolsMcpToolsTitle": {
+    "message": "MCP 工具",
+    "description": "本地工具设置中 MCP 工具区块的标题"
+  },
+  "settings.localToolsMcpToolsHint": {
+    "message": "已连接 MCP 服务器提供的工具。打开后，AI 调用它将不再逐次询问。MCP 服务器是第三方程序，不受已授权文件夹的限制——标记为「完全访问」的工具可能会修改或发布数据，请谨慎开启。",
+    "description": "MCP 工具区块的说明文字，强调第三方风险"
+  },
+  "settings.localToolsWorkingDirTitle": {
+    "message": "工作目录",
+    "description": "本地工具设置中的分区标题：AI 当前操作的项目文件夹"
+  },
+  "settings.localToolsWorkingDirHint": {
+    "message": "AI 默认在这个项目里工作：终端命令从这里开始执行，项目约定（AGENTS.md / CLAUDE.md）也从这里读取。选定后该文件夹会自动获得读写授权，无需再添加一次。",
+    "description": "工作目录分区的说明文字"
+  },
+  "settings.localToolsWorkingDirNone": {
+    "message": "尚未选择",
+    "description": "未设置工作目录时的空状态"
+  },
+  "settings.localToolsWorkingDirChange": {
+    "message": "更改",
+    "description": "更换工作目录的按钮"
+  },
+  "button.report": {
+    "message": "举报",
+    "description": "Text in button for reporting inappropriate AI-generated content"
+  },
+  "title.reportContent": {
+    "message": "举报内容",
+    "description": "Title of the dialog for reporting inappropriate AI-generated content"
+  },
+  "message.reportIntro": {
+    "message": "请选择举报原因，我们会尽快审核并据此改进内容过滤。",
+    "description": "Introductory message in the content report dialog"
+  },
+  "message.reportDetailPlaceholder": {
+    "message": "补充说明（选填）",
+    "description": "Placeholder for the optional detail textarea in the content report dialog"
+  },
+  "message.reportSuccess": {
+    "message": "举报已提交，感谢你的反馈。",
+    "description": "Message shown after a content report is submitted successfully"
+  },
+  "message.reportFailed": {
+    "message": "举报提交失败，请稍后重试。",
+    "description": "Message shown when submitting a content report fails"
+  },
+  "message.reportReasonRequired": {
+    "message": "请选择举报原因。",
+    "description": "Validation message when no report reason is selected"
+  },
+  "reportReason.sexual": {
+    "message": "色情或性暗示内容",
+    "description": "Content report reason: sexual content"
+  },
+  "reportReason.violence": {
+    "message": "暴力或血腥内容",
+    "description": "Content report reason: violence or gore"
+  },
+  "reportReason.hate": {
+    "message": "仇恨言论或骚扰",
+    "description": "Content report reason: hate speech or harassment"
+  },
+  "reportReason.child_safety": {
+    "message": "危害未成年人",
+    "description": "Content report reason: child safety"
+  },
+  "reportReason.self_harm": {
+    "message": "自残或危险行为",
+    "description": "Content report reason: self-harm or dangerous acts"
+  },
+  "reportReason.deception": {
+    "message": "虚假或误导信息",
+    "description": "Content report reason: deceptive or misleading content"
+  },
+  "reportReason.illegal": {
+    "message": "违法违规内容",
+    "description": "Content report reason: illegal activity"
+  },
+  "reportReason.ip": {
+    "message": "侵犯知识产权",
+    "description": "Content report reason: intellectual property infringement"
+  },
+  "reportReason.other": {
+    "message": "其他",
+    "description": "Content report reason: other"
+  },
+  "x402Scenario.payEachTime": {
+    "message": "每次确认",
+    "description": "每笔钱包支付前都要求用户确认的选项。"
+  },
+  "x402Scenario.continuousPayments": {
+    "message": "连续支付",
+    "description": "使用可复用 Solana USDC 支付授权的选项。"
+  },
+  "x402Scenario.continuousPaymentsDescription": {
+    "message": "允许 Studio 在你设置的每日限额内，从 Solana USDC 钱包支付实际用量。",
+    "description": "开启连续钱包支付前显示的说明。"
+  },
+  "x402Scenario.dailyPaymentLimit": {
+    "message": "每日支付上限",
+    "description": "连续支付每日可使用的 USDC 上限。"
+  },
+  "x402Scenario.validUntil": {
+    "message": "有效期至",
+    "description": "连续支付授权的到期日期。"
+  },
+  "x402Scenario.validDays": {
+    "message": "有效天数",
+    "description": "连续支付授权到期前的天数。"
+  },
+  "x402Scenario.enableContinuousPayments": {
+    "message": "开启连续支付",
+    "description": "创建可复用 Solana 支付授权的按钮。"
+  },
+  "x402Scenario.disableContinuousPayments": {
+    "message": "停用",
+    "description": "停止使用连续支付但不撤销链上授权的按钮。"
+  },
+  "x402Scenario.revokeAuthorization": {
+    "message": "撤销授权",
+    "description": "在 Solana 上撤销可复用支付授权的按钮。"
+  },
+  "x402Scenario.continuousPaymentsEnabled": {
+    "message": "连续支付已开启。",
+    "description": "钱包成功创建支付授权后的提示。"
+  },
+  "error.userRestricted": {
+    "message": "该账号当前受限，无法登录。如有异议，请联系客服。",
+    "description": "iOS 原生登录识别到隔离账号时显示的提示，不展示内部限制原因"
   }
 }

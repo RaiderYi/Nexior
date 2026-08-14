@@ -28,7 +28,7 @@
     "description": "Razlog neuspeha zadatka"
   },
   "name.status": {
-    "message": "Status",
+    "message": "Статус",
     "description": "Status zadatka"
   },
   "name.traceId": {
@@ -44,7 +44,7 @@
     "description": "Uputstvo za generisanje/uređivanje"
   },
   "name.openaiimageBot": {
-    "message": "OpenAI Image Bot",
+    "message": "OpenAI Image бот",
     "description": "Ime OpenAI Image robota"
   },
   "name.size": {
@@ -60,11 +60,11 @@
     "description": "Naslov grupe veličina 1K"
   },
   "sizeGroup.preset2k": {
-    "message": "2K Presets",
+    "message": "2K предлошци",
     "description": "Naslov grupe veličina 2K"
   },
   "sizeGroup.preset4k": {
-    "message": "4K Presets",
+    "message": "4K предлошци",
     "description": "Naslov grupe veličina 4K"
   },
   "name.customSize": {
@@ -112,7 +112,7 @@
     "description": "Objašnjenje parametra model"
   },
   "description.imageUrls": {
-    "message": "Otpremite 1-5 referentnih slika da biste ušli u režim uređivanja.",
+    "message": "Otpremite 1-16 referentnih slika da biste ušli u režim uređivanja.",
     "description": "Objašnjenje parametra image_urls"
   },
   "status.pending": {
@@ -156,7 +156,7 @@
     "description": "Poruka o potrošenim bodovima"
   },
   "message.uploadImageExceed": {
-    "message": "Maksimalno možete otpremiti 5 slika",
+    "message": "Maksimalno možete otpremiti {count} slika",
     "description": "Prekoračenje broja slika"
   },
   "message.uploadImageError": {
@@ -164,7 +164,7 @@
     "description": "Neuspeh pri otpremanju"
   },
   "name.model": {
-    "message": "Model",
+    "message": "Модел",
     "description": "Oznaka za izbor OpenAI modela slika"
   },
   "model.gptImage1": {
@@ -182,5 +182,9 @@
   "model.gptImage2Official": {
     "message": "gpt-image-2 (Zvanično)",
     "description": "Opcija modela gpt-image-2 (zvanični relej)"
+  },
+  "size.auto": {
+    "message": "Аутоматски",
+    "description": "Опција величине: аутоматски — модел бира однос страна на основу вашег упита"
   }
 }

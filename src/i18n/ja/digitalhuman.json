@@ -1,154 +1,338 @@
 {
   "name.bot": {
-    "message": "Digital Human",
-    "description": "Bot display name"
+    "message": "デジタル人",
+    "description": "ボットの表示名"
   },
   "name.taskId": {
-    "message": "Task ID",
+    "message": "タスクID",
     "description": "Task id"
   },
   "name.elapsed": {
-    "message": "Elapsed Time",
-    "description": "Elapsed seconds"
+    "message": "経過時間",
+    "description": "経過秒数"
   },
   "name.failure": {
-    "message": "Failed",
-    "description": "Failure status"
+    "message": "失敗",
+    "description": "失敗ステータス"
   },
   "name.failureReason": {
-    "message": "Failure Reason",
-    "description": "Failure reason"
-  },
-  "name.face": {
-    "message": "Face Source",
-    "description": "Face source field"
-  },
-  "name.faceVideo": {
-    "message": "Video",
-    "description": "Face video option"
-  },
-  "name.facePhoto": {
-    "message": "Photo",
-    "description": "Face photo option"
-  },
-  "name.voice": {
-    "message": "Voice",
-    "description": "Voice source field"
-  },
-  "name.voiceAudio": {
-    "message": "Audio",
-    "description": "Audio-driven voice option"
-  },
-  "name.voiceText": {
-    "message": "Text",
-    "description": "Text-driven voice option"
+    "message": "失敗の理由",
+    "description": "失敗の理由"
   },
   "name.audioDriven": {
-    "message": "Audio-driven",
-    "description": "Audio-driven label"
+    "message": "音声駆動",
+    "description": "音声駆動ラベル"
   },
   "name.textDriven": {
-    "message": "Text-driven",
-    "description": "Text-driven label"
-  },
-  "name.engine": {
-    "message": "Engine",
-    "description": "Lip-sync engine field"
-  },
-  "name.resolution": {
-    "message": "Resolution",
-    "description": "Output resolution field"
-  },
-  "name.voiceReady": {
-    "message": "Voice ready",
-    "description": "Cloned voice ready label"
-  },
-  "placeholder.text": {
-    "message": "Type what the avatar should say…",
-    "description": "Spoken text placeholder"
-  },
-  "description.face": {
-    "message": "Upload a clear, front-facing face video (preferred) or a single photo to drive the talking head.",
-    "description": "Face field help"
-  },
-  "description.voiceClone": {
-    "message": "Upload a clean 10–20s voice sample to clone a voice, then reuse it to speak your text.",
-    "description": "Voice clone help"
+    "message": "テキスト駆動",
+    "description": "テキスト駆動ラベル"
   },
   "status.pending": {
-    "message": "Pending",
-    "description": "Pending"
+    "message": "保留中",
+    "description": "保留中"
   },
   "status.processing": {
-    "message": "Processing",
-    "description": "Processing"
+    "message": "処理中",
+    "description": "処理中"
   },
   "status.succeed": {
-    "message": "Succeeded",
-    "description": "Succeeded"
+    "message": "完了",
+    "description": "成功"
   },
   "status.failed": {
-    "message": "Failed",
-    "description": "Failed"
-  },
-  "button.generate": {
-    "message": "Generate Video",
-    "description": "Generate button"
+    "message": "失敗",
+    "description": "失敗"
   },
   "button.download": {
-    "message": "Download Video",
-    "description": "Download video button"
-  },
-  "button.uploadVideo": {
-    "message": "Upload Face Video",
-    "description": "Upload face video button"
-  },
-  "button.uploadPhoto": {
-    "message": "Upload Face Photo",
-    "description": "Upload face photo button"
-  },
-  "button.uploadAudio": {
-    "message": "Upload Audio",
-    "description": "Upload driving audio button"
+    "message": "動画をダウンロード",
+    "description": "動画ダウンロードボタン"
   },
   "button.uploadSample": {
-    "message": "Upload Sample",
-    "description": "Upload voice sample button"
-  },
-  "button.clone": {
-    "message": "Clone Voice",
-    "description": "Clone voice button"
-  },
-  "button.cloning": {
-    "message": "Cloning…",
-    "description": "Cloning in progress button"
+    "message": "サンプルをアップロード",
+    "description": "音声サンプルアップロードボタン"
   },
   "message.startingTask": {
-    "message": "Submitting your video task…",
-    "description": "Submit toast"
+    "message": "動画タスクを送信中…",
+    "description": "送信中のトースト"
   },
   "message.startTaskSuccess": {
-    "message": "Task submitted! It will appear below as it renders.",
-    "description": "Submit success"
+    "message": "タスクが送信されました！レンダリングが進むにつれて以下に表示されます。",
+    "description": "送信成功"
   },
   "message.startTaskFailed": {
-    "message": "Failed to submit the task. Please try again.",
-    "description": "Submit fail"
+    "message": "タスクの送信に失敗しました。再試行してください。",
+    "description": "送信失敗"
   },
   "message.usedUp": {
-    "message": "Your balance is not sufficient for this request.",
-    "description": "Used-up toast"
+    "message": "このリクエストの残高が不足しています。",
+    "description": "残高不足のトースト"
   },
   "message.uploadError": {
-    "message": "Upload failed. Please try again.",
-    "description": "Upload error toast"
+    "message": "アップロードに失敗しました。再試行してください。",
+    "description": "アップロードエラーのトースト"
   },
   "message.voiceCloneSuccess": {
-    "message": "Voice cloned! You can now generate with your text.",
-    "description": "Voice clone success"
+    "message": "音声がクローンされました！テキストで動画を生成できます。",
+    "description": "音声クローン成功"
   },
   "message.voiceCloneFailed": {
-    "message": "Voice clone failed. Please try a cleaner sample.",
-    "description": "Voice clone fail"
+    "message": "音声クローンに失敗しました。よりクリーンなサンプルをお試しください。",
+    "description": "音声クローン失敗"
+  },
+  "name.step1": {
+    "message": "誰が話すか",
+    "description": "ステップ1のタイトル: 顔"
+  },
+  "name.step2": {
+    "message": "何を話すか",
+    "description": "ステップ2のタイトル: 声"
+  },
+  "name.required": {
+    "message": "必須",
+    "description": "必須フィールドのバッジ"
+  },
+  "name.faceModeVideo": {
+    "message": "動画クリップ",
+    "description": "フェイスモード: 動画"
+  },
+  "name.faceModePhoto": {
+    "message": "写真",
+    "description": "フェイスモード: 写真"
+  },
+  "name.voiceModeText": {
+    "message": "このテキストを読み上げる",
+    "description": "音声モード: テキストから音声"
+  },
+  "name.voiceModeAudio": {
+    "message": "私の録音を使用",
+    "description": "音声モード: 音声をアップロード"
+  },
+  "name.speech": {
+    "message": "スピーチ",
+    "description": "話すテキストフィールドのタイトル"
+  },
+  "name.timbre": {
+    "message": "音色",
+    "description": "クローン音声フィールド"
+  },
+  "name.advanced": {
+    "message": "高度なオプション",
+    "description": "高度なセクション"
+  },
+  "name.speed": {
+    "message": "スピード",
+    "description": "スピーチスピードフィールド"
+  },
+  "name.cloneVoice": {
+    "message": "音声をクローン",
+    "description": "音声クローンダイアログのタイトル"
+  },
+  "name.voiceName": {
+    "message": "音声名",
+    "description": "音声のニックネームフィールド"
+  },
+  "name.voiceLang": {
+    "message": "言語",
+    "description": "音声言語フィールド"
+  },
+  "name.myVoice": {
+    "message": "私の音色",
+    "description": "デフォルトのクローン音声名"
+  },
+  "name.lang_zh": {
+    "message": "中国語",
+    "description": "中国語の言語オプション"
+  },
+  "name.lang_en": {
+    "message": "英語",
+    "description": "英語の言語オプション"
+  },
+  "description.step1": {
+    "message": "正面からのクリアな5秒以上の動画をアップロードするのが最適です；正面の写真だけでも可能です。",
+    "description": "顔フィールドのヘルプ"
+  },
+  "description.step2": {
+    "message": "読み上げるテキストを入力し、音声を選択するか、既存の音声をアップロードします。",
+    "description": "音声フィールドのヘルプ"
+  },
+  "description.speed": {
+    "message": "1.0は元の速度で、0.5〜2.0の間で調整可能です。",
+    "description": "スピーチ速度のヘルプ"
+  },
+  "placeholder.speech": {
+    "message": "デジタル人が読み上げる内容を入力……",
+    "description": "スクリプトのプレースホルダー"
+  },
+  "placeholder.pickTimbre": {
+    "message": "音色を選択",
+    "description": "音声選択のプレースホルダー"
+  },
+  "placeholder.voiceName": {
+    "message": "この音色に名前を付けてください",
+    "description": "音声名のプレースホルダー"
+  },
+  "button.uploadFaceVideo": {
+    "message": "顔動画をアップロード",
+    "description": "顔動画アップロードボタン"
+  },
+  "button.uploadFacePhoto": {
+    "message": "顔写真をアップロード",
+    "description": "顔写真アップロードボタン"
+  },
+  "button.uploadSpeechAudio": {
+    "message": "音声をアップロード",
+    "description": "音声アップロードボタン"
+  },
+  "button.cloneNewVoice": {
+    "message": "新しい音声をクローン",
+    "description": "音声クローンダイアログを開く"
+  },
+  "button.startClone": {
+    "message": "クローンを開始",
+    "description": "音声クローンを開始する"
+  },
+  "button.replace": {
+    "message": "置き換え",
+    "description": "アップロードしたファイルを置き換える"
+  },
+  "button.generateVideo": {
+    "message": "動画を生成",
+    "description": "生成ボタン"
+  },
+  "message.faceVideoHint": {
+    "message": "MP4 / MOV / WEBMをサポート",
+    "description": "顔動画受け入れのヒント"
+  },
+  "message.facePhotoHint": {
+    "message": "PNG / JPG / WEBPをサポート",
+    "description": "顔写真受け入れのヒント"
+  },
+  "message.audioHint": {
+    "message": "WAV / MP3 / M4Aをサポート",
+    "description": "オーディオ受け入れのヒント"
+  },
+  "message.missingFace": {
+    "message": "不足しています：顔動画または写真をアップロードしてください",
+    "description": "顔が不足しています"
+  },
+  "message.missingText": {
+    "message": "不足しています：読み上げるテキストを入力してください",
+    "description": "スクリプトが不足しています"
+  },
+  "message.missingTimbre": {
+    "message": "不足しています：音声を選択またはクローンしてください",
+    "description": "音声が不足しています"
+  },
+  "message.missingAudio": {
+    "message": "不足しています：音声をアップロードしてください",
+    "description": "音声が不足しています"
+  },
+  "message.eta": {
+    "message": "生成には通常30〜45分かかります。他のことをして待っていてください",
+    "description": "生成のETAヒント"
+  },
+  "message.voiceCloneHint": {
+    "message": "10〜20秒のクリアな人声をアップロードしてください。背景が静かであるほど効果的です",
+    "description": "音声サンプルのヒント"
+  },
+  "message.voiceCloneRunning": {
+    "message": "クローン中です。通常1〜2分かかります……",
+    "description": "音声クローン進行中"
+  },
+  "message.voiceStoredLocally": {
+    "message": "音声は現在のブラウザに保存されています。デバイスを変更したりデータを消去したりすると、再度クローンが必要です",
+    "description": "音声ブックはブラウザローカルです"
+  },
+  "message.noVoiceYet": {
+    "message": "まだ音声がありません。まずクローンを作成してください",
+    "description": "空の音声リスト"
+  },
+  "name.etaLabel": {
+    "message": "残り時間の予測",
+    "description": "残りの時間の予測"
+  },
+  "name.duration": {
+    "message": "動画の長さ",
+    "description": "レンダリングされた動画の長さ"
+  },
+  "name.outputSize": {
+    "message": "出力サイズ",
+    "description": "レンダリングされたフレームのサイズ"
+  },
+  "name.traceId": {
+    "message": "トレース ID",
+    "description": "サポート用のトレース ID"
+  },
+  "message.etaRemaining": {
+    "message": "約 {minutes} 分",
+    "description": "残りの分数"
+  },
+  "message.etaAlmostDone": {
+    "message": "ほぼ完了",
+    "description": "ほぼ完了しています"
+  },
+  "name.face": {
+    "message": "顔のソース",
+    "description": "顔ソースフィールド"
+  },
+  "name.voice": {
+    "message": "声",
+    "description": "音声ソースフィールド"
+  },
+  "name.voiceAudio": {
+    "message": "音声",
+    "description": "音声駆動音声オプション"
+  },
+  "name.voiceText": {
+    "message": "テキスト",
+    "description": "テキスト駆動音声オプション"
+  },
+  "name.engine": {
+    "message": "エンジン",
+    "description": "リップシンクエンジンのフィールド"
+  },
+  "name.resolution": {
+    "message": "解像度",
+    "description": "出力解像度フィールド"
+  },
+  "name.voiceReady": {
+    "message": "音声準備完了",
+    "description": "クローン音声準備完了ラベル"
+  },
+  "placeholder.text": {
+    "message": "アバターに話させたいテキストを入力…",
+    "description": "読み上げテキストのプレースホルダー"
+  },
+  "description.face": {
+    "message": "クリアな正面向きの顔動画（推奨）または1枚の写真をアップロードしてアバターを駆動します。",
+    "description": "顔フィールドのヘルプ"
+  },
+  "description.voiceClone": {
+    "message": "クリーンな10〜20秒の音声サンプルをアップロードして音声をクローンし、テキストを読み上げさせます。",
+    "description": "音声クローンのヘルプ"
+  },
+  "button.generate": {
+    "message": "動画を生成",
+    "description": "生成ボタン"
+  },
+  "button.uploadVideo": {
+    "message": "顔の動画をアップロード",
+    "description": "顔動画アップロードボタン"
+  },
+  "button.uploadPhoto": {
+    "message": "顔の写真をアップロード",
+    "description": "顔写真アップロードボタン"
+  },
+  "button.uploadAudio": {
+    "message": "音声をアップロード",
+    "description": "駆動音声アップロードボタン"
+  },
+  "button.clone": {
+    "message": "音声をクローン",
+    "description": "音声クローンボタン"
+  },
+  "button.cloning": {
+    "message": "クローン中…",
+    "description": "クローン処理中ボタン"
   }
 }

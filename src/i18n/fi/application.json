@@ -8,8 +8,8 @@
     "description": "Palvelun käyttö."
   },
   "badge.shared": {
-    "message": "Shared",
-    "description": "Badge on the application list marking an application that has been authorized to the current user by someone else (not owned by them)."
+    "message": "Jaettu",
+    "description": "Merkki sovellusluettelossa, joka osoittaa, että sovellus on jonkun muun valtuuttama nykyiselle käyttäjälle (ei heidän omistamansa)."
   },
   "field.expiredAt": {
     "message": "Voimassaoloaika",
@@ -144,11 +144,11 @@
     "description": "Näytetään, kun automaattinen globaalin tilauksen luominen epäonnistuu."
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 Tervetuloa BigPlayer AIiin! Olemme lahjoittaneet sinulle {credits} krediittiä, joita voit käyttää kaikissa palveluissa.",
+    "message": "🎉 Tervetuloa {brand}iin! Olemme lahjoittaneet sinulle {credits} krediittiä, joita voit käyttää kaikissa palveluissa.",
     "description": "Näytetään tervetuloviesti onnistuneen globaalin tilauksen luomisen jälkeen tai ensimmäisellä sisäänkirjautumisella. {credits} on jäljellä oleva globaalin tilauksen saldo."
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 Tervetuloa BigPlayer AIiin! Tilisi on valmis ja voit käyttää kaikkia palveluja.",
+    "message": "🎉 Tervetuloa {brand}iin! Tilisi on valmis ja voit käyttää kaikkia palveluja.",
     "description": "Näytetään tervetuloviesti, kun globaalissa tilauksessa ei ole käytettävissä ilmaisia krediittejä."
   },
   "message.notApplied": {
@@ -244,7 +244,7 @@
     "description": "Sivun otsikko, kun käyttäjä haluaa ostaa palvelun."
   },
   "title.globalBuy": {
-    "message": "BigPlayer AI yleinen pisteiden lataus",
+    "message": "{brand} yleinen pisteiden lataus",
     "description": "Sivun otsikko, kun käyttäjä haluaa ostaa yleispalvelun."
   },
   "title.applicationRemainingCount": {
@@ -256,7 +256,7 @@
     "description": "Sivun otsikko, kun käyttäjä haluaa hallita hakemuksia."
   },
   "title.applicationBalance": {
-    "message": "Erityiset pisteet - {service}",
+    "message": "Erillinen saldo - {service}",
     "description": "Viesti, joka näytetään käyttäjälle, kun hän tarkastelee hakemuksen saldoa."
   },
   "title.count": {
@@ -272,8 +272,8 @@
     "description": "Sivun otsikko, kun käyttäjä tarkastelee yleistä saldoa."
   },
   "message.globalBalanceDescription": {
-    "message": "Kun 'Salli yleinen saldo' on käytössä, instanssin saldoa käytetään automaattisesti, kun se on riittämätön.",
-    "description": "Vihje, joka selittää, että instanssin saldoa käytetään automaattisesti, kun se on riittämätön."
+    "message": "Kun 'Salli yleinen saldo' on käytössä, yleistä saldoa käytetään automaattisesti, kun erillinen saldo on riittämätön.",
+    "description": "Vihje, joka selittää, että erillistä saldoa käytetään automaattisesti, kun se on riittämätön."
   },
   "button.service": {
     "message": "Asiakaspalvelu",

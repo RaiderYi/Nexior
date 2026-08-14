@@ -7,6 +7,7 @@
       </div>
     </div>
     <el-upload
+      ref="uploader"
       v-model:file-list="fileList"
       accept=".png,.jpg,.jpeg,.gif,.bmp,.webp"
       name="file"
@@ -14,6 +15,7 @@
       :limit="1"
       :multiple="false"
       list-type="picture"
+      :before-upload="beforeUploadSizeGuard"
       :action="uploadUrl"
       :on-exceed="onExceed"
       :on-error="onError"
@@ -40,7 +42,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { ElButton, ElUpload, ElMessage, UploadFiles, UploadFile } from 'element-plus';
-import { getBaseUrlPlatform, pasteUploadMixin, uploadTrackerMixin } from '@/utils';
+import {
+  getBaseUrlPlatform,
+  pasteUploadMixin,
+  dropUploadMixin,
+  uploadTrackerMixin,
+  uploadSizeGuardMixin
+} from '@/utils';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import ImagePreview from '@/components/common/ImagePreview.vue';
 
@@ -59,7 +67,7 @@ export default defineComponent({
     InfoIcon,
     ImagePreview
   },
-  mixins: [pasteUploadMixin, uploadTrackerMixin],
+  mixins: [pasteUploadMixin, dropUploadMixin, uploadTrackerMixin, uploadSizeGuardMixin],
   data(): IData {
     return {
       fileList: [],

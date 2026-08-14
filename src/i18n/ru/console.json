@@ -39,10 +39,6 @@
     "message": "История использования",
     "description": "Текст в меню сайта, история использования относится к истории использования API услуг пользователем"
   },
-  "menu.credentials": {
-    "message": "API ключи",
-    "description": "Пункт меню консоли"
-  },
   "menu.credentialIndex": {
     "message": "Учетные данные",
     "description": "Текст в меню сайта, учетные данные относятся к доступу к API"
@@ -131,10 +127,6 @@
     "message": "Токен платформы",
     "description": "Текст в меню сайта, токен платформы относится к токену, используемому для доступа к платформе Ace Data Cloud"
   },
-  "menu.publishIndex": {
-    "message": "Центр публикаций",
-    "description": "Текст в меню сайта, центр публикаций относится к месту, где пользователи публикуют контент"
-  },
   "menu.platformRankIndex": {
     "message": "Рейтинг платформы",
     "description": "Текст в меню сайта, рейтинг платформы относится к списку доходов, рекомендованному пользователями"
@@ -151,92 +143,16 @@
     "message": "Анализ доходов",
     "description": "Текст в меню сайта, вход для анализа доходов, виден только администраторам"
   },
-  "credentials.title": {
-    "message": "API ключи",
-    "description": "Заголовок страницы API ключей"
+  "menu.connectors": {
+    "message": "Коннекторы",
+    "description": "Текст в меню сайта, коннекторы обозначают сторонние сервисы, к которым подключается пользователь."
   },
-  "credentials.guide.title": {
-    "message": "Быстрый старт",
-    "description": "Заголовок руководства"
+  "menu.skills": {
+    "message": "Навыки",
+    "description": "网站菜单中的文本，技能指的是用户安装的 Agent Skill"
   },
-  "credentials.guide.step1Title": {
-    "message": "API эндпоинт",
-    "description": "Заголовок шага 1"
-  },
-  "credentials.guide.step1Desc": {
-    "message": "Отправляйте запросы на наш единый API эндпоинт:",
-    "description": "Описание шага 1"
-  },
-  "credentials.guide.step2Title": {
-    "message": "Аутентификация",
-    "description": "Заголовок шага 2"
-  },
-  "credentials.guide.step2Desc": {
-    "message": "Используйте ваш API ключ в заголовке Authorization как Bearer token.",
-    "description": "Описание шага 2"
-  },
-  "credentials.guide.step3Title": {
-    "message": "Выбор модели",
-    "description": "Заголовок шага 3"
-  },
-  "credentials.guide.step3Desc": {
-    "message": "Укажите имя модели в теле запроса. Доступные модели — см. ниже.",
-    "description": "Описание шага 3"
-  },
-  "credentials.keys.title": {
-    "message": "Ваши API ключи",
-    "description": "Заголовок раздела API ключей"
-  },
-  "credentials.keys.empty": {
-    "message": "API ключей пока нет. Начните использовать сервис для генерации.",
-    "description": "Сообщение пустого состояния"
-  },
-  "credentials.keys.startUsing": {
-    "message": "Начать",
-    "description": "Кнопка перехода к сервисам"
-  },
-  "credentials.keys.general": {
-    "message": "Общий",
-    "description": "Метка общего credential"
-  },
-  "credentials.button.refresh": {
-    "message": "Обновить",
-    "description": "Кнопка обновления"
-  },
-  "credentials.field.service": {
-    "message": "Сервис",
-    "description": "Заголовок колонки"
-  },
-  "credentials.field.apiKey": {
-    "message": "API ключ",
-    "description": "Заголовок колонки"
-  },
-  "credentials.field.balance": {
-    "message": "Баланс",
-    "description": "Заголовок колонки"
-  },
-  "credentials.field.createdAt": {
-    "message": "Создан",
-    "description": "Заголовок колонки"
-  },
-  "credentials.example.title": {
-    "message": "Пример кода",
-    "description": "Заголовок раздела примера кода"
-  },
-  "credentials.example.hint": {
-    "message": "Замените YOUR_API_KEY на ваш фактический ключ выше.",
-    "description": "Подсказка под примером"
-  },
-  "credentials.models.title": {
-    "message": "Доступные модели",
-    "description": "Заголовок раздела моделей"
-  },
-  "credentials.models.hint": {
-    "message": "Используйте эти имена моделей в поле \"model\" ваших API запросов.",
-    "description": "Подсказка под списком моделей"
-  },
-  "credentials.message.loadFailed": {
-    "message": "Не удалось загрузить API ключи, попробуйте позже.",
-    "description": "Сообщение об ошибке"
+  "menu.browserDevices": {
+    "message": "Устройства браузера",
+    "description": "Текст в меню сайта, устройства браузера относятся к расширениям браузера, которые пользователь уже связал."
   }
 }

@@ -18,6 +18,14 @@ export interface DesktopBridge {
   onAuthExpired(cb: () => void): () => void;
   /** Open an external https link (payment Page, docs) in the system browser. */
   openExternal(url: string): Promise<void>;
+  /**
+   * Open a connector's OAuth consent page in the system browser.
+   *
+   * Optional: an older desktop shell has no such handler, and falling back to
+   * `window.open` there is a silent no-op (provider hosts aren't on the
+   * external-open allowlist), so callers must check before offering the flow.
+   */
+  openAuthorizeConnector?(url: string): Promise<void>;
   /** Subscribe to native window fullscreen changes (macOS). Fires immediately
    * with the current state, then on every enter/leave. Returns an unsubscribe. */
   onFullscreenChange(cb: (isFullscreen: boolean) => void): () => void;
@@ -27,6 +35,40 @@ export interface DesktopBridge {
   setSiteOrigin(origin: string): void;
   /** Show an OS notification via the main process (reliable when window hidden). */
   notify(title: string, body: string): Promise<void>;
+  /**
+   * Scheduled-task daemon controls.
+   *
+   * The daemon fires locally-executed scheduled tasks from the main process,
+   * which is why it needs its own copy of the token: it must keep running after
+   * the window closes. The token only ever travels INWARD — nothing here hands
+   * it back to the renderer.
+   *
+   * Optional because the renderer must keep working against a desktop build
+   * that predates the daemon — an older shell simply has no `scheduler`, which
+   * is what `canRunLocally` checks before offering local execution.
+   */
+  scheduler?: SchedulerBridge;
+}
+
+export interface SchedulerBridge {
+  /** This installation's device id + display name + autostart state. */
+  identity(): Promise<{ device_id: string; device_name: string; open_at_login: boolean }>;
+  /** Hand main the Bearer token to persist (OS-encrypted, 0600). */
+  setCredentials(token: string, siteOrigin?: string): Promise<boolean>;
+  /** Sign-out. Keeps the device id so tasks bound to this machine survive. */
+  clearCredentials(): Promise<boolean>;
+  setDeviceName(name: string): Promise<boolean>;
+  setOpenAtLogin(enabled: boolean): Promise<boolean>;
+  status(): Promise<{
+    state: 'stopped' | 'running' | 'signed_out';
+    error?: string;
+    taskCount: number;
+    schedule: { id: string; name: string; nextAt: number | null }[];
+  }>;
+  /** Run a device-bound task now, through the daemon. The cloud's own trigger
+   *  runs the loop server-side with no client attached, so it cannot execute
+   *  local tools. Optional: older desktop shells don't have it. */
+  runNow?(taskId: string): Promise<{ ok: boolean; reason?: string }>;
 }
 
 declare global {
@@ -80,6 +122,8 @@ export interface LocalExecBridge {
       enabled?: boolean;
     }[];
     computerUse?: boolean;
+    /** The user's chosen project directory (desktop only). */
+    workingDir?: string;
   }>;
   saveConfig(cfg: {
     roots: string[];
@@ -92,6 +136,8 @@ export interface LocalExecBridge {
       enabled?: boolean;
     }[];
     computerUse?: boolean;
+    /** Omit to leave the stored working directory untouched. */
+    workingDir?: string;
   }): Promise<boolean>;
   /** Per-server MCP connection status + targeted reconnect (desktop only). */
   mcp?: {
@@ -117,6 +163,9 @@ export interface LocalExecBridge {
   /** Builtin (fs/shell) tool specs for the per-tool always-allow toggles.
    * Undefined on older preloads. */
   builtinTools?(): Promise<{ name: string; description: string; mutates: boolean }[]>;
+  /** Connected MCP tool specs for the per-tool always-allow toggles.
+   * Undefined on older preloads. */
+  mcpTools?(): Promise<{ name: string; description: string; writes: boolean }[]>;
   /** Subscribe to the global panic hotkey forcing Computer Use off. Returns an
    * unsubscribe fn. Undefined on older preloads. */
   onComputerUseDisabled?(cb: () => void): () => void;

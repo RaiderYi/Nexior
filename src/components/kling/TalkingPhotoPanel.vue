@@ -18,6 +18,7 @@
           :limit="1"
           class="upload-wrapper"
           :multiple="false"
+          :before-upload="beforeUploadSizeGuard"
           :action="uploadUrl"
           list-type="picture"
           :headers="headers"
@@ -35,7 +36,7 @@
             />
           </template>
           <el-button round type="primary" size="small" class="btn btn-upload">
-            <font-awesome-icon icon="fa-solid fa-upload" class="icon mr-1" />
+            <upload-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('kling.button.uploadReferences') }}
           </el-button>
         </el-upload>
@@ -55,6 +56,7 @@
           :limit="1"
           class="upload-wrapper"
           :multiple="false"
+          :before-upload="beforeUploadSizeGuard"
           :action="uploadUrl"
           :headers="headers"
           :on-exceed="onAudioExceed"
@@ -63,7 +65,7 @@
           :on-remove="onAudioRemove"
         >
           <el-button round type="primary" size="small" class="btn">
-            <font-awesome-icon icon="fa-solid fa-upload" class="icon mr-1" />
+            <upload-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('kling.button.uploadAudio') }}
           </el-button>
         </el-upload>
@@ -88,9 +90,10 @@
     </div>
 
     <div class="flex flex-col items-center justify-center px-5 pb-5">
-      <consumption :value="consumption" :service="service" />
+      <scenario-payment-mode scenario="kling" />
+      <consumption v-if="!walletMode" :value="consumption" :service="service" />
       <el-button type="primary" class="btn w-full" round :disabled="!canGenerate" @click="onGenerate">
-        <font-awesome-icon icon="fa-solid fa-magic" class="mr-2" />
+        <magic-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('kling.button.generateTalkingPhoto') }}
       </el-button>
     </div>
@@ -98,43 +101,52 @@
 </template>
 
 <script lang="ts">
+import { MagicIcon, UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElUpload, ElButton, ElInput, ElMessage, UploadFiles, UploadFile } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Consumption from '../common/Consumption.vue';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import ImagePreview from '@/components/common/ImagePreview.vue';
 import ModelSelector from './talking-photo/ModelSelector.vue';
 import ModeSelector from './talking-photo/ModeSelector.vue';
-import { getBaseUrlPlatform, getConsumption, uploadTrackerMixin } from '@/utils';
+import { getBaseUrlPlatform, getConsumption, uploadTrackerMixin, uploadSizeGuardMixin } from '@/utils';
 import { IKlingTalkingPhotoConfig } from '@/models';
+import ScenarioPaymentMode from '../common/ScenarioPaymentMode.vue';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import { buildKlingTalkingPhotoRequest, klingOperator } from '@/operators/kling';
 
 interface IData {
   imageFiles: UploadFiles;
   audioFiles: UploadFiles;
   uploadUrl: string;
+  quoteTimer: number;
+  quoteRunId: number;
 }
 
 export default defineComponent({
   name: 'TalkingPhotoPanel',
   components: {
+    MagicIcon,
+    UploadIcon,
     ElUpload,
     ElButton,
     ElInput,
-    FontAwesomeIcon,
     Consumption,
     InfoIcon,
     ImagePreview,
     ModelSelector,
-    ModeSelector
+    ModeSelector,
+    ScenarioPaymentMode
   },
-  mixins: [uploadTrackerMixin],
+  mixins: [uploadTrackerMixin, uploadSizeGuardMixin],
   emits: ['generate'],
   data(): IData {
     return {
       imageFiles: [],
       audioFiles: [],
-      uploadUrl: getBaseUrlPlatform() + '/api/v1/files/'
+      uploadUrl: getBaseUrlPlatform() + '/api/v1/files/',
+      quoteTimer: 0,
+      quoteRunId: 0
     };
   },
   computed: {
@@ -157,9 +169,48 @@ export default defineComponent({
     },
     canGenerate(): boolean {
       return Boolean(this.config.image_url && this.config.audio_url);
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('kling').mode === 'wallet';
     }
   },
+  watch: {
+    walletMode: {
+      handler(enabled: boolean) {
+        if (enabled) this.scheduleQuote();
+      },
+      immediate: true
+    },
+    config: {
+      handler() {
+        if (this.walletMode) this.scheduleQuote();
+      },
+      deep: true
+    }
+  },
+  beforeUnmount() {
+    window.clearTimeout(this.quoteTimer);
+    this.quoteRunId += 1;
+  },
   methods: {
+    scheduleQuote() {
+      window.clearTimeout(this.quoteTimer);
+      this.quoteTimer = window.setTimeout(this.refreshQuote, 350);
+    },
+    async refreshQuote() {
+      const state = scenarioPaymentState('kling');
+      const runId = ++this.quoteRunId;
+      state.quoteLoading = true;
+      state.quoteUsdc = undefined;
+      try {
+        const quote = await klingOperator.quoteTalkingPhoto(buildKlingTalkingPhotoRequest(this.config));
+        if (runId === this.quoteRunId && state.mode === 'wallet') state.quoteUsdc = quote.amountUsdc;
+      } catch (error) {
+        console.warn('x402 quote failed', error);
+      } finally {
+        if (runId === this.quoteRunId) state.quoteLoading = false;
+      }
+    },
     commit(patch: Partial<IKlingTalkingPhotoConfig>) {
       this.$store.commit('kling/setTalkingPhotoConfig', { ...this.config, ...patch });
     },

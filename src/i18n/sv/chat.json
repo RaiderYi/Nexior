@@ -79,36 +79,36 @@
     "message": "Stort språkmodell utvecklad av Zhiyu AI",
     "description": "Beskrivning av GLM-modellgruppen"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Modellnamnet för tjänsten, det vill säga GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Modellnamnet för tjänsten, det vill säga GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Den senaste generationens flaggskepp GPT 5.5-modell",
-    "description": "Beskrivning av GPT 5.5-modellen"
+  "model.56SolDescription": {
+    "message": "Den senaste generationens flaggskepp GPT 5.6 Sol-modell",
+    "description": "Beskrivning av GPT 5.6 Sol-modellen"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Modellnamnet för tjänsten, det vill säga GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Modellnamnet för tjänsten, det vill säga GPT 5.6"
   },
-  "model.54Description": {
-    "message": "Den senaste generationens flaggskepp GPT 5.4-modell",
-    "description": "Beskrivning av GPT 5.4-modellen"
+  "model.56TerraDescription": {
+    "message": "Den senaste generationens flaggskepp GPT 5.6-modell",
+    "description": "Beskrivning av GPT 5.6-modellen"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Modellnamnet för tjänsten, det vill säga GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Modellnamnet för tjänsten, det vill säga GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Snabbare och lättare GPT 5.4-modell",
-    "description": "Beskrivning av GPT 5.4 Mini-modellen"
+  "model.56LunaDescription": {
+    "message": "Snabbare och lättare GPT 5.6-modell",
+    "description": "Beskrivning av GPT 5.6 Luna-modellen"
   },
   "model.freeTag": {
     "message": "Gratis",
     "description": "Märke som visas bredvid gratismodeller i modellväljaren"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Beskrivning av DeepSeek Chat-modellen"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Beskrivning av DeepSeek Reasoner-modellen"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Beskrivning av DeepSeek V3.2 experimentella modellen"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Modellnamnet för tjänsten, det vill säga DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Beskrivning av DeepSeek V4 Flash-modellen"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Modellnamnet för tjänsten, det vill säga Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Beskrivning av Grok 4-modellen"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Modellnamnet för tjänsten"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Snabbare och lättare modell",
     "description": "Beskrivning av Gemini 2.5 Flash-modellen"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Modellnamnet för tjänsten, det vill säga Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Den senaste snabba modellen, stödjer inferens, visualisering och verktygsanrop",
+    "description": "Beskrivning av Gemini 3.6 Flash-modellen"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Modellnamnet för tjänsten, det vill säga Gemini 2.5 Flash"
@@ -195,12 +203,20 @@
     "message": "Snabbare och lättare modell",
     "description": "Beskrivning av Gemini 2.5 Flash-modellen"
   },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Det mest avancerade modellen hittills",
+    "description": "Beskrivning av Claude Opus 5 modellen"
+  },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
     "description": "Modellnamnet för tjänsten, det vill säga Claude Opus 4.8"
   },
   "model.claudeOpus48Description": {
-    "message": "För närvarande den mest avancerade modellen",
+    "message": "General-purpose K2 model for compatible workflows",
     "description": "Beskrivning av modellen Claude Opus 4.8"
   },
   "model.claudeSonnet46": {
@@ -219,16 +235,24 @@
     "message": "Lätt och snabb modell",
     "description": "Beskrivning av Claude Haiku 4.5-modellen"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Namnet på tjänstemodellen, dvs. Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Utmärkt för lång kontext, komplex slutledning och kreativt skrivande",
-    "description": "Beskrivning av Claude Fable 5-modellen"
+  "model.kimiK3Description": {
+    "message": "Flaggskeppmodell som stöder inferens, visuell och 1 miljon tokens kontext",
+    "description": "Beskrivning av Kimi K3-modellen"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Modell för inferens och visuell kompatibilitet med K2 arbetsflöden",
+    "description": "Beskrivning av Kimi K2.6 modellen"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Modellnamn för tjänsten, dvs Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +260,7 @@
     "description": "Beskrivning av Kimi K2.5-modellen"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 resonemang",
     "description": "Modellnamn för tjänsten, dvs Kimi K2 resonemang"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Beskrivning av Kimi K2 resonemangsmodellen"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 turbo resonemang",
     "description": "Modellnamn för tjänsten, dvs Kimi K2 turbo resonemang"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Beskrivning av Kimi K2 turbo resonemangsmodellen"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Modellnamn för tjänsten, dvs GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Beskrivning av GLM 5.1-modellen"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Modellnamn för tjänsten, dvs GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "Filuppladdning misslyckades, försök igen senare",
     "description": "Meddelande på webbsidan som informerar användaren om att filuppladdning misslyckades, försök igen senare"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "Filstorlek {size} överstiger gränsen {max}, vänligen komprimera och försök igen",
+    "description": "Meddelande på webben som informerar användaren om att filen överskrider den maximala uppladdningsstorleken och att den behöver komprimeras innan den kan laddas upp igen."
   },
   "message.notApplied": {
     "message": "Du har inte ansökt om denna tjänst, vänligen ansök först",
@@ -583,114 +611,374 @@
     "message": "Kopplingsbehörighet hoppad över",
     "description": "Kortets nederdel som visas efter att användaren har hoppat över behörighet"
   },
+  "browserTool.title": {
+    "message": "Webbläsaraktivitet",
+    "description": "Standardtiteln för BrowserDevice verktygsaktivitet"
+  },
+  "browserTool.state.starting_session": {
+    "message": "Startar webbläsarsession",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Ansluter webbläsartab",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "Webbläsaren är redo",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "Webbläsarenheten är offline",
+    "description": "Den valda webbläsarenheten är inte online"
+  },
+  "browserTool.state.device_busy": {
+    "message": "Webbläsarenheten är upptagen",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Godkännande krävs i Studio",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "Utförs i webbläsaren",
+    "description": "Webbläsarenheten utför verktyget"
+  },
+  "browserTool.state.completed": {
+    "message": "Genomfört",
+    "description": "Webbläsarverktyget har slutförts"
+  },
+  "browserTool.state.stopped": {
+    "message": "Webbläsarsession har stoppats",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "Webbläsarförfrågan har gått ut",
+    "description": "Förfrågan för webbläsarverktyget har gått ut"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Stäng utvecklarverktyg för att fortsätta",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Utfallet är okänt, vänligen verifiera och försök igen",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "Webbläsaroperation misslyckades",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "Stoppa",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Hantera enheter",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Stoppa andra sessioner",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Stäng utvecklarverktyg",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Visa godkännande",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "Schemalagda uppgifter",
+    "description": "Sidofältets ingång för schemalagda uppgifter"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Schemalagda uppgifter",
+    "description": "Schemalagda uppgifter sida - Flik för uppgifter"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Körningshistorik",
+    "description": "Schemalagda uppgifter sida - Flik för alla körningshistorik"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "Alla",
+    "description": "Körningshistorikens statusfilter - Alla"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "Schemalagda uppgifter",
+    "description": "Sidans titel"
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "Skapa ny",
+    "description": "Knapp för att skapa en schemalagd uppgift"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "Redigera uppgift",
+    "description": "Titel för redigeringsdialogrutan"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Kopiera uppgift",
+    "description": "Knapp för att kopiera en uppgift och förifylla det nya formuläret baserat på en befintlig uppgift"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "Inga schemalagda uppgifter än, klicka på «Skapa ny» för att skapa en",
+    "description": "Tomt tillstånd meddelande"
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "Har ännu inte körts",
+    "description": "Ingen körhistorik"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "Laddning misslyckades",
+    "description": "Felmeddelande vid laddning"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "Bekräfta borttagning av «{name}»? Uppgiften kommer att sluta köras efter borttagning.",
+    "description": "Bekräftelse för borttagning"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Utlös nu",
+    "description": "Kör uppgiften omedelbart"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Utlöst, resultatet kan ses i körningshistoriken senare.",
+    "description": "Meddelande vid lyckad manuell utlösning"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Utlösning misslyckades, försök igen senare.",
+    "description": "Meddelande vid misslyckad manuell utlösning"
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "Visa resultat",
+    "description": "Navigera till konversationen"
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "Körningshistorik",
+    "description": "Visa körningshistorik längst ner på kortet"
   },
   "scheduledTasks.noConversation": {
     "message": "Ingen konversationshistorik",
     "description": "Körning utan kopplad konversation (äldre version av körning)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60s jitter",
+    "description": "Förklaring av tidsjitter"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "Har körts {count} gånger",
+    "description": "Antal körningar"
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "Körs",
+    "description": "Aktiverad status"
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "Pausad",
+    "description": "Inaktiverad status"
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "Fel",
+    "description": "Felstatus"
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "I kö",
+    "description": "Köstatus"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "Körs",
+    "description": "Körs status"
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "Lyckad",
+    "description": "Lyckad status"
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "Misslyckades",
+    "description": "Misslyckad status"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Okänt",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Stegsgräns uppnådd"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Budgetgräns uppnådd"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Loop för verktygsanrop upptäckt"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Prompten är för lång"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Avbruten"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Avbruten"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Väntar på din inmatning"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Fel"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Okänt fel"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Otillräckligt saldo"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Faktureringsauktoriseringen misslyckades"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Obehörig"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Tidsgräns överskriden"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Internt fel"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "Behöver åtgärd",
+    "description": "Status som kräver användaråtgärd"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Webbläsarens enhet är offline",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Webbläsartillståndet har ändrats, vänligen redigera denna uppgift",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "Dagligen",
+    "description": "Körs varje dag"
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "Varje minut"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "Varje timme",
+    "description": "Körs varje timme"
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "Veckovis",
+    "description": "Körs varje vecka"
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Cron-uttryck",
+    "description": "Anpassad cron"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Varje",
+    "description": "Körs med fasta intervall"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "Minut",
+    "description": "Intervall enhet: minut"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "Timme",
+    "description": "Intervall enhet: timme"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "Dag",
+    "description": "Intervall enhet: dag"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "Utlösningsminut",
+    "description": "Vilken minut varje timme som ska utlösa"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "Vilken minut varje timme som ska utlösa (0–59)",
+    "description": "Förklaring av minut varje timme"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Kör en gång med fast tid mellan varje körning (minst 1 minut)",
+    "description": "Förklaring av fast intervall"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Standard 5-delat Cron-uttryck: Minut Timme Dag Månad Vecka",
+    "description": "Förklaring av Cron"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Utförandefrekvens: {text}",
+    "description": "Frekvensförhandsvisning"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "Varje {n} minut",
+    "description": "Mänskligt läsbart: varje N minut"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "Varje {n} timme",
+    "description": "Mänskligt läsbart: varje N timme"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "Varje {n} dag",
+    "description": "Mänskligt läsbart: varje N dag"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "Varje timme vid {n} minut",
+    "description": "Mänskligt läsbart: varje timme vid N minut"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "Varje dag {time}",
+    "description": "Mänskligt läsbart: varje dag vid en viss tid"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "Varje vecka {weekday} {time}",
+    "description": "Mänskligt läsbart: varje vecka på en viss dag vid en viss tid"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron: {cron}",
+    "description": "Mänskligt läsbart: rå Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "Engångs {time}",
+    "description": "Mänskligt läsbart: engångs"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "Uppgiftsnamn",
+    "description": "Namn fält"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "Ex: Daglig informationssammanställning",
+    "description": "Namn platshållare"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "Modell",
+    "description": "Val av modell"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "Promptord",
+    "description": "Fält för promptord"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "Ange frågan eller kommandot som ska köras schemalagt, stöder {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variabler",
+    "description": "Prompt platshållare"
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "Stöder mallvariabler: {'{{date}}'} dagens datum, {'{{run_count}}'} antal körningar, {'{{last_output}}'} sammanfattning av senaste resultat",
+    "description": "Förklaring av prompt"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "Utförandefrekvens",
+    "description": "Frekvensval"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "Utförande tid",
+    "description": "Tidsfält"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "Veckodag",
+    "description": "Veckodagsfält"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Cron-uttryck",
+    "description": "Fält för cron-uttryck"
   },
   "scheduledTasks.form.skills": {
     "message": "Auktorisera Skills",
@@ -704,6 +992,25 @@
     "message": "Valda Skills kan köras i bakgrunden utan manuell bekräftelse; icke-valda Skills kan fortfarande endast förhandsgranskas eller vänta på bekräftelse.",
     "description": "Beskrivning av auktorisering av skills"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "Webbläsaranslutning",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "Kan utföra följande externa bieffekter: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Obemannad auktoriseringens utgångstid: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Vänligen välj en online och kompatibel webbläsaranslutning innan du sparar",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Ej ansluten",
     "description": "skill saknar anslutning"
@@ -737,19 +1044,20 @@
     "description": "Text för auktoriseringsbekräftelse"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "Du måste först binda färdigheten",
+    "description": "Dialogtitel som visas när en schemalagd uppgift har en auktoriserad färdighet/MCP som ännu inte är bunden för användaren."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "Färdigheten „{name}” har ännu inte bundits eller aktiverats på ditt konto. Om du inte binder den först kan den schemalagda uppgiften kanske inte använda den när den körs automatiskt i bakgrunden. Vi rekommenderar att du binder den först innan du sparar, eller klicka på knappen nedan för att fortfarande spara.",
+    "description": "Varningsmeddelande; {name} är namnet på färdigheten/MCP. Förklarar att den inte är bunden och erbjuder att spara ändå."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "Vill du fortfarande spara",
+    "description": "Bekräfta-knapp som sparar den schemalagda uppgiften ändå, utan att kontrollera bindningen (tvinga)."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "Vänligen fyll i uppgiftsnamn och prompt",
+    "description": "Validering av obligatoriska fält"
   },
   "artifacts.navTitle": {
     "message": "Utdata",
@@ -786,6 +1094,18 @@
   "artifacts.hide": {
     "message": "Dölj",
     "description": "Knapp för att dölja utdata"
+  },
+  "artifacts.unhide": {
+    "message": "Återställ dolda",
+    "description": "Knappen för att återställa en dold Artifact"
+  },
+  "artifacts.showHidden": {
+    "message": "Visa dolda",
+    "description": "Växeln för att visa dolda Artifacts i filtreringsfältet"
+  },
+  "artifacts.hiddenBadge": {
+    "message": "Dold",
+    "description": "Märket för att en Artifact har blivit dolt"
   },
   "artifacts.delete": {
     "message": "Ta bort",
@@ -915,24 +1235,532 @@
     "message": "Du tittar på en delad konversation. Klicka ovan för att chatta med AI själv.",
     "description": "Förklarande text under den delade offentliga sidan"
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Mål inte uppnått",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Resultat väntar på bekräftelse",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Okänd körningsstatus"
+  },
+  "actions.rename": {
+    "message": "Döp om",
+    "description": "Menyalternativ för att döpa om konversationen."
+  },
+  "actions.renameTitle": {
+    "message": "Omdöp konversation",
+    "description": "Titel på dialogrutan för att omdöpa konversationen."
+  },
+  "actions.renameEmpty": {
+    "message": "Vänligen ange ett namn",
+    "description": "Meddelande när namnet är tomt vid omdöpning."
+  },
+  "actions.renameSuccess": {
+    "message": "Omdöpt",
+    "description": "Meddelande när konversationen har omdöpts framgångsrikt."
+  },
+  "actions.renameFailed": {
+    "message": "Omdöpning misslyckades, vänligen försök igen senare",
+    "description": "Meddelande när omdöpning av konversationen misslyckas."
+  },
+  "actions.deleteConfirm": {
+    "message": "Bekräfta borttagning av denna konversation? Borttagning kan inte återställas.",
+    "description": "Bekräftelsemeddelande innan en konversation tas bort."
+  },
+  "actions.deleteSuccess": {
+    "message": "Borttagen",
+    "description": "Meddelande när konversationen har tagits bort framgångsrikt."
+  },
+  "actions.deleteFailed": {
+    "message": "Borttagning misslyckades, vänligen försök igen senare",
+    "description": "Meddelande när borttagning av konversationen misslyckas."
+  },
+  "actions.tokenMissing": {
+    "message": "Token finns inte, vänligen logga in igen",
+    "description": "Felmeddelande när autentiseringstoken saknas."
+  },
+  "actions.conversationMissing": {
+    "message": "Konversationen finns inte",
+    "description": "Felmeddelande när den angivna konversationen inte finns."
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Körningsplats",
+    "description": "Välj om uppgiften ska köras i molnet eller lokalt"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Moln",
+    "description": "Molnbaserad körningsläge"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "Denna enhet",
+    "description": "Lokal körningsläge"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "Denna enhet ({device})",
+    "description": "Lokal körningsläge med enhetsnamn"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "Utlöses av plattformen i tid, körs även om datorn är avstängd.",
+    "description": "Förklaring av molnbaserat läge"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "Utlöses av denna enhet i tid, kan läsa och skriva lokala filer, köra lokala kommandon. Körs inte om enheten stängs av eller applikationen avslutas, missade körningar registreras men körs inte om.",
+    "description": "Förklaring av lokalt läge"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "Mobilversionen stöder för närvarande inte lokal körning",
+    "description": "Anledningen till att mobilversionen inte stöder lokal körning"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Lokal körning kräver skrivbordsversionen av applikationen",
+    "description": "Anledningen till att webbversionen inte stöder lokal körning"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Kan inte hämta lokal information, vänligen starta om applikationen och försök igen",
+    "description": "Information om skrivbordsenhet är inte tillgänglig"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Lokal verktygsbehörighet",
+    "description": "Fält för lokal verktygsbehörighet"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Välj vilka lokala verktyg som denna uppgift får använda",
+    "description": "Platsinnehåll för val av lokala verktyg"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "Ingen användare kommer att bekräfta behörighet under obevakad körning, endast verktyg som är markerade här kommer att vara tillgängliga.",
+    "description": "Förklaring av lokal verktygsbehörighet"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Har hoppats över",
+    "description": "Körstatus: Enheten var inte online vid den tidpunkten, kördes inte"
+  },
+  "workingDir.choose": {
+    "message": "Välj arbetskatalog",
+    "description": "Knappar ovanför chattinmatningsfältet på skrivbordet: Välj projektmappen för AI-operationer; meddelanden kan inte skickas innan ett val har gjorts"
+  },
+  "workingDir.switchHint": {
+    "message": "Klicka för att byta arbetskatalog",
+    "description": "Svävande tips för den valda arbetskatalogen, visar sökvägen"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "Detta är en lokal uppgift och kan endast köras manuellt i skrivbordsversionen på den bundna enheten",
+    "description": "Lokal uppgift kan inte utlösas manuellt på en icke-bunden enhet"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "Denna uppgift är bunden till en annan enhet",
+    "description": "Lokal uppgift tillhör inte den aktuella enheten"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Lokal schemaläggning är inte inloggad, vänligen logga in igen och försök",
+    "description": "Daemon har inte några autentiseringsuppgifter"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "Denna uppgift körs redan",
+    "description": "Uppgiften är redan i utförande"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Bekräfta",
+    "description": "Bekräfta åtgärden innan den utförs"
+  },
+  "actionConfirmation.cancel": {
+    "message": "Avbryt",
+    "description": "Bekräfta avbrytande av kortet innan åtgärden utförs"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Bekräftad, åtgärd pågår",
+    "description": "Bekräftelsekort före åtgärd: Användaren har bekräftat, efterföljande åtgärd pågår"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Avbruten",
+    "description": "Bekräftelsekort: Meddelande efter att användaren har avbrutit"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Laddar mediavisning...",
+    "description": "Bekräftelsekort före åtgärd: Medialaddningsstatus"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Kan inte spela förhandsvisning här",
+    "description": "Bekräftelsekort före åtgärd: Titel för misslyckad medieuppspelning"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "Medielänken kan ha gått ut, eller så stöder den aktuella webbläsaren inte detta format. Vänligen öppna originalfilen för att bekräfta innan publicering.",
+    "description": "Bekräftelsekort före åtgärd: Förklaring till misslyckad medieuppspelning"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Öppna originalfil",
+    "description": "Bekräftelsekort före åtgärd: Öppna medielänk"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Bekräfta före publicering",
+    "description": "TikTok publiceringsbekräftelsekortets statusetikett"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Publicera på TikTok",
+    "description": "Titel för TikTok publiceringsbekräftelsekort"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "Bekräfta för att publicera denna video på ditt TikTok-konto.",
+    "description": "Sammanfattning av TikTok publiceringsbekräftelsekort"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Publicera",
+    "description": "TikTok publiceringsbekräftelsekortets inlämningsknapp"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Publicera till",
+    "description": "TikTok publiceringsbekräftelse: Kontot etikett"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Ansluten",
+    "description": "TikTok publiceringsbekräftelse: Kontoinformation om anslutningsstatus"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Kontoinformation är inte tillgänglig",
+    "description": "TikTok publiceringsbekräftelse: Platshållartext vid saknad kontonamn"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Publiceringsinställningar är inte klara",
+    "description": "TikTok publiceringsbekräftelse: Titel för saknad skaparinformation"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "Det gick inte att läsa den synlighet som kontot stöder. Vänligen avbryt och låt assistenten hämta TikTok publiceringsinställningar på nytt.",
+    "description": "TikTok publiceringsbekräftelse: Förklaring till saknad skaparinformation"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "Videons längd uppfyller inte kontots begränsning",
+    "description": "TikTok publiceringsbekräftelse: Titel för videor som är för långa"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Publicera innehåll",
+    "description": "TikTok publiceringsbekräftelse: Titel för innehållsinställningar"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Obligatoriskt fält",
+    "description": "TikTok publiceringsbekräftelse: Förklaring till obligatoriska fält"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Text",
+    "description": "TikTok publiceringsbekräftelse: Textinmatningsfältets etikett"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Skriv en bildtext – hashtaggar och omnämnanden stöds",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Vem kan se",
+    "description": "TikTok publiceringsbekräftelse: Etikett för synlighetsinställningar"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Vänligen välj…",
+    "description": "TikTok publiceringsbekräftelse: Platshållare för synlighetsinställningar, enligt TikToks krav får det inte finnas något standardvärde"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "Ingen tillgänglig synlighet har erhållits, publicering kan för närvarande inte göras",
+    "description": "TikTok publiceringsbekräftelse: Ingen synlighet tillgänglig"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Alla",
+    "description": "TikTok synlighet: Offentlig"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Ömsesidigt följande vänner",
+    "description": "TikTok synlighet: Endast ömsesidigt följande vänner kan se"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "Mina följare",
+    "description": "TikTok synlighet: Endast följare kan se"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Endast jag",
+    "description": "TikTok synlighet: Endast jag kan se"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Tillåt interaktioner",
+    "description": "TikTok publiceringsbekräftelse: Gruppetikett för interaktionsinställningar"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Endast de interaktionssätt som kontot för närvarande tillåter kan aktiveras; som standard är alla avstängda.",
+    "description": "TikTok publiceringsbekräftelse: Förklaring till interaktionsinställningar"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "Detta konto har stängts av: {list}",
+    "description": "TikTok publiceringsbekräftelse: Interaktionsmöjligheter för ett avstängt konto"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Kommentarer",
+    "description": "TikTok interaktionsinställning: Tillåt kommentarer"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Duett",
+    "description": "TikTok interaktionsinställning: Tillåt duetter"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Sammanfogning",
+    "description": "TikTok interaktionsinställning: Tillåt stitch"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Innehållsavslöjande",
+    "description": "TikTok publiceringsbekräftelse: Titel för kommersiellt innehåll"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "Detta är kommersiellt innehåll",
+    "description": "TikTok publiceringsbekräftelse: Avslöjande för kommersiellt innehåll"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Om innehållet främjar ett varumärke, produkt eller tjänst, vänligen avslöja det korrekt.",
+    "description": "TikTok publiceringsbekräftelse: Beskrivning av kommersiell innehållsavslöjande"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "ditt varumärke",
+    "description": "TikTok kommersiellt innehåll: marknadsför ditt eget företag"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Marknadsför dig själv eller ditt företag",
+    "description": "TikTok kommersiellt innehåll: Förklaring för att marknadsföra eget företag"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Märkesinnehåll",
+    "description": "TikTok kommersiellt innehåll: Betald samarbeten"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Främja en tredje part för betalning, gåvor eller andra fördelar",
+    "description": "TikTok kommersiellt innehåll: Beskrivning av betald samverkan"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Videon kommer att märkas som 'Reklaminnehåll'",
+    "description": "TikTok kommersiellt innehåll: Meddelande efter att ditt märke har valts"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Videon kommer att märkas som 'Betalt samarbete'",
+    "description": "TikTok kommersiellt innehåll: Meddelande efter att märkesinnehåll har valts"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Märkesinnehållets synlighet kan inte ställas in på 'Endast jag'",
+    "description": "TikTok publiceringsbekräftelse: Meddelande om att märkesinnehåll och 'Endast jag' är ömsesidigt uteslutande"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "Videon överskrider kontots tidsgräns ({max} sekunder)",
+    "description": "TikTok publiceringsbekräftelse: Felmeddelande för för lång video"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Vänligen bekräfta före publicering",
+    "description": "TikTok publiceringsbekräftelse: Policybeskrivningstext"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "Genom att klicka på \"Publicera\" bekräftar du att du har rätt att använda innehållet och musiken samt godkänner TikToks villkor för musikbruk.",
+    "description": "TikTok publiceringsbekräftelse: Beskrivning av allmänna innehållspolicy"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "Genom att klicka på \"Publicera\" bekräftar du att informationen om avslöjande är korrekt och godkänner TikToks policy för varumärkesinnehåll och villkor för musikbruk.",
+    "description": "TikTok publiceringsbekräftelse: Beskrivning av policy för varumärkesinnehåll"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Se \"Bekräftelse av musikbruk\"",
+    "description": "TikTok publiceringsbekräftelse: Länk till bekräftelse av musikbruk"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Se \"Policy för varumärkesinnehåll\"",
+    "description": "TikTok publiceringsbekräftelse: Länk till policy för varumärkesinnehåll"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Publiceringsinformation är ofullständig, vänligen avbryt och generera bekräftelsekortet igen",
+    "description": "TikTok publiceringsbekräftelse: Orsak till inaktivering av knapp vid saknade detaljer"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Vänligen använd en video som uppfyller kontots tidsbegränsning",
+    "description": "TikTok publiceringsbekräftelse: Anledningen till att knappen är inaktiverad för videor som är för långa"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Vänligen välj vem som kan se denna video",
+    "description": "TikTok publiceringsbekräftelse: Orsak till inaktivering av knapp vid ej vald synlighet"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Vänligen välj typ av kommersiellt innehåll",
+    "description": "TikTok publiceringsbekräftelse: Orsak till inaktivering av knapp vid ej vald typ av avslöjande"
+  },
+  "scheduledTemplates.title": {
+    "message": "Automatiseringsmallar",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Skapa nytt från mall",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Anpassad skapelse",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Låt AI slutföra arbetet i tid",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Välj en officiell mall och koppla de nödvändiga kontona. Uppgiften kan köras omedelbart på kortet efter skapande.",
+    "description": "Vägledning för skapande och aktivering av schemalagda uppgiftsmallar"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Bläddra bland mallar",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Välj mall",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Enkel konfiguration",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Anslut konto",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.search": {
+    "message": "Sök mallar",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Rekommenderat",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Tillgänglig för användning",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Behöver ansluta {count} objekt",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Körtid",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Förbered nödvändig anslutning",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "Ingen anslutning till andra konton behövs",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Ansluten",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Inte ansluten än",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Välj konto",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Gå till anslutning",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.create": {
+    "message": "Skapa uppgift",
+    "description": "Vägledning för skapande och aktivering av schemalagda uppgiftsmallar"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Uppgiftsskapande misslyckades, vänligen kontrollera konfigurationen eller anslutningen",
+    "description": "Vägledning för skapande och aktivering av schemalagda uppgiftsmallar"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Uppgiften har skapats och hålls avstängd. Vänligen kör den omedelbart på kortet först, aktivera först efter framgång.",
+    "description": "Vägledning för skapande och aktivering av schemalagda uppgiftsmallar"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "Kan inte aktiveras för tillfället. Vänligen kör uppgiften omedelbart och bekräfta framgång; vissa mallar kräver också att en specifik utkast skapas.",
+    "description": "Vägledning för skapande och aktivering av schemalagda uppgiftsmallar"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Misslyckades med att ladda mallar, försök igen senare",
+    "description": "Kopiering av schemalagd uppgift mall centrum"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "Alla",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Marknadsföringstillväxt",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Innehållsskapande",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Arbetseffektivitet",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Intelligens och forskning",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Utveckling och drift",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Personlig assistent",
+    "description": "Kopiering av schemalagd uppgiftsmall centrum"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "Publicering innebär att du godkänner TikToks 'Musikanvändningsbekräftelse'",
+    "description": "TikTok publiceringsbekräftelse: Utsaga om musikanvändning"
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "Publicering innebär att du godkänner TikToks 'Märkesinnehållspolicy' och 'Musikanvändningsbekräftelse'",
+    "description": "TikTok publiceringsbekräftelse: Utsaga efter att märkesinnehåll har valts"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "Modellnamnet för tjänsten, det vill säga Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "Den mest avancerade modellen hittills",
     "description": "Beskrivning av Claude Opus 4.7-modellen"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "Tidszon"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "Nya uppgifter använder som standard den här enhetens tidszon: {timezone}. När den har sparats förblir den knuten till uppgiften."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Välj en giltig IANA-tidszon"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Föregående steg",
+    "description": "Navigering och anslutningsvägledning för schemalagda mallar"
+  },
+  "scheduledTemplates.next": {
+    "message": "Nästa steg",
+    "description": "Navigering och anslutningsvägledning för schemalagda mallar"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Vi kommer endast att använda de anslutningar som denna mall behöver; redan anslutna konton kommer att återanvändas automatiskt.",
+    "description": "Navigering och anslutningsvägledning för schemalagda mallar"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "Denna mall använder endast inbyggda funktioner och kan skapa uppgifter direkt.",
+    "description": "Vägledning för skapande och aktivering av schemalagda uppgiftsmallar"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Fortsätt efter att ha slutfört anslutningen.",
+    "description": "Navigering och anslutningsvägledning för schemalagda mallar"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "Denna uppgift kommer att använda det konto du valt.",
+    "description": "Navigering och anslutningsvägledning för schemalagda mallar"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Körs via auktoriserad MCP-anslutning, ingen ytterligare kontobindning krävs.",
+    "description": "Navigering och anslutningsvägledning för schemalagda mallar"
   }
 }

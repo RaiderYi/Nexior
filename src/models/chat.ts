@@ -6,95 +6,57 @@ import {
   CHAT_MODEL_NAME_DEEPSEEK32_CHAT,
   CHAT_MODEL_NAME_DEEPSEEK_V4_FLASH,
   CHAT_MODEL_NAME_DEEPSEEK_REASONER,
-  CHAT_MODEL_NAME_DEEPSEEK_R1_0528,
-  CHAT_MODEL_NAME_DEEPSEEK_V3_250324,
   CHAT_MODEL_NAME_GROK_3,
-  CHAT_MODEL_NAME_GPT_5_5,
-  CHAT_MODEL_NAME_GPT_5_4,
-  CHAT_MODEL_NAME_GPT_5_4_MINI,
-  CHAT_MODEL_NAME_GPT_4_1,
-  CHAT_MODEL_NAME_GPT_4O,
-  CHAT_MODEL_NAME_GPT_5_1,
-  CHAT_MODEL_NAME_GPT_5_2,
-  CHAT_MODEL_NAME_GPT_5_MINI,
-  CHAT_MODEL_NAME_GPT_5_NANO,
-  CHAT_MODEL_NAME_O1,
-  CHAT_MODEL_NAME_O3,
+  CHAT_MODEL_NAME_GPT_5_6_SOL,
+  CHAT_MODEL_NAME_GPT_5_6_TERRA,
+  CHAT_MODEL_NAME_GPT_5_6_LUNA,
   CHAT_MODEL_NAME_GROK_4,
   CHAT_MODEL_NAME_GEMINI_2_5_FLASH,
-  CHAT_MODEL_NAME_GEMINI_2_5_FLASH_LITE,
-  CHAT_MODEL_NAME_GEMINI_2_0_FLASH,
   CHAT_MODEL_NAME_GEMINI_2_5_PRO,
   CHAT_MODEL_NAME_GEMINI_3_0_PRO,
   CHAT_MODEL_NAME_GEMINI_3_1_PRO,
   CHAT_MODEL_NAME_GEMINI_3_5_FLASH,
-  CHAT_MODEL_NAME_GEMINI_3_FLASH_PREVIEW,
+  CHAT_MODEL_NAME_GEMINI_3_6_FLASH,
+  CHAT_MODEL_NAME_CLAUDE_OPUS_5,
   CHAT_MODEL_NAME_CLAUDE_OPUS_4_8,
-  CHAT_MODEL_NAME_CLAUDE_FABLE_5,
   CHAT_MODEL_NAME_CLAUDE_SONNET_4_6,
-  CHAT_MODEL_NAME_CLAUDE_SONNET_5,
-  CHAT_MODEL_NAME_CLAUDE_OPUS_4_6,
-  CHAT_MODEL_NAME_CLAUDE_OPUS_4_7,
-  CHAT_MODEL_NAME_CLAUDE_3_7_SONNET,
   CHAT_MODEL_NAME_CLAUDE_HAIKU_4_5,
+  CHAT_MODEL_NAME_KIMI_K3,
+  CHAT_MODEL_NAME_KIMI_K2_6,
   CHAT_MODEL_NAME_KIMI_K2_5,
   CHAT_MODEL_NAME_KIMI_K2_THINKING,
   CHAT_MODEL_NAME_KIMI_K2_THINKING_TURBO,
-  CHAT_MODEL_NAME_KIMI_K2_INSTRUCT_0905,
-  CHAT_MODEL_NAME_KIMI_K2_TURBO_PREVIEW,
   CHAT_MODEL_NAME_GLM_5_1,
-  CHAT_MODEL_NAME_GLM_4_7,
-  CHAT_MODEL_NAME_GLM_5,
-  CHAT_MODEL_NAME_GLM_5_TURBO,
-  CHAT_MODEL_NAME_GLM_4_6
+  CHAT_MODEL_NAME_GLM_4_7
 } from '@/constants';
 
 export type IChatModelName =
-  | typeof CHAT_MODEL_NAME_GPT_5_5
-  | typeof CHAT_MODEL_NAME_GPT_5_4
-  | typeof CHAT_MODEL_NAME_GPT_5_4_MINI
-  | typeof CHAT_MODEL_NAME_GPT_4_1
-  | typeof CHAT_MODEL_NAME_GPT_4O
-  | typeof CHAT_MODEL_NAME_GPT_5_1
-  | typeof CHAT_MODEL_NAME_GPT_5_2
-  | typeof CHAT_MODEL_NAME_GPT_5_MINI
-  | typeof CHAT_MODEL_NAME_GPT_5_NANO
-  | typeof CHAT_MODEL_NAME_O1
-  | typeof CHAT_MODEL_NAME_O3
+  | typeof CHAT_MODEL_NAME_GPT_5_6_SOL
+  | typeof CHAT_MODEL_NAME_GPT_5_6_TERRA
+  | typeof CHAT_MODEL_NAME_GPT_5_6_LUNA
   | typeof CHAT_MODEL_NAME_DEEPSEEK_CHAT
   | typeof CHAT_MODEL_NAME_DEEPSEEK32_CHAT
   | typeof CHAT_MODEL_NAME_DEEPSEEK_V4_FLASH
   | typeof CHAT_MODEL_NAME_DEEPSEEK_REASONER
-  | typeof CHAT_MODEL_NAME_DEEPSEEK_R1_0528
-  | typeof CHAT_MODEL_NAME_DEEPSEEK_V3_250324
   | typeof CHAT_MODEL_NAME_GROK_4
   | typeof CHAT_MODEL_NAME_GROK_3
   | typeof CHAT_MODEL_NAME_GEMINI_3_1_PRO
   | typeof CHAT_MODEL_NAME_GEMINI_3_0_PRO
   | typeof CHAT_MODEL_NAME_GEMINI_3_5_FLASH
+  | typeof CHAT_MODEL_NAME_GEMINI_3_6_FLASH
   | typeof CHAT_MODEL_NAME_GEMINI_2_5_PRO
   | typeof CHAT_MODEL_NAME_GEMINI_2_5_FLASH
-  | typeof CHAT_MODEL_NAME_GEMINI_2_5_FLASH_LITE
-  | typeof CHAT_MODEL_NAME_GEMINI_2_0_FLASH
-  | typeof CHAT_MODEL_NAME_GEMINI_3_FLASH_PREVIEW
+  | typeof CHAT_MODEL_NAME_CLAUDE_OPUS_5
   | typeof CHAT_MODEL_NAME_CLAUDE_OPUS_4_8
-  | typeof CHAT_MODEL_NAME_CLAUDE_FABLE_5
   | typeof CHAT_MODEL_NAME_CLAUDE_SONNET_4_6
-  | typeof CHAT_MODEL_NAME_CLAUDE_SONNET_5
-  | typeof CHAT_MODEL_NAME_CLAUDE_OPUS_4_6
-  | typeof CHAT_MODEL_NAME_CLAUDE_OPUS_4_7
-  | typeof CHAT_MODEL_NAME_CLAUDE_3_7_SONNET
   | typeof CHAT_MODEL_NAME_CLAUDE_HAIKU_4_5
+  | typeof CHAT_MODEL_NAME_KIMI_K3
+  | typeof CHAT_MODEL_NAME_KIMI_K2_6
   | typeof CHAT_MODEL_NAME_KIMI_K2_5
   | typeof CHAT_MODEL_NAME_KIMI_K2_THINKING
   | typeof CHAT_MODEL_NAME_KIMI_K2_THINKING_TURBO
-  | typeof CHAT_MODEL_NAME_KIMI_K2_INSTRUCT_0905
-  | typeof CHAT_MODEL_NAME_KIMI_K2_TURBO_PREVIEW
   | typeof CHAT_MODEL_NAME_GLM_5_1
-  | typeof CHAT_MODEL_NAME_GLM_4_7
-  | typeof CHAT_MODEL_NAME_GLM_5
-  | typeof CHAT_MODEL_NAME_GLM_5_TURBO
-  | typeof CHAT_MODEL_NAME_GLM_4_6;
+  | typeof CHAT_MODEL_NAME_GLM_4_7;
 
 export interface IChatModel {
   enabled?: boolean;
@@ -117,6 +79,8 @@ export interface IChatModelGroup {
   getDisplayName: () => string;
   getDescription: () => string;
   models: IChatModel[];
+  // Pre-selected model for new users / on group switch. Falls back to models[0].
+  defaultModel?: IChatModel;
   // Realtime voice call is only wired up for the OpenAI (ChatGPT) service.
   isVoiceCallSupported?: boolean;
 }
@@ -133,6 +97,23 @@ export enum IChatMessageState {
   FAILED = 'failed'
 }
 
+export type IChatToolExecution = 'client' | 'server' | 'browser';
+
+export type IBrowserToolExecutionState =
+  | 'starting_session'
+  | 'attaching_tab'
+  | 'ready'
+  | 'executing'
+  | 'completed'
+  | 'device_offline'
+  | 'device_busy'
+  | 'authorization_required'
+  | 'stopped'
+  | 'expired'
+  | 'debugger_unavailable'
+  | 'unknown_outcome'
+  | 'failed';
+
 export interface IChatMessageContentItem {
   type: string;
   text?: string;
@@ -140,6 +121,10 @@ export interface IChatMessageContentItem {
   file_url?: { url: string } | string;
   name?: string;
   mimeType?: string;
+  file_id?: string;
+  sha256?: string;
+  mime?: string;
+  size?: number;
   // Alt text for an `image_url` block. The aichat2 worker sets this on a
   // tool-result screenshot (`<tool_id> screenshot`); the frontend reuses it as
   // a dedupe key when folding the same block locally on client-tool resume.
@@ -148,6 +133,14 @@ export interface IChatMessageContentItem {
   tool_id?: string;
   tool_name?: string;
   tool_display_name?: string;
+  execution?: IChatToolExecution;
+  execution_state?: IBrowserToolExecutionState;
+  execution_sequence?: number;
+  browser_session_id?: string;
+  browser_call_id?: string;
+  wire_contract_digest?: string;
+  facade_catalog_digest?: string;
+  origin?: string;
   input?: Record<string, unknown>;
   output?: string;
   is_error?: boolean;
@@ -168,6 +161,11 @@ export interface IChatMessageContentItem {
   // render `<ConnectorConsentCard>`; on resume the resume detector strips it
   // and folds `output` (the user's authorize/skip JSON) into the block.
   pending_consent_request?: IConsentRequestPayload;
+  // Present iff `status === 'awaiting_input'` and the pause was driven by
+  // `request_action_confirmation`. Carries the confirmation payload so the
+  // frontend can render `<ActionConfirmationCard>`; on resume the block
+  // folds `output` (the user's confirm/cancel + edited values) back in.
+  pending_action_confirmation?: IActionConfirmationPayload;
   // Rich-output entity card (type='card') — payload mirrors the
   // worker's `CardData` SSE event. `type` inside `card` is open-ended:
   // 'audio' | 'video' | 'image' | 'file' today, with room for future
@@ -178,9 +176,9 @@ export interface IChatMessageContentItem {
 
 // ===== ask_user_question tool payload =====
 // Mirrors aichat2 worker contract (frozen). When the model calls the
-// `ask_user_question` tool, the worker pauses the turn and asks the user
-// one or more multi-choice questions; the payload is rendered as a card
-// (see AskUserQuestionCard.vue).
+// `ask_user_question` tool, the worker pauses the turn and emits a single
+// SSE event of type `ask_user_question` carrying this payload, followed by
+// a terminal `done` with `terminal_reason: 'awaiting_user_input'`.
 
 export interface IAskUserQuestionOption {
   /** Display label, 1–5 words. */
@@ -260,6 +258,94 @@ export interface IConsentRequestPayload {
   requirements: IConsentRequestRequirement[];
 }
 
+// ===== request_action_confirmation tool payload =====
+// Gate for an irreversible external action (publish a post, transfer
+// funds, delete a file). Distinct from `request_user_consent`, which asks
+// "do you have permission?" once per connector — this asks "should I do
+// this, this time?" and fires before every such action.
+//
+// `kind` is a discriminant: the card renders a kind-specific body when it
+// knows the kind, else a generic field list. Treat it as OPEN — the worker
+// may ship a new kind before the frontend does, so unknown values MUST
+// fall back rather than render blank.
+
+/** Known kinds; open-ended by design (see note above). */
+export type IActionConfirmationKind = 'generic' | 'tiktok.publish' | string;
+
+export interface IActionConfirmationField {
+  label: string;
+  value: string;
+}
+
+export interface IActionConfirmationPreview {
+  type: 'video' | 'image';
+  url: string;
+  /** Media duration, when known — lets a kind body check it against a cap. */
+  duration_sec?: number;
+}
+
+export interface IActionConfirmationPayload {
+  /** Stable id of the form `actconf_<uuid>`, echoed back on resume. */
+  action_confirmation_id: string;
+  /** Selects the body renderer. Unknown values fall back to generic. */
+  kind: IActionConfirmationKind;
+  /** Action title, e.g. "发布到 TikTok". */
+  title: string;
+  /** One sentence on what happens if confirmed (< 200 chars). */
+  summary?: string;
+  /** Drives button styling; `destructive` for deletions and the like. */
+  severity?: 'normal' | 'destructive';
+  /** Generic body content. Optional when a kind body supplies its own. */
+  fields?: IActionConfirmationField[];
+  /** Media to preview above the body. */
+  preview?: IActionConfirmationPreview;
+  /** Kind-specific data. The generic body ignores it. */
+  detail?: Record<string, unknown>;
+  /** Confirm button label; falls back to a localized default. */
+  confirm_label?: string;
+}
+
+/** Resume payload — `JSON.stringify`d into `tool_results[0].output`.
+ *  Unlike consent (which only reports authorized/skipped), this carries
+ *  the values the user edited in the card. */
+export interface IActionConfirmationResult {
+  action_confirmation_id: string;
+  confirmed: boolean;
+  /** Present when confirmed and the kind body collects input. */
+  values?: Record<string, unknown>;
+}
+
+// ===== tiktok.publish kind =====
+
+/** `detail` for `kind === 'tiktok.publish'` — mirrors the fields TikTok's
+ *  `creator_info/query` returns. The card MUST drive its privacy dropdown
+ *  and interaction toggles from these; hardcoding options is a TikTok
+ *  guideline violation, not just a bug. */
+export interface ITikTokPublishDetail {
+  creator_nickname: string;
+  creator_avatar_url?: string;
+  /** Exact options to offer. Never render a value outside this list. */
+  privacy_level_options: string[];
+  comment_disabled: boolean;
+  duet_disabled: boolean;
+  stitch_disabled: boolean;
+  max_video_post_duration_sec: number;
+  suggested_title?: string;
+  /** Photo posts have no duet/stitch — show only "allow comment". */
+  is_photo_post?: boolean;
+}
+
+/** `values` the tiktok.publish body submits. */
+export interface ITikTokPublishValues {
+  title: string;
+  privacy_level: string;
+  disable_comment: boolean;
+  disable_duet: boolean;
+  disable_stitch: boolean;
+  brand_organic_toggle?: boolean;
+  brand_content_toggle?: boolean;
+}
+
 /**
  * A user-attached reference (image or file) carried alongside the
  * composer prompt. The chat API only needs the URL on the wire, but
@@ -269,6 +355,10 @@ export interface IConsentRequestPayload {
 export interface IChatReference {
   url: string;
   name?: string;
+  file_id?: string;
+  sha256?: string;
+  mime?: string;
+  size?: number;
 }
 
 export interface IChatMessage {
@@ -342,7 +432,7 @@ export interface IChatConversationRequest {
   id?: string;
   question?: string;
   message?: string | IChatMessageContentItem[];
-  references?: string[];
+  references?: Array<string | IChatReference>;
   stateful?: boolean;
   messages?: IChatMessage[];
   action?: IChatConversationAction;
@@ -356,6 +446,17 @@ export interface IChatConversationRequest {
   // Names must be OpenAI-valid (^[a-zA-Z0-9_-]+$) — the desktop sends sanitized
   // wire names and maps them back locally.
   client_tools?: { name: string; displayName?: string; description: string; inputSchema: Record<string, unknown> }[];
+  // Desktop local MCP servers, sent as one summary each instead of inlining
+  // every tool schema into `client_tools`. The model calls
+  // `load_mcp_server({server: <id>})` to pull one server's tools into the
+  // registry for the rest of the conversation — the same deferral the cloud
+  // remote-MCP path uses. Without it a single server (e.g. Playwright: 24
+  // tools, ~16 KB) costs ~4k tokens on EVERY turn, relevant or not.
+  local_mcp_servers?: {
+    id: string;
+    displayName?: string;
+    tools: { name: string; displayName?: string; description: string; inputSchema: Record<string, unknown> }[];
+  }[];
   connectors?: string[];
   skills?: string[];
   // Resume payload for a paused conversation. When present, the conversation
@@ -375,8 +476,16 @@ export interface IChatConversationResponse {
   tool_id?: string;
   tool_name?: string;
   tool_display_name?: string;
-  // 'client' ⇒ desktop runs this tool locally; worker pauses awaiting tool_results.
-  execution?: 'client' | 'server';
+  // 'client' runs in the desktop bridge; 'browser' is observed here but runs
+  // on the selected BrowserDevice, never in this chat client.
+  execution?: IChatToolExecution;
+  execution_state?: IBrowserToolExecutionState;
+  execution_sequence?: number;
+  browser_session_id?: string;
+  browser_call_id?: string;
+  wire_contract_digest?: string;
+  facade_catalog_digest?: string;
+  origin?: string;
   input?: Record<string, unknown>;
   output?: string;
   is_error?: boolean;
@@ -404,8 +513,9 @@ export interface IChatConversationResponse {
   // pauses the turn and asks the user one or more multi-choice questions; the
   // payload is rendered as a card (see AskUserQuestionCard.vue).
   // Also used for `type === 'consent_request'` SSE events, which carry a
-  // `IConsentRequestPayload` rendered by ConnectorConsentCard.vue.
-  payload?: IAskUserQuestionPayload | IConsentRequestPayload;
+  // `IConsentRequestPayload` rendered by ConnectorConsentCard.vue, and for
+  // `type === 'action_confirmation'`, rendered by ActionConfirmationCard.vue.
+  payload?: IAskUserQuestionPayload | IConsentRequestPayload | IActionConfirmationPayload;
 }
 
 export interface IChatConversationsResponse {

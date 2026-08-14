@@ -5,11 +5,11 @@
       v-if="!currentNode"
       class="flex-1 flex flex-col items-center justify-center text-center p-8 text-[var(--app-text-subtle)]"
     >
-      <font-awesome-icon icon="fa-solid fa-laptop-code" class="text-4xl mb-3" />
+      <developer-icon class="text-4xl mb-3" :size="'1em' as any" aria-hidden="true" focusable="false" />
       <p class="text-sm">{{ $t('codingBridge.session.noDevice') }}</p>
       <!-- Mobile: the device list is in a drawer, so offer a way to open it. -->
       <el-button class="md:hidden mt-4" round @click="$emit('devices')">
-        <font-awesome-icon icon="fa-solid fa-laptop-code" class="mr-1" />
+        <developer-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('codingBridge.nodeList.title') }}
       </el-button>
     </div>
@@ -27,7 +27,7 @@
             :aria-label="$t('codingBridge.nodeList.title')"
             @click="$emit('devices')"
           >
-            <font-awesome-icon icon="fa-solid fa-laptop-code" />
+            <developer-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           </button>
           <div class="min-w-0">
             <div class="flex items-center gap-2 font-medium">
@@ -45,11 +45,11 @@
         </div>
         <div class="flex items-center gap-2 flex-none">
           <el-button size="small" round @click="$emit('history')">
-            <font-awesome-icon icon="fa-solid fa-clock-rotate-left" class="mr-1" />
+            <history-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('codingBridge.history.button') }}
           </el-button>
           <el-button v-if="currentSessionId" size="small" round @click="onNewSession">
-            <font-awesome-icon icon="fa-solid fa-plus" class="mr-1" />
+            <add-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('codingBridge.session.newSession') }}
           </el-button>
         </div>
@@ -76,7 +76,11 @@
       </div>
 
       <!-- Transcript -->
-      <div ref="transcript" class="flex-1 min-h-0 overflow-y-auto px-5 py-4 flex flex-col gap-3">
+      <div
+        ref="transcript"
+        class="flex-1 min-h-0 overflow-y-auto px-5 py-4 flex flex-col gap-3"
+        @scroll="onTranscriptScroll"
+      >
         <!-- Restoring a conversation: show a skeleton until its transcript lands,
              but only when we don't already hold (live) events to render. -->
         <div v-if="historyLoading && !events.length" class="cb-skeleton">
@@ -113,7 +117,7 @@
           :title="`+${hiddenEventCount}`"
           @click="loadEarlier"
         >
-          <font-awesome-icon icon="fa-solid fa-arrow-up" />
+          <up-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           {{ hiddenEventCount }}
         </button>
         <transcript-item
@@ -128,7 +132,7 @@
         <!-- Retry: re-run the last prompt after a turn ends in error. -->
         <div v-if="canRetry" class="flex justify-center pt-1">
           <el-button size="small" round @click="onRetry">
-            <font-awesome-icon icon="fa-solid fa-rotate-right" class="mr-1" />
+            <redo-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('codingBridge.session.retry') }}
           </el-button>
         </div>
@@ -153,7 +157,7 @@
       <div class="border-t border-[var(--app-border-subtle)] p-3">
         <!-- Read-only replay (e.g. Codex history cannot be resumed). -->
         <div v-if="readonly" class="flex items-center gap-2 text-xs text-[var(--app-text-subtle)] px-1 py-2">
-          <font-awesome-icon icon="fa-solid fa-eye" />
+          <view-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           <span>{{ $t('codingBridge.history.readonly') }}</span>
           <el-button class="ml-auto" size="small" round @click="onNewSession">
             {{ $t('codingBridge.session.newSession') }}
@@ -166,7 +170,12 @@
             class="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-lg bg-[var(--el-color-primary-light-9)] px-3 py-2 text-xs text-[var(--app-text)]"
           >
             <span class="inline-flex items-center gap-1.5">
-              <font-awesome-icon icon="fa-solid fa-pen" class="text-[var(--el-color-primary)]" />
+              <edit-icon
+                class="text-[var(--el-color-primary)]"
+                :size="'1em' as any"
+                aria-hidden="true"
+                focusable="false"
+              />
               {{ $t('codingBridge.session.editingBanner') }}
             </span>
             <el-checkbox v-if="canRestoreCode" v-model="restoreCode" size="small" class="cb-restore-code">
@@ -192,7 +201,7 @@
                   :alt="$t('codingBridge.session.attachmentImageAlt')"
                 />
                 <span v-else class="flex h-8 w-8 items-center justify-center rounded bg-[var(--app-content-bg)]">
-                  <font-awesome-icon icon="fa-solid fa-file" />
+                  <file-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
                 </span>
                 <span class="min-w-0 flex-1 truncate" :title="file.name">{{ file.name }}</span>
                 <span v-if="isAttachmentUploading(file)" class="text-[10px] text-[var(--app-text-subtle)]">
@@ -202,9 +211,10 @@
                   type="button"
                   class="flex h-5 w-5 items-center justify-center rounded-full text-[var(--app-text-subtle)] hover:bg-[var(--app-content-hover-bg)] hover:text-[var(--el-color-danger)]"
                   :title="$t('codingBridge.session.removeAttachment')"
+                  :aria-label="$t('codingBridge.session.removeAttachment')"
                   @click="removeAttachment(index, file)"
                 >
-                  <font-awesome-icon icon="fa-solid fa-xmark" />
+                  <close-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
                 </button>
               </div>
             </div>
@@ -230,6 +240,7 @@
               :autosize="{ minRows: 2, maxRows: 12 }"
               resize="none"
               class="cb-composer__input"
+              :readonly="speechActive"
               :placeholder="$t('codingBridge.session.promptPlaceholder')"
               @keydown="onComposerKeydown"
             />
@@ -258,9 +269,24 @@
                 type="button"
                 class="cb-icon-btn"
                 :title="$t('codingBridge.session.attachFile')"
+                :aria-label="$t('codingBridge.session.attachFile')"
                 @click="onTriggerAttachmentUpload"
               >
-                <font-awesome-icon icon="fa-solid fa-paperclip" />
+                <attachment-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+              </button>
+              <button
+                v-if="speechSupported"
+                type="button"
+                class="cb-icon-btn cb-voice-btn"
+                :class="{ 'cb-voice-btn--active': speechActive }"
+                :disabled="speechState === 'stopping'"
+                :title="$t(speechActive ? 'codingBridge.session.voiceStop' : 'codingBridge.session.voiceInput')"
+                :aria-label="$t(speechActive ? 'codingBridge.session.voiceStop' : 'codingBridge.session.voiceInput')"
+                :aria-pressed="speechActive"
+                @click="toggleSpeechRecognition"
+              >
+                <stop-icon v-if="speechActive" :size="'1em' as any" aria-hidden="true" focusable="false" />
+                <microphone-icon v-else :size="'1em' as any" aria-hidden="true" focusable="false" />
               </button>
 
               <div class="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
@@ -274,9 +300,14 @@
                       :class="{ 'cb-pill__brand--invert': providerIcon(provider)!.invertOnDark }"
                       alt=""
                     />
-                    <font-awesome-icon v-else icon="fa-solid fa-code" class="cb-pill__icon" />
+                    <code-icon v-else class="cb-pill__icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
                     <span class="truncate">{{ providerName(provider) }}</span>
-                    <font-awesome-icon icon="fa-solid fa-chevron-down" class="cb-pill__caret" />
+                    <expand-down-icon
+                      class="cb-pill__caret"
+                      :size="'1em' as any"
+                      aria-hidden="true"
+                      focusable="false"
+                    />
                   </button>
                   <template #dropdown>
                     <el-dropdown-menu>
@@ -286,10 +317,12 @@
                         :command="opt.value"
                         :disabled="!opt.available"
                       >
-                        <font-awesome-icon
-                          icon="fa-solid fa-check"
+                        <confirm-icon
                           class="mr-2"
                           :class="opt.value === provider ? 'opacity-100' : 'opacity-0'"
+                          :size="'1em' as any"
+                          aria-hidden="true"
+                          focusable="false"
                         />
                         <img
                           v-if="providerIcon(opt.value)"
@@ -316,144 +349,250 @@
                     }"
                     alt=""
                   />
-                  <font-awesome-icon v-else icon="fa-solid fa-code" class="cb-pill__icon" />
+                  <code-icon v-else class="cb-pill__icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
                   <span class="truncate">{{ providerName(currentSession?.provider || 'claude') }}</span>
                 </span>
 
-                <!-- Model can be switched any time, including mid-session. -->
-                <el-popover ref="modelPopover" trigger="click" placement="top-start" :width="260">
-                  <template #reference>
-                    <button type="button" class="cb-pill">
-                      <font-awesome-icon icon="fa-solid fa-brain" class="cb-pill__icon" />
-                      <span class="truncate">{{ model || $t('codingBridge.session.modelDefault') }}</span>
-                      <font-awesome-icon icon="fa-solid fa-chevron-down" class="cb-pill__caret" />
-                    </button>
-                  </template>
-                  <div class="cb-model-menu">
-                    <button type="button" class="cb-model-option" @click="selectModel('')">
-                      <font-awesome-icon
-                        icon="fa-solid fa-check"
-                        class="cb-model-option__check"
-                        :class="!model ? 'opacity-100' : 'opacity-0'"
-                      />
-                      <span class="truncate">{{ $t('codingBridge.session.modelDefault') }}</span>
-                    </button>
-                    <button
-                      v-for="opt in modelOptions"
-                      :key="opt.value"
-                      type="button"
-                      class="cb-model-option"
-                      @click="selectModel(opt.value)"
-                    >
-                      <font-awesome-icon
-                        icon="fa-solid fa-check"
-                        class="cb-model-option__check"
-                        :class="opt.value === model ? 'opacity-100' : 'opacity-0'"
-                      />
-                      <span class="truncate">{{ opt.label }}</span>
-                    </button>
-                    <div v-if="allowCustomModel" class="cb-model-custom">
-                      <el-input
-                        v-model="customModelDraft"
-                        size="small"
-                        :placeholder="$t('codingBridge.session.modelPlaceholder')"
-                        @keyup.enter="applyCustomModel"
-                      >
-                        <template #append>
-                          <el-button :disabled="!customModelDraft.trim()" @click="applyCustomModel">
-                            <font-awesome-icon icon="fa-solid fa-check" />
-                          </el-button>
-                        </template>
-                      </el-input>
-                    </div>
+                <!-- Secondary controls. The composer row can't hold five pills
+                     on a phone, so there they collapse behind this button and
+                     open in a dialog; `display: contents` on desktop keeps them
+                     inline in the row exactly as before. -->
+                <button
+                  type="button"
+                  class="cb-icon-btn cb-more-btn"
+                  :title="$t('codingBridge.session.settings')"
+                  :aria-label="$t('codingBridge.session.settings')"
+                  @click="moreOpen = true"
+                >
+                  <more-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+                </button>
+
+                <composer-settings v-model:open="moreOpen" :dialog="mobileSettings">
+                  <!-- Each control carries its own label so the dialog rows can't
+                       drift out of sync with the (conditionally rendered) set of
+                       controls. The label is hidden while inline. -->
+                  <div class="cb-setting" :class="{ 'cb-setting--row': mobileSettings }">
+                    <span v-if="mobileSettings" class="cb-setting__label">
+                      {{ $t('chat.scheduledTasks.form.model') }}
+                    </span>
+                    <!-- Model can be switched any time, including mid-session. -->
+                    <el-popover ref="modelPopover" trigger="click" placement="top-start" :width="260">
+                      <template #reference>
+                        <button type="button" class="cb-pill">
+                          <ai-icon class="cb-pill__icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
+                          <span class="truncate">{{ model || $t('codingBridge.session.modelDefault') }}</span>
+                          <expand-down-icon
+                            class="cb-pill__caret"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
+                        </button>
+                      </template>
+                      <div class="cb-model-menu">
+                        <button type="button" class="cb-model-option" @click="selectModel('')">
+                          <confirm-icon
+                            class="cb-model-option__check"
+                            :class="!model ? 'opacity-100' : 'opacity-0'"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
+                          <span class="truncate">{{ $t('codingBridge.session.modelDefault') }}</span>
+                        </button>
+                        <button
+                          v-for="opt in modelOptions"
+                          :key="opt.value"
+                          type="button"
+                          class="cb-model-option"
+                          @click="selectModel(opt.value)"
+                        >
+                          <confirm-icon
+                            class="cb-model-option__check"
+                            :class="opt.value === model ? 'opacity-100' : 'opacity-0'"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
+                          <span class="truncate">{{ opt.label }}</span>
+                        </button>
+                        <div v-if="allowCustomModel" class="cb-model-custom">
+                          <el-input
+                            v-model="customModelDraft"
+                            size="small"
+                            :placeholder="$t('codingBridge.session.modelPlaceholder')"
+                            @keyup.enter="applyCustomModel"
+                          >
+                            <template #append>
+                              <el-button
+                                :disabled="!customModelDraft.trim()"
+                                :aria-label="$t('common.button.confirm')"
+                                :title="$t('common.button.confirm')"
+                                @click="applyCustomModel"
+                              >
+                                <confirm-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+                              </el-button>
+                            </template>
+                          </el-input>
+                        </div>
+                      </div>
+                    </el-popover>
                   </div>
-                </el-popover>
 
-                <!-- Effort and permission/edit mode stay editable every turn: the
-                     node applies whatever the composer carries on each send, so a
-                     resumed conversation can change them per query. -->
-                <el-dropdown v-if="effortOptions.length > 1" trigger="click" @command="effort = $event">
-                  <button type="button" class="cb-pill">
-                    <font-awesome-icon icon="fa-solid fa-gauge-high" class="cb-pill__icon" />
-                    <span class="truncate">{{ effortLabel(effort) }}</span>
-                    <font-awesome-icon icon="fa-solid fa-chevron-down" class="cb-pill__caret" />
-                  </button>
-                  <template #dropdown>
-                    <el-dropdown-menu>
-                      <el-dropdown-item v-for="opt in effortOptions" :key="opt.value" :command="opt.value">
-                        <font-awesome-icon
-                          icon="fa-solid fa-check"
-                          class="mr-2"
-                          :class="opt.value === effort ? 'opacity-100' : 'opacity-0'"
+                  <!-- Effort and permission/edit mode stay editable every turn: the
+                       node applies whatever the composer carries on each send, so a
+                       resumed conversation can change them per query. -->
+                  <div
+                    v-if="effortOptions.length > 1"
+                    class="cb-setting"
+                    :class="{ 'cb-setting--row': mobileSettings }"
+                  >
+                    <span v-if="mobileSettings" class="cb-setting__label">
+                      {{ $t('codingBridge.session.effortLabel') }}
+                    </span>
+                    <el-dropdown trigger="click" @command="effort = $event">
+                      <button type="button" class="cb-pill">
+                        <performance-icon
+                          class="cb-pill__icon"
+                          :size="'1em' as any"
+                          aria-hidden="true"
+                          focusable="false"
                         />
-                        {{ opt.label }}
-                      </el-dropdown-item>
-                    </el-dropdown-menu>
-                  </template>
-                </el-dropdown>
-
-                <el-dropdown trigger="click" @command="permissionMode = $event">
-                  <button type="button" class="cb-pill">
-                    <font-awesome-icon icon="fa-solid fa-shield-halved" class="cb-pill__icon" />
-                    <span class="truncate">{{ permissionModeLabel(permissionMode) }}</span>
-                    <font-awesome-icon icon="fa-solid fa-chevron-down" class="cb-pill__caret" />
-                  </button>
-                  <template #dropdown>
-                    <el-dropdown-menu>
-                      <el-dropdown-item v-for="opt in permissionModeOptions" :key="opt.value" :command="opt.value">
-                        <font-awesome-icon
-                          icon="fa-solid fa-check"
-                          class="mr-2"
-                          :class="opt.value === permissionMode ? 'opacity-100' : 'opacity-0'"
+                        <span class="truncate">{{ effortLabel(effort) }}</span>
+                        <expand-down-icon
+                          class="cb-pill__caret"
+                          :size="'1em' as any"
+                          aria-hidden="true"
+                          focusable="false"
                         />
-                        {{ opt.label }}
-                      </el-dropdown-item>
-                    </el-dropdown-menu>
-                  </template>
-                </el-dropdown>
+                      </button>
+                      <template #dropdown>
+                        <el-dropdown-menu>
+                          <el-dropdown-item v-for="opt in effortOptions" :key="opt.value" :command="opt.value">
+                            <confirm-icon
+                              class="mr-2"
+                              :class="opt.value === effort ? 'opacity-100' : 'opacity-0'"
+                              :size="'1em' as any"
+                              aria-hidden="true"
+                              focusable="false"
+                            />
+                            {{ opt.label }}
+                          </el-dropdown-item>
+                        </el-dropdown-menu>
+                      </template>
+                    </el-dropdown>
+                  </div>
 
-                <!-- Working directory: editable for a new or resumed-but-not-yet
+                  <div class="cb-setting" :class="{ 'cb-setting--row': mobileSettings }">
+                    <span v-if="mobileSettings" class="cb-setting__label">
+                      {{ $t('codingBridge.session.permissionModeLabel') }}
+                    </span>
+                    <el-dropdown trigger="click" @command="permissionMode = $event">
+                      <button type="button" class="cb-pill">
+                        <security-icon
+                          class="cb-pill__icon"
+                          :size="'1em' as any"
+                          aria-hidden="true"
+                          focusable="false"
+                        />
+                        <span class="truncate">{{ permissionModeLabel(permissionMode) }}</span>
+                        <expand-down-icon
+                          class="cb-pill__caret"
+                          :size="'1em' as any"
+                          aria-hidden="true"
+                          focusable="false"
+                        />
+                      </button>
+                      <template #dropdown>
+                        <el-dropdown-menu>
+                          <el-dropdown-item v-for="opt in permissionModeOptions" :key="opt.value" :command="opt.value">
+                            <confirm-icon
+                              class="mr-2"
+                              :class="opt.value === permissionMode ? 'opacity-100' : 'opacity-0'"
+                              :size="'1em' as any"
+                              aria-hidden="true"
+                              focusable="false"
+                            />
+                            {{ opt.label }}
+                          </el-dropdown-item>
+                        </el-dropdown-menu>
+                      </template>
+                    </el-dropdown>
+                  </div>
+
+                  <!-- Working directory: editable for a new or resumed-but-not-yet
                      -continued session (its first send is a fresh start that
                      applies the cwd); read-only once a live turn pins it. -->
-                <el-popover v-if="canPickCwd" trigger="click" placement="top-start" :width="320">
-                  <template #reference>
-                    <button type="button" class="cb-pill">
-                      <font-awesome-icon icon="fa-solid fa-folder-open" class="cb-pill__icon" />
-                      <span class="truncate">{{ cwd || $t('codingBridge.session.cwdDefault') }}</span>
-                      <font-awesome-icon icon="fa-solid fa-chevron-down" class="cb-pill__caret" />
-                    </button>
-                  </template>
-                  <el-input
-                    v-model="cwd"
-                    size="small"
-                    clearable
-                    class="cb-cwd-input"
-                    :placeholder="$t('codingBridge.session.cwdPlaceholder')"
+                  <div
+                    v-if="canPickCwd || currentSession?.cwd"
+                    class="cb-setting"
+                    :class="{ 'cb-setting--row': mobileSettings }"
                   >
-                    <template #suffix>
-                      <span
-                        class="cb-cwd-browse"
-                        role="button"
-                        tabindex="0"
-                        :title="$t('codingBridge.directory.title')"
-                        :aria-label="$t('codingBridge.directory.title')"
-                        @click="openDirectory"
-                        @keydown.enter.prevent="openDirectory"
-                        @keydown.space.prevent="openDirectory"
+                    <span v-if="mobileSettings" class="cb-setting__label">
+                      {{ $t('common.settings.localToolsWorkingDirTitle') }}
+                    </span>
+                    <el-popover v-if="canPickCwd" trigger="click" placement="top-start" :width="320">
+                      <template #reference>
+                        <button type="button" class="cb-pill">
+                          <folder-open-icon
+                            class="cb-pill__icon"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
+                          <span class="truncate">{{ cwd || $t('codingBridge.session.cwdDefault') }}</span>
+                          <expand-down-icon
+                            class="cb-pill__caret"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
+                        </button>
+                      </template>
+                      <el-input
+                        v-model="cwd"
+                        size="small"
+                        clearable
+                        class="cb-cwd-input"
+                        :placeholder="$t('codingBridge.session.cwdPlaceholder')"
                       >
-                        <font-awesome-icon icon="fa-solid fa-folder-open" />
-                      </span>
-                    </template>
-                  </el-input>
-                </el-popover>
-                <span v-else-if="currentSession?.cwd" class="cb-pill cb-pill--static">
-                  <font-awesome-icon icon="fa-solid fa-folder-open" class="cb-pill__icon" />
-                  <span class="truncate">{{ currentSession?.cwd }}</span>
-                </span>
+                        <template #suffix>
+                          <span
+                            class="cb-cwd-browse"
+                            role="button"
+                            tabindex="0"
+                            :title="$t('codingBridge.directory.title')"
+                            :aria-label="$t('codingBridge.directory.title')"
+                            @click="openDirectory"
+                            @keydown.enter.prevent="openDirectory"
+                            @keydown.space.prevent="openDirectory"
+                          >
+                            <folder-open-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+                          </span>
+                        </template>
+                      </el-input>
+                    </el-popover>
+                    <span v-else class="cb-pill cb-pill--static">
+                      <folder-open-icon
+                        class="cb-pill__icon"
+                        :size="'1em' as any"
+                        aria-hidden="true"
+                        focusable="false"
+                      />
+                      <span class="truncate">{{ currentSession?.cwd }}</span>
+                    </span>
+                  </div>
+                </composer-settings>
               </div>
 
-              <el-button v-if="running" circle @click="onInterrupt">
-                <font-awesome-icon icon="fa-solid fa-stop" />
+              <el-button
+                v-if="running"
+                circle
+                :aria-label="$t('common.button.stop')"
+                :title="$t('common.button.stop')"
+                @click="onInterrupt"
+              >
+                <stop-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
               </el-button>
               <el-button type="primary" round :disabled="!canSend" @click="onSend">
                 {{ editingActive ? $t('codingBridge.session.editSubmit') : $t('codingBridge.session.send') }}
@@ -472,6 +611,28 @@
 </template>
 
 <script lang="ts">
+import {
+  AddIcon,
+  AiIcon,
+  AttachmentIcon,
+  CloseIcon,
+  CodeIcon,
+  ConfirmIcon,
+  DeveloperIcon,
+  EditIcon,
+  ExpandDownIcon,
+  FileIcon,
+  FolderOpenIcon,
+  HistoryIcon,
+  MicrophoneIcon,
+  MoreIcon,
+  PerformanceIcon,
+  RedoIcon,
+  SecurityIcon,
+  StopIcon,
+  UpIcon,
+  ViewIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import {
   ElInput,
@@ -488,13 +649,13 @@ import {
   UploadFile,
   UploadFiles
 } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import TranscriptItem from './TranscriptItem.vue';
 import ThinkingIndicator from './ThinkingIndicator.vue';
+import ComposerSettings from './ComposerSettings.vue';
 import DirectoryDialog from './DirectoryDialog.vue';
 import AskUserQuestionCard from '@/components/chat/AskUserQuestionCard.vue';
 import { isAskUserQuestionRequest, questionPayload } from './askUserQuestion';
-import { getBaseUrlPlatform, pasteUploadMixin } from '@/utils';
+import { getBaseUrlPlatform, getFinalApplication, pasteUploadMixin, dropUploadMixin } from '@/utils';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
 import {
   Status,
@@ -511,6 +672,12 @@ import {
 import claudeIcon from '@/assets/images/logos/claude.svg';
 import openaiIcon from '@/assets/images/logos/openai.svg';
 import copilotIcon from '@/assets/images/logos/github-copilot.svg';
+import {
+  createSpeechRecognitionController,
+  type SpeechRecognitionController,
+  type SpeechRecognitionErrorCode,
+  type SpeechRecognitionSnapshot
+} from '@/utils/speechRecognition';
 
 const MAX_ATTACHMENT_BYTES = 50 * 1024 * 1024;
 const MAX_ATTACHMENTS = 10;
@@ -522,6 +689,9 @@ const MAX_ATTACHMENTS = 10;
 // TranscriptItem, this bounds rendered memory regardless of conversation size.
 const RENDER_WINDOW = 60;
 const RENDER_PAGE = 60;
+// Px from the bottom still counted as "following the tail". Generous enough to
+// survive sub-pixel rounding and the composer's own resize.
+const SCROLL_PIN_THRESHOLD = 80;
 
 // Brand marks for each coding backend. `invertOnDark` flips the black OpenAI /
 // Copilot glyphs to white in dark mode; Claude's orange already reads on both.
@@ -534,6 +704,26 @@ const PROVIDER_BRANDS: Record<string, { src: string; invertOnDark: boolean }> = 
 export default defineComponent({
   name: 'CodingBridgeSessionView',
   components: {
+    AddIcon,
+    AiIcon,
+    AttachmentIcon,
+    CloseIcon,
+    CodeIcon,
+    ConfirmIcon,
+    DeveloperIcon,
+    EditIcon,
+    ExpandDownIcon,
+    FileIcon,
+    FolderOpenIcon,
+    HistoryIcon,
+    MicrophoneIcon,
+    MoreIcon,
+    PerformanceIcon,
+    RedoIcon,
+    SecurityIcon,
+    StopIcon,
+    UpIcon,
+    ViewIcon,
     ElInput,
     ElButton,
     ElPopover,
@@ -544,14 +734,14 @@ export default defineComponent({
     ElCheckbox,
     ElSkeleton,
     ElSkeletonItem,
-    FontAwesomeIcon,
     TranscriptItem,
     ThinkingIndicator,
+    ComposerSettings,
     DirectoryDialog,
     AskUserQuestionCard,
     CopyToClipboard
   },
-  mixins: [pasteUploadMixin],
+  mixins: [pasteUploadMixin, dropUploadMixin],
   emits: ['history', 'devices'],
   data() {
     return {
@@ -566,6 +756,15 @@ export default defineComponent({
       provider: 'claude',
       effort: '',
       directoryVisible: false,
+      // Mobile only: whether the settings dialog holding the secondary controls
+      // (model / effort / permission / cwd) is open. Ignored at md+, where they
+      // render inline in the composer row.
+      moreOpen: false,
+      // Whether those controls belong in a dialog. This is a structural choice
+      // (dialog vs inline), not styling, so it can't live in a media query —
+      // tracked here and kept in sync by a matchMedia listener.
+      mobileSettings: false,
+      settingsMql: undefined as MediaQueryList | undefined,
       slashMenuOpen: false,
       slashActiveIndex: 0,
       // Id of the prompt event being edited; when set, sending rewinds the
@@ -577,7 +776,21 @@ export default defineComponent({
       maxAttachments: MAX_ATTACHMENTS,
       // How many of the most recent events to render; grows by RENDER_PAGE when
       // the user loads earlier turns. Reset on session switch.
-      visibleCount: RENDER_WINDOW
+      visibleCount: RENDER_WINDOW,
+      // Whether the transcript is following the tail. Cleared when the user
+      // scrolls up (so incoming events don't yank them back down), restored the
+      // moment they scroll back to the bottom or switch conversations.
+      pinnedToBottom: true,
+      // One tail-jump per frame, however many mutations the burst produced.
+      scrollPending: false,
+      transcriptObserver: undefined as MutationObserver | undefined,
+      observedTranscript: undefined as HTMLElement | undefined,
+      speechController: undefined as SpeechRecognitionController | undefined,
+      speechSupported: false,
+      speechState: 'idle' as 'idle' | 'listening' | 'stopping',
+      speechBasePrompt: '',
+      speechFinalText: '',
+      speechInterimText: ''
     };
   },
   computed: {
@@ -610,6 +823,10 @@ export default defineComponent({
     events(): ICodingBridgeEvent[] {
       const id = this.currentSessionId;
       return id ? (this.$store.state.codingBridge?.events?.[id] ?? []) : [];
+    },
+    // A primitive the watcher can actually compare — see the `eventCount` watch.
+    eventCount(): number {
+      return this.events.length;
     },
     // Only the most recent `visibleCount` events are rendered; the rest stay
     // behind the "load earlier" control so a huge transcript never mounts at once.
@@ -713,6 +930,9 @@ export default defineComponent({
     uploadingAttachments(): boolean {
       return (this.attachmentFileList || []).some((file: UploadFile) => this.isAttachmentUploading(file));
     },
+    speechActive(): boolean {
+      return this.speechState !== 'idle';
+    },
     canSend(): boolean {
       // Intentionally NOT gated on `currentProviderAvailable`: that flag comes
       // from the node's CLI probe, which false-negatives when the daemon's PATH
@@ -722,11 +942,18 @@ export default defineComponent({
       return (
         (!!this.prompt.trim() || this.attachments.length > 0) &&
         !this.uploadingAttachments &&
+        !this.speechActive &&
         this.connected &&
         this.nodeOnline
       );
     },
     composerHint(): string {
+      if (this.speechState === 'stopping') {
+        return this.$t('codingBridge.session.voiceStopping') as string;
+      }
+      if (this.speechState === 'listening') {
+        return this.$t('codingBridge.session.voiceListening') as string;
+      }
       if (this.uploadingAttachments) {
         return this.$t('codingBridge.session.uploadingAttachment') as string;
       }
@@ -869,7 +1096,10 @@ export default defineComponent({
     }
   },
   watch: {
-    events() {
+    // Watch the COUNT, not the array: `appendEvent` pushes into the same array
+    // instance, so a watcher on `events` sees oldValue === newValue and never
+    // fires — the transcript then stopped following live output.
+    eventCount() {
       this.scrollToBottom();
     },
     pendingQuestion() {
@@ -879,6 +1109,9 @@ export default defineComponent({
       this.scrollToBottom();
     },
     currentSessionId() {
+      void this.cancelSpeechRecognition?.();
+      // A different conversation always opens pinned to its newest message.
+      this.pinnedToBottom = true;
       this.scrollToBottom();
       // A different conversation starts capped to the most recent window again.
       this.visibleCount = RENDER_WINDOW;
@@ -889,12 +1122,18 @@ export default defineComponent({
       this.syncSessionSettings();
     },
     currentNodeId() {
+      void this.cancelSpeechRecognition?.();
       // Refresh capabilities when switching devices.
       this.requestCapabilities();
       // On a new session, swap the composer to the new device's last setup —
       // a folder / model from the previous device is meaningless here.
       if (this.isNewSession) {
         this.restoreComposerPrefs();
+      }
+    },
+    nodeOnline(value: boolean) {
+      if (!value) {
+        void this.cancelSpeechRecognition?.();
       }
     },
     providerCaps() {
@@ -933,8 +1172,142 @@ export default defineComponent({
   mounted() {
     this.requestCapabilities();
     this.syncSessionSettings();
+    // A transcript restored before mount (deep link / page reload) already has
+    // its events in the store, so no watcher fires — open it at the newest turn.
+    this.scrollToBottom();
+    this.observeTranscript();
+    this.watchSettingsBreakpoint();
+    void this.initializeSpeechRecognition?.();
+  },
+  updated() {
+    // The transcript is behind `v-if="currentNode"`, so on a reload it appears
+    // only once the device list lands — after mount. Cheap no-op once attached.
+    this.observeTranscript();
+  },
+  beforeUnmount() {
+    this.transcriptObserver?.disconnect();
+    this.transcriptObserver = undefined;
+    this.observedTranscript = undefined;
+    this.settingsMql?.removeEventListener('change', this.onSettingsBreakpoint);
+    this.settingsMql = undefined;
+    void this.speechController?.dispose();
+    this.speechController = undefined;
   },
   methods: {
+    async initializeSpeechRecognition() {
+      const controller = createSpeechRecognitionController();
+      this.speechController = controller;
+      this.speechSupported = await controller.isSupported();
+    },
+    async toggleSpeechRecognition() {
+      if (this.speechState === 'listening') {
+        await this.stopSpeechRecognition();
+        return;
+      }
+      if (this.speechState === 'idle') {
+        await this.startSpeechRecognition();
+      }
+    },
+    async startSpeechRecognition() {
+      if (!this.speechController || !this.speechSupported) return;
+      const token = await this.ensureSpeechCredential();
+      if (!token) {
+        ElMessage.error(this.$t('codingBridge.session.voiceError') as string);
+        return;
+      }
+      this.speechBasePrompt = this.prompt;
+      this.speechFinalText = '';
+      this.speechInterimText = '';
+      this.speechState = 'listening';
+      try {
+        await this.speechController.start(this.$i18n.locale, token, {
+          onResult: this.applySpeechSnapshot,
+          onEnd: this.finishSpeechRecognition,
+          onError: this.handleSpeechError
+        });
+      } catch {
+        this.finishSpeechRecognition();
+      }
+    },
+    async ensureSpeechCredential(): Promise<string> {
+      let token = this.$store.state.openaiimage?.credential?.token as string | undefined;
+      if (token) return token;
+      await this.$store.dispatch('openaiimage/getService');
+      const applications = await this.$store.dispatch('openaiimage/getApplications');
+      const combined = [...(this.$store.state.applications ?? []), ...(applications ?? [])];
+      const application = getFinalApplication(combined, this.$store.state.openaiimage?.application);
+      if (application) await this.$store.dispatch('openaiimage/setApplication', application);
+      token = this.$store.state.openaiimage?.credential?.token as string | undefined;
+      return token ?? '';
+    },
+    async stopSpeechRecognition() {
+      if (!this.speechController || this.speechState !== 'listening') return;
+      this.speechState = 'stopping';
+      try {
+        await this.speechController.stop();
+      } catch {
+        this.handleSpeechError('unknown');
+        this.finishSpeechRecognition();
+      }
+    },
+    async cancelSpeechRecognition() {
+      if (!this.speechController || this.speechState === 'idle') return;
+      this.speechState = 'idle';
+      this.speechInterimText = '';
+      this.applySpeechPrompt();
+      await this.speechController.abort();
+    },
+    applySpeechSnapshot(snapshot: SpeechRecognitionSnapshot) {
+      if (this.speechState === 'idle') return;
+      this.speechFinalText = snapshot.finalText;
+      this.speechInterimText = snapshot.interimText;
+      this.applySpeechPrompt();
+    },
+    applySpeechPrompt() {
+      const speech = `${this.speechFinalText}${this.speechInterimText}`;
+      const separator = this.speechBasePrompt && speech ? '\n' : '';
+      this.prompt = `${this.speechBasePrompt}${separator}${speech}`;
+    },
+    finishSpeechRecognition() {
+      if (this.speechState === 'idle') return;
+      this.speechInterimText = '';
+      this.applySpeechPrompt();
+      this.speechState = 'idle';
+    },
+    handleSpeechError(code: SpeechRecognitionErrorCode) {
+      if (code === 'aborted') return;
+      const keys: Record<Exclude<SpeechRecognitionErrorCode, 'aborted'>, string> = {
+        'permission-denied': 'codingBridge.session.voicePermissionDenied',
+        'microphone-unavailable': 'codingBridge.session.voiceMicrophoneUnavailable',
+        'no-speech': 'codingBridge.session.voiceNoSpeech',
+        network: 'codingBridge.session.voiceNetworkError',
+        unknown: 'codingBridge.session.voiceError'
+      };
+      const message = this.$t(keys[code]) as string;
+      if (code === 'no-speech') {
+        ElMessage.warning(message);
+      } else {
+        ElMessage.error(message);
+      }
+    },
+    // Matches the `md` breakpoint the composer styles use. Below it the
+    // secondary controls open in a dialog instead of crowding the row.
+    watchSettingsBreakpoint() {
+      if (typeof window === 'undefined' || !window.matchMedia) {
+        return;
+      }
+      this.settingsMql = window.matchMedia('(max-width: 767px)');
+      this.mobileSettings = this.settingsMql.matches;
+      this.settingsMql.addEventListener('change', this.onSettingsBreakpoint);
+    },
+    onSettingsBreakpoint(event: MediaQueryListEvent) {
+      this.mobileSettings = event.matches;
+      // Rotating a phone to landscape (or resizing a desktop window down) must
+      // not leave a dialog-only flag set while the controls render inline.
+      if (!event.matches) {
+        this.moreOpen = false;
+      }
+    },
     requestCapabilities() {
       if (this.currentNodeId) {
         this.$store.dispatch('codingBridge/getCapabilities', this.currentNodeId);
@@ -1093,6 +1466,7 @@ export default defineComponent({
       if (!this.canSend) {
         return;
       }
+      void this.cancelSpeechRecognition?.();
       const attachments = this.attachments;
       // Editing a past prompt rewinds the conversation to that turn instead of
       // appending — so the original prompt and everything after leave context.
@@ -1135,7 +1509,11 @@ export default defineComponent({
     },
     // Clear the input, slash menu, attachments and any active edit state.
     resetComposer() {
+      void this.cancelSpeechRecognition?.();
       this.prompt = '';
+      this.speechBasePrompt = '';
+      this.speechFinalText = '';
+      this.speechInterimText = '';
       this.slashMenuOpen = false;
       this.slashActiveIndex = 0;
       this.editingEventId = '';
@@ -1249,6 +1627,7 @@ export default defineComponent({
       if (!this.canEdit) {
         return;
       }
+      void this.cancelSpeechRecognition?.();
       this.editingEventId = event.id;
       this.restoreCode = false;
       this.prompt = event.text ?? '';
@@ -1299,17 +1678,73 @@ export default defineComponent({
       });
     },
     scrollToBottom() {
-      this.$nextTick(() => {
+      if (!this.pinnedToBottom) {
+        return;
+      }
+      const jump = () => {
         const el = this.$refs.transcript as HTMLElement | undefined;
         if (el) {
           el.scrollTop = el.scrollHeight;
         }
+      };
+      // Two passes: $nextTick lands after the patch, the rAF after the browser
+      // has laid out (images, code blocks and markdown grow the content AFTER
+      // the DOM patch, which left the old single-pass jump short of the bottom).
+      this.$nextTick(() => {
+        jump();
+        requestAnimationFrame(jump);
       });
+    },
+    // Streamed output grows via `appendDelta`, which mutates the open bubble's
+    // text in place — the event COUNT never changes, so no watcher fires and the
+    // tail would grow below the viewport. Watch the rendered DOM instead, which
+    // covers every way the transcript gets taller (deltas, markdown, images).
+    // Re-runs on every patch because the transcript sits behind `v-if`: on a
+    // reload the device list arrives after mount, so the element the observer
+    // needs does not exist yet at mount time.
+    observeTranscript() {
+      const el = this.$refs.transcript as HTMLElement | undefined;
+      if (el === this.observedTranscript) {
+        return;
+      }
+      this.transcriptObserver?.disconnect();
+      this.transcriptObserver = undefined;
+      this.observedTranscript = el;
+      if (!el || typeof MutationObserver === 'undefined') {
+        return;
+      }
+      this.transcriptObserver = new MutationObserver(() => this.scheduleScrollToBottom());
+      this.transcriptObserver.observe(el, { childList: true, subtree: true, characterData: true });
+    },
+    // Coalesce a delta burst into one jump per frame.
+    scheduleScrollToBottom() {
+      if (!this.pinnedToBottom || this.scrollPending) {
+        return;
+      }
+      this.scrollPending = true;
+      requestAnimationFrame(() => {
+        this.scrollPending = false;
+        const el = this.$refs.transcript as HTMLElement | undefined;
+        if (el && this.pinnedToBottom) {
+          el.scrollTop = el.scrollHeight;
+        }
+      });
+    },
+    // Following the tail is the user's to break: scrolling up detaches, coming
+    // back within a threshold of the bottom re-attaches.
+    onTranscriptScroll() {
+      const el = this.$refs.transcript as HTMLElement | undefined;
+      if (!el) {
+        return;
+      }
+      this.pinnedToBottom = el.scrollHeight - el.scrollTop - el.clientHeight <= SCROLL_PIN_THRESHOLD;
     },
     // Reveal an older page of the transcript, keeping the current scroll anchor.
     loadEarlier() {
       const el = this.$refs.transcript as HTMLElement | undefined;
       const prevHeight = el?.scrollHeight ?? 0;
+      // Reading earlier turns means we are no longer following the tail.
+      this.pinnedToBottom = false;
       this.visibleCount += RENDER_PAGE;
       this.$nextTick(() => {
         if (el) {
@@ -1324,7 +1759,9 @@ export default defineComponent({
 <style scoped lang="scss">
 // Mobile-only devices entry in the header (replaces the old floating button).
 .cb-devices-btn {
-  display: inline-flex;
+  // Mobile-only entry to the device drawer. `md:hidden` on the element does
+  // nothing against this scoped rule's higher specificity, so gate it here.
+  display: none;
   flex: none;
   align-items: center;
   justify-content: center;
@@ -1343,6 +1780,12 @@ export default defineComponent({
   &:hover {
     color: var(--el-color-primary);
     border-color: var(--el-color-primary-light-5);
+  }
+}
+
+@media (max-width: 767px) {
+  .cb-devices-btn {
+    display: inline-flex;
   }
 }
 
@@ -1524,6 +1967,76 @@ export default defineComponent({
   &:hover {
     color: var(--el-color-primary);
     border-color: var(--el-color-primary-light-5);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.65;
+  }
+}
+
+.cb-voice-btn--active {
+  color: var(--el-color-danger);
+  border-color: var(--el-color-danger-light-5);
+  background: var(--el-color-danger-light-9);
+  animation: cb-voice-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes cb-voice-pulse {
+  50% {
+    box-shadow: 0 0 0 4px rgb(245 108 108 / 14%);
+  }
+}
+
+// One secondary control. Inline (desktop) the wrapper is invisible to layout so
+// the pill stays a flex item of the composer row; in the mobile dialog it
+// becomes a labelled, full-width row.
+.cb-setting {
+  display: contents;
+
+  &--row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: var(--app-text-subtle);
+  }
+
+  // The control is sometimes the pill itself, sometimes an el-dropdown /
+  // el-popover wrapper around one — stretch whichever it is.
+  &--row > *:not(&__label) {
+    width: 100%;
+  }
+
+  &--row .cb-pill {
+    width: 100%;
+    max-width: none;
+    height: 40px;
+    padding: 0 14px;
+    font-size: 13px;
+    justify-content: flex-start;
+  }
+
+  // Right-align every chevron so the rows read as one list.
+  &--row .cb-pill__caret {
+    margin-left: auto;
+  }
+}
+
+// The settings button only exists on phones. Tailwind's `md:hidden` can't do
+// this here: `.cb-icon-btn[data-v-*]` (0,2,0) outranks `.md\:hidden` (0,1,0),
+// so the button would stay visible on desktop — the same reason
+// `.cb-devices-btn` above sets its own breakpoint rule.
+.cb-more-btn {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .cb-more-btn {
+    display: inline-flex;
   }
 }
 

@@ -215,6 +215,10 @@
     "message": "실패 원인",
     "description": "작업 실패의 원인"
   },
+  "name.failure": {
+    "message": "생성 실패",
+    "description": "Producer 작업 실패 제목"
+  },
   "name.status": {
     "message": "상태",
     "description": "작업의 상태"

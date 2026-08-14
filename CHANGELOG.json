@@ -2,6 +2,4712 @@
   "name": "@acedatacloud/nexior",
   "entries": [
     {
+      "date": "Thu, 13 Aug 2026 20:21:54 GMT",
+      "version": "3.362.3",
+      "tag": "@acedatacloud/nexior_v3.362.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "81c145da36029dd149ff9e42b24181efbc2056ee",
+            "comment": "Distribute desktop installers through GitHub downloads without the unused COS update feed"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 12 Aug 2026 20:34:04 GMT",
+      "version": "3.362.2",
+      "tag": "@acedatacloud/nexior_v3.362.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "50e090e8b519ac777e565722414118df54e53f49",
+            "comment": "Fix desktop local-tool consent so Always allow (any path) applies to future invocations of the selected tool"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "89410f436c6148a4135cba5a74ae5c9270c58ece",
+            "comment": "Move Intel desktop builds to the supported macOS 15 Intel runner"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "02f243404dcae41fca03cf811736fe0350c86730",
+            "comment": "Fix the desktop release pipeline to validate the generated Apple Silicon update ZIP"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 11 Aug 2026 20:27:39 GMT",
+      "version": "3.362.1",
+      "tag": "@acedatacloud/nexior_v3.362.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4579792bd2a0e197cf20e531a5cba55777a59637",
+            "comment": "Show a clear support message when a restricted account cannot sign in"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "292d01ea4ad86755b66e5b9819f974043486fcb8",
+            "comment": "Add editable voice input to the Coding Bridge composer on web, iOS, and Android"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 10 Aug 2026 20:22:20 GMT",
+      "version": "3.362.0",
+      "tag": "@acedatacloud/nexior_v3.362.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "20cf874d5505fc7b2e05a41403b46c8c8798315d",
+            "comment": "Add Gemini 3.6 Flash to the chat model picker."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0a3d459ecfffc4c35c0823955b7193a5e403554f",
+            "comment": "Add profile-based desktop update checks and signed installer replacement flow."
+          }
+        ],
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "eb7b2b3b0d92aa3dfd098749698207ef8b6fb989",
+            "comment": "Add Lite, Standard, and Pro Maestro SKU selection with tier-aware limits and pricing estimates"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 09 Aug 2026 20:16:39 GMT",
+      "version": "3.361.1",
+      "tag": "@acedatacloud/nexior_v3.361.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "adfac794e5c79b6baa5373704771cfafec3d4a46",
+            "comment": "Hide recharge actions for applications shared by another user"
+          }
+        ],
+        "none": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6672d60828f5ed288bfdac56df1ee94371d342fb",
+            "comment": "Batch production web deployments hourly without changing the app release"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "fcead9a192c251f96bf7a0c36f61ff205025c0f5",
+            "comment": "Use explicit release inputs inside reusable desktop and Android workflows"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 09 Aug 2026 15:37:44 GMT",
+      "version": "3.361.0",
+      "tag": "@acedatacloud/nexior_v3.361.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "319407966c56d63fa1dda49501819243d08b8bcc",
+            "comment": "Keep Fish voice clone submissions pending until completion and preserve failed form input"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9bb86a41794be845b07f3211295da86f07c68f3d",
+            "comment": "Restore complete daily releases and align desktop and mobile workflow names"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2d88a7d66e7d07bd2cb5d8f2ab9517c5798e6766",
+            "comment": "Restore pre-mount web authentication bootstrap so refreshes preserve valid sessions"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9f8ee5aa12a46256aedd9fc56f48782954c08bf0",
+            "comment": "Add Base wallet payments for x402 generation flows"
+          }
+        ],
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2c0854f60b4e44839a0445a686786b66d70e7538",
+            "comment": "Add reusable Solana wallet authorization for continuous x402 payments."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 08 Aug 2026 20:17:59 GMT",
+      "version": "3.360.0",
+      "tag": "@acedatacloud/nexior_v3.360.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "959a44e2e4672a6eac4fe1278ed00f83b6ea44e9",
+            "comment": "Add Solana x402 wallet payments to Suno generation and exact-priced secondary actions."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8252d95e1bb54af0cc020630ab2e27e560a70fd1",
+            "comment": "Add Solana x402 wallet payments to Midjourney image, video, describe, and custom actions."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "566732dc6dca9234a2662cda7b7a7288cab86c41",
+            "comment": "Add Solana x402 wallet payments to Producer audio, lyrics, video, and WAV actions."
+          }
+        ],
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b7624976b0ebacae25dcae12e4120c2cc1d3f7ed",
+            "comment": "Reuse shared coding-agent contracts and transcript helpers."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 08 Aug 2026 16:15:23 GMT",
+      "version": "3.359.0",
+      "tag": "@acedatacloud/nexior_v3.359.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b74399accc6c6764f147f283bd490bb792817353",
+            "comment": "Add Solana x402 wallet payments to Flux and QR Art."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3b6bbafc10c4ab62a1e5eb6d4590caeec3dedd79",
+            "comment": "Add Solana x402 wallet payments to SERP search."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cc79c8f853d28f47aeb58095abf48eb2579325ce",
+            "comment": "Add Solana x402 wallet payments to Kling and Digital Human exact-priced flows."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6866e7e0eca07a1adff535afdbd71d3863215389",
+            "comment": "Add Solana x402 wallet payments to standard video scenarios."
+          }
+        ],
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ef0d33aa49b43391ff7eb4571da8fd0b5b68a3fe",
+            "comment": "Limit console usage filters and application usage actions to API services."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8a96110124e4a891b371dc7340e911966ce22cef",
+            "comment": "Prevent Android startup from waiting on remote initialization and acknowledge the native update watchdog immediately."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ec9e77358eb86b36e0b8acfa040a214ffa059441",
+            "comment": "Add smart logo and favicon processing with transparent backgrounds and light/dark logo variants."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "50cbd767af5d18c2e263b217abe1a26205c26431",
+            "comment": "Simplify scheduled-template creation and enforce gated activation from task cards."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "714df042859db726e38ebc44e5c9158c7261637b",
+            "comment": "Unify copy controls and code blocks on consistent success icons, timing, and accessible feedback."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a2bc48b91ed541d42cd176e335126e0a995278fc",
+            "comment": "Keep the usage API filter visible while its options preload and show loading inside the dropdown."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cd288034d9000f2573c7e06b6bb781fc10cff332",
+            "comment": "Apply account usage discounts to x402 quotes and improve settlement history layout."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b7d3013d3a2c150fde9a7d0e5b78740417bd4980",
+            "comment": "Show settled USDC amounts and transaction links in API usage history."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 07 Aug 2026 20:23:40 GMT",
+      "version": "3.358.0",
+      "tag": "@acedatacloud/nexior_v3.358.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "31d7b7824ba58b2fd671a7dd7e57d49544e1cc41",
+            "comment": "Improve template connection guidance, translations, and actionable test errors."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "998ad892abd92eefe83b5b4c5c0eea86cd1c44a1",
+            "comment": "Keep chat and accent-tinted surfaces readable with custom site colours in dark mode."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "dc7de614c36297f89f69388d27b6f282c5d0cfa6",
+            "comment": "Default unresolved site login flows to a full-page redirect instead of an embedded popup."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2a8e9455a46992bc069a24c861ac98385405a452",
+            "comment": "Wrap MiniMax aspect ratio options into a balanced two-row layout."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a97ea26ed1d797dbf48d0de99e09fb640a104034",
+            "comment": "Align MiniMax H3 requests, task responses, controls, and translations with the official V2 API contract."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2766bf9257341ad70851d90eb9ba9eca6b63a553",
+            "comment": "Add MiniMax H3 resolution pricing and watermark controls."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b48f459ebf8020bde5a70daf5083850be45d7e49",
+            "comment": "Align the MiniMax H3 workspace with standard media uploads, help text, and video controls."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6a9b9fc0af50bd7016f3c909d7c76034e33aa911",
+            "comment": "Align MiniMax resolution, aspect ratio, and duration controls with the compact video workspace UI."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "560e54c73c1750d80a1aacd4c18fb309e187c8e5",
+            "comment": "Polish the scheduled template wizard with a compact layout, primary-colour steps, and clearer test-run spacing."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5cd9218303d4cd9ea9fced49cda9d77579f2ce5f",
+            "comment": "Use each site's own brand and copyright in the public footer."
+          }
+        ],
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "84d74628d7fbe00e14be3538e799a2e2f03c5d2c",
+            "comment": "Add the MiniMax H3 multimodal video creation workspace."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "dc7de614c36297f89f69388d27b6f282c5d0cfa6",
+            "comment": "Add feature-gated Solana x402 payments to Nano Banana and GPT Image 2 generation."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 06 Aug 2026 22:20:15 GMT",
+      "version": "3.357.1",
+      "tag": "@acedatacloud/nexior_v3.357.1",
+      "comments": {
+        "none": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "97dca1ea95ca8f25e82b285d4b7e3faf7b4ce951",
+            "comment": "ci: aggregate product releases daily with complete desktop and Android assets"
+          }
+        ],
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3926679ba902f32e2db989fc5aa6bd20d5d7870e",
+            "comment": "serve dynamic white-label Open Graph cards"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "13734fda262c11a46f71a19e0a0a525531c2837f",
+            "comment": "Open scheduled template deep links in the requested category."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 06 Aug 2026 04:54:04 GMT",
+      "version": "3.357.0",
+      "tag": "@acedatacloud/nexior_v3.357.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9490f0bcf8ea16e6a343430f4e52c70b332cec61",
+            "comment": "Add guided scheduled-task templates and referral automation onboarding."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 06 Aug 2026 04:52:05 GMT",
+      "version": "3.356.14",
+      "tag": "@acedatacloud/nexior_v3.356.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b2f63a0f8c429f54f6285137ff146cb1327fd0a7",
+            "comment": "Preserve the exact Claude model selector when resuming Coding Bridge sessions so selector-only context profiles are not replaced by resolved model IDs."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 06 Aug 2026 03:48:34 GMT",
+      "version": "3.356.13",
+      "tag": "@acedatacloud/nexior_v3.356.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "7ecd73afbb45ddc0f222b3e1b25af3269972be01",
+            "comment": "Clarify that confirming an external action starts execution rather than proving it succeeded, and preserve structured continuation errors."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 06 Aug 2026 03:03:39 GMT",
+      "version": "3.356.12",
+      "tag": "@acedatacloud/nexior_v3.356.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2358e3c864047b11bafa0276ce3c21daa4579da9",
+            "comment": "Let scheduled tasks select and display an IANA time zone, and make desktop-local schedules honor the saved zone across daylight-saving changes."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 06 Aug 2026 00:30:10 GMT",
+      "version": "3.356.11",
+      "tag": "@acedatacloud/nexior_v3.356.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b01c3306a0cfb06aa5ec33106bad060fd417532f",
+            "comment": "move the capability-first product presentation from /intro to /home and move the white-label business presentation from /home to /business"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 23:28:09 GMT",
+      "version": "3.356.10",
+      "tag": "@acedatacloud/nexior_v3.356.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0f33e5b68ae736341ea3c5e92cdc1c55860628fc",
+            "comment": "Use the official TikTok brand icon and localize the publish confirmation title, summary, and action label from the active Studio locale."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 21:40:18 GMT",
+      "version": "3.356.9",
+      "tag": "@acedatacloud/nexior_v3.356.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "96ec4d4459b2c2326359d086342ba8d5853ee806",
+            "comment": "use each initialized Site's title and description as the /home and /intro hero copy, with default marketing text only as a fallback"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 20:43:54 GMT",
+      "version": "3.356.8",
+      "tag": "@acedatacloud/nexior_v3.356.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d5b5469e78ce3bcaa2ad1fffabb6efa1ceeb6b88",
+            "comment": "Turn TikTok publishing confirmation into a complete review screen with reliable media fallback, validated account settings, clear disabled reasons, and linked policy guidance."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 15:22:50 GMT",
+      "version": "3.356.7",
+      "tag": "@acedatacloud/nexior_v3.356.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "43395f8648f8e9481cea0af852758d1aef9b4aa0",
+            "comment": "send Suno excluded styles through the canonical negative_tags API field while preserving prompt reuse from older tasks"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 15:00:28 GMT",
+      "version": "3.356.6",
+      "tag": "@acedatacloud/nexior_v3.356.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3a718b497e0797c5fd5fa1ed590e71ce4ee79e6f",
+            "comment": "render each white-label Site's configured logo on tenant subdomains and custom domains while keeping the built-in wordmark on exact official hosts"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 14:01:47 GMT",
+      "version": "3.356.5",
+      "tag": "@acedatacloud/nexior_v3.356.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9e3b5d9f6482496b857da20e2f6896be2e83db05",
+            "comment": "give /intro a logo-only presentation header, circular product marks, and balanced responsive card rows"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 13:53:00 GMT",
+      "version": "3.356.4",
+      "tag": "@acedatacloud/nexior_v3.356.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "86e791741e6879b92df6f0dde5a7774d5edeb85f",
+            "comment": "Remove unavailable Seedream 3.0 models and migrate persisted selections to a supported model."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 13:17:30 GMT",
+      "version": "3.356.3",
+      "tag": "@acedatacloud/nexior_v3.356.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1f513765dcd0dfb6e8ffd000099a2dffb027be39",
+            "comment": "polish /intro with outward-facing campaign headlines and a recognizable logo on every product card"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 05 Aug 2026 08:42:10 GMT",
+      "version": "3.356.2",
+      "tag": "@acedatacloud/nexior_v3.356.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b248741f574da5d21edb9b245d36e0b56f261aa4",
+            "comment": "make /intro honor the enabled capability set on every site, including studio.acedata.cloud, and select matching screenshots and copy"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 04 Aug 2026 17:08:26 GMT",
+      "version": "3.356.1",
+      "tag": "@acedatacloud/nexior_v3.356.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6fd3b013eef9a11e915e171e09c6e506c70bd568",
+            "comment": "gate /intro capability sections and model cards by the site's enabled features"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 04 Aug 2026 15:00:18 GMT",
+      "version": "3.356.0",
+      "tag": "@acedatacloud/nexior_v3.356.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5c56aa4d10c4f41993068d4ef5354dda99e5caad",
+            "comment": "add a capability-first /intro product tour covering chat, image, video, music, production, tools, and connectors, with localized desktop and mobile screenshots"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 04 Aug 2026 07:13:48 GMT",
+      "version": "3.355.0",
+      "tag": "@acedatacloud/nexior_v3.355.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d3df581255bbd13ec34d54732b7f25a9c6262ebb",
+            "comment": "Add a track-length control to Suno advanced params for custom-mode generations"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 03 Aug 2026 17:39:11 GMT",
+      "version": "3.354.4",
+      "tag": "@acedatacloud/nexior_v3.354.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "28096994165b5389f4c4be29c5c81fc4f1abf531",
+            "comment": "Send size=auto explicitly for OpenAI Image instead of omitting the field, and give the option its own i18n key"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 03 Aug 2026 02:14:09 GMT",
+      "version": "3.354.3",
+      "tag": "@acedatacloud/nexior_v3.354.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b3d22e3b1220da5649a9db3554dc90ffb77b73a4",
+            "comment": "fix(chat): 输入框加号菜单的技能/连接不再显示外链图标（已是站内页面）"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 03 Aug 2026 01:03:10 GMT",
+      "version": "3.354.2",
+      "tag": "@acedatacloud/nexior_v3.354.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ed60163c129c43496525b6252c92682faccf6303",
+            "comment": "fix(auth): 微信内置浏览器里内嵌登录选微信登录不再白屏"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 03 Aug 2026 00:51:24 GMT",
+      "version": "3.354.1",
+      "tag": "@acedatacloud/nexior_v3.354.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9fdeaa329350e2affdfd32dfdfb477eec6a680fb",
+            "comment": "fix(white-label): 子站首帧不再闪现 Ace Data Cloud 品牌"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 03 Aug 2026 00:41:07 GMT",
+      "version": "3.354.0",
+      "tag": "@acedatacloud/nexior_v3.354.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5d06cf6ff94ab10d51e20ce230d75cea2aff6b98",
+            "comment": "站点设置新增强制语言：设定后全站访客界面语言被固定，不设置则自动检测"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 02 Aug 2026 10:20:15 GMT",
+      "version": "3.353.5",
+      "tag": "@acedatacloud/nexior_v3.353.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3be2e7f88187f34dbcb9fd48905dcc249e0e9044",
+            "comment": "修复刷新后界面语言被重置为英文"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 02 Aug 2026 04:06:33 GMT",
+      "version": "3.353.4",
+      "tag": "@acedatacloud/nexior_v3.353.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "21c35877284afaefe6994033dfce2fce1482a364",
+            "comment": "register the Element Plus components each chat card actually uses, so the action confirmation and TikTok publish forms render real inputs, selects, checkboxes and buttons instead of bare text"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 02 Aug 2026 01:16:08 GMT",
+      "version": "3.353.3",
+      "tag": "@acedatacloud/nexior_v3.353.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4ba16eab5c3382744fc606e72ea4e277c2f9e137",
+            "comment": "polish the action confirmation card: match the connector consent card's house style, drop the duplicate tool row above it, and replay the submitted TikTok form read-only once resolved"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 18:40:32 GMT",
+      "version": "3.353.2",
+      "tag": "@acedatacloud/nexior_v3.353.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1c3e3fa449b6d497c2bd8a6f70eeac3cd533396c",
+            "comment": "fix iframe-login sites falling back to a full-page redirect"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 18:10:00 GMT",
+      "version": "3.353.1",
+      "tag": "@acedatacloud/nexior_v3.353.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b4ec0ef5269157c2bcea5755f41658f63d37f949",
+            "comment": "show the chat report action only while hovering or focusing the full message row"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 17:34:07 GMT",
+      "version": "3.353.0",
+      "tag": "@acedatacloud/nexior_v3.353.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "add an action confirmation card so irreversible actions (e.g. publishing to TikTok) are confirmed in a real UI before they run"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 17:33:12 GMT",
+      "version": "3.352.0",
+      "tag": "@acedatacloud/nexior_v3.352.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "支持站点管理员限制访客可选的界面语言"
+          }
+        ],
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "10079d10fa01cbea833763720bf1a05d44dc49bf",
+            "comment": "add an action confirmation card so irreversible actions (e.g. publishing to TikTok) are confirmed in a real UI before they run"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 17:32:32 GMT",
+      "version": "3.351.6",
+      "tag": "@acedatacloud/nexior_v3.351.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8779f74a5e074be33b8759db2cd5a206b837b875",
+            "comment": "支持站点管理员限制访客可选的界面语言"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 17:24:35 GMT",
+      "version": "3.351.5",
+      "tag": "@acedatacloud/nexior_v3.351.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d86976a2a1219baf3bb474de51fec36f2d1b212b",
+            "comment": "优化生成任务预览间距并恢复口播文本展示"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 16:28:13 GMT",
+      "version": "3.351.4",
+      "tag": "@acedatacloud/nexior_v3.351.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3cdfa58aa058572fcc66c5ee2df48cc940652be3",
+            "comment": "管理分站时优先打开已生效的绑定域名"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 14:03:22 GMT",
+      "version": "3.351.3",
+      "tag": "@acedatacloud/nexior_v3.351.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cf4e86450a50c5dd5c79e61736c030f48d848826",
+            "comment": "数字人结果卡片：回显素材、补齐尺寸与追踪信息、给等待中的任务一个剩余时间"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 13:52:37 GMT",
+      "version": "3.351.2",
+      "tag": "@acedatacloud/nexior_v3.351.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "53fc69cd35f3702eb169615c82c23d26c37ad04e",
+            "comment": "数字人配置面板重做：两步式输入、上传预览、音色簿，并收起引擎与分辨率参数"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 13:02:07 GMT",
+      "version": "3.351.1",
+      "tag": "@acedatacloud/nexior_v3.351.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ad4220c854871a55f211bd5130acb8454126dd5e",
+            "comment": "数字人：修好被吞掉的 API token、失效的 favicon 路径与上传中就能点生成，并换上新服务图标"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 Aug 2026 07:57:44 GMT",
+      "version": "3.351.0",
+      "tag": "@acedatacloud/nexior_v3.351.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "托盘图标收小一档：18pt → 16pt"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "托盘图标加粗提亮：先二值化再缩放，按高度铺满画布"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "桌面端修复：聊天顶栏的模型选择器等控件被窗口拖拽区吞掉、无法点击"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "desktop: defer local MCP tool schemas behind load_mcp_server instead of re-sending them every turn"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "举报按钮与相邻操作按钮垂直对齐，颜色改用次级文字色"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "nginx: send security headers on every route and serve /auth/ variants uniformly (CASA remediation)"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "console: unify the sidebar and page layout — one source of truth for the sidebar width, nav rows that cannot overflow, and rounded workspace panels"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "build: strip comments from built HTML so scanners stop flagging them (CASA #6)"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "connectors: the authorization popup now closes itself on every outcome, including custom MCP servers, instead of leaving a window open that has to be dismissed by hand"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "skills: show the search field permanently and match the connector page's toolbar, instead of hiding it behind a magnifier toggle"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "coding bridge: collapse the secondary composer controls behind a compact toggle on mobile so only the backend picker stays on the main row"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "桌面 CI 触发路径补上托盘图标"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "上传超过大小上限时立即提示，不再卡在进度条上导致发送按钮永久变灰"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "connectors: connecting a service now works on desktop, iOS and Android — the consent page opens in the right browser for each and the list refreshes when you come back, instead of the click doing nothing (desktop) or leaving the screen stuck (mobile)"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "上传体积天花板抬到 300m，消除超过上限时的残留卡死"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "下载页浏览器扩展改为通栏卡片"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "coding bridge: open the secondary composer controls in a settings dialog on mobile instead of expanding them inline"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "desktop: ship the tray icon inside the app bundle so the menu-bar item is actually visible"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "fix(chat): 工作目录入口移到输入框下方，改为低调的页脚样式"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "scheduled tasks: run a device-bound task through its own daemon so it can actually reach local tools, and make the tray icon legible at menu-bar size"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "下载页新增浏览器扩展入口（Chrome / Edge 双图标）"
+          }
+        ],
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "scheduled tasks: choose whether a task runs in the cloud or on this device, authorize the local tools it may use, and show where each run fired from"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "mobile: collapse the bottom app bar to a thin handle to free up screen space, and remember the choice"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "connectors, skills and browser devices are now managed in Studio for everyone"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "console: manage paired browser devices in Studio, matching the connector and skill pages"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "新增 AI 生成内容举报入口：22 个生成结果卡片与聊天回复均可举报不良内容（Google Play AI 内容政策要求）"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "feat(local-tools): 工作目录持久化到主进程配置，并作为 shell 与项目约定的默认目录"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1b7274947db2aced3f5428d4aa4af72c6e90ce2c",
+            "comment": "feat(chat): 桌面端发消息前必须先选工作目录，设置里可随时更改"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 03:03:23 GMT",
+      "version": "3.349.2",
+      "tag": "@acedatacloud/nexior_v3.349.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "fix(console): 弹窗收口视口、断点对齐、搜索框换 el-input"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 03:02:21 GMT",
+      "version": "3.350.0",
+      "tag": "@acedatacloud/nexior_v3.350.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "feat(local-tools): 新增目录级授权档，填补精确绑定与完全放开之间的空白"
+          }
+        ],
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "659fe100e4218c2044030f2a3865d060e6e1902a",
+            "comment": "fix(console): 弹窗收口视口、断点对齐、搜索框换 el-input"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 03:01:34 GMT",
+      "version": "3.349.0",
+      "tag": "@acedatacloud/nexior_v3.349.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "feat(local-tools): 新增目录级授权档，填补精确绑定与完全放开之间的空白"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 03:00:38 GMT",
+      "version": "3.348.0",
+      "tag": "@acedatacloud/nexior_v3.348.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "feat(local-tools): 持久 shell、会话工作目录与项目约定加载"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "386f8e9a064e0a65feecef5eb6c84f37a29f5834",
+            "comment": "feat(local-tools): 新增目录级授权档，填补精确绑定与完全放开之间的空白"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 02:59:56 GMT",
+      "version": "3.347.0",
+      "tag": "@acedatacloud/nexior_v3.347.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5b5f64f62895e12cecd855f8746bd0b3c096094c",
+            "comment": "feat(local-tools): 持久 shell、会话工作目录与项目约定加载"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 02:57:17 GMT",
+      "version": "3.346.0",
+      "tag": "@acedatacloud/nexior_v3.346.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "baaafaec15e99a0ea7b6703adbee5970ced5c597",
+            "comment": "desktop: run locally-executed scheduled tasks from the main process — tray residency, start-at-login, and the client-tool loop without a window"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 31 Jul 2026 02:55:17 GMT",
+      "version": "3.345.2",
+      "tag": "@acedatacloud/nexior_v3.345.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b70ca5e2de9f7ae1d0fc406f719e214e852ffb72",
+            "comment": "share: center the brand in the shared-conversation header, drop the duplicate site title, and make the logo dark-mode aware"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 10:21:24 GMT",
+      "version": "3.345.1",
+      "tag": "@acedatacloud/nexior_v3.345.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3645b6f7f6a8efbf161b8e8f98ea32457111d2ce",
+            "comment": "fix(console): 连接器/技能页样式对齐 Studio 控制台"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 10:13:22 GMT",
+      "version": "3.345.0",
+      "tag": "@acedatacloud/nexior_v3.345.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "84abe3dabc4dbbd127b4454446c1aa402860d5ad",
+            "comment": "feat(local-tools): 新增 fs.glob / fs.grep 本地检索工具"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 10:00:57 GMT",
+      "version": "3.344.0",
+      "tag": "@acedatacloud/nexior_v3.344.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "72af472c6e882ffe1d1e3b1f348a91c4550df30f",
+            "comment": "feat(local-tools): 新增 fs.edit_file 精确编辑与 fs.read_file 分页读"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 09:43:42 GMT",
+      "version": "3.343.5",
+      "tag": "@acedatacloud/nexior_v3.343.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "48d569cdf3b455f520223b686587a4d23a79f31b",
+            "comment": "desktop local tools: folder-scoped fs consent stated in the dialog, working PATH for shell.run_command, session grants honored for every tool, macOS folder TCC strings, crash-safe write_file"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 05:04:51 GMT",
+      "version": "3.343.4",
+      "tag": "@acedatacloud/nexior_v3.343.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "04e2015a42ec64dbdb7e3ce15afa16492c4304b4",
+            "comment": "openaiimage: raise the reference-image ceiling from 5 to 16 to match the upstream limit"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 04:12:26 GMT",
+      "version": "3.343.3",
+      "tag": "@acedatacloud/nexior_v3.343.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "69dea712e560807a00bbb452a70f1dde2d7ec625",
+            "comment": "test(chat): 补浏览器工具卡片的流式回归测试"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 04:07:42 GMT",
+      "version": "3.343.2",
+      "tag": "@acedatacloud/nexior_v3.343.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1bf1ae801acb1618f4f5727db3c987758617f2f4",
+            "comment": "desktop: surface MCP tool image results to the model instead of burying them in JSON"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 03:33:09 GMT",
+      "version": "3.343.1",
+      "tag": "@acedatacloud/nexior_v3.343.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1841951c2d95877b03e16c98f878ee0d6652c94f",
+            "comment": "fix(chat): 浏览器工具卡片停在转圈且看不到结果"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 02:15:56 GMT",
+      "version": "3.343.0",
+      "tag": "@acedatacloud/nexior_v3.343.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "25ded2d648533b4b26b7e5310903c6ffa8721230",
+            "comment": "feat(console): 技能管理搬进 Studio 控制台（feature flag 保护）"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 30 Jul 2026 01:14:54 GMT",
+      "version": "3.342.0",
+      "tag": "@acedatacloud/nexior_v3.342.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0d1a1c71c2f49dbf2a7ae62551862e39f426a826",
+            "comment": "feat(console): 连接器管理搬进 Studio 控制台（feature flag 保护）"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 16:05:41 GMT",
+      "version": "3.341.0",
+      "tag": "@acedatacloud/nexior_v3.341.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c5f57ba90b70bd80bc317689094271adfb26813a",
+            "comment": "desktop: per-tool always-allow toggles for connected MCP tools"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 13:16:43 GMT",
+      "version": "3.340.12",
+      "tag": "@acedatacloud/nexior_v3.340.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cab00d3b2c5b1bde3df2938210616c62811120fc",
+            "comment": "kling/flux/pixverse: 数字参数 setter 的类型标注改回 number"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 05:40:53 GMT",
+      "version": "3.340.11",
+      "tag": "@acedatacloud/nexior_v3.340.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2f574b12c3bbf2e282e96b8b7082aae8ac651fb7",
+            "comment": "scheduled runs: render an unverifiable outcome as 待确认 instead of 失败"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 04:49:09 GMT",
+      "version": "3.340.10",
+      "tag": "@acedatacloud/nexior_v3.340.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "61ff04ebbc0cd99e0693c97c8785c619f46fc149",
+            "comment": "fix(chat): restore blockquote spacing overridden by lazy-loaded github-markdown-css"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 04:14:35 GMT",
+      "version": "3.340.9",
+      "tag": "@acedatacloud/nexior_v3.340.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6ca407c7c03170148e8a6da72989d58aea6a3f8f",
+            "comment": "surface rename/share/delete for the open conversation in a toolbar menu next to the model selector"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 03:43:07 GMT",
+      "version": "3.340.8",
+      "tag": "@acedatacloud/nexior_v3.340.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "06d45526ed08a1a4a2205e3447aa4c15b87d0a74",
+            "comment": "show the scheduled task id under its name, click to copy"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 01:28:47 GMT",
+      "version": "3.340.7",
+      "tag": "@acedatacloud/nexior_v3.340.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "1ff25ecbdfef5a2d72e8324b3af7e0239809930e",
+            "comment": "coding bridge: stop replaying the whole buffer on a re-keyed session, and clear the seq cursor when the relay renumbers it"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 29 Jul 2026 00:41:33 GMT",
+      "version": "3.340.6",
+      "tag": "@acedatacloud/nexior_v3.340.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2a3d2bf2db900f498f77e5dd4eaa0a7c7f0cbb64",
+            "comment": "retranslate i18n values left as English placeholders by the backfill script"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 16:13:38 GMT",
+      "version": "3.340.5",
+      "tag": "@acedatacloud/nexior_v3.340.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4761f293fcdae4689ea38f91d13cc45ac7d8fe36",
+            "comment": "coding bridge: open a conversation at its newest message instead of replaying the relay buffer oldest-first"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 15:00:11 GMT",
+      "version": "3.340.4",
+      "tag": "@acedatacloud/nexior_v3.340.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "663641dbc28351d89d4833d1b32a194b4bb31f5c",
+            "comment": "coding bridge history: drop the unread red dot, show unread by bold title alone"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 13:00:47 GMT",
+      "version": "3.340.3",
+      "tag": "@acedatacloud/nexior_v3.340.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "825952477c3534b379dfda3afc1e1c7c092030b4",
+            "comment": "mark finished, unopened coding bridge history sessions as unread (bold title + red dot)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 11:09:19 GMT",
+      "version": "3.340.2",
+      "tag": "@acedatacloud/nexior_v3.340.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "fe5f35ef4c716d0de36a0710de58ecedaf4081f3",
+            "comment": "filter coding bridge history by provider (Claude Code / Codex / GitHub Copilot)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 08:46:44 GMT",
+      "version": "3.340.1",
+      "tag": "@acedatacloud/nexior_v3.340.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d6e0cd1398340d0b1353a1c094b47311bd338a10",
+            "comment": "restore the authorized Skills / MCP servers when editing a scheduled task"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 07:19:57 GMT",
+      "version": "3.340.0",
+      "tag": "@acedatacloud/nexior_v3.340.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "e8198afa83ad4e58a3d7009b55c9d820bed711b8",
+            "comment": "add a duplicate action to scheduled tasks that prefills the create form from an existing task"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 06:52:10 GMT",
+      "version": "3.339.1",
+      "tag": "@acedatacloud/nexior_v3.339.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "08898e0e15cbf1bb944def7acbe9a1a30a65d761",
+            "comment": "render coding bridge TodoWrite calls as a checklist instead of raw JSON"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 06:38:10 GMT",
+      "version": "3.339.0",
+      "tag": "@acedatacloud/nexior_v3.339.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "24bf252a4c76bdf95c9b51ff45443a68570dbfa9",
+            "comment": "rename a Coding Bridge device; the name syncs to every signed-in client"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Jul 2026 06:11:42 GMT",
+      "version": "3.338.0",
+      "tag": "@acedatacloud/nexior_v3.338.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bcf2e86b037ce2374a30b3abffedd13fa39424e0",
+            "comment": "Scheduled run lists now refresh themselves while a run is still queued or running, so a finished run stops showing as 运行中 and becomes clickable without leaving and re-entering the page."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 27 Jul 2026 23:39:30 GMT",
+      "version": "3.337.0",
+      "tag": "@acedatacloud/nexior_v3.337.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f7a651ee5ceceb29f483c81f1c7ddca25b76f607",
+            "comment": "Show which connector account each scheduled run used: run rows now carry a tag per pinned account (e.g. `zhihu · Germey`), falling back to the connector alone once the account is gone."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 27 Jul 2026 05:20:15 GMT",
+      "version": "3.336.5",
+      "tag": "@acedatacloud/nexior_v3.336.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f8d8883ebed054bd69e6081ff1c6de14cfd23e37",
+            "comment": "default the ChatGPT model picker to GPT-5.6 Sol"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 27 Jul 2026 02:11:41 GMT",
+      "version": "3.336.4",
+      "tag": "@acedatacloud/nexior_v3.336.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "540fa71949dd0820c809180ee6b50719bfaae1c8",
+            "comment": "localize the run_abandoned scheduled-run reason"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 26 Jul 2026 16:37:32 GMT",
+      "version": "3.336.3",
+      "tag": "@acedatacloud/nexior_v3.336.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c9c16e1bafbe038852a37f9fe2903732a280ebe6",
+            "comment": "show whether a scheduled run achieved its goal"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 26 Jul 2026 12:34:57 GMT",
+      "version": "3.336.2",
+      "tag": "@acedatacloud/nexior_v3.336.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "44bbf2a1a6b3eb10ed91961103b3772f0fbfc80a",
+            "comment": "定时任务支持为每个 connector 指定使用哪个账号"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 26 Jul 2026 12:25:20 GMT",
+      "version": "3.336.1",
+      "tag": "@acedatacloud/nexior_v3.336.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "939d5e0586421ae4ced7b2b0c87c044cd779c136",
+            "comment": "chore(i18n): drop orphan menu.publishIndex key (publish center retired)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 26 Jul 2026 09:32:20 GMT",
+      "version": "3.336.0",
+      "tag": "@acedatacloud/nexior_v3.336.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bf47263229f6a3786b818472d71e2f0ac77d9dc0",
+            "comment": "Add a Runs tab to the scheduled tasks page: a cross-task feed of every scheduled run, newest first, each row tagged with its parent task name and filterable by status."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 26 Jul 2026 06:46:35 GMT",
+      "version": "3.335.5",
+      "tag": "@acedatacloud/nexior_v3.335.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "dc42b4d3feb20f86e35d106046b9a92fd8f4f0a7",
+            "comment": "Drop the cross-repo browser wire/facade digest gate: delete the generated browserContract module and the isCompatibleBrowserContract check, keeping the browser execution FSM, state forwarding and scheduled-task online/compatible validation intact."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 26 Jul 2026 01:48:09 GMT",
+      "version": "3.335.4",
+      "tag": "@acedatacloud/nexior_v3.335.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4fbfdb0c15bc52028717676b57e501d6eee87b0a",
+            "comment": "Use new bank-card icon for Card pay-way"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 25 Jul 2026 02:49:28 GMT",
+      "version": "3.335.3",
+      "tag": "@acedatacloud/nexior_v3.335.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "623ab1113f7035add12003c796259f304f6788de",
+            "comment": "Make scenario-top tabs single-line and width-adaptive so long locales (English) no longer wrap; overflow scrolls horizontally instead."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "623ab1113f7035add12003c796259f304f6788de",
+            "comment": "Unify scenario-tab spacing: align tab side gutters with the p-5 (20px) content below and add top padding so the tabs no longer hug the panel edge, across all six config-panel tab bars."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 25 Jul 2026 01:38:45 GMT",
+      "version": "3.335.2",
+      "tag": "@acedatacloud/nexior_v3.335.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b8e240513573b77f53aa4fed62d284593192ebea",
+            "comment": "Add Claude Opus 5 to the chat model picker (Claude group flagship)."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 24 Jul 2026 23:32:23 GMT",
+      "version": "3.335.1",
+      "tag": "@acedatacloud/nexior_v3.335.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "56604ced2453695b2d5c6b516e9897500a5716aa",
+            "comment": "Sync the browser contract with the 100MB Route A resource limit."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 24 Jul 2026 10:04:57 GMT",
+      "version": "3.335.0",
+      "tag": "@acedatacloud/nexior_v3.335.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a7231aef8007fbb760c96fdcd66a78292c87e569",
+            "comment": "Grok video: add the ttapi Official endpoint via new :reverse / :official model variants (grok-imagine-video-1.5-fast:reverse, grok-imagine-video:reverse, grok-imagine-video:official, grok-imagine-video-1.5:official) with per-model duration bounds and updated pricing copy."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 24 Jul 2026 09:55:55 GMT",
+      "version": "3.334.3",
+      "tag": "@acedatacloud/nexior_v3.334.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a30690a95f84a9d31d59d6dced3e971098794107",
+            "comment": "Browser execution: sync the canonical LocatorPlan wire contract digest."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 24 Jul 2026 02:25:40 GMT",
+      "version": "3.334.2",
+      "tag": "@acedatacloud/nexior_v3.334.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ebefaf92bc02566a9aad11cb95957752388df681",
+            "comment": "Chat models: replace GPT 5.5 and 5.4 with the GPT 5.6 Sol, Terra, and Luna tiers, with Luna as the free default."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Jul 2026 08:47:02 GMT",
+      "version": "3.334.1",
+      "tag": "@acedatacloud/nexior_v3.334.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "984950cabb9937f5ddb17acef6b5c15ee36f7d36",
+            "comment": "Chat conversations: remove the separate loading spinner and visible loading text while conversation history restores, leaving the message skeleton as the loading affordance."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Jul 2026 08:07:56 GMT",
+      "version": "3.334.0",
+      "tag": "@acedatacloud/nexior_v3.334.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4772bf0fa9ca10889dc2547f17aed3ca8e331c21",
+            "comment": "Upload controls: add drag-and-drop. Drop a file onto any uploader (chat composer + all generator config panels) and it uploads through the normal el-upload pipeline. A drop overlay appears only while a file is dragged over that uploader — nothing is shown otherwise. Mirrors the existing paste-to-upload behavior."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Jul 2026 05:44:17 GMT",
+      "version": "3.333.1",
+      "tag": "@acedatacloud/nexior_v3.333.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b18fc3f0b1debb7c79edeb72d6c707aeebcb0390",
+            "comment": "Fix ChatGPT conversations freeze/OOM on send: never persist full message histories (base64 screenshots) into chat.conversations; keep summary-only in the persisted store."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Jul 2026 05:38:21 GMT",
+      "version": "3.333.0",
+      "tag": "@acedatacloud/nexior_v3.333.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "886adef6b695747e34e250dda71b8c736321d1db",
+            "comment": "Seedance generator: drop the confusing Talking-mode switch and instead spell out, per Volcengine's official docs, exactly what each input does — first-frame vs reference image vs reference audio — and how to make a character speak ({line} + Generate Audio)."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Jul 2026 05:04:50 GMT",
+      "version": "3.332.2",
+      "tag": "@acedatacloud/nexior_v3.332.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9855402a72e4044208dfd117aadfd68cfcef3d9a",
+            "comment": "Fix Fish TTS credit estimates by pricing UTF-8 text bytes and showing small positive costs instead of rounding them to zero."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Jul 2026 04:53:10 GMT",
+      "version": "3.332.1",
+      "tag": "@acedatacloud/nexior_v3.332.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0915c6032f08f1b1f7e9fb69c93ce363fec186c6",
+            "comment": "Remove stale auth iframe message listeners when login panels close"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 18:24:01 GMT",
+      "version": "3.332.0",
+      "tag": "@acedatacloud/nexior_v3.332.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5ca3deb2a8ba113e3c644204ba10db4cf1fcdb62",
+            "comment": "Seedance generator: default to 2.0 Fast and add a Talking mode (口播) toggle that routes uploads to reference_image, forces audio, and guides dialogue phrasing so characters actually speak."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 18:11:30 GMT",
+      "version": "3.331.0",
+      "tag": "@acedatacloud/nexior_v3.331.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "867ffb33db57081bdae516fb796e8b456a32dc7e",
+            "comment": "feat(tasks): per-card delete button on GPT-image + Nano Banana history — hover-reveal trash control hard-deletes a task server-side across all devices"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 18:03:59 GMT",
+      "version": "3.330.23",
+      "tag": "@acedatacloud/nexior_v3.330.23",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5125ab24c0fb3c382ceea69750d9290cfd996641",
+            "comment": "Fix misaligned download & view-code buttons in the Fish TTS task card (the download button used mb-2, shifting its baseline vs the sibling; use btn-action like the other cards)."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 17:35:42 GMT",
+      "version": "3.330.22",
+      "tag": "@acedatacloud/nexior_v3.330.22",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "afecaef1c5dfa869492e9baa8dd420cec05e39c0",
+            "comment": "Preserve owner-bound browser resource metadata across chat attachment submission and retry."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 13:22:56 GMT",
+      "version": "3.330.21",
+      "tag": "@acedatacloud/nexior_v3.330.21",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "693f431673a87df5cd84b2c4f92f56c376f9df62",
+            "comment": "Unify the per-service balance label to 专属余额 / Dedicated Balance across all locales."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 12:37:25 GMT",
+      "version": "3.330.20",
+      "tag": "@acedatacloud/nexior_v3.330.20",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3f5126da319fc3203b1d6fbf237115c56f43d080",
+            "comment": "Keep assistant text contiguous when an early tool announcement arrives mid-stream, while preserving live tool progress"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 11:27:09 GMT",
+      "version": "3.330.19",
+      "tag": "@acedatacloud/nexior_v3.330.19",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bd09206e5b399d3c4eadeeec7343e881ce4ea7cd",
+            "comment": "Fish TTS voice picker: search Fish's public voice library (self=false) with grouped results and inline audio preview, not just the user's own cloned voices"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 11:21:13 GMT",
+      "version": "3.330.18",
+      "tag": "@acedatacloud/nexior_v3.330.18",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cf116fccca1070be83e9d1d05c29490baa774824",
+            "comment": "Fix chat tool-call rows spinning forever: clone rebuilt content parts so a settled tool block gets a fresh ref and Vue re-renders its icon"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 06:03:36 GMT",
+      "version": "3.330.17",
+      "tag": "@acedatacloud/nexior_v3.330.17",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "42e408fd38fb5a2246e9b88ed79d39d195edd8d1",
+            "comment": "Align BrowserDevice activity, scheduled authorization, artifacts, and Desktop execution with the final browser contract"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 05:12:52 GMT",
+      "version": "3.330.16",
+      "tag": "@acedatacloud/nexior_v3.330.16",
+      "comments": {
+        "none": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "816eed3e7490a71baa01ab8f4d332de31d83f8a7",
+            "comment": "ci: split build-ios/android concurrency groups by production toggle"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 05:05:03 GMT",
+      "version": "3.330.16",
+      "tag": "@acedatacloud/nexior_v3.330.16",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b9c0600a5f8a284e55214da2542ddebd4b2b955d",
+            "comment": "Replace Poivelle's graph-first entry with a guided production overview"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 03:58:48 GMT",
+      "version": "3.330.15",
+      "tag": "@acedatacloud/nexior_v3.330.15",
+      "comments": {
+        "none": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "623387026fd91363a4a0f676e38fe8de511296d2",
+            "comment": "ci: retime Nexior macOS builds to daily + pod cache + cancel-in-progress"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 22 Jul 2026 01:18:06 GMT",
+      "version": "3.330.15",
+      "tag": "@acedatacloud/nexior_v3.330.15",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d959b6301495319a6d5b222b7e48f63852af110d",
+            "comment": "Render failed Fish TTS tasks with their error reason instead of showing them as pending forever"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 17:56:23 GMT",
+      "version": "3.330.14",
+      "tag": "@acedatacloud/nexior_v3.330.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6e8adb88367a4c0dbd8db9597d9c70f03e83e5df",
+            "comment": "Replace Arabic English placeholders with localized UI copy"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 16:48:50 GMT",
+      "version": "3.330.13",
+      "tag": "@acedatacloud/nexior_v3.330.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0af940d0f522e52f7e0281adee29b86e66c426bd",
+            "comment": "Add playable finished films to the Poivelle discovery gallery"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 15:38:34 GMT",
+      "version": "3.330.12",
+      "tag": "@acedatacloud/nexior_v3.330.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "44f48543fb30d21e18249d4c95e8e1eb7e3d7021",
+            "comment": "Remove Claude Fable 5 from the Claude model picker."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 15:14:25 GMT",
+      "version": "3.330.11",
+      "tag": "@acedatacloud/nexior_v3.330.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "017520b4ab32dbf84e2c3b6a1d4776801d34493f",
+            "comment": "Fix large empty band above the Veo config tabs by aligning ActionSelector with the shared 48px scenario-tabs pattern."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 14:54:51 GMT",
+      "version": "3.330.10",
+      "tag": "@acedatacloud/nexior_v3.330.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0f82d99c10d0729e935cac31957cec4067e92811",
+            "comment": "fix(scenarios): align upload actions and preserve field spacing"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 14:53:03 GMT",
+      "version": "3.330.9",
+      "tag": "@acedatacloud/nexior_v3.330.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f61d7a44293e555b31349314998af6c972e060f2",
+            "comment": "fix(fish): create voice models as private by default and remove the visibility picker"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 14:50:00 GMT",
+      "version": "3.330.8",
+      "tag": "@acedatacloud/nexior_v3.330.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "eca12e7d50ac31caecf692ade0182c707bcbaf9f",
+            "comment": "Add a prompt-first Poivelle creator home with real works and one-click project copying"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 14:47:39 GMT",
+      "version": "3.330.7",
+      "tag": "@acedatacloud/nexior_v3.330.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c682dec18a1774d0a3a231a33c69325678415532",
+            "comment": "Hide unsupported Quality and Turbo controls when Midjourney V8.1 is selected."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 14:13:16 GMT",
+      "version": "3.330.6",
+      "tag": "@acedatacloud/nexior_v3.330.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "619523946aa37b64381bd91e41cf6d043b5b28da",
+            "comment": "Show Nano Banana task metadata while generated images are still pending."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 13:58:45 GMT",
+      "version": "3.330.5",
+      "tag": "@acedatacloud/nexior_v3.330.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ce6c6a5e0d22aec5e8691f82faa4b42158dd5e78",
+            "comment": "fix(fish): render voice model visibility & train-mode controls at normal size"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 11:32:37 GMT",
+      "version": "3.330.4",
+      "tag": "@acedatacloud/nexior_v3.330.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d7185da239b9873890fb2023b1d5ea324899116b",
+            "comment": "Route Poivelle provider runs through standard user Credentials, API cost rules, and usage recording."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 21 Jul 2026 10:20:45 GMT",
+      "version": "3.330.3",
+      "tag": "@acedatacloud/nexior_v3.330.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f4979944addf8a70e0fa4b8fe1ea9ba146582d3f",
+            "comment": "Add Poivelle production recovery, quality evidence, Take comparison, and timeline editing workflows."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 20 Jul 2026 16:16:39 GMT",
+      "version": "3.330.2",
+      "tag": "@acedatacloud/nexior_v3.330.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5c50270be27b95743001fdbf17cf5e8e667f8721",
+            "comment": "Align the Poivelle studio with Nexior design tokens, responsive surfaces, and keyboard focus states."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 20 Jul 2026 16:09:07 GMT",
+      "version": "3.330.1",
+      "tag": "@acedatacloud/nexior_v3.330.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "937b2b54b3c349e93be45d08f88f92da16d87331",
+            "comment": "Show pending and processing states for unfinished Hailuo video tasks."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 20 Jul 2026 14:44:59 GMT",
+      "version": "3.330.0",
+      "tag": "@acedatacloud/nexior_v3.330.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "331e8f956c5b00640bc298a11ea10661541e98c1",
+            "comment": "Add the Poivelle professional AI film production workspace."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 20 Jul 2026 04:09:30 GMT",
+      "version": "3.329.53",
+      "tag": "@acedatacloud/nexior_v3.329.53",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2594dbb99abbe7d42a3759713e93f3fa9577d2ef",
+            "comment": "Add Claude Fable 5 to the Claude model picker."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:23:19 GMT",
+      "version": "3.329.52",
+      "tag": "@acedatacloud/nexior_v3.329.52",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label unfinished Nano Banana responses with pending semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Show accurate pending and processing semantics for Pika tasks."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:22:56 GMT",
+      "version": "3.329.51",
+      "tag": "@acedatacloud/nexior_v3.329.51",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label unfinished Nano Banana responses with pending semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Show accurate pending and processing semantics for Pika tasks."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Wan tasks with waiting semantics instead of failure copy."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:22:11 GMT",
+      "version": "3.329.50",
+      "tag": "@acedatacloud/nexior_v3.329.50",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "7838444684c2a0d3177ce4c08715f9e93ef452d6",
+            "comment": "Label unfinished Nano Banana responses with pending semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "7838444684c2a0d3177ce4c08715f9e93ef452d6",
+            "comment": "Show accurate pending and processing semantics for Pika tasks."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Wan tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Show pending and processing states for unfinished Kling video tasks."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:21:33 GMT",
+      "version": "3.329.49",
+      "tag": "@acedatacloud/nexior_v3.329.49",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Luma tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Sora tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4b80c05f1eae49d9979872bc4f4bc3fba76a101a",
+            "comment": "Label queued and processing Wan tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Show pending and processing states for unfinished Kling video tasks."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:21:08 GMT",
+      "version": "3.329.48",
+      "tag": "@acedatacloud/nexior_v3.329.48",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8adee99b076ade626d175b6cdbfd1ae8563a69cc",
+            "comment": "Show pending and processing states for unfinished Kling video tasks."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Luma tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Sora tasks with waiting semantics instead of failure copy."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:20:31 GMT",
+      "version": "3.329.47",
+      "tag": "@acedatacloud/nexior_v3.329.47",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f52b48ec13b855132413115e1876cb0d38a83cb9",
+            "comment": "Label queued and processing Sora tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label queued and processing Luma tasks with waiting semantics instead of failure copy."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:19:43 GMT",
+      "version": "3.329.46",
+      "tag": "@acedatacloud/nexior_v3.329.46",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "cb9daa5fcd950877b85bb963f2349ac35f156631",
+            "comment": "Label queued and processing Luma tasks with waiting semantics instead of failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Cover Veo task metadata across pending, successful, and failed generations."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 16:18:56 GMT",
+      "version": "3.329.45",
+      "tag": "@acedatacloud/nexior_v3.329.45",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2726e43854a2bf962c01fe46123162cebbc3fdc8",
+            "comment": "Cover Veo task metadata across pending, successful, and failed generations."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 13:10:33 GMT",
+      "version": "3.329.44",
+      "tag": "@acedatacloud/nexior_v3.329.44",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a32a03295f11e6d675c44a09d10e4ccb4b46833e",
+            "comment": "Add Kimi K3 and K2.6 to the chat model picker."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:33:52 GMT",
+      "version": "3.329.43",
+      "tag": "@acedatacloud/nexior_v3.329.43",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Consolidate shared scenario tab baseline styles while preserving specialized overflow behavior."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:33:28 GMT",
+      "version": "3.329.42",
+      "tag": "@acedatacloud/nexior_v3.329.42",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Consolidate shared scenario tab baseline styles while preserving specialized overflow behavior."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:32:35 GMT",
+      "version": "3.329.41",
+      "tag": "@acedatacloud/nexior_v3.329.41",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c4eb05fbfdc7f7438e0acf17bcd16517f9b496e4",
+            "comment": "Consolidate shared scenario tab baseline styles while preserving specialized overflow behavior."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Unify inter-item spacing across image generation task previews."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Align Midjourney task state metadata to a consistent top-spacing rhythm."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:32:08 GMT",
+      "version": "3.329.40",
+      "tag": "@acedatacloud/nexior_v3.329.40",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Move generated image result spacing from the shared media primitive to its parent task layouts."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Align Midjourney task state metadata to a consistent top-spacing rhythm."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Unify inter-item spacing across image generation task previews."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:31:40 GMT",
+      "version": "3.329.39",
+      "tag": "@acedatacloud/nexior_v3.329.39",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a6f71e198324a2dccb889325ecbde3e75b628a0d",
+            "comment": "Unify inter-item spacing across image generation task previews."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Move generated image result spacing from the shared media primitive to its parent task layouts."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a6f71e198324a2dccb889325ecbde3e75b628a0d",
+            "comment": "Align Midjourney task state metadata to a consistent top-spacing rhythm."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Cover Seedream failure spacing when legacy requests contain a null prompt."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:30:56 GMT",
+      "version": "3.329.38",
+      "tag": "@acedatacloud/nexior_v3.329.38",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "df1c5e4900997bace447682dd11d2165fd03fca8",
+            "comment": "Move generated image result spacing from the shared media primitive to its parent task layouts."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Cover Seedream failure spacing when legacy requests contain a null prompt."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 12:30:28 GMT",
+      "version": "3.329.37",
+      "tag": "@acedatacloud/nexior_v3.329.37",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b3eb0bbf997a7e3cf0e4545c71c4b36907fa57de",
+            "comment": "Cover Seedream failure spacing when legacy requests contain a null prompt."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 10:33:06 GMT",
+      "version": "3.329.36",
+      "tag": "@acedatacloud/nexior_v3.329.36",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "e09628ff16595d19c07a56f5362a17fc12070986",
+            "comment": "Show Producer task-level failures when generation returns no audio rows."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 08:16:24 GMT",
+      "version": "3.329.35",
+      "tag": "@acedatacloud/nexior_v3.329.35",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a5aa48e71ac904f23b13b49364554cc7ddcd0a24",
+            "comment": "Show Suno task-level failures when generation returns no audio rows."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 07:42:55 GMT",
+      "version": "3.329.34",
+      "tag": "@acedatacloud/nexior_v3.329.34",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5a29d3f92c24a0eb65db2059ae7917c078170822",
+            "comment": "Show failed Fish TTS tasks separately from pending tasks with failure reason and trace details."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 07:41:24 GMT",
+      "version": "3.329.33",
+      "tag": "@acedatacloud/nexior_v3.329.33",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label OpenAI Image pending and unknown tasks without failure copy."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 07:40:42 GMT",
+      "version": "3.329.32",
+      "tag": "@acedatacloud/nexior_v3.329.32",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "44b83071143e120694ac19f7484081ceb7e58649",
+            "comment": "Label OpenAI Image pending and unknown tasks without failure copy."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Label Flux tasks without a response as pending instead of failed."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 07:39:43 GMT",
+      "version": "3.329.31",
+      "tag": "@acedatacloud/nexior_v3.329.31",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d30445b479683ea005397a594842f6be6190d374",
+            "comment": "Label Flux tasks without a response as pending instead of failed."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 06:09:40 GMT",
+      "version": "3.329.30",
+      "tag": "@acedatacloud/nexior_v3.329.30",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bc8f34583340e8aa34b7dc47cbf9ea79f8a157ea",
+            "comment": "Render failed Pixverse tasks with failure alert semantics."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 05:03:23 GMT",
+      "version": "3.329.29",
+      "tag": "@acedatacloud/nexior_v3.329.29",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ba9042e5ae081135ffa2aa62206bd34dbbb5eee6",
+            "comment": "Improve local media field spacing in Seedance, Kling, and Midjourney."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 04:29:01 GMT",
+      "version": "3.329.28",
+      "tag": "@acedatacloud/nexior_v3.329.28",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2c8ce973c5c0e94b2f7699f845a50025c11eeee6",
+            "comment": "Improve local Suno variation controls and Seedance frame field spacing."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 19 Jul 2026 04:19:50 GMT",
+      "version": "3.329.27",
+      "tag": "@acedatacloud/nexior_v3.329.27",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f231cde60a9beb2b26014c82b4cf234fb56dd941",
+            "comment": "Align Seedream task spacing and result containment with Nano Banana, and add missing spacing above failures without a prompt."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 21:10:12 GMT",
+      "version": "3.329.26",
+      "tag": "@acedatacloud/nexior_v3.329.26",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2054dec52766770d0837f66ea96787191bbf4557",
+            "comment": "Remove the Seedream watermark option and always generate images without a watermark."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 20:49:36 GMT",
+      "version": "3.329.25",
+      "tag": "@acedatacloud/nexior_v3.329.25",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "7f1aed8ec8defb72a25c5790ea06841c54f11c83",
+            "comment": "Automatically switch Seedream between image creation and editing based on reference images."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 18:30:47 GMT",
+      "version": "3.329.24",
+      "tag": "@acedatacloud/nexior_v3.329.24",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "63a885b8ab6da2a410170a9f1c36013b7de5fe80",
+            "comment": "Migrate production non-brand icons to shared semantic Lucide components."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 11:38:03 GMT",
+      "version": "3.329.23",
+      "tag": "@acedatacloud/nexior_v3.329.23",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "467392bce24be23c2abbf0c1b934db1ac4b4334c",
+            "comment": "Align Pika ingredient and image labels with their controls without magic offsets."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 11:35:22 GMT",
+      "version": "3.329.22",
+      "tag": "@acedatacloud/nexior_v3.329.22",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "7c3c88ae61dab68842e87b7885dc42eaa0d8cfeb",
+            "comment": "Align top-level generator fields to a consistent 16px vertical rhythm."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 09:21:49 GMT",
+      "version": "3.329.21",
+      "tag": "@acedatacloud/nexior_v3.329.21",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "65e8ccbf7a54fca27ac9a74510c565d109528bfb",
+            "comment": "Unify generator sidebar scrolling and 20px content padding across services."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 07:44:13 GMT",
+      "version": "3.329.20",
+      "tag": "@acedatacloud/nexior_v3.329.20",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Make shared audio previews keyboard-accessible and show load failures."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 07:43:21 GMT",
+      "version": "3.329.19",
+      "tag": "@acedatacloud/nexior_v3.329.19",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Keep all Kling scenario tab labels readable in narrow parameter panels."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Make Seedream Generate and Edit modes explicit while preserving uploaded references."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "e78764796015e24560eeedd9e869f990f0eec39e",
+            "comment": "Make shared audio previews keyboard-accessible and show load failures."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 07:42:29 GMT",
+      "version": "3.329.18",
+      "tag": "@acedatacloud/nexior_v3.329.18",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d2e7ec1fb909dd98596caa0abbf58989d3756fd3",
+            "comment": "Make Seedream Generate and Edit modes explicit while preserving uploaded references."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Keep all Kling scenario tab labels readable in narrow parameter panels."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 07:42:03 GMT",
+      "version": "3.329.17",
+      "tag": "@acedatacloud/nexior_v3.329.17",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a2817c71907a2764074d0294384dc8193fbf88dd",
+            "comment": "Keep all Kling scenario tab labels readable in narrow parameter panels."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Jul 2026 06:17:45 GMT",
+      "version": "3.329.16",
+      "tag": "@acedatacloud/nexior_v3.329.16",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "40b85906977a71e6f269021595b5ea80fdb59d7e",
+            "comment": "Align task response names and avatars with Service capability presentation overrides."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 17 Jul 2026 09:04:00 GMT",
+      "version": "3.329.15",
+      "tag": "@acedatacloud/nexior_v3.329.15",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "66f1bdef8f7f557a52cc8d951ea696ce20bc77e5",
+            "comment": "Use a stable 6-second default for Grok video generation."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 16 Jul 2026 17:17:28 GMT",
+      "version": "3.329.14",
+      "tag": "@acedatacloud/nexior_v3.329.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b6f7fc15d65994a94438277bd709f6f84298634b",
+            "comment": "Add canonical Kling O1 and V3 Omni image/video reference controls."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 16 Jul 2026 15:43:05 GMT",
+      "version": "3.329.13",
+      "tag": "@acedatacloud/nexior_v3.329.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bd1353a70abcc1f0372b8cf1243b7d361e3676c5",
+            "comment": "Emphasize homepage business-story headings with a stronger visual weight"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 16 Jul 2026 15:01:57 GMT",
+      "version": "3.329.12",
+      "tag": "@acedatacloud/nexior_v3.329.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8189bf1aefed893ed36a8947e288cf42b41f0723",
+            "comment": "Showcase branded subsites, referrals, and the complete responsive AI capability catalog on the homepage"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 16 Jul 2026 10:08:56 GMT",
+      "version": "3.329.11",
+      "tag": "@acedatacloud/nexior_v3.329.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "12060212699ff2dcaa739af25bdc733a3fd701ee",
+            "comment": "Improve Veo action labels, reference previews, and task metadata."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 16 Jul 2026 06:08:15 GMT",
+      "version": "3.329.10",
+      "tag": "@acedatacloud/nexior_v3.329.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3624b89be36fb4f012786edf1e6735ca0e7004f3",
+            "comment": "Add per-site custom names and icons for capability apps"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 16 Jul 2026 00:54:34 GMT",
+      "version": "3.329.9",
+      "tag": "@acedatacloud/nexior_v3.329.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "71dec1da84d445c17730e765752e0224c4029949",
+            "comment": "Stop polling the removed Desktop Agent endpoint from chat pages"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 17:09:13 GMT",
+      "version": "3.329.8",
+      "tag": "@acedatacloud/nexior_v3.329.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9b84b33ecf2fb8a198b0f758361dbd7095b8ea25",
+            "comment": "Use solid primary and danger buttons for Memory settings actions."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 15:57:01 GMT",
+      "version": "3.329.7",
+      "tag": "@acedatacloud/nexior_v3.329.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ec6698dd985ea0462bf8eed722f75fba4ab5870c",
+            "comment": "Improve Veo action tabs and model-aware generation inputs"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 15:45:08 GMT",
+      "version": "3.329.6",
+      "tag": "@acedatacloud/nexior_v3.329.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0840929c2b80dedd71de93ca01a1021d2a1cd5fc",
+            "comment": "Run long memory imports asynchronously and resume status polling after reloads."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 14:46:17 GMT",
+      "version": "3.329.5",
+      "tag": "@acedatacloud/nexior_v3.329.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4cc0e91d52ec21e10d566ed4a36a21b1242d85e5",
+            "comment": "Remove the unused AI ID Photo feature and its implementation from Nexior."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 13:18:52 GMT",
+      "version": "3.329.4",
+      "tag": "@acedatacloud/nexior_v3.329.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0973790a5bafe2d1b54e75ab9fbe9d122338e703",
+            "comment": "Add Omni to Capabilities and give AI ID Photo a dedicated favicon."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 11:22:28 GMT",
+      "version": "3.329.3",
+      "tag": "@acedatacloud/nexior_v3.329.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "34cbcdb460ec8742a85d53ec077a425db547215c",
+            "comment": "Add a guided flow for importing saved memory from other AI assistants."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 10:01:22 GMT",
+      "version": "3.329.2",
+      "tag": "@acedatacloud/nexior_v3.329.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "200f2c944b3c8f4c769806cec14c6d30b077c324",
+            "comment": "Add service icons and localized capability summaries to Capabilities settings"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 08:22:49 GMT",
+      "version": "3.329.1",
+      "tag": "@acedatacloud/nexior_v3.329.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b8049c144f211fbe7c7bf423180384f897a7b0f3",
+            "comment": "Show loading feedback while historical conversations are restored"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 05:48:21 GMT",
+      "version": "3.329.0",
+      "tag": "@acedatacloud/nexior_v3.329.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "15665c9ddcaeed305e1b471d2d35ff78f974c11b",
+            "comment": "Add Omni video module (omni-flash text/image/video-to-video and video editing)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 05:30:32 GMT",
+      "version": "3.328.3",
+      "tag": "@acedatacloud/nexior_v3.328.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c6b87417a6153cfbc335e8ddefb804e6cf3988e5",
+            "comment": "Show Kling image, video, and audio inputs in task history"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 04:59:17 GMT",
+      "version": "3.328.2",
+      "tag": "@acedatacloud/nexior_v3.328.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "58f5b3dff138d25190700eea425b90129ddf8c55",
+            "comment": "Add a persisted setting to disable long-term memory in chats and scheduled tasks."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 04:52:40 GMT",
+      "version": "3.328.1",
+      "tag": "@acedatacloud/nexior_v3.328.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "852596e82f932895fd44dbaeea80b261a33f6537",
+            "comment": "Show durable BrowserDevice execution states in chat and scheduled task history."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 04:44:24 GMT",
+      "version": "3.328.0",
+      "tag": "@acedatacloud/nexior_v3.328.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bfbb4698c6ff2a1d4e4859d2821fff507e97849c",
+            "comment": "Add reference-video uploader for kling-video-o1 (Omni video editing)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 04:02:30 GMT",
+      "version": "3.327.14",
+      "tag": "@acedatacloud/nexior_v3.327.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "644a068c6734a9a7a2118a60d846ed8457e1aab7",
+            "comment": "Localize the latest error code shown on scheduled task cards"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 02:21:09 GMT",
+      "version": "3.327.13",
+      "tag": "@acedatacloud/nexior_v3.327.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "192aaa8a0395dc94c441d1003cdf84b8e18bcdaa",
+            "comment": "Use native Element Plus control sizes in the Edit Support Contacts dialog (remove explicit size=\"small\")"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Jul 2026 02:15:39 GMT",
+      "version": "3.327.12",
+      "tag": "@acedatacloud/nexior_v3.327.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2dfe69a79761e06aa050628c9339adced676764a",
+            "comment": "feat(setting): white-label per-site SMS webhook config (auth.sms) in the Auth panel"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 18:03:19 GMT",
+      "version": "3.327.11",
+      "tag": "@acedatacloud/nexior_v3.327.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "64f99a0a34feda31aceff739a59c4ef27fe133c3",
+            "comment": "Use Element Plus native control sizes (drop --el-component-size override) so el-input/el-select/el-button align"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 17:16:56 GMT",
+      "version": "3.327.10",
+      "tag": "@acedatacloud/nexior_v3.327.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Pin @acedatacloud scope to public npmjs so proxied registries can't serve a stale core (missing controls.css)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 17:15:45 GMT",
+      "version": "3.327.9",
+      "tag": "@acedatacloud/nexior_v3.327.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "fix(chat): remove square focus outline on the composer textarea (shared-adapter :focus-visible rule)"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2ffe0ace084f8cc44208eb471775fd2ae21f407b",
+            "comment": "Pin @acedatacloud scope to public npmjs so proxied registries can't serve a stale core (missing controls.css)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 17:14:57 GMT",
+      "version": "3.327.8",
+      "tag": "@acedatacloud/nexior_v3.327.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "844b29cf00bda41f1d83ac295b9224a5ac9054d5",
+            "comment": "fix(chat): remove square focus outline on the composer textarea (shared-adapter :focus-visible rule)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 16:45:58 GMT",
+      "version": "3.327.7",
+      "tag": "@acedatacloud/nexior_v3.327.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bca34f84c0f307134fa4b6beb0bb89a3646be235",
+            "comment": "Migrate scheduled-task actions to the shared semantic Lucide icon entries."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 14:30:51 GMT",
+      "version": "3.327.6",
+      "tag": "@acedatacloud/nexior_v3.327.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6fdc877f576b6bfe8de39fb7e2f7ab7b93d3013d",
+            "comment": "Adopt the shared core control adapter and remove duplicate global control rules."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 11:45:51 GMT",
+      "version": "3.327.5",
+      "tag": "@acedatacloud/nexior_v3.327.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "faa75e64112afdcfaf5b59467a9c06a62ac60000",
+            "comment": "fix(auth): present native/desktop login as a floating popup over the app instead of a full-screen page"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 11:21:31 GMT",
+      "version": "3.327.4",
+      "tag": "@acedatacloud/nexior_v3.327.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f38a14a2fbb28905528ff165da6ead23202aa38a",
+            "comment": "fix(site): only the bare main official host (studio.acedata.cloud) shows the \"View Code\" affordance; drop the per-site toggle"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 10:48:05 GMT",
+      "version": "3.327.3",
+      "tag": "@acedatacloud/nexior_v3.327.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "aa54a6619b7670bd5481360ed4f5601fbb181cb8",
+            "comment": "Format the application extras route imports so the repository lint gate passes."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 06:10:16 GMT",
+      "version": "3.327.2",
+      "tag": "@acedatacloud/nexior_v3.327.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6732a7e4eaa35eb745390df862314618d13d82b1",
+            "comment": "feat(site): make the per-generation \"View Code\" button configurable per-site (hidden by default on white-label subsites, shown on the official site)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 06:04:22 GMT",
+      "version": "3.327.1",
+      "tag": "@acedatacloud/nexior_v3.327.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f73ac5447085265dc1f2b17262acae33cd993a13",
+            "comment": "polish(contacts): icons on summary chips + smaller editor inputs/buttons"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 05:52:06 GMT",
+      "version": "3.327.0",
+      "tag": "@acedatacloud/nexior_v3.327.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "177fe0c2cdfb62b58a5f1a8eadab7f184a878bb3",
+            "comment": "Add a /home marketing landing page introducing the one-stop AI capabilities (chat, image, music, video), a model wall, and CTAs"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 05:25:42 GMT",
+      "version": "3.326.3",
+      "tag": "@acedatacloud/nexior_v3.326.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8201a6625f674828178970da31edf8b047ae8f20",
+            "comment": "fix(about): show saved contacts on reopen + per-row channel icon"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 05:21:36 GMT",
+      "version": "3.326.2",
+      "tag": "@acedatacloud/nexior_v3.326.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "24c1ccc6548fb3ad3b1074b2fe2e5c5b83c7d8fc",
+            "comment": "Adopt the shared focus, density, elevation, motion, and layer baseline."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Use site brand instead of hardcoded Nexior in first-time welcome toast"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 05:19:58 GMT",
+      "version": "3.326.1",
+      "tag": "@acedatacloud/nexior_v3.326.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "aa3293cb9137f8be5cf8cae2615c9b74aa1b9f85",
+            "comment": "Use site brand instead of hardcoded Nexior in first-time welcome toast"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 05:05:25 GMT",
+      "version": "3.326.0",
+      "tag": "@acedatacloud/nexior_v3.326.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9c84fe5645b8ec32013b63f7c027f2075b9293c4",
+            "comment": "feat(site): add site-config toggle to disable recharge, hiding all top-up entries and guarding pay pages"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 04:54:53 GMT",
+      "version": "3.325.2",
+      "tag": "@acedatacloud/nexior_v3.325.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6f4d94a642658d09b5f87aa38e739099e40af946",
+            "comment": "feat(nexior): show app download page only on official main host"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 04:38:40 GMT",
+      "version": "3.325.1",
+      "tag": "@acedatacloud/nexior_v3.325.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "e27e9f6ef7f675896c51f72abdc80fe7ad6f637a",
+            "comment": "feat(nexior): use site brand name in global recharge title"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 03:58:03 GMT",
+      "version": "3.325.0",
+      "tag": "@acedatacloud/nexior_v3.325.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "86fe942296ce713b23f1018770e2a7f889da8ff6",
+            "comment": "feat(about): site support contacts + official-only first-party trio"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 03:43:13 GMT",
+      "version": "3.324.35",
+      "tag": "@acedatacloud/nexior_v3.324.35",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "86d1bc018e4826df4d53a0d81265d203fef23595",
+            "comment": "fix(site): vertically center service-override dropdown hover"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 03:39:37 GMT",
+      "version": "3.324.34",
+      "tag": "@acedatacloud/nexior_v3.324.34",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "01096e8acc6834b2cd0b701fad8a1fdaad588605",
+            "comment": "Replace the dormant purple Tailwind theme with runtime semantic design tokens."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Jul 2026 03:10:25 GMT",
+      "version": "3.324.33",
+      "tag": "@acedatacloud/nexior_v3.324.33",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b87c68d4585bd9a0718e9a64e309e28d65453d20",
+            "comment": "Keep setting section notice text readable in dark mode"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 17:41:17 GMT",
+      "version": "3.324.32",
+      "tag": "@acedatacloud/nexior_v3.324.32",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "02cf940d26246b8ea4d02b1d3a499ea1703b77f4",
+            "comment": "Fix custom domain settings tab going blank: escape bare '@' in i18n messages (vue-i18n linked-format crash)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 17:28:41 GMT",
+      "version": "3.324.31",
+      "tag": "@acedatacloud/nexior_v3.324.31",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d1ce98023314d5c3c77e32ee52f7f66cef09e19b",
+            "comment": "Align global colors, borders, radii, spacing, and typography with shared design tokens."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 17:11:42 GMT",
+      "version": "3.324.30",
+      "tag": "@acedatacloud/nexior_v3.324.30",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b9361a9a52ad2a0b4f70b3e176059508d3ec5d83",
+            "comment": "feat(settings): add send-message shortcut, remove source-code link"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 17:09:34 GMT",
+      "version": "3.324.29",
+      "tag": "@acedatacloud/nexior_v3.324.29",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b4be5e7764d2af2dc905f2b64025d99c4a495dab",
+            "comment": "feat(settings): add System theme option that follows the OS colour scheme"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 12:18:56 GMT",
+      "version": "3.324.28",
+      "tag": "@acedatacloud/nexior_v3.324.28",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "63941f9a03a2c8578d6792784779c4da8d8b56df",
+            "comment": "Show the applied VIP discount and true final price before creating a top-up order."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 11:38:39 GMT",
+      "version": "3.324.27",
+      "tag": "@acedatacloud/nexior_v3.324.27",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2c028b52a9128a78ab888b11ecd3b802ce10a934",
+            "comment": "Localize scheduled-run failure reason codes"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 11:29:07 GMT",
+      "version": "3.324.26",
+      "tag": "@acedatacloud/nexior_v3.324.26",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6239e0ecadde0c490dd932412db0e08f0aaaa748",
+            "comment": "Use shared core translation DTOs and remove the duplicate local models."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 10:47:05 GMT",
+      "version": "3.324.25",
+      "tag": "@acedatacloud/nexior_v3.324.25",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3bd85687d8eebb9fa3271f22602b5b1c006e5e66",
+            "comment": "Use the shared core currency mappings and remove the duplicate local constants."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 09:50:16 GMT",
+      "version": "3.324.24",
+      "tag": "@acedatacloud/nexior_v3.324.24",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "29975b264aaf08820bf6fb477fc41c8dedbbd636",
+            "comment": "Use the shared core Pagination component and remove the duplicate local implementation."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 06:00:07 GMT",
+      "version": "3.324.23",
+      "tag": "@acedatacloud/nexior_v3.324.23",
+      "comments": {
+        "none": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ae04ebebcdfbb2b865929b256e28dddcbd41286a",
+            "comment": "Add a package contract harness for CommonFrontend releases"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 01:14:19 GMT",
+      "version": "3.324.23",
+      "tag": "@acedatacloud/nexior_v3.324.23",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Maestro: control video type, visual style, and voice with independent toggles"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ff0c16e62d02c5b57eef3704de847d8d9b4f3ab0",
+            "comment": "Align purchase previews with effective site and service markup while failing closed when pricing is unavailable."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 13 Jul 2026 01:12:53 GMT",
+      "version": "3.324.22",
+      "tag": "@acedatacloud/nexior_v3.324.22",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "21d778bd54ba85fbbc07184fe8eca04d642c140e",
+            "comment": "Maestro: control video type, visual style, and voice with independent toggles"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 15:19:17 GMT",
+      "version": "3.324.21",
+      "tag": "@acedatacloud/nexior_v3.324.21",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "7143be6952e5d84f7e8dcc8a91cd37c0969441fd",
+            "comment": "Show localized Maestro language names and make the primary output language explicit"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 14:43:53 GMT",
+      "version": "3.324.20",
+      "tag": "@acedatacloud/nexior_v3.324.20",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Maestro: localize customization controls across all supported languages"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 14:43:14 GMT",
+      "version": "3.324.19",
+      "tag": "@acedatacloud/nexior_v3.324.19",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Group site-wide and per-service pricing in a dedicated Price settings section and remove the sample price input."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "e5fc1ed475cf8a12056f860d3b87a95627ee1dff",
+            "comment": "Maestro: localize customization controls across all supported languages"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 14:42:09 GMT",
+      "version": "3.324.18",
+      "tag": "@acedatacloud/nexior_v3.324.18",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "20fe530a2402376728da6bdad51714bd52d91533",
+            "comment": "Group site-wide and per-service pricing in a dedicated Price settings section and remove the sample price input."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 14:03:45 GMT",
+      "version": "3.324.17",
+      "tag": "@acedatacloud/nexior_v3.324.17",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0fcecb4f31d9d7a36e9ced545451e0017b8e4e48",
+            "comment": "Show the referenced source video on Maestro remix results"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 13:59:29 GMT",
+      "version": "3.324.16",
+      "tag": "@acedatacloud/nexior_v3.324.16",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "76c0d440ec6e949b54206b82594eed82be9639e6",
+            "comment": "Scheduled tasks: open New with a fresh form after editing an existing task"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 13:56:58 GMT",
+      "version": "3.324.15",
+      "tag": "@acedatacloud/nexior_v3.324.15",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "9a8a66e7a9cb6d7a1a728a8602e4973ae6e0ecf6",
+            "comment": "Maestro: hide optional creative controls behind a default-off customization toggle"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 13:20:04 GMT",
+      "version": "3.324.14",
+      "tag": "@acedatacloud/nexior_v3.324.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f81ea08fc02120d076470489953aa09cc7e13ba6",
+            "comment": "Unify the Artifacts page with Scheduled Tasks styling and add count-aware artifact filters"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 10:57:12 GMT",
+      "version": "3.324.13",
+      "tag": "@acedatacloud/nexior_v3.324.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "92cca94081defd3d0cf8b2698aac4a0ea6e96384",
+            "comment": "Scheduled tasks: force page background with background-color !important"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 06:58:24 GMT",
+      "version": "3.324.12",
+      "tag": "@acedatacloud/nexior_v3.324.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "fd6988e9aab98c615d80ead3ae11c13c34f4841d",
+            "comment": "Site service override: filter picker to non-private services with a favicon, fine-print markup helper, per-locale auto-translate toggles for display name/summary, fix sort-order tip spacing"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 06:54:25 GMT",
+      "version": "3.324.11",
+      "tag": "@acedatacloud/nexior_v3.324.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "37e92e0ce144c62724e36e282b803ee67a2f3ff4",
+            "comment": "Scheduled tasks: use --el-bg-color-page for the page background; keep default white cards"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 06:50:22 GMT",
+      "version": "3.324.10",
+      "tag": "@acedatacloud/nexior_v3.324.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "515083d87aeb18fde2d9c8417a1a2adabe15d3d5",
+            "comment": "Add a Run now button to scheduled tasks to trigger a run immediately"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 06:00:13 GMT",
+      "version": "3.324.9",
+      "tag": "@acedatacloud/nexior_v3.324.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f4be526bd5d1a446177e4e6479f80d683b3d19cd",
+            "comment": "Move Login Mode into the renamed Auth tab as site config (server-driven redirect vs iframe)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 05:56:35 GMT",
+      "version": "3.324.8",
+      "tag": "@acedatacloud/nexior_v3.324.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "bda4bb77535c7f2de5e5d67ba3ac5260278634ad",
+            "comment": "Scheduled tasks: flatten cards onto page background, drop border, remove lift-on-hover"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 03:30:58 GMT",
+      "version": "3.324.7",
+      "tag": "@acedatacloud/nexior_v3.324.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "ff82e336c5e81b4d4c1d0db9dbeba6eea99ddbcd",
+            "comment": "Scheduled tasks: advanced schedule builder (every N min/h/day, hourly-at-minute) with live preview"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 03:15:58 GMT",
+      "version": "3.324.6",
+      "tag": "@acedatacloud/nexior_v3.324.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a7239e324768089637f7c8860c66c49023205db4",
+            "comment": "maestro: show the agent's live activity line (and render %) as the progress detail"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 02:15:13 GMT",
+      "version": "3.324.5",
+      "tag": "@acedatacloud/nexior_v3.324.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "4d55288d09be91c1c84259f657647d02b12beecb",
+            "comment": "View docs opens the service documents landing page"
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Maestro: display task trace IDs from the task response top level"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 02:13:54 GMT",
+      "version": "3.324.4",
+      "tag": "@acedatacloud/nexior_v3.324.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "851e95bd2c69c7fa3caed7f8550b178d69c6f758",
+            "comment": "Maestro: display task trace IDs from the task response top level"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 02:08:08 GMT",
+      "version": "3.324.3",
+      "tag": "@acedatacloud/nexior_v3.324.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "fix(maestro): enable Run again in the API code dialog (add maestro to PATH_TO_STORE so the dialog resolves the API token)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 02:07:11 GMT",
+      "version": "3.324.2",
+      "tag": "@acedatacloud/nexior_v3.324.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Gate iframe login solely on the LOGIN_METHOD setting; stop reading the auth-iframe/iframe feature flag for the login decision. Default is redirect. The general featureFlag util (URL + /config) is retained for other features."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a09534ab25cfa8432175a5c6d5ddd8131e3009bd",
+            "comment": "fix(maestro): enable Run again in the API code dialog (add maestro to PATH_TO_STORE so the dialog resolves the API token)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 12 Jul 2026 02:06:21 GMT",
+      "version": "3.324.1",
+      "tag": "@acedatacloud/nexior_v3.324.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "5d037afbc32196d02ae0dd6df57dd70b06f50b9e",
+            "comment": "Gate iframe login solely on the LOGIN_METHOD setting; stop reading the auth-iframe/iframe feature flag for the login decision. Default is redirect. The general featureFlag util (URL + /config) is retained for other features."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 17:58:34 GMT",
+      "version": "3.324.0",
+      "tag": "@acedatacloud/nexior_v3.324.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0c7de6f1403463e8fb31e6c346e2012503bfaa8e",
+            "comment": "feat(settings): per-service pricing/display overrides tab for site admins + editable markup previews"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 17:42:46 GMT",
+      "version": "3.323.16",
+      "tag": "@acedatacloud/nexior_v3.323.16",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d7545d768b433a16618fa0a6cfc7f30fc422b801",
+            "comment": "Remove seedance service_tier (flex) selector; always use realtime tier"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 17:28:06 GMT",
+      "version": "3.323.15",
+      "tag": "@acedatacloud/nexior_v3.323.15",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "af003b7f1855131943ef6e9d505c1b0991982590",
+            "comment": "Add configurable login mode (iframe popup vs redirect) in settings"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 17:09:17 GMT",
+      "version": "3.323.14",
+      "tag": "@acedatacloud/nexior_v3.323.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c4df5bf20b3f4bc73a0059dca44bbc8b34541a5c",
+            "comment": "Honor the server-side auth-iframe feature flag from GET /config so in-app iframe login can be enabled for everyone."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 17:04:29 GMT",
+      "version": "3.323.13",
+      "tag": "@acedatacloud/nexior_v3.323.13",
+      "comments": {
+        "none": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f391a645dcd1f4d37edee594440c08f98eb9c36d",
+            "comment": "ci(ios): set required whatsNew release notes and clean stale drafts before App Store submit"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 15:32:59 GMT",
+      "version": "3.323.13",
+      "tag": "@acedatacloud/nexior_v3.323.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "937b83e3938c630859c974a56efa30e53de576c4",
+            "comment": "Update the Maestro bot logo to the selected Holo Window CDN asset."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 10:28:28 GMT",
+      "version": "3.323.12",
+      "tag": "@acedatacloud/nexior_v3.323.12",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "70ebb99bdfc469117731635d0d4ba18611c2c19d",
+            "comment": "Maestro: regenerate the Video Type thumbnails as a cohesive set of purpose-made 3:4 portrait images so each type reads at a glance"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 10:23:24 GMT",
+      "version": "3.323.11",
+      "tag": "@acedatacloud/nexior_v3.323.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c2a3968f632221bbf6aeed8b0ce0e6a42fd86d56",
+            "comment": "Retire Veo ops actions (upsample/extend/reshoot/objects) from the UI"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 10:15:00 GMT",
+      "version": "3.323.10",
+      "tag": "@acedatacloud/nexior_v3.323.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "40078cd67ce68dc10bbe48709b8bc4c3b8503c96",
+            "comment": "Make task image thumbnails clickable to open a full-screen preview lightbox"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 06:11:41 GMT",
+      "version": "3.323.9",
+      "tag": "@acedatacloud/nexior_v3.323.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "3a9857004605c2f860880c41374bbd06b57489f3",
+            "comment": "Maestro: show full heads in Video Type cards with compact vertical (3:4) thumbnails instead of a 16:9 crop that hid faces"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 06:05:05 GMT",
+      "version": "3.323.8",
+      "tag": "@acedatacloud/nexior_v3.323.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "8f103e172554fd0afa0cc8dcdbb610fb452f6149",
+            "comment": "Even out Maestro task-card metadata row spacing to match the nanobanana/kling convention (uniform mb-2, last row mb-0)."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 03:44:25 GMT",
+      "version": "3.323.7",
+      "tag": "@acedatacloud/nexior_v3.323.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Maestro: remove the Motion Graphics video type and require a source video before generating Captions"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 03:44:01 GMT",
+      "version": "3.323.6",
+      "tag": "@acedatacloud/nexior_v3.323.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "not available",
+            "comment": "Loosen row spacing on the in-progress Maestro task card so the request-params list is less cramped."
+          },
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "c1c01c2dc8eefa334352f5d6fab53a5edd0feab6",
+            "comment": "Maestro: remove the Motion Graphics video type and require a source video before generating Captions"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 03:42:55 GMT",
+      "version": "3.323.5",
+      "tag": "@acedatacloud/nexior_v3.323.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "80eee0e52e5a5479eb2bdb0e8a584ad4f1471cda",
+            "comment": "Loosen row spacing on the in-progress Maestro task card so the request-params list is less cramped."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 11 Jul 2026 02:45:56 GMT",
+      "version": "3.323.4",
+      "tag": "@acedatacloud/nexior_v3.323.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "25d937c37e2302a0070c87601f8458e793d7e506",
+            "comment": "Refresh the macOS desktop app icon with a white badge background."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 10 Jul 2026 14:00:39 GMT",
+      "version": "3.323.3",
+      "tag": "@acedatacloud/nexior_v3.323.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d74bfbdbfb8312057eca8fa291168d3fe82dd03e",
+            "comment": "Reload after iframe login completes."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 10 Jul 2026 13:06:18 GMT",
+      "version": "3.323.2",
+      "tag": "@acedatacloud/nexior_v3.323.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6ca1836828c3064cffa1faffc950f2be30657c2a",
+            "comment": "Move iframe login entry into the bottom user menu."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 10 Jul 2026 12:18:37 GMT",
+      "version": "3.323.1",
+      "tag": "@acedatacloud/nexior_v3.323.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "6c1506cfce1edafae16ba215e4357cead16744da",
+            "comment": "Route iframe feature logins through the global auth modal."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 10 Jul 2026 07:47:16 GMT",
+      "version": "3.323.0",
+      "tag": "@acedatacloud/nexior_v3.323.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "0613bb0fdf391f183a9956d81bccb9e1060dc038",
+            "comment": "feat(maestro): show request params (mode/scenario/style/quality/aspect/duration/langs) and trace_id/elapsed on task detail cards"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 09 Jul 2026 16:39:53 GMT",
+      "version": "3.322.5",
+      "tag": "@acedatacloud/nexior_v3.322.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b2b759f68c00d592d59df2528441309c573518d2",
+            "comment": "Gate web iframe login behind auth-iframe feature flag."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 09 Jul 2026 14:09:22 GMT",
+      "version": "3.322.4",
+      "tag": "@acedatacloud/nexior_v3.322.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "a2d6629c9fbaf384dac1c974afddf615c907ac15",
+            "comment": "Use embedded AuthFrontend iframe for web login."
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 09 Jul 2026 09:55:46 GMT",
+      "version": "3.322.3",
+      "tag": "@acedatacloud/nexior_v3.322.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "2413b45d5b36607bc70b79bba4bb3abb5060ebc4",
+            "comment": "feat(white-label): keep the neutral short-URL domain on white-label distribution links (no share.acedata.cloud rebrand)"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 09 Jul 2026 09:29:12 GMT",
+      "version": "3.322.2",
+      "tag": "@acedatacloud/nexior_v3.322.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "f4a1655631d4545109682ea31ee8260e9f59bdef",
+            "comment": "feat(white-label): let a site hide our brand traces (View Code + About) via Site.branding"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 09 Jul 2026 02:50:48 GMT",
+      "version": "3.322.1",
+      "tag": "@acedatacloud/nexior_v3.322.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "b73af38d1dfe227075662d7d4c797cefb3beb5b1",
+            "comment": "show credential name for each usage record"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 09 Jul 2026 01:11:55 GMT",
+      "version": "3.322.0",
+      "tag": "@acedatacloud/nexior_v3.322.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "d52f416bc890f6ae8d4d162e1388f40ef0a2ad77",
+            "comment": "Add Seedream 5.0 Pro (doubao-seedream-5-0-pro-260628) model option"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 15:57:40 GMT",
+      "version": "3.321.4",
+      "tag": "@acedatacloud/nexior_v3.321.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "82885e95fa0c8f3e50cc24a6fa57bed49dc2f44e",
+            "comment": "fix(seedance): expose official auto duration option"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 08 Jul 2026 15:22:11 GMT",
+      "version": "3.321.3",
+      "tag": "@acedatacloud/nexior_v3.321.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "dev@acedata.cloud",
+            "package": "@acedatacloud/nexior",
+            "commit": "520cd22749d658a7c67e348e6fceaf036338794c",
+            "comment": "Show a friendly message when AI chat uploads are too large."
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 08 Jul 2026 10:37:08 GMT",
       "version": "3.321.2",
       "tag": "@acedatacloud/nexior_v3.321.2",

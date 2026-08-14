@@ -19,10 +19,6 @@
     "message": "AI ビデオ",
     "description": "AI ビデオセクションのタイトル"
   },
-  "title.headshots": {
-    "message": "AI 証明写真",
-    "description": "AI 証明写真セクションのタイトル"
-  },
   "title.comments": {
     "message": "顧客の声",
     "description": "顧客の声セクションのタイトル"
@@ -54,10 +50,6 @@
   "subtitle.luma": {
     "message": "最新のLumaモデルに接続し、ワンクリックでカスタムビデオを生成し、柔軟なビデオ拡張オプションをサポートします。",
     "description": "AI ビデオセクションのサブタイトル"
-  },
-  "subtitle.headshots": {
-    "message": "最新のAIモデルに接続し、ワンクリックでカスタムテンプレートの証明写真を生成し、多様なスタイルの証明写真をサポートします。",
-    "description": "AI 証明写真セクションのサブタイトル"
   },
   "subtitle.comments": {
     "message": "これらの顧客を支援できることを嬉しく思います。彼らは私たちのサービスに高い評価を与えています。",
@@ -110,5 +102,293 @@
   "customers.comment3": {
     "message": "AIプラットフォームは多いですが、これは本当に使いやすく、価格も手頃です。もっと良くなることを願っています！",
     "description": "顧客のコメント"
+  },
+  "badge.hero": {
+    "message": "新登場 · オールインワン AI 創作プラットフォーム",
+    "description": "ホームページのヒーローバッジ"
+  },
+  "subtitle.hero": {
+    "message": "チャット · 絵画 · 音楽 · 動画、すべての機能が一つのプラットフォームで",
+    "description": "ホームページのヒーローセクションのサブタイトル下の説明文"
+  },
+  "button.explore": {
+    "message": "機能を知る",
+    "description": "ホームページのヒーローセクションのサブボタンで、サービス紹介エリアにスクロールします"
+  },
+  "button.learnBusiness": {
+    "message": "完全なプランを確認",
+    "description": "ホームページのビジネス能力の公共文書リンク"
+  },
+  "title.models": {
+    "message": "世界をリードする大規模モデルを内蔵",
+    "description": "ホームページの大規模モデルセクションのタイトル"
+  },
+  "subtitle.models": {
+    "message": "世界の主要な大規模モデルに即アクセス、複数のツール間を行き来する必要なし",
+    "description": "ホームページの大規模モデルセクションのサブタイトル"
+  },
+  "title.cta": {
+    "message": "今すぐあなたのAI創作を始めよう",
+    "description": "ホームページのフッターにあるアクションコールのタイトル"
+  },
+  "subtitle.cta": {
+    "message": "無料登録で、今すぐ一体型AI機能を体験",
+    "description": "ホームページのフッターにあるアクションコールのサブタイトル"
+  },
+  "stat.capabilities": {
+    "message": "自由に組み合わせ可能なAI機能",
+    "description": "ホームページの機能数説明"
+  },
+  "stat.subsite": {
+    "message": "ブランド分サイトの立ち上げ完了",
+    "description": "ホームページの分サイト速度説明"
+  },
+  "stat.platforms": {
+    "message": "デスクトップとモバイルの完全カバー",
+    "description": "ホームページのクロスプラットフォームサポート説明"
+  },
+  "stat.commission": {
+    "message": "最高の分配手数料",
+    "description": "ホームページの最高分配手数料説明"
+  },
+  "note.allInOne": {
+    "message": "1つのアカウントで全てのAIツールを使用",
+    "description": "ホームページのスクリーンショット浮層説明"
+  },
+  "note.customDomain": {
+    "message": "カスタムドメインとブランド",
+    "description": "ホームページのカスタムドメイン浮層説明"
+  },
+  "eyebrow.business": {
+    "message": "あなたのAIビジネス基盤",
+    "description": "ホームページのビジネスプラットフォームセクションの見出し"
+  },
+  "title.business": {
+    "message": "AIツールを提供するだけでなく、自分のAIビジネスを構築する手助けをします",
+    "description": "ホームページのビジネスプラットフォーム章のタイトル"
+  },
+  "subtitle.business": {
+    "message": "分サイトの作成、ブランドの変更、ドメインのバインド、機能の選択、価格と分配ルールの設定を同一のバックエンドで完了。別途開発やデプロイは不要。",
+    "description": "ホームページのビジネスプラットフォーム章の副題"
+  },
+  "eyebrow.subsites": {
+    "message": "5分で立ち上げ",
+    "description": "ホームページの分サイト機能の眉題"
+  },
+  "title.subsites": {
+    "message": "ブランドサブサイトを迅速に構築し、独立したドメインを持つ",
+    "description": "ホームページのサブサイト機能タイトル"
+  },
+  "subtitle.subsites": {
+    "message": "分サイトを作成すると、独立したロゴ、タイトル、機能セット、ユーザーエントリを持つことができます。カスタムドメインをバインドすると、顧客は訪問から購入まであなたのブランド内に留まります。",
+    "description": "ホームページの分サイト機能説明"
+  },
+  "button.createSubsite": {
+    "message": "私のサブサイトを作成",
+    "description": "ホームページのサブサイト作成ボタン"
+  },
+  "eyebrow.capabilities": {
+    "message": "完全にカスタマイズ可能",
+    "description": "ホームページの機能設定の見出し"
+  },
+  "title.capabilities": {
+    "message": "ブランド、モデル、価格、ログイン方法はあなたが決める",
+    "description": "ホームページの能力設定タイトル"
+  },
+  "subtitle.capabilities": {
+    "message": "Enable any of 31 AI capabilities and configure service names, descriptions, pricing, homepage visibility, SEO, contacts, and authentication. New capabilities join the same management experience.",
+    "description": "Homepage capabilities description"
+  },
+  "button.configure": {
+    "message": "機能設定を確認",
+    "description": "ホームページの機能設定ボタン"
+  },
+  "eyebrow.operations": {
+    "message": "完全な運営バックエンド",
+    "description": "ホームページの運営設定の眉題"
+  },
+  "title.operations": {
+    "message": "顧客獲得からログインまで、各ブランドタッチポイントを設定可能",
+    "description": "ホームページの運営設定タイトル"
+  },
+  "subtitle.operations": {
+    "message": "検索表示、多言語コンテンツ、連絡先情報、ユーザーログイン方法を独立して管理し、分サイトが立ち上がるだけでなく、長期的に運営・成長できるようにします。",
+    "description": "ホームページの運営設定説明"
+  },
+  "button.operations": {
+    "message": "運営設定を確認",
+    "description": "ホームページの運営設定ボタン"
+  },
+  "eyebrow.distribution": {
+    "message": "成長とマネタイズ",
+    "description": "ホームページの分配機能の眉題"
+  },
+  "title.distribution": {
+    "message": "階層的な報酬、招待リンクと収益の引き出し",
+    "description": "ホームページの分配機能タイトル"
+  },
+  "subtitle.distribution": {
+    "message": "Every user receives a referral link and QR code. The platform tracks orders, calculates tiered commissions, and aggregates withdrawable earnings so customer growth becomes a sustainable network.",
+    "description": "Homepage referral description"
+  },
+  "button.viewDistribution": {
+    "message": "分配センターを確認",
+    "description": "ホームページの分配センターボタン"
+  },
+  "eyebrow.creation": {
+    "message": "リアルな製品インターフェース",
+    "description": "ホームページの創作機能セクションの見出し"
+  },
+  "title.creation": {
+    "message": "アイデアから完全なマルチモーダル作品へ",
+    "description": "ホームページの創作能力章タイトル"
+  },
+  "subtitle.creation": {
+    "message": "同一アカウント、同一残高、同一のクロスプラットフォーム体験で、画像、動画、音楽、デジタル人、ワークフローをカバー。",
+    "description": "ホームページの創作機能章の副題"
+  },
+  "eyebrow.chat": {
+    "message": "対話と検索",
+    "description": "ホームページのチャット機能の見出し"
+  },
+  "eyebrow.image": {
+    "message": "画像制作",
+    "description": "ホームページの画像機能の眉題"
+  },
+  "title.image": {
+    "message": "AIによる描画とプロフェッショナルな画像編集",
+    "description": "ホームページの画像能力タイトル"
+  },
+  "subtitle.image": {
+    "message": "テキストから画像生成、参照画像編集、多画像融合、部分的な再描画、アートQRコード、証明写真をカバーし、主流のモデルと一般的なアスペクト比をサポート。",
+    "description": "ホームページの画像機能説明"
+  },
+  "eyebrow.video": {
+    "message": "動画生成",
+    "description": "ホームページの動画機能の眉題"
+  },
+  "title.video": {
+    "message": "テキスト、画像、動画を駆動するAI動画",
+    "description": "ホームページの動画能力タイトル"
+  },
+  "subtitle.video": {
+    "message": "Kling、Veo、Sora、Seedance、Hailuo、Lumaなどのモデルを使用して、生成、延長、カメラワーク、口の動き、多素材の創作を完了。",
+    "description": "ホームページの動画機能説明"
+  },
+  "eyebrow.music": {
+    "message": "音楽とサウンド",
+    "description": "ホームページの音楽機能の眉題"
+  },
+  "title.music": {
+    "message": "曲、音楽、歌詞、音声の生成",
+    "description": "ホームページの音楽能力タイトル"
+  },
+  "subtitle.music": {
+    "message": "1つの説明文またはカスタム歌詞から始めて、完全な曲を生成し、延長、カバー、ボーカルの分離、またはFishを通じて自然な音声を合成。",
+    "description": "ホームページの音楽機能説明"
+  },
+  "eyebrow.workflow": {
+    "message": "デジタル人とワークフロー",
+    "description": "ホームページのワークフロー機能の眉題"
+  },
+  "title.workflow": {
+    "message": "スクリプトをデジタル人のナレーションと完全な動画に変換",
+    "description": "ホームページのワークフロー能力タイトル"
+  },
+  "subtitle.workflow": {
+    "message": "Maestroとデジタル人機能がスクリプト、素材、音声、ショット、レンダリングを結びつけ、繰り返し可能なコンテンツ制作プロセスを形成。",
+    "description": "ホームページのワークフロー機能説明"
+  },
+  "eyebrow.digitalHuman": {
+    "message": "デジタル人のナレーション",
+    "description": "ホームページのデジタル人機能の見出し"
+  },
+  "title.digitalHuman": {
+    "message": "写真、音声、スクリプトからデジタル人の動画を生成",
+    "description": "ホームページのデジタル人能力タイトル"
+  },
+  "subtitle.digitalHuman": {
+    "message": "実際の肖像と声を使用して自然な口の動きと完全なナレーション動画を生成。コース、マーケティング、製品紹介、大量コンテンツ制作に適しています。",
+    "description": "ホームページのデジタル人機能説明"
+  },
+  "eyebrow.coding": {
+    "message": "プログラミング協力",
+    "description": "ホームページのプログラミング機能の見出し"
+  },
+  "title.coding": {
+    "message": "ローカルデバイスに接続するAIプログラミングアシスタント",
+    "description": "ホームページのプログラミング能力タイトル"
+  },
+  "subtitle.coding": {
+    "message": "Coding Bridgeを通じて安全に開発デバイスを接続し、AIが明確な権限の下でプロジェクトを読み取り、タスクを実行し、進捗を継続的にフィードバック。",
+    "description": "ホームページのプログラミング機能説明"
+  },
+  "eyebrow.directory": {
+    "message": "機能カタログ",
+    "description": "ホームページの機能カタログの見出し"
+  },
+  "title.directory": {
+    "message": "完全なAI能力ディレクトリ、最新モデルに継続的に接続",
+    "description": "ホームページの能力ディレクトリタイトル"
+  },
+  "subtitle.directory": {
+    "message": "以下は現在のサイトで有効になっている完全な機能です。メインサイトは新しいモデルを継続的に接続し、分サイトの管理者は顧客にどのサービスを表示するかを自由に決定できます。",
+    "description": "ホームページの機能ディレクトリ説明"
+  },
+  "eyebrow.cta": {
+    "message": "今すぐ始める",
+    "description": "ホームページのフッターの行動喚起の見出し"
+  },
+  "benefit.subsites.noServer": {
+    "message": "サーバーを購入したりシステムを構築したりする必要はなく、5分でAIサブサイトを作成して公開できます",
+    "description": "ホームページのサブサイトサーバー不要のセールスポイント"
+  },
+  "benefit.subsites.customDomain": {
+    "message": "独自のサブドメインを持ち、自分のブランドドメインとHTTPSをバインドすることも可能です",
+    "description": "ホームページのサブサイトカスタムドメインのセールスポイント"
+  },
+  "benefit.subsites.branding": {
+    "message": "ロゴ、名称、主色、連絡先、ブランド入口はすべて独立して設定可能です",
+    "description": "ホームページのサブサイトブランドカスタマイズのセールスポイント"
+  },
+  "benefit.capabilities.catalog": {
+    "message": "チャット、画像、動画、音楽、デジタル人、ワークフロー、プログラミング機能が継続的に更新されます",
+    "description": "ホームページの完全な機能カタログのセールスポイント"
+  },
+  "benefit.capabilities.display": {
+    "message": "各機能は独立して表示/非表示、名前変更、説明の修正、表示順序の調整が可能です",
+    "description": "ホームページの機能表示設定のセールスポイント"
+  },
+  "benefit.capabilities.pricing": {
+    "message": "全サイトでの統一価格設定と単一サービスの独立価格設定をサポートし、価格戦略はあなたが決定します",
+    "description": "ホームページの機能価格設定のセールスポイント"
+  },
+  "benefit.operations.seo": {
+    "message": "カスタムSEOタイトル、キーワード、説明を設定し、自分の検索ブランドを構築します",
+    "description": "ホームページのSEOのセールスポイント"
+  },
+  "benefit.operations.auth": {
+    "message": "メール、電話、GitHub、Google、WeChat、Apple、パスキーでのログインを自由に有効化できます",
+    "description": "ホームページのログイン方法のセールスポイント"
+  },
+  "benefit.operations.localization": {
+    "message": "サービス名、説明、運営内容は多言語および自動翻訳をサポートします",
+    "description": "ホームページの多言語運営のセールスポイント"
+  },
+  "benefit.distribution.noBarrier": {
+    "message": "申請のハードルなし、登録ユーザーは自動的に専用の招待リンクとQRコードを取得します",
+    "description": "ホームページの無制限分配のセールスポイント"
+  },
+  "benefit.distribution.levels": {
+    "message": "13段階の成長システム、業績に応じてコミッションが増加し、最大24%に達します",
+    "description": "ホームページの分配レベルのセールスポイント"
+  },
+  "benefit.distribution.withdrawal": {
+    "message": "注文、招待人数、報酬が自動的に集計され、収益は一括で引き出し申請が可能です",
+    "description": "ホームページの分配引き出しのセールスポイント"
+  },
+  "nav.business": {
+    "message": "ビジネス提携",
+    "description": "ホワイトラベルのウェブサイト構築とビジネス提携ページのナビゲーション"
   }
 }

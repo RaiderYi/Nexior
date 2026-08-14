@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div class="flex justify-between">
+    <div class="flex min-h-8 items-center pr-20">
       <div class="flex justify-start items-center">
         <span class="text-sm font-bold">
           {{ $t('midjourney.name.imageUrl') }}
@@ -18,6 +18,7 @@
       accept=".png,.jpg,.jpeg,.gif,.bmp,.webp"
       :multiple="true"
       list-type="picture"
+      :before-upload="beforeUploadSizeGuard"
       :action="uploadUrl"
       :on-exceed="onExceed"
       :on-error="onError"
@@ -32,7 +33,7 @@
         />
       </template>
       <el-button round type="primary" size="small" class="btn btn-upload">
-        <font-awesome-icon icon="fa-solid fa-upload" class="icon mr-1" />
+        <upload-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('midjourney.button.uploadImageUrl') }}
       </el-button>
     </el-upload>
@@ -40,10 +41,16 @@
 </template>
 
 <script lang="ts">
+import { UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElUpload, ElButton, UploadFiles, UploadFile, ElMessage } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { getBaseUrlPlatform, pasteUploadMixin, uploadTrackerMixin } from '@/utils';
+import {
+  getBaseUrlPlatform,
+  pasteUploadMixin,
+  dropUploadMixin,
+  uploadTrackerMixin,
+  uploadSizeGuardMixin
+} from '@/utils';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import ImagePreview from '@/components/common/ImagePreview.vue';
 
@@ -55,13 +62,13 @@ interface IData {
 export default defineComponent({
   name: 'ReferenceImage',
   components: {
+    UploadIcon,
     ElUpload,
     ElButton,
     InfoIcon,
-    FontAwesomeIcon,
     ImagePreview
   },
-  mixins: [pasteUploadMixin, uploadTrackerMixin],
+  mixins: [pasteUploadMixin, dropUploadMixin, uploadTrackerMixin, uploadSizeGuardMixin],
   emits: ['change'],
   data(): IData {
     return {

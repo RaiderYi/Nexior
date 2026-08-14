@@ -27,6 +27,18 @@
     "message": "Temps écoulé",
     "description": "Étiquette de temps écoulé pour la tâche Fish"
   },
+  "name.failure": {
+    "message": "Échec de la génération",
+    "description": "Titre de l'échec de la tâche dans Fish"
+  },
+  "name.failureReason": {
+    "message": "Raison de l'échec",
+    "description": "Étiquette de la raison de l'échec de la tâche dans Fish"
+  },
+  "name.traceId": {
+    "message": "ID de suivi",
+    "description": "Étiquette de l'ID de suivi de la tâche dans Fish"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Étiquette de carte de tâche robot Fish"
@@ -91,13 +103,25 @@
     "message": "Aucun modèle vocal disponible",
     "description": "Message indiquant que le sélecteur de voix de Fish est vide"
   },
+  "group.publicVoices": {
+    "message": "Bibliothèque de voix publiques",
+    "description": "Titre du groupe de voix publiques dans le sélecteur de sons Fish"
+  },
+  "message.searching": {
+    "message": "Recherche en cours…",
+    "description": "Indicateur de chargement pour la recherche à distance dans le sélecteur de sons Fish"
+  },
+  "message.searchVoiceHint": {
+    "message": "Entrez des mots-clés pour rechercher des voix publiques",
+    "description": "Message d'état vide pour la recherche à distance dans le sélecteur de sons Fish"
+  },
   "name.voiceTitle": {
     "message": "Nom",
     "description": "Étiquette du champ de nom pour le modèle de son Fish"
   },
   "name.voiceDescription": {
     "message": "Description",
-    "description": "Étiquette du champ de description pour le modèle de son Fish"
+    "description": "Étiquette du champ de description du modèle vocal Fish"
   },
   "name.referenceAudio": {
     "message": "Audio de référence",
@@ -213,7 +237,7 @@
   },
   "value.public": {
     "message": "Public",
-    "description": "Fish visibilité du clonage de voix : public"
+    "description": "Visibilité du clonage vocal Fish : public"
   },
   "value.trainModeFast": {
     "message": "Rapide",

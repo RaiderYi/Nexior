@@ -28,8 +28,8 @@
     "description": "Ознака за унос слике"
   },
   "name.referenceImages": {
-    "message": "Reference Images",
-    "description": "Label for reference images"
+    "message": "Референтне слике",
+    "description": "Ознака за референтне слике"
   },
   "name.required": {
     "message": "Обавезно",
@@ -64,8 +64,8 @@
     "description": "Uputstvo za unos prompta"
   },
   "description.model": {
-    "message": "Izaberite Grok Imagine model. grok-imagine-video podržava generisanje videa iz teksta i slike; 1.5-preview podržava samo generisanje videa iz slike.",
-    "description": "Uputstvo za izbor modela"
+    "message": "Izaberite Grok Imagine model. :reverse koristi brze/standardne tačke; :official koristi zvaničnu tačku (veći kvalitet, naplata po sekundi). grok-imagine-video-1.5:official podržava samo generisanje videa iz slika.",
+    "description": "Uputstva za izbor modela"
   },
   "description.ratio": {
     "message": "Izaberite odnos stranica izlaznog videa.",
@@ -76,16 +76,16 @@
     "description": "Uputstvo za rezoluciju"
   },
   "description.duration": {
-    "message": "Trajanje videa (sekunde), naplaćuje se po broju sekundi.",
-    "description": "Uputstvo za trajanje"
+    "message": "Дужина видеа (секунде). 1.5-brzo (obrnuto) podržava 6-30 sekundi, naplata po dužini; ostale varijante podržavaju 1-15 sekundi, naplata po izlaznim sekundama.",
+    "description": "Uputstva za dužinu"
   },
   "description.image": {
-    "message": "Opcionalna ulazna slika, koristi se za generisanje videa. grok-imagine-video-1.5-preview je obavezno.",
-    "description": "Uputstvo za ulaznu sliku"
+    "message": "Opcionalna ulazna slika za generisanje videa. grok-imagine-video-1.5:official je obavezno.",
+    "description": "Uputstva za ulaznu sliku"
   },
   "description.referenceImages": {
-    "message": "Optional reference images to guide the style or content of the generated video (grok-imagine-video only).",
-    "description": "Instructions for reference images"
+    "message": "Opcione referentne slike za vođenje stila ili sadržaja generisanog videa.",
+    "description": "Uputstva za referentne slike"
   },
   "placeholder.prompt": {
     "message": "Опишите ваш видео…",
@@ -95,13 +95,21 @@
     "message": "Изаберите",
     "description": "Плацехолдер за избор"
   },
-  "model.default": {
-    "message": "Grok Imagine video",
-    "description": "Oznaka za podrazumevani model"
+  "model.fastReverse": {
+    "message": "Grok Imagine video 1.5 Brzo (brzo, 6–30 sekundi)",
+    "description": "Oznaka modela 1.5-brzo obrnuto"
   },
-  "model.preview15": {
-    "message": "Grok Imagine video 1.5 (preview, generisanje videa iz slike)",
-    "description": "Oznaka za 1.5 preview model"
+  "model.reverse": {
+    "message": "Grok Imagine video (standard, 1–15 sekundi)",
+    "description": "Oznaka modela grok-imagine-video obrnuto"
+  },
+  "model.official": {
+    "message": "Grok Imagine video · Zvanično (veći kvalitet, naplata po sekundi)",
+    "description": "Oznaka zvaničnog modela grok-imagine-video"
+  },
+  "model.official15": {
+    "message": "Grok Imagine video 1.5 · Zvanično (generisanje videa iz slika, do 1080p)",
+    "description": "Oznaka 1.5 zvaničnog modela"
   },
   "button.upload": {
     "message": "Otpremi",
@@ -128,8 +136,8 @@
     "description": "Upozorenje o prekoračenju otpremanja"
   },
   "message.uploadReferenceExceed": {
-    "message": "You can upload up to 4 reference images.",
-    "description": "Reference images upload exceed warning"
+    "message": "Можете отпремити до 4 референтне слике.",
+    "description": "Упозорење о прекорачењу броја референтних слика"
   },
   "message.uploadError": {
     "message": "Otpremanje slike nije uspelo, molimo pokušajte ponovo.",

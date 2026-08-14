@@ -2,16 +2,29 @@
   <div class="node-list flex flex-col h-full bg-[var(--app-sidebar-bg)] border-r border-[var(--app-border-subtle)]">
     <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--app-border-subtle)]">
       <div class="flex items-center gap-2 font-medium">
-        <font-awesome-icon icon="fa-solid fa-laptop-code" />
+        <developer-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
         <span>{{ $t('codingBridge.nodeList.title') }}</span>
       </div>
       <div class="flex items-center gap-1">
         <notification-toggle />
-        <el-button circle size="small" :title="$t('codingBridge.nodeList.refresh')" @click="onRefresh">
-          <font-awesome-icon icon="fa-solid fa-rotate-right" />
+        <el-button
+          circle
+          size="small"
+          :aria-label="$t('codingBridge.nodeList.refresh')"
+          :title="$t('codingBridge.nodeList.refresh')"
+          @click="onRefresh"
+        >
+          <redo-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
         </el-button>
-        <el-button type="primary" circle size="small" :title="$t('codingBridge.nodeList.pair')" @click="$emit('pair')">
-          <font-awesome-icon icon="fa-solid fa-plus" />
+        <el-button
+          type="primary"
+          circle
+          size="small"
+          :aria-label="$t('codingBridge.nodeList.pair')"
+          :title="$t('codingBridge.nodeList.pair')"
+          @click="$emit('pair')"
+        >
+          <add-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
         </el-button>
       </div>
     </div>
@@ -25,7 +38,7 @@
       <div v-if="!nodes.length" class="p-6 text-center text-sm text-[var(--app-text-subtle)]">
         <p class="mb-3">{{ $t('codingBridge.nodeList.empty') }}</p>
         <el-button type="primary" round size="small" @click="$emit('pair')">
-          <font-awesome-icon icon="fa-solid fa-plus" class="mr-1" />
+          <add-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
           {{ $t('codingBridge.nodeList.pairFirst') }}
         </el-button>
       </div>
@@ -37,7 +50,12 @@
           :class="{ 'bg-[var(--app-content-bg)]': node.node_id === currentNodeId }"
           @click="onSelect(node.node_id)"
         >
-          <font-awesome-icon icon="fa-solid fa-desktop" class="text-[var(--app-text-subtle)]" />
+          <desktop-icon
+            class="text-[var(--app-text-subtle)]"
+            :size="'1em' as any"
+            aria-hidden="true"
+            focusable="false"
+          />
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
               <span class="truncate font-medium">{{ node.name }}</span>
@@ -52,14 +70,26 @@
             </div>
           </div>
           <el-button
-            class="opacity-0 group-hover:opacity-100"
+            class="node-action"
             text
             circle
             size="small"
+            :aria-label="$t('codingBridge.nodeList.rename')"
+            :title="$t('codingBridge.nodeList.rename')"
+            @click.stop="onRename(node)"
+          >
+            <edit-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+          </el-button>
+          <el-button
+            class="node-action"
+            text
+            circle
+            size="small"
+            :aria-label="$t('codingBridge.nodeList.remove')"
             :title="$t('codingBridge.nodeList.remove')"
             @click.stop="onDelete(node)"
           >
-            <font-awesome-icon icon="fa-solid fa-trash" />
+            <delete-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           </el-button>
         </li>
       </ul>
@@ -68,17 +98,30 @@
 </template>
 
 <script lang="ts">
+import {
+  AddIcon,
+  DeleteIcon,
+  DesktopIcon,
+  DeveloperIcon,
+  EditIcon,
+  RedoIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton, ElMessage, ElMessageBox } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { ICodingBridgeConnectionStatus, ICodingBridgeNode } from '@/models';
+import { CB_NODE_NAME_MAX_LENGTH } from '@/constants';
 import NotificationToggle from './NotificationToggle.vue';
 
 export default defineComponent({
   name: 'CodingBridgeNodeList',
   components: {
+    AddIcon,
+    DeleteIcon,
+    DesktopIcon,
+    DeveloperIcon,
+    EditIcon,
+    RedoIcon,
     ElButton,
-    FontAwesomeIcon,
     NotificationToggle
   },
   emits: ['pair'],
@@ -115,6 +158,43 @@ export default defineComponent({
     onRefresh() {
       this.$store.dispatch('codingBridge/getNodes');
     },
+    async onRename(node: ICodingBridgeNode) {
+      let value: string;
+      try {
+        const result = await ElMessageBox.prompt(
+          this.$t('codingBridge.nodeList.renamePrompt') as string,
+          this.$t('codingBridge.nodeList.rename') as string,
+          {
+            confirmButtonText: this.$t('common.button.confirm') as string,
+            cancelButtonText: this.$t('common.button.cancel') as string,
+            inputValue: node.name,
+            inputValidator: (input: string) => {
+              const trimmed = (input ?? '').trim();
+              if (!trimmed) {
+                return this.$t('codingBridge.nodeList.renameEmpty') as string;
+              }
+              // Count code points, not UTF-16 units, to match the server's len().
+              if ([...trimmed].length > CB_NODE_NAME_MAX_LENGTH) {
+                return this.$t('codingBridge.nodeList.renameTooLong', { max: CB_NODE_NAME_MAX_LENGTH }) as string;
+              }
+              return true;
+            }
+          }
+        );
+        value = (result.value ?? '').trim();
+      } catch {
+        return;
+      }
+      if (!value || value === node.name) {
+        return;
+      }
+      try {
+        await this.$store.dispatch('codingBridge/renameNode', { nodeId: node.node_id, name: value });
+        ElMessage.success(this.$t('codingBridge.nodeList.renameSuccess') as string);
+      } catch {
+        ElMessage.error(this.$t('codingBridge.nodeList.renameFailed') as string);
+      }
+    },
     async onDelete(node: ICodingBridgeNode) {
       try {
         await ElMessageBox.confirm(
@@ -139,3 +219,23 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+// Row actions reveal on hover, but a touch device has no hover state — the
+// buttons would be unreachable there (the drawer mount is touch-only), so they
+// stay visible whenever the pointer can't hover.
+.node-action {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .node-action {
+    opacity: 0;
+  }
+
+  .group:hover .node-action,
+  .node-action:focus-visible {
+    opacity: 1;
+  }
+}
+</style>

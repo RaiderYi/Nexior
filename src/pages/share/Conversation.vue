@@ -1,9 +1,8 @@
 <template>
   <div class="shared-page">
     <header class="shared-header">
-      <div class="brand" @click="goToApp">
-        <img v-if="brandLogo" :src="brandLogo" class="brand-logo" alt="logo" />
-        <span class="brand-name">{{ brandName }}</span>
+      <div class="brand">
+        <logo @click="goToApp" />
       </div>
       <el-button class="cta" type="primary" round @click="goToApp">
         {{ $t('chat.share.startYourOwn') }}
@@ -14,7 +13,7 @@
       <el-skeleton v-if="loading" :rows="6" animated class="skeleton" />
 
       <div v-else-if="error" class="unavailable">
-        <font-awesome-icon icon="fa-solid fa-link-slash" class="unavailable-icon" />
+        <unlink-icon class="unavailable-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
         <h1 class="unavailable-title">{{ $t('chat.share.unavailableTitle') }}</h1>
         <p class="unavailable-hint">{{ $t('chat.share.unavailableHint') }}</p>
         <el-button type="primary" round @click="goToApp">{{ $t('chat.share.startYourOwn') }}</el-button>
@@ -27,7 +26,7 @@
             <img v-if="modelGroup?.icon" :src="modelGroup.icon" class="meta-icon" alt="model" />
             <span v-if="modelGroupName" class="meta-model">{{ modelGroupName }}</span>
             <span class="meta-badge">
-              <font-awesome-icon icon="fa-solid fa-eye" class="mr-1" />
+              <view-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
               {{ $t('chat.share.viewOnly') }}
             </span>
           </div>
@@ -58,10 +57,11 @@
 </template>
 
 <script lang="ts">
+import { UnlinkIcon, ViewIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent, provide } from 'vue';
 import { ElButton, ElSkeleton } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Message from '@/components/chat/Message.vue';
+import Logo from '@/components/common/Logo.vue';
 import { chatOperator } from '@/operators';
 import { CHAT_MODEL_GROUPS, CHAT_MODELS } from '@/constants';
 import { IChatConversation, IChatMessage, IChatModelGroup } from '@/models';
@@ -76,10 +76,12 @@ interface IData {
 export default defineComponent({
   name: 'SharedConversation',
   components: {
+    UnlinkIcon,
+    ViewIcon,
     Message,
+    Logo,
     ElButton,
-    ElSkeleton,
-    FontAwesomeIcon
+    ElSkeleton
   },
   setup() {
     // Force sanitized markdown rendering for every VueMarkdown descendant.
@@ -118,12 +120,6 @@ export default defineComponent({
     },
     modelGroupName(): string {
       return this.modelGroup?.getDisplayName?.() || '';
-    },
-    brandName(): string {
-      return this.$store.state.site?.title || 'AceData';
-    },
-    brandLogo(): string | undefined {
-      return this.$store.state.site?.logo || this.$store.state.site?.favicon || undefined;
     }
   },
   async mounted() {
@@ -189,28 +185,25 @@ export default defineComponent({
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
+  display: grid;
+  // 1fr / auto / 1fr keeps the brand optically centered no matter how wide
+  // the CTA gets in other locales.
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 12px 20px;
   border-bottom: 1px solid var(--el-border-color-lighter, #ebeef5);
   background-color: var(--el-bg-color, #fff);
 
   .brand {
+    grid-column: 2;
     display: flex;
     align-items: center;
-    gap: 10px;
-    cursor: pointer;
+    justify-content: center;
+  }
 
-    .brand-logo {
-      height: 28px;
-      width: auto;
-    }
-    .brand-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--el-text-color-primary);
-    }
+  .cta {
+    grid-column: 3;
+    justify-self: end;
   }
 }
 

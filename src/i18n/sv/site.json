@@ -27,6 +27,18 @@
     "message": "Temafärg",
     "description": "Titeln som visas i redigeringsfältet"
   },
+  "field.supportedLocales": {
+    "message": "Webbplatsens språk",
+    "description": "Webbplatsinställningar där besökare kan välja gränssnittsspråk."
+  },
+  "field.forcedLocale": {
+    "message": "Tvingad språk",
+    "description": "Alternativ för att fastställa hela webbplatsens gränssnittsspråk i inställningarna"
+  },
+  "placeholder.autoDetectLocale": {
+    "message": "Automatisk detektering",
+    "description": "Platsinnehåll när tvingat språk inte är inställt"
+  },
   "field.qr": {
     "message": "QR-kod",
     "description": "Visas som titeln i redigeringsrutan"
@@ -39,17 +51,29 @@
     "message": "Webbplatsens administratörs-ID",
     "description": "Visas som titeln i redigeringsrutan"
   },
+  "field.contacts": {
+    "message": "Supportkontakter",
+    "description": "Field title for the customer-service contacts in site settings"
+  },
   "field.markupRatio": {
-    "message": "Påslagprocent",
+    "message": "Enhetligt påslag för hela webbplatsen",
     "description": "Inställningar för webbplatsen: den enhetliga påslagsprocenten (i procent) för alla insättningspaket på denna webbplats."
   },
   "message.markupRatioTip": {
-    "message": "Enhetligt påslag för alla insättningspaket (0%~500%). 0% innebär att du säljer till plattformens originalpris; påslagsdelen är din vinst, och provisionsprocenten för distribution förblir oförändrad.",
+    "message": "Ange ett enhetligt påslag för alla tjänster på webbplatsen (0%–500%). Ett anpassat påslag per tjänst nedan åsidosätter detta värde.",
     "description": "Förklarande text för inställningen av påslagprocent."
   },
   "message.markupExample": {
     "message": "Exempel: officiellt pris {from} → ditt försäljningspris {to}",
     "description": "Ett realtids exempel under inställningen för påslagprocent, där {from} är det officiella priset och {to} är försäljningspriset efter påslag."
+  },
+  "field.disableRecharge": {
+    "message": "Inaktivera påfyllning",
+    "description": "Site settings: when on, hide all recharge/top-up entries on this site"
+  },
+  "message.disableRechargeTip": {
+    "message": "När det är aktiverat döljs alla påfyllningsknappar på den här webbplatsen och användare kan inte längre fylla på sitt saldo.",
+    "description": "Help text for the disable-recharge toggle"
   },
   "field.distributionDefaultInviterId": {
     "message": "Standardinbjudar-ID",
@@ -89,7 +113,103 @@
   },
   "field.authProvider_wechat": {
     "message": "WeChat",
-    "description": "Namn på inloggningsmetod: WeChat tredjepartsinloggning"
+    "description": "Inloggningsmetodens namn: WeChat tredjepartsinloggning"
+  },
+  "field.authSmsWebhook": {
+    "message": "Anpassad SMS-avsändaradress",
+    "description": "Webbplatsinställningar / inloggning: titel för webbplatsens egen anpassade SMS-verifieringskodleverans webhook"
+  },
+  "message.authSmsWebhookTip": {
+    "message": "När den är aktiverad kommer SMS-kod som skickas från plattformen att skickas av ditt eget API med din egen signatur; när den är avstängd används plattformens standard signatur. Du måste först aktivera \"telefonnummer\" inloggningsmetod.",
+    "description": "Förklarar den anpassade SMS-avsändarens webhook"
+  },
+  "placeholder.authSmsWebhookUrl": {
+    "message": "https://dittdomännamn/sms-webhook",
+    "description": "Platshållare för SMS webhook URL inmatningsfält"
+  },
+  "placeholder.authSmsWebhookSecret": {
+    "message": "Signaturnyckel (lämna tom för att behålla oförändrad)",
+    "description": "Platshållare för SMS webhook signeringshemlighet; skrivskyddad, tomt behåller befintligt"
+  },
+  "field.authSmsWebhookEnable": {
+    "message": "Aktivera anpassad avsändaradress",
+    "description": "Etikett bredvid växeln för anpassad SMS-avsändare"
+  },
+  "field.authSmsWebhookDoc": {
+    "message": "Visa dokumentation",
+    "description": "Länk som öppnar dialogrutan för SMS webhook-specifikation"
+  },
+  "field.authSmsWebhookTest": {
+    "message": "Testa",
+    "description": "Knapp som öppnar dialogrutan för SMS webhook-test"
+  },
+  "message.authSmsWebhookNeedsPhone": {
+    "message": "Du måste först aktivera \"telefonnummer\" inloggningsmetod för att kunna konfigurera en anpassad SMS-avsändaradress.",
+    "description": "Tooltip som visas när växeln är inaktiverad eftersom telefoninloggning är avstängd"
+  },
+  "field.authSmsWebhookDocTitle": {
+    "message": "Anpassad SMS-avsändaradress · API-specifikation",
+    "description": "Titel på dialogrutan för SMS webhook-specifikationen"
+  },
+  "message.authSmsWebhookDocIntro": {
+    "message": "Vi kommer att göra en signerad HTTPS POST-begäran till den angivna adressen, och din tjänst ansvarar för att skicka SMS. Se till att ditt API uppfyller följande krav:",
+    "description": "Introduktionstext i dialogrutan för SMS webhook-specifikationen"
+  },
+  "field.authSmsWebhookDocRequest": {
+    "message": "Begäran",
+    "description": "Rubrik: begärans avsnitt av SMS webhook-specifikationen"
+  },
+  "message.authSmsWebhookDocRequest": {
+    "message": "Metoden är POST, Content-Type är application/json. Syftet kan vara login / register / test (test är en anslutningstest, SMS behöver inte skickas). Begärningskroppens struktur är som följer:",
+    "description": "Beskriver begärningsmetoden och kroppen för SMS webhook"
+  },
+  "field.authSmsWebhookDocHeaders": {
+    "message": "Signaturverifiering",
+    "description": "Rubrik: signaturavsnittet av SMS webhook-specifikationen"
+  },
+  "message.authSmsWebhookDocHeaders": {
+    "message": "Bifoga följande begärningshuvuden vid varje begäran, använd din signaturnyckel för att göra HMAC-SHA256-verifiering enligt Standard Webhooks-specifikationen och använd konstant tidsjämförelse:",
+    "description": "Beskriver signaturverifiering för SMS webhook"
+  },
+  "field.authSmsWebhookDocResponse": {
+    "message": "Svar",
+    "description": "Rubrik: svarsavsnitt av SMS webhook-specifikationen"
+  },
+  "message.authSmsWebhookDocResponse": {
+    "message": "Vid framgång, returnera 2xx; för att uttryckligen indikera ett misslyckande, kan du returnera HTTP 200, och body-fältet success ska vara false (se exempel nedan). Svara inom 5 sekunder.",
+    "description": "Beskriver den förväntade svaret av SMS webhook"
+  },
+  "field.authSmsWebhookTestTitle": {
+    "message": "Testa anpassad SMS-avsändaradress",
+    "description": "Titel på dialogrutan för SMS webhook-test"
+  },
+  "field.authSmsWebhookTestRegion": {
+    "message": "Lands-/regionskod",
+    "description": "Etikett för regionskodsfältet i testdialogrutan"
+  },
+  "field.authSmsWebhookTestNumber": {
+    "message": "Testtelefonnummer (valfritt)",
+    "description": "Etikett för telefonnummerfältet i testdialogrutan"
+  },
+  "field.authSmsWebhookTestSend": {
+    "message": "Skicka test",
+    "description": "Knapp som skickar SMS webhook-testbegäran"
+  },
+  "message.authSmsWebhookTestOk": {
+    "message": "Testbegäran har framgångsrikt nått ditt API.",
+    "description": "Framgångsmeddelande efter ett webhook-test"
+  },
+  "message.authSmsWebhookTestFailed": {
+    "message": "Testet misslyckades, kontrollera adressen, signaturnyckeln och API-svaret.",
+    "description": "Felmeddelande efter ett webhook-test"
+  },
+  "field.authSmsWebhookDisableTitle": {
+    "message": "Stäng av anpassad SMS-avsändaradress",
+    "description": "Titel på bekräftelsedialogen som visas när den anpassade SMS-avsändaren inaktiveras"
+  },
+  "message.authSmsWebhookDisableConfirm": {
+    "message": "När du stänger av kommer sparade avsändaradresser och signaturnycklar att raderas (nycklar kan inte återställas), och plattformen kommer att använda standard signatur. Är du säker på att du vill stänga av?",
+    "description": "Text i bekräftelsedialogen som visas när den anpassade SMS-avsändaren stängs av"
   },
   "field.featuresChat": {
     "message": "Chat",
@@ -115,9 +235,13 @@
     "message": "Maestro",
     "description": "Visas som titeln i redigeringsrutan"
   },
-  "field.featuresDigitalhuman": {
-    "message": "Digital Human",
+  "field.featuresPoivelle": {
+    "message": "Poivelle",
     "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresDigitalhuman": {
+    "message": "Digital människa",
+    "description": "Visas som titel i redigeringsrutan"
   },
   "field.featuresDeepseek": {
     "message": "Deepseek",
@@ -159,9 +283,9 @@
     "message": "Hailuo",
     "description": "Visas som titeln i redigeringsrutan"
   },
-  "field.featuresHeadshots": {
-    "message": "AI ID-foto",
-    "description": "Visas som titeln i redigeringsrutan"
+  "field.featuresMinimax": {
+    "message": "MiniMax H3",
+    "description": "Displayed as the title in the editing box"
   },
   "field.featuresSuno": {
     "message": "Suno",
@@ -186,6 +310,10 @@
   "field.featuresSeedance": {
     "message": "SeeDance",
     "description": "Visas som titeln i redigeringsrutan"
+  },
+  "field.featuresOmni": {
+    "message": "Omni",
+    "description": "Visas som rubrik i redigeringsrutan"
   },
   "field.featuresWan": {
     "message": "Wan",
@@ -234,6 +362,10 @@
   "title.editAdmins": {
     "message": "Redigera administratörer",
     "description": "Visas som titeln i redigeringsrutan"
+  },
+  "title.editContacts": {
+    "message": "Redigera supportkontakter",
+    "description": "Title of the edit-support-contacts dialog"
   },
   "title.featuresConfig": {
     "message": "Funktioner konfiguration",
@@ -371,6 +503,74 @@
     "message": "Bilduppladdning misslyckades.",
     "description": "Fel vid uppladdning i bildbeskäraren"
   },
+  "logoStudio.analysisReady": {
+    "message": "Bildanalys klar",
+    "description": "Översta statusrubriken för steg två av intelligent behandling av varumärkesbilder"
+  },
+  "logoStudio.analysisSummary": {
+    "message": "{width}×{height} px · Bakgrundsförtroende {confidence}%",
+    "description": "Mått och bakgrundsförtroende i bildanalysresultatet"
+  },
+  "logoStudio.backgroundDetected": {
+    "message": "Enfärgad bakgrund upptäckt",
+    "description": "Statusmärkning när bakgrunden runt bilden är tillräckligt enhetlig"
+  },
+  "logoStudio.transparentOrComplex": {
+    "message": "Transparent eller komplex bakgrund",
+    "description": "Statusmärkning när bilden är transparent eller bakgrunden inte är lämplig för automatisk borttagning"
+  },
+  "logoStudio.removeBackground": {
+    "message": "Automatiskt ta bort bakgrund",
+    "description": "Märket för växeln för att ta bort bakgrunden från varumärkesbilden"
+  },
+  "logoStudio.backgroundColor": {
+    "message": "Bakgrundsfärg",
+    "description": "Märket för mål färg för att ta bort bakgrunden från varumärkesbilden"
+  },
+  "logoStudio.edgeTolerance": {
+    "message": "Kanttolerans",
+    "description": "Märket för reglaget för tolerans vid borttagning av bakgrund på varumärkesbilden"
+  },
+  "logoStudio.refreshPreview": {
+    "message": "Uppdatera förhandsgranskning",
+    "description": "Knappen för att bearbeta bilden igen med nya bakgrundsborttagningsparametrar"
+  },
+  "logoStudio.modeBrand": {
+    "message": "Behåll varumärkesfärg",
+    "description": "Visningsläge där både ljusa och mörka teman använder färgglad logotyp"
+  },
+  "logoStudio.modeBalanced": {
+    "message": "Intelligent anpassning",
+    "description": "Rekommenderat läge där ljusa färger behåller varumärkesfärgen och mörka färger använder vit logotyp"
+  },
+  "logoStudio.modeMono": {
+    "message": "Svartvit läge",
+    "description": "Visningsläge där ljusa färger använder svart och mörka färger använder vit logotyp"
+  },
+  "logoStudio.lightTheme": {
+    "message": "Ljust tema",
+    "description": "Märket för förhandsgranskning av varumärkesbild med ljus bakgrund"
+  },
+  "logoStudio.darkTheme": {
+    "message": "Mörkt tema",
+    "description": "Märket för förhandsgranskning av varumärkesbild med mörk bakgrund"
+  },
+  "logoStudio.previewOutdated": {
+    "message": "Parametrar har ändrats, vänligen uppdatera förhandsgranskningen innan du tillämpar.",
+    "description": "Meddelande när behandlingsparametrarna inte stämmer överens med aktuell förhandsgranskning"
+  },
+  "logoStudio.back": {
+    "message": "Tillbaka till beskärning",
+    "description": "Knappen för att återgå till beskärningssteget från behandlingsförhandsgranskningen"
+  },
+  "logoStudio.analyze": {
+    "message": "Analysera och förhandsgranska",
+    "description": "Knappen för att slutföra beskärning och gå till det intelligenta behandlingssteget"
+  },
+  "logoStudio.apply": {
+    "message": "Tillämpa bild",
+    "description": "Knappen för att bekräfta resultatet av varumärkesbildens behandling"
+  },
   "message.editLogoTip": {
     "message": "Rekommenderad storlek: 200*60px",
     "description": "Tips för bilduppladdning"
@@ -435,6 +635,30 @@
     "message": "Webbplatsens temabrandfärg, som används för knappar, länkar, markeringar och färgövergångar på hela webbplatsen.",
     "description": "Tips för färgval för webbplatsens tema"
   },
+  "message.supportedLocalesTip": {
+    "message": "Välj vilket gränssnittsspråk som erbjuds besökare, standard är att stödja alla språk.",
+    "description": "Tips för inställningar av tillgängliga språk på webbplatsen."
+  },
+  "message.forcedLocaleTip": {
+    "message": "Fastställ gränssnittsspråket för alla besökare, efter inställning kan besökare inte byta. Lämna tomt för automatisk detektering.",
+    "description": "Tips för inställning av tvingat språk på webbplatsen"
+  },
+  "message.allLocales": {
+    "message": "Alla språk",
+    "description": "Sammanfattning när webbplatsen inte begränsar tillgängliga språk."
+  },
+  "message.atLeastOneLocale": {
+    "message": "Vänligen behåll minst ett språk",
+    "description": "Valideringsmeddelande när inga språk är valda på webbplatsen."
+  },
+  "placeholder.supportedLocales": {
+    "message": "Välj webbplatsens språk",
+    "description": "Platshållartext för flervalsruta för webbplatsens språk."
+  },
+  "title.editSupportedLocales": {
+    "message": "Redigera webbplatsens språk",
+    "description": "Titel för popup-fönster för redigering av webbplatsens språk."
+  },
   "message.adminsTip": {
     "message": "Webbplatsens administratörs-ID. Som standard blir den första användaren som skapar webbplatsen administratör. Endast webbplatsadministratörer kan hantera webbplatsen.",
     "description": "Tips om webbplatsens administratörer"
@@ -442,6 +666,14 @@
   "message.adminsTip2": {
     "message": "Kan här lägga till eller ta bort administratörs-ID. Du kan se användar-ID på https://auth.acedata.cloud",
     "description": "Tips om webbplatsens administratörer"
+  },
+  "message.contactsTip": {
+    "message": "Fyll i dina kundtjänstkontakter (Discord, X, WeChat, telefon, e-post). De visas på Om-sidan så att användare kan nå dig.",
+    "description": "Tip for the support-contacts field"
+  },
+  "message.contactsEmpty": {
+    "message": "Inte angivet",
+    "description": "Placeholder shown when no support contact has been filled in"
   },
   "message.keywordsTip": {
     "message": "Webbplatsens nyckelord, finns i webbplatsens metadata och används för SEO-optimering.",
@@ -456,124 +688,132 @@
     "description": "Beskrivning av Chat-funktionen"
   },
   "message.featuresGrok": {
-    "message": "Aktivera eller inaktivera Grok-funktion.",
-    "description": "Beskrivning av Grok-funktionen"
+    "message": "xAI-assistent för aktuell kunskap, resonemang, skrivande och kodning.",
+    "description": "Concise capability introduction: xAI assistant for real-time knowledge, reasoning, writing, and coding."
   },
   "message.featuresGrokvideo": {
-    "message": "Aktivera eller inaktivera Grok Video-funktionmodulen.",
-    "description": "Beskrivning av Grok Video-funktionen"
+    "message": "xAI-videogenerering för korta klipp från textprompter eller referensbilder.",
+    "description": "Concise capability introduction: xAI video generation for short clips from text prompts or reference images."
   },
   "message.featuresMaestro": {
-    "message": "Aktivera eller inaktivera Maestro-funktionmodulen.",
-    "description": "Beskrivning av Maestro-funktionen"
+    "message": "Skapa kompletta videor från en idé, inklusive planering, speakerröst, scener och leverans.",
+    "description": "Concise capability introduction: Produce complete videos from an idea, including planning, voiceover, scenes, and delivery."
+  },
+  "message.featuresPoivelle": {
+    "message": "Genom att dela projektplaner, storyboard, tidslinjer, granskningar och Skill Agent-arbetsflöden, samordnar professionell AI filmproduktion.",
+    "description": "Introduktion till kapaciteten för att samordna professionell AI filmproduktion."
   },
   "message.featuresDigitalhuman": {
-    "message": "Enable or disable the Digital Human feature module.",
-    "description": "Description of the Digital Human feature"
+    "message": "Skapa talking-head-videor med syntetiserat tal och naturlig läppsynk.",
+    "description": "Concise capability introduction: Create talking-head videos with synthesized speech and natural lip sync."
   },
   "message.featuresDeepseek": {
-    "message": "Aktivera eller inaktivera Deepseek-funktion.",
-    "description": "Beskrivning av Deepseek-funktionen"
+    "message": "DeepSeek-assistent för avancerat resonemang, kodning, matematik och vardagsfrågor.",
+    "description": "Concise capability introduction: DeepSeek assistant for advanced reasoning, coding, math, and everyday questions."
   },
   "message.featuresChatgpt": {
-    "message": "Aktivera eller inaktivera ChatGPT-funktion.",
-    "description": "Beskrivning av ChatGPT-funktionen"
+    "message": "OpenAI-assistent för skrivande, resonemang, kodning och multimodala samtal.",
+    "description": "Concise capability introduction: OpenAI assistant for writing, reasoning, coding, and multimodal conversations."
   },
   "message.featuresMidjourney": {
-    "message": "Aktivera eller inaktivera Midjourney-funktion.",
-    "description": "Beskrivning av Midjourney-funktionen"
+    "message": "Skapa välpolerade bilder och kreativa variationer från text eller visuella referenser.",
+    "description": "Concise capability introduction: Create polished images and creative variations from text or visual references."
   },
   "message.featuresChatdoc": {
     "message": "Aktivera eller inaktivera Chatdoc-funktion.",
     "description": "Beskrivning av Chatdoc-funktionen"
   },
   "message.featuresQrart": {
-    "message": "Aktivera eller inaktivera Qrart-funktion.",
-    "description": "Beskrivning av Qrart-funktionen"
+    "message": "Gör länkar till skanningsbara konstnärliga QR-koder med anpassade stilar och bilder.",
+    "description": "Concise capability introduction: Turn links into scannable artistic QR codes with custom styles and imagery."
   },
   "message.featuresVeo": {
-    "message": "Aktivera eller inaktivera Veo-funktion.",
-    "description": "Beskrivning av Veo-funktionen"
+    "message": "Google-video generering för filmiska klipp med stark kontroll över prompt och rörelse.",
+    "description": "Concise capability introduction: Google video generation for cinematic clips with strong prompt and motion control."
   },
   "message.featuresSora": {
-    "message": "Aktivera eller inaktivera Sora-funktion.",
-    "description": "Beskrivning av Sora-funktionen"
+    "message": "OpenAI-videogenerering för realistiska scener, berättande och visuella transformationer.",
+    "description": "Concise capability introduction: OpenAI video generation for realistic scenes, storytelling, and visual transformations."
   },
   "message.featuresSuno": {
-    "message": "Aktivera eller inaktivera Suno-funktionmodulen.",
-    "description": "Beskrivning av Suno-funktionen"
+    "message": "Generera kompletta låtar, texter, sång och instrumentaler från en prompt.",
+    "description": "Concise capability introduction: Generate complete songs, lyrics, vocals, and instrumentals from a prompt."
   },
   "message.featuresPixverse": {
-    "message": "Aktivera eller inaktivera Pixverse-funktionmodulen.",
-    "description": "Beskrivning av Pixverse-funktionen"
+    "message": "Skapa stiliserade videor från prompts och bilder med mallar och effekter.",
+    "description": "Concise capability introduction: Generate stylized videos from prompts and images with templates and effects."
   },
   "message.featuresFlux": {
-    "message": "Aktivera eller inaktivera FLux-funktionmodulen.",
-    "description": "Beskrivning av FLux-funktionen"
+    "message": "Skapa detaljerade bilder och redigera befintliga visuella med naturliga språkkommandon.",
+    "description": "Concise capability introduction: Create detailed images and edit existing visuals with natural-language instructions."
   },
   "message.featuresNanobanana": {
-    "message": "Aktivera eller inaktivera Nano Banana-funktionmodulen.",
-    "description": "Beskrivning av Nano Banana-funktionen"
+    "message": "Google-driven bildgenerering och redigering med exakt följsamhet till instruktioner.",
+    "description": "Concise capability introduction: Google-powered image generation and editing with precise instruction following."
   },
   "message.featuresOpenaiimage": {
-    "message": "Aktivera eller inaktivera OpenAI bildfunktionmodulen.",
-    "description": "Beskrivning av OpenAI bildfunktionen"
+    "message": "OpenAI-bildgenerering och redigering för välpolerade visuella uttryck, text och kompositioner.",
+    "description": "Concise capability introduction: OpenAI image generation and editing for polished visuals, text, and compositions."
   },
   "message.featuresSeedream": {
-    "message": "Aktivera eller inaktivera SeeDream-funktionmodulen.",
-    "description": "Beskrivning av SeeDream-funktionen"
+    "message": "ByteDance-bildgenerering och redigering för kreativa bilder av hög kvalitet.",
+    "description": "Concise capability introduction: ByteDance image generation and editing for high-quality creative visuals."
   },
   "message.featuresSeedance": {
-    "message": "Aktivera eller inaktivera SeeDance-funktionmodulen.",
-    "description": "Beskrivning av SeeDance-funktionen"
+    "message": "ByteDance-videogenerering för dynamiska scener, kamerarörelser och valfritt ljud.",
+    "description": "Concise capability introduction: ByteDance video generation for dynamic scenes, camera motion, and optional audio."
+  },
+  "message.featuresOmni": {
+    "message": "Skapa eller redigera videor med Omni-modeller utifrån text, bilder och videoreferenser.",
+    "description": "Skapa eller redigera videor med Omni-modeller utifrån text, bilder och videoreferenser."
   },
   "message.featuresWan": {
-    "message": "Aktivera eller inaktivera Wan-funktionmodulen.",
-    "description": "Beskrivning av Wan-funktionen"
+    "message": "Alibaba-videogenerering från text, bilder eller referenser i flera upplösningar.",
+    "description": "Concise capability introduction: Alibaba video generation from text, images, or references at multiple resolutions."
   },
   "message.featuresProducer": {
-    "message": "Aktivera eller inaktivera Producer-funktionmodulen.",
-    "description": "Beskrivning av Producer-funktionen"
+    "message": "Skapa låtar, covers, förlängningar och röst- eller instrumentvariationer.",
+    "description": "Concise capability introduction: Create songs, covers, extensions, and vocal or instrumental variations."
   },
   "message.featuresKimi": {
-    "message": "Aktivera eller inaktivera Kimi-funktionmodulen.",
-    "description": "Beskrivning av Kimi-funktionen"
+    "message": "Moonshot AI-assistent för research med långt sammanhang, resonemang, skrivande och kodning.",
+    "description": "Concise capability introduction: Moonshot AI assistant for long-context research, reasoning, writing, and coding."
   },
   "message.featuresSerp": {
-    "message": "Aktivera eller inaktivera SERP-funktionmodulen.",
-    "description": "Beskrivning av SERP-funktionen"
+    "message": "Sök på webben, i bilder, nyheter, kartor och videor med strukturerade Google-resultat.",
+    "description": "Concise capability introduction: Search the web, images, news, maps, and videos with structured Google results."
   },
   "message.featuresFish": {
-    "message": "Aktivera eller inaktivera Fiskljud-funktionaliteten.",
-    "description": "Beskrivning av Fiskljud-funktionen"
+    "message": "Generera naturligt tal och klona röster för flerspråkig ljudproduktion.",
+    "description": "Concise capability introduction: Generate natural speech and clone voices for multilingual audio production."
   },
   "message.featuresCodingBridge": {
-    "message": "Enable or disable the Coding Bridge feature module.",
-    "description": "Description of the Coding Bridge feature"
+    "message": "Koppla AI-kodassistenter till lokala projekt för vägledd utveckling.",
+    "description": "Concise capability introduction: Connect AI coding assistants to local projects for guided development workflows."
   },
   "message.featuresWebextrator": {
-    "message": "Enable or disable the WebExtrator feature module.",
-    "description": "Description of the WebExtrator feature"
+    "message": "Extrahera rent, strukturerat innehåll och data från webbsidor.",
+    "description": "Concise capability introduction: Extract clean, structured content and data from web pages."
   },
   "message.featuresLuma": {
-    "message": "Aktivera eller inaktivera Luma-funktionmodulen.",
-    "description": "Beskrivning av Luma-funktionen"
+    "message": "Skapa filmiska videor från text eller bilder med naturlig rörelse.",
+    "description": "Concise capability introduction: Create cinematic videos from text or images with natural motion."
   },
   "message.featuresPika": {
-    "message": "Aktivera eller inaktivera Pika-funktionmodulen.",
-    "description": "Beskrivning av Pika-funktionen"
+    "message": "Skapa och redigera korta kreativa videor med effekter, scener och transformationer.",
+    "description": "Concise capability introduction: Generate and edit short creative videos with effects, scenes, and transformations."
   },
   "message.featuresKling": {
-    "message": "Aktivera eller inaktivera Kling-funktionmodulen.",
-    "description": "Beskrivning av Kling-funktionen"
+    "message": "Skapa högkvalitativa videor från text, bilder eller rörelsereferenser.",
+    "description": "Concise capability introduction: Create high-quality videos from text, images, or motion references."
   },
   "message.featuresHailuo": {
-    "message": "Aktivera eller inaktivera Hailuo-funktionmodulen.",
-    "description": "Beskrivning av Hailuo-funktionen"
+    "message": "Generera uttrycksfulla videor från text eller bilder med mjuk karaktärsrörelse.",
+    "description": "Concise capability introduction: Generate expressive videos from text or images with smooth character motion."
   },
-  "message.featuresHeadshots": {
-    "message": "Aktivera eller inaktivera AI ID-foto-funktionmodulen.",
-    "description": "Beskrivning av AI ID-foto-funktionen"
+  "message.featuresMinimax": {
+    "message": "Skapa 768P eller 2K-video med text, bilder och ljud.",
+    "description": "En introduktion till MiniMax H3:s kapabiliteter."
   },
   "message.featuresSupport": {
     "message": "Aktivera eller inaktivera kundsupport",
@@ -604,16 +844,16 @@
     "description": "Visas som titel i redigeringsrutan"
   },
   "message.featuresGemini": {
-    "message": "Aktivera eller inaktivera Gemini-funktionmodulen.",
-    "description": "Beskrivning av Gemini-funktionen"
+    "message": "Google-assistent för resonemang med långt sammanhang, research, kodning och multimodalt arbete.",
+    "description": "Concise capability introduction: Google assistant for long-context reasoning, research, coding, and multimodal work."
   },
   "field.featuresClaude": {
     "message": "Claude",
     "description": "Visas som titel i redigeringsrutan"
   },
   "message.featuresClaude": {
-    "message": "Aktivera eller inaktivera Claude-funktionmodulen.",
-    "description": "Beskrivning av Claude-funktionen"
+    "message": "Anthropic-assistent för noggrant resonemang, skrivande, kodning och dokumentanalys.",
+    "description": "Concise capability introduction: Anthropic assistant for careful reasoning, writing, coding, and document analysis."
   },
   "placeholder.admins": {
     "message": "Ange administratörs användar-ID",
@@ -670,5 +910,184 @@
   "autoTranslate.error": {
     "message": "Det gick inte att växla automatisk översättning, försök igen",
     "description": "Fallback error toast when the enable/disable HTTP call fails with no detail"
+  },
+  "services.title": {
+    "message": "Anpassat påslag och visning per tjänst"
+  },
+  "services.tip": {
+    "message": "Dölj, byt namn, prissätt eller sortera enskilda tjänster. Ett tomt påslag ärver webbplatsens standard. Att ta bort en rad återställer katalogens standard."
+  },
+  "services.addButton": {
+    "message": "Lägg till"
+  },
+  "services.empty": {
+    "message": "Inga åsidosättanden — varje tjänst använder sina standardvärden."
+  },
+  "services.field.service": {
+    "message": "Tjänst"
+  },
+  "services.field.visible": {
+    "message": "Synlig"
+  },
+  "services.field.customMarkupRatio": {
+    "message": "Anpassat påslag per tjänst"
+  },
+  "services.field.displayTitle": {
+    "message": "Visningsnamn"
+  },
+  "services.field.displaySummary": {
+    "message": "Visningssammanfattning"
+  },
+  "services.field.sortOrder": {
+    "message": "Sortering"
+  },
+  "services.field.action": {
+    "message": "Åtgärder"
+  },
+  "services.status.visible": {
+    "message": "Visas"
+  },
+  "services.status.hidden": {
+    "message": "Dold"
+  },
+  "services.status.inherit": {
+    "message": "Ärvd"
+  },
+  "services.dialog.create": {
+    "message": "Lägg till tjänståsidosättning"
+  },
+  "services.dialog.edit": {
+    "message": "Redigera tjänståsidosättning"
+  },
+  "services.placeholder.service": {
+    "message": "Välj en tjänst från katalogen"
+  },
+  "services.placeholder.markup": {
+    "message": "Lämna tomt för att ärva webbplatsens standard"
+  },
+  "services.placeholder.displayTitle": {
+    "message": "Lämna tomt för att använda katalognamnet"
+  },
+  "services.placeholder.displaySummary": {
+    "message": "Lämna tomt för att använda katalogbeskrivningen"
+  },
+  "services.tip.visible": {
+    "message": "Avstängd döljs tjänsten på startsidan (befintliga användare behåller åtkomst)."
+  },
+  "services.tip.markup": {
+    "message": "0 % = plattformspris; 0,5 = +50 %; upp till +500 %. Tomt = webbplatsens standard."
+  },
+  "services.tip.sortOrder": {
+    "message": "Lägre nummer kommer först."
+  },
+  "services.preview.sampleLabel": {
+    "message": "Exempelpris"
+  },
+  "services.preview.inherit": {
+    "message": "(ärver webbplatsens standardpåslag {percent})"
+  },
+  "services.message.alreadyOverridden": {
+    "message": "Redan tillagd"
+  },
+  "services.message.serviceRequired": {
+    "message": "Välj en tjänst först"
+  },
+  "services.message.saved": {
+    "message": "Sparad"
+  },
+  "services.message.deleted": {
+    "message": "Borttagen"
+  },
+  "services.message.deleteConfirm": {
+    "message": "Ta bort åsidosättning för ”{name}”? Tjänsten återgår till katalogens standard."
+  },
+  "services.message.saveFailed": {
+    "message": "Sparandet misslyckades, försök igen"
+  },
+  "services.message.deleteFailed": {
+    "message": "Borttagningen misslyckades, försök igen"
+  },
+  "services.message.fetchFailed": {
+    "message": "Kunde inte läsa in tjänståsidosättningar"
+  },
+  "capabilityOverride.edit": {
+    "message": "Anpassa applikation",
+    "description": "Tips och tillgänglighetslabel för att redigera kapabilitetsapplikationens namn och ikon"
+  },
+  "capabilityOverride.dialogTitle": {
+    "message": "Anpassa {name}",
+    "description": "Dialogtitel, {name} är plattformens standardapplikationsnamn"
+  },
+  "capabilityOverride.displayName": {
+    "message": "Anpassat namn",
+    "description": "Fält för visningsnamn av underwebbplatsens kapabilitetsapplikation"
+  },
+  "capabilityOverride.displayNameTip": {
+    "message": "Lämna tomt för att använda {name}. Automatisk översättning kan aktiveras efter första sparandet.",
+    "description": "Namnförklaring, {name} är plattformens standardapplikationsnamn"
+  },
+  "capabilityOverride.icon": {
+    "message": "Anpassad ikon",
+    "description": "Fält för ikon av underwebbplatsens kapabilitetsapplikation"
+  },
+  "capabilityOverride.defaultIcon": {
+    "message": "Standard",
+    "description": "Label för förhandsvisning av plattformens standardikon"
+  },
+  "capabilityOverride.currentIcon": {
+    "message": "Aktuell effekt",
+    "description": "Label för förhandsvisning av aktuell aktiv ikon"
+  },
+  "capabilityOverride.replaceIcon": {
+    "message": "Ersätt ikon",
+    "description": "Kommando för att ladda upp en ersättningsikon"
+  },
+  "capabilityOverride.uploadIcon": {
+    "message": "Ladda upp ikon",
+    "description": "Kommando för att första gången ladda upp en anpassad ikon"
+  },
+  "capabilityOverride.useDefaultIcon": {
+    "message": "Använd standardikon",
+    "description": "Kommando för att rensa utkast av anpassad ikon"
+  },
+  "capabilityOverride.iconTip": {
+    "message": "Stöder PNG, JPEG eller WebP, kommer att beskäras till kvadrat; transparent PNG behåller transparent bakgrund.",
+    "description": "Krav för uppladdning av kapabilitetsapplikationsikon"
+  },
+  "capabilityOverride.editIcon": {
+    "message": "Redigera applikationsikon",
+    "description": "Titel för dialogrutan för ikonbeskärning"
+  },
+  "capabilityOverride.resetAll": {
+    "message": "Återställ till standard",
+    "description": "Kommando för att ta bort både anpassat namn och ikon"
+  },
+  "capabilityOverride.empty": {
+    "message": "Vänligen ange ett anpassat namn eller ladda upp en ikon först.",
+    "description": "Tips när man försöker skapa en tom överskrivning"
+  },
+  "capabilityOverride.saved": {
+    "message": "Applikationens anpassningar har sparats",
+    "description": "Framgångsmeddelande efter att ha sparat kapabilitetsapplikationens överskrivning"
+  },
+  "capabilityOverride.savedEnableTranslation": {
+    "message": "Sparad, nu kan automatisk översättning för anpassat namn aktiveras.",
+    "description": "Tips efter första sparandet och erhållande av överskrivningspost-ID"
+  },
+  "capabilityOverride.saveFailed": {
+    "message": "Misslyckades med att spara applikationens anpassningar",
+    "description": "Fallback-fel vid misslyckande av skrivning av kapabilitetsapplikationens överskrivning"
+  },
+  "capabilityOverride.resetConfirm": {
+    "message": "Återställ {name} till standardnamn och ikon?",
+    "description": "Bekräftelsemeddelande för återställning, {name} är plattformens standardapplikationsnamn"
+  },
+  "capabilityOverride.resetDone": {
+    "message": "Standardnamn och ikon har återställts",
+    "description": "Framgångsmeddelande efter att ha tagit bort kapabilitetsapplikationens överskrivning"
+  },
+  "capabilityOverride.fetchFailed": {
+    "message": "Misslyckades med att ladda applikationens anpassningar",
+    "description": "Fel när man inte kan läsa kapabilitetsapplikationens överskrivningshanteringsposter"
   }
 }

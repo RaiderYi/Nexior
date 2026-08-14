@@ -79,36 +79,36 @@
     "message": "Велика мовна модель, розроблена компанією Zhiyu AI",
     "description": "Опис групи моделей GLM"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Назва моделі сервісу, тобто GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Назва моделі сервісу, тобто GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Остання флагманська модель GPT 5.5",
-    "description": "Опис моделі GPT 5.5"
+  "model.56SolDescription": {
+    "message": "Остання флагманська модель GPT 5.6 Sol",
+    "description": "Опис моделі GPT 5.6 Sol"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Назва моделі сервісу, тобто GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Назва моделі сервісу, тобто GPT 5.6"
   },
-  "model.54Description": {
-    "message": "Остання флагманська модель GPT 5.4",
-    "description": "Опис моделі GPT 5.4"
+  "model.56TerraDescription": {
+    "message": "Остання флагманська модель GPT 5.6",
+    "description": "Опис моделі GPT 5.6"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Назва моделі сервісу, тобто GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Назва моделі сервісу, тобто GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Швидша та легша модель GPT 5.4",
-    "description": "Опис моделі GPT 5.4 Mini"
+  "model.56LunaDescription": {
+    "message": "Швидша та легша модель GPT 5.6",
+    "description": "Опис моделі GPT 5.6 Luna"
   },
   "model.freeTag": {
     "message": "Безкоштовно",
     "description": "Значок, що відображається поруч із безкоштовними моделями в селекторі моделей"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Назва моделі сервісу, тобто DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Опис моделі DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Назва моделі сервісу, тобто DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Опис моделі DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Назва моделі сервісу, тобто DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Опис експериментальної моделі DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Назва моделі сервісу, тобто DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Опис моделі DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Назва моделі сервісу, тобто Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Опис моделі Grok 4"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Назва моделі сервісу"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Швидша та легша модель",
     "description": "Опис моделі Gemini 2.5 Flash"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Назва моделі сервісу, тобто Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Остання швидка модель, що підтримує інференцію, візуалізацію та виклики інструментів",
+    "description": "Опис моделі Gemini 3.6 Flash"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Назва моделі сервісу, тобто Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "Швидша та легша модель",
     "description": "Опис моделі Gemini 2.5 Flash"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Найсучасніша модель на даний момент",
+    "description": "Опис моделі Claude Opus 5"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,24 +235,32 @@
     "message": "Легка та швидка модель",
     "description": "Опис моделі Claude Haiku 4.5"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Назва моделі сервісу, тобто Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Відмінно підходить для довгого контексту, складних міркувань та творчого письма",
-    "description": "Опис моделі Claude Fable 5"
+  "model.kimiK3Description": {
+    "message": "Флагманська модель з підтримкою інференції, зору та контексту на 1 мільйон токенів",
+    "description": "Опис моделі Kimi K3"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Модель для інференції та візуалізації, сумісна з робочими процесами K2",
+    "description": "Опис моделі Kimi K2.6"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Назва моделі сервісу, тобто Kimi K2.5"
   },
   "model.kimiK25Description": {
-    "message": "Найсучасніша модель",
+    "message": "Універсальна модель K2, сумісна з робочими процесами",
     "description": "Опис моделі Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 інтерпретація",
     "description": "Назва моделі сервісу, тобто Kimi K2 інтерпретація"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Опис моделі Kimi K2 інтерпретація"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 швидка інтерпретація",
     "description": "Назва моделі сервісу, тобто Kimi K2 швидка інтерпретація"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Опис моделі Kimi K2 швидка інтерпретація"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Назва моделі сервісу, тобто GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Опис моделі GLM 5.1"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Назва моделі сервісу, тобто GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "Завантаження файлу не вдалося, спробуйте ще раз пізніше",
     "description": "Повідомлення на веб-сторінці, яке повідомляє користувачу, що завантаження файлу не вдалося, спробуйте ще раз пізніше"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "Розмір файлу {size} перевищує ліміт {max}, будь ласка, стисніть і спробуйте ще раз",
+    "description": "Повідомлення на веб-сторінці, яке повідомляє користувача, що файл перевищує максимальний розмір для завантаження і потрібно стиснути його перед повторною спробою"
   },
   "message.notApplied": {
     "message": "Ви ще не подали заявку на цей сервіс, спочатку подайте заявку",
@@ -583,114 +611,374 @@
     "message": "Авторизацію конектора пропущено",
     "description": "Пояснення внизу картки після того, як користувач пропустив авторизацію"
   },
+  "browserTool.title": {
+    "message": "Активність браузера",
+    "description": "Заголовок за замовчуванням для активності інструменту BrowserDevice"
+  },
+  "browserTool.state.starting_session": {
+    "message": "Запуск сесії браузера",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Підключення вкладки браузера",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "Браузер готовий",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "Пристрій браузера офлайн",
+    "description": "Обраний пристрій браузера не в мережі"
+  },
+  "browserTool.state.device_busy": {
+    "message": "Пристрій браузера зайнятий",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Необхідно підтвердити дозвіл у Studio",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "Виконання в браузері",
+    "description": "Пристрій браузера виконує інструмент"
+  },
+  "browserTool.state.completed": {
+    "message": "Завершено",
+    "description": "Виконання інструменту браузера завершено"
+  },
+  "browserTool.state.stopped": {
+    "message": "Сесія браузера зупинена",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "Запит браузера закінчився",
+    "description": "Запит на виконання інструменту браузера закінчився"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Будь ласка, закрийте інструменти розробника та продовжте",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Результат виконання невідомий, будь ласка, перевірте та спробуйте ще раз",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "Операція браузера не вдалася",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "Зупинити",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Керувати пристроями",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Зупинити іншу сесію",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Закрити інструменти розробника",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Переглянути дозвіл",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "Заплановані завдання",
+    "description": "Вхід до запланованих завдань у бічній панелі"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Заплановані завдання",
+    "description": "Сторінка запланованих завдань - вкладка завдань"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Записи виконання",
+    "description": "Сторінка запланованих завдань - вкладка всіх записів виконання"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "Усе",
+    "description": "Фільтр статусу виконання записів - Усе"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "Заплановані завдання",
+    "description": "Назва сторінки"
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "Створити",
+    "description": "Кнопка для створення запланованого завдання"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "Редагувати завдання",
+    "description": "Назва діалогового вікна редагування"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Копіювати завдання",
+    "description": "Кнопка для копіювання завдання, автоматично заповнює нову форму на основі існуючого завдання"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "Ще немає запланованих завдань, натисніть «Створити», щоб створити одне",
+    "description": "Підказка про порожній стан"
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "Ще не виконувалося",
+    "description": "Відсутня історія виконань"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "Не вдалося завантажити",
+    "description": "Повідомлення про помилку завантаження"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "Підтвердити видалення «{name}»? Після видалення завдання зупинить свою роботу.",
+    "description": "Підтвердження видалення"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Запустити зараз",
+    "description": "Ручний запуск завдання негайно"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Запущено, результати можна переглянути пізніше в історії виконання.",
+    "description": "Повідомлення про успішний ручний запуск"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Не вдалося запустити, будь ласка, спробуйте ще раз пізніше.",
+    "description": "Повідомлення про невдалий ручний запуск"
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "Переглянути результати",
+    "description": "Перехід до діалогу"
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "Історія виконань",
+    "description": "Перегляд історії виконань внизу картки"
   },
   "scheduledTasks.noConversation": {
     "message": "Немає записів розмов",
     "description": "Запуск без пов'язаних розмов (версія без оновлень)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60с коливання",
+    "description": "Опис коливання часу виконання"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "Виконано {count} разів",
+    "description": "Кількість виконань"
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "Виконується",
+    "description": "Статус увімкнення"
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "Призупинено",
+    "description": "Статус вимкнення"
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "Помилка",
+    "description": "Статус помилки"
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "У черзі",
+    "description": "Статус у черзі"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "Виконується",
+    "description": "Статус виконання"
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "Успішно",
+    "description": "Статус успішного виконання"
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "Не вдалося",
+    "description": "Статус невдачі"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Непідтверджено",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Досягнуто ліміт кроків"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Досягнуто ліміт бюджету"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Виявлено цикл викликів інструментів"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Запит надто довгий"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Перервано"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Перервано"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Очікування вашого вводу"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Помилка"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Невідома помилка"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Недостатньо коштів"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Не вдалося авторизувати оплату"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Не авторизовано"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Час очікування вичерпано"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Внутрішня помилка"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "Потрібні дії",
+    "description": "Статус, що вимагає дій користувача"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Пристрій браузера офлайн",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Авторизація браузера змінилася, будь ласка, відредагуйте це завдання",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "Щодня",
+    "description": "Виконання щодня"
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "Щохвилини"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "Щогодини",
+    "description": "Виконання щогодини"
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "Щотижня",
+    "description": "Виконання щотижня"
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Cron вираз",
+    "description": "Користувацький cron"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Кожні",
+    "description": "Виконання з фіксованим інтервалом"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "Хвилина",
+    "description": "Одиниця інтервалу: хвилина"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "Година",
+    "description": "Одиниця інтервалу: година"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "День",
+    "description": "Одиниця інтервалу: день"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "Хвилина спрацьовування",
+    "description": "Хвилина, коли спрацьовує кожну годину"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "Хвилина спрацьовування кожну годину (0–59)",
+    "description": "Опис хвилин для кожної години"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Виконувати раз на фіксований час з моменту останнього запуску (мінімум 1 хвилина)",
+    "description": "Опис фіксованого інтервалу"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Стандартний 5-частинний Cron вираз: хвилина година день місяць тиждень",
+    "description": "Опис cron"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Частота виконання: {text}",
+    "description": "Попередній перегляд частоти"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "Кожні {n} хвилин",
+    "description": "Людське читання: кожні N хвилин"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "Кожні {n} годин",
+    "description": "Людське читання: кожні N годин"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "Кожні {n} днів",
+    "description": "Людське читання: кожні N днів"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "Кожну годину на {n} хвилині",
+    "description": "Людське читання: кожну годину на N хвилині"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "Щодня {time}",
+    "description": "Людське читання: щодня в певний час"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "Щотижня {weekday} о {time}",
+    "description": "Людське читання: щотижня в певний день та час"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron: {cron}",
+    "description": "Людське читання: оригінальний Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "Одноразово {time}",
+    "description": "Людське читання: одноразово"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "Назва завдання",
+    "description": "Поле для введення назви"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "Наприклад: щоденний звіт",
+    "description": "Заповнювач для назви"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "Модель",
+    "description": "Вибір моделі"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "Підказка",
+    "description": "Поле для введення підказки"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "Введіть питання або команду для запланованого виконання, підтримує {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} змінні",
+    "description": "Заповнювач для підказки"
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "Підтримує шаблонні змінні: {'{{date}}'} сьогоднішня дата, {'{{run_count}}'} номер запуску, {'{{last_output}}'} короткий зміст останнього результату",
+    "description": "Опис підказки"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "Частота виконання",
+    "description": "Вибір частоти"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "Час виконання",
+    "description": "Поле часу"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "День тижня",
+    "description": "Поле дня тижня"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Cron вираз",
+    "description": "Поле для введення cron виразу"
   },
   "scheduledTasks.form.skills": {
     "message": "Авторизувати навички",
@@ -704,6 +992,25 @@
     "message": "Вибрані навички можуть виконуватись у фоновому режимі без підтвердження; невибрані навички все ще можуть лише переглядатися або чекати підтвердження.",
     "description": "Опис авторизації навичок"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "З'єднання браузера",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "Можливі зовнішні побічні ефекти: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Час закінчення безперервної авторизації: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Перед збереженням виберіть онлайн та сумісний браузер",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Не підключено",
     "description": "Відсутнє з'єднання з навичкою"
@@ -737,19 +1044,20 @@
     "description": "Текст підтвердження авторизації"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "Необхідно спочатку прив'язати навичку",
+    "description": "Заголовок діалогу, що відображається, коли навичка/MCP, авторизована для запланованого завдання, ще не прив'язана до користувача."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "Навичка «{name}» ще не прив'язана або активована у вашому акаунті. Якщо не прив'язати, заплановане завдання може не використовувати її під час автоматичного виконання у фоновому режимі. Рекомендуємо спочатку прив'язати, а потім зберегти, або натисніть кнопку нижче, щоб все ще зберегти.",
+    "description": "Текст попередження; {name} - це назва навички/MCP. Пояснює, що вона не прив'язана, і пропонує зберегти все ж."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "Все ще хочете зберегти",
+    "description": "Кнопка підтвердження, яка зберігає заплановане завдання, обминаючи перевірку прив'язки (примусово)."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "Будь ласка, заповніть назву завдання та підказку",
+    "description": "Перевірка обов'язкових полів"
   },
   "artifacts.navTitle": {
     "message": "Артефакти",
@@ -786,6 +1094,18 @@
   "artifacts.hide": {
     "message": "Сховати",
     "description": "Кнопка для приховування артефакту"
+  },
+  "artifacts.unhide": {
+    "message": "Відновити видимість",
+    "description": "Кнопка для відновлення видимості схованого артефакту"
+  },
+  "artifacts.showHidden": {
+    "message": "Показати сховане",
+    "description": "Перемикач для відображення схованих артефактів у фільтрі"
+  },
+  "artifacts.hiddenBadge": {
+    "message": "Сховано",
+    "description": "Позначка, що вказує, що артефакт був схований"
   },
   "artifacts.delete": {
     "message": "Видалити",
@@ -915,24 +1235,532 @@
     "message": "Ви переглядаєте частину спільної розмови. Натисніть вище, щоб самостійно поспілкуватися з AI.",
     "description": "Опис під розмовою на публічній сторінці спільного доступу"
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Мета не досягнута",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Результат чекає підтвердження",
+    "description": "Статус, коли результат ще не відомий"
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Статус виконання невідомий"
+  },
+  "actions.rename": {
+    "message": "Перейменувати",
+    "description": "Елемент меню перейменування в меню операцій з розмовою"
+  },
+  "actions.renameTitle": {
+    "message": "Перейменування розмови",
+    "description": "Заголовок діалогового вікна для перейменування розмови"
+  },
+  "actions.renameEmpty": {
+    "message": "Введіть назву",
+    "description": "Повідомлення, коли назва порожня під час перейменування"
+  },
+  "actions.renameSuccess": {
+    "message": "Перейменовано",
+    "description": "Повідомлення про успішне перейменування розмови"
+  },
+  "actions.renameFailed": {
+    "message": "Не вдалося перейменувати, будь ласка, спробуйте ще раз пізніше",
+    "description": "Повідомлення про невдале перейменування розмови"
+  },
+  "actions.deleteConfirm": {
+    "message": "Підтвердити видалення цієї розмови? Після видалення відновити не вдасться.",
+    "description": "Підтвердження перед видаленням розмови"
+  },
+  "actions.deleteSuccess": {
+    "message": "Видалено",
+    "description": "Повідомлення про успішне видалення розмови"
+  },
+  "actions.deleteFailed": {
+    "message": "Не вдалося видалити, будь ласка, спробуйте ще раз пізніше",
+    "description": "Повідомлення про невдале видалення розмови"
+  },
+  "actions.tokenMissing": {
+    "message": "Токен не існує, будь ласка, увійдіть знову",
+    "description": "Помилка, що вказує на відсутність облікових даних під час операцій з розмовою"
+  },
+  "actions.conversationMissing": {
+    "message": "Розмова не існує",
+    "description": "Помилка, що вказує на те, що цільова розмова не існує під час операцій з розмовою"
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Місце виконання",
+    "description": "Виберіть, чи виконувати завдання в хмарі чи на локальному пристрої"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Хмарний",
+    "description": "Режим виконання в хмарі"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "Цей пристрій",
+    "description": "Режим виконання на локальному пристрої"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "Цей пристрій ({device})",
+    "description": "Режим виконання на локальному пристрої з назвою пристрою"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "Запускається платформою вчасно, навіть якщо комп'ютер вимкнено.",
+    "description": "Опис режиму виконання в хмарі"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "Запускається цим пристроєм вчасно, може читати та записувати локальні файли, виконувати команди на локальному пристрої. Якщо пристрій вимкнено або додаток закрито, виконання не відбудеться, пропущені запуски лише фіксуються, але не виконуються повторно.",
+    "description": "Опис режиму виконання на локальному пристрої"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "На мобільному пристрої локальне виконання наразі не підтримується",
+    "description": "Причина, чому мобільний додаток не підтримує локальне виконання"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Локальне виконання потребує настільного додатку",
+    "description": "Причина, чому веб-версія не підтримує локальне виконання"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Не вдалося отримати інформацію про локальний пристрій, будь ласка, перезапустіть додаток і спробуйте ще раз",
+    "description": "Інформація про пристрій на настільному комп'ютері недоступна"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Авторизація локальних інструментів",
+    "description": "Поле авторизації локальних інструментів"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Виберіть локальні інструменти, які дозволено використовувати для цього завдання",
+    "description": "Плейсхолдер для вибору локальних інструментів"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "Під час безлюдного виконання не з'явиться підтвердження авторизації, лише інструменти, вибрані тут, будуть доступні.",
+    "description": "Опис авторизації локальних інструментів"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Пропущено",
+    "description": "Статус виконання: пристрій був офлайн, виконання не відбулося"
+  },
+  "workingDir.choose": {
+    "message": "Вибрати робочу директорію",
+    "description": "Кнопка над полем вводу чату на десктопі: вибір папки проекту для роботи AI; не вибравши, не можна відправити повідомлення"
+  },
+  "workingDir.switchHint": {
+    "message": "Натисніть, щоб змінити робочу директорію",
+    "description": "Підказка при наведенні на капсулу шляху, коли робоча директорія вже вибрана"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "Це локальне завдання, його можна запустити вручну тільки на прив'язаному пристрої в десктопній версії",
+    "description": "Локальне завдання не може бути запущене вручну на неприєднаних пристроях"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "Це завдання прив'язане до іншого пристрою",
+    "description": "Локальне завдання не належить до поточного пристрою"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Локальний розклад не увійшов в систему, будь ласка, увійдіть знову та спробуйте ще раз",
+    "description": "демон не має облікових даних"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "Це завдання вже виконується",
+    "description": "Завдання вже в процесі виконання"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Підтвердити",
+    "description": "Кнопка підтвердження на картці підтвердження перед виконанням"
+  },
+  "actionConfirmation.cancel": {
+    "message": "Скасувати",
+    "description": "Кнопка скасування на картці підтвердження перед виконанням"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Підтверджено, виконується",
+    "description": "Підтвердження дії: користувач підтвердив, подальші дії виконуються"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Скасовано",
+    "description": "Картка підтвердження перед виконанням: повідомлення після скасування користувачем"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Завантаження медіа-прев'ю...",
+    "description": "Підтвердження перед виконанням: статус завантаження медіа"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Неможливо відтворити прев'ю тут",
+    "description": "Підтвердження перед виконанням: заголовок помилки відтворення медіа"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "Посилання на медіа могло втратити актуальність, або поточний браузер не підтримує цей формат. Будь ласка, відкрийте оригінальний файл для підтвердження перед публікацією.",
+    "description": "Підтвердження перед виконанням: пояснення помилки відтворення медіа"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Відкрити оригінальний файл",
+    "description": "Підтвердження перед виконанням: відкриття медіа-посилання"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Підтвердження перед публікацією",
+    "description": "Статус картки підтвердження публікації TikTok"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Опублікувати на TikTok",
+    "description": "Заголовок підтвердження публікації на TikTok"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "Після підтвердження це відео буде опубліковано у вашому акаунті TikTok.",
+    "description": "Резюме підтвердження публікації на TikTok"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Опублікувати",
+    "description": "Кнопка підтвердження публікації на TikTok"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Публікація до",
+    "description": "Підтвердження публікації TikTok: мітка облікового запису"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Підключено",
+    "description": "Підтвердження публікації TikTok: статус підключення аккаунта"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Інформація про аккаунт недоступна",
+    "description": "Підтвердження публікації TikTok: заповнювальний текст при відсутності ніку аккаунта"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Налаштування публікації ще не готові",
+    "description": "Підтвердження публікації TikTok: заголовок відсутньої інформації про творця"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "Не вдалося отримати видимість, підтримувану цим аккаунтом. Будь ласка, скасуйте та дайте помічнику повторно отримати налаштування публікації TikTok.",
+    "description": "Підтвердження публікації TikTok: пояснення відсутньої інформації про творця"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "Тривалість відео не відповідає обмеженням акаунта",
+    "description": "TikTok підтвердження дії: заголовок для надто довгого відео"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Контент публікації",
+    "description": "Підтвердження публікації TikTok: заголовок налаштувань контенту"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Обов'язково",
+    "description": "Підтвердження публікації TikTok: пояснення обов'язкових полів"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Опис",
+    "description": "Підтвердження публікації TikTok: мітка поля введення опису"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Напишіть опис — хештеги та згадки підтримуються",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Хто може бачити",
+    "description": "Підтвердження публікації TikTok: мітка випадаючого списку видимості"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Будь ласка, виберіть…",
+    "description": "Підтвердження публікації TikTok: заповнювач для видимості, не може мати значення за замовчуванням згідно з вимогами TikTok"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "Не вдалося отримати доступні параметри видимості, наразі публікацію не можна здійснити",
+    "description": "Підтвердження публікації TikTok: відсутність видимості"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Усі",
+    "description": "Видимість TikTok: публічна"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Взаємні друзі",
+    "description": "Видимість TikTok: видимість для взаємних друзів"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "Мої підписники",
+    "description": "Видимість TikTok: видимість для підписників"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Тільки для себе",
+    "description": "Видимість TikTok: видимість тільки для себе"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Дозволити взаємодію",
+    "description": "Підтвердження публікації TikTok: мітка групи перемикачів взаємодії"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Можна активувати лише ті способи взаємодії, які наразі дозволені для цього аккаунта; за замовчуванням всі вимкнені.",
+    "description": "Підтвердження публікації TikTok: пояснення перемикача взаємодії"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "Цей аккаунт вимкнено: {list}",
+    "description": "Підтвердження публікації TikTok: взаємодії, які заборонені для вимкненого аккаунта"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Коментарі",
+    "description": "Перемикач взаємодії TikTok: дозволити коментарі"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Дует",
+    "description": "Перемикач взаємодії TikTok: дозволити дуети"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Склеювання",
+    "description": "Перемикач взаємодії TikTok: дозволити склеювання"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Розкриття контенту",
+    "description": "Підтвердження публікації TikTok: заголовок групи комерційного контенту"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "Це комерційний контент",
+    "description": "Підтвердження публікації TikTok: перемикач розкриття комерційного контенту"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Якщо контент просуває бренд, продукт або послугу, будь ласка, розкрийте інформацію відповідно до реальності.",
+    "description": "Підтвердження публікації TikTok: пояснення розкриття комерційного контенту"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "Ваш бренд",
+    "description": "TikTok комерційний контент: просування власного бізнесу"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Рекламуйте себе або свій бізнес",
+    "description": "TikTok комерційний контент: пояснення щодо реклами власного бізнесу"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Брендований контент",
+    "description": "Комерційний контент TikTok: платне співробітництво"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Просування третьої сторони за рахунок оплати, подарунків або інших вигод",
+    "description": "TikTok комерційний контент: пояснення платного співробітництва"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Відео буде позначено як «рекламний контент»",
+    "description": "Комерційний контент TikTok: повідомлення після вибору вашого бренду"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Відео буде позначено як «платне співробітництво»",
+    "description": "Комерційний контент TikTok: повідомлення після вибору брендованого контенту"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Видимість брендованого контенту не може бути встановлена на «тільки для себе»",
+    "description": "Підтвердження публікації TikTok: повідомлення про несумісність брендованого контенту з видимістю «тільки для себе»"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "Відео перевищує максимальний ліміт тривалості для цього облікового запису ({max} секунд)",
+    "description": "Підтвердження публікації TikTok: помилка перевищення тривалості відео"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Будь ласка, підтверджте перед публікацією",
+    "description": "Підтвердження публікації TikTok: заголовок пояснення політики"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "Натискаючи «Опублікувати», ви підтверджуєте, що маєте право на використання контенту та музики, і погоджуєтеся з умовами використання музики TikTok.",
+    "description": "Підтвердження публікації TikTok: пояснення загальної політики контенту"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "Натискаючи «Опублікувати», ви підтверджуєте, що інформація про розкриття є точною, і погоджуєтеся з політикою брендового контенту та умовами використання музики TikTok.",
+    "description": "Підтвердження публікації TikTok: пояснення політики брендових контентів"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Переглянути «Підтвердження використання музики»",
+    "description": "Підтвердження публікації TikTok: посилання на підтвердження використання музики"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Переглянути «Політику брендового контенту»",
+    "description": "Підтвердження публікації TikTok: посилання на політику брендових контентів"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Інформація про публікацію неповна, будь ласка, скасуйте та згенеруйте підтверджувальну картку знову",
+    "description": "Підтвердження публікації TikTok: причина відключення кнопки при відсутності деталей"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Будь ласка, використайте відео, що відповідає обмеженням по тривалості для цього акаунта",
+    "description": "TikTok підтвердження дії: причина, чому кнопка вимкнена через надто довге відео"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Будь ласка, виберіть, хто може бачити це відео",
+    "description": "Підтвердження публікації TikTok: причина відключення кнопки при відсутності вибору видимості"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Будь ласка, виберіть тип комерційного контенту",
+    "description": "Підтвердження публікації TikTok: причина відключення кнопки при відсутності вибору типу розкриття"
+  },
+  "scheduledTemplates.title": {
+    "message": "Шаблони автоматизації",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Створити з шаблону",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Створити на замовлення",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Нехай AI вчасно виконує вашу роботу",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Виберіть офіційний шаблон і підключіть необхідний обліковий запис. Після створення завдання його можна буде запустити на картці.",
+    "description": "Інструкції щодо створення та активації шаблону запланованого завдання"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Переглянути шаблони",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Вибрати шаблон",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Просте налаштування",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Підключити акаунт",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.search": {
+    "message": "Шукати шаблони",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Рекомендовані",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Готовий до використання",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Потрібно підключити {count} елементів",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Час виконання",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Підготовка до необхідного підключення",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "Не потрібно підключати інші акаунти",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Підключено",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Ще не підключено",
+    "description": "Копія центру шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Вибрати обліковий запис",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Підключитися",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.create": {
+    "message": "Створити завдання",
+    "description": "Інструкції щодо створення та активації шаблону запланованого завдання"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Не вдалося створити завдання, будь ласка, перевірте конфігурацію або з'єднання",
+    "description": "Інструкції щодо створення та активації шаблону запланованого завдання"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Завдання створено і воно залишається вимкненим. Спочатку запустіть його на картці, а після успішного виконання активуйте.",
+    "description": "Інструкції щодо створення та активації шаблону запланованого завдання"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "Активувати наразі не вдається. Спочатку запустіть завдання та підтвердіть успіх; деякі шаблони також потребують створення вказаного чернетки.",
+    "description": "Інструкції щодо створення та активації шаблону запланованого завдання"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Не вдалося завантажити шаблон, будь ласка, спробуйте пізніше",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "Усі",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Маркетинговий ріст",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Створення контенту",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Продуктивність",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Інформація та дослідження",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Розробка та експлуатація",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Особистий асистент",
+    "description": "Центр шаблонів запланованих завдань"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "Публікація означає, що ви погоджуєтеся з «Підтвердженням використання музики» TikTok",
+    "description": "Підтвердження публікації TikTok: заява про використання музики"
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "Публікація означає, що ви погоджуєтеся з «Політикою брендованого контенту» та «Підтвердженням використання музики» TikTok",
+    "description": "Підтвердження публікації TikTok: заява після вибору брендованого контенту"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "Назва моделі сервісу, тобто Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "Найсучасніша модель на сьогодні",
     "description": "Опис моделі Claude Opus 4.7"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "Часовий пояс"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "Нові завдання типово використовують часовий пояс цього пристрою: {timezone}. Після збереження він закріплюється за завданням."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Виберіть дійсний часовий пояс IANA"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Попередній крок",
+    "description": "Навігація по майстру шаблонів розкладу та підказки щодо підключення"
+  },
+  "scheduledTemplates.next": {
+    "message": "Наступний крок",
+    "description": "Навігація по майстру шаблонів розкладу та підказки щодо підключення"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Ми використовуватимемо лише з'єднання, необхідні для цього шаблону; підключені облікові записи будуть автоматично повторно використовуватися.",
+    "description": "Навігація по майстру шаблонів розкладу та підказки щодо підключення"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "Цей шаблон використовує лише вбудовані можливості, завдання можна створити безпосередньо.",
+    "description": "Інструкції щодо створення та активації шаблону запланованого завдання"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Продовжте після завершення підключення.",
+    "description": "Навігація по майстру шаблонів розкладу та підказки щодо підключення"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "Це завдання буде використовувати обраний вами обліковий запис.",
+    "description": "Навігація по майстру шаблонів розкладу та підказки щодо підключення"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Запуск через авторизоване з'єднання MCP, без необхідності додаткового прив'язування облікового запису.",
+    "description": "Навігація по майстру шаблонів розкладу та підказки щодо підключення"
   }
 }

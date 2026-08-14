@@ -8,8 +8,8 @@
     "description": "サービスの使用量。"
   },
   "badge.shared": {
-    "message": "Shared",
-    "description": "Badge on the application list marking an application that has been authorized to the current user by someone else (not owned by them)."
+    "message": "共有済み",
+    "description": "自分以外のユーザーから共有されたアプリケーションに表示されるバッジ"
   },
   "field.expiredAt": {
     "message": "期限",
@@ -144,11 +144,11 @@
     "description": "グローバル申請の自動作成に失敗した場合に表示される通知。"
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 BigPlayer AIへようこそ！{credits}ポイントをプレゼントしました。全サービスでご利用いただけます。",
+    "message": "🎉 {brand}へようこそ！{credits}ポイントをプレゼントしました。全サービスでご利用いただけます。",
     "description": "グローバル申請の自動作成が成功した場合、または初回ログイン時に表示されるウェルカムメッセージ。{credits}は残りの全体クレジットを指します。"
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 BigPlayer AIへようこそ！アカウントは準備完了です。全サービスをお試しいただけます。",
+    "message": "🎉 {brand}へようこそ！アカウントは準備完了です。全サービスをお試しいただけます。",
     "description": "グローバル申請に利用可能な無料クレジットがない場合に表示されるウェルカムメッセージ。"
   },
   "message.notApplied": {
@@ -156,7 +156,7 @@
     "description": "ユーザーがこのサービスをまだ申請していない場合に表示されるメッセージ。"
   },
   "message.globalBalanceBuyDescription": {
-    "message": "一般残高にチャージすることも、各申請インスタンスに個別にチャージすることもできます。今回のチャージは一般残高に入ります。特定の申請インスタンスの残高が不足した場合、自動的に一般残高が補充されます。",
+    "message": "一般残高にチャージすることも、各申請インスタンスに個別にチャージすることもできます。今回のチャージは一般残高に入ります。特定の申請専用残高が不足した場合、自動的に一般残高が補充されます。",
     "description": "一般残高にチャージし、インスタンスの残高が不足した場合に自動的に補充されることを説明するヒント文。用語：一般残高=General Balance（Global Balanceに翻訳しないでください）。"
   },
   "message.yourApplication": {
@@ -244,7 +244,7 @@
     "description": "ユーザーがサービスを購入したい場合のページタイトル。"
   },
   "title.globalBuy": {
-    "message": "BigPlayer AI 共通ポイントチャージ",
+    "message": "{brand} 共通ポイントチャージ",
     "description": "ユーザーが共通サービスを購入したい場合のページタイトル。"
   },
   "title.applicationRemainingCount": {
@@ -256,7 +256,7 @@
     "description": "ユーザーが申請を管理したい場合のページタイトル。"
   },
   "title.applicationBalance": {
-    "message": "専用ポイント - {service}",
+    "message": "専用残高 - {service}",
     "description": "ユーザーが申請残高を確認する場合に表示されるメッセージ。"
   },
   "title.count": {
@@ -272,7 +272,7 @@
     "description": "ユーザーが共通残高を確認する場合のページタイトル。英語は「General Balance」に翻訳する必要があります。"
   },
   "message.globalBalanceDescription": {
-    "message": "「共通残高を許可」を有効にすると、インスタンスの残高が不足した場合に自動的に共通残高が使用されます。",
+    "message": "「共通残高を許可」を有効にすると、専用残高が不足した場合に自動的に共通残高が使用されます。",
     "description": "インスタンスの残高が不足した場合に自動的に共通残高が消費されることを説明するメッセージ。用語：共通残高=General Balance（Global Balanceに翻訳しないことに注意）。"
   },
   "button.service": {

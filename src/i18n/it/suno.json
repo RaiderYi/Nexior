@@ -177,7 +177,7 @@
   },
   "button.video": {
     "message": "Video",
-    "description": "Testo del pulsante video"
+    "description": "Testo del pulsante per il video"
   },
   "button.download_video": {
     "message": "Scarica Video",
@@ -209,7 +209,7 @@
   },
   "button.remaster": {
     "message": "Remaster",
-    "description": "Testo del pulsante per migliorare la qualità audio"
+    "description": "Testo del pulsante per migliorare la qualità audio della traccia master"
   },
   "button.replace_section": {
     "message": "Sostituisci Sezione",
@@ -319,6 +319,10 @@
     "message": "Influenza Stile",
     "description": "Controlla l'influenza dello stile sul risultato generato"
   },
+  "name.duration": {
+    "message": "Durata della canzone",
+    "description": "Controlla la durata target della canzone generata"
+  },
   "name.variationCategory": {
     "message": "Tipo di Variazione",
     "description": "Controlla la varietà delle variazioni generate"
@@ -334,6 +338,10 @@
   "name.failureReason": {
     "message": "Motivo di Fallimento",
     "description": "Motivo del fallimento del compito"
+  },
+  "name.failure": {
+    "message": "Generazione fallita",
+    "description": "Titolo per il fallimento del compito Suno"
   },
   "name.status": {
     "message": "Stato",
@@ -394,6 +402,10 @@
   "description.styleInfluence": {
     "message": "Valori più alti aumentano l'influenza dell'etichetta di stile sul risultato generato (0-1)",
     "description": "Descrizione del parametro di influenza dello stile"
+  },
+  "description.duration": {
+    "message": "Specifica la durata desiderata della canzone (secondi), il supporto varia a seconda del modello, la durata effettiva può variare leggermente",
+    "description": "Descrizione del parametro della durata della canzone"
   },
   "description.audioWeight": {
     "message": "Peso dell'originale sul risultato durante il cover (0-1)",
@@ -853,7 +865,7 @@
   },
   "filter.video": {
     "message": "Video",
-    "description": "Sezione di filtro: Contiene video"
+    "description": "Filtro per la sezione: se contiene video"
   },
   "filter.videoAll": {
     "message": "Tutti",

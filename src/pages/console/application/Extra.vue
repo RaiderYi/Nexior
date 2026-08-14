@@ -10,10 +10,16 @@
         <el-col :span="24">
           <el-card shadow="hover" class="min-h-[500px]">
             <el-row>
-              <el-col :span="16" :offset="4">
+              <el-col :xs="{ span: 22, offset: 1 }" :sm="{ span: 20, offset: 2 }" :md="{ span: 16, offset: 4 }">
                 <el-skeleton v-if="loading" />
+                <div v-else-if="loadFailed" class="text-center">
+                  <el-empty :description="$t('common.message.noData')" />
+                  <el-button type="primary" round @click="onFetchApplication">
+                    {{ $t('common.button.refresh') }}
+                  </el-button>
+                </div>
                 <el-empty v-else-if="!showPayment" :description="$t('common.message.noData')" />
-                <el-form v-else-if="application" label-width="100px">
+                <el-form v-else-if="application" class="purchase-form" label-width="100px">
                   <div v-if="!application?.service">
                     <p class="text-[var(--el-text-color-secondary)] text-[12px] mb-3">
                       {{ $t('application.message.globalBalanceBuyDescription') }}
@@ -24,10 +30,10 @@
                     {{ application?.service?.title }}
                   </el-form-item>
                   <el-form-item v-else :label="$t('application.field.scope')">
-                    {{ $t('application.title.globalBuy') }}
+                    {{ globalBuyTitle }}
                   </el-form-item>
                   <el-form-item :label="$t('application.field.package')" class="mb-0">
-                    <el-radio-group v-if="packages" v-model="form.packageId">
+                    <el-radio-group v-if="packages.length > 0" v-model="form.packageId" class="package-options">
                       <el-radio-button v-for="(pkg, pkgIndex) in packages" :key="pkgIndex" :label="pkg.id" class="mb-2">
                         <span v-show="pkgIndex !== 0" class="corner">
                           {{ getDiscount(pkg) }}
@@ -35,6 +41,7 @@
                         {{ pkg.amount }} {{ $t(`service.unit.${application?.service?.unit || 'credit'}s`) }}
                       </el-radio-button>
                     </el-radio-group>
+                    <el-empty v-else :description="$t('common.message.noData')" :image-size="48" />
                   </el-form-item>
                   <el-form-item
                     v-if="
@@ -45,24 +52,34 @@
                     <service-estimation v-if="application?.service" :service="application.service" :package="package" />
                   </el-form-item>
                   <el-form-item :label="$t('service.field.price')">
-                    <price :price="displayPackagePrice" />
-                    <span v-if="package" class="ml-2"
-                      >({{
-                        getPriceString({ value: displayUnitPrice }) +
-                        ' / ' +
-                        $t(`service.unit.${application?.service?.unit || 'credits'}`)
-                      }})
-                    </span>
+                    <template v-if="package && pricingAvailable">
+                      <price :price="displayPackagePrice" />
+                      <span v-if="package" class="ml-2"
+                        >({{
+                          getPriceString({ value: displayUnitPrice }) +
+                          ' / ' +
+                          $t(`service.unit.${application?.service?.unit || 'credits'}`)
+                        }})
+                      </span>
+                    </template>
+                    <span v-else class="text-[var(--el-text-color-secondary)]">{{ $t('common.message.noData') }}</span>
                   </el-form-item>
                   <el-divider border-style="dashed" />
                   <el-form-item :label="$t('application.field.shouldPayPrice')">
-                    <span
-                      v-if="package"
-                      :class="{ price: true, unfree: package?.price > 0, free: package?.price === 0 }"
-                    >
-                      {{ getPriceString({ value: displayPackagePrice }) }}
-                    </span>
-                    <span v-else :class="{ price: true, free: true }"> $ 0 </span>
+                    <div v-if="displayFinalPrice !== undefined" class="final-price-block">
+                      <div class="final-price-line">
+                        <span :class="{ price: true, unfree: displayFinalPrice > 0, free: displayFinalPrice === 0 }">
+                          {{ getPriceString({ value: displayFinalPrice }) }}
+                        </span>
+                        <el-tag v-if="hasOrderDiscount" class="discount-tag" effect="light" size="small" type="success">
+                          {{ $t('order.message.discountTag', { percent: discountPercent }) }}
+                        </el-tag>
+                      </div>
+                      <p v-if="hasOrderDiscount" class="discount-hint">
+                        {{ $t('order.message.discountHint', { percent: discountPercent }) }}
+                      </p>
+                    </div>
+                    <span v-else class="text-[var(--el-text-color-secondary)]">{{ $t('common.message.noData') }}</span>
                   </el-form-item>
                   <el-form-item>
                     <el-button
@@ -71,6 +88,7 @@
                       size="large"
                       class="btn-create"
                       :loading="creating"
+                      :disabled="!pricingAvailable || !package"
                       round
                       @click="onCreateOrder"
                     >
@@ -96,7 +114,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IApplication, IApplicationDetailResponse, IOrderDetailResponse, IPackageType } from '@/models';
+import {
+  IApplication,
+  IApplicationDetailResponse,
+  IApplicationType,
+  IOrderDetailResponse,
+  IPackageType
+} from '@/models';
 import {
   ElRow,
   ElCol,
@@ -109,19 +133,25 @@ import {
   ElDivider,
   ElEmpty,
   ElRadioGroup,
-  ElRadioButton
+  ElRadioButton,
+  ElTag
 } from 'element-plus';
-import { ROUTE_CONSOLE_APPLICATION_SUBSCRIBE, ROUTE_CONSOLE_ORDER_DETAIL } from '@/router';
+import {
+  ROUTE_CONSOLE_APPLICATION_SUBSCRIBE,
+  ROUTE_CONSOLE_ORDER_DETAIL,
+  ROUTE_CONSOLE_APPLICATION_LIST
+} from '@/router';
 import Price from '@/components/common/Price.vue';
 import { applicationOperator, orderOperator } from '@/operators';
-import { getPriceString, applyMarkup, getSiteMarkupRatio } from '@/utils';
-import { isIOS } from '@/utils';
+import { getPriceString, applyMarkup, getApplicationMarkupRatio, getApplicationCallerOrderDiscountRate } from '@/utils';
+import { isIOS, isRechargeDisabled } from '@/utils';
 import { track } from '@/plugins/telemetry';
 import ServiceEstimation from '@/components/service/Estimation.vue';
 
 interface IData {
   application: IApplication | undefined;
   loading: boolean;
+  loadFailed: boolean;
   form: {
     amount: number | undefined;
     packageId: string | undefined;
@@ -145,6 +175,7 @@ export default defineComponent({
     ElEmpty,
     ElRadioGroup,
     ElRadioButton,
+    ElTag,
     Price,
     ServiceEstimation
   },
@@ -153,6 +184,7 @@ export default defineComponent({
       lang: this.$i18n.locale,
       application: undefined,
       loading: false,
+      loadFailed: false,
       type: IPackageType.USAGE,
       form: {
         packageId: undefined,
@@ -203,20 +235,53 @@ export default defineComponent({
     site() {
       return this.$store.getters.site;
     },
-    markupRatio(): number {
-      return getSiteMarkupRatio(this.site);
+    globalBuyTitle(): string {
+      const brand = this.$store.state.site?.title || 'Ace Data Cloud';
+      return this.$t('application.title.globalBuy', { brand }) as string;
     },
-    // Displayed prices carry the site-wide markup so the sub-site figure equals
-    // what the gateway charges at order time; undefined until a package is
-    // selected (mirrors the original `package?.price` binding).
+    markupRatio(): number | undefined {
+      return getApplicationMarkupRatio(this.application, this.site);
+    },
+    orderDiscountRate(): number | undefined {
+      if (isIOS()) return 0;
+      return getApplicationCallerOrderDiscountRate(this.application);
+    },
+    pricingAvailable(): boolean {
+      return this.markupRatio !== undefined && this.orderDiscountRate !== undefined;
+    },
+    // Backend-resolved markup keeps this preview aligned with order billing
+    // when a service overrides the site-wide default.
     displayPackagePrice(): number | undefined {
-      return this.package ? applyMarkup(this.package.price, this.markupRatio) : undefined;
+      return this.package && this.markupRatio !== undefined
+        ? applyMarkup(this.package.price, this.markupRatio)
+        : undefined;
     },
     displayUnitPrice(): number | undefined {
-      return this.package ? applyMarkup(this.package.price, this.markupRatio) / this.package.amount : undefined;
+      return this.package && this.markupRatio !== undefined
+        ? applyMarkup(this.package.price, this.markupRatio) / this.package.amount
+        : undefined;
+    },
+    displayFinalPrice(): number | undefined {
+      if (this.displayPackagePrice === undefined || this.orderDiscountRate === undefined) {
+        return undefined;
+      }
+      return this.displayPackagePrice * (1 - this.orderDiscountRate);
+    },
+    hasOrderDiscount(): boolean {
+      return (this.orderDiscountRate ?? 0) > 0;
+    },
+    discountPercent(): string {
+      const percent = (this.orderDiscountRate ?? 0) * 100;
+      return Number.isInteger(percent) ? percent.toFixed(0) : percent.toFixed(1);
     }
   },
   mounted() {
+    // Site admin disabled recharge: block the direct/bookmarked top-up page
+    // too, not just the entry buttons.
+    if (isRechargeDisabled(this.$store.getters.site)) {
+      this.$router.replace({ name: ROUTE_CONSOLE_APPLICATION_LIST });
+      return;
+    }
     this.onFetchApplication();
   },
   methods: {
@@ -245,9 +310,21 @@ export default defineComponent({
     getPriceString,
     onFetchApplication() {
       this.loading = true;
+      this.loadFailed = false;
       applicationOperator
         .get(this.id)
         .then(({ data: data }: { data: IApplicationDetailResponse }) => {
+          if (data.role === 'grantee') {
+            this.$router.replace({ name: ROUTE_CONSOLE_APPLICATION_LIST });
+            return;
+          }
+          if (data.type === IApplicationType.PERIOD) {
+            this.$router.replace({
+              name: ROUTE_CONSOLE_APPLICATION_SUBSCRIBE,
+              params: { id: data.id }
+            });
+            return;
+          }
           this.application = data;
           this.loading = false;
           // by default select first packageId
@@ -255,6 +332,7 @@ export default defineComponent({
         })
         .catch(() => {
           this.loading = false;
+          this.loadFailed = true;
         });
     },
     onChangeType() {
@@ -264,7 +342,7 @@ export default defineComponent({
       });
     },
     onCreateOrder() {
-      if (!this.application?.id) {
+      if (!this.application?.id || !this.pricingAvailable || !this.package) {
         return;
       }
       this.creating = true;
@@ -286,11 +364,7 @@ export default defineComponent({
             : {}),
           description: this.application?.service
             ? `${this.application?.service?.title} x ${this.package?.amount} ${unit}`
-            : this.$t('application.title.globalBuy') +
-              ' - ' +
-              this.package?.amount +
-              ' ' +
-              this.$t('service.unit.credits')
+            : this.globalBuyTitle + ' - ' + this.package?.amount + ' ' + this.$t('service.unit.credits')
         })
         .then(({ data: data }: { data: IOrderDetailResponse }) => {
           this.creating = false;
@@ -350,6 +424,87 @@ export default defineComponent({
         color: #29c287;
       }
     }
+    .final-price-block {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .final-price-line {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .discount-tag {
+      border-radius: 999px;
+    }
+    .discount-hint {
+      margin: 0;
+      font-size: 13px;
+      color: var(--el-text-color-secondary);
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .panel {
+    .el-card {
+      padding: 16px 12px;
+    }
+  }
+
+  :deep(.purchase-form .el-form-item) {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  :deep(.purchase-form .el-form-item__label) {
+    width: auto !important;
+    height: auto;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  :deep(.purchase-form .el-form-item__content) {
+    margin-left: 0 !important;
+  }
+
+  .package-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 8px;
+    width: 100%;
+    padding-top: 4px;
+  }
+
+  :deep(.package-options .el-radio-button) {
+    width: 100%;
+    margin-bottom: 0 !important;
+  }
+
+  :deep(.package-options .el-radio-button__inner) {
+    width: 100%;
+    padding: 8px 6px;
+    border: 1px solid var(--el-border-color);
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .final-price-block {
+    width: 100%;
+  }
+
+  .package-options .corner {
+    top: -8px;
+    right: 4px;
+    padding: 0 3px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .btn-create {
+    width: 100%;
   }
 }
 </style>

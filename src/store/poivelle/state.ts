@@ -1,0 +1,28 @@
+import { Status } from '@/models';
+import type { IPoivelleState } from './models';
+
+export default (): IPoivelleState => ({
+  workspaces: [],
+  discoveryWorks: [],
+  projects: [],
+  projection: 'overview',
+  assets: [],
+  artifacts: [],
+  takes: [],
+  selections: [],
+  revisions: [],
+  proposals: [],
+  runs: [],
+  evaluations: [],
+  forensicValidations: [],
+  application: undefined,
+  applications: undefined,
+  service: undefined,
+  status: {
+    bootstrap: Status.None,
+    graph: Status.None,
+    command: Status.None,
+    action: Status.None,
+    assets: Status.None
+  }
+});

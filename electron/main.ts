@@ -1,12 +1,15 @@
 import { app, BrowserWindow, ipcMain, shell, Menu, Notification, globalShortcut } from 'electron';
 import path from 'node:path';
+import os from 'node:os';
 import { registerAppProtocol, APP_ORIGIN } from './protocol';
 import { issueState, consumeState } from './auth-state';
-import { initUpdater } from './updater';
 import { registerLocalExec, disableComputerUse } from './local/ipc';
 import { registry } from './local/registry';
 import { setRoots } from './local/fs';
-import { load as loadLocalConfig } from './local/config';
+import { load as loadLocalConfig, rootsWithWorkingDir } from './local/config';
+import { daemon } from './scheduler/daemon';
+import { initTray, refreshTray, setOpenAtLogin, isOpenAtLogin } from './scheduler/tray';
+import { getDeviceId, getDeviceName, setDeviceName, setCredentials, clearCredentials } from './scheduler/credentials';
 
 const DESKTOP_SCHEME = 'acedata-desktop';
 
@@ -96,21 +99,36 @@ if (!gotLock) {
     }
     createWindow();
     setupAppMenu();
-    initUpdater(() => mainWindow);
     // Local tool execution: load authorized roots, boot MCP servers, wire IPC.
     const localCfg = loadLocalConfig();
-    setRoots(localCfg.roots);
+    setRoots(rootsWithWorkingDir(localCfg.roots, localCfg.workingDir));
     registry.setComputerUse(localCfg.computerUse === true); // opt-in, default off
     void registry.boot(localCfg.mcp);
     registerLocalExec(() => mainWindow);
     registerPanicStop();
+    // Scheduled-task daemon: holds the schedules for tasks bound to this
+    // device and fires them from THIS process. It lives in main, not the
+    // renderer, because Chromium throttles a hidden window's timers to about
+    // once a minute — a "every 5 minutes" task would fire whenever the user
+    // happened to look at it.
+    initTray(() => focusWindow());
+    daemon.start();
+    void daemon.reportMissedSinceLastRun();
     // Windows cold-start protocol activation: URL is in this instance's argv.
     const coldUrl = process.argv.find((a) => a.startsWith(`${DESKTOP_SCHEME}://`));
     if (coldUrl) handleDeepLink(coldUrl);
   });
 
   app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit();
+    // Staying resident is what makes a local scheduled task fire at 7am with
+    // no window open. Only do it when this device actually holds one —
+    // otherwise closing the last window still quits, as it always did.
+    if (process.platform === 'darwin') return;
+    if (daemon.hasTasks()) {
+      refreshTray(() => focusWindow());
+      return;
+    }
+    app.quit();
   });
   app.on('will-quit', () => globalShortcut.unregisterAll());
   app.on('activate', () => {
@@ -161,7 +179,9 @@ function createWindow(): void {
     // 64px TopHeader height for chrome — 40px is just enough to display the
     // native min/max/close buttons at their default size.
     titleBarStyle: isMac ? 'hiddenInset' : 'hidden',
-    ...(isMac ? { trafficLightPosition: { x: 16, y: 20 } } : { titleBarOverlay: { color: '#00000000', symbolColor: '#888888', height: 40 } }),
+    ...(isMac
+      ? { trafficLightPosition: { x: 16, y: 20 } }
+      : { titleBarOverlay: { color: '#00000000', symbolColor: '#888888', height: 40 } }),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -237,7 +257,14 @@ function handleDeepLink(rawUrl: string): void {
 }
 
 function focusWindow(): void {
-  if (!mainWindow) return;
+  // Once the app can outlive its window (tray residency), "focus" may have to
+  // recreate it — otherwise clicking the tray icon after closing the window
+  // would do nothing at all.
+  if (!mainWindow || mainWindow.isDestroyed()) {
+    createWindow();
+    return;
+  }
+  if (mainWindow.isMinimized()) mainWindow.restore();
   mainWindow.show();
   mainWindow.focus();
 }
@@ -280,6 +307,32 @@ ipcMain.handle('shell:openExternal', (_e, url: string) => {
   if (allowedExternal(url)) return shell.openExternal(url);
 });
 
+/**
+ * Open a connector's OAuth consent page in the system browser.
+ *
+ * Separate from `shell:openExternal` because the destination is a *provider*
+ * host — accounts.google.com, slack.com, api.notion.com — and those can never
+ * go on `EXTERNAL_HOSTS`: that set also governs `setWindowOpenHandler` and the
+ * navigation guard, so widening it would loosen the whole window's policy for
+ * the sake of one button. Without this handler the connect click is a silent
+ * no-op (deny, then the fallback navigation gets preventDefault'd).
+ *
+ * The URL is not host-checked, because a legitimate one points at an
+ * arbitrary third party. What bounds it instead: it is only ever the
+ * `authorization_url` our own backend just returned, it must be https, and
+ * `shell.openExternal` hands it to the browser rather than to this app. No
+ * `state` is minted here — unlike login, nothing comes back through the
+ * renderer for us to bind it to.
+ */
+ipcMain.handle('connections:openAuthorize', (_e, url: string) => {
+  try {
+    if (new URL(url).protocol !== 'https:') return;
+  } catch {
+    return;
+  }
+  return shell.openExternal(url);
+});
+
 // Current native fullscreen state, so a renderer that subscribes after the
 // window already entered fullscreen still gets the right initial value.
 ipcMain.handle('window:isFullscreen', () => mainWindow?.isFullScreen() ?? false);
@@ -293,8 +346,70 @@ ipcMain.handle('notify:show', (_e, { title, body }: { title: string; body: strin
   n.show();
 });
 
+// --- Scheduled-task daemon IPC ---
+//
+// The daemon needs a Bearer token that outlives the window, so the renderer
+// hands it over on sign-in and main persists it (OS-encrypted, 0600). Nothing
+// here reads the token back out to the renderer — it only ever goes inward.
+
+ipcMain.handle('scheduler:identity', () => ({
+  device_id: getDeviceId(),
+  device_name: getDeviceName() ?? defaultDeviceName(),
+  open_at_login: isOpenAtLogin()
+}));
+
+ipcMain.handle('scheduler:setCredentials', (_e, { token, siteOrigin }: { token: string; siteOrigin?: string }) => {
+  if (typeof token !== 'string' || !token) return false;
+  setCredentials(token, typeof siteOrigin === 'string' ? siteOrigin : undefined);
+  daemon.start();
+  refreshTray(() => focusWindow());
+  return true;
+});
+
+ipcMain.handle('scheduler:clearCredentials', () => {
+  clearCredentials();
+  refreshTray(() => focusWindow());
+  return true;
+});
+
+ipcMain.handle('scheduler:setDeviceName', (_e, name: string) => {
+  if (typeof name !== 'string' || !name.trim()) return false;
+  setDeviceName(name.trim());
+  refreshTray(() => focusWindow());
+  return true;
+});
+
+ipcMain.handle('scheduler:setOpenAtLogin', (_e, enabled: boolean) => {
+  setOpenAtLogin(enabled === true);
+  refreshTray(() => focusWindow());
+  return isOpenAtLogin();
+});
+
+ipcMain.handle('scheduler:status', () => ({ ...daemon.getState(), schedule: daemon.getSchedule() }));
+
+// "Run now" for a task bound to THIS device. The cloud's own trigger action
+// runs the agent loop through a server-side loopback with no client attached,
+// so a local task fired that way reaches the model with none of its authorized
+// local tools — it can only reply that it cannot see the machine.
+ipcMain.handle('scheduler:runNow', async (_e, taskId: string) => {
+  if (typeof taskId !== 'string' || !taskId) return { ok: false, reason: 'bad_task_id' };
+  const result = await daemon.runNow(taskId);
+  refreshTray(() => focusWindow());
+  return result;
+});
+
+/** A name the user will recognize in a task list without being asked to invent
+ *  one: their machine's hostname, which is what other devices already show. */
+function defaultDeviceName(): string {
+  const platform = process.platform === 'darwin' ? 'Mac' : 'PC';
+  try {
+    return os.hostname().replace(/\.local$/, '') || platform;
+  } catch {
+    return platform;
+  }
+}
+
 // Cross-platform menu. The Edit role is REQUIRED for clipboard accelerators
-// (Cmd/Ctrl+C/V/X/A, undo/redo) to work in inputs; without it they are dead.
 function setupAppMenu(): void {
   const isMac = process.platform === 'darwin';
   const nav = (dir: 'back' | 'forward') => {

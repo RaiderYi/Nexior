@@ -125,7 +125,7 @@
   },
   "button.addAudio": {
     "message": "+ Audio",
-    "description": "Button zum Öffnen des Dialogs zum Hinzufügen von Audio (Durchsuchen oder Aufnehmen)"
+    "description": "Schaltfläche zum Öffnen des Dialogs zum Hinzufügen von Audio (Durchsuchen oder Aufnehmen)"
   },
   "button.startRecord": {
     "message": "Aufnahme starten",
@@ -177,7 +177,7 @@
   },
   "button.video": {
     "message": "Video",
-    "description": "Text des Video-Buttons"
+    "description": "Text für die Video-Schaltfläche"
   },
   "button.download_video": {
     "message": "Video herunterladen",
@@ -197,7 +197,7 @@
   },
   "button.cover_music": {
     "message": "Cover",
-    "description": "Text für den Button zum Erstellen eines Covers"
+    "description": "Text für die Cover-Schaltfläche"
   },
   "button.concat_music": {
     "message": "Zusammenfügen",
@@ -209,7 +209,7 @@
   },
   "button.remaster": {
     "message": "Remaster",
-    "description": "Text für den Button zum Remastern für bessere Audioqualität"
+    "description": "Text für die Schaltfläche zum Remastern und Verbessern der Audioqualität"
   },
   "button.replace_section": {
     "message": "Abschnitt ersetzen",
@@ -217,7 +217,7 @@
   },
   "button.mashup": {
     "message": "Mashup",
-    "description": "Text für den Button zum Erstellen eines Mashups mehrerer Songs"
+    "description": "Text für die Schaltfläche zum Mischen mehrerer Songs"
   },
   "button.generate_lyrics": {
     "message": "AI-generierte Lyrics",
@@ -241,7 +241,7 @@
   },
   "name.instrumental": {
     "message": "Instrumental",
-    "description": "Generierung von rein instrumentaler Musik ohne Gesang"
+    "description": "Erzeugt instrumentale Musik ohne Gesang"
   },
   "name.referenceAudios": {
     "message": "Referenzmusik",
@@ -288,8 +288,8 @@
     "description": "Eingabeaufforderung für den Inhalt"
   },
   "name.lyrics": {
-    "message": "Lyrics",
-    "description": "Eingabeaufforderung für den Inhalt der Lyrics"
+    "message": "Songtext",
+    "description": "Hinweis zum Eingeben des Songtextinhalts"
   },
   "name.style": {
     "message": "Stil",
@@ -319,6 +319,10 @@
     "message": "Stil Einfluss",
     "description": "Steuerung des Einflusses des Stils auf das Ergebnis"
   },
+  "name.duration": {
+    "message": "Songdauer",
+    "description": "Steuert die Zielzeitdauer des generierten Songs"
+  },
   "name.variationCategory": {
     "message": "Variationskategorie",
     "description": "Steuerung der Vielfalt der generierten Variationen"
@@ -334,6 +338,10 @@
   "name.failureReason": {
     "message": "Fehlergrund",
     "description": "Grund für das Scheitern der Aufgabe"
+  },
+  "name.failure": {
+    "message": "Generierung fehlgeschlagen",
+    "description": "Titel für fehlgeschlagene Suno-Aufgaben"
   },
   "name.status": {
     "message": "Status",
@@ -394,6 +402,10 @@
   "description.styleInfluence": {
     "message": "Je höher der Wert, desto größer ist der Einfluss des Stil-Labels auf das Ergebnis (0-1)",
     "description": "Beschreibung des Stil-Einflussparameters"
+  },
+  "description.duration": {
+    "message": "Geben Sie die gewünschte Songlänge (Sekunden) an; verschiedene Modelle unterstützen unterschiedliche Längen, die tatsächliche Länge kann leicht variieren.",
+    "description": "Beschreibung des Parameters für die Songlänge"
   },
   "description.audioWeight": {
     "message": "Einfluss des Originalsongs auf das Ergebnis beim Cover (0-1)",
@@ -813,7 +825,7 @@
   },
   "filter.title": {
     "message": "Filter",
-    "description": "Filter-Button"
+    "description": "Schaltfläche zum Filtern"
   },
   "filter.type": {
     "message": "Typ",
@@ -853,7 +865,7 @@
   },
   "filter.video": {
     "message": "Video",
-    "description": "Filterbereich: Enthält Video"
+    "description": "Filterbereich: Enthält Video oder nicht"
   },
   "filter.videoAll": {
     "message": "Alle",

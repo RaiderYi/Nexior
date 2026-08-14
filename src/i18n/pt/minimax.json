@@ -1,0 +1,142 @@
+{
+  "name.model": {
+    "message": "Modelo",
+    "description": "Modelo de geração de vídeo"
+  },
+  "name.prompt": {
+    "message": "Palavra-chave",
+    "description": "Descrição do conteúdo, ações, ângulos e estilo do vídeo"
+  },
+  "name.referenceImages": {
+    "message": "Imagem de referência",
+    "description": "Campo para upload de imagem de referência"
+  },
+  "name.referenceAudios": {
+    "message": "Áudio de referência",
+    "description": "Campo para upload de áudio de referência"
+  },
+  "name.ratio": {
+    "message": "Proporção",
+    "description": "Proporção do vídeo gerado"
+  },
+  "name.duration": {
+    "message": "Duração (segundos)",
+    "description": "Duração do vídeo gerado"
+  },
+  "name.resolution": {
+    "message": "Resolução",
+    "description": "Resolução do vídeo de saída"
+  },
+  "name.watermark": {
+    "message": "Marca d'água AIGC",
+    "description": "Se deve adicionar a marca d'água de identificação AIGC"
+  },
+  "name.taskId": {
+    "message": "ID da tarefa",
+    "description": "Identificação da tarefa"
+  },
+  "name.failure": {
+    "message": "Falha",
+    "description": "Estado de falha da tarefa"
+  },
+  "name.failureReason": {
+    "message": "Razão da falha",
+    "description": "Razão da falha da tarefa"
+  },
+  "placeholder.prompt": {
+    "message": "Descreva a cena, ação, ângulo e estilo (os prompts são obrigatórios, independentemente de enviar material de referência)",
+    "description": "Texto de espaço reservado para o prompt"
+  },
+  "description.model": {
+    "message": "Modelo de geração de vídeo MiniMax H3.",
+    "description": "Descrição do modelo"
+  },
+  "description.prompt": {
+    "message": "Descreva as cenas, ações, ângulos e estilos do vídeo; todos os modos de geração devem ser preenchidos.",
+    "description": "Descrição do prompt"
+  },
+  "description.referenceImages": {
+    "message": "Carregue de 1 a 9 imagens. Uma imagem como o quadro inicial, várias imagens como referências.",
+    "description": "Descrição da imagem de referência"
+  },
+  "description.referenceAudios": {
+    "message": "Carregue de 1 a 3 faixas de áudio. Ao usar áudio de referência, é necessário carregar pelo menos uma imagem de referência.",
+    "description": "Descrição do áudio de referência"
+  },
+  "description.resolution": {
+    "message": "Escolha a qualidade do vídeo de saída.",
+    "description": "Descrição da resolução"
+  },
+  "description.ratio": {
+    "message": "Escolha entre formato paisagem ou retrato.",
+    "description": "Descrição da proporção"
+  },
+  "description.duration": {
+    "message": "Defina a duração do vídeo entre 4 e 15 segundos.",
+    "description": "Descrição da duração"
+  },
+  "description.watermark": {
+    "message": "Adicione uma marca d'água de identificação AIGC no vídeo.",
+    "description": "Descrição da marca d'água"
+  },
+  "status.pending": {
+    "message": "Pendente",
+    "description": "Estado de espera da tarefa"
+  },
+  "status.processing": {
+    "message": "Processando",
+    "description": "Estado de processamento da tarefa"
+  },
+  "button.generate": {
+    "message": "Gerar vídeo",
+    "description": "Botão de geração"
+  },
+  "button.upload": {
+    "message": "Carregar",
+    "description": "Botão para carregar materiais"
+  },
+  "button.download": {
+    "message": "Baixar vídeo",
+    "description": "Botão de download"
+  },
+  "message.startingTask": {
+    "message": "Iniciando tarefa...",
+    "description": "Dica para iniciar a tarefa"
+  },
+  "message.startTaskSuccess": {
+    "message": "Tarefa de geração iniciada com sucesso",
+    "description": "Sucesso ao submeter a tarefa"
+  },
+  "message.startTaskFailed": {
+    "message": "Falha ao iniciar a tarefa, por favor tente novamente mais tarde",
+    "description": "Falha ao submeter a tarefa"
+  },
+  "message.usedUp": {
+    "message": "Saldo insuficiente, por favor recarregue para continuar usando",
+    "description": "Dica de saldo insuficiente"
+  },
+  "message.downloadVideo": {
+    "message": "Baixar este vídeo",
+    "description": "Dica para download de vídeo"
+  },
+  "message.promptRequired": {
+    "message": "Todos os modos de geração devem ter um prompt preenchido",
+    "description": "Falta o prompt"
+  },
+  "message.textRatioRequired": {
+    "message": "A proporção de vídeo gerada deve escolher uma proporção específica diferente de adaptativa",
+    "description": "A proporção do vídeo gerado é inválida"
+  },
+  "message.imageLimit": {
+    "message": "Máximo de 9 imagens de referência",
+    "description": "Limite de quantidade de imagem excedido"
+  },
+  "message.audioLimit": {
+    "message": "Máximo de 3 áudios de referência",
+    "description": "Limite de quantidade de áudio excedido"
+  },
+  "message.uploadError": {
+    "message": "Falha ao carregar, por favor tente novamente mais tarde.",
+    "description": "Mensagem de falha no carregamento de materiais"
+  }
+}

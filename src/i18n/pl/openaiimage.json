@@ -112,7 +112,7 @@
     "description": "Opis parametru modelu"
   },
   "description.imageUrls": {
-    "message": "Prześlij 1-5 obrazów referencyjnych, aby przejść do trybu edycji.",
+    "message": "Prześlij 1-16 obrazów referencyjnych, aby przejść do trybu edycji.",
     "description": "Opis parametru image_urls"
   },
   "status.pending": {
@@ -156,7 +156,7 @@
     "description": "Komunikat o wyczerpaniu punktów"
   },
   "message.uploadImageExceed": {
-    "message": "Możesz przesłać maksymalnie 5 obrazów",
+    "message": "Możesz przesłać maksymalnie {count} obrazów",
     "description": "Przekroczono limit liczby obrazów"
   },
   "message.uploadImageError": {
@@ -165,7 +165,7 @@
   },
   "name.model": {
     "message": "Model",
-    "description": "Etykieta wyboru modelu OpenAI Image"
+    "description": "Etykieta wyboru modelu obrazu OpenAI"
   },
   "model.gptImage1": {
     "message": "gpt-image-1",
@@ -182,5 +182,9 @@
   "model.gptImage2Official": {
     "message": "gpt-image-2 (Oficjalny)",
     "description": "Opcja modelu gpt-image-2 (oficjalny przekaźnik)"
+  },
+  "size.auto": {
+    "message": "Automatyczny",
+    "description": "Opcja rozmiaru: automatyczny — model wybiera proporcje na podstawie Twojego promptu"
   }
 }

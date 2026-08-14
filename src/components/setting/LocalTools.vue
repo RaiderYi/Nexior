@@ -27,14 +27,15 @@
       <section v-if="!android">
         <div class="section-head">
           <h3>{{ $t('common.settings.localToolsFoldersTitle') }}</h3>
-          <el-button size="small" type="primary" :icon="Plus" @click="addFolder">
+          <el-button size="small" type="primary" @click="addFolder">
+            <add-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('common.settings.localToolsAddFolder') }}
           </el-button>
         </div>
         <p class="muted">{{ $t('common.settings.localToolsFoldersHint') }}</p>
         <ul class="rows">
           <li v-for="(r, i) in roots" :key="r" class="row">
-            <font-awesome-icon icon="fa-solid fa-folder" class="row-icon" />
+            <folder-icon class="row-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
             <span class="path">{{ r }}</span>
             <el-button size="small" text type="danger" @click="removeRoot(i)">
               {{ $t('common.settings.localToolsRemove') }}
@@ -53,11 +54,35 @@
         </p>
       </section>
 
+      <!-- Working directory: the project the AI operates in. Also chosen in the
+           chat page (which blocks sending until one is set); this is where it
+           can be changed later. -->
+      <section v-if="!android">
+        <div class="section-head">
+          <h3>{{ $t('common.settings.localToolsWorkingDirTitle') }}</h3>
+          <el-button size="small" type="primary" :loading="pickingWorkingDir" @click="chooseWorkingDir">
+            <folder-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{
+              workingDir ? $t('common.settings.localToolsWorkingDirChange') : $t('common.settings.localToolsAddFolder')
+            }}
+          </el-button>
+        </div>
+        <p class="muted">{{ $t('common.settings.localToolsWorkingDirHint') }}</p>
+        <ul class="rows">
+          <li v-if="workingDir" class="row">
+            <folder-icon class="row-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            <span class="path">{{ workingDir }}</span>
+          </li>
+          <li v-else class="row muted empty">{{ $t('common.settings.localToolsWorkingDirNone') }}</li>
+        </ul>
+      </section>
+
       <!-- MCP servers (local stdio, Claude-Desktop style) -->
       <section>
         <div class="section-head">
           <h3>{{ $t('common.settings.localToolsMcpTitle') }}</h3>
-          <el-button size="small" type="primary" :icon="Plus" @click="addMcp">
+          <el-button size="small" type="primary" @click="addMcp">
+            <add-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('common.settings.localToolsMcpAdd') }}
           </el-button>
         </div>
@@ -134,7 +159,7 @@
         <p class="muted">{{ $t('common.settings.localToolsGrantsHint') }}</p>
         <ul class="rows">
           <li v-for="g in grants" :key="g.key" class="row">
-            <font-awesome-icon icon="fa-solid fa-shield-halved" class="row-icon" />
+            <security-icon class="row-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
             <span class="grant">
               <code class="grant-name">{{ g.name }}</code>
               <span class="grant-input">{{ g.input }}</span>
@@ -155,11 +180,46 @@
         <p class="muted">{{ $t('common.settings.localToolsBuiltinHint') }}</p>
         <ul class="rows">
           <li v-for="t in builtinTools" :key="t.name" class="row">
-            <font-awesome-icon :icon="builtinIcon(t.name)" class="row-icon" />
+            <component
+              :is="builtinIcon(t.name)"
+              class="row-icon"
+              :size="'1em' as any"
+              aria-hidden="true"
+              focusable="false"
+            />
             <span class="cu-action">
               <span class="cu-action-name">
                 <code class="grant-name">{{ t.name }}</code>
                 <el-tag v-if="t.name === 'shell.run_command'" size="small" type="danger" effect="plain">{{
+                  $t('common.settings.localToolsBuiltinRisky')
+                }}</el-tag>
+              </span>
+              <span class="cu-action-desc">{{ t.description }}</span>
+            </span>
+            <el-switch
+              :model-value="toolGrants[t.name] === true"
+              :loading="builtinBusy === t.name"
+              :disabled="!!builtinBusy"
+              @change="(v: string | number | boolean) => onToggleBuiltinTool(t.name, v)"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- MCP tools: per-tool "always allow (any input)" toggles. Populated from
+           the CONNECTED servers, so adding a server makes its tools appear here. -->
+      <section v-if="mcpTools.length && !android">
+        <div class="section-head">
+          <h3>{{ $t('common.settings.localToolsMcpToolsTitle') }}</h3>
+        </div>
+        <p class="muted">{{ $t('common.settings.localToolsMcpToolsHint') }}</p>
+        <ul class="rows">
+          <li v-for="t in mcpTools" :key="t.name" class="row">
+            <MagicIcon class="row-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            <span class="cu-action">
+              <span class="cu-action-name">
+                <code class="grant-name">{{ t.name }}</code>
+                <el-tag v-if="t.writes" size="small" type="danger" effect="plain">{{
                   $t('common.settings.localToolsBuiltinRisky')
                 }}</el-tag>
               </span>
@@ -203,7 +263,13 @@
           <p class="muted">{{ $t('common.settings.localToolsCuActionsHint') }}</p>
           <ul class="rows">
             <li v-for="t in computerTools" :key="t.name" class="row">
-              <font-awesome-icon :icon="cuIcon(t.name)" class="row-icon" />
+              <component
+                :is="cuIcon(t.name)"
+                class="row-icon"
+                :size="'1em' as any"
+                aria-hidden="true"
+                focusable="false"
+              />
               <span class="cu-action">
                 <span class="cu-action-name">{{ cuLabel(t.name) }}</span>
                 <span class="cu-action-desc">{{ t.description }}</span>
@@ -227,7 +293,7 @@
         <p class="muted">{{ $t('common.settings.localToolsAndroidSkillsHint') }}</p>
         <ul class="rows">
           <li v-if="xhsSkill" class="row">
-            <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" class="row-icon" />
+            <magic-icon class="row-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
             <span class="cu-action">
               <span class="cu-action-name">{{ $t('common.settings.localToolsAndroidSkillsXhsName') }}</span>
               <span class="cu-action-desc">{{ $t('common.settings.localToolsAndroidSkillsXhsDesc') }}</span>
@@ -307,10 +373,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {
+  AddIcon,
+  CameraIcon,
+  EditIcon,
+  FileIcon,
+  FolderIcon,
+  KeyboardIcon,
+  MagicIcon,
+  MoveIcon,
+  PointerIcon,
+  ScrollIcon,
+  SecurityIcon,
+  TerminalIcon
+} from '@acedatacloud/core/icons/components';
+import { defineComponent, type Component } from 'vue';
 import { ElButton, ElTag, ElSwitch, ElInput } from 'element-plus';
-import { Plus } from '@element-plus/icons-vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { localExec, type IMcpServerStatus } from '@/utils/desktop';
 import { isAndroid } from '@/utils/surface';
 import { httpClient } from '@/operators/common';
@@ -346,11 +424,14 @@ interface McpDraft {
 
 export default defineComponent({
   name: 'LocalToolsSetting',
-  components: { ElButton, ElTag, ElSwitch, ElInput, FontAwesomeIcon },
+  components: { AddIcon, ElButton, ElTag, ElSwitch, ElInput, FolderIcon, MagicIcon, SecurityIcon },
   data() {
     return {
-      Plus,
       roots: [] as string[],
+      // The project directory the AI operates in (chat page blocks sending
+      // until it is set; this panel is where it can be changed).
+      workingDir: '',
+      pickingWorkingDir: false,
       tools: [] as string[],
       // Editable MCP server drafts (loaded from config, parsed back on save).
       mcpServers: [] as McpDraft[],
@@ -371,6 +452,9 @@ export default defineComponent({
       cuBusy: null as null | string,
       // Builtin (fs/shell) tool catalog + per-tool tool-wide always-allow state.
       builtinTools: [] as { name: string; description: string; mutates: boolean }[],
+      // Connected MCP tools, same toggle model. Refreshed whenever the server
+      // set changes (save / reconnect) so new servers' tools appear right away.
+      mcpTools: [] as { name: string; description: string; writes: boolean }[],
       toolGrants: {} as Record<string, boolean>,
       builtinBusy: null as null | string,
       savingCU: false,
@@ -413,6 +497,7 @@ export default defineComponent({
     if (!ex) return;
     const cfg = await ex.getConfig();
     this.roots = cfg.roots;
+    this.workingDir = cfg.workingDir ?? '';
     this.computerUse = cfg.computerUse === true;
     this.mcpServers = (cfg.mcp ?? []).map((m) => ({
       _uid: this.mcpUid++,
@@ -428,6 +513,7 @@ export default defineComponent({
     this.tools = (await ex.listTools()).map((t) => t.name);
     this.computerTools = (await ex.computerTools?.()) ?? [];
     this.builtinTools = (await ex.builtinTools?.()) ?? [];
+    this.mcpTools = (await ex.mcpTools?.()) ?? [];
     const s = await ex.perm?.status();
     if (s?.mac) this.perm = s;
     await this.loadGrants();
@@ -532,17 +618,31 @@ export default defineComponent({
       const cuGrants: Record<string, boolean> = {};
       const toolWide: Record<string, boolean> = {};
       const builtinNames = new Set(this.builtinTools.map((t) => t.name));
+      const mcpNames = new Set(this.mcpTools.map((t) => t.name));
       const rows: GrantRow[] = [];
       for (const k of keys) {
         if (k.startsWith('computer.') && !k.includes(':')) {
           cuGrants[k] = true;
           continue;
         }
-        // Bare-name (no `:input`) grant for a builtin tool = tool-wide always-allow,
-        // surfaced as its own toggle → hide from the generic list too.
-        if (!k.includes(':') && builtinNames.has(k)) {
+        // Bare-name (no `:input`) grant for a builtin OR connected MCP tool =
+        // tool-wide always-allow, surfaced as its own toggle → hide from the
+        // generic list too. A bare name we don't recognise (server since removed)
+        // still falls through to the list so it stays revocable.
+        if (!k.includes(':') && (builtinNames.has(k) || mcpNames.has(k))) {
           toolWide[k] = true;
           continue;
+        }
+        // Directory-scoped grant: `dir:<tool.name>:<folder>` — "this tool,
+        // anywhere under this folder". Split at the FIRST colon after the
+        // prefix; a Windows folder contains one (`C:\…`), a tool name never does.
+        if (k.startsWith('dir:')) {
+          const rest = k.slice(4);
+          const i = rest.indexOf(':');
+          if (i > 0) {
+            rows.push({ key: k, name: rest.slice(0, i), input: `📁 ${rest.slice(i + 1)}` });
+            continue;
+          }
         }
         // key shape: `<tool.name>:<json input>`. The input is always JSON, so
         // split at the first `:{` (object) — robust even if a tool name ever
@@ -554,6 +654,29 @@ export default defineComponent({
       this.computerGrants = cuGrants;
       this.toolGrants = toolWide;
       this.grants = rows;
+    },
+    /** Pick (or change) the project directory the AI operates in. Saved
+     *  immediately — unlike the roots list there is no separate Save button,
+     *  because the chat page's send gate reads this value straight away.
+     *  Picking it also authorizes the folder (the main process folds it into
+     *  ROOTS), so the user does not have to add the same path twice. */
+    async chooseWorkingDir() {
+      if (this.pickingWorkingDir) return;
+      this.pickingWorkingDir = true;
+      try {
+        const dir = await localExec()?.pickFolder();
+        if (!dir) return;
+        const cur = await localExec()?.getConfig();
+        await localExec()?.saveConfig({
+          roots: cur?.roots ?? this.roots,
+          mcp: cur?.mcp ?? [],
+          computerUse: this.computerUse,
+          workingDir: dir
+        });
+        this.workingDir = dir;
+      } finally {
+        this.pickingWorkingDir = false;
+      }
     },
     async addFolder() {
       const p = await localExec()?.pickFolder();
@@ -664,6 +787,10 @@ export default defineComponent({
       if (!ex) return;
       this.mcpStatuses = (await ex.mcp?.status()) ?? [];
       this.tools = (await ex.listTools())?.map((t) => t.name) ?? this.tools;
+      // Server set changed ⇒ the per-tool toggle list must follow, and a removed
+      // server's stale bare-name grant has to fall back to the revocable list.
+      this.mcpTools = (await ex.mcpTools?.()) ?? [];
+      await this.loadGrants();
     },
     // Toggling enable/disable persists immediately (needs a save+reboot to take
     // effect). If another row is invalid the save is blocked, so revert the
@@ -769,16 +896,16 @@ export default defineComponent({
       const label = this.$t(key);
       return label === key ? name.replace(/^computer\./, '') : label;
     },
-    cuIcon(name: string): string {
-      const map: Record<string, string> = {
-        screenshot: 'fa-solid fa-camera',
-        click: 'fa-solid fa-arrow-pointer',
-        move: 'fa-solid fa-up-down-left-right',
-        type: 'fa-solid fa-keyboard',
-        key: 'fa-solid fa-keyboard',
-        scroll: 'fa-solid fa-arrows-up-down'
+    cuIcon(name: string): Component {
+      const map: Record<string, Component> = {
+        screenshot: CameraIcon,
+        click: PointerIcon,
+        move: MoveIcon,
+        type: KeyboardIcon,
+        key: KeyboardIcon,
+        scroll: ScrollIcon
       };
-      return map[name.replace(/^computer\./, '')] ?? 'fa-solid fa-shield-halved';
+      return map[name.replace(/^computer\./, '')] ?? SecurityIcon;
     },
     cuSuffix(name: string): string {
       const s = name.replace(/^computer\./, '');
@@ -806,12 +933,12 @@ export default defineComponent({
         this.builtinBusy = null;
       }
     },
-    builtinIcon(name: string): string {
-      if (name === 'shell.run_command') return 'fa-solid fa-terminal';
-      if (name === 'fs.write_file') return 'fa-solid fa-pen';
-      if (name === 'fs.read_file') return 'fa-solid fa-file';
-      if (name === 'fs.list_dir') return 'fa-solid fa-folder';
-      return 'fa-solid fa-shield-halved';
+    builtinIcon(name: string): Component {
+      if (name === 'shell.run_command') return TerminalIcon;
+      if (name === 'fs.write_file') return EditIcon;
+      if (name === 'fs.read_file') return FileIcon;
+      if (name === 'fs.list_dir') return FolderIcon;
+      return SecurityIcon;
     },
     async revoke(key: string) {
       await localExec()?.grants?.revoke(key);

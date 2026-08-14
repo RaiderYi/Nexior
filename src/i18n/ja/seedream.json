@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "操作",
+    "description": "生成または編集の操作選択を示します"
+  },
   "name.taskId": {
     "message": "タスク ID",
     "description": "タスクの ID"
@@ -131,6 +135,10 @@
     "message": "画像のアップロードに失敗しました。後で再試行してください",
     "description": "アップロード失敗"
   },
+  "message.referenceImageRequired": {
+    "message": "編集モードでは少なくとも1枚の参考画像をアップロードする必要があります。",
+    "description": "編集モードに参考画像がない場合に表示される検証メッセージ"
+  },
   "message.featureNotSupportedTitle": {
     "message": "確認が必要",
     "description": "能力の衝突を示すポップアップのタイトル"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "SeeDream 5.0 モデルオプション（グループ画像とストリーミング出力をサポート）"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Proモデルオプション（フラッグシップ単一画像；画像セット/ストリーミング/ウェブ検索なし）"
   },
   "name.maxImages": {
     "message": "画像枚数",

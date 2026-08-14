@@ -23,27 +23,30 @@ import ConfigPanel from '@/components/kling/ConfigPanel.vue';
 import MotionPanel from '@/components/kling/MotionPanel.vue';
 import TabSwitcher from '@/components/kling/TabSwitcher.vue';
 import TalkingPhotoPanel from '@/components/kling/TalkingPhotoPanel.vue';
-import { klingOperator } from '@/operators';
+import { buildKlingTalkingPhotoRequest, buildKlingVideoRequest, klingOperator } from '@/operators/kling';
 import { instrumentGeneration } from '@/plugins/telemetry';
-import {
-  IKlingGenerateRequest,
-  IKlingMotionRequest,
-  IKlingTalkingPhotoRequest,
-  IKlingTaskType,
-  Status
-} from '@/models';
-import { ElMessage } from 'element-plus';
-import { ERROR_CODE_USED_UP, KLING_TALKING_PHOTO_DEFAULT_MODEL, KLING_TALKING_PHOTO_DEFAULT_MODE } from '@/constants';
+import { IKlingMotionRequest, IKlingTaskType, Status } from '@/models';
+import { ElMessage, ElMessageBox } from 'element-plus';
+import { ERROR_CODE_USED_UP } from '@/constants';
 import RecentPanel from '@/components/kling/RecentPanel.vue';
 import { IKlingTask } from '@/models';
 import { loadPreviousPage } from '@/utils/pagination';
 import { uploadTrackerProviderMixin, ensureNoPendingUpload, ensureLoggedIn } from '@/utils';
+import { isScenarioX402Enabled, scenarioPaymentState, setScenarioPaymentMode } from '@/utils/x402/scenarioPayment';
+import {
+  X402PaymentCancelledError,
+  type OperatorRequestOptions,
+  type X402PaymentQuote,
+  type X402WalletContext,
+  resolveX402WalletContext
+} from '@/operators/x402';
 
 interface IData {
   task: IKlingTask | undefined;
   job: number;
   loadingMore: boolean;
   fetchingTasks: boolean;
+  walletTaskIds: string[];
 }
 
 export default defineComponent({
@@ -63,7 +66,8 @@ export default defineComponent({
       task: undefined,
       job: 0,
       loadingMore: false,
-      fetchingTasks: false
+      fetchingTasks: false,
+      walletTaskIds: []
     };
   },
   computed: {
@@ -90,9 +94,27 @@ export default defineComponent({
     },
     tasks() {
       return this.$store.state.kling.tasks;
+    },
+    walletMode(): boolean {
+      return this.taskType !== 'motion' && isScenarioX402Enabled() && scenarioPaymentState('kling').mode === 'wallet';
     }
   },
   watch: {
+    walletMode: {
+      async handler(value: boolean, oldValue: boolean | undefined) {
+        if (oldValue === undefined || value === oldValue) return;
+        this.$store.commit('kling/setTasks', undefined);
+        if (value && !this.job) this.job = window.setInterval(this.onGetTasks, 5000);
+        if (!value && !this.credential?.token) {
+          window.clearInterval(this.job);
+          this.job = 0;
+          await this.onScrollDown();
+          return;
+        }
+        await this.onGetTasks();
+        await this.onScrollDown();
+      }
+    },
     tasks: {
       handler(value, oldValue) {
         // scroll down if new tasks are added
@@ -109,9 +131,7 @@ export default defineComponent({
           console.debug('layout initialized');
           await this.onGetTasks();
           await this.onScrollDown();
-          this.job = window.setInterval(() => {
-            this.onGetTasks();
-          }, 5000);
+          if (!this.job) this.job = window.setInterval(this.onGetTasks, 5000);
         }
       },
       immediate: true
@@ -168,7 +188,8 @@ export default defineComponent({
         await this.$store.dispatch('kling/getTasks', {
           limit,
           createdAtMin,
-          createdAtMax
+          createdAtMax,
+          ...(this.walletMode && !this.credential?.token ? { mode: 'x402', ids: this.walletTaskIds } : {})
         });
       } finally {
         this.fetchingTasks = false;
@@ -184,67 +205,34 @@ export default defineComponent({
       ) {
         return;
       }
-      const { camera_control, ...rest } = this.config || {};
-      const request = {
-        ...rest,
-        async: true
-      } as IKlingGenerateRequest;
-      // Reject "only end frame, no start frame" — Kling can't anchor an
-      // end-frame without a starting reference.
-      if (!request.video_id && !(rest as any).video_url && !request.start_image_url && request.end_image_url) {
+      const request = buildKlingVideoRequest(this.config);
+      const frameCount = Number(Boolean(request.start_image_url)) + Number(Boolean(request.end_image_url));
+      const referenceImageCount = request.image_list?.length || 0;
+      const maxReferenceImages = request.video_list?.length ? 4 : 7;
+      if (frameCount + referenceImageCount > maxReferenceImages) {
+        ElMessage.warning(this.$t('kling.message.referenceImagesTotalLimit', { count: maxReferenceImages }));
+        return;
+      }
+      if (
+        request.video_list?.[0]?.refer_type === 'base' &&
+        (request.start_image_url || request.end_image_url || request.image_list?.some(({ type }) => type))
+      ) {
+        ElMessage.warning(this.$t('kling.message.baseVideoFrameConflict'));
+        return;
+      }
+      if (!request.video_id && !request.video_url && !request.start_image_url && request.end_image_url) {
         ElMessage.warning(this.$t('kling.message.endImageRequiresStart'));
         return;
       }
-      // Derive `action` from inputs if the user did not set one explicitly.
-      // Upstream Kling worker requires `action` and defaults to `text2video`,
-      // which rejects `start_image_url`/`end_image_url` (#bug: image refs ignored).
-      if (!request.action) {
-        if (request.video_id || (rest as any).video_url) {
-          request.action = 'extend';
-        } else if (request.start_image_url) {
-          request.action = 'image2video';
-        } else {
-          request.action = 'text2video';
-        }
-      }
-      // text2video does not accept end_image_url; strip it to avoid a 400.
-      if (request.action === 'text2video' && request.end_image_url) {
-        delete request.end_image_url;
-      }
-      // Only include camera_control when a type is set; clean empty config blocks.
-      if (camera_control?.type) {
-        request.camera_control = {
-          type: camera_control.type,
-          ...(camera_control.type === 'simple' && camera_control.config
-            ? {
-                config: Object.fromEntries(
-                  Object.entries(camera_control.config).filter(([, v]) => v !== undefined && v !== null)
-                )
-              }
-            : {})
-        };
-      }
-      if (!ensureLoggedIn()) {
-        return;
-      }
-      const token = this.credential?.token;
-      if (!token) {
-        console.error('no token specified');
-        return;
-      }
+      const operation = this.createPaymentOperation((options) => klingOperator.generate(request, options));
+      if (!operation) return;
       ElMessage.info(this.$t('kling.message.startingTask'));
-      instrumentGeneration('kling', klingOperator.generate(request, { token }))
-        .then(() => {
+      instrumentGeneration('kling', operation)
+        .then((response: any) => {
+          this.recordWalletTask(response);
           ElMessage.success(this.$t('kling.message.startTaskSuccess'));
         })
-        .catch((error) => {
-          const response = error?.response?.data;
-          if (response?.error?.code === ERROR_CODE_USED_UP) {
-            ElMessage.error(this.$t('kling.message.usedUp'));
-          } else {
-            ElMessage.error(this.$t('kling.message.startTaskFailed'));
-          }
-        })
+        .catch((error) => this.handleGenerationError(error))
         .finally(async () => {
           setTimeout(async () => {
             await this.onGetTasks();
@@ -252,12 +240,68 @@ export default defineComponent({
           }, 1000);
         });
     },
+    createPaymentOperation(
+      submit: (options: OperatorRequestOptions) => Promise<unknown>
+    ): Promise<unknown> | undefined {
+      if (!this.walletMode) {
+        if (!ensureLoggedIn()) return undefined;
+        const token = this.credential?.token;
+        return token ? submit({ token }) : undefined;
+      }
+      const wallet = this.getWalletContext();
+      if (!wallet) {
+        ElMessage.warning(this.$t('common.x402Scenario.connectWalletFirst'));
+        return undefined;
+      }
+      return submit({
+        mode: 'x402',
+        x402: {
+          wallet,
+          confirm: (quote) => this.confirmWalletPayment(quote),
+          identityToken: this.credential?.token
+        }
+      });
+    },
+    recordWalletTask(response: any) {
+      const taskId = response?.data?.task_id;
+      if (this.walletMode && !this.credential?.token && taskId && !this.walletTaskIds.includes(taskId)) {
+        this.walletTaskIds.unshift(taskId);
+      }
+    },
+    handleGenerationError(error: any) {
+      if (error instanceof X402PaymentCancelledError) return;
+      const response = error?.response?.data;
+      if (response?.error?.code === ERROR_CODE_USED_UP) {
+        ElMessage.error(this.$t('kling.message.usedUp'));
+      } else if (this.walletMode) {
+        ElMessage.error(`${this.$t('common.x402Scenario.paymentFailed')} ${error?.message || ''}`.trim());
+      } else {
+        ElMessage.error(this.$t('kling.message.startTaskFailed'));
+      }
+    },
+    getWalletContext(): X402WalletContext | undefined {
+      return resolveX402WalletContext((this as any).$wallet);
+    },
+    async confirmWalletPayment(quote: X402PaymentQuote): Promise<boolean> {
+      return ElMessageBox.confirm(
+        this.$t('common.x402Scenario.confirmPayment', { amount: quote.amountUsdc }),
+        this.$t('order.message.x402ConfirmTitle'),
+        {
+          confirmButtonText: this.$t('order.message.x402WalletPayCta'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          type: 'warning'
+        }
+      )
+        .then(() => true)
+        .catch(() => false);
+    },
     getTasksScrollElement(): HTMLElement | undefined {
       const panel = this.$refs.recentPanel as any;
       return panel?.getScrollElement?.();
     },
     async onTabChange(value: IKlingTaskType) {
       if (value === this.taskType) return;
+      if (value === 'motion') setScenarioPaymentMode('kling', 'credits');
       await this.$store.dispatch('kling/setTaskType', value);
       // taskType change clears tasks; re-fetch.
       await this.onGetTasks();
@@ -331,37 +375,16 @@ export default defineComponent({
         ElMessage.warning(this.$t('kling.message.talkingPhotoMissingInputs'));
         return;
       }
-      const request: IKlingTalkingPhotoRequest = {
-        image_url: cfg.image_url,
-        audio_url: cfg.audio_url,
-        // Upstream requires `model`; always send a supported default if unset.
-        model: cfg.model || KLING_TALKING_PHOTO_DEFAULT_MODEL,
-        mode: cfg.mode || KLING_TALKING_PHOTO_DEFAULT_MODE,
-        ...(cfg.prompt ? { prompt: cfg.prompt } : {}),
-        ...(cfg.duration ? { duration: cfg.duration } : {}),
-        async: true
-      };
-      if (!ensureLoggedIn()) {
-        return;
-      }
-      const token = this.credential?.token;
-      if (!token) {
-        console.error('no token specified');
-        return;
-      }
+      const request = buildKlingTalkingPhotoRequest(cfg);
+      const operation = this.createPaymentOperation((options) => klingOperator.talkingPhoto(request, options));
+      if (!operation) return;
       ElMessage.info(this.$t('kling.message.startingTask'));
-      instrumentGeneration('kling', klingOperator.talkingPhoto(request, { token }))
-        .then(() => {
+      instrumentGeneration('kling', operation)
+        .then((response: any) => {
+          this.recordWalletTask(response);
           ElMessage.success(this.$t('kling.message.startTaskSuccess'));
         })
-        .catch((error) => {
-          const response = error?.response?.data;
-          if (response?.error?.code === ERROR_CODE_USED_UP) {
-            ElMessage.error(this.$t('kling.message.usedUp'));
-          } else {
-            ElMessage.error(this.$t('kling.message.startTaskFailed'));
-          }
-        })
+        .catch((error) => this.handleGenerationError(error))
         .finally(async () => {
           setTimeout(async () => {
             await this.onGetTasks();

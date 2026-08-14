@@ -28,8 +28,8 @@
     "description": "입력 이미지의 레이블"
   },
   "name.referenceImages": {
-    "message": "Reference Images",
-    "description": "Label for reference images"
+    "message": "참조 이미지",
+    "description": "참조 이미지 레이블"
   },
   "name.required": {
     "message": "필수",
@@ -64,7 +64,7 @@
     "description": "프롬프트 입력에 대한 설명"
   },
   "description.model": {
-    "message": "Grok Imagine 모델을 선택하세요. grok-imagine-video는 텍스트와 이미지 기반 비디오를 지원하며; 1.5-preview는 이미지 기반 비디오만 지원합니다.",
+    "message": "Grok Imagine 모델을 선택하세요. :reverse는 빠른/표준 엔드포인트를 사용하고; :official은 공식 엔드포인트를 사용합니다(화질이 더 높고, 초당 요금이 부과됨). grok-imagine-video-1.5:official은 비디오 생성을 위한 이미지 전용입니다.",
     "description": "모델 선택에 대한 설명"
   },
   "description.ratio": {
@@ -76,16 +76,16 @@
     "description": "해상도에 대한 설명"
   },
   "description.duration": {
-    "message": "비디오 길이(초), 출력 초 수에 따라 요금이 청구됩니다.",
+    "message": "비디오 길이(초). 1.5-fast(리버스)는 6-30초를 지원하며, 길이에 따라 요금이 부과됩니다; 나머지 변형은 1-15초를 지원하며, 출력 초수에 따라 요금이 부과됩니다.",
     "description": "길이에 대한 설명"
   },
   "description.image": {
-    "message": "비디오 생성을 위한 선택적 입력 이미지. grok-imagine-video-1.5-preview는 필수입니다.",
+    "message": "비디오 생성을 위한 선택적 입력 이미지. grok-imagine-video-1.5:official은 필수입니다.",
     "description": "이미지 입력에 대한 설명"
   },
   "description.referenceImages": {
-    "message": "Optional reference images to guide the style or content of the generated video (grok-imagine-video only).",
-    "description": "Instructions for reference images"
+    "message": "비디오 생성의 스타일이나 내용을 안내하기 위한 선택적 참조 이미지.",
+    "description": "참조 이미지에 대한 설명"
   },
   "placeholder.prompt": {
     "message": "비디오를 설명하세요…",
@@ -95,13 +95,21 @@
     "message": "선택하세요",
     "description": "선택을 위한 플레이스홀더"
   },
-  "model.default": {
-    "message": "Grok Imagine 비디오",
-    "description": "기본 모델 레이블"
+  "model.fastReverse": {
+    "message": "Grok Imagine 비디오 1.5 Fast(빠름, 6–30초)",
+    "description": "1.5-fast 리버스 모델 레이블"
   },
-  "model.preview15": {
-    "message": "Grok Imagine 비디오 1.5(미리보기, 이미지 기반 비디오)",
-    "description": "1.5 미리보기 모델 레이블"
+  "model.reverse": {
+    "message": "Grok Imagine 비디오(표준, 1–15초)",
+    "description": "grok-imagine-video 리버스 모델 레이블"
+  },
+  "model.official": {
+    "message": "Grok Imagine 비디오 · 공식(더 높은 화질, 초당 요금 부과)",
+    "description": "grok-imagine-video 공식 모델 레이블"
+  },
+  "model.official15": {
+    "message": "Grok Imagine 비디오 1.5 · 공식(이미지 생성 비디오, 최대 1080p)",
+    "description": "1.5 공식 모델 레이블"
   },
   "button.upload": {
     "message": "업로드",
@@ -128,7 +136,7 @@
     "description": "업로드 초과 경고"
   },
   "message.uploadReferenceExceed": {
-    "message": "You can upload up to 4 reference images.",
+    "message": "최대 4개의 참조 이미지를 업로드할 수 있습니다.",
     "description": "Reference images upload exceed warning"
   },
   "message.uploadError": {

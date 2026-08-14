@@ -1,0 +1,142 @@
+{
+  "name.model": {
+    "message": "モデル",
+    "description": "動画生成モデル"
+  },
+  "name.prompt": {
+    "message": "プロンプト",
+    "description": "動画の内容、アクション、ショットとスタイルの説明"
+  },
+  "name.referenceImages": {
+    "message": "参考画像",
+    "description": "参考画像アップロードフィールド"
+  },
+  "name.referenceAudios": {
+    "message": "参考音声",
+    "description": "参考音声アップロードフィールド"
+  },
+  "name.ratio": {
+    "message": "アスペクト比",
+    "description": "出力動画のアスペクト比"
+  },
+  "name.duration": {
+    "message": "長さ（秒）",
+    "description": "出力動画の長さ"
+  },
+  "name.resolution": {
+    "message": "解像度",
+    "description": "出力動画の解像度"
+  },
+  "name.watermark": {
+    "message": "AIGC ウォーターマーク",
+    "description": "AIGC ロゴのウォーターマークを追加するかどうか"
+  },
+  "name.taskId": {
+    "message": "タスク ID",
+    "description": "タスクの識別子"
+  },
+  "name.failure": {
+    "message": "失敗",
+    "description": "タスクの失敗状態"
+  },
+  "name.failureReason": {
+    "message": "失敗理由",
+    "description": "タスクの失敗理由"
+  },
+  "placeholder.prompt": {
+    "message": "シーン、アクション、ショット、スタイルを説明してください（参考素材をアップロードするかどうかに関わらず、プロンプトは必須です）",
+    "description": "プロンプトのプレースホルダーテキスト"
+  },
+  "description.model": {
+    "message": "MiniMax H3動画生成モデル。",
+    "description": "モデルの説明"
+  },
+  "description.prompt": {
+    "message": "動画のシーン、アクション、カメラワーク、スタイルを説明してください。すべての生成モードで記入が必要です。",
+    "description": "プロンプトの説明"
+  },
+  "description.referenceImages": {
+    "message": "1〜9の画像をアップロードします。単一画像は初フレームとして、多数の画像は参考画像として使用されます。",
+    "description": "参考画像の説明"
+  },
+  "description.referenceAudios": {
+    "message": "1〜3の音声をアップロードします。参考音声を使用する場合は、少なくとも1つの参考画像を同時にアップロードする必要があります。",
+    "description": "参考音声の説明"
+  },
+  "description.resolution": {
+    "message": "出力動画の解像度を選択します。",
+    "description": "解像度の説明"
+  },
+  "description.ratio": {
+    "message": "横向きまたは縦向きのアスペクト比を選択します。",
+    "description": "アスペクト比の説明"
+  },
+  "description.duration": {
+    "message": "4〜15秒の動画の長さを設定します。",
+    "description": "長さの説明"
+  },
+  "description.watermark": {
+    "message": "動画にAIGCのロゴウォーターマークを追加します。",
+    "description": "ウォーターマークの説明"
+  },
+  "status.pending": {
+    "message": "保留中",
+    "description": "タスクの保留状態"
+  },
+  "status.processing": {
+    "message": "処理中",
+    "description": "タスクの処理状態"
+  },
+  "button.generate": {
+    "message": "動画を生成",
+    "description": "生成ボタン"
+  },
+  "button.upload": {
+    "message": "アップロード",
+    "description": "素材アップロードボタン"
+  },
+  "button.download": {
+    "message": "動画をダウンロード",
+    "description": "ダウンロードボタン"
+  },
+  "message.startingTask": {
+    "message": "タスクを起動しています...",
+    "description": "タスク開始のヒント"
+  },
+  "message.startTaskSuccess": {
+    "message": "生成タスクを正常に開始しました",
+    "description": "タスクの提出に成功しました"
+  },
+  "message.startTaskFailed": {
+    "message": "タスクの開始に失敗しました。後でもう一度お試しください",
+    "description": "タスクの提出に失敗しました"
+  },
+  "message.usedUp": {
+    "message": "残高が不足しています。チャージしてから続行してください",
+    "description": "残高不足のヒント"
+  },
+  "message.downloadVideo": {
+    "message": "この動画をダウンロード",
+    "description": "動画ダウンロードのヒント"
+  },
+  "message.promptRequired": {
+    "message": "すべての生成モードにプロンプトを入力する必要があります",
+    "description": "プロンプトが不足しています"
+  },
+  "message.textRatioRequired": {
+    "message": "文生動画は、adaptive以外の具体的なアスペクト比を選択する必要があります",
+    "description": "文生動画の比率が無効です"
+  },
+  "message.imageLimit": {
+    "message": "参考画像は最大9件まで",
+    "description": "画像の数が制限を超えています"
+  },
+  "message.audioLimit": {
+    "message": "参考音声は最大3件まで",
+    "description": "音声の数が制限を超えています"
+  },
+  "message.uploadError": {
+    "message": "アップロードに失敗しました。後でもう一度お試しください。",
+    "description": "素材アップロード失敗の提示"
+  }
+}

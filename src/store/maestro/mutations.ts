@@ -1,6 +1,8 @@
 import { IApplication, ICredential, IMaestroConfig, IMaestroTask, IService } from '@/models';
+import { normalizeMaestroLanguages } from '@/utils/maestroLanguages';
 import initialState from './state';
 import { IMaestroState } from './models';
+import { normalizeMaestroConfig } from '@/utils/maestro';
 
 export const resetAll = (state: IMaestroState): void => {
   Object.assign(state, initialState());
@@ -23,7 +25,11 @@ export const setApplications = (state: IMaestroState, payload: IApplication[]): 
 };
 
 export const setConfig = (state: IMaestroState, payload: IMaestroConfig): void => {
-  state.config = payload;
+  const normalized = normalizeMaestroConfig(payload);
+  state.config = {
+    ...normalized,
+    langs: normalizeMaestroLanguages(normalized.langs)
+  };
 };
 
 export const setTasksItems = (state: IMaestroState, payload: IMaestroTask[]): void => {

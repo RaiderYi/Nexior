@@ -8,7 +8,7 @@
     "description": "Oznaka za polje zvuka Fish TTS"
   },
   "name.model": {
-    "message": "Model",
+    "message": "Модел",
     "description": "Oznaka za polje modela Fish TTS"
   },
   "name.referenceId": {
@@ -26,6 +26,18 @@
   "name.elapsed": {
     "message": "Proteklo vreme",
     "description": "Oznaka za vreme trajanja Fish zadatka"
+  },
+  "name.failure": {
+    "message": "Генерација није успела",
+    "description": "Наслов за неуспешан задатак у Fish"
+  },
+  "name.failureReason": {
+    "message": "Разлог неуспеха",
+    "description": "Ознака за разлог неуспеха задатка у Fish"
+  },
+  "name.traceId": {
+    "message": "ID за праћење",
+    "description": "Ознака за ID праћења задатка у Fish"
   },
   "name.fishBot": {
     "message": "Fish Audio",
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Nema dostupnih zvučnih modela",
     "description": "Poruka kada je selektor zvukova Fish prazan"
+  },
+  "group.publicVoices": {
+    "message": "Јавна библиотека звукових тонова",
+    "description": "Наслов групе јавних звукових тонова у Fish изборнику звукова"
+  },
+  "message.searching": {
+    "message": "У току претрага…",
+    "description": "Порука за учитавање током удаљене претраге у Fish изборнику звукова"
+  },
+  "message.searchVoiceHint": {
+    "message": "Унесите кључне речи за претрагу јавних звукових тонова",
+    "description": "Порука за стање празне претраге у Fish изборнику звукова"
   },
   "name.voiceTitle": {
     "message": "Име",

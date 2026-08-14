@@ -1,0 +1,950 @@
+name: Release · iOS
+
+on:
+  push:
+    tags:
+      - 'ios-v*'
+  workflow_call:
+    inputs:
+      force:
+        description: 'Build even if this version already exists in TestFlight.'
+        required: false
+        default: false
+        type: boolean
+      auto_distribute_external:
+        description: 'Add the build to every external TestFlight group.'
+        required: false
+        default: true
+        type: boolean
+      auto_submit_review:
+        description: 'Submit the build for App Store review.'
+        required: false
+        default: false
+        type: boolean
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Build even if this version already exists in TestFlight (default: skip duplicates).'
+        required: false
+        default: false
+        type: boolean
+      auto_distribute_external:
+        description: 'After upload, automatically add the build to every external TestFlight group (Open testing).'
+        required: false
+        default: true
+        type: boolean
+      auto_submit_review:
+        description: 'After upload, attach the build to an App Store version and submit it for App Review.'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  # Include auto_submit_review so a testing build (04:07 auto-release-mobile,
+  # submit=false) and a production submit build (09:32 auto-production-mobile,
+  # submit=true) — both dispatched on --ref main — land in DIFFERENT groups and
+  # can never cancel each other. Same-type re-dispatches still coalesce.
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.auto_submit_review }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  preflight:
+    name: Preflight (skip if TestFlight already has this build)
+    runs-on: ubuntu-latest
+    outputs:
+      should-build: ${{ steps.check.outputs.should-build }}
+      version-name: ${{ steps.version.outputs.name }}
+      version-code: ${{ steps.version.outputs.code }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine version from package.json
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          IFS='.' read -r major minor patch <<< "$VERSION"
+          CODE=$((major * 10000 + minor * 100 + patch))
+          echo "name=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "code=$CODE"   >> "$GITHUB_OUTPUT"
+          echo "Version: $VERSION  Code: $CODE"
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Check TestFlight for existing build
+        id: check
+        env:
+          FORCE: ${{ inputs.force }}
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+          BUNDLE_ID: com.acedatacloud.nexior
+          BUILD_NUMBER: ${{ steps.version.outputs.code }}
+        # Queries App Store Connect for a build with CFBundleVersion == BUILD_NUMBER
+        # under our app and sets should-build=false if one already exists. On any
+        # API failure we fail-open (should-build=true) so a flaky preflight never
+        # blocks a release; the actual altool upload will surface the real error.
+        run: |
+          if [ "$FORCE" = "true" ]; then
+            echo "::notice::force=true → skipping TestFlight duplicate check."
+            echo "should-build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 -m pip install --quiet 'pyjwt[crypto]==2.10.1' requests
+          python3 <<'PY'
+          import base64, os, time, requests, jwt
+          try:
+              now = int(time.time())
+              key_pem = base64.b64decode(os.environ['ASC_KEY_BASE64']).decode()
+              token = jwt.encode(
+                  {'iss': os.environ['ASC_ISSUER_ID'], 'iat': now, 'exp': now + 1200, 'aud': 'appstoreconnect-v1'},
+                  key_pem,
+                  algorithm='ES256',
+                  headers={'kid': os.environ['ASC_KEY_ID'], 'typ': 'JWT'},
+              )
+              h = {'Authorization': f'Bearer {token}'}
+              bundle = os.environ['BUNDLE_ID']
+              build_num = os.environ['BUILD_NUMBER']
+              r = requests.get(
+                  'https://api.appstoreconnect.apple.com/v1/apps',
+                  headers=h, params={'filter[bundleId]': bundle}, timeout=30,
+              )
+              r.raise_for_status()
+              apps = r.json().get('data', [])
+              if not apps:
+                  print(f"::warning::No App Store Connect app for bundleId={bundle} — letting build proceed.")
+                  should = 'true'
+              else:
+                  app_id = apps[0]['id']
+                  r = requests.get(
+                      'https://api.appstoreconnect.apple.com/v1/builds',
+                      headers=h,
+                      params={'filter[app]': app_id, 'filter[version]': build_num, 'limit': 1},
+                      timeout=30,
+                  )
+                  r.raise_for_status()
+                  builds = r.json().get('data', [])
+                  if builds:
+                      print(f"::notice::TestFlight already has build {build_num} for {bundle} — skipping.")
+                      should = 'false'
+                  else:
+                      print(f"Build {build_num} not yet uploaded — proceeding.")
+                      should = 'true'
+          except Exception as e:
+              print(f"::warning::TestFlight preflight check failed ({e!r}) — letting build proceed.")
+              should = 'true'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'should-build={should}\n')
+          print(f'should-build={should}')
+          PY
+
+  build:
+    name: Build & Upload to TestFlight
+    needs: preflight
+    if: needs.preflight.outputs.should-build == 'true'
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 26+
+        # App Store Connect requires the iOS 26 SDK (Xcode 26+) for uploads
+        # starting April 2026. The macos-15 runner default is Xcode 16.4 which
+        # ships with the iOS 18.5 SDK and altool will reject the build with a
+        # 409 "SDK version issue" validation error.
+        run: |
+          LATEST_XCODE=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$LATEST_XCODE" ]; then
+            echo "::error::No Xcode 26+ found on runner. Available Xcodes:"
+            ls -d /Applications/Xcode_*.app
+            exit 1
+          fi
+          echo "Selecting $LATEST_XCODE"
+          sudo xcode-select -s "$LATEST_XCODE"
+          xcodebuild -version
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build web assets (iOS surface)
+        run: npm run build:ios
+
+      # Restore Pods BEFORE `cap sync` — cap sync runs `pod install` itself, so a
+      # cache restored after it would miss the dominant install. Key on the
+      # committed Podfile.lock; pod install reconciles if cap sync regenerates it.
+      - name: Cache CocoaPods
+        uses: actions/cache@v4
+        with:
+          path: ios/App/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('ios/App/Podfile.lock') }}
+          restore-keys: ${{ runner.os }}-pods-
+
+      - name: Sync web assets and native plugins to iOS project
+        # `cap sync` (not `cap copy`) regenerates the Podfile from the installed
+        # Capacitor plugins so native pods like CapacitorPushNotifications are present.
+        run: npx cap sync ios
+
+      - name: Install CocoaPods
+        working-directory: ios/App
+        run: pod install
+
+      - name: Set version in Xcode project
+        env:
+          VERSION_NAME: ${{ needs.preflight.outputs.version-name }}
+          VERSION_CODE: ${{ needs.preflight.outputs.version-code }}
+        run: |
+          cd ios/App
+          agvtool new-marketing-version "$VERSION_NAME"
+          agvtool new-version -all "$VERSION_CODE"
+
+      - name: Install Apple certificate and provisioning profile
+        env:
+          P12_BASE64: ${{ secrets.IOS_P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.IOS_P12_PASSWORD }}
+          PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+          KEYCHAIN_PASSWORD: ${{ github.run_id }}
+        run: |
+          # Create variables
+          CERTIFICATE_PATH=$RUNNER_TEMP/certificate.p12
+          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+          # Decode files
+          echo "$P12_BASE64" | base64 --decode > "$CERTIFICATE_PATH"
+          echo "$PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PP_PATH"
+
+          # Create temporary keychain
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+
+          # Import certificate
+          security import "$CERTIFICATE_PATH" -P "$P12_PASSWORD" -A -t cert -f pkcs12 \
+            -k "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" \
+            "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+          # Install provisioning profile
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          cp "$PP_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/
+
+      - name: Build archive
+        working-directory: ios/App
+        run: |
+          xcodebuild -workspace App.xcworkspace \
+            -scheme App \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath $RUNNER_TEMP/App.xcarchive \
+            archive \
+            CODE_SIGN_STYLE=Manual \
+            PROVISIONING_PROFILE_SPECIFIER="${{ secrets.IOS_PROVISIONING_PROFILE_NAME }}" \
+            CODE_SIGN_IDENTITY="Apple Distribution" \
+            DEVELOPMENT_TEAM="${{ secrets.IOS_TEAM_ID }}"
+
+      - name: Create ExportOptions.plist
+        run: |
+          cat > $RUNNER_TEMP/ExportOptions.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>app-store-connect</string>
+              <key>teamID</key>
+              <string>${{ secrets.IOS_TEAM_ID }}</string>
+              <key>signingStyle</key>
+              <string>manual</string>
+              <key>provisioningProfiles</key>
+              <dict>
+                  <key>com.acedatacloud.nexior</key>
+                  <string>${{ secrets.IOS_PROVISIONING_PROFILE_NAME }}</string>
+              </dict>
+              <key>uploadBitcode</key>
+              <false/>
+              <key>uploadSymbols</key>
+              <true/>
+          </dict>
+          </plist>
+          EOF
+
+      - name: Export IPA
+        run: |
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/App.xcarchive \
+            -exportOptionsPlist $RUNNER_TEMP/ExportOptions.plist \
+            -exportPath $RUNNER_TEMP/export
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: nexior-${{ needs.preflight.outputs.version-name }}.ipa
+          path: ${{ runner.temp }}/export/*.ipa
+
+      - name: Upload to TestFlight
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+        run: |
+          # Decode API key
+          mkdir -p ~/private_keys
+          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode \
+            > ~/private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
+
+          # Upload via xcrun
+          xcrun altool --upload-app \
+            --type ios \
+            --file "$(find $RUNNER_TEMP/export -name '*.ipa')" \
+            --apiKey "$APP_STORE_CONNECT_API_KEY_ID" \
+            --apiIssuer "$APP_STORE_CONNECT_API_ISSUER_ID"
+
+      - name: Clean up keychain
+        if: always()
+        run: |
+          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db 2>/dev/null || true
+
+  distribute:
+    name: Distribute & Submit (TestFlight + Review)
+    needs: [preflight, build]
+    # Run when preflight finished (either the build job uploaded a fresh binary
+    # or preflight detected an existing TF build and skipped the rebuild).
+    # Self-skip when both auto-toggles are disabled on a manual dispatch.
+    if: >-
+      always()
+      && needs.preflight.result == 'success'
+      && (needs.build.result == 'success' || needs.build.result == 'skipped')
+      && (inputs.auto_distribute_external || github.event_name == 'push' || inputs.auto_submit_review)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install ASC API client deps
+        run: python -m pip install --quiet 'pyjwt[crypto]==2.10.1' requests
+
+      - name: Wait for TestFlight processing
+        id: tf_wait
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+          BUNDLE_ID: com.acedatacloud.nexior
+          VERSION_NAME: ${{ needs.preflight.outputs.version-name }}
+          BUILD_NUMBER: ${{ needs.preflight.outputs.version-code }}
+        # ASC takes ~5–20 min to finish processing an uploaded build before
+        # it can be added to a beta group or attached to an App Store version.
+        # Polls every 30s for up to 25 min, then sets build-id as a step output.
+        run: |
+          python <<'PY'
+          import base64, json, os, sys, time, requests, jwt
+
+          key_id = os.environ['ASC_KEY_ID']
+          issuer = os.environ['ASC_ISSUER_ID']
+          private_key = base64.b64decode(os.environ['ASC_KEY_BASE64']).decode('utf-8')
+          bundle_id = os.environ['BUNDLE_ID']
+          version_name = os.environ['VERSION_NAME']
+          build_number = os.environ['BUILD_NUMBER']
+
+          def asc_token():
+              now = int(time.time())
+              return jwt.encode(
+                  {'iss': issuer, 'iat': now, 'exp': now + 1200, 'aud': 'appstoreconnect-v1'},
+                  private_key, algorithm='ES256',
+                  headers={'kid': key_id, 'typ': 'JWT'},
+              )
+
+          def H():
+              return {'Authorization': f'Bearer {asc_token()}', 'Content-Type': 'application/json'}
+
+          apps = requests.get(
+              'https://api.appstoreconnect.apple.com/v1/apps',
+              params={'filter[bundleId]': bundle_id, 'limit': 1},
+              headers=H(), timeout=30,
+          )
+          apps.raise_for_status()
+          app_data = apps.json().get('data') or []
+          if not app_data:
+              sys.exit(f'::error::No ASC app found for bundle {bundle_id}')
+          app_id = app_data[0]['id']
+          print(f'::notice::App ID: {app_id}')
+
+          deadline = time.time() + 25 * 60
+          build_id = None
+          last_state = None
+          while time.time() < deadline:
+              r = requests.get(
+                  'https://api.appstoreconnect.apple.com/v1/builds',
+                  params={
+                      'filter[app]': app_id,
+                      'filter[version]': build_number,
+                      'filter[preReleaseVersion.version]': version_name,
+                      'limit': 5,
+                      'sort': '-uploadedDate',
+                  },
+                  headers=H(), timeout=30,
+              )
+              if r.status_code == 200:
+                  builds = r.json().get('data') or []
+                  if builds:
+                      b = builds[0]
+                      state = b['attributes'].get('processingState')
+                      if state != last_state:
+                          print(f'Build {b["id"]} state={state}')
+                          last_state = state
+                      if state == 'VALID':
+                          build_id = b['id']
+                          break
+                      if state == 'FAILED' or state == 'INVALID':
+                          sys.exit(f'::error::Build processing failed (state={state})')
+              else:
+                  print(f'::warning::ASC /v1/builds {r.status_code}: {r.text[:200]}')
+              time.sleep(30)
+
+          if not build_id:
+              print('::warning::Timed out waiting for build to become VALID. Subsequent steps will skip.')
+              sys.exit(0)
+
+          out = os.environ['GITHUB_OUTPUT']
+          with open(out, 'a') as fh:
+              fh.write(f'app-id={app_id}\n')
+              fh.write(f'build-id={build_id}\n')
+          print(f'::notice::Build {build_id} (v{version_name} build {build_number}) ready for distribution.')
+          PY
+
+      - name: Submit build for Beta App Review (external testing)
+        if: ${{ steps.tf_wait.outputs.build-id != '' && (inputs.auto_distribute_external || github.event_name == 'push') }}
+        continue-on-error: true
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+          BUILD_ID: ${{ steps.tf_wait.outputs.build-id }}
+          VERSION_NAME: ${{ needs.preflight.outputs.version-name }}
+          BUILD_NUMBER: ${{ needs.preflight.outputs.version-code }}
+        # External TestFlight testers only receive a build after it passes Beta
+        # App Review — and a build is NOT submitted for that review just by adding
+        # it to an external group. Without this step every build sits forever in
+        # the "Ready to Submit" state and newly-invited external testers keep
+        # getting the last *approved* build instead of the latest upload.
+        #
+        # Beta review rejects a submission unless two prerequisites are met, so we
+        # set them first (idempotently):
+        #   1) Export-compliance answer (usesNonExemptEncryption) on the build.
+        #   2) A "What to Test" localization (betaBuildLocalizations.whatsNew).
+        # App-level Beta App Review details (contact info / demo account) are a
+        # one-time manual setup in App Store Connect; if they're missing the
+        # submission call below surfaces Apple's error (continue-on-error keeps
+        # the run green so a later same-version build can still auto-distribute).
+        #
+        # NOTE: Apple only reviews the FIRST build of each marketing version.
+        # Subsequent builds of the same version auto-approve, so the POST below
+        # returning 409 ("already submitted/approved") is the normal happy path.
+        run: |
+          python <<'PY'
+          import base64, os, time, requests, jwt
+
+          key_id = os.environ['ASC_KEY_ID']
+          issuer = os.environ['ASC_ISSUER_ID']
+          private_key = base64.b64decode(os.environ['ASC_KEY_BASE64']).decode('utf-8')
+          build_id = os.environ['BUILD_ID']
+          version_name = os.environ['VERSION_NAME']
+          build_number = os.environ['BUILD_NUMBER']
+
+          def H():
+              now = int(time.time())
+              t = jwt.encode(
+                  {'iss': issuer, 'iat': now, 'exp': now + 1200, 'aud': 'appstoreconnect-v1'},
+                  private_key, algorithm='ES256',
+                  headers={'kid': key_id, 'typ': 'JWT'},
+              )
+              return {'Authorization': f'Bearer {t}', 'Content-Type': 'application/json'}
+
+          # 1) Export compliance. A null usesNonExemptEncryption blocks beta
+          # review with MISSING_EXPORT_COMPLIANCE. We declare "no non-exempt
+          # encryption" (standard HTTPS-only is exempt). If the app ever adds
+          # non-exempt crypto, set ITSAppUsesNonExemptEncryption in Info.plist
+          # and this step becomes a no-op.
+          r = requests.get(
+              f'https://api.appstoreconnect.apple.com/v1/builds/{build_id}',
+              headers=H(), timeout=30,
+          )
+          uses_enc = None
+          if r.status_code == 200:
+              uses_enc = (r.json().get('data') or {}).get('attributes', {}).get('usesNonExemptEncryption')
+          if uses_enc is None:
+              p = requests.patch(
+                  f'https://api.appstoreconnect.apple.com/v1/builds/{build_id}',
+                  json={'data': {'type': 'builds', 'id': build_id,
+                                 'attributes': {'usesNonExemptEncryption': False}}},
+                  headers=H(), timeout=30,
+              )
+              if p.status_code in (200, 201):
+                  print('::notice::Set export compliance (usesNonExemptEncryption=false).')
+              else:
+                  print(f'::warning::Could not set export compliance: {p.status_code} {p.text[:200]}')
+          else:
+              print(f'Export compliance already set (usesNonExemptEncryption={uses_enc}).')
+
+          # 2) "What to Test" — Apple requires a non-empty whatsNew for external
+          # review. Reuse the en-US localization if present, else create it.
+          whats_new = f'v{version_name} ({build_number}) — bug fixes and improvements.'
+          loc = requests.get(
+              f'https://api.appstoreconnect.apple.com/v1/builds/{build_id}/betaBuildLocalizations',
+              params={'limit': 50}, headers=H(), timeout=30,
+          )
+          existing = loc.json().get('data') or [] if loc.status_code == 200 else []
+          en = next((l for l in existing if l['attributes'].get('locale', '').lower().startswith('en')), None)
+          if en is None:
+              c = requests.post(
+                  'https://api.appstoreconnect.apple.com/v1/betaBuildLocalizations',
+                  json={'data': {'type': 'betaBuildLocalizations',
+                                 'attributes': {'locale': 'en-US', 'whatsNew': whats_new},
+                                 'relationships': {'build': {'data': {'type': 'builds', 'id': build_id}}}}},
+                  headers=H(), timeout=30,
+              )
+              print(f'::notice::Created en-US What-to-Test ({c.status_code}).'
+                    if c.status_code in (200, 201)
+                    else f'::warning::Could not create What-to-Test: {c.status_code} {c.text[:200]}')
+          elif not (en['attributes'].get('whatsNew') or '').strip():
+              requests.patch(
+                  f'https://api.appstoreconnect.apple.com/v1/betaBuildLocalizations/{en["id"]}',
+                  json={'data': {'type': 'betaBuildLocalizations', 'id': en['id'],
+                                 'attributes': {'whatsNew': whats_new}}},
+                  headers=H(), timeout=30,
+              )
+              print('::notice::Filled empty en-US What-to-Test.')
+          else:
+              print('What-to-Test already present.')
+
+          # 3) Submit for Beta App Review. This is the step that was missing —
+          # it moves the build out of "Ready to Submit" into beta review and is
+          # what actually delivers it to external testers once approved.
+          s = requests.post(
+              'https://api.appstoreconnect.apple.com/v1/betaAppReviewSubmissions',
+              json={'data': {'type': 'betaAppReviewSubmissions',
+                             'relationships': {'build': {'data': {'type': 'builds', 'id': build_id}}}}},
+              headers=H(), timeout=30,
+          )
+          if s.status_code in (200, 201):
+              print(f'::notice::Submitted build {build_id} for Beta App Review.')
+          elif s.status_code == 409:
+              # Already submitted, already in review, or auto-approved as a
+              # follow-up build of an already-reviewed version. All fine.
+              print(f'Build already submitted/approved for beta review (409). {s.text[:200]}')
+          else:
+              print(f'::warning::Beta App Review submission failed: {s.status_code} {s.text[:300]}')
+          PY
+
+      - name: Distribute to external TestFlight groups
+        if: ${{ steps.tf_wait.outputs.build-id != '' && (inputs.auto_distribute_external || github.event_name == 'push') }}
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+          APP_ID: ${{ steps.tf_wait.outputs.app-id }}
+          BUILD_ID: ${{ steps.tf_wait.outputs.build-id }}
+        # Attaches the just-uploaded build to every external beta group on the
+        # app (Open testing). Internal groups receive the build automatically
+        # so we only target externally-shared groups here. Tolerates groups
+        # that already include this build (409 conflicts are ignored).
+        run: |
+          python <<'PY'
+          import base64, os, time, requests, jwt
+
+          key_id = os.environ['ASC_KEY_ID']
+          issuer = os.environ['ASC_ISSUER_ID']
+          private_key = base64.b64decode(os.environ['ASC_KEY_BASE64']).decode('utf-8')
+          app_id = os.environ['APP_ID']
+          build_id = os.environ['BUILD_ID']
+
+          def H():
+              now = int(time.time())
+              t = jwt.encode(
+                  {'iss': issuer, 'iat': now, 'exp': now + 1200, 'aud': 'appstoreconnect-v1'},
+                  private_key, algorithm='ES256',
+                  headers={'kid': key_id, 'typ': 'JWT'},
+              )
+              return {'Authorization': f'Bearer {t}', 'Content-Type': 'application/json'}
+
+          groups, next_url, params = [], (
+              f'https://api.appstoreconnect.apple.com/v1/apps/{app_id}/betaGroups'
+          ), {'limit': 200}
+          while next_url:
+              r = requests.get(next_url, params=params, headers=H(), timeout=30)
+              r.raise_for_status()
+              payload = r.json()
+              groups.extend(payload.get('data') or [])
+              next_url = (payload.get('links') or {}).get('next')
+              params = None
+
+          external = [g for g in groups if not g['attributes'].get('isInternalGroup', True)]
+          if not external:
+              print('::warning::No external TestFlight groups configured. Skipping.')
+          for g in external:
+              gid = g['id']
+              name = g['attributes'].get('name')
+              payload = {'data': [{'type': 'builds', 'id': build_id}]}
+              r = requests.post(
+                  f'https://api.appstoreconnect.apple.com/v1/betaGroups/{gid}/relationships/builds',
+                  json=payload, headers=H(), timeout=30,
+              )
+              if r.status_code in (200, 204):
+                  print(f'::notice::Added build {build_id} to group "{name}".')
+              elif r.status_code == 409:
+                  print(f'Group "{name}" already includes this build. Skipped.')
+              else:
+                  print(f'::warning::Failed to add to "{name}": {r.status_code} {r.text[:200]}')
+          PY
+
+      - name: Submit build for App Store review
+        if: ${{ steps.tf_wait.outputs.build-id != '' && (inputs.auto_submit_review || github.event_name == 'push') }}
+        continue-on-error: true
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_KEY_BASE64 }}
+          APP_ID: ${{ steps.tf_wait.outputs.app-id }}
+          BUILD_ID: ${{ steps.tf_wait.outputs.build-id }}
+          VERSION_NAME: ${{ needs.preflight.outputs.version-name }}
+        # Reuses any in-flight editable App Store version that matches our
+        # versionString (or creates one), attaches the new build, then files a
+        # review submission via the modern reviewSubmissions API. continue-on-error
+        # because review submission can fail for legitimate reasons (missing
+        # screenshots, no localized release notes, etc.) and we don't want
+        # those to fail the whole workflow — they require manual fixup.
+        run: |
+          python <<'PY'
+          import base64, os, sys, time, requests, jwt
+
+          key_id = os.environ['ASC_KEY_ID']
+          issuer = os.environ['ASC_ISSUER_ID']
+          private_key = base64.b64decode(os.environ['ASC_KEY_BASE64']).decode('utf-8')
+          app_id = os.environ['APP_ID']
+          build_id = os.environ['BUILD_ID']
+          version_name = os.environ['VERSION_NAME']
+
+          def H():
+              now = int(time.time())
+              t = jwt.encode(
+                  {'iss': issuer, 'iat': now, 'exp': now + 1200, 'aud': 'appstoreconnect-v1'},
+                  private_key, algorithm='ES256',
+                  headers={'kid': key_id, 'typ': 'JWT'},
+              )
+              return {'Authorization': f'Bearer {t}', 'Content-Type': 'application/json'}
+
+          def die_soft(msg):
+              print(f'::warning::{msg}')
+              sys.exit(0)
+
+          def die_hard(msg):
+              # Visible red step (the step is continue-on-error, so the job still
+              # proceeds) — used for real submit-path failures so a broken App
+              # Store submit can never masquerade as green again.
+              print(f'::error::{msg}')
+              sys.exit(1)
+
+          def all_pages(url, params):
+              out = []
+              while url:
+                  r = requests.get(url, params=params, headers=H(), timeout=30)
+                  if r.status_code != 200:
+                      print(f'::warning::List failed ({r.status_code}) for {url}: {r.text[:200]}')
+                      break
+                  j = r.json()
+                  out.extend(j.get('data') or [])
+                  url = (j.get('links') or {}).get('next')
+                  params = None
+              return out
+
+          # 1) Find the single in-progress (editable) iOS App Store version.
+          # Apple allows only ONE editable version at a time, so we must NOT
+          # filter by versionString: a stale editable version left at an older
+          # number (e.g. a previous day's 3.301.2 stuck in PREPARE_FOR_SUBMISSION)
+          # would be missed, we'd try to create today's number, and Apple would
+          # 409 "You cannot create a new version of the App in the current state"
+          # — silently freezing every future submission. Instead we adopt the
+          # existing editable version and rename it to today's versionString.
+          r = requests.get(
+              f'https://api.appstoreconnect.apple.com/v1/apps/{app_id}/appStoreVersions',
+              params={'filter[platform]': 'IOS', 'limit': 50},
+              headers=H(), timeout=30,
+          )
+          if r.status_code != 200:
+              die_hard(f'Failed to list App Store versions: {r.status_code} {r.text[:400]}')
+          versions = r.json().get('data') or []
+
+          # States we can safely adopt + edit (rename / re-attach a build).
+          adopt_states = {
+              'PREPARE_FOR_SUBMISSION', 'DEVELOPER_REJECTED', 'METADATA_REJECTED',
+              'REJECTED', 'INVALID_BINARY',
+          }
+          # States meaning a submission is already pending — must NOT be touched:
+          # renaming/re-attaching an in-review version is rejected by Apple and
+          # would disrupt the pending release. Bail (the gated cron already skips
+          # these; this also protects the ungated manual path).
+          inflight_states = {
+              'WAITING_FOR_REVIEW', 'IN_REVIEW', 'PENDING_DEVELOPER_RELEASE',
+              'PENDING_APPLE_RELEASE', 'PROCESSING_FOR_APP_STORE',
+          }
+          live_states = {
+              'READY_FOR_SALE', 'REPLACED_WITH_NEW_VERSION',
+              'DEVELOPER_REMOVED_FROM_SALE',
+          }
+          # Apple allows only ONE non-live (editable/in-flight) version. Collect
+          # them and pick deterministically (prefer PREPARE_FOR_SUBMISSION, then
+          # highest versionString) so multiple leftovers can't make us adopt the
+          # wrong one.
+          def vkey(vs):
+              try:
+                  return tuple(int(x) for x in (str(vs).split('.') + ['0', '0', '0'])[:3])
+              except Exception:
+                  return (0, 0, 0)
+
+          non_live = [v for v in versions
+                      if v['attributes'].get('appStoreState') not in live_states]
+          for v in non_live:
+              st = v['attributes'].get('appStoreState')
+              if st in inflight_states:
+                  die_soft(f"version {v['attributes'].get('versionString')} is {st} "
+                           f"(submission already pending) — not submitting a new build")
+
+          candidates = [v for v in non_live
+                        if v['attributes'].get('appStoreState') in adopt_states]
+          candidates.sort(
+              key=lambda v: (
+                  0 if v['attributes'].get('appStoreState') == 'PREPARE_FOR_SUBMISSION' else 1,
+                  tuple(-x for x in vkey(v['attributes'].get('versionString'))),
+              )
+          )
+          version_id, version_state, version_string = None, None, None
+          if candidates:
+              v = candidates[0]
+              version_id = v['id']
+              version_state = v['attributes'].get('appStoreState')
+              version_string = v['attributes'].get('versionString')
+              print(f'Reusing editable App Store version {version_id} '
+                    f'(v{version_string}, state={version_state}).')
+
+          # 2) No editable version yet → create one at today's versionString.
+          if not version_id:
+              create_payload = {
+                  'data': {
+                      'type': 'appStoreVersions',
+                      'attributes': {'platform': 'IOS', 'versionString': version_name},
+                      'relationships': {
+                          'app': {'data': {'type': 'apps', 'id': app_id}},
+                          'build': {'data': {'type': 'builds', 'id': build_id}},
+                      },
+                  }
+              }
+              c = requests.post(
+                  'https://api.appstoreconnect.apple.com/v1/appStoreVersions',
+                  json=create_payload, headers=H(), timeout=30,
+              )
+              if c.status_code not in (200, 201):
+                  die_hard(f'Failed to create App Store version: {c.status_code} {c.text[:400]}')
+              version_id = c.json()['data']['id']
+              print(f'::notice::Created App Store version {version_id} (v{version_name}).')
+          else:
+              # Adopt the existing editable version: bump its number to today's
+              # release if it lags, then attach our build.
+              if version_string != version_name:
+                  u = requests.patch(
+                      f'https://api.appstoreconnect.apple.com/v1/appStoreVersions/{version_id}',
+                      json={'data': {'type': 'appStoreVersions', 'id': version_id,
+                                     'attributes': {'versionString': version_name}}},
+                      headers=H(), timeout=30,
+                  )
+                  if u.status_code >= 400:
+                      die_hard(f'Failed to rename version {version_string}->{version_name}: '
+                               f'{u.status_code} {u.text[:400]}')
+                  print(f'::notice::Renamed App Store version {version_id} '
+                        f'{version_string} -> {version_name}.')
+              a = requests.patch(
+                  f'https://api.appstoreconnect.apple.com/v1/appStoreVersions/{version_id}/relationships/build',
+                  json={'data': {'type': 'builds', 'id': build_id}},
+                  headers=H(), timeout=30,
+              )
+              if a.status_code >= 400:
+                  die_hard(f'Failed to attach build to version: {a.status_code} {a.text[:400]}')
+              print(f'::notice::Attached build {build_id} to App Store version {version_id}.')
+
+          # 2.5) Release notes ("What's New") are REQUIRED for every version
+          # update. An empty whatsNew silently blocks the submit: the version
+          # never leaves PREPARE_FOR_SUBMISSION, the reviewSubmissionItem POST
+          # fails, and empty draft submissions pile up. Backfill any localization
+          # whose notes are empty (never overwrite manually-written notes).
+          default_whats_new = (
+              '\u2022 Performance improvements and bug fixes.\n'
+              '\u2022 Smoother, more reliable AI chat, image, video and music generation.'
+          )
+          lr = requests.get(
+              f'https://api.appstoreconnect.apple.com/v1/appStoreVersions/{version_id}/appStoreVersionLocalizations',
+              params={'limit': 200}, headers=H(), timeout=30,
+          )
+          if lr.status_code == 200:
+              for loc in lr.json().get('data', []):
+                  if (loc['attributes'].get('whatsNew') or '').strip():
+                      continue
+                  locale = loc['attributes'].get('locale')
+                  pw = requests.patch(
+                      f"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/{loc['id']}",
+                      json={'data': {'type': 'appStoreVersionLocalizations', 'id': loc['id'],
+                                     'attributes': {'whatsNew': default_whats_new}}},
+                      headers=H(), timeout=30,
+                  )
+                  if pw.status_code >= 400:
+                      print(f'::warning::Failed to set release notes for {locale}: '
+                            f'{pw.status_code} {pw.text[:200]}')
+                  else:
+                      print(f'::notice::Set default release notes for {locale}.')
+          else:
+              print(f'::warning::Could not list version localizations: '
+                    f'{lr.status_code} {lr.text[:200]}')
+
+          # 2.6) Delete ONLY empty stale drafts (READY_FOR_REVIEW with zero
+          # items). The prior bug created empty drafts that block every new
+          # submit with 409; but a draft that already HAS items may be a
+          # legitimate manual/in-progress submission we must never destroy.
+          # Paginate so a large backlog is fully cleared.
+          drafts = all_pages(
+              'https://api.appstoreconnect.apple.com/v1/reviewSubmissions',
+              [('filter[app]', app_id), ('filter[platform]', 'IOS'),
+               ('filter[state]', 'READY_FOR_REVIEW'), ('include', 'items'),
+               ('limit', 200)],
+          )
+          for s in drafts:
+              rel_items = ((s.get('relationships') or {}).get('items') or {}).get('data') or []
+              if rel_items:
+                  print(f"Keeping draft {s['id']} — has {len(rel_items)} item(s).")
+                  continue
+              ds = requests.delete(
+                  f"https://api.appstoreconnect.apple.com/v1/reviewSubmissions/{s['id']}",
+                  headers=H(), timeout=30,
+              )
+              print(f"Removed empty stale draft {s['id']} -> {ds.status_code}")
+
+          # 3) Open a review submission for this app (one open submission per app/platform).
+          sub_payload = {
+              'data': {
+                  'type': 'reviewSubmissions',
+                  'attributes': {'platform': 'IOS'},
+                  'relationships': {'app': {'data': {'type': 'apps', 'id': app_id}}},
+              }
+          }
+          sr = requests.post(
+              'https://api.appstoreconnect.apple.com/v1/reviewSubmissions',
+              json=sub_payload, headers=H(), timeout=30,
+          )
+          if sr.status_code == 409:
+              # An open submission already exists; find it. Apple's API expects
+              # repeated filter[state] params, not a single comma-joined value.
+              ex = requests.get(
+                  'https://api.appstoreconnect.apple.com/v1/reviewSubmissions',
+                  params=[
+                      ('filter[app]', app_id),
+                      ('filter[platform]', 'IOS'),
+                      ('filter[state]', 'READY_FOR_REVIEW'),
+                      ('filter[state]', 'WAITING_FOR_REVIEW'),
+                      ('filter[state]', 'IN_REVIEW'),
+                      ('filter[state]', 'UNRESOLVED_ISSUES'),
+                      ('filter[state]', 'COMPLETING'),
+                  ],
+                  headers=H(), timeout=30,
+              )
+              if ex.status_code != 200 or not (ex.json().get('data') or []):
+                  die_hard(f'Review submission exists but cannot list it: {ex.status_code} {ex.text[:400]}')
+              submission_id = ex.json()['data'][0]['id']
+              print(f'Reusing existing review submission {submission_id}.')
+          elif sr.status_code in (200, 201):
+              submission_id = sr.json()['data']['id']
+              print(f'::notice::Created review submission {submission_id}.')
+          else:
+              die_hard(f'Failed to create review submission: {sr.status_code} {sr.text[:400]}')
+
+          # 4) Add our App Store version as a submission item.
+          item_payload = {
+              'data': {
+                  'type': 'reviewSubmissionItems',
+                  'relationships': {
+                      'reviewSubmission': {'data': {'type': 'reviewSubmissions', 'id': submission_id}},
+                      'appStoreVersion': {'data': {'type': 'appStoreVersions', 'id': version_id}},
+                  },
+              }
+          }
+          it = requests.post(
+              'https://api.appstoreconnect.apple.com/v1/reviewSubmissionItems',
+              json=item_payload, headers=H(), timeout=30,
+          )
+          if it.status_code == 409:
+              print(f'Version {version_id} already in submission. Skipped.')
+          elif it.status_code not in (200, 201):
+              die_hard(f'Failed to add submission item: {it.status_code} {it.text[:400]}')
+          else:
+              print(f'::notice::Added version {version_id} to submission {submission_id}.')
+
+          # 5) Submit.
+          fin = requests.patch(
+              f'https://api.appstoreconnect.apple.com/v1/reviewSubmissions/{submission_id}',
+              json={'data': {'type': 'reviewSubmissions', 'id': submission_id, 'attributes': {'submitted': True}}},
+              headers=H(), timeout=30,
+          )
+          if fin.status_code >= 400:
+              die_hard(f'Failed to submit for review: {fin.status_code} {fin.text[:400]}')
+
+          # 6) Verify the submission actually left READY_FOR_REVIEW. The submit
+          # PATCH above (2xx) is the authority; this is a best-effort confirm.
+          # State transition is eventually consistent, so poll a few times and
+          # treat a transient/unknown read as neutral — only warn if it is still
+          # DEFINITIVELY READY_FOR_REVIEW (missing metadata/screenshots froze
+          # past releases silently).
+          submitted_states = {
+              'WAITING_FOR_REVIEW', 'IN_REVIEW', 'UNRESOLVED_ISSUES', 'COMPLETING',
+          }
+          final_state = None
+          for attempt in range(3):
+              chk = requests.get(
+                  f'https://api.appstoreconnect.apple.com/v1/reviewSubmissions/{submission_id}',
+                  headers=H(), timeout=30,
+              )
+              if chk.status_code == 200:
+                  final_state = (chk.json().get('data', {}).get('attributes', {}) or {}).get('state')
+                  if final_state in submitted_states:
+                      break
+              if attempt < 2:
+                  time.sleep(5)
+          if final_state == 'READY_FOR_REVIEW':
+              # Hard-fail (visible red step) instead of a swallowed warning. A
+              # silent "still READY_FOR_REVIEW" is exactly how iOS releases froze
+              # unnoticed for days. continue-on-error keeps TestFlight intact.
+              print(f'::error::Review submission {submission_id} did NOT enter review '
+                    f'(still READY_FOR_REVIEW) — App Store submit FAILED. Check required '
+                    f'metadata (release notes / screenshots / age-rating) in App Store Connect.')
+              sys.exit(1)
+          elif final_state in submitted_states:
+              print(f'::notice::Submitted review {submission_id} — state now {final_state}.')
+          else:
+              print(f'::notice::Submitted review {submission_id} '
+                    f'(post-submit state unconfirmed: {final_state}).')
+          PY

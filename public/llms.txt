@@ -17,7 +17,6 @@ Ace Data Cloud AI Hub (hub.acedata.cloud) is a consumer-facing web application t
 - [Midjourney](https://hub.acedata.cloud/midjourney): Generate stunning images from text prompts
 - [Flux](https://hub.acedata.cloud/flux): Fast, high-quality image generation
 - [QR Art](https://hub.acedata.cloud/qrart): Generate artistic QR codes with AI
-- [AI Headshots](https://hub.acedata.cloud/headshots): Professional AI-generated headshots
 - [NanoBanana](https://hub.acedata.cloud/nanobanana): Image generation and editing via Gemini
 - [Seedream](https://hub.acedata.cloud/seedream): Image generation by ByteDance
 
@@ -30,6 +29,7 @@ Ace Data Cloud AI Hub (hub.acedata.cloud) is a consumer-facing web application t
 - [Kling](https://hub.acedata.cloud/kling): Video generation by Kuaishou
 - [Pixverse](https://hub.acedata.cloud/pixverse): Video generation from text and images
 - [Hailuo](https://hub.acedata.cloud/hailuo): Video generation by MiniMax
+- [MiniMax H3](https://studio.acedata.cloud/minimax): Multimodal video generation from text, images, and audio
 - [Seedance](https://hub.acedata.cloud/seedance): Dance video generation by ByteDance
 
 ## AI Music

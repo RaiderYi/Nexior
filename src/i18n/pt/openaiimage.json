@@ -29,7 +29,7 @@
   },
   "name.status": {
     "message": "Status",
-    "description": "Status da tarefa"
+    "description": "Estado da tarefa"
   },
   "name.traceId": {
     "message": "ID de Rastreamento",
@@ -50,6 +50,10 @@
   "name.size": {
     "message": "Tamanho",
     "description": "Tamanho da imagem de saída"
+  },
+  "size.auto": {
+    "message": "Automático",
+    "description": "Opção de tamanho: automático, onde o modelo escolhe a proporção adequada de largura e altura com base nas palavras-chave."
   },
   "description.size": {
     "message": "Tamanho de saída para gerar a imagem, valores comuns: 1024x1024, 1536x1024, 1024x1536.",
@@ -112,7 +116,7 @@
     "description": "Descrição do parâmetro model"
   },
   "description.imageUrls": {
-    "message": "Envie de 1 a 5 imagens de referência para entrar no modo de edição.",
+    "message": "Envie de 1 a 16 imagens de referência para entrar no modo de edição.",
     "description": "Descrição do parâmetro image_urls"
   },
   "status.pending": {
@@ -156,7 +160,7 @@
     "description": "Mensagem de créditos esgotados"
   },
   "message.uploadImageExceed": {
-    "message": "Máximo de 5 imagens permitidas",
+    "message": "Máximo de {count} imagens permitidas",
     "description": "Número de imagens excedeu o limite"
   },
   "message.uploadImageError": {

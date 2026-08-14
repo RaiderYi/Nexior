@@ -12,7 +12,7 @@
         round
         @click="onGenerateLyrics"
       >
-        <font-awesome-icon v-if="!generatingLyrics" icon="fa-solid fa-wand-magic-sparkles" class="mr-1" />
+        <magic-icon v-if="!generatingLyrics" class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('producer.button.generate_lyrics') }}
       </el-button>
     </div>
@@ -36,20 +36,28 @@
 </template>
 
 <script lang="ts">
+import { MagicIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
-import { ElInput, ElButton, ElMessage } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { ElInput, ElButton, ElMessage, ElMessageBox } from 'element-plus';
 import InfoIcon from '@/components/common/InfoIcon.vue';
-import { producerOperator } from '@/operators';
+import { producerOperator } from '@/operators/producer';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import {
+  X402PaymentCancelledError,
+  type OperatorRequestOptions,
+  type X402PaymentQuote,
+  type X402WalletContext,
+  resolveX402WalletContext
+} from '@/operators/x402';
 
 export const DEFAULT_LYRIC = '';
 
 export default defineComponent({
   name: 'LyricInput',
   components: {
+    MagicIcon,
     ElInput,
     ElButton,
-    FontAwesomeIcon,
     InfoIcon
   },
   data() {
@@ -74,6 +82,9 @@ export default defineComponent({
     },
     credential() {
       return this.$store.state.producer?.credential;
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('producer').mode === 'wallet';
     }
   },
   mounted() {
@@ -82,16 +93,34 @@ export default defineComponent({
     }
   },
   methods: {
+    paymentOptions(): OperatorRequestOptions | undefined {
+      if (!this.walletMode) {
+        const token = this.credential?.token;
+        return token ? { token } : undefined;
+      }
+      const wallet = this.getWalletContext();
+      if (!wallet) {
+        ElMessage.warning(this.$t('common.x402Scenario.connectWalletFirst'));
+        return undefined;
+      }
+      return {
+        mode: 'x402',
+        x402: {
+          wallet,
+          confirm: (quote) => this.confirmWalletPayment(quote),
+          identityToken: this.credential?.token
+        }
+      };
+    },
     async onGenerateLyrics() {
-      const token = this.credential?.token;
-      if (!token) return;
-
+      const options = this.paymentOptions();
+      if (!options) return;
       const prompt = this.config?.style || this.config?.title || 'a beautiful song';
       this.generatingLyrics = true;
       ElMessage.info(this.$t('producer.message.generatingLyrics'));
 
       try {
-        const response = await producerOperator.lyric({ prompt }, { token });
+        const response = await producerOperator.lyric({ prompt }, options);
         const data = response.data?.data;
         if (data?.text) {
           this.lyric = data.text;
@@ -104,11 +133,28 @@ export default defineComponent({
           }
           ElMessage.success(this.$t('producer.message.generateLyricsSuccess'));
         }
-      } catch {
+      } catch (error) {
+        if (error instanceof X402PaymentCancelledError) return;
         ElMessage.error(this.$t('producer.message.generateLyricsFailed'));
       } finally {
         this.generatingLyrics = false;
       }
+    },
+    getWalletContext(): X402WalletContext | undefined {
+      return resolveX402WalletContext((this as any).$wallet);
+    },
+    async confirmWalletPayment(quote: X402PaymentQuote): Promise<boolean> {
+      return ElMessageBox.confirm(
+        this.$t('common.x402Scenario.confirmPayment', { amount: quote.amountUsdc }),
+        this.$t('order.message.x402ConfirmTitle'),
+        {
+          confirmButtonText: this.$t('order.message.x402WalletPayCta'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          type: 'warning'
+        }
+      )
+        .then(() => true)
+        .catch(() => false);
     }
   }
 });

@@ -1,68 +1,75 @@
-import { spawn, execFile, ChildProcess } from 'node:child_process';
-import { promisify } from 'node:util';
+import { spawn, ChildProcess } from 'node:child_process';
+import { resolveEnhancedPath, windowsNodeDirs } from './env';
 import type { McpServerConf, ToolSpec, ToolResult } from './types';
 
-const execFileAsync = promisify(execFile);
+// Re-exported so existing importers/tests keep resolving it from here; the
+// implementation now lives in env.ts, shared with shell.run_command.
+export { windowsNodeDirs };
+
 const RPC_TIMEOUT_MS = 30_000;
 // The initial `initialize` handshake gets a longer budget than a mid-turn call:
 // a cold MCP server (e.g. `node …/@playwright/mcp` loading playwright-core) on a
 // slow machine can take far longer than RPC_TIMEOUT_MS just to boot Node + its
 // deps before it answers — a first-boot timeout would strand it as `failed`.
 const STARTUP_TIMEOUT_MS = 60_000;
+// Mirrors the cap in computer.ts: stay under the aichat2 worker's tool-result
+// image budget (~6 MB of base64). An MCP image over budget is dropped from the
+// `image` channel and left as text in `output` rather than blowing up the turn.
+const MAX_IMAGE_B64_CHARS = 5_400_000;
+// The aichat2 worker only accepts these in a tool result's `image`
+// (isValidResultImage in handlers/conversations.ts). Lifting anything else
+// would be WORSE than doing nothing: the worker drops it silently AND we would
+// have already removed it from `output` — the image vanishes with no trace.
+// Keep this in sync with the worker's regex.
+const LIFTABLE_IMAGE_MIME = /^image\/(png|jpe?g|webp)$/;
 
 interface Pending { resolve: (v: unknown) => void; reject: (e: Error) => void; timer: NodeJS.Timeout; }
 
-// A GUI-launched Electron app (Finder / Dock / Start menu) inherits a stripped
-// PATH — it does NOT source the user's shell profile — so `npx` / `node` /
-// `uvx` / `bunx` (in Homebrew, nvm, ~/.local, bun) resolve to `spawn ENOENT`
-// and every MCP server silently fails to connect. Rebuild a usable PATH once,
-// cached (as a Promise) for the process lifetime. ASYNC so the login-shell
-// probe never blocks the main thread / UI.
-// Standard Node + global-npm install dirs on Windows, derived from STABLE env
-// vars (never the possibly-stale inherited PATH). Exported for tests.
-export function windowsNodeDirs(env: NodeJS.ProcessEnv = process.env): string[] {
-  return [
-    env.ProgramFiles && `${env.ProgramFiles}\\nodejs`,
-    env['ProgramFiles(x86)'] && `${env['ProgramFiles(x86)']}\\nodejs`,
-    env.APPDATA && `${env.APPDATA}\\npm`,
-    env.LOCALAPPDATA && `${env.LOCALAPPDATA}\\Programs\\nodejs`
-  ].filter((d): d is string => !!d);
+// One block of an MCP `tools/call` result. Only `image` needs special handling;
+// everything else is serialized into `output` as before. MCP also defines
+// `audio`, `resource` and `resource_link` blocks — those have no channel to the
+// model today (ToolResult carries an image only), so they stay in `output`.
+interface McpContentBlock {
+  type?: string;
+  data?: string;
+  mimeType?: string;
+  [k: string]: unknown;
 }
 
-let cachedPath: Promise<string> | null = null;
-function resolveEnhancedPath(): Promise<string> {
-  if (cachedPath) return cachedPath;
-  cachedPath = (async (): Promise<string> => {
-    const sep = process.platform === 'win32' ? ';' : ':';
-    let parts = (process.env.PATH || '').split(sep);
-    if (process.platform !== 'win32') {
-      // Ask the user's login shell for its real PATH (covers nvm / asdf / brew /
-      // bun). Bounded by a short timeout + static fallback so a slow or noisy
-      // shell can't wedge startup; take the last non-empty line.
-      try {
-        const shell = process.env.SHELL || '/bin/zsh';
-        const { stdout } = await execFileAsync(shell, ['-lic', 'printf "%s" "$PATH"'], { timeout: 3000, encoding: 'utf8' });
-        const line = stdout.trim().split('\n').filter(Boolean).pop() || '';
-        if (line.includes('/')) parts = line.split(sep).concat(parts);
-      } catch {
-        /* login shell unavailable — fall back to the static dirs below */
-      }
-      const home = process.env.HOME || '';
-      parts = parts.concat(['/opt/homebrew/bin', '/usr/local/bin', '/usr/bin', '/bin', `${home}/.local/bin`, `${home}/.bun/bin`]);
-    } else {
-      // A GUI-launched Windows app can inherit a STALE PATH — e.g. an
-      // explorer.exe started before Node was installed (or before its installer
-      // updated the registry PATH) — so a bare `node` / `npx` resolves to
-      // `spawn ENOENT` even though Node IS installed and on the machine PATH.
-      // Append the standard Node + global-npm install dirs so the common install
-      // still resolves. Bare-command resolution tolerates the space in
-      // "Program Files".
-      parts = parts.concat(windowsNodeDirs());
-    }
-    const seen = new Set<string>();
-    return parts.filter((d) => d && !seen.has(d) && seen.add(d)).join(sep);
-  })();
-  return cachedPath;
+// Why a block could not be lifted, so `output` can say so instead of the image
+// disappearing without explanation (which is what made the model claim it had
+// displayed a QR code that was never there).
+function liftBlocker(b: McpContentBlock): string | null {
+  const mime = b.mimeType || 'image/png';
+  if (!LIFTABLE_IMAGE_MIME.test(mime)) return `unsupported type ${mime} (expected png/jpeg/webp)`;
+  if ((b.data?.length ?? 0) > MAX_IMAGE_B64_CHARS) return 'too large to send';
+  return null;
+}
+
+// Map an MCP `tools/call` result to a ToolResult. Exported for tests.
+// Lifts the first liftable image block into `image` (the same channel
+// computer.screenshot uses) so the model actually SEES it. Left inside
+// `output` it was only a base64 blob in a JSON string: unrenderable, and the
+// model would claim to have shown a picture it never received.
+export function mapCallResult(r: { content?: unknown; isError?: boolean }): ToolResult {
+  const blocks = Array.isArray(r.content) ? (r.content as McpContentBlock[]) : [];
+  const images = blocks.filter((b) => b?.type === 'image' && typeof b.data === 'string');
+  const img = images.find((b) => liftBlocker(b) === null);
+  const image = img ? `data:${img.mimeType || 'image/png'};base64,${img.data}` : undefined;
+  // Replace every image block with a short note: the lifted one is already in
+  // `image` (no need to repeat 5 MB of base64 in the text channel), and a
+  // non-liftable one must not silently vanish — the model should know an image
+  // exists that it cannot see, rather than assume it was shown.
+  const rest = blocks.map((b) => {
+    if (!images.includes(b)) return b;
+    if (b === img) return { type: 'text', text: '[image returned separately and shown to you]' };
+    return { type: 'text', text: `[image not shown: ${liftBlocker(b)}]` };
+  });
+  return {
+    output: JSON.stringify(Array.isArray(r.content) ? rest : (r.content ?? '')),
+    is_error: !!r.isError,
+    ...(image ? { image } : {})
+  };
 }
 
 // Spawns local stdio MCP servers and bridges tools/list + tools/call.
@@ -163,7 +170,7 @@ export class McpHost {
 
   async call(server: string, tool: string, input: Record<string, unknown>): Promise<ToolResult> {
     const r = (await this.rpc(server, 'tools/call', { name: tool, arguments: input })) as { content?: unknown; isError?: boolean };
-    return { output: JSON.stringify(r.content ?? ''), is_error: !!r.isError };
+    return mapCallResult(r);
   }
 
   stopAll(): void {

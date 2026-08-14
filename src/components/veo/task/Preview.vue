@@ -1,16 +1,39 @@
 <template>
   <div class="preview">
     <div class="left">
-      <el-image src="https://cdn.acedata.cloud/8nxyy9.jpg" class="avatar" />
+      <capability-presentation capability="veo" part="avatar" class="avatar" />
     </div>
     <div class="main">
       <div class="bot">
-        {{ $t('veo.name.veoBot') }}
+        <capability-presentation capability="veo" part="name" />
         <span class="datetime">
           {{ $dayjs.format('' + new Date(parseFloat((modelValue?.created_at || '').toString()) * 1000)) }}
         </span>
+        <el-tooltip effect="dark" :content="$t('common.button.delete')" placement="top">
+          <button
+            v-if="modelValue?.id"
+            type="button"
+            class="btn-delete"
+            :aria-label="$t('common.button.delete')"
+            @click.stop="onDelete"
+          >
+            <delete-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+          </button>
+        </el-tooltip>
       </div>
       <div class="info">
+        <div
+          v-if="referenceImages.length > 0"
+          class="flex justify-start items-center gap-2 mt-2 w-full overflow-x-auto"
+        >
+          <image-preview
+            v-for="(url, idx) in referenceImages"
+            :key="`${idx}-${url}`"
+            :url="url"
+            :name="`reference-${idx + 1}`"
+            :closable="false"
+          />
+        </div>
         <p v-if="modelValue?.request?.prompt" class="prompt mt-2">
           {{ modelValue?.request?.prompt }}
           <span v-if="!modelValue?.response"> - ({{ $t('veo.status.pending') }}) </span>
@@ -19,7 +42,6 @@
           </span>
         </p>
       </div>
-      <!-- Display success message -->
       <div
         v-if="modelValue?.response?.success === true && modelValue?.response?.data"
         :class="{ content: true, failed: true }"
@@ -28,69 +50,6 @@
           <video-player :src="modelValue?.response?.data[0]?.video_url" />
         </div>
         <div v-if="modelValue?.response.success" :class="{ operations: true, 'mt-2': true }">
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'upsample', '1080p')"
-          >
-            {{ $t('veo.button.actionUpsample1080p') }}
-          </el-button>
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'upsample', '4k')"
-          >
-            {{ $t('veo.button.actionUpsample4k') }}
-          </el-button>
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'upsample', 'gif')"
-          >
-            {{ $t('veo.button.actionUpsampleGif') }}
-          </el-button>
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'extend')"
-          >
-            {{ $t('veo.button.actionExtend') }}
-          </el-button>
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'reshoot')"
-          >
-            {{ $t('veo.button.actionReshoot') }}
-          </el-button>
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'object_insert')"
-          >
-            {{ $t('veo.button.actionObjectInsert') }}
-          </el-button>
-          <el-button
-            v-if="modelValue?.response?.data[0]?.video_url"
-            type="info"
-            size="small"
-            class="btn-action"
-            @click="onPickAction($event, modelValue?.response, 'object_remove')"
-          >
-            {{ $t('veo.button.actionObjectRemove') }}
-          </el-button>
           <el-tooltip class="box-item" effect="dark" :content="$t('veo.message.downloadVideo')" placement="top-start">
             <el-button
               v-if="modelValue?.response?.data[0]?.video_url"
@@ -103,74 +62,67 @@
             </el-button>
           </el-tooltip>
           <api-code-button path="/veo/videos" :body="modelValue?.request" />
+          <report-button
+            service="veo"
+            :target-id="modelValue?.id"
+            :snapshot="{ prompt: modelValue?.request?.prompt }"
+          />
         </div>
-        <el-alert :closable="false" class="mt-2 success">
-          <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-hashtag" class="mr-1" />
-            {{ $t('veo.name.model') }}:
-            {{ modelValue?.request?.model }}
-          </p>
-          <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
-            {{ $t('veo.name.taskId') }}:
-            {{ modelValue?.id }}
-            <copy-to-clipboard :content="modelValue?.id!" />
-          </p>
-          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-clock" class="mr-1" />
-            {{ $t('veo.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
-          </p>
-        </el-alert>
       </div>
-      <!-- Display error message -->
       <div v-if="modelValue?.response?.success === false" :class="{ content: true }">
         <el-alert :closable="false" class="failure">
           <template #template>
-            <font-awesome-icon icon="fa-solid fa-exclamation-triangle" class="mr-1" />
+            <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('veo.name.failure') }}
           </template>
           <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
-            {{ $t('veo.name.taskId') }}:
-            {{ modelValue?.id }}
-            <copy-to-clipboard :content="modelValue?.id!" />
-          </p>
-          <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-circle-info" class="mr-1" />
+            <info-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('veo.name.failureReason') }}:
             {{ modelValue?.response?.error?.message }}
             <copy-to-clipboard :content="modelValue?.response?.error?.message!" />
           </p>
-          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-clock" class="mr-1" />
-            {{ $t('veo.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
-          </p>
-          <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-hashtag" class="mr-1" />
-            {{ $t('veo.name.traceId') }}:
-            {{ modelValue?.response?.trace_id }}
-            <copy-to-clipboard :content="modelValue?.response?.trace_id" />
-          </p>
         </el-alert>
       </div>
-      <!-- Display error message -->
-      <div v-if="modelValue?.response?.success === undefined" :class="{ content: true }">
-        <el-alert :closable="false" class="info">
-          <template #template>
-            <font-awesome-icon icon="fa-solid fa-exclamation-triangle" class="mr-1" />
-            {{ $t('veo.name.failure') }}
-          </template>
+      <div :class="{ content: true }">
+        <el-alert :closable="false" :class="['mt-2', 'task-metadata', taskInfoClass]">
+          <p v-if="modelValue?.request?.model" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <application-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('veo.name.model') }}:
+            {{ modelValue?.request?.model }}
+          </p>
           <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
-            <font-awesome-icon icon="fa-solid fa-magic" class="mr-1" />
+            <lightning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('veo.name.action') }}:
+            {{ actionLabel }}
+          </p>
+          <p v-if="modelValue?.request?.aspect_ratio" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <expand-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('veo.name.ratio') }}:
+            {{ modelValue?.request?.aspect_ratio }}
+          </p>
+          <p
+            v-if="modelValue?.request?.translation !== undefined"
+            class="text-[var(--el-text-color-regular)] text-xs mb-2"
+          >
+            <language-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('veo.name.translation') }}:
+            {{ $t(modelValue?.request?.translation ? 'seedance.button.on' : 'seedance.button.off') }}
+          </p>
+          <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('veo.name.taskId') }}:
             {{ modelValue?.id }}
-            <copy-to-clipboard :content="modelValue?.id!" />
+            <copy-to-clipboard :content="modelValue?.id!" class="btn-copy inline-block" />
           </p>
-          <p v-if="modelValue?.response?.trace_id" class="text-[var(--el-text-color-regular)] text-xs mb-0">
-            <font-awesome-icon icon="fa-solid fa-hashtag" class="mr-1" />
+          <p v-if="modelValue?.elapsed" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+            <time-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+            {{ $t('veo.name.elapsed') }}: {{ modelValue?.elapsed?.toFixed(2) }}s
+          </p>
+          <p v-if="traceId" class="text-[var(--el-text-color-regular)] text-xs mb-0">
+            <channel-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
             {{ $t('veo.name.traceId') }}:
-            {{ modelValue?.response?.trace_id }}
-            <copy-to-clipboard :content="modelValue?.response?.trace_id" />
+            {{ traceId }}
+            <copy-to-clipboard :content="traceId" class="btn-copy inline-block" />
           </p>
         </el-alert>
       </div>
@@ -179,26 +131,48 @@
 </template>
 
 <script lang="ts">
+import {
+  ApplicationIcon,
+  ChannelIcon,
+  DeleteIcon,
+  ExpandIcon,
+  InfoIcon,
+  LanguageIcon,
+  LightningIcon,
+  MagicIcon,
+  TimeIcon,
+  WarningIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
-import { ElImage, ElAlert, ElButton, ElTooltip } from 'element-plus';
+import { ElAlert, ElButton, ElTooltip, ElMessageBox, ElMessage } from 'element-plus';
 import { IVeoTask } from '@/models';
 import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
-import { IVeoGenerateResponse } from '@/models';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VideoPlayer from '@/components/common/VideoPlayer.vue';
+import ImagePreview from '@/components/common/ImagePreview.vue';
 import ApiCodeButton from '@/components/common/ApiCodeButton.vue';
+import ReportButton from '@/components/common/ReportButton.vue';
 
 export default defineComponent({
   name: 'TaskPreview',
   components: {
-    ElImage,
+    DeleteIcon,
+    ApplicationIcon,
+    ChannelIcon,
+    ExpandIcon,
+    InfoIcon,
+    LanguageIcon,
+    LightningIcon,
+    MagicIcon,
+    TimeIcon,
+    WarningIcon,
     CopyToClipboard,
-    FontAwesomeIcon,
     ElAlert,
     VideoPlayer,
+    ImagePreview,
     ElTooltip,
     ElButton,
-    ApiCodeButton
+    ApiCodeButton,
+    ReportButton
   },
   props: {
     modelValue: {
@@ -210,29 +184,55 @@ export default defineComponent({
     return {};
   },
   computed: {
-    application() {
-      return this.$store.state.veo?.application;
+    referenceImages(): string[] {
+      const imageUrls = this.modelValue?.request?.image_urls;
+      return Array.isArray(imageUrls) ? imageUrls.filter((url): url is string => typeof url === 'string' && !!url) : [];
     },
-    config() {
-      return this.$store.state.veo?.config;
+    actionLabel(): string {
+      const request = this.modelValue?.request;
+      const inferredAction =
+        request?.model === 'veo31-fast-ingredients' || this.referenceImages.length > 2
+          ? 'ingredients2video'
+          : this.referenceImages.length > 0
+            ? 'image2video'
+            : 'text2video';
+      const action = request?.action || inferredAction;
+      const labels: Record<string, string> = {
+        text2video: 'veo.button.action1',
+        image2video: 'veo.button.action2',
+        ingredients2video: 'veo.button.actionIngredients'
+      };
+      return this.$t(labels[action] || 'veo.name.action') as string;
+    },
+    traceId(): string | undefined {
+      return this.modelValue?.response?.trace_id || this.modelValue?.trace_id;
+    },
+    taskInfoClass(): string {
+      if (this.modelValue?.response?.success === true) return 'success';
+      if (this.modelValue?.response?.success === false) return 'failure';
+      return 'info';
     }
   },
   methods: {
-    onPickAction(_event: MouseEvent, response: IVeoGenerateResponse, action: string, upsampleAction?: string) {
-      // Seed config so the user lands on the chosen post-processing form
-      // with video_id + video_url already filled. Specific extra fields
-      // (motion_type, prompt, image_mask, model) are left for the user
-      // to fill in via the now-visible per-action inputs.
-      console.debug('seed config from preview', { action, upsampleAction, response });
-      this.$store.commit('veo/setConfig', {
-        ...this.$store.state.veo?.config,
-        action,
-        // @ts-ignore
-        video_id: response?.data?.[0]?.id,
-        // @ts-ignore
-        video_url: response?.data?.[0]?.video_url,
-        ...(upsampleAction ? { upsample_action: upsampleAction } : {})
-      });
+    async onDelete() {
+      const id = this.modelValue?.id;
+      if (!id) return;
+      try {
+        await ElMessageBox.confirm(this.$t('common.message.deleteTaskConfirm'), this.$t('common.button.delete'), {
+          type: 'warning',
+          confirmButtonText: this.$t('common.button.delete'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          confirmButtonClass: 'el-button--danger'
+        });
+      } catch {
+        return; // user cancelled
+      }
+      try {
+        await this.$store.dispatch('veo/deleteTask', { id });
+        ElMessage.success(this.$t('common.message.deleteTaskSuccess'));
+      } catch {
+        ElMessage.error(this.$t('common.message.deleteTaskFailed'));
+      }
     },
     onDownload(event: MouseEvent, video_url: string) {
       event?.stopPropagation();
@@ -273,6 +273,8 @@ $left-width: 70px;
     padding: 10px 10px 0 10px;
 
     .bot {
+      display: flex;
+      align-items: center;
       font-size: 16px;
       font-weight: bold;
       color: var(--el-color-primary);
@@ -283,9 +285,32 @@ $left-width: 70px;
       white-space: nowrap;
       .datetime {
         font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-weight: normal;
         color: var(--el-text-color-secondary);
         margin-left: 10px;
+      }
+      .btn-delete {
+        margin-left: auto;
+        padding: 4px 6px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        line-height: 1;
+        color: var(--el-text-color-secondary);
+        // Hover-reveal on pointer devices; keep it out of the way until wanted.
+        opacity: 0;
+        transition:
+          opacity 0.15s ease,
+          color 0.15s ease;
+        &:hover {
+          color: var(--el-color-danger);
+        }
+        // Touch devices have no hover — always show the control.
+        @media (hover: none) {
+          opacity: 1;
+        }
       }
     }
 
@@ -295,7 +320,7 @@ $left-width: 70px;
         font-size: 16px;
         font-weight: bold;
         color: var(--el-text-color-regular);
-        margin-bottom: 10px;
+        margin-bottom: 0;
         white-space: normal;
         word-break: break-word;
         overflow-wrap: anywhere;
@@ -303,11 +328,17 @@ $left-width: 70px;
     }
 
     .content {
+      margin-top: 8px;
       word-break: break-word;
       overflow-wrap: anywhere;
       .el-alert {
         border-left-width: 2px;
         border-left-style: solid;
+        &.task-metadata {
+          :deep(p) {
+            color: var(--el-text-color-regular);
+          }
+        }
         &.failure {
           border-color: var(--el-color-danger);
         }
@@ -346,6 +377,11 @@ $left-width: 70px;
         margin-bottom: 10px;
       }
     }
+  }
+
+  // Reveal the trash icon when hovering anywhere on the card.
+  &:hover .main .bot .btn-delete {
+    opacity: 1;
   }
 }
 </style>

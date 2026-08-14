@@ -79,36 +79,36 @@
     "message": "Large language model developed by Zhipu AI",
     "description": "Description of the GLM model group"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Name of the service model, i.e., GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Name of the service model, i.e., GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Latest flagship GPT 5.5 model",
-    "description": "Description of the GPT 5.5 model"
+  "model.56SolDescription": {
+    "message": "Flagship GPT 5.6 model for the most demanding tasks",
+    "description": "Description of the GPT 5.6 Sol model"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Name of the service model, i.e., GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Name of the service model, i.e., GPT 5.6 Terra"
   },
-  "model.54Description": {
-    "message": "Latest flagship GPT 5.4 model",
-    "description": "Description of the GPT 5.4 model"
+  "model.56TerraDescription": {
+    "message": "Balanced GPT 5.6 model for everyday work",
+    "description": "Description of the GPT 5.6 Terra model"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Name of the service model, i.e., GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Name of the service model, i.e., GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Faster and lighter GPT 5.4 model",
-    "description": "Description of the GPT 5.4 Mini model"
+  "model.56LunaDescription": {
+    "message": "Fast and lightweight GPT 5.6 model",
+    "description": "Description of the GPT 5.6 Luna model"
   },
   "model.freeTag": {
     "message": "Free",
     "description": "Badge shown next to free models in the model selector"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Name of the service model, i.e., DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Description of the DeepSeek Chat model"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Name of the service model, i.e., DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Description of the DeepSeek Reasoner model"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Name of the service model, i.e., DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Description of the DeepSeek V3.2 experimental model"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Name of the service model, i.e., DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Description of the DeepSeek V4 Flash model"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Name of the service model, i.e., Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Description of the Grok 4 model"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Name of the service model"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Faster and lighter model",
     "description": "Description of the Gemini 2.5 Flash model"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Name of the service model, i.e., Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Latest fast model for reasoning, vision, and tools",
+    "description": "Description of the Gemini 3.6 Flash model"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Name of the service model, i.e., Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "Faster and lighter model",
     "description": "Description of the Gemini 2.5 Flash model"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Currently the most advanced model",
+    "description": "Description of the Claude Opus 5 model"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,24 +235,32 @@
     "message": "Lightweight and fast model",
     "description": "Description of the Claude Haiku 4.5 model"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Name of the service model, i.e., Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Excellent for long context, complex reasoning, and creative writing",
-    "description": "Description of the Claude Fable 5 model"
+  "model.kimiK3Description": {
+    "message": "Flagship reasoning and vision model with a 1M-token context window",
+    "description": "Description of the Kimi K3 model"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Reasoning and vision model for compatible K2 workflows",
+    "description": "Description of the Kimi K2.6 model"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Name of the service model, i.e., Kimi K2.5"
   },
   "model.kimiK25Description": {
-    "message": "Currently the most advanced model",
+    "message": "General-purpose K2 model for compatible workflows",
     "description": "Description of the Kimi K2.5 model"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 reasoning",
     "description": "Name of the service model, i.e., Kimi K2 reasoning"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Description of the Kimi K2 reasoning model"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 turbo reasoning",
     "description": "Name of the service model, i.e., Kimi K2 turbo reasoning"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Description of the Kimi K2 turbo reasoning model"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Name of the service model, i.e., GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Description of the GLM 5.1 model"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Name of the service model, i.e., GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "File upload failed, please try again later",
     "description": "Message on the webpage informing the user that the file upload failed, please try again later"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "The file is {size}, over the {max} limit. Please compress it and try again.",
+    "description": "Message informing the user that the file exceeds the upload size limit and should be compressed before retrying"
   },
   "message.notApplied": {
     "message": "You have not applied for this service, please apply first",
@@ -348,8 +376,8 @@
     "description": "Message on the webpage informing the user that the conversation does not exist or has expired, please start a new conversation"
   },
   "message.errorContentTooLarge": {
-    "message": "Question content is too long, please shorten it and try again",
-    "description": "Message on the webpage informing the user that the question content is too long, please shorten it and try again"
+    "message": "The uploaded images or conversation content are too large. Please compress images, reduce the number of images, or shorten the content and try again.",
+    "description": "Message informing the user that uploaded images or conversation content are too large and should be compressed or reduced before retrying"
   },
   "message.errorTooManyRequests": {
     "message": "Your requests are too frequent, please try again later",
@@ -583,8 +611,78 @@
     "message": "Connector authorization skipped",
     "description": "Resolved banner when the user clicked Skip"
   },
+  "browserTool.title": {
+    "message": "Browser activity",
+    "description": "Fallback title for a BrowserDevice tool activity"
+  },
+  "browserTool.state.starting_session": {
+    "message": "Starting browser session"
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Attaching browser tab"
+  },
+  "browserTool.state.ready": {
+    "message": "Browser is ready"
+  },
+  "browserTool.state.device_offline": {
+    "message": "Browser device is offline"
+  },
+  "browserTool.state.device_busy": {
+    "message": "Browser device is busy"
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Authorization required in Studio"
+  },
+  "browserTool.state.executing": {
+    "message": "Executing in browser"
+  },
+  "browserTool.state.completed": {
+    "message": "Completed"
+  },
+  "browserTool.state.stopped": {
+    "message": "Browser session stopped"
+  },
+  "browserTool.state.expired": {
+    "message": "Browser request expired"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Close DevTools to continue"
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Outcome is unknown; verify before retrying"
+  },
+  "browserTool.state.failed": {
+    "message": "Browser operation failed"
+  },
+  "browserTool.stop": {
+    "message": "Stop"
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Manage device"
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Stop other session"
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Close DevTools"
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Review authorization"
+  },
   "scheduledTasks.navTitle": {
     "message": "Scheduled Tasks"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Tasks",
+    "description": "Scheduled tasks page - tasks tab"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Runs",
+    "description": "Scheduled tasks page - all runs tab"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "All",
+    "description": "Run status filter - all"
   },
   "scheduledTasks.title": {
     "message": "Scheduled Tasks"
@@ -594,6 +692,9 @@
   },
   "scheduledTasks.edit": {
     "message": "Edit Task"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Duplicate Task"
   },
   "scheduledTasks.empty": {
     "message": "No scheduled tasks yet. Click \"New\" to create one."
@@ -606,6 +707,18 @@
   },
   "scheduledTasks.deleteConfirm": {
     "message": "Delete \"{name}\"? The task will stop running."
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Run now",
+    "description": "Trigger the task immediately, out of schedule"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Triggered. The result will appear in run history shortly.",
+    "description": "Manual trigger success"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Failed to trigger. Please try again later.",
+    "description": "Manual trigger error"
   },
   "scheduledTasks.viewResult": {
     "message": "View Result"
@@ -643,8 +756,60 @@
   "scheduledTasks.run.failed": {
     "message": "Failed"
   },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Unconfirmed",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Reached step limit"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Reached budget limit"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Tool call loop detected"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Prompt too long"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Interrupted"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Interrupted"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Waiting for your input"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Error"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Unknown error"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Insufficient balance"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Billing authorization failed"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Unauthorized"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Timed out"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Internal error"
+  },
   "scheduledTasks.run.needs_user_input": {
     "message": "Needs action"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Browser device is offline"
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Browser authorization changed; edit this task"
   },
   "scheduledTasks.scheduleType.daily": {
     "message": "Daily"
@@ -660,6 +825,74 @@
   },
   "scheduledTasks.scheduleType.cron": {
     "message": "Cron expression"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Every",
+    "description": "Run at a fixed interval"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "minutes",
+    "description": "Interval unit: minutes"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "hours",
+    "description": "Interval unit: hours"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "days",
+    "description": "Interval unit: days"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "At minute",
+    "description": "Which minute of each hour to run"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "Which minute of each hour to run (0–59)",
+    "description": "Hourly minute hint"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Runs once every fixed interval after the previous run (minimum 1 minute)",
+    "description": "Interval hint"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Standard 5-field cron expression: minute hour day month weekday",
+    "description": "Cron hint"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Runs {text}",
+    "description": "Schedule preview"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "every {n} min",
+    "description": "Human-readable: every N minutes"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "every {n} h",
+    "description": "Human-readable: every N hours"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "every {n} d",
+    "description": "Human-readable: every N days"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "hourly at minute {n}",
+    "description": "Human-readable: hourly at minute N"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "daily at {time}",
+    "description": "Human-readable: daily at time"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "{weekday} at {time}",
+    "description": "Human-readable: weekly at weekday/time"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron: {cron}",
+    "description": "Human-readable: raw cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "once at {time}",
+    "description": "Human-readable: once"
   },
   "scheduledTasks.form.name": {
     "message": "Task name"
@@ -685,6 +918,18 @@
   "scheduledTasks.form.time": {
     "message": "Time"
   },
+  "scheduledTasks.form.timezone": {
+    "message": "Time zone",
+    "description": "Scheduled task time zone field"
+  },
+  "scheduledTasks.form.timezoneHint": {
+    "message": "New tasks default to this device's time zone: {timezone}. Once saved, it stays fixed to the task.",
+    "description": "Scheduled task time zone guidance"
+  },
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Select a valid IANA time zone",
+    "description": "Invalid time zone warning"
+  },
   "scheduledTasks.form.weekday": {
     "message": "Weekday"
   },
@@ -700,6 +945,21 @@
   "scheduledTasks.form.skillsHint": {
     "message": "Selected Skills may skip interactive confirmation during scheduled background runs. Unselected Skills can still preview or wait for confirmation."
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "Browser connection"
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "May perform these external side effects: {effects}"
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Unattended authorization expires: {time}"
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Select an online, compatible browser connection before saving"
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Not connected"
   },
@@ -914,5 +1174,506 @@
   "share.footerNote": {
     "message": "You are viewing a shared conversation. To chat with AI yourself, click above.",
     "description": "Footer note shown on the public share page under the conversation"
+  },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Goal not achieved"
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Result unconfirmed"
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Run status unknown"
+  },
+  "actions.rename": {
+    "message": "Rename",
+    "description": "Rename menu item in the conversation actions menu"
+  },
+  "actions.renameTitle": {
+    "message": "Rename conversation",
+    "description": "Title of the rename-conversation dialog"
+  },
+  "actions.renameEmpty": {
+    "message": "Please enter a name",
+    "description": "Warning shown when the rename input is empty"
+  },
+  "actions.renameSuccess": {
+    "message": "Renamed",
+    "description": "Toast shown after a conversation is renamed"
+  },
+  "actions.renameFailed": {
+    "message": "Failed to rename. Please try again later.",
+    "description": "Toast shown when renaming a conversation fails"
+  },
+  "actions.deleteConfirm": {
+    "message": "Delete this conversation? This cannot be undone.",
+    "description": "Confirmation text before deleting a conversation"
+  },
+  "actions.deleteSuccess": {
+    "message": "Deleted",
+    "description": "Toast shown after a conversation is deleted"
+  },
+  "actions.deleteFailed": {
+    "message": "Failed to delete. Please try again later.",
+    "description": "Toast shown when deleting a conversation fails"
+  },
+  "actions.tokenMissing": {
+    "message": "Token missing. Please sign in again.",
+    "description": "Error shown when the credential is missing during a conversation action"
+  },
+  "actions.conversationMissing": {
+    "message": "Conversation not found",
+    "description": "Error shown when the target conversation is missing"
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Runs on",
+    "description": "Where the task runs"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Cloud",
+    "description": "Cloud execution mode"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "This device",
+    "description": "Local execution mode"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "This device ({device})",
+    "description": "Local execution mode with device name"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "The platform runs it on schedule, whether or not your computer is on.",
+    "description": "Cloud mode explanation"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "This device runs it on schedule, so it can read your files and run local commands. It won't run while the device is off or the app is closed; missed runs are recorded, not run late.",
+    "description": "Local mode explanation"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "Running on the device isn't supported on mobile yet",
+    "description": "Why local execution is unavailable on mobile"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Running on the device requires the desktop app",
+    "description": "Why local execution is unavailable on web"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Couldn't read this device's details — restart the app and try again",
+    "description": "Desktop identity unavailable"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Local tool access",
+    "description": "Local tool authorization field"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Choose which local tools this task may use",
+    "description": "Local tools select placeholder"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "Unattended runs can't ask for permission, so only the tools you select here are available.",
+    "description": "Local tool authorization explanation"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Skipped",
+    "description": "Run status: the device was offline, so it didn't run"
+  },
+  "workingDir.choose": {
+    "message": "Choose working directory",
+    "description": "Desktop chat button above the composer: pick the project folder the AI works in; sending is blocked until one is chosen"
+  },
+  "workingDir.switchHint": {
+    "message": "Click to switch working directory",
+    "description": "Tooltip on the path pill once a working directory is set"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "This task runs on a specific device — open the desktop app on that machine to run it now",
+    "description": "Local task cannot be triggered from here"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "This task is bound to another device",
+    "description": "Local task belongs to a different device"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Local scheduling is signed out — sign in again and retry",
+    "description": "Daemon holds no credential"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "This task is already running",
+    "description": "Task run in flight"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Confirm",
+    "description": "Confirm button on the action confirmation card"
+  },
+  "actionConfirmation.cancel": {
+    "message": "Cancel",
+    "description": "Cancel button on the action confirmation card"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Confirmed — action in progress",
+    "description": "Collapsed banner after confirmation while the action continues"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Cancelled",
+    "description": "Collapsed banner after the user cancels the action"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Loading media preview…",
+    "description": "Media loading state on the action confirmation card"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Preview cannot play here",
+    "description": "Media playback failure title on the action confirmation card"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "The media link may have expired, or this browser may not support its format. Open the original before publishing.",
+    "description": "Media playback failure explanation on the action confirmation card"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Open original",
+    "description": "Link to open confirmation media"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Review before posting",
+    "description": "TikTok confirmation card status badge"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Publish to TikTok",
+    "description": "TikTok publish confirmation card title"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "Confirm to publish this video to your TikTok account.",
+    "description": "TikTok publish confirmation card summary"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Publish",
+    "description": "TikTok publish confirmation card submit button"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Posting to this account",
+    "description": "TikTok publish confirmation: account label"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Connected",
+    "description": "TikTok publish confirmation: account connection status"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Account unavailable",
+    "description": "TikTok publish confirmation: missing account placeholder"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Publishing settings are not ready",
+    "description": "TikTok publish confirmation: missing creator details title"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "The available visibility settings could not be read. Cancel and ask the assistant to reload your TikTok publishing settings.",
+    "description": "TikTok publish confirmation: missing creator details explanation"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "This video exceeds the account limit",
+    "description": "TikTok publish confirmation: video duration error title"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Post details",
+    "description": "TikTok publish confirmation: post settings section title"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Required",
+    "description": "TikTok publish confirmation: required fields note"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Caption",
+    "description": "TikTok publish confirmation: caption field label"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Write a caption — hashtags and mentions are supported",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Who can view this",
+    "description": "TikTok publish confirmation: privacy dropdown label"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Select who can view",
+    "description": "TikTok publish confirmation: privacy placeholder; TikTok forbids a default value"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "No visibility options were returned, so this post cannot be published yet",
+    "description": "TikTok publish confirmation: privacy options missing"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Everyone",
+    "description": "TikTok privacy level: public"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Friends who follow each other",
+    "description": "TikTok privacy level: mutual follow friends"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "My followers",
+    "description": "TikTok privacy level: followers"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Only me",
+    "description": "TikTok privacy level: self only"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Interaction permissions",
+    "description": "TikTok publish confirmation: interaction toggles group label"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Only interactions currently available on this account can be enabled. All start off.",
+    "description": "TikTok publish confirmation: interaction settings explanation"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "Disabled by this account: {list}",
+    "description": "TikTok publish confirmation: interactions disabled by the account"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Comment",
+    "description": "TikTok interaction toggle: allow comment"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Duet",
+    "description": "TikTok interaction toggle: allow duet"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Stitch",
+    "description": "TikTok interaction toggle: allow stitch"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Content disclosure",
+    "description": "TikTok publish confirmation: commercial disclosure section title"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "This is commercial content",
+    "description": "TikTok publish confirmation: commercial disclosure toggle"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Disclose content that promotes a brand, product, or service.",
+    "description": "TikTok publish confirmation: commercial disclosure explanation"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "Promoting your own brand",
+    "description": "TikTok commercial content: promoting own business"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Promotes you or a business you operate",
+    "description": "TikTok commercial content: own brand explanation"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Branded content",
+    "description": "TikTok commercial content: paid partnership"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Promotes a third party in exchange for payment, gifts, or another incentive",
+    "description": "TikTok commercial content: paid partnership explanation"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Your video will be labeled as 'Promotional content'",
+    "description": "TikTok commercial content: label shown after picking Your brand"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Your video will be labeled as 'Paid partnership'",
+    "description": "TikTok commercial content: label shown after picking Branded content"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Branded content visibility cannot be set to private",
+    "description": "TikTok publish confirmation: branded content and self-only are mutually exclusive"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "This video exceeds the account limit of {max} seconds",
+    "description": "TikTok publish confirmation: video too long error"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Before you publish",
+    "description": "TikTok publish confirmation: policy notice title"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "By clicking Publish, you confirm that you have the rights to the content and music and agree to TikTok's music terms.",
+    "description": "TikTok publish confirmation: standard policy notice"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "By clicking Publish, you confirm that the disclosure is accurate and agree to TikTok's branded content and music terms.",
+    "description": "TikTok publish confirmation: branded policy notice"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Read Music Usage Confirmation",
+    "description": "TikTok publish confirmation: music usage link"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Read Branded Content Policy",
+    "description": "TikTok publish confirmation: branded content policy link"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Publishing details are incomplete — cancel and regenerate this confirmation",
+    "description": "TikTok publish confirmation: disabled button reason for missing details"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Choose a video within this account's duration limit",
+    "description": "TikTok publish confirmation: disabled button reason for long video"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Choose who can view this video",
+    "description": "TikTok publish confirmation: disabled button reason for missing privacy"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Choose a commercial content type",
+    "description": "TikTok publish confirmation: disabled button reason for missing disclosure type"
+  },
+  "scheduledTemplates.title": {
+    "message": "Automation templates",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Create from template",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Create custom task",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Let AI handle recurring work for you",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Choose an official template and connect the required accounts. You can run it from the task card after creation.",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Browse templates",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Choose",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Configure",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Connect",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.search": {
+    "message": "Search templates",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Featured",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Ready to use",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Connect {count} item(s)",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Schedule",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Prepare required connections",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "No additional accounts required",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Connected",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Not connected",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Choose an account",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Connect",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.create": {
+    "message": "Create task",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Could not create the task; check the configuration or connections",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Task created and kept disabled. Run it from the task card, then enable it after it succeeds.",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "This task cannot be enabled yet. Run it successfully first; some templates also require the expected draft artifact.",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Could not load templates",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "All",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Marketing growth",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Content creation",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Productivity",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Research & intelligence",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Development & operations",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Personal assistant",
+    "description": "Scheduled task template center copy"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Previous",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.next": {
+    "message": "Next",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Only connections required by this template are used. Existing accounts are reused automatically.",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "This template only uses built-in capabilities and is ready to create.",
+    "description": "Scheduled task template creation and activation guidance"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Connect this account to continue.",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "This task will stay pinned to the account you select.",
+    "description": "Scheduled template wizard navigation and connection guidance"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Runs through the authorized MCP connection; no separate account binding is needed.",
+    "description": "Scheduled template wizard navigation and connection guidance"
   }
 }

@@ -1,30 +1,33 @@
 <template>
-  <el-tooltip class="box-item" effect="dark" :content="$t('common.message.viewCodeHint')" placement="top-start">
-    <el-button
-      :type="buttonType"
-      :size="buttonSize"
-      :class="['btn-action', 'btn-api-code', buttonClass]"
-      @click.stop="onOpen"
-    >
-      <font-awesome-icon icon="fa-solid fa-code" class="mr-1" />
-      {{ $t('common.button.viewCode') }}
-    </el-button>
-  </el-tooltip>
-  <api-code-dialog
-    v-model:visible="dialogVisible"
-    method="POST"
-    :path="path"
-    :body="cleanedBody"
-    :token="resolvedToken"
-    :doc-href="docHref"
-  />
+  <template v-if="showViewCode">
+    <el-tooltip class="box-item" effect="dark" :content="$t('common.message.viewCodeHint')" placement="top-start">
+      <el-button
+        :type="buttonType"
+        :size="buttonSize"
+        :class="['btn-action', 'btn-api-code', buttonClass]"
+        @click.stop="onOpen"
+      >
+        <code-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+        {{ $t('common.button.viewCode') }}
+      </el-button>
+    </el-tooltip>
+    <api-code-dialog
+      v-model:visible="dialogVisible"
+      method="POST"
+      :path="path"
+      :body="cleanedBody"
+      :token="resolvedToken"
+      :doc-href="docHref"
+    />
+  </template>
 </template>
 
 <script lang="ts">
+import { CodeIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent, type PropType } from 'vue';
 import { ElButton, ElTooltip } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ApiCodeDialog from '@/components/common/ApiCodeDialog.vue';
+import { isMainOfficial } from '@/utils';
 
 type ButtonType = '' | 'default' | 'text' | 'primary' | 'success' | 'warning' | 'info' | 'danger';
 type ButtonSize = '' | 'small' | 'default' | 'large';
@@ -44,13 +47,14 @@ const PATH_TO_STORE: Record<string, string> = {
   'nano-banana': 'nanobanana',
   flux: 'flux',
   qrart: 'qrart',
-  headshots: 'headshots',
   pika: 'pika',
   pixverse: 'pixverse',
   seedance: 'seedance',
   seedream: 'seedream',
   wan: 'wan',
   fish: 'fish',
+  maestro: 'maestro',
+  'digital-human': 'digitalhuman',
   // OpenAI image generation paths live under /openai/images/...
   openai: 'openaiimage',
   suno: 'suno',
@@ -60,37 +64,16 @@ const PATH_TO_STORE: Record<string, string> = {
 
 const PLATFORM_DOCS_BASE = 'https://platform.acedata.cloud/documents';
 
-// First path segment -> platform documentation alias for that service's
-// representative API. Powers the "查看文档" deep-link in the code dialog.
-const SERVICE_DOC_ALIAS: Record<string, string> = {
-  midjourney: 'midjourney-imagine',
-  luma: 'luma-videos',
-  sora: 'sora-videos',
-  veo: 'veo-videos',
-  kling: 'kling-videos',
-  hailuo: 'hailuo-videos-integration',
-  'nano-banana': 'nano-banana-images',
-  flux: 'flux-images',
-  qrart: 'qrart-generate',
-  headshots: 'headshots-generate',
-  pika: 'pika-videos',
-  pixverse: 'pixverse',
-  seedance: 'seedance-videos',
-  seedream: 'seedream-images',
-  wan: 'wan-videos',
-  fish: 'fish-tts',
-  openai: 'openai-images-generations',
-  suno: 'suno-audios',
-  producer: 'producer-audios',
-  grok: 'grok-videos'
-};
+// The "查看文档" deep-link points at each service's documents landing page,
+// whose alias equals the first path segment (e.g. /maestro/videos ->
+// documents/maestro).
 
 export default defineComponent({
   name: 'ApiCodeButton',
   components: {
+    CodeIcon,
     ElButton,
     ElTooltip,
-    FontAwesomeIcon,
     ApiCodeDialog
   },
   props: {
@@ -129,6 +112,11 @@ export default defineComponent({
     };
   },
   computed: {
+    showViewCode(): boolean {
+      // Only the bare main official host (studio.acedata.cloud) exposes the
+      // API host/code; subsites and white-label tenants never show it.
+      return isMainOfficial();
+    },
     cleanedBody(): Record<string, unknown> {
       const src = (this.body || {}) as Record<string, unknown>;
       const out: Record<string, unknown> = {};
@@ -149,8 +137,8 @@ export default defineComponent({
     },
     docHref(): string {
       const seg = (this.path || '').split('/').filter(Boolean)[0] || '';
-      const alias = SERVICE_DOC_ALIAS[seg];
-      return alias ? `${PLATFORM_DOCS_BASE}/${alias}` : PLATFORM_DOCS_BASE;
+      if (!seg) return PLATFORM_DOCS_BASE;
+      return `${PLATFORM_DOCS_BASE}/${seg}`;
     },
     resolvedTokenKey(): string {
       if (this.tokenKey) return this.tokenKey;

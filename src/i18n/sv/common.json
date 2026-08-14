@@ -1,4 +1,8 @@
 {
+  "message.mediaPreviewUnavailable": {
+    "message": "Förhandsvisning är inte tillgänglig",
+    "description": "Mediaförhandsvisning kan inte laddas"
+  },
   "button.setup": {
     "message": "Inställningar",
     "description": "Text i knappen för att göra inställningar"
@@ -66,6 +70,46 @@
   "button.close": {
     "message": "Stäng",
     "description": "Text i knappen för att stänga en dialogruta eller panel"
+  },
+  "button.send": {
+    "message": "Skicka",
+    "description": "Tillgänglighetsetikett för knappen som skickar innehåll."
+  },
+  "button.stop": {
+    "message": "Stoppa",
+    "description": "Tillgänglighetsetikett för knappen som stoppar åtgärden."
+  },
+  "button.openMenu": {
+    "message": "Öppna meny",
+    "description": "Tillgänglighetsetikett för knappen som öppnar navigerings- eller konfigurationsmenyn."
+  },
+  "button.more": {
+    "message": "Fler åtgärder",
+    "description": "Tillgänglighetsetikett för knappen som öppnar åtgärdsmenyn."
+  },
+  "button.remove": {
+    "message": "Ta bort",
+    "description": "Tillgänglighetsetikett för knappen som tar bort objekt."
+  },
+  "player.previous": {
+    "message": "Föregående låt",
+    "description": "Tillgänglighetsetikett för föregående låt-knappen i spelaren"
+  },
+  "player.play": {
+    "message": "Spela",
+    "description": "Tillgänglighetsetikett för spela-knappen i spelaren"
+  },
+  "player.pause": {
+    "message": "Pausa",
+    "description": "Tillgänglighetsetikett för pausknappen i spelaren"
+  },
+  "player.next": {
+    "message": "Nästa låt",
+    "description": "Tillgänglighetsetikett för nästa låt-knappen i spelaren"
+  },
+  "player.volume": {
+    "message": "Volym",
+    "description": "Tillgänglighetsetikett för volymkontrollen i spelaren"
   },
   "button.expand": {
     "message": "Expandera",
@@ -135,6 +179,14 @@
     "message": "Ladda ner för macOS",
     "description": "Text in button for downloading the macOS desktop installer"
   },
+  "button.downloadBrowserExtension": {
+    "message": "Ladda ner webbläsartillägg",
+    "description": "Text in button for downloading the Chrome / Edge browser extension package"
+  },
+  "button.viewExtensionGuide": {
+    "message": "Visa installationsguide",
+    "description": "Sekundär knapp på webbläsartilläggskortet som leder till dokumentationen för installation av tillägget"
+  },
   "button.installIos": {
     "message": "Installera iOS",
     "description": "Text i knappen för att installera iOS-appen"
@@ -200,7 +252,7 @@
     "description": "Visar typen av enhet"
   },
   "entity.website": {
-    "message": "BigPlayer AI",
+    "message": "Ace Data Cloud",
     "description": "Webbplatsens namn, ingen översättning behövs, behåll som 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -221,7 +273,7 @@
   },
   "entity.status": {
     "message": "Status",
-    "description": "Status för enheten"
+    "description": "Entitetens status"
   },
   "status.loading": {
     "message": "Laddar...",
@@ -232,8 +284,8 @@
     "description": "Error toast shown when native Apple sign-in fails for a reason other than user cancellation"
   },
   "error.loginLinkExpired": {
-    "message": "Login link expired. Please sign in again.",
-    "description": "Shown on the desktop client when an OAuth callback is dropped (state mismatch or expired)."
+    "message": "Inloggningslänken har gått ut, vänligen logga in igen.",
+    "description": "Felmeddelande som visas när skrivbordsappens OAuth-återkoppling har övergivits på grund av misslyckad/utgången state-verifiering."
   },
   "entity.operation": {
     "message": "Åtgärd",
@@ -268,7 +320,7 @@
     "description": "Visar det belopp som har använts för tjänsten"
   },
   "message.mobileAppDescription": {
-    "message": "Använd BigPlayer AI direkt på mobilen, för närvarande tillgänglig för nedladdning av Android APK, iOS-installationspaket kommer att göras tillgängligt efter signering.",
+    "message": "Använd AceData direkt på mobilen, för närvarande tillgänglig för nedladdning av Android APK, iOS-installationspaket kommer att göras tillgängligt efter signering.",
     "description": "Beskrivning på nedladdningssidan för mobilapplikationen"
   },
   "message.mobileAndroidHint": {
@@ -299,6 +351,14 @@
     "message": "Dela konto och kvot med webbversionen",
     "description": "Förklarar att mobilversionen delar konto med webbversionen"
   },
+  "message.extensionAvailableNow": {
+    "message": "Gratis att använda",
+    "description": "Status chip on the browser extension card"
+  },
+  "message.extensionHint": {
+    "message": "Autorisera sociala mediekonton, anslut din lokala webbläsare för att utföra uppgifter. Ladda ner, packa upp och välj 'Ladda upppackade tillägg' på sidan för tilläggshantering för att installera.",
+    "description": "Beskrivningstext på webbläsartilläggskortet"
+  },
   "message.mobileIosHint": {
     "message": "För iPhone och iPad, kan installeras direkt online; om systemet blockerar kan du först ladda ner IPA och sedan distribuera.",
     "description": "Beskrivning på iOS-nedladdningskortet"
@@ -312,8 +372,8 @@
     "description": "Short status label shown on a platform card (e.g. iOS) while its build is being prepared"
   },
   "message.mobileNowOnAppStore": {
-    "message": "Now on the App Store",
-    "description": "Status label shown on the iOS card when the app is live on the App Store"
+    "message": "Finns nu på App Store",
+    "description": "Statusetikett som visas på iOS-kortet när appen är live på App Store"
   },
   "message.desktopWindowsHint": {
     "message": "För Windows 10 och senare (64-bitars). Ladda ner installationsprogrammet och dubbelklicka för att installera.",
@@ -332,8 +392,8 @@
     "description": "Button label that opens the app's Google Play Store listing"
   },
   "button.getOnAppStore": {
-    "message": "Get it on the App Store",
-    "description": "Button label that opens the app's Apple App Store listing"
+    "message": "Ladda ner från App Store",
+    "description": "Knappetikett som öppnar appens Apple App Store-lista."
   },
   "message.mobileApkFallback": {
     "message": "Ingen åtkomst till Google Play? Ladda ner APK-filen direkt.",
@@ -344,8 +404,8 @@
     "description": "Hint under the QR code explaining that scanning it opens the Google Play listing"
   },
   "message.mobileAppStoreHint": {
-    "message": "Scan to open the App Store",
-    "description": "Hint under the QR code explaining that scanning it opens the App Store listing"
+    "message": "Skanna för att gå till App Store",
+    "description": "Tips under QR-koden som förklarar att skanning öppnar App Store-listan"
   },
   "message.mobileInstallNote": {
     "message": "Vid första installationen av företags- eller Ad Hoc-paket på iOS kan systemet kräva att du först litar på certifikatet i 'Inställningar > Allmänt > VPN och enhetsadministration'.",
@@ -398,6 +458,18 @@
   "message.confirmDelete": {
     "message": "Är du säker på att du vill ta bort?",
     "description": "Bekräfta meddelande för att användaren ska ta bort något innehåll"
+  },
+  "message.deleteTaskConfirm": {
+    "message": "Är du säker på att du vill ta bort denna genereringspost? Den kommer att tas bort från alla enheter och kan inte återställas.",
+    "description": "Bekräftelsemeddelande som visas innan en enskild uppgiftsgenereringspost tas bort."
+  },
+  "message.deleteTaskSuccess": {
+    "message": "Posten har tagits bort.",
+    "description": "Meddelande som visas efter att uppgiftsposten har tagits bort framgångsrikt."
+  },
+  "message.deleteTaskFailed": {
+    "message": "Borttagning misslyckades, vänligen försök igen senare.",
+    "description": "Meddelande som visas när borttagning av uppgiftspost misslyckas."
   },
   "message.expiredAt": {
     "message": "Utgångstid",
@@ -569,7 +641,7 @@
   },
   "nav.grokvideo": {
     "message": "Grok Video",
-    "description": "Text in the website navigation bar to display the Grok Imagine video page"
+    "description": "Text i webbplatsens navigeringsfält för att visa Grok Imagine videopage"
   },
   "nav.luma": {
     "message": "Luma",
@@ -587,6 +659,10 @@
     "message": "Hailuo",
     "description": "Text in the website navigation bar for displaying the Hailuo page, must remain 'Hailuo'"
   },
+  "nav.minimax": {
+    "message": "MiniMax H3",
+    "description": "Navigation name for the MiniMax H3 video generation service"
+  },
   "nav.wan": {
     "message": "Wan",
     "description": "Text in the website navigation bar for displaying the Wan page, must remain 'Wan'"
@@ -602,6 +678,10 @@
   "nav.kimi": {
     "message": "Kimi",
     "description": "Text in the website navigation bar for displaying the Kimi page, must remain 'Kimi'"
+  },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
   },
   "nav.serp": {
     "message": "SERP",
@@ -625,7 +705,7 @@
   },
   "nav.video": {
     "message": "Video",
-    "description": "Text in the website navigation bar for displaying the video page"
+    "description": "Text i webbplatsens navigeringsfält för att visa videopage"
   },
   "nav.distribution": {
     "message": "Rekommenderad inkomst",
@@ -655,13 +735,17 @@
     "message": "Inställningar",
     "description": "Text in the website navigation bar for displaying the settings page"
   },
-  "nav.headshots": {
-    "message": "AI ID-foto",
-    "description": "Text in the website navigation bar for displaying the site configuration page"
-  },
   "nav.more": {
     "message": "Mer",
     "description": "Text in the website navigation bar for expanding more services"
+  },
+  "nav.collapseDock": {
+    "message": "Dölj appfält",
+    "description": "Knappen för att dölja appfältet längst ner på mobil"
+  },
+  "nav.expandDock": {
+    "message": "Visa appfält",
+    "description": "Knappen för att visa appfältet längst ner på mobil"
   },
   "nav.locale": {
     "message": "Språkinställningar",
@@ -700,8 +784,8 @@
     "description": "Page title for displaying order information"
   },
   "title.buyMore": {
-    "message": "Top Up",
-    "description": "Page title for recharging. Must be translated to 'Top Up'."
+    "message": "Ladda på",
+    "description": "Sidtitel för att ladda på. Den engelska översättningen måste vara 'Top Up', den kinesiska är '充值'."
   },
   "title.distribution": {
     "message": "Rekommenderad inkomst",
@@ -744,7 +828,7 @@
     "description": "Företagets adress"
   },
   "about.email": {
-    "message": "office@acedata.cloud",
+    "message": "office{'@'}acedata.cloud",
     "description": "Företagets e-post"
   },
   "about.link1": {
@@ -793,7 +877,7 @@
   },
   "theme.system": {
     "message": "System",
-    "description": "Namn på systemtemat, indikerar automatisk växling av tema baserat på systeminställningar"
+    "description": "Namnet på systemtemat, indikerar att temat automatiskt växlar baserat på systeminställningar"
   },
   "settings.general": {
     "message": "Allmänna inställningar",
@@ -806,6 +890,30 @@
   "settings.theme": {
     "message": "Tema",
     "description": "Rubrik för tema-inställningar på inställningssidan"
+  },
+  "settings.sendShortcut": {
+    "message": "Skicka meddelande",
+    "description": "Title of the send-message shortcut row in General settings: choose Enter or modifier+Enter to send."
+  },
+  "sendShortcut.enter": {
+    "message": "Skicka med Enter",
+    "description": "Send-shortcut option: press Enter to send the message."
+  },
+  "sendShortcut.modEnter": {
+    "message": "Skicka med {key} + Enter",
+    "description": "Send-shortcut option: press the platform modifier (⌘ or Ctrl) plus Enter to send. {key} is the modifier symbol."
+  },
+  "settings.loginMode": {
+    "message": "Inloggningsläge",
+    "description": "Login-mode row title in general settings"
+  },
+  "loginMode.iframe": {
+    "message": "Inbäddad popup",
+    "description": "Login mode option: embedded iframe popup"
+  },
+  "loginMode.redirect": {
+    "message": "Helsidesomdirigering",
+    "description": "Login mode option: full-page redirect"
   },
   "settings.seo": {
     "message": "SEO-inställningar",
@@ -820,11 +928,11 @@
     "description": "Rubrik för distribueringsinställningar på inställningssidan"
   },
   "settings.function": {
-    "message": "Funktionsinställningar",
-    "description": "Rubrik för funktionsinställningar på inställningssidan"
+    "message": "Funktioner",
+    "description": "Title for the site capabilities section in the settings page"
   },
   "settings.auth": {
-    "message": "Inloggningsmetod",
+    "message": "Autentisering",
     "description": "Inställningssidans sidofältets fliktitel för 'Inloggningsmetod' — konfigurerar de inloggningsmetoder som tillåts på denna webbplats samt standardinloggningsmetod, endast synlig för webbplatsadministratörer."
   },
   "settings.apiKey": {
@@ -839,6 +947,14 @@
     "message": "Assistenten kommer att komma ihåg användbar information som du nämner i konversationer för att ge mer personliga svar i olika samtal. Du har full kontroll - du kan se det sparade innehållet och ta bort det du inte vill att den ska komma ihåg.",
     "description": "Introduktionstexten högst upp på minnesinställningssidan."
   },
+  "settings.memoryEnabled": {
+    "message": "Använd minne",
+    "description": "Rubriken för växeln som kontrollerar om assistenten ska använda sparat minne i chatten och fortsätta lära sig nya minnen."
+  },
+  "settings.memoryEnabledHint": {
+    "message": "När den är avstängd kommer assistenten inte att läsa sparat minne och inte spara minnen från nya konversationer. Existerande innehåll kommer inte att tas bort.",
+    "description": "Beteendebeskrivning under minnesväxeln."
+  },
   "settings.memoryNeedsChat": {
     "message": "Vänligen starta en konversation för att aktivera minnesfunktionen.",
     "description": "Visas på minnesinställningssidan när chattapplikationen/token ännu inte har laddats."
@@ -846,6 +962,58 @@
   "settings.memoryStored": {
     "message": "Sparade minnen",
     "description": "Rubriken ovanför listan med sparade minnesposter."
+  },
+  "settings.memoryImport": {
+    "message": "Importera",
+    "description": "Knappen för att öppna popup-fönstret för minnesimport."
+  },
+  "settings.memoryImportTitle": {
+    "message": "Importera minne från andra AI",
+    "description": "Rubriken för popup-fönstret för minnesimport."
+  },
+  "settings.memoryImportExportStep": {
+    "message": "1. Låt den aktuella AI:n exportera minnet",
+    "description": "Rubriken för det första steget i popup-fönstret för minnesimport."
+  },
+  "settings.memoryImportPrompt": {
+    "message": "Jag vill migrera till en annan AI-tjänst. Vänligen lista varje minne du har sparat om mig, samt bestående information från tidigare konversationer. Sätt allt innehåll i en kodblock, skriv en minnespost per rad, format: [spara datum, om tillgängligt] - minnesinnehåll. Inkludera preferenser för svar, personlig information, projekt, mål, vanliga verktyg, språk, ramverk, samt korrigeringar jag har gjort. Försök att behålla mina exakta ord, inkludera inte lösenord, nycklar eller annan känslig information.",
+    "description": "Prompt för att kopiera till andra AI-tjänster för att exportera minnen."
+  },
+  "settings.memoryImportCopy": {
+    "message": "Kopiera prompt",
+    "description": "Knappen för att kopiera minnesexportens prompt."
+  },
+  "settings.memoryImportCopied": {
+    "message": "Prompt har kopierats",
+    "description": "Meddelandet efter att minnesexportens prompt har kopierats framgångsrikt."
+  },
+  "settings.memoryImportPasteStep": {
+    "message": "2. Klistra in det exporterade minnet",
+    "description": "Rubriken för det andra steget i popup-fönstret för minnesimport."
+  },
+  "settings.memoryImportPlaceholder": {
+    "message": "Klistra in minnesinnehåll från ChatGPT, Claude, Gemini eller andra AI…",
+    "description": "Platshållartext i inmatningsfältet för att klistra in exporterade minnesinnehåll."
+  },
+  "settings.memoryImportSubmit": {
+    "message": "Lägg till i minnet",
+    "description": "Knappen för att skicka det klistrade innehållet för import."
+  },
+  "settings.memoryImportSuccess": {
+    "message": "Imported {count} memory entries",
+    "description": "Success toast after importing memory; count is the number of accepted entries"
+  },
+  "settings.memoryImportPartial": {
+    "message": "Behandlat {processed} innehåll, ytterligare {rejected} osäkra eller ogiltiga innehåll har hoppats över.",
+    "description": "Varning som visas när en del av minnesimporten lyckas."
+  },
+  "settings.memoryImportInvalid": {
+    "message": "Misslyckades med att importera minnet. Vänligen bekräfta att minnet är aktiverat och klistra in i formatet en vanlig fakta per rad.",
+    "description": "Operativt felmeddelande som visas när minnesimportbegäran är ogiltig."
+  },
+  "settings.memoryImportInProgress": {
+    "message": "En annan minnesimportuppgift pågår, vänligen håll popup-fönstret öppet och försök igen senare.",
+    "description": "Varning som visas när en annan minnesimportuppgift körs."
   },
   "settings.memoryEmpty": {
     "message": "Inga sparade minnen än. Med tiden kommer assistenten att komma ihåg dina bestående preferenser och information här.",
@@ -924,7 +1092,7 @@
     "description": "Kundens yrke"
   },
   "customers.comment1": {
-    "message": "BigPlayer AI har gett vårt team utmärkt service och hjälpt oss att öka produktiviteten. Mycket nöjd!",
+    "message": "Ace Data Cloud har gett vårt team utmärkt service och hjälpt oss att öka produktiviteten. Mycket nöjd!",
     "description": "Kundens omdöme"
   },
   "customers.name2": {
@@ -936,7 +1104,7 @@
     "description": "Kundens yrke"
   },
   "customers.comment2": {
-    "message": "BigPlayer AI är en fantastisk integrationsplattform med utmärkt servicekvalitet.",
+    "message": "Ace Data Cloud är en fantastisk integrationsplattform med utmärkt servicekvalitet.",
     "description": "Kundens omdöme"
   },
   "customers.name3": {
@@ -948,7 +1116,7 @@
     "description": "Kundens yrke"
   },
   "customers.comment3": {
-    "message": "Jag älskar BigPlayer AIs tjänster, de är användarvänliga och prisvärda. Hoppas de blir ännu bättre!",
+    "message": "Jag älskar Ace Data Clouds tjänster, de är användarvänliga och prisvärda. Hoppas de blir ännu bättre!",
     "description": "Kundens omdöme"
   },
   "nav.github": {
@@ -980,12 +1148,12 @@
     "description": "Help text under the authorized-folders heading."
   },
   "settings.localToolsComputerUseTitle": {
-    "message": "Computer Use (experimental)",
-    "description": "Heading for the opt-in Computer Use (screen + mouse/keyboard control) toggle."
+    "message": "Datoråtgärder (experimentella)",
+    "description": "Rubrik för växeln för att delta i datoranvändning (skärm + mus/tangentbordskontroll)."
   },
   "settings.localToolsComputerUseHint": {
-    "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
-    "description": "Help text under the Computer Use toggle."
+    "message": "Låt AI se din skärm och styra musen och tangentbordet på din dator. Som standard avstängd, aktivera vid behov. På macOS måste du ge \"skärminspelning\" och \"tillgänglighet\"-behörigheter nedan. Varje åtgärd kommer fortfarande att begära din bekräftelse.",
+    "description": "Hjälptext under växeln för datoranvändning."
   },
   "settings.localToolsAndroidSkillsTitle": {
     "message": "Telefonautomationsfärdigheter",
@@ -1077,96 +1245,96 @@
     "description": "Save the authorized folders."
   },
   "settings.localToolsMcpTitle": {
-    "message": "MCP servers",
-    "description": "Section title for local MCP server configuration in Local Tools settings."
+    "message": "MCP-server",
+    "description": "Rubriken för konfigurationen av den lokala MCP-servern i inställningarna för lokala verktyg."
   },
   "settings.localToolsMcpHint": {
-    "message": "Connect local MCP servers over stdio. Their tools become available to the AI, gated by the same per-call confirmation. Changes take effect immediately.",
-    "description": "Explains what local MCP servers do and that changes apply without a restart."
+    "message": "Anslut till den lokala MCP-servern via stdio. Deras verktyg kommer att göras tillgängliga för AI och skyddas av samma bekräftelse för varje anrop. Ändringar träder i kraft omedelbart.",
+    "description": "Förklaring av vad den lokala MCP-servern gör och att ändringar träder i kraft utan att behöva starta om."
   },
   "settings.localToolsMcpAdd": {
-    "message": "Add server",
-    "description": "Button to add a new local MCP server row."
+    "message": "Lägg till server",
+    "description": "Knapp för att lägga till en ny lokal MCP-serverrad."
   },
   "settings.localToolsMcpName": {
-    "message": "Name",
-    "description": "Label for the MCP server name/id field."
+    "message": "Namn",
+    "description": "Etikett för fältet för namn/identifiering av MCP-servern."
   },
   "settings.localToolsMcpCommand": {
-    "message": "Command",
-    "description": "Label for the MCP server launch command field."
+    "message": "Kommando",
+    "description": "Etikett för fältet för startkommando för MCP-servern."
   },
   "settings.localToolsMcpArgs": {
-    "message": "Arguments",
-    "description": "Label for the MCP server command arguments field."
+    "message": "Parametrar",
+    "description": "Etikett för fältet för kommandoparametrar för MCP-servern."
   },
   "settings.localToolsMcpArgsHint": {
-    "message": "One argument per line.",
-    "description": "Placeholder/hint for the MCP arguments textarea."
+    "message": "En parameter per rad.",
+    "description": "Platshållartext för MCP-parametern textfält."
   },
   "settings.localToolsMcpEnv": {
-    "message": "Environment",
-    "description": "Label for the MCP server environment variables field."
+    "message": "Miljövariabler",
+    "description": "Etikett för fältet för miljövariabler för MCP-servern."
   },
   "settings.localToolsMcpEnvHint": {
-    "message": "One KEY=VALUE per line.",
-    "description": "Placeholder/hint for the MCP environment variables textarea."
+    "message": "En KEY=VALUE per rad.",
+    "description": "Platshållartext för MCP-miljövariabel textfält."
   },
   "settings.localToolsMcpNoServers": {
-    "message": "No MCP servers configured.",
-    "description": "Empty state shown when no MCP servers are configured."
+    "message": "Inga MCP-servrar har konfigurerats än.",
+    "description": "Visas som ett tomt tillstånd när inga MCP-servrar har konfigurerats."
   },
   "settings.localToolsMcpNamePlaceholder": {
-    "message": "e.g. filesystem",
-    "description": "Placeholder for the MCP server name input."
+    "message": "Till exempel filesystem",
+    "description": "Platshållare för inmatningsfältet för MCP-servernamn."
   },
   "settings.localToolsMcpCommandPlaceholder": {
-    "message": "e.g. npx",
-    "description": "Placeholder for the MCP server command input."
+    "message": "Till exempel npx",
+    "description": "Platshållare för inmatningsfältet för MCP-serverkommando."
   },
   "settings.localToolsMcpNameRequired": {
-    "message": "Each server needs a name and a command.",
-    "description": "Validation error when a server row is missing a name or command."
+    "message": "Varje server behöver ett namn och ett kommando.",
+    "description": "Valideringsfel när serverraden saknar namn eller kommando."
   },
   "settings.localToolsMcpDuplicateName": {
-    "message": "Server names must be unique.",
-    "description": "Validation error when two servers share the same name."
+    "message": "Servernamnet måste vara unikt.",
+    "description": "Valideringsfel när två servernamn är identiska."
   },
   "settings.localToolsMcpNameInvalid": {
-    "message": "Name may only contain letters, numbers, hyphens and underscores.",
-    "description": "Validation error when a server name contains invalid characters."
+    "message": "Namnet får endast innehålla bokstäver, siffror, bindestreck och understreck.",
+    "description": "Valideringsfel när servernamnet innehåller ogiltiga tecken."
   },
   "settings.localToolsMcpEnabled": {
-    "message": "On",
-    "description": "Toggle label to enable/disable a local MCP server."
+    "message": "Aktiverad",
+    "description": "Etikett för växeln för att aktivera/inaktivera en lokal MCP-server."
   },
   "settings.localToolsMcpReconnect": {
-    "message": "Test / Reconnect",
-    "description": "Button to re-spawn one MCP server and refresh its status."
+    "message": "Testa / Återanslut",
+    "description": "Knappen för att starta om en MCP-server och uppdatera dess status."
   },
   "settings.localToolsMcpConnecting": {
-    "message": "Connecting…",
-    "description": "Badge while an MCP server is being (re)connected."
+    "message": "Ansluter…",
+    "description": "Statusetikett när MCP-servern håller på att (åter)ansluta."
   },
   "settings.localToolsMcpNotSaved": {
-    "message": "Not saved yet",
-    "description": "Badge for an MCP server row that hasn't been saved/connected yet."
+    "message": "Inte sparad än",
+    "description": "Statusetikett för MCP-serverraden som inte har sparats/anslutits än."
   },
   "settings.localToolsMcpConnected": {
-    "message": "Connected · {n} tools",
-    "description": "Badge when an MCP server connected; {n} is the tool count."
+    "message": "Ansluten · {n} verktyg",
+    "description": "Etikett när MCP-servern är framgångsrikt ansluten; {n} är antalet verktyg."
   },
   "settings.localToolsMcpDisabled": {
-    "message": "Disabled",
-    "description": "Badge when an MCP server is turned off."
+    "message": "Avstängd",
+    "description": "Etikett när MCP-servern är avstängd."
   },
   "settings.localToolsMcpFailed": {
-    "message": "Failed to connect",
-    "description": "Badge when an MCP server failed to start; the reason is shown below."
+    "message": "Anslutning misslyckades",
+    "description": "Etikett när MCP-servern misslyckas med att starta; orsaken visas nedan."
   },
   "settings.localToolsMcpPlatformHint": {
-    "message": "Tip: use a command on your PATH such as npx or uvx (e.g. npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). On Windows, npx/node resolve automatically. If a server shows \"spawn … ENOENT\", set the command to a full path.",
-    "description": "Cross-platform hint for configuring the MCP launch command."
+    "message": "Tips: Använd kommandon i PATH, som npx eller uvx (t.ex. npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). npx/node kommer automatiskt att lösas på Windows. Om en server visar \"spawn … ENOENT\", ändra kommandot till fullständig sökväg.",
+    "description": "Konfigurationshint för att starta MCP-kommandon över plattformar."
   },
   "settings.localToolsSaved": {
     "message": "Sparat",
@@ -1253,7 +1421,7 @@
     "description": "Rubriken som visar vilken öppen källkodsprojekt webbplatsen är baserad på på om-sidan"
   },
   "settings.poweredByTip": {
-    "message": "Denna webbplats är baserad på BigPlayer AI öppen källkodsprojekt, koden är helt öppen källkod.",
+    "message": "Denna webbplats är baserad på Nexior öppen källkodsprojekt, koden är helt öppen källkod.",
     "description": "Beskrivningen av vilket öppen källkodsprojekt webbplatsen är baserad på på om-sidan"
   },
   "settings.apiService": {
@@ -1261,7 +1429,7 @@
     "description": "Rubriken som visar API-tjänsteleverantören på om-sidan"
   },
   "settings.apiServiceTip": {
-    "message": "Denna webbplats API-tjänst tillhandahålls av BigPlayer AI.",
+    "message": "Denna webbplats API-tjänst tillhandahålls av Ace Data Cloud.",
     "description": "Beskrivningen av API-tjänsteleverantören på om-sidan"
   },
   "settings.buildYourOwn": {
@@ -1276,6 +1444,86 @@
     "message": "Kontakta support",
     "description": "Texten för knappen för att kontakta support"
   },
+  "settings.contactSupport": {
+    "message": "Kontakta support",
+    "description": "Section title on the About page listing the site owner's customer-service channels"
+  },
+  "settings.contactSupportTip": {
+    "message": "Nå vårt supportteam via någon av kanalerna nedan.",
+    "description": "Subtitle under the support contacts section on the About page"
+  },
+  "settings.contactInvalidUrl": {
+    "message": "{field} måste vara en giltig http(s)-länk",
+    "description": "Validation error shown when a contact URL is not a valid http(s) link"
+  },
+  "settings.contactInvalidPhone": {
+    "message": "Ange ett giltigt telefonnummer",
+    "description": "Validation error shown when the phone number is invalid"
+  },
+  "settings.contactInvalidEmail": {
+    "message": "Ange en giltig e-postadress",
+    "description": "Validation error shown when the email address is invalid"
+  },
+  "settings.contactType": {
+    "message": "Typ",
+    "description": "Placeholder for the contact type picker in the editor"
+  },
+  "settings.contactType_phone": {
+    "message": "Telefon",
+    "description": "Display name for the phone contact type"
+  },
+  "settings.contactType_email": {
+    "message": "E-post",
+    "description": "Display name for the email contact type"
+  },
+  "settings.contactType_website": {
+    "message": "Webbplats",
+    "description": "Display name for the website contact type"
+  },
+  "settings.contactType_wechat": {
+    "message": "WeChat",
+    "description": "Visningsnamn för WeChat kontakt typ"
+  },
+  "settings.contactLabelPlaceholder": {
+    "message": "Anteckning (valfritt), t.ex.: Försäljning",
+    "description": "Platshållare för den valfria kontaktetikettens inmatning"
+  },
+  "settings.contactValuePlaceholder": {
+    "message": "Konto / Visningstext",
+    "description": "Platshållare för den generiska kontaktvärdesinmatningen"
+  },
+  "settings.contactQr": {
+    "message": "QR-kod",
+    "description": "Label for a contact's QR-code image"
+  },
+  "settings.contactQrTip": {
+    "message": "Ladda upp en QR-kod så att användare kan skanna för att lägga till dig.",
+    "description": "Tips för kontaktens QR-koduppladdare"
+  },
+  "settings.contactAdd": {
+    "message": "Lägg till kontakt",
+    "description": "Button to add another contact entry"
+  },
+  "settings.contactEditorHint": {
+    "message": "Välj typ för varje kanal och fyll i minst ett av värde/länk/QR-kod; flera kan läggas till.",
+    "description": "Tips högst upp i kontaktredigerardialogen"
+  },
+  "settings.contactInvalidType": {
+    "message": "Typen får endast innehålla små bokstäver, siffror, - och _",
+    "description": "Valideringsfel för en ogiltig kontakttyp slug"
+  },
+  "settings.contactRowNeedsValue": {
+    "message": "Varje kontakt måste ha minst ett värde, länk eller QR-kod",
+    "description": "Valideringsfel när en kontakt rad saknar värde/url/qr"
+  },
+  "settings.contactInvalidValue": {
+    "message": "Kontaktinnehållet är ogiltigt eller för långt",
+    "description": "Valideringsfel när ett kontaktvärde/etikett är ogiltigt eller för långt"
+  },
+  "settings.contactTooMany": {
+    "message": "Maximalt {max} kontakter kan läggas till",
+    "description": "Valideringsfel när för många kontakter har lagts till"
+  },
   "message.viewOnGithub": {
     "message": "Visa på GitHub",
     "description": "Texten för länken för att se projektet på GitHub"
@@ -1285,7 +1533,7 @@
     "description": "Rubriken för 404-sidan"
   },
   "message.notFound": {
-    "message": "Sidan du besöker finns inte, länken kan ha ändrats eller tagits bort. Gå till startsidan för att fortsätta utforska BigPlayer AI's AI-tjänster.",
+    "message": "Sidan du besöker finns inte, länken kan ha ändrats eller tagits bort. Gå till startsidan för att fortsätta utforska AceData's AI-tjänster.",
     "description": "Underrubriken för 404-sidan"
   },
   "message.notFoundEyebrow": {
@@ -1305,24 +1553,24 @@
     "description": "Texten för knappen som används för att gå tillbaka till föregående sida i webbläsarhistoriken"
   },
   "title.apiCode": {
-    "message": "API code for this request",
-    "description": "Title of the dialog that shows the equivalent API code (curl / Python / Node) that would reproduce a result generated inside the product"
+    "message": "API-koden för denna begäran",
+    "description": "Dialogrutorubrik: visar curl / Python / Node API-anropskoden som motsvarar det aktuella resultatet."
   },
   "message.viewCodeHint": {
-    "message": "Show API code for this request",
-    "description": "Tooltip text on the View Code button shown alongside result-card action buttons (U1/U2/Download/Extend/...). Clicking the button opens a dialog with curl / Python / Node snippets that reproduce the same generation via the public API."
+    "message": "Visa API-koden för denna begäran",
+    "description": "Svävande tips för knappen Visa kod bredvid resultatkortets åtgärdsknappar (U1/U2/nedladdning/utvidgning…). Klicka på knappen för att öppna en dialogruta som visar curl / Python / Node-kod för API-anrop som motsvarar det aktuella resultatet."
   },
   "button.viewCode": {
-    "message": "View code",
-    "description": "Button text that opens a dialog with the equivalent API code (curl / Python / Node) for the current result, similar to the OpenAI Playground 'View code' affordance"
+    "message": "Visa kod",
+    "description": "Knapptext: öppnar dialogrutan som visar curl / Python / Node API-anropskoden som motsvarar det aktuella resultatet (liknande OpenAI Playground's Visa kod)."
   },
   "button.getApiKey": {
-    "message": "Get an API key",
-    "description": "Link text in the API code dialog footer that opens the platform console page where users can create an API key"
+    "message": "Hämta API-nyckel",
+    "description": "Länktext i botten av API-koddialogen: klicka för att gå till plattformens kontrollpanel för att skapa API-nyckel."
   },
   "button.apiPlatform": {
-    "message": "API Platform",
-    "description": "API code dialog footer button label. Clicking opens https://platform.acedata.cloud/ in a new tab so users can manage their API keys, balance and usage."
+    "message": "API-plattform",
+    "description": "API-koddialogens fotknappsetikett. Klicka för att öppna https://platform.acedata.cloud/ i en ny flik så att användare kan hantera sina API-nycklar, saldo och användning."
   },
   "message.apiCodeIntro": {
     "message": "Run this from your own code to produce the same result. Replace <YOUR_API_KEY> with a key from your platform console.",
@@ -1380,60 +1628,235 @@
     "message": "Referensuppladdningarna pågår fortfarande – vänta ett ögonblick.",
     "description": "Toast shown when the user clicks the Generate button while one or more reference uploads are still in flight. Asks them to wait for uploads to complete before retrying."
   },
+  "message.uploadTooLarge": {
+    "message": "Filstorlek {size} överskrider gränsen {max}, vänligen komprimera och försök igen",
+    "description": "Meddelande som visas när den valda filen överskrider den tillåtna uppladdningsstorleken, anger aktuell filstorlek och tillåten gräns."
+  },
+  "message.dropToUpload": {
+    "message": "Dra och släpp hit för att ladda upp",
+    "description": "Text som tillfälligt visas ovanför ett uppladdningskontroll när en fil dras över det, vilket informerar användaren att släppa för att ladda upp."
+  },
   "appUpgrade.title": {
-    "message": "Update required",
-    "description": "Title of the native-app version gate modal shown at startup when the installed build is older than what the backend supports."
+    "message": "Uppgradering krävs",
+    "description": "Titeln på versionsgränsen popup när den inhemska appen startas. Visas när klientversionen är lägre än serverns krav, informerar användaren om att appen behöver uppgraderas."
   },
   "appUpgrade.blockMessage": {
-    "message": "This version is no longer supported. Please update from the app store to continue.",
-    "description": "Body text of the hard-block upgrade modal shown when the installed version is below min_supported. The modal has no dismiss affordance — the only button opens the app store."
+    "message": "Den nuvarande versionen är för låg, vänligen gå till appbutiken för att uppdatera till den senaste versionen innan du fortsätter.",
+    "description": "Tvingande uppgraderingspopupens text. Visas när klientversionen är lägre än min_supported, kan inte stängas, enda knappen går till appbutiken."
   },
   "appUpgrade.softMessage": {
-    "message": "A newer version is available. Update from the app store for the best experience.",
-    "description": "Body text of the soft upgrade prompt shown when the installed version is below latest but above min_supported. The user can dismiss and keep using the app."
+    "message": "En ny version är tillgänglig, vi rekommenderar att du går till appbutiken för att uppdatera för bästa upplevelse.",
+    "description": "Valfri uppgraderingspåminnelse. Visas när klientversionen är lägre än latest men högre än min_supported, användaren kan välja att säga senare och fortsätta använda."
   },
   "appUpgrade.openStore": {
-    "message": "Update now",
-    "description": "Primary button on the upgrade modal — opens the App Store / Play Store URL in the system browser."
+    "message": "Gå till uppdatering",
+    "description": "Huvudknappen i uppgraderingspopupen: öppnar App Store / Play Store-länken i systemets webbläsare."
   },
   "appUpgrade.later": {
-    "message": "Later",
-    "description": "Secondary button on the soft upgrade prompt — dismisses the modal and lets the user keep using the current version. Only shown for non-forced upgrades."
+    "message": "Säg senare",
+    "description": "Mjuk påminnelse för uppgraderingspopupens sekundära knapp: ignorera denna påminnelse och fortsätt använda, visas endast i icke-tvingande uppgraderingsscenarier."
   },
   "nav.maestro": {
     "message": "Maestro",
     "description": "Texten för Maestro-artikeln på videoproduktionssidan i navigeringsfältet, hålls som 'Maestro'"
   },
   "nav.digitalhuman": {
-    "message": "Digital Human",
-    "description": "Text in the website navigation bar for the Digital Human talking-head page"
+    "message": "Digital människa",
+    "description": "Texten för den digitala människosidan i navigeringsfältet"
   },
   "settings.localToolsAndroidPermHint": {
-    "message": "Enable the accessibility service so the assistant can see and control your screen. You can pre-authorize individual actions below.",
-    "description": "Hint for the Android Computer Use accessibility permission section in Settings."
+    "message": "Efter att ha aktiverat tillgänglighetstjänster kan AI-assistenten se och styra din skärm. Du kan i förväg ge tillstånd för specifika åtgärder nedan.",
+    "description": "Beskrivning av tillgänglighetsbehörighetsavsnittet för Computer Use i Android-inställningarna."
   },
   "settings.cuConsentTitle": {
-    "message": "Allow action?",
-    "description": "Title of the on-demand consent dialog shown when the assistant requests a screen action."
+    "message": "Tillåta åtgärd?",
+    "description": "Titeln på dialogrutan för att be om tillstånd (visas när modellen begär att utföra en viss skärmägning)."
   },
   "settings.cuConsentMessage": {
-    "message": "The assistant wants to run \"{action}\" on your phone. Allow it?",
-    "description": "Body of the on-demand consent dialog; {action} is the computer.* action name."
+    "message": "AI-assistenten vill utföra \"{action}\" på din telefon, tillåter du det?",
+    "description": "Text i dialogrutan för att be om tillstånd; {action} är namnet på den specifika computer.* åtgärden."
   },
   "settings.cuConsentAllow": {
-    "message": "Allow once",
-    "description": "Allow button of the on-demand consent dialog."
+    "message": "Tillåt en gång",
+    "description": "Tillåt-knappen i dialogrutan för begärd behörighet."
   },
   "settings.cuConsentAlways": {
-    "message": "Always allow",
-    "description": "Always-allow button of the on-demand consent dialog; persists a grant so this action never prompts again."
+    "message": "Tillåt alltid",
+    "description": "Knappen för att alltid tillåta i dialogrutan för begärd behörighet; beständig behörighet, denna åtgärd kommer inte att fråga igen."
   },
   "settings.cuConsentDeny": {
-    "message": "Deny",
-    "description": "Deny button of the on-demand consent dialog."
+    "message": "Neka",
+    "description": "Neka-knappen i dialogrutan för begärd behörighet."
   },
-  "nav.glm": {
-    "message": "GLM",
-    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  "settings.siteServices": {
+    "message": "Pris"
+  },
+  "nav.omni": {
+    "message": "Omni Video",
+    "description": "Navigeringsflik för Omni videomodul"
+  },
+  "settings.localToolsMcpToolsTitle": {
+    "message": "MCP Verktyg",
+    "description": "Titel för MCP-verktygsblock i lokala verktygsinställningar"
+  },
+  "settings.localToolsMcpToolsHint": {
+    "message": "Verktyg som tillhandahålls av den anslutna MCP-servern. När det är aktiverat kommer AI-anropet inte längre att fråga en och en. MCP-servern är ett tredjepartsprogram och är inte begränsat av auktoriserade mappar - verktyg som är markerade som 'fullständig åtkomst' kan ändra eller publicera data, var försiktig med att aktivera.",
+    "description": "Beskrivningstext för MCP-verktygsblock, betonar tredjepartsrisker"
+  },
+  "settings.localToolsWorkingDirTitle": {
+    "message": "Arbetskatalog",
+    "description": "Partitionstitel i inställningarna för lokala verktyg: projektmappen som AI för närvarande arbetar med"
+  },
+  "settings.localToolsWorkingDirHint": {
+    "message": "AI arbetar som standard i detta projekt: terminalkommandon körs härifrån, projektkonventioner (AGENTS.md / CLAUDE.md) läses också härifrån. När den väljs får den här mappen automatiskt läs- och skrivbehörighet, så det behövs ingen ytterligare tillägg.",
+    "description": "Beskrivningstext för arbetskatalogpartitionen"
+  },
+  "settings.localToolsWorkingDirNone": {
+    "message": "Inte valt än",
+    "description": "Tomt tillstånd när arbetskatalogen inte är inställd"
+  },
+  "settings.localToolsWorkingDirChange": {
+    "message": "Ändra",
+    "description": "Knapp för att byta arbetskatalog"
+  },
+  "button.report": {
+    "message": "Rapportera",
+    "description": "Text i knappen för att rapportera olämpligt AI-genererat innehåll"
+  },
+  "title.reportContent": {
+    "message": "Rapportera innehåll",
+    "description": "Titel på dialogrutan för att rapportera olämpligt AI-genererat innehåll"
+  },
+  "message.reportIntro": {
+    "message": "Vänligen välj en rapporteringsorsak, vi kommer att granska den så snart som möjligt och förbättra innehållsfiltreringen baserat på detta.",
+    "description": "Inledande meddelande i dialogrutan för innehållsrapportering"
+  },
+  "message.reportDetailPlaceholder": {
+    "message": "Tilläggsinformation (valfritt)",
+    "description": "Platshållare för den valfria detalj-textarean i dialogrutan för innehållsrapportering"
+  },
+  "message.reportSuccess": {
+    "message": "Rapporten har skickats, tack för din feedback.",
+    "description": "Meddelande som visas efter att en innehållsrapport har skickats framgångsrikt"
+  },
+  "message.reportFailed": {
+    "message": "Rapporten kunde inte skickas, försök igen senare.",
+    "description": "Meddelande som visas när inskickandet av en innehållsrapport misslyckas"
+  },
+  "message.reportReasonRequired": {
+    "message": "Vänligen välj en rapporteringsorsak.",
+    "description": "Valideringsmeddelande när ingen rapporteringsorsak har valts"
+  },
+  "reportReason.sexual": {
+    "message": "Sexuellt eller sexuellt antydande innehåll",
+    "description": "Rapporteringsorsak för innehåll: sexuellt innehåll"
+  },
+  "reportReason.violence": {
+    "message": "Våld eller blodigt innehåll",
+    "description": "Rapporteringsorsak för innehåll: våld eller blod"
+  },
+  "reportReason.hate": {
+    "message": "Hatretorik eller trakasserier",
+    "description": "Rapporteringsorsak för innehåll: hatretorik eller trakasserier"
+  },
+  "reportReason.child_safety": {
+    "message": "Skada på minderåriga",
+    "description": "Rapporteringsorsak för innehåll: barnsäkerhet"
+  },
+  "reportReason.self_harm": {
+    "message": "Självskada eller farliga beteenden",
+    "description": "Rapporteringsorsak för innehåll: självskada eller farliga handlingar"
+  },
+  "reportReason.deception": {
+    "message": "Bedrägligt eller vilseledande innehåll",
+    "description": "Rapporteringsorsak för innehåll: bedrägligt eller vilseledande innehåll"
+  },
+  "reportReason.illegal": {
+    "message": "Olaga innehåll",
+    "description": "Rapporteringsorsak för innehåll: olaglig verksamhet"
+  },
+  "reportReason.ip": {
+    "message": "Överträdelser av immateriella rättigheter",
+    "description": "Rapporteringsorsak för innehåll: intrång i immateriella rättigheter"
+  },
+  "reportReason.other": {
+    "message": "Annat",
+    "description": "Rapporteringsorsak för innehåll: annat"
+  },
+  "x402Scenario.paymentMethod": {
+    "message": "Betalningsmetod",
+    "description": "Etiketten för att välja poäng eller Solana USDC plånbok i bildgenereringsscenariot."
+  },
+  "x402Scenario.credits": {
+    "message": "Poäng",
+    "description": "Betalningsalternativet med poäng i bildgenereringsscenariot."
+  },
+  "x402Scenario.wallet": {
+    "message": "USDC plånbok",
+    "description": "Betalningsalternativet med Solana USDC plånbok i bildgenereringsscenariot."
+  },
+  "x402Scenario.quoteBeforeSigning": {
+    "message": "Det exakta USDC-priset från servern visas innan plånboken signeras.",
+    "description": "En indikation på att servern kommer att tillhandahålla ett auktoritativt pris innan betalning i plånboksbetalningsläge."
+  },
+  "x402Scenario.connectWalletFirst": {
+    "message": "Vänligen anslut Solana plånbok innan du genererar.",
+    "description": "En uppmaning när plånboksmetoden valts men plånboken inte är ansluten."
+  },
+  "x402Scenario.confirmPayment": {
+    "message": "Bekräfta betalningen av {amount} USDC (Solana) för denna generation?",
+    "description": "Betalningsbekräftelse efter att ha mottagit x402-utmaningen; {amount} är det exakta priset från servern."
+  },
+  "x402Scenario.paymentFailed": {
+    "message": "Plånboksbetalning misslyckades.",
+    "description": "Prefix för meddelandet när bildgenereringen misslyckas i plånboksmetoden."
+  },
+  "x402Scenario.gptEditCreditsOnly": {
+    "message": "Plånboksbetalning stöder för närvarande endast GPT Image bildgenerering; för att redigera referensbilden, vänligen väx till poäng.",
+    "description": "En uppmaning till MVP-användare som försöker redigera referensbilder i plånboksmetoden."
+  },
+  "x402Scenario.payEachTime": {
+    "message": "Bekräfta varje gång",
+    "description": "Alternativ som kräver att användaren bekräftar varje plånboksbetalning."
+  },
+  "x402Scenario.continuousPayments": {
+    "message": "Kontinuerliga betalningar",
+    "description": "Alternativ för att använda återanvändbara Solana USDC betalningsautoriseringar."
+  },
+  "x402Scenario.continuousPaymentsDescription": {
+    "message": "Tillåter Studio att betala den faktiska användningen från Solana USDC plånbok inom den dagliga gränsen du ställt in.",
+    "description": "Beskrivning som visas innan kontinuerliga plånboksbetalningar aktiveras."
+  },
+  "x402Scenario.dailyPaymentLimit": {
+    "message": "Dagligt betalningsgräns",
+    "description": "Maximalt belopp av USDC som kan användas för kontinuerliga betalningar per dag."
+  },
+  "x402Scenario.validUntil": {
+    "message": "Giltig till",
+    "description": "Utgångsdatum för auktoriseringen för kontinuerliga betalningar."
+  },
+  "x402Scenario.validDays": {
+    "message": "Giltiga dagar",
+    "description": "Antal dagar innan auktoriseringen för kontinuerliga betalningar går ut."
+  },
+  "x402Scenario.enableContinuousPayments": {
+    "message": "Aktivera kontinuerliga betalningar",
+    "description": "Knapp för att skapa återanvändbara Solana betalningsautoriseringar."
+  },
+  "x402Scenario.disableContinuousPayments": {
+    "message": "Inaktivera",
+    "description": "Knapp för att stoppa användningen av kontinuerliga betalningar utan att återkalla on-chain auktorisering."
+  },
+  "x402Scenario.revokeAuthorization": {
+    "message": "Återkalla auktorisering",
+    "description": "Knapp för att återkalla återanvändbara betalningsautoriseringar på Solana."
+  },
+  "x402Scenario.continuousPaymentsEnabled": {
+    "message": "Kontinuerliga betalningar är aktiverade.",
+    "description": "Meddelande efter att plånboken framgångsrikt har skapat betalningsautorisering."
+  },
+  "error.userRestricted": {
+    "message": "Detta konto är för närvarande begränsat och kan inte logga in. Kontakta kundtjänst om du har några frågor.",
+    "description": "Meddelande som visas när iOS-inloggning identifierar ett isolerat konto, utan att visa interna begränsningsorsaker"
   }
 }

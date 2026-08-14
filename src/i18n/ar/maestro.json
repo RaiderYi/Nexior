@@ -27,6 +27,26 @@
     "message": "سبب الفشل",
     "description": "سبب الفشل"
   },
+  "name.mode": {
+    "message": "الوضع",
+    "description": "وضع الجيل / الإجراء"
+  },
+  "option.action.generate": {
+    "message": "إنشاء",
+    "description": "خيار إجراء الإنشاء"
+  },
+  "option.action.remix": {
+    "message": "إعادة مزج",
+    "description": "خيار إجراء إعادة المزج"
+  },
+  "option.action.edit": {
+    "message": "تعديل",
+    "description": "خيار إجراء التعديل"
+  },
+  "option.action.extend": {
+    "message": "تمديد",
+    "description": "خيار إجراء التمديد"
+  },
   "step.plan": {
     "message": "التخطيط والقصة المصورة",
     "description": "Pipeline step: plan"
@@ -63,6 +83,14 @@
     "message": "اللغات",
     "description": "حقل لغات الإخراج"
   },
+  "name.primaryLanguage": {
+    "message": "اللغة الأساسية",
+    "description": "حقل اللغة الأساسية للإخراج"
+  },
+  "name.additionalLanguages": {
+    "message": "لغات إضافية (اختياري)",
+    "description": "حقل لغات الإخراج الإضافية"
+  },
   "name.aspect": {
     "message": "نسبة العرض إلى الارتفاع",
     "description": "حقل نسبة العرض إلى الارتفاع"
@@ -75,17 +103,41 @@
     "message": "الجودة",
     "description": "Production quality tier field"
   },
-  "option.quality.draft": {
-    "message": "مسودة · معاينة سريعة",
-    "description": "Draft quality option"
+  "option.quality.lite": {
+    "message": "Lite خفيف",
+    "description": "خيار SKU Lite"
   },
   "option.quality.standard": {
     "message": "قياسي · متوازن",
     "description": "Standard quality option"
   },
-  "option.quality.premium": {
-    "message": "متميز · تفاصيل أكثر",
-    "description": "Premium quality option"
+  "option.quality.pro": {
+    "message": "Pro محترف",
+    "description": "خيار SKU Pro"
+  },
+  "description.quality.lite": {
+    "message": "إنشاء مقاطع فيديو قصيرة بسيطة بسرعة، مع حركات خفيفة، وإخراج بلغة واحدة.",
+    "description": "ملخص SKU Lite"
+  },
+  "description.quality.standard": {
+    "message": "إنتاج متوازن بدقة 1080p، يدعم التعليق الصوتي الرقمي وما يصل إلى لغتين.",
+    "description": "ملخص SKU Standard"
+  },
+  "description.quality.pro": {
+    "message": "يدعم الفيديوهات الطويلة، والقصص القصيرة، وأكمل قدرات الإبداع.",
+    "description": "ملخص SKU Pro"
+  },
+  "name.upToSeconds": {
+    "message": "أقصى مدة {seconds} ثانية",
+    "description": "أقصى مدة SKU"
+  },
+  "name.estimatedCredits": {
+    "message": "تقدير {credits} نقاط",
+    "description": "نقاط التوليد المقدرة"
+  },
+  "name.requiresSku": {
+    "message": "يتطلب {sku}",
+    "description": "الحد الأدنى من SKU لنوع الفيديو"
   },
   "name.remixing": {
     "message": "إعادة التعديل",
@@ -98,6 +150,10 @@
   "placeholder.select": {
     "message": "يرجى الاختيار",
     "description": "نموذج عام لمكان حجز الاختيار"
+  },
+  "placeholder.additionalLanguages": {
+    "message": "إضافة لغات إخراج إضافية",
+    "description": "نموذج لغات إضافية"
   },
   "description.prompt": {
     "message": "استخدم لغة بسيطة لشرح ما تريده، النص، المشاهد، الصوت، والتحرير كلها تعود إلى Maestro.",
@@ -187,12 +243,36 @@
     "message": "لا توجد فيديوهات بعد — قم بإنشاء أول فيديو لك على اليسار.",
     "description": "لا توجد مهام"
   },
+  "name.customize": {
+    "message": "تخصيص",
+    "description": "Optional creative controls toggle"
+  },
+  "description.customize.auto": {
+    "message": "تلقائي · يحدد Maestro نوع الفيديو والأسلوب البصري ونغمة الصوت.",
+    "description": "Customization disabled state"
+  },
+  "description.customize.manual": {
+    "message": "اختر نوع الفيديو والأسلوب البصري ونغمة الصوت.",
+    "description": "Customization enabled state"
+  },
+  "name.customizeScenario": {
+    "message": "تخصيص نوع الفيديو",
+    "description": "Video type customization toggle"
+  },
+  "name.customizeStyle": {
+    "message": "تخصيص الأسلوب البصري",
+    "description": "Visual style customization toggle"
+  },
+  "name.customizeVoice": {
+    "message": "تخصيص نغمة الصوت",
+    "description": "Voice timbre customization toggle"
+  },
   "name.scenario": {
     "message": "نوع الفيديو",
     "description": "Video type field"
   },
   "description.scenario": {
-    "message": "اختر نوع الفيديو المراد إنشاؤه. «تلقائي» يترك القرار لـ Maestro؛ أو حدّد نمطًا مثل دراما قصيرة أو لقطات واقعية أو شرح أو ترويج منتج.",
+    "message": "فعّل التخصيص لاختيار نوع الفيديو؛ اتركه مغلقًا ليقرر Maestro تلقائيًا.",
     "description": "Scenario field help"
   },
   "option.scenario.auto": {
@@ -211,20 +291,24 @@
     "message": "شخصية رقمية · حديث مباشر",
     "description": "خيار سيناريو شخصية / حديث مباشر"
   },
-  "option.scenario.motion": {
-    "message": "رسوم متحركة",
-    "description": "Motion graphics scenario option"
-  },
   "option.scenario.captions": {
     "message": "إضافة ترجمات",
     "description": "Add-captions scenario option"
+  },
+  "message.captionsNeedVideo": {
+    "message": "تعمل التسميات الحركية على فيديو متحدث موجود — ارفع مقطعًا في الأعلى أولًا.",
+    "description": "Warning shown when captions video type is selected but no source video is uploaded"
+  },
+  "message.avatarNeedsImage": {
+    "message": "يتطلب التعليق الصوتي الرقمي صورة شخصية، يرجى رفعها أعلاه أولاً.",
+    "description": "تحذير يظهر عند اختيار فيديو الصورة الرمزية ولكن لم يتم رفع صورة"
   },
   "name.style": {
     "message": "الأسلوب البصري",
     "description": "حقل الأسلوب البصري"
   },
   "description.style": {
-    "message": "نصائح أسلوب بصري اختيارية (تؤثر على الطباعة، الألوان، الحركات، الإيقاع)، مستقلة عن نوع الفيديو. يمكن اختيار إعدادات مسبقة أو إدخالها يدويًا.",
+    "message": "فعّل التخصيص لاختيار الأسلوب البصري أو إدخاله؛ اتركه مغلقًا ليقرر Maestro تلقائيًا.",
     "description": "مساعدة حقل الأسلوب"
   },
   "option.style.auto": {
@@ -236,60 +320,60 @@
     "description": "خيار أسلوب سينمائي"
   },
   "option.style.glass": {
-    "message": "Frosted Glass",
-    "description": "Frosted glass style option"
+    "message": "زجاج مصنفر · زجاج سائل",
+    "description": "خيار نمط الزجاج المصنفر"
   },
   "option.style.luxury": {
-    "message": "Luxury",
-    "description": "Luxury style option"
+    "message": "فاخر · فراغ",
+    "description": "خيار نمط الفخامة"
   },
   "option.style.swiss": {
-    "message": "Swiss Grid",
-    "description": "Swiss grid style option"
+    "message": "شبكة سويسرية · دقة",
+    "description": "خيار نمط الشبكة السويسرية"
   },
   "option.style.modern": {
-    "message": "Modern",
-    "description": "Modern style option"
+    "message": "حديث بسيط · SaaS",
+    "description": "خيار نمط الحديث"
   },
   "option.style.editorial": {
-    "message": "Editorial",
-    "description": "Editorial style option"
+    "message": "تحرير المجلات",
+    "description": "خيار نمط التحرير"
   },
   "option.style.warm": {
-    "message": "Warm",
-    "description": "Warm style option"
+    "message": "دافئ وحميم",
+    "description": "خيار نمط الدفء"
   },
   "option.style.vibrant": {
-    "message": "Vibrant",
-    "description": "Vibrant style option"
+    "message": "حيوية نابضة",
+    "description": "خيار نمط الحيوية"
   },
   "option.style.neon": {
     "message": "نيون",
     "description": "خيار أسلوب نيون"
   },
   "option.style.mono": {
-    "message": "Monochrome",
-    "description": "Monochrome style option"
+    "message": "أبيض وأسود بسيط",
+    "description": "خيار نمط أحادي اللون"
   },
   "option.style.pastel": {
-    "message": "Pastel",
-    "description": "Pastel style option"
+    "message": "ألوان باهتة",
+    "description": "خيار نمط الألوان الباهتة"
   },
   "option.style.bold": {
-    "message": "Bold Type",
-    "description": "Bold type style option"
+    "message": "خط عريض · طاقة عالية",
+    "description": "خيار نمط الخط العريض"
   },
   "option.style.industrial": {
-    "message": "Industrial",
-    "description": "Industrial style option"
+    "message": "عطل صناعي",
+    "description": "خيار نمط صناعي"
   },
   "option.style.futuristic": {
-    "message": "Futuristic",
-    "description": "Futuristic style option"
+    "message": "تقنية مستقبلية",
+    "description": "خيار نمط المستقبل"
   },
   "option.style.retro": {
-    "message": "Retro Film",
-    "description": "Retro film style option"
+    "message": "فيلم قديم",
+    "description": "خيار نمط الفيلم القديم"
   },
   "name.voice": {
     "message": "نغمة الصوت",
@@ -300,7 +384,7 @@
     "description": "زر معاينة الصوت / تشغيل العينة"
   },
   "description.voice": {
-    "message": "اختر نغمة الصوت للراوي. النغمة غير مرتبطة باللغة - ستستخدم نفس النغمة اللغة المختارة أعلاه للقراءة؛ اضغط على التشغيل للاستماع.",
+    "message": "فعّل التخصيص لاختيار نغمة الصوت؛ اتركه مغلقًا ليختار Maestro تلقائيًا. النغمة مستقلة عن اللغة، ويمكنك الضغط على التشغيل للاستماع.",
     "description": "مساعدة حقل الصوت"
   },
   "option.voice.auto": {

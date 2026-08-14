@@ -40,7 +40,7 @@
         <div class="flex items-center mb-1">
           <span class="text-xs font-bold">{{ $t('suno.name.variationCategory') }}</span>
         </div>
-        <el-radio-group v-model="variationCategory" size="small">
+        <el-radio-group v-model="variationCategory">
           <el-radio-button value="">{{ $t('suno.gender.auto') }}</el-radio-button>
           <el-radio-button value="high">{{ $t('suno.variation.high') }}</el-radio-button>
           <el-radio-button value="low">{{ $t('suno.variation.low') }}</el-radio-button>
@@ -55,6 +55,18 @@
         </div>
         <el-slider v-model="audioWeight" :min="0" :max="1" :step="0.01" />
       </div>
+      <!-- Duration -->
+      <div v-if="config?.custom" class="mb-3">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-bold">{{ $t('suno.name.duration') }}</span>
+          <el-switch v-model="durationEnabled" size="small" />
+        </div>
+        <template v-if="durationEnabled">
+          <el-input-number v-model="duration" size="small" :step="10" :precision="0" class="w-full" />
+          <div class="text-xs text-[var(--el-text-color-secondary)]">{{ $t('suno.description.duration') }}</div>
+        </template>
+      </div>
+
       <!-- Lyrics Mode (Manual/Auto) -->
       <div v-if="config?.custom && !config?.instrumental" class="mb-3">
         <div class="flex items-center mb-1">
@@ -71,7 +83,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ElCollapse, ElCollapseItem, ElInput, ElSlider, ElRadioGroup, ElRadioButton } from 'element-plus';
+import {
+  ElCollapse,
+  ElCollapseItem,
+  ElInput,
+  ElInputNumber,
+  ElSlider,
+  ElRadioGroup,
+  ElRadioButton,
+  ElSwitch
+} from 'element-plus';
+import { SUNO_DEFAULT_DURATION } from '@/constants/suno';
 
 export default defineComponent({
   name: 'AdvancedParams',
@@ -79,9 +101,11 @@ export default defineComponent({
     ElCollapse,
     ElCollapseItem,
     ElInput,
+    ElInputNumber,
     ElSlider,
     ElRadioGroup,
-    ElRadioButton
+    ElRadioButton,
+    ElSwitch
   },
   data() {
     return {
@@ -96,14 +120,36 @@ export default defineComponent({
       const model = this.config?.model || '';
       return ['chirp-v5', 'chirp-v5-5'].includes(model);
     },
+    durationEnabled: {
+      get() {
+        return this.$store.state.suno?.config?.duration !== undefined;
+      },
+      set(val: boolean) {
+        this.$store.commit('suno/setConfig', {
+          ...this.$store.state.suno?.config,
+          duration: val ? SUNO_DEFAULT_DURATION : undefined
+        });
+      }
+    },
+    duration: {
+      get() {
+        return this.$store.state.suno?.config?.duration ?? SUNO_DEFAULT_DURATION;
+      },
+      set(val: number) {
+        this.$store.commit('suno/setConfig', {
+          ...this.$store.state.suno?.config,
+          duration: val
+        });
+      }
+    },
     styleNegative: {
       get() {
-        return this.$store.state.suno?.config?.style_negative || '';
+        return this.$store.state.suno?.config?.negative_tags || '';
       },
       set(val: string) {
         this.$store.commit('suno/setConfig', {
           ...this.$store.state.suno?.config,
-          style_negative: val || undefined
+          negative_tags: val || undefined
         });
       }
     },

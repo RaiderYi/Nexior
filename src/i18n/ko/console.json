@@ -39,10 +39,6 @@
     "message": "사용 기록",
     "description": "웹사이트 메뉴의 텍스트, 사용 기록은 사용자가 API 서비스를 사용한 기록을 의미"
   },
-  "menu.credentials": {
-    "message": "API Keys",
-    "description": "Console sidebar menu item for API key management"
-  },
   "menu.credentialIndex": {
     "message": "자격 증명",
     "description": "웹사이트 메뉴의 텍스트, 자격 증명은 API 접근을 위한 자격 증명을 의미"
@@ -131,10 +127,6 @@
     "message": "플랫폼 토큰",
     "description": "웹사이트 메뉴의 텍스트로, 플랫폼 토큰은 Ace Data Cloud 플랫폼에 접근하는 데 사용되는 토큰을 의미합니다."
   },
-  "menu.publishIndex": {
-    "message": "게시 센터",
-    "description": "웹사이트 메뉴의 텍스트로, 게시 센터는 사용자가 콘텐츠를 게시하는 중심을 의미합니다."
-  },
   "menu.platformRankIndex": {
     "message": "플랫폼 순위",
     "description": "웹사이트 메뉴의 텍스트로, 플랫폼 순위는 사용자가 추천한 수익 순위를 의미합니다."
@@ -151,92 +143,16 @@
     "message": "수익 분석",
     "description": "웹사이트 메뉴의 텍스트로, 관리자만 볼 수 있는 수익 분석 진입점입니다."
   },
-  "credentials.title": {
-    "message": "API Keys",
-    "description": "Title of the API credentials page"
+  "menu.connectors": {
+    "message": "커넥터",
+    "description": "웹사이트 메뉴의 텍스트로, 커넥터는 사용자가 연결한 제3자 서비스를 의미합니다."
   },
-  "credentials.guide.title": {
-    "message": "Quick Start",
-    "description": "Title of the quick start guide"
+  "menu.skills": {
+    "message": "스킬",
+    "description": "网站菜单中的文本，技能指的是用户安装的 Agent Skill"
   },
-  "credentials.guide.step1Title": {
-    "message": "API Endpoint",
-    "description": "Step 1 title"
-  },
-  "credentials.guide.step1Desc": {
-    "message": "Send requests to our unified API endpoint:",
-    "description": "Step 1 description"
-  },
-  "credentials.guide.step2Title": {
-    "message": "Authentication",
-    "description": "Step 2 title"
-  },
-  "credentials.guide.step2Desc": {
-    "message": "Use your API key in the Authorization header as Bearer token.",
-    "description": "Step 2 description"
-  },
-  "credentials.guide.step3Title": {
-    "message": "Choose a Model",
-    "description": "Step 3 title"
-  },
-  "credentials.guide.step3Desc": {
-    "message": "Specify the model name in the request body. See available models below.",
-    "description": "Step 3 description"
-  },
-  "credentials.keys.title": {
-    "message": "Your API Keys",
-    "description": "Title of the API keys section"
-  },
-  "credentials.keys.empty": {
-    "message": "No API keys yet. Start using a service to generate one.",
-    "description": "Empty state message"
-  },
-  "credentials.keys.startUsing": {
-    "message": "Start Using",
-    "description": "Button to go to services"
-  },
-  "credentials.keys.general": {
-    "message": "General",
-    "description": "Label for general-purpose credential"
-  },
-  "credentials.button.refresh": {
-    "message": "Refresh",
-    "description": "Refresh button"
-  },
-  "credentials.field.service": {
-    "message": "Service",
-    "description": "Table column header"
-  },
-  "credentials.field.apiKey": {
-    "message": "API Key",
-    "description": "Table column header"
-  },
-  "credentials.field.balance": {
-    "message": "Balance",
-    "description": "Table column header"
-  },
-  "credentials.field.createdAt": {
-    "message": "Created",
-    "description": "Table column header"
-  },
-  "credentials.example.title": {
-    "message": "Code Example",
-    "description": "Title of code example section"
-  },
-  "credentials.example.hint": {
-    "message": "Replace YOUR_API_KEY with your actual key above.",
-    "description": "Hint under code example"
-  },
-  "credentials.models.title": {
-    "message": "Available Models",
-    "description": "Title of available models section"
-  },
-  "credentials.models.hint": {
-    "message": "Use these model names in the \"model\" field of your API requests.",
-    "description": "Hint under model list"
-  },
-  "credentials.message.loadFailed": {
-    "message": "Failed to load API keys, please try again later.",
-    "description": "Error message"
+  "menu.browserDevices": {
+    "message": "브라우저 장치",
+    "description": "웹사이트 메뉴의 텍스트로, 브라우저 장치는 사용자가 연결한 브라우저 확장을 의미합니다."
   }
 }

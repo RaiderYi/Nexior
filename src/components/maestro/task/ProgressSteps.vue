@@ -9,9 +9,11 @@
     >
       <span class="ico">
         <el-icon v-if="i === currentIndex" class="is-loading" :aria-label="$t(`maestro.step.${step.key}`)">
-          <loading />
+          <loading :size="'1em' as any" aria-hidden="true" focusable="false" />
         </el-icon>
-        <el-icon v-else-if="i < currentIndex"><check /></el-icon>
+        <el-icon v-else-if="i < currentIndex"
+          ><check :size="'1em' as any" aria-hidden="true" focusable="false"
+        /></el-icon>
       </span>
       <span class="txt">{{ $t(`maestro.step.${step.key}`) }}</span>
     </div>
@@ -20,9 +22,10 @@
 </template>
 
 <script lang="ts">
+import { LoadingIcon as Loading, ConfirmIcon as Check } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElIcon } from 'element-plus';
-import { Loading, Check } from '@element-plus/icons-vue';
+
 import { IMaestroTask } from '@/models';
 
 // Canonical, ordered pipeline stages the backend emits (runner.py). The checklist mirrors them.
@@ -63,9 +66,13 @@ export default defineComponent({
       return Math.max(max, 0);
     },
     // Latest progress message (may be from a previous step if the current step hasn't logged one
-    // yet) — shown as the live "currently doing" detail under the active step.
+    // yet) — shown as the live "currently doing" detail under the active step. Prefer the worker's
+    // live `activity` line (the director's own narration / "Rendering · 60% (1400/2388 frames)")
+    // over the sparse canned stage messages, so a long step exposes real, moving detail.
     detail(): string | undefined {
-      const events = this.modelValue?.response?.data?.progress || [];
+      const data = this.modelValue?.response?.data;
+      if (data?.activity) return data.activity;
+      const events = data?.progress || [];
       for (let i = events.length - 1; i >= 0; i--) {
         if (events[i]?.message) return events[i]?.message;
       }

@@ -1,21 +1,26 @@
 <template>
-  <div v-if="isInAppLogin" class="auth-native">
-    <div v-if="useBrowser" class="auth-native__loading">
-      <p>{{ $t('common.status.loading') }}</p>
+  <!-- Every surface (web iframe mode, native, desktop) renders the same
+       floating popup: a centered card over a dimmed/blurred backdrop so the
+       chat page stays visible behind it. `isInAppLogin` still drives the
+       functional differences (URL params, in-app OAuth) below. -->
+  <div class="auth-frame-modal" role="dialog" aria-modal="true">
+    <div class="auth-frame-modal__panel">
+      <button class="auth-frame-modal__close" type="button" aria-label="Close" title="Close" @click="closeWebLogin">
+        <close-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
+      </button>
+      <div v-if="useBrowser" class="auth-frame-modal__loading">
+        <p>{{ $t('common.status.loading') }}</p>
+      </div>
+      <iframe
+        v-else
+        ref="iframe"
+        class="auth-frame-modal__iframe"
+        :src="iframeUrl"
+        frameborder="0"
+        referrerpolicy="origin"
+      />
     </div>
-    <iframe v-else class="auth-native__iframe" :src="iframeUrl" frameborder="0" />
   </div>
-  <el-dialog
-    v-else
-    :model-value="!authenticated"
-    modal-class="dialog"
-    width="400px"
-    :show-close="false"
-    :close-on-press-escape="false"
-    :close-on-click-modal="false"
-  >
-    <iframe width="360" height="560" :src="iframeUrl" frameborder="0" />
-  </el-dialog>
   <el-dialog v-model="showQR" width="400px" :show-close="true">
     <qr-code
       v-if="qrLink"
@@ -30,11 +35,12 @@
 </template>
 
 <script lang="ts">
+import { CloseIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import axios from 'axios';
 import { ElDialog } from 'element-plus';
 import { ElMessage } from 'element-plus';
-import { getBaseUrlAuth, withCurrentSite } from '@/utils';
+import { getBaseUrlAuth, getBaseUrlHub, withCurrentSite } from '@/utils';
 import { getCookie } from 'typescript-cookie';
 import QrCode from 'vue-qrcode';
 import { ROUTE_SETTINGS_INDEX } from '@/router';
@@ -43,15 +49,30 @@ import { SignInWithApple } from '@capacitor-community/apple-sign-in';
 import { isNative as isNativeSurface, isIOS, isDesktop } from '@/utils/surface';
 import { desktopBridge } from '@/utils/desktop';
 import { track } from '@/plugins/telemetry';
+import type { PluginListenerHandle } from '@capacitor/core';
 
 // Native Sign In with Apple is keyed by the iOS bundle identifier, NOT
 // the web Services ID. The same Apple `sub` is returned for both, so
 // accounts stay linked across native and web.
 const APPLE_NATIVE_CLIENT_ID = 'com.acedatacloud.nexior';
 
+type NativeAppleLoginError = 'canceled' | 'restricted' | 'failed';
+
+export function classifyNativeAppleLoginError(error: unknown): NativeAppleLoginError {
+  const detail = error instanceof Error ? error.message : String(error);
+  if (/\b100[01]\b/.test(detail) || /cancel/i.test(detail)) {
+    return 'canceled';
+  }
+  if (axios.isAxiosError(error) && error.response?.data?.code === 'user_restricted') {
+    return 'restricted';
+  }
+  return 'failed';
+}
+
 export default defineComponent({
   name: 'AuthPanel',
   components: {
+    CloseIcon,
     ElDialog,
     QrCode
   },
@@ -59,7 +80,10 @@ export default defineComponent({
     return {
       showQR: false,
       qrLink: '',
-      useBrowser: false
+      useBrowser: false,
+      messageHandler: null as ((event: MessageEvent) => Promise<void>) | null,
+      browserFinishedHandle: null as PluginListenerHandle | null,
+      unmounted: false
     };
   },
   computed: {
@@ -76,16 +100,39 @@ export default defineComponent({
     nativeRedirect() {
       return isDesktop() ? 'acedata-desktop' : 'com.acedatacloud.nexior';
     },
+    authOrigin() {
+      return new URL(getBaseUrlAuth()).origin;
+    },
+    redirect() {
+      return this.$store.state.auth?.redirect || window.location.pathname + window.location.search;
+    },
+    authAction() {
+      return this.$store.state.auth?.action || 'login';
+    },
     iframeUrl() {
+      if (this.authAction === 'logout') {
+        return new URL('/auth/logout', getBaseUrlAuth()).toString();
+      }
       // Trailing slash matters: `/auth/login` 301s to a cleartext `http://`
       // URL that iOS ATS blocks, leaving this iframe blank (white screen).
-      let url = `${getBaseUrlAuth()}/auth/login/?inviter_id=${this.inviterId}`;
+      const url = new URL('/auth/login/', getBaseUrlAuth());
+      if (this.inviterId) {
+        url.searchParams.set('inviter_id', this.inviterId);
+      }
       if (this.isInAppLogin) {
-        url += `&native_redirect=${this.nativeRedirect}`;
+        url.searchParams.set('native_redirect', this.nativeRedirect);
+      } else {
+        url.searchParams.set('embed_origin', window.location.origin);
+        url.searchParams.set(
+          'redirect',
+          `${getBaseUrlHub()}/auth/callback?${new URLSearchParams({
+            redirect: this.redirect
+          }).toString()}`
+        );
       }
       // Pass `site` so the embedded AuthFrontend login form renders the
       // calling subsite's white-label logo (no-op on the main official host).
-      return withCurrentSite(url);
+      return withCurrentSite(url.toString());
     },
     inviterId() {
       // if forceInviterId is set, then use forceInviterId
@@ -103,22 +150,29 @@ export default defineComponent({
       return !!this.$store.state.token.access;
     }
   },
-  mounted() {
+  async mounted() {
     if (this.isNative) {
       // Capacitor-only: if the user closes the in-app browser manually, fall
       // back to the iframe login UI. Desktop OAuth opens the SYSTEM browser
       // (no browserFinished event), so this listener must stay isNative-only —
       // never isInAppLogin — or desktop would get stuck on the loading screen.
-      Browser.addListener('browserFinished', () => {
+      const handle = await Browser.addListener('browserFinished', () => {
         console.debug('browser closed by user');
         this.useBrowser = false;
       });
+      if (this.unmounted) {
+        await handle.remove();
+        return;
+      } else {
+        this.browserFinishedHandle = handle;
+      }
     }
     // On native platforms, keep the iframe for regular login (email/password).
     // When the user clicks Google/GitHub, the iframe (AuthFrontend) sends a
     // postMessage asking us to open the OAuth flow in the in-app browser.
-    window.addEventListener('message', async (event: MessageEvent) => {
-      if (event.origin !== getBaseUrlAuth()) {
+    this.messageHandler = async (event: MessageEvent) => {
+      const iframe = this.$refs.iframe as HTMLIFrameElement | undefined;
+      if (event.origin !== this.authOrigin || event.source !== iframe?.contentWindow) {
         return;
       }
       console.debug('received from child page', event);
@@ -181,14 +235,16 @@ export default defineComponent({
             // with Apple" capability) used to be swallowed too, leaving the
             // button looking dead — surface those to the user instead.
             const detail = error instanceof Error ? error.message : String(error);
-            const canceled = /\b100[01]\b/.test(detail) || /cancel/i.test(detail);
-            if (canceled) {
+            const errorType = classifyNativeAppleLoginError(error);
+            if (errorType === 'canceled') {
               track('apple_login_canceled', { action: 'native_ios' });
               console.debug('native apple sign in canceled by user', error);
             } else {
-              track('apple_login_failed', { action: 'native_ios', error: detail });
+              track('apple_login_failed', { action: 'native_ios', error: detail, error_type: errorType });
               console.warn('native apple sign in failed', error);
-              ElMessage.error(this.$t('common.error.appleSignInFailed').toString());
+              const messageKey =
+                errorType === 'restricted' ? 'common.error.userRestricted' : 'common.error.appleSignInFailed';
+              ElMessage.error(this.$t(messageKey).toString());
             }
           }
           return;
@@ -222,15 +278,14 @@ export default defineComponent({
         await this.$store.dispatch('setToken', token);
         await this.$store.dispatch('getUser');
         // if the site is not initialized, initialize it
+        let openedSettings = false;
         if (!this.$store.state.site?.origin) {
           await this.$store.dispatch('initializeSite');
           // navigate to settings page (the dialog auto-opens) for
           // white-label site owners, but skip on native/desktop where users
           // are always on the official site
           if (!isNativeSurface() && !isDesktop()) {
-            await this.$router.push({
-              name: ROUTE_SETTINGS_INDEX
-            });
+            openedSettings = true;
           }
         }
         if (isNativeSurface() || isDesktop()) {
@@ -241,7 +296,31 @@ export default defineComponent({
           this.$store.commit('setAuth', { visible: false });
           await this.$router.push('/');
         } else {
-          window.location.reload();
+          this.$store.commit('setAuth', { visible: false });
+          const target = openedSettings
+            ? this.$router.resolve({ name: ROUTE_SETTINGS_INDEX }).href
+            : this.redirect || '/';
+          const targetUrl = new URL(this.resolveLocalRedirect(target), window.location.origin).toString();
+          if (targetUrl === window.location.href) {
+            window.location.reload();
+          } else {
+            window.location.href = targetUrl;
+          }
+        }
+      }
+      if (event.data.name === 'logout') {
+        this.$store.commit('setAuth', { action: 'login', visible: true });
+      }
+      if (event.data.name === 'wechatMobileRedirect') {
+        // WeChat's mobile authorize URL is an empty shell that only works when
+        // the WeChat client sees the TOP window navigate to it — inside the
+        // login iframe it renders blank. So the iframe hands us the URL and we
+        // navigate ourselves. Returns via ?code= on the redirect we passed in.
+        const url = event.data.data?.url;
+        if (typeof url === 'string' && url.startsWith('https://open.weixin.qq.com/')) {
+          window.location.href = url;
+        } else {
+          console.warn('ignored wechatMobileRedirect with unexpected url', url);
         }
       }
       if (event.data.name === 'show_qr') {
@@ -249,42 +328,101 @@ export default defineComponent({
         this.qrLink = data.qrLink;
         this.showQR = true;
       }
-    });
+    };
+    window.addEventListener('message', this.messageHandler);
+  },
+  async beforeUnmount() {
+    this.unmounted = true;
+    if (this.messageHandler) {
+      window.removeEventListener('message', this.messageHandler);
+      this.messageHandler = null;
+    }
+    if (this.browserFinishedHandle) {
+      await this.browserFinishedHandle.remove();
+      this.browserFinishedHandle = null;
+    }
+  },
+  methods: {
+    closeWebLogin() {
+      this.$store.commit('setAuth', { visible: false });
+    },
+    resolveLocalRedirect(target: string | undefined, fallback = '/') {
+      try {
+        const url = new URL(target || fallback, window.location.origin);
+        if (url.origin !== window.location.origin) return fallback;
+        return `${url.pathname}${url.search}${url.hash}`;
+      } catch {
+        return fallback;
+      }
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.dialog {
-  width: 400px;
-  height: 600px;
-}
-
-.auth-native {
+.auth-frame-modal {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  // Keep the card clear of the notch / home indicator on native devices.
+  padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(8px);
+
+  &__panel {
+    position: relative;
+    width: min(400px, calc(100vw - 24px));
+    height: min(720px, 100%);
+  }
 
   &__iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28);
   }
 
   &__loading {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    background: #ffffff;
     color: #666;
     font-size: 16px;
-  }
-}
 
-@media (prefers-color-scheme: dark) {
-  .auth-native {
-    background: #1a1a1a;
+    @media (prefers-color-scheme: dark) {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.68);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>

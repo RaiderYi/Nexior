@@ -1,9 +1,10 @@
 import { getCookie, setCookie } from 'typescript-cookie';
 import favicon from '@/assets/images/favicon.ico';
-import { applyAccentColor, applyTheme } from './theme';
+import { applyAccentColor, applyThemePreference } from './theme';
 import store from '@/store';
 import { IToken } from '@/models';
-import { BASE_HOST_HUB, LOCALE_CURRENCY_MAPPING } from '@/constants';
+import { LOCALE_CURRENCY_MAPPING } from '@acedatacloud/core/constants';
+import { BASE_HOST_HUB } from '@/constants';
 import { isOfficial, isSubOfficial, isWechatBrowser } from './is';
 import { getLocale } from '@/i18n';
 
@@ -194,7 +195,7 @@ export const initializeToken = async () => {
 export const initializeTheme = async () => {
   const theme = getCookie('THEME') || 'dark';
   console.debug('initialize theme', theme);
-  applyTheme(theme);
+  applyThemePreference(theme);
   const primaryColor = store.state.site?.theme?.primary_color;
   console.debug('initialize primary color', primaryColor || '(default)');
   applyAccentColor(primaryColor || null);

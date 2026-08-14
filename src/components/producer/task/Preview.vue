@@ -1,5 +1,26 @@
 <template>
   <div class="task">
+    <el-alert v-if="isFailure" :closable="false" class="task-failure">
+      <template #title>
+        <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+        {{ $t('producer.name.failure') }}
+      </template>
+      <p class="text-[var(--el-text-color-regular)] text-xs mb-2">
+        <magic-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+        {{ $t('producer.name.taskId') }}: {{ modelValue?.id }}
+        <copy-to-clipboard :content="modelValue?.id" />
+      </p>
+      <p v-if="failureReason" class="text-[var(--el-text-color-regular)] text-xs mb-2">
+        <info-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+        {{ $t('producer.name.failureReason') }}: {{ failureReason }}
+        <copy-to-clipboard :content="failureReason" />
+      </p>
+      <p v-if="traceId" class="text-[var(--el-text-color-regular)] text-xs mb-0">
+        <channel-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+        {{ $t('producer.name.traceId') }}: {{ traceId }}
+        <copy-to-clipboard :content="traceId" />
+      </p>
+    </el-alert>
     <div v-for="audio in audios" :key="audio.id" class="audio" @click.stop="onClick(audio)">
       <div v-loading="!audio?.audio_url" class="left">
         <el-image :src="audio?.image_url" class="cover" fit="cover" lazy />
@@ -10,9 +31,15 @@
             $store.state?.producer?.audio?.state === 'playing'
           "
           class="overlay"
+          role="button"
+          tabindex="0"
+          :aria-label="$t('common.player.pause')"
+          :title="$t('common.player.pause')"
           @click.stop="onPause(audio)"
+          @keydown.enter.stop.prevent="onPause(audio)"
+          @keydown.space.stop.prevent="onPause(audio)"
         >
-          <el-icon><video-pause /></el-icon>
+          <el-icon><video-pause :size="'1em' as any" aria-hidden="true" focusable="false" /></el-icon>
         </div>
         <div
           v-if="
@@ -21,9 +48,15 @@
               ($store.state?.producer?.audio?.id === audio.id && $store.state?.producer?.audio?.state === 'paused'))
           "
           class="overlay"
+          role="button"
+          tabindex="0"
+          :aria-label="$t('common.player.play')"
+          :title="$t('common.player.play')"
           @click.stop="onPlay(audio)"
+          @keydown.enter.stop.prevent="onPlay(audio)"
+          @keydown.space.stop.prevent="onPlay(audio)"
         >
-          <el-icon><video-play /></el-icon>
+          <el-icon><video-play :size="'1em' as any" aria-hidden="true" focusable="false" /></el-icon>
         </div>
         <div v-if="audio?.duration" class="duration">
           {{ useFormatDuring(audio?.duration) }}
@@ -37,10 +70,12 @@
         <el-dropdown>
           <span class="el-dropdown-link">
             <el-tooltip effect="dark" :content="$t('producer.button.download')" placement="top">
-              <font-awesome-icon
+              <download-icon
                 v-if="audio?.audio_url || audio?.video_url"
-                icon="fa-solid fa-download"
                 class="icon icon-download"
+                :size="'1em' as any"
+                aria-hidden="true"
+                focusable="false"
               />
             </el-tooltip>
           </span>
@@ -49,7 +84,7 @@
               <el-dropdown-item :disabled="isFetchingVideoUrl" @click="handleVideoDownload(audio)">
                 <div class="flex items-center min-w-[120px]">
                   <el-icon v-if="isFetchingVideoUrl" class="is-loading mr-2">
-                    <Loading />
+                    <Loading :size="'1em' as any" aria-hidden="true" focusable="false" />
                   </el-icon>
                   <span>{{ $t('producer.button.download_video') }}</span>
                 </div>
@@ -60,7 +95,7 @@
               <el-dropdown-item :disabled="isFetchingWav" @click="handleWavDownload(audio)">
                 <div class="flex items-center min-w-[120px]">
                   <el-icon v-if="isFetchingWav" class="is-loading mr-2">
-                    <Loading />
+                    <Loading :size="'1em' as any" aria-hidden="true" focusable="false" />
                   </el-icon>
                   <span>{{ $t('producer.button.download_wav') }}</span>
                 </div>
@@ -71,10 +106,12 @@
         <el-dropdown>
           <span class="el-dropdown-link">
             <el-tooltip effect="dark" :content="$t('producer.button.more')" placement="top">
-              <font-awesome-icon
+              <more-icon
                 v-if="audio?.audio_url || audio?.video_url"
-                icon="fa-solid fa-ellipsis"
                 class="icon icon-ellipsis"
+                :size="'1em' as any"
+                aria-hidden="true"
+                focusable="false"
               />
             </el-tooltip>
           </span>
@@ -104,9 +141,13 @@
               <el-dropdown-item v-if="audio?.id" @click.stop="onReplaceSection(audio)">
                 {{ $t('producer.button.replace_section') }}
               </el-dropdown-item>
-              <el-dropdown-item @click.stop="onViewCode">
-                <font-awesome-icon icon="fa-solid fa-code" class="mr-1" />
+              <el-dropdown-item v-if="showViewCode" @click.stop="onViewCode">
+                <code-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
                 {{ $t('common.button.viewCode') }}
+              </el-dropdown-item>
+              <el-dropdown-item v-if="audio?.id" @click.stop="onReport(audio)">
+                <warning-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+                {{ $t('common.button.report') }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -120,36 +161,82 @@
       :body="apiCodeBody"
       :token="$store.state.producer?.credential?.token || ''"
     />
+    <report-dialog
+      v-model:visible="reportVisible"
+      service="producer"
+      :target-id="reportTargetId"
+      :snapshot="reportSnapshot"
+    />
   </div>
 </template>
 
 <script lang="ts">
+import {
+  ChannelIcon,
+  CodeIcon,
+  DownloadIcon,
+  InfoIcon,
+  LoadingIcon as Loading,
+  MagicIcon,
+  MoreIcon,
+  PauseIcon as VideoPause,
+  PlayIcon as VideoPlay,
+  WarningIcon
+} from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { useFormatDuring } from '@/utils/number';
 import { IProducerAudio, IProducerTask } from '@/models';
-import { ElImage, ElIcon, ElTooltip, ElDropdown, ElDropdownMenu, ElDropdownItem, ElMessage } from 'element-plus';
-import { Loading } from '@element-plus/icons-vue';
-import { VideoPlay, VideoPause } from '@element-plus/icons-vue';
+import {
+  ElAlert,
+  ElImage,
+  ElIcon,
+  ElTooltip,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElMessage,
+  ElMessageBox
+} from 'element-plus';
+
 import { IProducerVideoRequest, IProducerAudioRequest, Status } from '@/models';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { saveAs } from 'file-saver';
-import { producerOperator } from '@/operators';
+import { producerOperator } from '@/operators/producer';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import {
+  X402PaymentCancelledError,
+  type OperatorRequestOptions,
+  type X402PaymentQuote,
+  type X402WalletContext,
+  resolveX402WalletContext
+} from '@/operators/x402';
 import ApiCodeDialog from '@/components/common/ApiCodeDialog.vue';
+import ReportDialog from '@/components/common/ReportDialog.vue';
+import CopyToClipboard from '@/components/common/CopyToClipboard.vue';
+import { isMainOfficial } from '@/utils';
 
 export default defineComponent({
   name: 'TaskPreview',
   components: {
+    ChannelIcon,
+    CodeIcon,
+    DownloadIcon,
+    InfoIcon,
+    MagicIcon,
+    MoreIcon,
+    WarningIcon,
+    ElAlert,
     ElImage,
     ElIcon,
     ElTooltip,
-    FontAwesomeIcon,
     VideoPlay,
     VideoPause,
     ElDropdown,
     ElDropdownMenu,
     ElDropdownItem,
     Loading,
-    ApiCodeDialog
+    ApiCodeDialog,
+    ReportDialog,
+    CopyToClipboard
   },
   props: {
     modelValue: {
@@ -157,11 +244,15 @@ export default defineComponent({
       required: true
     }
   },
+  emits: ['wallet-task'],
   data() {
     return {
       isFetchingVideoUrl: false,
       isFetchingWav: false,
       apiCodeVisible: false,
+      reportVisible: false,
+      reportTargetId: '',
+      reportSnapshot: undefined as Record<string, unknown> | undefined,
       apiCodePath: '/producer/audios',
       apiCodeBody: {} as Record<string, unknown>
     };
@@ -170,8 +261,14 @@ export default defineComponent({
     loading() {
       return this.$store.state.producer?.status?.getApplications === Status.Request;
     },
+    showViewCode(): boolean {
+      return isMainOfficial();
+    },
     credential() {
       return this.$store.state.producer.credential;
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('producer').mode === 'wallet';
     },
     config() {
       return this.$store.state.producer.config;
@@ -185,6 +282,18 @@ export default defineComponent({
       const action = this.modelValue?.request?.action as IProducerAudio['action'] | undefined;
       return action ? data.map((a) => ({ ...a, action })) : data;
     },
+    isFailure(): boolean {
+      return (
+        this.audios.length === 0 && (this.modelValue?.response?.success === false || !!this.modelValue?.response?.error)
+      );
+    },
+    failureReason(): string | undefined {
+      const error = this.modelValue?.response?.error;
+      return typeof error === 'string' ? error : error?.message;
+    },
+    traceId(): string | undefined {
+      return this.modelValue?.response?.trace_id || this.modelValue?.trace_id;
+    },
     application() {
       return this.$store.state.producer?.application;
     },
@@ -193,6 +302,46 @@ export default defineComponent({
     }
   },
   methods: {
+    paymentOptions(): OperatorRequestOptions | undefined {
+      if (!this.walletMode) {
+        const token = this.credential?.token;
+        return token ? { token } : undefined;
+      }
+      const wallet = this.getWalletContext();
+      if (!wallet) {
+        ElMessage.warning(this.$t('common.x402Scenario.connectWalletFirst'));
+        return undefined;
+      }
+      return {
+        mode: 'x402',
+        x402: {
+          wallet,
+          confirm: (quote) => this.confirmWalletPayment(quote),
+          identityToken: this.credential?.token
+        }
+      };
+    },
+    getWalletContext(): X402WalletContext | undefined {
+      return resolveX402WalletContext((this as any).$wallet);
+    },
+    async confirmWalletPayment(quote: X402PaymentQuote): Promise<boolean> {
+      return ElMessageBox.confirm(
+        this.$t('common.x402Scenario.confirmPayment', { amount: quote.amountUsdc }),
+        this.$t('order.message.x402ConfirmTitle'),
+        {
+          confirmButtonText: this.$t('order.message.x402WalletPayCta'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          type: 'warning'
+        }
+      )
+        .then(() => true)
+        .catch(() => false);
+    },
+    onReport(audio: any) {
+      this.reportTargetId = audio?.id || '';
+      this.reportSnapshot = { prompt: audio?.prompt, title: audio?.title };
+      this.reportVisible = true;
+    },
     useFormatDuring,
     onViewCode() {
       const request = (this.modelValue?.request || {}) as Record<string, unknown>;
@@ -276,6 +425,7 @@ export default defineComponent({
         audio.video_url = videoUrl;
         this.onDownload(null, videoUrl);
       } catch (error) {
+        if (error instanceof X402PaymentCancelledError) return;
         console.error('get videoUrl failed:', error);
         ElMessage.error(this.$t('producer.message.getVideoUrlFailed'));
       } finally {
@@ -284,17 +434,11 @@ export default defineComponent({
     },
     async fetchVideoUrlFromApi(audioId: string): Promise<string> {
       return new Promise((resolve, reject) => {
-        const request = {
-          audio_id: audioId
-        } as IProducerVideoRequest;
-        const token = this.credential?.token;
-        if (!token) {
-          console.error('no token specified');
-          reject(new Error('No token specified'));
-          return;
-        }
+        const request = { audio_id: audioId } as IProducerVideoRequest;
+        const options = this.paymentOptions();
+        if (!options) return reject(new X402PaymentCancelledError());
         producerOperator
-          .video(request, { token })
+          .video(request, options)
           .then((response) => {
             const videoUrl = response.data?.data?.video_url;
             if (videoUrl) {
@@ -363,12 +507,12 @@ export default defineComponent({
     },
     async handleWavDownload(audio: IProducerAudio) {
       if (!audio?.id || this.isFetchingWav) return;
-      const token = this.credential?.token;
-      if (!token) return;
+      const options = this.paymentOptions();
+      if (!options) return;
       try {
         this.isFetchingWav = true;
         ElMessage.info(this.$t('producer.message.fetchingWav'));
-        const response = await producerOperator.wav({ audio_id: audio.id }, { token });
+        const response = await producerOperator.wav({ audio_id: audio.id }, options);
         // Upstream returns { data: [{ file_url }] } — read the first entry's file_url
         const data = response.data?.data;
         const wavUrl = Array.isArray(data) ? data[0]?.file_url : data?.file_url || data?.audio_url;
@@ -377,7 +521,8 @@ export default defineComponent({
         } else {
           ElMessage.error(this.$t('producer.message.fetchWavFailed'));
         }
-      } catch {
+      } catch (error) {
+        if (error instanceof X402PaymentCancelledError) return;
         ElMessage.error(this.$t('producer.message.fetchWavFailed'));
       } finally {
         this.isFetchingWav = false;
@@ -389,25 +534,19 @@ export default defineComponent({
         audio_id: audioId,
         async: true
       } as IProducerAudioRequest;
-      const token = this.credential?.token;
-      if (!token) {
-        console.error('no token specified');
-        return;
-      }
+      const options = this.paymentOptions();
+      if (!options) return;
       ElMessage.info(this.$t('producer.message.startingTask'));
       producerOperator
-        .audio(request, {
-          token
-        })
-        .then(() => {
+        .audio(request, options)
+        .then((response) => {
+          const taskId = response?.data?.task_id;
+          if (this.walletMode && !this.credential?.token && taskId) this.$emit('wallet-task', taskId);
           ElMessage.success(this.$t('producer.message.startTaskSuccess'));
         })
         .catch((error) => {
+          if (error instanceof X402PaymentCancelledError) return;
           ElMessage.error(error?.response?.data?.error?.message || this.$t('producer.message.startTaskFailed'));
-        })
-        .finally(async () => {
-          await this.onGetTasks();
-          await this.onScrollDown();
         });
     },
     async onScrollDown() {
@@ -437,6 +576,9 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  .task-failure {
+    border-left: 2px solid var(--el-color-danger);
+  }
   .audio {
     display: flex;
     margin-bottom: 10px;

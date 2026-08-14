@@ -215,9 +215,13 @@
     "message": "Powód niepowodzenia",
     "description": "Powód niepowodzenia zadania"
   },
+  "name.failure": {
+    "message": "Generowanie nie powiodło się",
+    "description": "Tytuł błędu zadania producenta"
+  },
   "name.status": {
     "message": "Status",
-    "description": "Status zadania"
+    "description": "Stan zadania"
   },
   "name.traceId": {
     "message": "ID śledzenia",
@@ -233,7 +237,7 @@
   },
   "name.model": {
     "message": "Model",
-    "description": "Wybór wersji modelu"
+    "description": "Wybierz wersję modelu"
   },
   "name.songDescription": {
     "message": "Opis piosenki",

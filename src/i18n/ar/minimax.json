@@ -1,0 +1,142 @@
+{
+  "name.model": {
+    "message": "النموذج",
+    "description": "نموذج إنشاء الفيديو"
+  },
+  "name.prompt": {
+    "message": "الكلمات المفتاحية",
+    "description": "وصف محتوى الفيديو، الحركة، اللقطات والأسلوب"
+  },
+  "name.referenceImages": {
+    "message": "الصورة المرجعية",
+    "description": "حقل رفع الصورة المرجعية"
+  },
+  "name.referenceAudios": {
+    "message": "الصوت المرجعي",
+    "description": "حقل رفع الصوت المرجعي"
+  },
+  "name.ratio": {
+    "message": "نسبة العرض إلى الارتفاع",
+    "description": "نسبة العرض إلى الارتفاع للفيديو الناتج"
+  },
+  "name.duration": {
+    "message": "المدة (ثانية)",
+    "description": "مدة الفيديو الناتج"
+  },
+  "name.resolution": {
+    "message": "الدقة",
+    "description": "دقة الفيديو الناتج"
+  },
+  "name.watermark": {
+    "message": "علامة مائية AIGC",
+    "description": "ما إذا كان يجب إضافة علامة مائية لعلامة AIGC"
+  },
+  "name.taskId": {
+    "message": "معرف المهمة",
+    "description": "معرف المهمة"
+  },
+  "name.failure": {
+    "message": "فشل",
+    "description": "حالة فشل المهمة"
+  },
+  "name.failureReason": {
+    "message": "سبب الفشل",
+    "description": "سبب فشل المهمة"
+  },
+  "placeholder.prompt": {
+    "message": "وصف المشهد، الحركة، اللقطة والأسلوب (سواء قمت بتحميل مواد مرجعية أم لا، يجب ملء الكلمات الدلالية)",
+    "description": "نص مكان لملء الكلمات الدلالية"
+  },
+  "description.model": {
+    "message": "نموذج توليد الفيديو MiniMax H3.",
+    "description": "وصف النموذج"
+  },
+  "description.prompt": {
+    "message": "وصف المشاهد، الحركات، اللقطات والأسلوب في الفيديو، يجب ملء جميع أوضاع التوليد.",
+    "description": "وصف الكلمات التوجيهية"
+  },
+  "description.referenceImages": {
+    "message": "رفع 1-9 صور. صورة واحدة كإطار أول، وصور متعددة كصور مرجعية.",
+    "description": "وصف الصور المرجعية"
+  },
+  "description.referenceAudios": {
+    "message": "رفع 1-3 مقاطع صوتية. عند استخدام الصوت المرجعي، يجب رفع صورة مرجعية واحدة على الأقل.",
+    "description": "وصف الصوت المرجعي"
+  },
+  "description.resolution": {
+    "message": "اختر دقة الفيديو الناتج.",
+    "description": "وصف الدقة"
+  },
+  "description.ratio": {
+    "message": "اختر نسبة العرض إلى الارتفاع الأفقية أو العمودية.",
+    "description": "وصف نسبة العرض إلى الارتفاع"
+  },
+  "description.duration": {
+    "message": "حدد مدة الفيديو من 4 إلى 15 ثانية.",
+    "description": "وصف المدة"
+  },
+  "description.watermark": {
+    "message": "إضافة علامة مائية AIGC إلى الفيديو.",
+    "description": "وصف العلامة المائية"
+  },
+  "status.pending": {
+    "message": "قيد الانتظار",
+    "description": "حالة انتظار المهمة"
+  },
+  "status.processing": {
+    "message": "قيد المعالجة",
+    "description": "حالة معالجة المهمة"
+  },
+  "button.generate": {
+    "message": "إنشاء فيديو",
+    "description": "زر الإنشاء"
+  },
+  "button.upload": {
+    "message": "رفع",
+    "description": "زر رفع المواد"
+  },
+  "button.download": {
+    "message": "تحميل الفيديو",
+    "description": "زر التحميل"
+  },
+  "message.startingTask": {
+    "message": "جارٍ بدء المهمة...",
+    "description": "إشعار بدء المهمة"
+  },
+  "message.startTaskSuccess": {
+    "message": "تم بدء مهمة الإنشاء بنجاح",
+    "description": "نجاح تقديم المهمة"
+  },
+  "message.startTaskFailed": {
+    "message": "فشل بدء المهمة، يرجى المحاولة لاحقًا",
+    "description": "فشل تقديم المهمة"
+  },
+  "message.usedUp": {
+    "message": "الرصيد غير كافٍ، يرجى إعادة الشحن للاستمرار في الاستخدام",
+    "description": "إشعار نقص الرصيد"
+  },
+  "message.downloadVideo": {
+    "message": "تحميل هذا الفيديو",
+    "description": "إشعار تحميل الفيديو"
+  },
+  "message.promptRequired": {
+    "message": "يجب ملء جميع أوضاع التوليد بكلمة تحفيزية",
+    "description": "نقص كلمة التحفيز"
+  },
+  "message.textRatioRequired": {
+    "message": "يجب اختيار نسبة عرض إلى ارتفاع محددة غير متوافقة",
+    "description": "نسبة عرض إلى ارتفاع الفيديو غير صالحة"
+  },
+  "message.imageLimit": {
+    "message": "يمكن إدخال 9 صور كحد أقصى",
+    "description": "تجاوز الحد الأقصى لعدد الصور"
+  },
+  "message.audioLimit": {
+    "message": "يمكن إدخال 3 روابط صوتية كحد أقصى",
+    "description": "تجاوز الحد الأقصى لعدد الصوتيات"
+  },
+  "message.uploadError": {
+    "message": "فشل الرفع، يرجى المحاولة لاحقًا",
+    "description": "تنبيه فشل رفع المواد"
+  }
+}

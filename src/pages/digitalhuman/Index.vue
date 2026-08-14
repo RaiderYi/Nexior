@@ -14,18 +14,26 @@ import { defineComponent } from 'vue';
 import Layout from '@/layouts/DigitalHuman.vue';
 import ConfigPanel from '@/components/digitalhuman/ConfigPanel.vue';
 import RecentPanel from '@/components/digitalhuman/RecentPanel.vue';
-import { digitalHumanOperator } from '@/operators';
-import { ensureLoggedIn } from '@/utils';
+import { digitalHumanOperator } from '@/operators/digitalhuman';
+import { ensureLoggedIn, ensureNoPendingUpload, uploadTrackerProviderMixin } from '@/utils';
 import { instrumentGeneration } from '@/plugins/telemetry';
 import { IDigitalHumanGenerateRequest, Status } from '@/models';
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElMessageBox } from 'element-plus';
 import { ERROR_CODE_USED_UP } from '@/constants';
 import { loadPreviousPage } from '@/utils/pagination';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import {
+  X402PaymentCancelledError,
+  type X402PaymentQuote,
+  type X402WalletContext,
+  resolveX402WalletContext
+} from '@/operators/x402';
 
 interface IData {
   job: number;
   loadingMore: boolean;
   fetchingTasks: boolean;
+  walletTaskIds: string[];
 }
 
 export default defineComponent({
@@ -35,12 +43,14 @@ export default defineComponent({
     Layout,
     RecentPanel
   },
+  mixins: [uploadTrackerProviderMixin],
   inject: ['initialized'],
   data(): IData {
     return {
       job: 0,
       loadingMore: false,
-      fetchingTasks: false
+      fetchingTasks: false,
+      walletTaskIds: []
     };
   },
   computed: {
@@ -58,18 +68,34 @@ export default defineComponent({
     },
     tasks() {
       return this.$store.state.digitalhuman.tasks;
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('digitalhuman').mode === 'wallet';
     }
   },
   watch: {
+    walletMode: {
+      async handler(value: boolean, oldValue: boolean | undefined) {
+        if (oldValue === undefined || value === oldValue) return;
+        this.$store.commit('digitalhuman/setTasks', undefined);
+        if (value && !this.job) this.job = window.setInterval(this.onGetTasks, 5000);
+        if (!value && !this.credential?.token) {
+          window.clearInterval(this.job);
+          this.job = 0;
+          await this.onScrollDown();
+          return;
+        }
+        await this.onGetTasks();
+        await this.onScrollDown();
+      }
+    },
     initialized: {
       async handler(newValue) {
         window.clearInterval(this.job);
         if (newValue) {
           await this.onGetTasks();
           await this.onScrollDown();
-          this.job = window.setInterval(() => {
-            this.onGetTasks();
-          }, 5000);
+          if (!this.job) this.job = window.setInterval(this.onGetTasks, 5000);
         }
       },
       immediate: true
@@ -110,32 +136,58 @@ export default defineComponent({
       const { limit = 5, createdAtMin, createdAtMax } = payload || {};
       this.fetchingTasks = true;
       try {
-        await this.$store.dispatch('digitalhuman/getTasks', { limit, createdAtMin, createdAtMax });
+        await this.$store.dispatch('digitalhuman/getTasks', {
+          limit,
+          createdAtMin,
+          createdAtMax,
+          ...(this.walletMode && !this.credential?.token ? { mode: 'x402', ids: this.walletTaskIds } : {})
+        });
       } finally {
         this.fetchingTasks = false;
       }
     },
     async onGenerate(request: IDigitalHumanGenerateRequest) {
-      if (!ensureLoggedIn()) {
+      if (
+        !ensureNoPendingUpload(
+          this.uploadTracker,
+          (k) => this.$t(k) as string,
+          (m) => ElMessage.warning(m)
+        )
+      ) {
         return;
       }
-      const token = this.credential?.token;
-      if (!token) {
-        console.error('no token specified');
-        return;
+      let operation: Promise<unknown>;
+      if (this.walletMode) {
+        const wallet = this.getWalletContext();
+        if (!wallet) {
+          ElMessage.warning(this.$t('common.x402Scenario.connectWalletFirst'));
+          return;
+        }
+        operation = digitalHumanOperator.generate(request, {
+          mode: 'x402',
+          x402: { wallet, confirm: (quote) => this.confirmWalletPayment(quote), identityToken: this.credential?.token }
+        });
+      } else {
+        if (!ensureLoggedIn()) return;
+        const token = this.credential?.token;
+        if (!token) return;
+        operation = digitalHumanOperator.generate(request, { token });
       }
       ElMessage.info(this.$t('digitalhuman.message.startingTask'));
-      instrumentGeneration('digitalhuman', digitalHumanOperator.generate(request, { token }))
-        .then(() => {
+      instrumentGeneration('digitalhuman', operation)
+        .then((response: any) => {
+          const taskId = response?.data?.task_id;
+          if (this.walletMode && !this.credential?.token && taskId && !this.walletTaskIds.includes(taskId))
+            this.walletTaskIds.unshift(taskId);
           ElMessage.success(this.$t('digitalhuman.message.startTaskSuccess'));
         })
         .catch((error) => {
+          if (error instanceof X402PaymentCancelledError) return;
           const response = error?.response?.data;
-          if (response?.error?.code === ERROR_CODE_USED_UP) {
-            ElMessage.error(this.$t('digitalhuman.message.usedUp'));
-          } else {
-            ElMessage.error(this.$t('digitalhuman.message.startTaskFailed'));
-          }
+          if (response?.error?.code === ERROR_CODE_USED_UP) ElMessage.error(this.$t('digitalhuman.message.usedUp'));
+          else if (this.walletMode)
+            ElMessage.error(`${this.$t('common.x402Scenario.paymentFailed')} ${error?.message || ''}`.trim());
+          else ElMessage.error(this.$t('digitalhuman.message.startTaskFailed'));
         })
         .finally(async () => {
           setTimeout(async () => {
@@ -143,6 +195,22 @@ export default defineComponent({
             await this.onScrollDown();
           }, 1000);
         });
+    },
+    getWalletContext(): X402WalletContext | undefined {
+      return resolveX402WalletContext((this as any).$wallet);
+    },
+    async confirmWalletPayment(quote: X402PaymentQuote): Promise<boolean> {
+      return ElMessageBox.confirm(
+        this.$t('common.x402Scenario.confirmPayment', { amount: quote.amountUsdc }),
+        this.$t('order.message.x402ConfirmTitle'),
+        {
+          confirmButtonText: this.$t('order.message.x402WalletPayCta'),
+          cancelButtonText: this.$t('common.button.cancel'),
+          type: 'warning'
+        }
+      )
+        .then(() => true)
+        .catch(() => false);
     },
     getTasksScrollElement(): HTMLElement | undefined {
       const panel = this.$refs.recentPanel as any;

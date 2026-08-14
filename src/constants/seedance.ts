@@ -5,13 +5,14 @@ export const SEEDANCE_LOGO = 'https://cdn.acedata.cloud/9q90dl.png';
 export const SEEDANCE_MODEL_1_0_PRO = 'doubao-seedance-1-0-pro-250528';
 export const SEEDANCE_MODEL_1_0_PRO_FAST = 'doubao-seedance-1-0-pro-fast-251015';
 export const SEEDANCE_MODEL_1_5_PRO = 'doubao-seedance-1-5-pro-251215';
+export const SEEDANCE_MODEL_2_5 = 'doubao-seedance-2-5-260628';
 export const SEEDANCE_MODEL_2_0 = 'doubao-seedance-2-0-260128';
 export const SEEDANCE_MODEL_2_0_FAST = 'doubao-seedance-2-0-fast-260128';
 export const SEEDANCE_MODEL_2_0_MINI = 'doubao-seedance-2-0-mini-260615';
 export const SEEDANCE_MODEL_1_0_LITE_T2V = 'doubao-seedance-1-0-lite-t2v-250428';
 export const SEEDANCE_MODEL_1_0_LITE_I2V = 'doubao-seedance-1-0-lite-i2v-250428';
 
-export const SEEDANCE_DEFAULT_MODEL = SEEDANCE_MODEL_1_0_PRO;
+export const SEEDANCE_DEFAULT_MODEL = SEEDANCE_MODEL_2_0;
 
 export const SEEDANCE_SERVICE_TIER_DEFAULT = 'default';
 export const SEEDANCE_SERVICE_TIER_FLEX = 'flex';
@@ -30,6 +31,7 @@ export const SEEDANCE_DEFAULT_RESOLUTION = SEEDANCE_RESOLUTION_720P;
 
 export const SEEDANCE_DEFAULT_MAX_DURATION = 12;
 export const SEEDANCE_2_0_MAX_DURATION = 15;
+export const SEEDANCE_2_5_MAX_DURATION = 30;
 
 export const SEEDANCE_RATIO_16_9 = '16:9';
 export const SEEDANCE_RATIO_4_3 = '4:3';
@@ -70,15 +72,42 @@ export interface ISeedanceModelCapability {
   minDuration: number;
   /** Longest clip duration (seconds) the model accepts. */
   maxDuration: number;
+  /** Whether duration -1 (auto duration) is supported by this model. */
+  supportsAutoDuration: boolean;
   /** Accepts reference image(s) as subject input (Seedance 2.0 multimodal). */
   acceptsReferenceImage: boolean;
   /** Accepts a reference audio input (Seedance 2.0 multimodal talking-head). */
   acceptsReferenceAudio: boolean;
-  /** Accepts a reference video input (Seedance 2.0 multimodal). */
+  /** Accepts a reference video input (Seedance 2.x multimodal). */
   acceptsReferenceVideo: boolean;
+  /** Accepts reference audio without a paired image or video. */
+  supportsAudioOnly: boolean;
+  /** Seedance 2.5 task types exposed by the studio. */
+  taskTypes: readonly ('auto' | 'edit' | 'extend')[];
+  /** Supported output containers. */
+  outputFormats: readonly ('mp4' | 'mov')[];
 }
 
 export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapability> = {
+  [SEEDANCE_MODEL_2_5]: {
+    acceptsText: true,
+    acceptsImage: true,
+    requiresImage: false,
+    acceptsLastFrame: true,
+    acceptsAudio: true,
+    acceptsReturnLastFrame: true,
+    defaultResolution: SEEDANCE_RESOLUTION_720P,
+    maxResolution: SEEDANCE_RESOLUTION_720P,
+    minDuration: 4,
+    maxDuration: SEEDANCE_2_5_MAX_DURATION,
+    supportsAutoDuration: true,
+    acceptsReferenceImage: true,
+    acceptsReferenceAudio: true,
+    acceptsReferenceVideo: true,
+    supportsAudioOnly: true,
+    taskTypes: ['auto', 'edit', 'extend'],
+    outputFormats: ['mp4', 'mov']
+  },
   [SEEDANCE_MODEL_1_0_PRO]: {
     acceptsText: true,
     acceptsImage: true,
@@ -90,9 +119,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_1080P,
     minDuration: 2,
     maxDuration: SEEDANCE_DEFAULT_MAX_DURATION,
+    supportsAutoDuration: false,
     acceptsReferenceImage: false,
     acceptsReferenceAudio: false,
-    acceptsReferenceVideo: false
+    acceptsReferenceVideo: false,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_1_0_PRO_FAST]: {
     acceptsText: true,
@@ -105,9 +138,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_1080P,
     minDuration: 2,
     maxDuration: SEEDANCE_DEFAULT_MAX_DURATION,
+    supportsAutoDuration: false,
     acceptsReferenceImage: false,
     acceptsReferenceAudio: false,
-    acceptsReferenceVideo: false
+    acceptsReferenceVideo: false,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_1_5_PRO]: {
     acceptsText: true,
@@ -118,11 +155,15 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     acceptsReturnLastFrame: true,
     defaultResolution: SEEDANCE_RESOLUTION_720P,
     maxResolution: SEEDANCE_RESOLUTION_1080P,
-    minDuration: 2,
+    minDuration: 4,
     maxDuration: SEEDANCE_DEFAULT_MAX_DURATION,
+    supportsAutoDuration: true,
     acceptsReferenceImage: false,
     acceptsReferenceAudio: false,
-    acceptsReferenceVideo: false
+    acceptsReferenceVideo: false,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_2_0]: {
     acceptsText: true,
@@ -135,9 +176,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_4K,
     minDuration: 4,
     maxDuration: SEEDANCE_2_0_MAX_DURATION,
+    supportsAutoDuration: true,
     acceptsReferenceImage: true,
     acceptsReferenceAudio: true,
-    acceptsReferenceVideo: true
+    acceptsReferenceVideo: true,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_2_0_FAST]: {
     acceptsText: true,
@@ -150,9 +195,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_720P,
     minDuration: 4,
     maxDuration: SEEDANCE_2_0_MAX_DURATION,
+    supportsAutoDuration: true,
     acceptsReferenceImage: true,
     acceptsReferenceAudio: true,
-    acceptsReferenceVideo: true
+    acceptsReferenceVideo: true,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_2_0_MINI]: {
     acceptsText: true,
@@ -165,9 +214,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_720P,
     minDuration: 4,
     maxDuration: SEEDANCE_2_0_MAX_DURATION,
+    supportsAutoDuration: true,
     acceptsReferenceImage: true,
     acceptsReferenceAudio: true,
-    acceptsReferenceVideo: true
+    acceptsReferenceVideo: true,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_1_0_LITE_T2V]: {
     acceptsText: true,
@@ -180,9 +233,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_720P,
     minDuration: 2,
     maxDuration: SEEDANCE_DEFAULT_MAX_DURATION,
+    supportsAutoDuration: false,
     acceptsReferenceImage: false,
     acceptsReferenceAudio: false,
-    acceptsReferenceVideo: false
+    acceptsReferenceVideo: false,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   },
   [SEEDANCE_MODEL_1_0_LITE_I2V]: {
     acceptsText: false,
@@ -195,9 +252,13 @@ export const SEEDANCE_MODEL_CAPABILITIES: Record<string, ISeedanceModelCapabilit
     maxResolution: SEEDANCE_RESOLUTION_720P,
     minDuration: 2,
     maxDuration: SEEDANCE_DEFAULT_MAX_DURATION,
+    supportsAutoDuration: false,
     acceptsReferenceImage: false,
     acceptsReferenceAudio: false,
-    acceptsReferenceVideo: false
+    acceptsReferenceVideo: false,
+    supportsAudioOnly: false,
+    taskTypes: [],
+    outputFormats: ['mp4']
   }
 };
 

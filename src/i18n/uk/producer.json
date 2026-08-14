@@ -215,6 +215,10 @@
     "message": "Причина невдачі",
     "description": "Причина невдачі завдання"
   },
+  "name.failure": {
+    "message": "Не вдалося згенерувати",
+    "description": "Заголовок про невдале виконання завдання Producer"
+  },
   "name.status": {
     "message": "Статус",
     "description": "Статус завдання"

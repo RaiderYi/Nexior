@@ -1,0 +1,202 @@
+{
+  "name.bot": {
+    "message": "روبوت فيديو Omni",
+    "description": "اسم مولد فيديو Omni"
+  },
+  "name.prompt": {
+    "message": "نص التوجيه",
+    "description": "نص لتوليد الفيديو"
+  },
+  "name.model": {
+    "message": "نموذج",
+    "description": "تسمية لاختيار النموذج"
+  },
+  "name.ratio": {
+    "message": "نسبة العرض إلى الارتفاع",
+    "description": "تسمية لنسبة العرض إلى الارتفاع"
+  },
+  "name.resolution": {
+    "message": "الدقة",
+    "description": "تسمية للدقة"
+  },
+  "name.duration": {
+    "message": "المدة",
+    "description": "تسمية للمدة"
+  },
+  "name.image": {
+    "message": "صورة",
+    "description": "تسمية لإدخال الصورة"
+  },
+  "name.referenceImages": {
+    "message": "صور مرجعية",
+    "description": "تسمية لصور المرجع"
+  },
+  "name.required": {
+    "message": "مطلوب",
+    "description": "شارة مطلوبة"
+  },
+  "name.taskId": {
+    "message": "معرف المهمة",
+    "description": "تسمية معرف المهمة"
+  },
+  "name.elapsed": {
+    "message": "الوقت المستغرق",
+    "description": "تسمية الوقت المستغرق"
+  },
+  "name.traceId": {
+    "message": "معرف التتبع",
+    "description": "تسمية معرف التتبع"
+  },
+  "name.failure": {
+    "message": "فشل الإنشاء",
+    "description": "عنوان الفشل"
+  },
+  "name.failureReason": {
+    "message": "سبب الفشل",
+    "description": "تسمية سبب الفشل"
+  },
+  "name.status": {
+    "message": "الحالة",
+    "description": "عنوان الحالة"
+  },
+  "description.prompt": {
+    "message": "صف الفيديو الذي ترغب في إنشائه (المشهد، الموضوع، الحركة، اللقطة، الإضاءة، الأسلوب).",
+    "description": "تعليمات حول إدخال النص"
+  },
+  "description.model": {
+    "message": "اختر نموذج Omni. يدعم omni-flash الفيديو الناتج عن النص والصورة؛ بينما 1.5-preview يدعم فقط الفيديو الناتج عن الصورة.",
+    "description": "تعليمات حول اختيار النموذج"
+  },
+  "description.ratio": {
+    "message": "اختر نسبة عرض إلى ارتفاع الإخراج.",
+    "description": "تعليمات حول نسبة العرض إلى الارتفاع"
+  },
+  "description.resolution": {
+    "message": "اختر دقة الإخراج. كلما كانت الدقة أعلى، زادت التكلفة لكل ثانية.",
+    "description": "تعليمات حول الدقة"
+  },
+  "description.duration": {
+    "message": "مدة الفيديو (بالثواني)، يتم احتساب الرسوم حسب عدد الثواني.",
+    "description": "تعليمات حول المدة"
+  },
+  "description.image": {
+    "message": "صورة إدخال اختيارية، تستخدم لإنشاء الفيديو. omni-flash إلزامية.",
+    "description": "تعليمات حول إدخال الصورة"
+  },
+  "description.referenceImages": {
+    "message": "صور مرجعية اختيارية (بحد أقصى 4 صور) لتوجيه الفيديو؛ وهي مطلوبة عند تحرير فيديو مرجعي.",
+    "description": "تعليمات الصور المرجعية"
+  },
+  "placeholder.prompt": {
+    "message": "وصف الفيديو الخاص بك…",
+    "description": "نص بديل لنص التوجيه"
+  },
+  "placeholder.select": {
+    "message": "يرجى الاختيار",
+    "description": "نص بديل للاختيارات"
+  },
+  "model.default": {
+    "message": "فيديو Omni",
+    "description": "تسمية النموذج الافتراضي"
+  },
+  "model.preview15": {
+    "message": "فيديو Omni 1.5 (معاينة، فيديو ناتج عن الصورة)",
+    "description": "تسمية نموذج المعاينة 1.5"
+  },
+  "button.upload": {
+    "message": "رفع",
+    "description": "زر الرفع"
+  },
+  "button.generate": {
+    "message": "إنشاء",
+    "description": "زر الإنشاء"
+  },
+  "button.download": {
+    "message": "تنزيل",
+    "description": "زر التنزيل"
+  },
+  "status.pending": {
+    "message": "قيد الانتظار",
+    "description": "حالة الانتظار"
+  },
+  "status.processing": {
+    "message": "جاري المعالجة",
+    "description": "حالة المعالجة"
+  },
+  "message.uploadExceed": {
+    "message": "يمكنك رفع صورة واحدة فقط.",
+    "description": "تحذير تجاوز الرفع"
+  },
+  "message.uploadReferenceExceed": {
+    "message": "يمكنك رفع 4 صور مرجعية كحد أقصى.",
+    "description": "تحذير عند تجاوز عدد صور المرجع المسموح به"
+  },
+  "message.uploadError": {
+    "message": "فشل رفع الصورة، يرجى المحاولة مرة أخرى.",
+    "description": "خطأ في الرفع"
+  },
+  "message.downloadVideo": {
+    "message": "تنزيل الفيديو",
+    "description": "تلميح التنزيل"
+  },
+  "message.modelRequiresImage": {
+    "message": "هذا النموذج يتطلب صورة إدخال (فيديو ناتج عن الصورة).",
+    "description": "تحذير يتطلب صورة للنموذج"
+  },
+  "message.promptOrImageRequired": {
+    "message": "يرجى إدخال نص أو رفع صورة.",
+    "description": "تحذير يتطلب نص أو صورة"
+  },
+  "message.startingTask": {
+    "message": "جارٍ تقديم مهمة إنشاء الفيديو...",
+    "description": "بدء المهمة"
+  },
+  "message.startTaskSuccess": {
+    "message": "تم تقديم المهمة بنجاح.",
+    "description": "نجاح المهمة"
+  },
+  "message.startTaskFailed": {
+    "message": "فشل تقديم المهمة:",
+    "description": "فشل المهمة"
+  },
+  "message.usedUp": {
+    "message": "تم استهلاك الرصيد، يرجى الشراء للاستمرار في الاستخدام.",
+    "description": "استهلاك الرصيد"
+  },
+  "name.referenceVideo": {
+    "message": "فيديو مرجعي",
+    "description": "فيديو مرجعي/قيد التحرير في تحرير الفيديو الشامل"
+  },
+  "description.referenceVideo": {
+    "message": "MP4/MOV اختياري (≤200MB) ، لاستخدامه في تحرير أو مرجعية فيديو موجود. يجب أن تحتوي على صورة مرجعية واحدة على الأقل.",
+    "description": "نص المساعدة لرفع الفيديو المرجعي"
+  },
+  "button.uploadVideo": {
+    "message": "رفع الفيديو",
+    "description": "زر لرفع فيديو مرجعي"
+  },
+  "message.uploadVideoExceed": {
+    "message": "يمكنك رفع فيديو مرجعي واحد فقط كحد أقصى",
+    "description": "رسالة خطأ عند تجاوز عدد الفيديوهات المرجعية المسموح به"
+  },
+  "message.uploadVideoError": {
+    "message": "فشل رفع الفيديو المرجعي، يرجى المحاولة لاحقًا",
+    "description": "رسالة خطأ عند فشل رفع الفيديو المرجعي"
+  },
+  "message.uploadVideoTypeFailed": {
+    "message": "يجب أن يكون الملف المرفوع بتنسيق MP4 أو MOV!",
+    "description": "رسالة خطأ عند عدم كون تنسيق الفيديو المرجعي MP4/MOV"
+  },
+  "message.uploadVideoSizeExceed": {
+    "message": "يجب ألا يتجاوز حجم الملف المرفوع 200MB!",
+    "description": "رسالة خطأ عند تجاوز حجم الفيديو المرجعي 200MB"
+  },
+  "message.promptRequired": {
+    "message": "يرجى إدخال كلمة التلميح.",
+    "description": "تحذير التحقق عند ترك كلمة التلميح فارغة"
+  },
+  "message.videoRequiresImage": {
+    "message": "عند استخدام الفيديو المرجعي، يرجى إضافة صورة مرجعية واحدة على الأقل.",
+    "description": "تحذير التحقق عند توفير video_urls ولكن بدون صورة مرجعية"
+  }
+}

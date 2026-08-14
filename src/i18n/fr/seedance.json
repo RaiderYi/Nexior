@@ -8,8 +8,8 @@
     "description": "Mots-clés pour générer la vidéo"
   },
   "description.prompt": {
-    "message": "Décrivez la vidéo que vous souhaitez générer, vous pouvez ajouter des paramètres SeeDance (par exemple : --rs 720p --rt 16:9 --dur 5).",
-    "description": "Instructions pour l'entrée des mots-clés"
+    "message": "Décrivez la vidéo que vous souhaitez générer. Pour que les personnages parlent : téléchargez l'image dans la case \"image de référence\" ci-dessous (pas dans \"image de première frame\"), écrivez clairement les dialogues dans les mots-clés et encadrez-les de guillemets, par exemple, le personnage dans l'image 1 dit à la caméra : \"Votre dialogue\", et activez \"générer audio\". Des paramètres supplémentaires peuvent être ajoutés (comme --rs 720p --rt 16:9 --dur 5).",
+    "description": "Explication de l'entrée des mots-clés"
   },
   "placeholder.prompt": {
     "message": "Décrivez votre vidéo…",
@@ -40,8 +40,8 @@
     "description": "Étiquette pour générer de l'audio"
   },
   "description.generateAudio": {
-    "message": "Si activé, la vidéo sera accompagnée d'un audio. Supporté uniquement par le modèle seedance-1.5-pro, coût environ 2 fois plus.",
-    "description": "Instructions pour la génération audio"
+    "message": "Une fois activé, la vidéo aura du son. Pour que les personnages parlent, vous devez : télécharger l'image du personnage dans la case \"image de référence\" + activer ce commutateur + écrire les dialogues entre guillemets dans les mots-clés. Supporté uniquement par les séries seedance-1.5-pro / seedance-2.0, coût environ 2 fois plus.",
+    "description": "Explication de la génération audio"
   },
   "name.resolution": {
     "message": "Résolution",
@@ -100,20 +100,20 @@
     "description": "Instructions sur le retour de la dernière image"
   },
   "name.firstFrame": {
-    "message": "Image de la première image",
-    "description": "Étiquette pour le téléchargement de l'image de la première image"
+    "message": "Image de première frame (effet d'animation)",
+    "description": "Étiquette de téléchargement de l'image de première frame"
   },
   "description.firstFrame": {
-    "message": "Optionnel. Téléchargez une image de référence/première image.",
-    "description": "Instructions sur l'image de la première image"
+    "message": "Image de première frame : l'image que vous téléchargez deviendra la première frame de la vidéo, l'animation commence à partir de celle-ci. Convient pour \"faire bouger une image\", mais les personnages ne parleront pas, pas de synchronisation labiale. Pour que les personnages parlent, veuillez utiliser l'\"image de référence\" ci-dessous.",
+    "description": "Explication de l'image de première frame"
   },
   "name.lastFrame": {
     "message": "Image de la dernière image",
     "description": "Étiquette pour le téléchargement de l'image de la dernière image"
   },
   "description.lastFrame": {
-    "message": "Optionnel. Téléchargez l'image de la dernière image (nécessite la première image).",
-    "description": "Instructions sur l'image de la dernière image"
+    "message": "Image de dernière frame : spécifiez la dernière frame de la vidéo (doit être associée à l'image de première frame). Utilisé pour verrouiller l'animation d'une image à une autre.",
+    "description": "Explication de l'image de dernière frame"
   },
   "button.generate": {
     "message": "Générer",
@@ -248,27 +248,27 @@
     "description": "Description de la graine aléatoire"
   },
   "placeholder.seed": {
-    "message": "Auto",
-    "description": "Espace réservé pour la graine"
+    "message": "Automatique",
+    "description": "Espace réservé pour la graine aléatoire"
   },
   "model.seedance20Mini": {
     "message": "doubao-seedance-2.0-mini",
     "description": "Modèle SeeDance 2.0 Mini"
   },
   "name.referenceImage": {
-    "message": "Image de référence",
-    "description": "Étiquette de téléchargement pour l'image de référence (Seedance 2.0)"
+    "message": "Image de référence (faire parler le personnage)",
+    "description": "Étiquette de téléchargement de l'image de référence (Seedance 2.0)"
   },
   "description.referenceImage": {
-    "message": "Optionnel. Téléchargez une image de référence, par exemple, le visage d'une personne pour la vidéo de présentation. Prend uniquement en charge Seedance 2.0.",
+    "message": "Canal pour que le personnage dans l'image parle et synchronise ses lèvres (préféré pour la narration / les personnages numériques, conservera l'apparence du personnage). Pour que le personnage parle, téléchargez l'image ici, et non dans \"image de première frame\". Utilisé avec les dialogues entre guillemets dans les mots-clés + \"générer audio\". Vous pouvez télécharger de 1 à 9 images. Supporté uniquement par la série Seedance 2.0. Attention : ne peut pas être utilisé simultanément avec \"image de première/dernière frame\".",
     "description": "Explication de l'image de référence"
   },
   "name.referenceAudio": {
-    "message": "Audio de référence",
-    "description": "Étiquette de téléchargement pour l'audio de référence (Seedance 2.0)"
+    "message": "Audio de référence (tonalité / musique de fond)",
+    "description": "Étiquette de téléchargement de l'audio de référence (Seedance 2.0)"
   },
   "description.referenceAudio": {
-    "message": "Optionnel. Téléchargez un fichier audio/voix pour générer une vidéo de présentation (personnage numérique), à utiliser avec une image de référence. Prend uniquement en charge Seedance 2.0.",
+    "message": "Permet à la vidéo générée d'emprunter la tonalité ou la musique de fond de cet audio (avec l'image de référence pour que le personnage parle avec cette tonalité). Doit être utilisé avec une image de référence ou une vidéo de référence, ne peut pas être utilisé seul. Vous pouvez télécharger 1 à 3 segments. Supporté uniquement par la série Seedance 2.0.",
     "description": "Explication de l'audio de référence"
   },
   "name.referenceVideo": {
@@ -276,11 +276,39 @@
     "description": "Étiquette de téléchargement pour la vidéo de référence (Seedance 2.0)"
   },
   "description.referenceVideo": {
-    "message": "Optionnel. Téléchargez une vidéo de référence. Prend uniquement en charge Seedance 2.0.",
+    "message": "Permet au modèle d'emprunter les mouvements / les angles de caméra / le style / les effets sonores de cette vidéo, pour générer une nouvelle vidéo. Vous pouvez télécharger 1 à 3 segments. Supporté uniquement par la série Seedance 2.0.",
     "description": "Explication de la vidéo de référence"
   },
-  "message.audioRequiresReferenceImage": {
-    "message": "L'audio de référence nécessite une image de référence (sujet de présentation), veuillez télécharger l'image de référence en même temps.",
-    "description": "Alerte lorsque l'audio est fourni mais que l'image de référence est manquante"
+  "message.audioRequiresReference": {
+    "message": "L'audio de référence ne peut pas être utilisé seul, veuillez télécharger en même temps une image de référence ou une vidéo de référence.",
+    "description": "Avertissement lorsque l'audio de référence n'a pas d'image/vidéo associée"
+  },
+  "model.seedance25": {
+    "message": "doubao-seedance-2.5",
+    "description": "Seedance 2.5 model"
+  },
+  "name.taskType": {
+    "message": "Type de tâche",
+    "description": "Type de tâche Seedance 2.5"
+  },
+  "description.taskType": {
+    "message": "Détermination automatique, édition de vidéo de référence ou prolongation de vidéo de référence. L'édition/le prolongement nécessite une vidéo de référence.",
+    "description": "Description du type de tâche"
+  },
+  "taskType.auto": {
+    "message": "Automatique",
+    "description": "Détermination automatique du type de tâche"
+  },
+  "taskType.edit": {
+    "message": "Éditer la vidéo",
+    "description": "Édition de la vidéo de référence"
+  },
+  "taskType.extend": {
+    "message": "Prolonger la vidéo",
+    "description": "Prolongation de la vidéo de référence"
+  },
+  "name.outputFormat": {
+    "message": "Format de sortie",
+    "description": "Format du conteneur vidéo"
   }
 }

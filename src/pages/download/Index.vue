@@ -4,7 +4,7 @@
     <div class="download-page__inner">
       <!-- Bare layout has no app chrome (native/desktop have no browser back) — always offer a way back. -->
       <button type="button" class="download-back" @click="goBack">
-        <font-awesome-icon :icon="faArrowLeft" class="download-back__icon" />
+        <back-icon class="download-back__icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
         <span>{{ $t('common.button.goBack') }}</span>
       </button>
 
@@ -53,6 +53,36 @@
 
       <!-- Platform download cards -->
       <section class="platforms">
+        <article class="platform platform--extension">
+          <div class="platform__head">
+            <span class="platform__os">
+              <span class="platform__os-icons">
+                <font-awesome-icon :icon="faChrome" class="platform__os-icon" />
+                <font-awesome-icon :icon="faEdge" class="platform__os-icon" />
+              </span>
+              Chrome &amp; Edge
+            </span>
+            <span class="chip chip--live">
+              <span class="chip__dot"></span>{{ $t('common.message.extensionAvailableNow') }}
+            </span>
+          </div>
+          <h2 class="platform__title">{{ $t('common.button.downloadBrowserExtension') }}</h2>
+          <p class="platform__text">{{ $t('common.message.extensionHint') }}</p>
+
+          <div class="platform__foot platform__foot--extension">
+            <el-button type="primary" round size="large" tag="a" :href="extensionDownloadUrl" target="_blank">
+              <span class="btn-icons">
+                <font-awesome-icon :icon="faChrome" />
+                <font-awesome-icon :icon="faEdge" />
+              </span>
+              {{ $t('common.button.downloadBrowserExtension') }}
+            </el-button>
+            <el-button round tag="a" :href="extensionGuideUrl" target="_blank" class="btn-ghost">
+              {{ $t('common.button.viewExtensionGuide') }}
+            </el-button>
+          </div>
+        </article>
+
         <article class="platform platform--android">
           <div class="platform__head">
             <span class="platform__os">
@@ -97,14 +127,14 @@
             <template v-if="hasAndroidDownload">
               <div v-if="hasPlayStore" class="platform__fallback">
                 <el-button round tag="a" :href="androidDownloadUrl" target="_blank" class="btn-ghost">
-                  <font-awesome-icon :icon="faDownload" class="btn-icon" />
+                  <download-icon class="btn-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
                   {{ $t('common.button.downloadAndroid') }}
                 </el-button>
                 <span class="platform__meta">{{ $t('common.message.mobileApkFallback') }}</span>
               </div>
               <template v-else>
                 <el-button type="primary" round size="large" tag="a" :href="androidDownloadUrl" target="_blank">
-                  <font-awesome-icon :icon="faDownload" class="btn-icon" />
+                  <download-icon class="btn-icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
                   {{ $t('common.button.downloadAndroid') }}
                 </el-button>
                 <span class="platform__meta">{{ $t('common.message.mobileDirectInstall') }}</span>
@@ -254,13 +284,13 @@
 
       <!-- Install note -->
       <aside v-if="hasIosDownload" class="note">
-        <font-awesome-icon :icon="faCircleInfo" class="note__icon" />
+        <info-icon class="note__icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
         <p class="note__text">{{ $t('common.message.mobileInstallNote') }}</p>
       </aside>
 
       <!-- Desktop unsigned-beta note -->
       <aside class="note">
-        <font-awesome-icon :icon="faCircleInfo" class="note__icon" />
+        <info-icon class="note__icon" :size="'1em' as any" aria-hidden="true" focusable="false" />
         <p class="note__text">{{ $t('common.message.desktopUnsignedNote') }}</p>
       </aside>
     </div>
@@ -268,14 +298,16 @@
 </template>
 
 <script lang="ts">
+import { BackIcon, DownloadIcon, InfoIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton } from 'element-plus';
 import QrCode from 'vue-qrcode';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faAndroid, faApple, faGooglePlay, faWindows } from '@fortawesome/free-brands-svg-icons';
-import { faDownload, faCircleInfo, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAndroid, faApple, faChrome, faEdge, faGooglePlay, faWindows } from '@fortawesome/free-brands-svg-icons';
 import defaultLogo from '@/assets/images/logo.png';
 import {
+  BROWSER_EXTENSION_DOWNLOAD_URL,
+  BROWSER_EXTENSION_GUIDE_URL,
   DESKTOP_RELEASES_URL,
   MOBILE_ANDROID_DOWNLOAD_URL,
   MOBILE_ANDROID_PLAY_STORE_URL,
@@ -287,7 +319,10 @@ import {
 export default defineComponent({
   name: 'DownloadIndex',
   components: {
+    BackIcon,
+    DownloadIcon,
     ElButton,
+    InfoIcon,
     QrCode,
     FontAwesomeIcon
   },
@@ -295,11 +330,10 @@ export default defineComponent({
     return {
       faAndroid,
       faApple,
+      faChrome,
+      faEdge,
       faGooglePlay,
-      faWindows,
-      faDownload,
-      faCircleInfo,
-      faArrowLeft
+      faWindows
     };
   },
   computed: {
@@ -326,6 +360,12 @@ export default defineComponent({
     },
     hasAppStore() {
       return !!MOBILE_IOS_APP_STORE_URL;
+    },
+    extensionDownloadUrl() {
+      return BROWSER_EXTENSION_DOWNLOAD_URL;
+    },
+    extensionGuideUrl() {
+      return BROWSER_EXTENSION_GUIDE_URL;
     },
     iosDownloadUrl() {
       return MOBILE_IOS_DOWNLOAD_URL;
@@ -507,6 +547,13 @@ export default defineComponent({
 }
 
 .btn-icon {
+  margin-right: 8px;
+}
+
+.btn-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-right: 8px;
 }
 
@@ -692,6 +739,24 @@ export default defineComponent({
   gap: 12px;
 }
 
+// The extension card spans both columns, so its buttons sit side by side and
+// hug the left edge instead of being pushed apart across the full width.
+.platform__foot--extension {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.platform--extension {
+  grid-column: 1 / -1;
+}
+
+.platform__os-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -811,6 +876,12 @@ html.dark .qr__img {
   .hero__actions :deep(.el-button) {
     width: 100%;
     margin-left: 0;
+    // el-button is nowrap by default, which clips long translations on a
+    // phone-width row.
+    height: auto;
+    min-height: 40px;
+    padding-block: 8px;
+    white-space: normal;
   }
 }
 </style>

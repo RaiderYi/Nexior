@@ -1,3 +1,12 @@
+import {
+  appendCodingAgentDelta,
+  appendCodingAgentEvent,
+  finalizeAllCodingAgentStreams,
+  finalizeCodingAgentStream,
+  renameCodingAgentSession,
+  rewindCodingAgentEvents,
+  upsertCodingAgentSession
+} from '@acedatacloud/core/coding-agent';
 import initialState from './state';
 import { ICodingBridgeHistoryRef, ICodingBridgeState } from './models';
 import {
@@ -34,8 +43,16 @@ export const setNodes = (state: ICodingBridgeState, payload: ICodingBridgeNode[]
 
 export const mergeNodeSnapshot = (state: ICodingBridgeState, snapshot: ICodingBridgeNode[]): void => {
   const online = new Set(snapshot.map((node) => node.node_id));
+  const names = new Map(snapshot.map((node) => [node.node_id, node.name]));
   for (const node of state.nodes) {
     node.status = online.has(node.node_id) ? 'online' : 'offline';
+    // The relay is the source of truth for the name. Adopting it here is what
+    // makes a rename land on a client that was disconnected when the
+    // `node.renamed` broadcast went out (backgrounded phone, closed laptop).
+    const name = names.get(node.node_id);
+    if (name) {
+      node.name = name;
+    }
   }
   for (const snap of snapshot) {
     if (!state.nodes.some((node) => node.node_id === snap.node_id)) {
@@ -54,6 +71,13 @@ export const setNodeStatus = (
   }
 };
 
+export const setNodeName = (state: ICodingBridgeState, payload: { node_id: string; name: string }): void => {
+  const node = state.nodes.find((item) => item.node_id === payload.node_id);
+  if (node) {
+    node.name = payload.name;
+  }
+};
+
 export const setCurrentNode = (state: ICodingBridgeState, payload: string | undefined): void => {
   state.currentNodeId = payload;
 };
@@ -63,10 +87,7 @@ export const setCurrentSession = (state: ICodingBridgeState, payload: string | u
 };
 
 export const upsertSession = (state: ICodingBridgeState, payload: ICodingBridgeSession): void => {
-  state.sessions[payload.session_id] = { ...state.sessions[payload.session_id], ...payload };
-  if (!state.events[payload.session_id]) {
-    state.events[payload.session_id] = [];
-  }
+  upsertCodingAgentSession(state, payload);
 };
 
 export const updateSession = (
@@ -86,44 +107,14 @@ export const updateSession = (
 // (e.g. a snapshot stub); its transcript is only carried over when non-empty so
 // a reattach never blows away events already loaded under the real id.
 export const renameSession = (state: ICodingBridgeState, payload: { from: string; to: string }): void => {
-  const { from, to } = payload;
-  if (from === to || !state.sessions[from]) {
-    return;
-  }
-  state.sessions[to] = { ...state.sessions[to], ...state.sessions[from], session_id: to };
-  delete state.sessions[from];
-  const moving = state.events[from];
-  if (moving && (moving.length || !state.events[to]?.length)) {
-    state.events[to] = moving;
-  }
-  delete state.events[from];
-  // Do NOT carry the provisional id's seq cursor onto the real id. The relay
-  // numbers `seq` PER session_id, so once the node re-tags events to the real id
-  // that id begins a FRESH seq space (1, 2, 3…). Inheriting the provisional
-  // cursor made the dedup in `applyNodeEvent` drop the real id's first events as
-  // "already seen" — e.g. a codex turn's first reply (low seq) silently vanished
-  // while a later turn (higher seq) showed. The real id is brand-new to this tab
-  // at re-key time, so reset its cursor to accept its whole stream.
-  delete state.lastSeq[from];
-  state.lastSeq[to] = 0;
-  for (const request of state.permissions) {
-    if (request.session_id === from) {
-      request.session_id = to;
-    }
-  }
-  if (state.currentSessionId === from) {
-    state.currentSessionId = to;
-  }
-  if (state.historyRef?.session_id === from) {
-    state.historyRef = { ...state.historyRef, session_id: to };
+  renameCodingAgentSession(state, payload.from, payload.to);
+  if (state.historyRef?.session_id === payload.from) {
+    state.historyRef = { ...state.historyRef, session_id: payload.to };
   }
 };
 
 export const appendEvent = (state: ICodingBridgeState, payload: ICodingBridgeEvent): void => {
-  if (!state.events[payload.session_id]) {
-    state.events[payload.session_id] = [];
-  }
-  state.events[payload.session_id].push(payload);
+  appendCodingAgentEvent(state, payload);
 };
 
 // Drop the event with `event_id` and everything after it. Used when editing a
@@ -149,18 +140,7 @@ export const truncateEventsBefore = (
 // the whole transcript is cleared. This is what makes a reconnect-after-edit
 // rebuild the correct branch from the log instead of replaying the old turns.
 export const rewindToCut = (state: ICodingBridgeState, payload: { session_id: string; cut_uuid?: string }): void => {
-  const events = state.events[payload.session_id];
-  if (!events) {
-    return;
-  }
-  if (!payload.cut_uuid) {
-    state.events[payload.session_id] = [];
-    return;
-  }
-  const index = events.findIndex((event) => event.kind === 'result' && event.cut_uuid === payload.cut_uuid);
-  if (index >= 0) {
-    state.events[payload.session_id] = events.slice(0, index + 1);
-  }
+  rewindCodingAgentEvents(state, payload.session_id, payload.cut_uuid);
 };
 
 // Remember the highest event seq applied for a session (reconnect cursor).
@@ -171,20 +151,39 @@ export const setLastSeq = (state: ICodingBridgeState, payload: { session_id: str
   }
 };
 
+// Drop a session's cursor. Used when the relay's seq space restarts under us
+// (see `applyNodeEvent`), where keeping the old high-water mark would make every
+// live event look like one we had already applied.
+export const resetLastSeq = (state: ICodingBridgeState, sessionId: string): void => {
+  delete state.lastSeq[sessionId];
+};
+
+// Mark a session's seq space as validated on this connection.
+export const markSeqChecked = (state: ICodingBridgeState, sessionId: string): void => {
+  state.seqChecked[sessionId] = true;
+};
+
+// Forget ONE session's validation. Used where that session's seq space is known
+// to restart under us (session.closed) but the socket — and every other
+// session's cursor on it — stays valid.
+export const clearSeqCheckedFor = (state: ICodingBridgeState, sessionId: string): void => {
+  delete state.seqChecked[sessionId];
+};
+
+// Forget every validation. Called on each (re)connect: the relay is
+// single-replica, so a restart always drops our socket — the first event of a
+// session after one is where a renumbered seq space can be detected.
+export const clearSeqChecked = (state: ICodingBridgeState): void => {
+  state.seqChecked = {};
+};
+
 // Streaming: append an incremental text chunk onto the open bubble matching
 // `stream_id`. No-op if the bubble was already finalized or never created.
 export const appendDelta = (
   state: ICodingBridgeState,
   payload: { session_id: string; stream_id: string; text: string }
 ): void => {
-  const events = state.events[payload.session_id];
-  if (!events) {
-    return;
-  }
-  const target = events.find((item) => item.kind === 'text' && item.stream_id === payload.stream_id);
-  if (target) {
-    target.text = (target.text ?? '') + (payload.text ?? '');
-  }
+  appendCodingAgentDelta(state, payload.session_id, payload.stream_id, payload.text);
 };
 
 // Streaming: close the bubble matching `stream_id`, optionally replacing its
@@ -193,30 +192,12 @@ export const finalizeStream = (
   state: ICodingBridgeState,
   payload: { session_id: string; stream_id: string; text?: string }
 ): void => {
-  const events = state.events[payload.session_id];
-  if (!events) {
-    return;
-  }
-  const target = events.find((item) => item.kind === 'text' && item.stream_id === payload.stream_id);
-  if (target) {
-    if (typeof payload.text === 'string') {
-      target.text = payload.text;
-    }
-    target.streaming = false;
-  }
+  finalizeCodingAgentStream(state, payload.session_id, payload.stream_id, payload.text);
 };
 
 // Streaming: close every still-open bubble in a session (turn ended / errored).
 export const finalizeAllStreams = (state: ICodingBridgeState, payload: { session_id: string }): void => {
-  const events = state.events[payload.session_id];
-  if (!events) {
-    return;
-  }
-  for (const item of events) {
-    if (item.streaming) {
-      item.streaming = false;
-    }
-  }
+  finalizeAllCodingAgentStreams(state, payload.session_id);
 };
 
 // Replace a session's transcript wholesale (used when replaying history).
@@ -286,6 +267,7 @@ export const removeNodeData = (state: ICodingBridgeState, nodeId: string): void 
       delete state.sessions[session.session_id];
       delete state.events[session.session_id];
       delete state.lastSeq[session.session_id];
+      delete state.seqChecked[session.session_id];
       if (state.currentSessionId === session.session_id) {
         state.currentSessionId = undefined;
       }
@@ -300,6 +282,7 @@ export default {
   setNodes,
   mergeNodeSnapshot,
   setNodeStatus,
+  setNodeName,
   setCurrentNode,
   setCurrentSession,
   upsertSession,
@@ -309,6 +292,10 @@ export default {
   truncateEventsBefore,
   rewindToCut,
   setLastSeq,
+  resetLastSeq,
+  markSeqChecked,
+  clearSeqChecked,
+  clearSeqCheckedFor,
   appendDelta,
   finalizeStream,
   finalizeAllStreams,

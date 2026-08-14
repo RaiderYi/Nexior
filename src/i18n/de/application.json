@@ -8,8 +8,8 @@
     "description": "Dienstkontingent."
   },
   "badge.shared": {
-    "message": "Shared",
-    "description": "Badge on the application list marking an application that has been authorized to the current user by someone else (not owned by them)."
+    "message": "Geteilt",
+    "description": "Ein Badge in der Anwendungsübersicht, das anzeigt, dass diese Anwendung von anderen für den aktuellen Benutzer autorisiert wurde und nicht im Besitz des aktuellen Benutzers ist."
   },
   "field.expiredAt": {
     "message": "Ablaufdatum",
@@ -53,7 +53,7 @@
   },
   "field.status": {
     "message": "Status",
-    "description": "Status des Antrags."
+    "description": "Der Status der Anfrage."
   },
   "field.id": {
     "message": "Antrags-ID",
@@ -77,7 +77,7 @@
   },
   "field.operation": {
     "message": "Operation",
-    "description": "Operation des Antrags."
+    "description": "Die durchgeführte Operation der Anfrage."
   },
   "field.allowConsumeGlobal": {
     "message": "Allgemeines Guthaben verwenden",
@@ -105,7 +105,7 @@
   },
   "field.proxy": {
     "message": "Proxy",
-    "description": "Dies ist ein Online-Dienst, der über einen HTTP-Proxy bereitgestellt wird."
+    "description": "Dies ist ein Online-Dienst, der das Formular über einen HTTP-Proxy (zur Datenübertragung) bereitstellt."
   },
   "field.credential": {
     "message": "Anmeldeinformationen",
@@ -113,7 +113,7 @@
   },
   "field.name": {
     "message": "Name",
-    "description": "Name des Antrags."
+    "description": "Der Name der Anfrage."
   },
   "field.package": {
     "message": "Paket",
@@ -144,11 +144,11 @@
     "description": "Hinweis, der angezeigt wird, wenn die automatische globale Antragstellung fehlschlägt."
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 Willkommen bei BigPlayer AI! Wir haben Ihnen {credits} Guthaben geschenkt, die Sie für alle Dienste der Plattform nutzen können.",
+    "message": "🎉 Willkommen bei {brand}! Wir haben Ihnen {credits} Guthaben geschenkt, die Sie für alle Dienste der Plattform nutzen können.",
     "description": "Willkommenshinweis, der nach erfolgreicher automatischer globaler Antragstellung oder beim ersten Betreten angezeigt wird. {credits} ist das verbleibende Guthaben des globalen Antrags."
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 Willkommen bei BigPlayer AI! Ihr Konto ist einsatzbereit und Sie können alle Dienste der Plattform testen.",
+    "message": "🎉 Willkommen bei {brand}! Ihr Konto ist einsatzbereit und Sie können alle Dienste der Plattform testen.",
     "description": "Willkommenshinweis, der angezeigt wird, wenn keine kostenlosen Guthaben für den globalen Antrag verfügbar sind."
   },
   "message.notApplied": {
@@ -244,7 +244,7 @@
     "description": "Titel der Seite, wenn der Benutzer einen Dienst kaufen möchte."
   },
   "title.globalBuy": {
-    "message": "BigPlayer AI Allgemeine Punkteaufladung",
+    "message": "{brand} Allgemeine Punkteaufladung",
     "description": "Titel der Seite, wenn der Benutzer einen allgemeinen Dienst kaufen möchte."
   },
   "title.applicationRemainingCount": {
@@ -256,7 +256,7 @@
     "description": "Titel der Seite, wenn der Benutzer den Antrag verwalten möchte."
   },
   "title.applicationBalance": {
-    "message": "Exklusive Punkte - {service}",
+    "message": "Dediziertes Guthaben - {service}",
     "description": "Nachricht, die angezeigt wird, wenn der Benutzer den Antragssaldo einsehen möchte."
   },
   "title.count": {
@@ -272,8 +272,8 @@
     "description": "Titel der Seite, wenn der Benutzer das allgemeine Guthaben einsehen möchte."
   },
   "message.globalBalanceDescription": {
-    "message": "Wenn 'Allgemeines Guthaben erlauben' aktiviert ist, wird bei unzureichendem Instanzguthaben automatisch das allgemeine Guthaben verwendet.",
-    "description": "Hinweis, dass bei unzureichendem Instanzguthaben automatisch das allgemeine Guthaben verbraucht wird."
+    "message": "Wenn 'Allgemeines Guthaben erlauben' aktiviert ist, wird bei unzureichendem dedizierten Guthaben automatisch das allgemeine Guthaben verwendet.",
+    "description": "Hinweis, dass bei unzureichendem dedizierten Guthaben automatisch das allgemeine Guthaben verbraucht wird."
   },
   "button.service": {
     "message": "Exklusiver Support",

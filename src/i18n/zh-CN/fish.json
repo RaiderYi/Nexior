@@ -27,6 +27,18 @@
     "message": "耗时",
     "description": "Fish 任务耗时标签"
   },
+  "name.failure": {
+    "message": "生成失败",
+    "description": "Fish 任务失败标题"
+  },
+  "name.failureReason": {
+    "message": "失败原因",
+    "description": "Fish 任务失败原因标签"
+  },
+  "name.traceId": {
+    "message": "追踪 ID",
+    "description": "Fish 任务追踪 ID 标签"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Fish 任务卡片机器人标签"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "暂无声音模型",
     "description": "Fish 声音选择器为空提示"
+  },
+  "group.publicVoices": {
+    "message": "公共音色库",
+    "description": "Fish 声音选择器公共音色分组标题"
+  },
+  "message.searching": {
+    "message": "搜索中…",
+    "description": "Fish 声音选择器远程搜索加载提示"
+  },
+  "message.searchVoiceHint": {
+    "message": "输入关键词搜索公共音色",
+    "description": "Fish 声音选择器远程搜索空状态提示"
   },
   "name.voiceTitle": {
     "message": "名称",

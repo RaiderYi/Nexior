@@ -27,6 +27,18 @@
     "message": "経過時間",
     "description": "Fish タスクの経過時間ラベル"
   },
+  "name.failure": {
+    "message": "生成に失敗しました",
+    "description": "Fish タスク失敗のタイトル"
+  },
+  "name.failureReason": {
+    "message": "失敗の理由",
+    "description": "Fish タスク失敗理由のラベル"
+  },
+  "name.traceId": {
+    "message": "トレース ID",
+    "description": "Fish タスクトレース ID のラベル"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Fish タスクカードのロボットラベル"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "音声モデルはありません",
     "description": "Fish 音声セレクターが空であることを示すメッセージ"
+  },
+  "group.publicVoices": {
+    "message": "公共音色ライブラリ",
+    "description": "Fish 音声選択器の公共音色グループタイトル"
+  },
+  "message.searching": {
+    "message": "検索中…",
+    "description": "Fish 音声選択器のリモート検索の読み込み提示"
+  },
+  "message.searchVoiceHint": {
+    "message": "キーワードを入力して公共音色を検索",
+    "description": "Fish 音声選択器のリモート検索空状態のヒント"
   },
   "name.voiceTitle": {
     "message": "名前",

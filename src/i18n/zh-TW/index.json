@@ -1,71 +1,63 @@
 {
   "title.chat": {
     "message": "AI 聊天",
-    "description": "AI 聊天章节标题"
+    "description": "AI 聊天章節標題"
   },
   "title.midjourney": {
     "message": "AI 繪畫",
-    "description": "AI 繪畫章节标题"
+    "description": "AI 繪畫章節標題"
   },
   "title.qrart": {
     "message": "AI 藝術 QR碼",
-    "description": "AI 藝術 QR碼章节标题"
+    "description": "AI 藝術 QR碼章節標題"
   },
   "title.suno": {
     "message": "AI 音樂",
-    "description": "AI 音樂章节标题"
+    "description": "AI 音樂章節標題"
   },
   "title.luma": {
     "message": "AI 影片",
-    "description": "AI 影片章节标题"
-  },
-  "title.headshots": {
-    "message": "AI 證件照",
-    "description": "AI 證件照章节标题"
+    "description": "AI 影片章節標題"
   },
   "title.comments": {
     "message": "客戶評價",
-    "description": "客戶評價章节标题"
+    "description": "客戶評價章節標題"
   },
   "title.introduction": {
     "message": "我們的服務",
-    "description": "站點簡介"
+    "description": "站台簡介"
   },
   "subtitle.banner": {
     "message": "AI 賦能，全麵提升你的生產力。",
-    "description": "站點副标题"
+    "description": "站台副標題"
   },
   "subtitle.chat": {
-    "message": "支持多種問答模型，具備聯網功能，能夠識別圖片、文件和視頻等多種內容。",
-    "description": "AI 聊天章节标题"
+    "message": "支援多種問答模型，具備聯網功能，能夠識別圖片、檔案和影片等多種內容。",
+    "description": "AI 聊天章節標題"
   },
   "subtitle.midjourney": {
     "message": "對接最新的 Midjourney 模型，一鍵生成各種風格的圖片和連續微調。",
-    "description": "AI 繪畫章节标题"
+    "description": "AI 繪畫章節標題"
   },
   "subtitle.qrart": {
-    "message": "支持多種藝術 QR碼風格，允許上傳已有 QR碼，輕鬆將其藝術化，打造獨特的視覺效果。",
-    "description": "AI 藝術 QR碼章节标题"
+    "message": "支援多種藝術 QR碼風格，允許上傳已有 QR碼，輕鬆將其藝術化，打造獨特的視覺效果。",
+    "description": "AI 藝術 QR碼章節標題"
   },
   "subtitle.suno": {
-    "message": "支持多種音樂風格，輕鬆生成你想要的音樂，並支持靈活的長度擴展選項。",
-    "description": "AI 音樂章节标题"
+    "message": "支援多種音樂風格，輕鬆生成你想要的音樂，並支援靈活的長度擴充套件選項。",
+    "description": "AI 音樂章節標題"
   },
   "subtitle.luma": {
-    "message": "對接最新的 Luma 模型，一鍵生成自定義的影片，並支持靈活的影片擴展選項。",
-    "description": "AI 影片章节标题"
-  },
-  "subtitle.headshots": {
-    "message": "對接最新的 AI 模型，一鍵生成自定義模板的證件照，並支持多種風格的證件照。",
-    "description": "AI 證件照章节标题"
+    "message": "對接最新的 Luma 模型，一鍵生成自定義的影片，並支援靈活的影片擴充套件選項。",
+    "description": "AI 影片章節標題"
   },
   "subtitle.comments": {
     "message": "我們很高興能夠幫助這些客戶，他們對我們的服務給予了很高的評價。",
-    "description": "客戶評價章节标题"
+    "description": "客戶評價章節標題"
   },
   "subtitle.introduction": {
     "message": "我們提供一站式的 AI 服務，包括問答、繪畫、QR碼、音樂等多種功能，滿足你的多樣化需求。",
-    "description": "站點簡介"
+    "description": "站台簡介"
   },
   "button.try": {
     "message": "免費開始",
@@ -84,7 +76,7 @@
     "description": "客戶的職位"
   },
   "customers.comment1": {
-    "message": "這種集成式的服務簡直太方便了，我可以在一個平臺使用多種 AI 各種工具，非常棒！",
+    "message": "這種整合式的服務簡直太方便了，我可以在一個平臺使用多種 AI 各種工具，非常棒！",
     "description": "客戶的評論"
   },
   "customers.name2": {
@@ -108,7 +100,295 @@
     "description": "客戶的職位"
   },
   "customers.comment3": {
-    "message": "AI 平台太多了，但這個真的易於使用，價格合理，希望它能變得更好！",
+    "message": "AI 平臺太多了，但這個真的易於使用，價格合理，希望它能變得更好！",
     "description": "客戶的評論"
+  },
+  "badge.hero": {
+    "message": "全新 · 一站式 AI 創作平臺",
+    "description": "首頁 Hero 徽章"
+  },
+  "subtitle.hero": {
+    "message": "聊天 · 繪畫 · 音樂 · 影片，一個平臺全部搞定",
+    "description": "首頁 Hero 副標題下方的一句話說明"
+  },
+  "button.explore": {
+    "message": "瞭解功能",
+    "description": "首頁 Hero 次要按鈕，點選滾動到服務介紹區"
+  },
+  "button.learnBusiness": {
+    "message": "查看完整方案",
+    "description": "首頁業務能力公共文檔鏈接"
+  },
+  "title.models": {
+    "message": "內建全球領先大模型",
+    "description": "首頁大模型牆區塊標題"
+  },
+  "subtitle.models": {
+    "message": "第一時間接入全球主流大模型，無需在多個工具之間來回切換",
+    "description": "首頁大模型牆區塊副標題"
+  },
+  "title.cta": {
+    "message": "現在就開始你的 AI 創作",
+    "description": "首頁底部行動號召標題"
+  },
+  "subtitle.cta": {
+    "message": "免費註冊，立即體驗一站式 AI 能力",
+    "description": "首頁底部行動號召副標題"
+  },
+  "stat.capabilities": {
+    "message": "可自由組合的 AI 能力",
+    "description": "首頁能力數量說明"
+  },
+  "stat.subsite": {
+    "message": "完成品牌分站上線",
+    "description": "首頁分站速度說明"
+  },
+  "stat.platforms": {
+    "message": "桌面與移動端完整覆蓋",
+    "description": "首頁跨端支持說明"
+  },
+  "stat.commission": {
+    "message": "最高分銷佣金",
+    "description": "首頁最高分銷佣金說明"
+  },
+  "note.allInOne": {
+    "message": "一個帳號，使用全部 AI 工具",
+    "description": "首頁截圖浮層說明"
+  },
+  "note.customDomain": {
+    "message": "自定義域名與品牌",
+    "description": "首頁自定義域名浮層說明"
+  },
+  "eyebrow.business": {
+    "message": "你的 AI 業務基礎設施",
+    "description": "首頁業務平台章節眉題"
+  },
+  "title.business": {
+    "message": "不止提供 AI 工具，也幫你建立自己的 AI 業務",
+    "description": "首頁業務平台章節標題"
+  },
+  "subtitle.business": {
+    "message": "建分站、換品牌、綁定域名、選擇能力、配置價格和分銷規則都在同一套後台完成，不需要單獨開發和部署。",
+    "description": "首頁業務平台章節副標題"
+  },
+  "eyebrow.subsites": {
+    "message": "5 分鐘上線",
+    "description": "首頁分站功能眉題"
+  },
+  "title.subsites": {
+    "message": "快速建立品牌分站，自帶獨立域名",
+    "description": "首頁分站功能標題"
+  },
+  "subtitle.subsites": {
+    "message": "創建分站後即可擁有獨立 Logo、標題、功能集和用戶入口。綁定自定義域名後，客戶從訪問到購買都停留在你的品牌裡。",
+    "description": "首頁分站功能說明"
+  },
+  "button.createSubsite": {
+    "message": "創建我的分站",
+    "description": "首頁創建分站按鈕"
+  },
+  "eyebrow.capabilities": {
+    "message": "完全可配置",
+    "description": "首頁能力配置眉題"
+  },
+  "title.capabilities": {
+    "message": "品牌、模型、價格、登入方式都由你決定",
+    "description": "首頁能力配置標題"
+  },
+  "subtitle.capabilities": {
+    "message": "Enable any of 31 AI capabilities and configure service names, descriptions, pricing, homepage visibility, SEO, contacts, and authentication. New capabilities join the same management experience.",
+    "description": "Homepage capabilities description"
+  },
+  "button.configure": {
+    "message": "查看能力配置",
+    "description": "首頁能力配置按鈕"
+  },
+  "eyebrow.operations": {
+    "message": "完整運營後台",
+    "description": "首頁運營配置眉題"
+  },
+  "title.operations": {
+    "message": "從獲客到登入，每個品牌觸點都能配置",
+    "description": "首頁運營配置標題"
+  },
+  "subtitle.operations": {
+    "message": "獨立管理搜索展示、多語言內容、聯繫方式與用戶登錄方式，讓分站不僅能上線，也能長期運營和增長。",
+    "description": "首頁運營配置說明"
+  },
+  "button.operations": {
+    "message": "查看運營配置",
+    "description": "首頁運營配置按鈕"
+  },
+  "eyebrow.distribution": {
+    "message": "增長與變現",
+    "description": "首頁分銷功能眉題"
+  },
+  "title.distribution": {
+    "message": "分級返佣、邀請連結與收益提現",
+    "description": "首頁分銷功能標題"
+  },
+  "subtitle.distribution": {
+    "message": "Every user receives a referral link and QR code. The platform tracks orders, calculates tiered commissions, and aggregates withdrawable earnings so customer growth becomes a sustainable network.",
+    "description": "Homepage referral description"
+  },
+  "button.viewDistribution": {
+    "message": "查看分銷中心",
+    "description": "首頁分銷中心按鈕"
+  },
+  "eyebrow.creation": {
+    "message": "真實產品界面",
+    "description": "首頁創作能力章節眉題"
+  },
+  "title.creation": {
+    "message": "從一個想法，到完整的多模態作品",
+    "description": "首頁創作能力章節標題"
+  },
+  "subtitle.creation": {
+    "message": "同一帳號、同一餘額、同一套跨端體驗，覆蓋圖像、視頻、音樂、數字人和工作流。",
+    "description": "首頁創作能力章節副標題"
+  },
+  "eyebrow.chat": {
+    "message": "對話與搜索",
+    "description": "首頁聊天能力眉題"
+  },
+  "eyebrow.image": {
+    "message": "圖像創作",
+    "description": "首頁圖像能力眉題"
+  },
+  "title.image": {
+    "message": "AI 繪圖與專業圖像編輯",
+    "description": "首頁圖像能力標題"
+  },
+  "subtitle.image": {
+    "message": "覆蓋文生圖、參考圖編輯、多圖融合、局部重繪、藝術二維碼和證件照，支持主流模型與常用畫幅。",
+    "description": "首頁圖像能力說明"
+  },
+  "eyebrow.video": {
+    "message": "視頻生成",
+    "description": "首頁視頻能力眉題"
+  },
+  "title.video": {
+    "message": "文本、圖片與視頻驅動的 AI 視頻",
+    "description": "首頁視頻能力標題"
+  },
+  "subtitle.video": {
+    "message": "使用 Kling、Veo、Sora、Seedance、Hailuo、Luma 等模型完成生成、延長、運鏡、口型和多素材創作。",
+    "description": "首頁視頻能力說明"
+  },
+  "eyebrow.music": {
+    "message": "音樂與聲音",
+    "description": "首頁音樂能力眉題"
+  },
+  "title.music": {
+    "message": "歌曲、配樂、歌詞與聲音生成",
+    "description": "首頁音樂能力標題"
+  },
+  "subtitle.music": {
+    "message": "從一句描述或自定義歌詞開始，生成完整歌曲，繼續延長、翻唱、分離人聲，或通過 Fish 合成自然語音。",
+    "description": "首頁音樂能力說明"
+  },
+  "eyebrow.workflow": {
+    "message": "數字人与工作流",
+    "description": "首頁工作流能力眉題"
+  },
+  "title.workflow": {
+    "message": "把腳本變成數位人口播與完整視頻",
+    "description": "首頁工作流能力標題"
+  },
+  "subtitle.workflow": {
+    "message": "Maestro 與數字人能力把腳本、素材、語音、鏡頭和渲染連接成可重複的內容生產流程。",
+    "description": "首頁工作流能力說明"
+  },
+  "eyebrow.digitalHuman": {
+    "message": "數字人口播",
+    "description": "首頁數字人能力眉題"
+  },
+  "title.digitalHuman": {
+    "message": "照片、聲音與腳本生成數位人視頻",
+    "description": "首頁數位人能力標題"
+  },
+  "subtitle.digitalHuman": {
+    "message": "使用真實人像和聲音生成自然口型與完整口播視頻，適合課程、行銷、產品介紹和批量內容生產。",
+    "description": "首頁數字人能力說明"
+  },
+  "eyebrow.coding": {
+    "message": "編程協作",
+    "description": "首頁編程能力眉題"
+  },
+  "title.coding": {
+    "message": "連接本地設備的 AI 程式設計助手",
+    "description": "首頁程式設計能力標題"
+  },
+  "subtitle.coding": {
+    "message": "通過 Coding Bridge 安全連接你的開發設備，讓 AI 在明確授權下讀取項目、執行任務並持續反饋進度。",
+    "description": "首頁編程能力說明"
+  },
+  "eyebrow.directory": {
+    "message": "能力目錄",
+    "description": "首頁能力目錄眉題"
+  },
+  "title.directory": {
+    "message": "完整 AI 能力目錄，持續接入最新模型",
+    "description": "首頁能力目錄標題"
+  },
+  "subtitle.directory": {
+    "message": "下面是當前站點已開啟的完整能力。主站會持續接入新模型，分站管理員可以自由決定向客戶展示哪些服務。",
+    "description": "首頁能力目錄說明"
+  },
+  "eyebrow.cta": {
+    "message": "立即開始",
+    "description": "首頁底部行動號召眉題"
+  },
+  "benefit.subsites.noServer": {
+    "message": "無需購買伺服器或搭建系統，5 分鐘創建並上線 AI 子站",
+    "description": "首頁子站無需伺服器賣點"
+  },
+  "benefit.subsites.customDomain": {
+    "message": "自帶獨立子域名，也可綁定自己的品牌域名與 HTTPS",
+    "description": "首頁子站自定義域名賣點"
+  },
+  "benefit.subsites.branding": {
+    "message": "Logo、名稱、主色、聯繫方式和品牌入口均可獨立設置",
+    "description": "首頁子站品牌定制賣點"
+  },
+  "benefit.capabilities.catalog": {
+    "message": "聊天、圖像、視頻、音樂、數字人、工作流和編程能力持續更新",
+    "description": "首頁完整能力目錄賣點"
+  },
+  "benefit.capabilities.display": {
+    "message": "每項能力可獨立顯隱、改名、修改介紹和調整展示順序",
+    "description": "首頁能力展示配置賣點"
+  },
+  "benefit.capabilities.pricing": {
+    "message": "支持全站統一加價與單服務獨立定價，價格策略由你決定",
+    "description": "首頁能力定價賣點"
+  },
+  "benefit.operations.seo": {
+    "message": "自定義 SEO 標題、關鍵詞和描述，建立自己的搜索品牌",
+    "description": "首頁 SEO 賣點"
+  },
+  "benefit.operations.auth": {
+    "message": "自由啟用郵箱、手機、GitHub、Google、微信、Apple 與通行密鑰登錄",
+    "description": "首頁登錄方式賣點"
+  },
+  "benefit.operations.localization": {
+    "message": "服務名稱、介紹和運營內容支持多語言與自動翻譯",
+    "description": "首頁多語言運營賣點"
+  },
+  "benefit.distribution.noBarrier": {
+    "message": "無申請門檻，註冊用戶自動獲得專屬邀請鏈接和二維碼",
+    "description": "首頁無門檻分銷賣點"
+  },
+  "benefit.distribution.levels": {
+    "message": "13 級成長體系，佣金隨業績提升，最高可達 24%",
+    "description": "首頁分銷等級賣點"
+  },
+  "benefit.distribution.withdrawal": {
+    "message": "訂單、邀請人數和獎勵自動統計，收益可統一申請提現",
+    "description": "首頁分銷提現賣點"
+  },
+  "nav.business": {
+    "message": "商業合作",
+    "description": "白標建站與商業合作頁面導航"
   }
 }

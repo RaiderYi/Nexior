@@ -1,15 +1,15 @@
 {
   "name.seedanceBot": {
-    "message": "SeeDance Bot",
-    "description": "Nome do gerador de vídeo SeeDance"
+    "message": "Robô SeeDance",
+    "description": "Nome do gerador de vídeos SeeDance"
   },
   "name.prompt": {
-    "message": "Prompt",
-    "description": "Prompt para gerar vídeo"
+    "message": "Palavras-chave",
+    "description": "Palavras-chave para geração do vídeo"
   },
   "description.prompt": {
-    "message": "Descreva o vídeo que deseja gerar, podendo adicionar parâmetros do SeeDance (ex: --rs 720p --rt 16:9 --dur 5).",
-    "description": "Instruções para entrada de prompt"
+    "message": "Descreva o vídeo que você deseja gerar. Para que os personagens falem: envie a imagem para o campo \"imagem de referência\" abaixo (não para \"imagem inicial\"), escreva os diálogos claramente entre aspas nas palavras-chave, por exemplo, o personagem na imagem 1 diz para a câmera: \"sua fala\", e ative \"gerar áudio\". Parâmetros adicionais podem ser incluídos (como --rs 720p --rt 16:9 --dur 5).",
+    "description": "Instruções para entrada de palavras-chave"
   },
   "placeholder.prompt": {
     "message": "Descreva seu vídeo…",
@@ -40,8 +40,8 @@
     "description": "Rótulo para geração de áudio"
   },
   "description.generateAudio": {
-    "message": "Ativado, o vídeo incluirá áudio. Suportado apenas pelo modelo seedance-1.5-pro, com custo cerca de 2 vezes maior.",
-    "description": "Instruções para geração de áudio"
+    "message": "Ao ativar, o vídeo terá som. Para que os personagens falem, você precisa: enviar a imagem do personagem para o campo \"imagem de referência\" + ativar este botão + escrever os diálogos entre aspas nas palavras-chave. Suportado apenas nas séries seedance-1.5-pro / seedance-2.0, com custo cerca de 2 vezes maior.",
+    "description": "Descrição para geração de áudio"
   },
   "name.resolution": {
     "message": "Resolução",
@@ -100,20 +100,20 @@
     "description": "Instruções para retornar último quadro"
   },
   "name.firstFrame": {
-    "message": "Imagem do primeiro quadro",
-    "description": "Rótulo para upload da imagem do primeiro quadro"
+    "message": "Imagem inicial (efeito de animação)",
+    "description": "Etiqueta para upload da imagem inicial"
   },
   "description.firstFrame": {
-    "message": "Opcional. Faça upload da imagem de referência/primeiro quadro.",
-    "description": "Instruções para imagem do primeiro quadro"
+    "message": "Imagem inicial do vídeo: a imagem que você enviou será o primeiro quadro do vídeo, e a animação começará a partir dela. Ideal para \"dar vida a uma imagem\", mas os personagens não falarão, nem terão movimentos labiais. Para que os personagens falem, utilize a \"imagem de referência\" abaixo.",
+    "description": "Descrição da imagem do primeiro quadro"
   },
   "name.lastFrame": {
     "message": "Imagem do último quadro",
     "description": "Rótulo para upload da imagem do último quadro"
   },
   "description.lastFrame": {
-    "message": "Opcional. Faça upload da imagem do último quadro (necessita do primeiro quadro).",
-    "description": "Instruções para imagem do último quadro"
+    "message": "Imagem final do vídeo: especifique o último quadro do vídeo (deve ser combinado com a imagem inicial). Usado para fixar a animação começando de uma imagem e terminando em outra.",
+    "description": "Descrição da imagem do último quadro"
   },
   "button.generate": {
     "message": "Gerar",
@@ -248,27 +248,27 @@
     "description": "Descrição da semente aleatória"
   },
   "placeholder.seed": {
-    "message": "Auto",
-    "description": "Marcador de posição da semente"
+    "message": "Automático",
+    "description": "Placeholder para semente aleatória"
   },
   "model.seedance20Mini": {
     "message": "doubao-seedance-2.0-mini",
     "description": "Modelo SeeDance 2.0 Mini"
   },
   "name.referenceImage": {
-    "message": "Imagem de referência",
-    "description": "Etiqueta de upload de imagem de referência (Seedance 2.0)"
+    "message": "Imagem de referência (para fazer o personagem falar)",
+    "description": "Etiqueta para upload da imagem de referência (Seedance 2.0)"
   },
   "description.referenceImage": {
-    "message": "Opcional. Faça o upload de uma imagem de referência do sujeito, por exemplo, o rosto da pessoa para o vídeo de narração. Apenas Seedance 2.0 suporta.",
+    "message": "Canal para fazer o personagem na imagem falar e sincronizar os lábios (preferido para narração / personagens digitais, mantendo a imagem do personagem). Para que o personagem fale, envie a imagem aqui, e não na \"imagem inicial\". Deve ser usado junto com os diálogos entre aspas nas palavras-chave + \"gerar áudio\". É possível enviar de 1 a 9 imagens. Apenas na série Seedance 2.0. Atenção: não pode ser usado simultaneamente com \"imagem inicial/imagem final\".",
     "description": "Descrição da imagem de referência"
   },
   "name.referenceAudio": {
-    "message": "Áudio de referência",
-    "description": "Etiqueta de upload de áudio de referência (Seedance 2.0)"
+    "message": "Áudio de referência (tom/música de fundo)",
+    "description": "Etiqueta para upload do áudio de referência (Seedance 2.0)"
   },
   "description.referenceAudio": {
-    "message": "Opcional. Faça o upload de um áudio/vídeo de voz para gerar um vídeo de narração (avatar digital), deve ser usado com uma imagem de referência. Apenas Seedance 2.0 suporta.",
+    "message": "Permita que o vídeo gerado utilize o tom ou a música de fundo deste áudio (em combinação com a imagem de referência para que o personagem fale com esse tom). Deve ser usado junto com a imagem ou vídeo de referência, não pode ser enviado apenas o áudio. É possível enviar de 1 a 3 trechos. Apenas na série Seedance 2.0.",
     "description": "Descrição do áudio de referência"
   },
   "name.referenceVideo": {
@@ -276,11 +276,39 @@
     "description": "Etiqueta de upload de vídeo de referência (Seedance 2.0)"
   },
   "description.referenceVideo": {
-    "message": "Opcional. Faça o upload de um vídeo de referência. Apenas Seedance 2.0 suporta.",
+    "message": "Permita que o modelo utilize os movimentos/estilos/efeitos sonoros deste vídeo para gerar um novo vídeo. É possível enviar de 1 a 3 trechos. Apenas na série Seedance 2.0.",
     "description": "Descrição do vídeo de referência"
   },
-  "message.audioRequiresReferenceImage": {
-    "message": "O áudio de referência precisa ser usado com uma imagem de referência (sujeito da narração), por favor, faça o upload da imagem de referência ao mesmo tempo.",
-    "description": "Mensagem de aviso quando o áudio é fornecido, mas a imagem de referência está faltando"
+  "message.audioRequiresReference": {
+    "message": "O áudio de referência não pode ser usado sozinho, por favor, envie também uma imagem de referência ou um vídeo de referência.",
+    "description": "Aviso quando o áudio de referência não tem imagem/vídeo pareado"
+  },
+  "model.seedance25": {
+    "message": "doubao-seedance-2.5",
+    "description": "Seedance 2.5 model"
+  },
+  "name.taskType": {
+    "message": "Tipo de tarefa",
+    "description": "Tipo de tarefa do Seedance 2.5"
+  },
+  "description.taskType": {
+    "message": "Descrição do tipo de tarefa",
+    "description": "Explicação sobre o tipo de tarefa"
+  },
+  "taskType.auto": {
+    "message": "Automático",
+    "description": "Determinação automática do tipo de tarefa"
+  },
+  "taskType.edit": {
+    "message": "Editar vídeo",
+    "description": "Edição de vídeo de referência"
+  },
+  "taskType.extend": {
+    "message": "Estender vídeo",
+    "description": "Extensão de vídeo de referência"
+  },
+  "name.outputFormat": {
+    "message": "Formato de saída",
+    "description": "Formato do contêiner de vídeo"
   }
 }

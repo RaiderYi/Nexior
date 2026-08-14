@@ -79,36 +79,36 @@
     "message": "Большая языковая модель, разработанная Zhiyu AI",
     "description": "Описание группы моделей GLM"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Название модели сервиса, то есть GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Название модели сервиса, то есть GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Флагманская модель последнего поколения GPT 5.5",
-    "description": "Описание модели GPT 5.5"
+  "model.56SolDescription": {
+    "message": "Флагманская модель последнего поколения GPT 5.6 Sol",
+    "description": "Описание модели GPT 5.6 Sol"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Название модели сервиса, то есть GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Название модели сервиса, то есть GPT 5.6"
   },
-  "model.54Description": {
-    "message": "Флагманская модель последнего поколения GPT 5.4",
-    "description": "Описание модели GPT 5.4"
+  "model.56TerraDescription": {
+    "message": "Флагманская модель последнего поколения GPT 5.6",
+    "description": "Описание модели GPT 5.6"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Название модели сервиса, то есть GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Название модели сервиса, то есть GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Более быстрая и легкая модель GPT 5.4",
-    "description": "Описание модели GPT 5.4 Mini"
+  "model.56LunaDescription": {
+    "message": "Более быстрая и легкая модель GPT 5.6",
+    "description": "Описание модели GPT 5.6 Luna"
   },
   "model.freeTag": {
     "message": "Бесплатно",
     "description": "Значок, отображаемый рядом с бесплатными моделями в селекторе моделей"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Название модели сервиса, то есть DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Описание модели DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Название модели сервиса, то есть DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Описание модели DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Название модели сервиса, то есть DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Описание экспериментальной модели DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Название модели сервиса, то есть DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,7 +140,7 @@
     "description": "Описание модели DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Название модели сервиса, то есть Grok 4"
   },
   "model.grok4Description": {
@@ -148,7 +148,7 @@
     "description": "Описание модели Grok 4"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Название модели сервиса"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Более быстрая и легкая модель",
     "description": "Описание модели Gemini 2.5 Flash"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Название модели сервиса, то есть Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Последняя быстрая модель, поддерживающая вывод, визуализацию и вызов инструментов",
+    "description": "Описание модели Gemini 3.6 Flash"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Название модели сервиса, то есть Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "Более быстрая и легкая модель",
     "description": "Описание модели Gemini 2.5 Flash"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Самая современная модель на данный момент",
+    "description": "Описание модели Claude Opus 5"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,24 +235,32 @@
     "message": "Легкая и быстрая модель",
     "description": "Описание модели Claude Haiku 4.5"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Название модели сервиса, т.е. Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Отлично подходит для длинного контекста, сложных рассуждений и творческого письма",
-    "description": "Описание модели Claude Fable 5"
+  "model.kimiK3Description": {
+    "message": "Флагманская модель с поддержкой вывода, визуализации и контекста на 1 миллион токенов",
+    "description": "Описание модели Kimi K3"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Модель для вывода и визуализации, совместимая с K2 рабочими процессами",
+    "description": "Описание модели Kimi K2.6"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Название модели сервиса, то есть Kimi K2.5"
   },
   "model.kimiK25Description": {
-    "message": "Наиболее продвинутая модель на данный момент",
+    "message": "Универсальная модель K2, подходящая для совместимых рабочих процессов",
     "description": "Описание модели Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 Инференс",
     "description": "Название модели сервиса, то есть Kimi K2 Инференс"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Описание модели Kimi K2 Инференс"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 Турбо Инференс",
     "description": "Название модели сервиса, то есть Kimi K2 Турбо Инференс"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Описание модели Kimi K2 Турбо Инференс"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Название модели сервиса, то есть GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Описание модели GLM 5.1"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Название модели сервиса, то есть GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "Ошибка загрузки файла, попробуйте позже",
     "description": "Сообщение на веб-странице, информирующее пользователя о том, что загрузка файла не удалась, попробуйте позже"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "Размер файла {size} превышает лимит {max}, пожалуйста, сожмите и попробуйте снова",
+    "description": "Сообщение на веб-странице, информирующее пользователя о том, что файл превышает лимит размера загрузки и необходимо сжать его перед повторной попыткой"
   },
   "message.notApplied": {
     "message": "Вы еще не подали заявку на этот сервис, пожалуйста, подайте заявку",
@@ -557,15 +585,15 @@
   },
   "consent.selectScopes": {
     "message": "Выберите разрешения {provider}",
-    "description": "Title of the scope picker dialog opened from the consent card; {provider} is the upstream provider name (e.g. Gmail)."
+    "description": "Заголовок окна выбора разрешений, открываемого из карточки согласия; {provider} — имя внешнего провайдера (например, Gmail)."
   },
   "consent.selectScopesHint": {
     "message": "Выберите разрешения, которые вы хотите предоставить. Можно выбрать несколько, по умолчанию предоставляются только основные данные для входа.",
-    "description": "Body copy explaining that the user can opt out of specific scopes; rendered above the checkbox group."
+    "description": "Текст над группой флажков, объясняющий, что пользователь может отказаться от отдельных разрешений."
   },
   "consent.installFailed": {
     "message": "Авторизация не удалась. Пожалуйста, попробуйте снова.",
-    "description": "Toast shown when the AuthBackend install endpoint returns an error from the consent card."
+    "description": "Уведомление, которое показывается, когда endpoint установки AuthBackend из карточки согласия возвращает ошибку."
   },
   "consent.statusConnected": {
     "message": "Подключено",
@@ -583,114 +611,374 @@
     "message": "Авторизация коннектора пропущена",
     "description": "Нижняя подпись карточки после того, как пользователь пропустил авторизацию"
   },
+  "browserTool.title": {
+    "message": "Активность браузера",
+    "description": "Заголовок по умолчанию для активности инструмента BrowserDevice."
+  },
+  "browserTool.state.starting_session": {
+    "message": "Запуск сессии браузера",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Подключение к вкладке браузера",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "Браузер готов",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "Браузерное устройство не в сети",
+    "description": ""
+  },
+  "browserTool.state.device_busy": {
+    "message": "Устройство браузера занято",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Требуется подтверждение авторизации в Studio",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "Выполняется в браузере",
+    "description": ""
+  },
+  "browserTool.state.completed": {
+    "message": "Завершено",
+    "description": ""
+  },
+  "browserTool.state.stopped": {
+    "message": "Сессия браузера остановлена",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "Срок запроса к браузеру истек",
+    "description": ""
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Пожалуйста, закройте инструменты разработчика и продолжите",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Результат выполнения неизвестен, пожалуйста, проверьте и повторите попытку",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "Операция браузера не удалась",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "Остановить",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Управление устройствами",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Остановить другие сессии",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Закрыть инструменты разработчика",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Посмотреть разрешение",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "Запланированные задачи",
+    "description": ""
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Расписанные задачи",
+    "description": "Страница расписанных задач - Вкладка задач"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Записи выполнения",
+    "description": "Страница расписанных задач - Вкладка всех записей выполнения"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "Все",
+    "description": "Фильтр состояния записей - Все"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "Запланированные задачи",
+    "description": ""
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "Новая",
+    "description": ""
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "Редактировать задачу",
+    "description": ""
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Копировать задачу",
+    "description": "Кнопка для копирования задачи, предзаполняет новую форму на основе существующей задачи"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "Запланированных задач пока нет. Нажмите «Новая», чтобы создать задачу.",
+    "description": ""
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "Запусков пока не было",
+    "description": ""
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "Не удалось загрузить",
+    "description": ""
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "Удалить «{name}»? Задача перестанет запускаться.",
+    "description": ""
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Запустить сейчас",
+    "description": "Немедленно запускает задачу вне расписания."
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Запущено. Результат скоро появится в истории запусков.",
+    "description": "Сообщение об успешном ручном запуске."
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Не удалось запустить. Попробуйте позже.",
+    "description": "Сообщение об ошибке ручного запуска."
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "Посмотреть результат",
+    "description": ""
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "История запусков",
+    "description": ""
   },
   "scheduledTasks.noConversation": {
     "message": "Нет записей о разговоре",
     "description": "Запуск без связанных разговоров (версия старого типа)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "Разброс ±60 с",
+    "description": ""
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "Запущено {count} раз",
+    "description": ""
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "Активна",
+    "description": ""
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "Приостановлена",
+    "description": ""
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "Ошибка",
+    "description": ""
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "В очереди",
+    "description": ""
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "Выполняется",
+    "description": ""
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "Успешно",
+    "description": ""
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "Сбой",
+    "description": ""
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Не подтверждено",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Достигнут лимит шагов"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Достигнут лимит бюджета"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Обнаружен цикл вызовов инструментов"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Слишком длинный запрос"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Прервано"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Прервано"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Ожидание вашего ввода"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Ошибка"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Неизвестная ошибка"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Недостаточно средств"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Не удалось авторизовать оплату"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Не авторизовано"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Время ожидания истекло"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Внутренняя ошибка"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "Требуется действие",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Устройство браузера офлайн",
+    "description": "Сообщение указывает на то, что устройство, на котором запущен браузер, не подключено к интернету."
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Авторизация браузера была изменена, пожалуйста, отредактируйте эту задачу",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "Ежедневно",
+    "description": ""
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "Каждую минуту"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "Ежечасно",
+    "description": ""
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "Еженедельно",
+    "description": ""
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Cron-выражение",
+    "description": ""
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Интервал",
+    "description": "Запуск по фиксированному интервалу."
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "минут",
+    "description": "Единица интервала: минуты."
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "часов",
+    "description": "Единица интервала: часы."
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "дней",
+    "description": "Единица интервала: дни."
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "На минуте",
+    "description": "На какой минуте каждого часа запускать задачу."
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "На какой минуте каждого часа запускать задачу (0–59)",
+    "description": "Подсказка для минуты ежечасного запуска."
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Запуск через фиксированный интервал после предыдущего запуска (минимум 1 минута)",
+    "description": "Подсказка для интервального расписания."
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Стандартное 5-польное cron-выражение: минута час день месяц день-недели",
+    "description": "Подсказка для Cron-выражения."
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Будет запускаться {text}",
+    "description": "Предпросмотр расписания."
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "каждые {n} мин",
+    "description": "Человекочитаемое описание: каждые N минут."
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "каждые {n} ч",
+    "description": "Человекочитаемое описание: каждые N часов."
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "каждые {n} дн.",
+    "description": "Человекочитаемое описание: каждые N дней."
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "каждый час на {n}-й минуте",
+    "description": "Человекочитаемое описание: каждый час на N-й минуте."
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "ежедневно в {time}",
+    "description": "Человекочитаемое описание: ежедневно в указанное время."
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "{weekday} в {time}",
+    "description": "Человекочитаемое описание: еженедельно в указанный день и время."
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron：{cron}",
+    "description": "Читаемый человеком: оригинальный Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "один раз в {time}",
+    "description": "Человекочитаемое описание: однократный запуск."
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "Название задачи",
+    "description": ""
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "например, Ежедневная сводка новостей",
+    "description": ""
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "Модель",
+    "description": ""
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "Промпт",
+    "description": ""
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "Введите вопрос или инструкцию для запланированной задачи. Поддерживаются переменные {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'}.",
+    "description": ""
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "Переменные: {'{{date}}'} — сегодня, {'{{run_count}}'} — номер запуска, {'{{last_output}}'} — фрагмент последнего результата",
+    "description": ""
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "Периодичность",
+    "description": ""
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "Время",
+    "description": ""
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "День недели",
+    "description": ""
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Cron-выражение",
+    "description": ""
   },
   "scheduledTasks.form.skills": {
     "message": "Разрешить Skills",
@@ -704,6 +992,25 @@
     "message": "Выбранные Skills могут выполнять действия в фоновом режиме без подтверждения; невыбранные Skills все еще требуют предварительного просмотра или ожидания подтверждения.",
     "description": "Описание разрешения skill"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "Подключение браузера",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "Могут быть выполнены следующие внешние побочные эффекты: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Время истечения неавторизованного доступа: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Перед сохранением выберите онлайн и совместимое подключение браузера",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Не подключено",
     "description": "Отсутствует подключение к skill"
@@ -722,11 +1029,11 @@
   },
   "scheduledTasks.form.maxTurns": {
     "message": "Максимум ходов",
-    "description": "Scheduled task per-run agent turn cap"
+    "description": "Лимит ходов агента на один запуск запланированной задачи."
   },
   "scheduledTasks.form.maxTurnsHint": {
     "message": "Максимальное число ходов агента за запуск (1–50). Слишком низкий лимит принудительно останавливает многошаговые задачи (например, навыки, выполняющие несколько шагов Bash/поиска по документам) до их завершения, не оставляя итогового результата. По умолчанию 50.",
-    "description": "Scheduled task per-run agent turn cap"
+    "description": "Подсказка о лимите ходов агента на один запуск запланированной задачи."
   },
   "scheduledTasks.form.skillsConfirmTitle": {
     "message": "Подтверждение автоматического разрешения",
@@ -737,19 +1044,20 @@
     "description": "Текст подтверждения разрешения"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "Сначала привяжите навык",
+    "description": "Заголовок окна, которое показывается, если авторизованный навык или MCP для запланированной задачи ещё не привязан к аккаунту пользователя."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "Навык \"{name}\" ещё не привязан к вашему аккаунту или не активирован. Без этого запланированная задача может не использовать его во время фоновых запусков без вашего участия. Рекомендуем сначала привязать навык, но вы можете сохранить задачу и сейчас.",
+    "description": "Текст предупреждения; {name} — имя навыка или MCP. Объясняет, что навык не привязан, и предлагает всё равно сохранить задачу."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "Все равно сохранить",
+    "description": "Кнопка подтверждения, которая сохраняет запланированную задачу, игнорируя проверку привязки."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "Заполните название задачи и промпт",
+    "description": ""
   },
   "artifacts.navTitle": {
     "message": "Результаты",
@@ -786,6 +1094,18 @@
   "artifacts.hide": {
     "message": "Скрыть",
     "description": "Кнопка скрытия результата"
+  },
+  "artifacts.unhide": {
+    "message": "Показать",
+    "description": "Снова показать скрытый артефакт."
+  },
+  "artifacts.showHidden": {
+    "message": "Показать скрытые",
+    "description": "Переключатель в панели фильтров, который включает отображение скрытых артефактов."
+  },
+  "artifacts.hiddenBadge": {
+    "message": "Скрыт",
+    "description": "Метка на артефактах, которые сейчас скрыты."
   },
   "artifacts.delete": {
     "message": "Удалить",
@@ -915,24 +1235,532 @@
     "message": "Вы просматриваете часть общего разговора. Нажмите выше, чтобы начать разговор с AI.",
     "description": "Объяснение под разговором на публичной странице общего доступа"
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Цель не достигнута",
+    "description": "Сообщение указывает на то, что запланированная цель не была достигнута."
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Результат неизвестен",
+    "description": "Сообщение указывает на то, что результат выполнения задачи еще не подтвержден."
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Статус выполнения неизвестен"
+  },
+  "actions.rename": {
+    "message": "Переименовать",
+    "description": "Элемент меню переименования в меню операций с разговором."
+  },
+  "actions.renameTitle": {
+    "message": "Переименовать разговор",
+    "description": "Заголовок диалогового окна переименования разговора."
+  },
+  "actions.renameEmpty": {
+    "message": "Введите имя",
+    "description": "Сообщение, когда имя пустое при переименовании."
+  },
+  "actions.renameSuccess": {
+    "message": "Переименовано",
+    "description": "Сообщение об успешном переименовании разговора."
+  },
+  "actions.renameFailed": {
+    "message": "Не удалось переименовать, пожалуйста, попробуйте позже",
+    "description": "Сообщение об ошибке при неудачном переименовании разговора."
+  },
+  "actions.deleteConfirm": {
+    "message": "Подтвердите удаление этого разговора? После удаления восстановить нельзя.",
+    "description": "Подтверждение перед удалением разговора."
+  },
+  "actions.deleteSuccess": {
+    "message": "Удалено",
+    "description": "Сообщение об успешном удалении разговора."
+  },
+  "actions.deleteFailed": {
+    "message": "Не удалось удалить, пожалуйста, попробуйте позже",
+    "description": "Сообщение об ошибке при неудачном удалении разговора."
+  },
+  "actions.tokenMissing": {
+    "message": "Токен не существует, пожалуйста, войдите снова",
+    "description": "Ошибка, указывающая на отсутствие учетных данных при выполнении операции."
+  },
+  "actions.conversationMissing": {
+    "message": "Разговор не существует",
+    "description": "Ошибка, указывающая на то, что целевой разговор не существует при выполнении операции."
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Место выполнения",
+    "description": "Выбор, где будет выполняться задача: в облаке или на локальном устройстве"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Облако",
+    "description": "Режим выполнения в облаке"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "Это устройство",
+    "description": "Режим выполнения на локальном устройстве"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "Это устройство ({device})",
+    "description": "Режим выполнения на локальном устройстве с указанием имени устройства"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "Запускается платформой по расписанию, будет работать даже при выключенном компьютере.",
+    "description": "Описание режима облачного выполнения"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "Запускается на этом устройстве по расписанию, может читать и записывать локальные файлы, выполнять локальные команды. Не будет выполняться при выключении устройства или выходе из приложения, пропущенные запуски будут просто зафиксированы, но не выполнены.",
+    "description": "Описание режима локального выполнения"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "На мобильных устройствах локальное выполнение не поддерживается",
+    "description": "Причина, по которой мобильная версия не поддерживает локальное выполнение"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Локальное выполнение требует настольного приложения",
+    "description": "Причина, по которой веб-версия не поддерживает локальное выполнение"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Не удалось получить информацию о локальном устройстве, пожалуйста, перезапустите приложение и попробуйте снова",
+    "description": "Информация о локальном устройстве недоступна на настольной версии"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Авторизация локальных инструментов",
+    "description": "Поле авторизации для локальных инструментов"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Выберите локальные инструменты, разрешенные для использования этой задачей",
+    "description": "Заполнитель для выбора локальных инструментов"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "При безлюдном выполнении не будет всплывающего окна для подтверждения авторизации, только инструменты, отмеченные здесь, будут доступны.",
+    "description": "Описание авторизации локальных инструментов"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Пропущено",
+    "description": "Статус выполнения: устройство было оффлайн, выполнение не состоялось"
+  },
+  "workingDir.choose": {
+    "message": "Выбрать рабочую директорию",
+    "description": "Кнопка над полем ввода чата на настольном приложении: выбрать папку проекта для работы AI; сообщения нельзя отправлять, пока папка не выбрана"
+  },
+  "workingDir.switchHint": {
+    "message": "Нажмите, чтобы переключить рабочую директорию",
+    "description": "Подсказка при наведении на путь, когда рабочая директория выбрана"
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "Это локальная задача, ее можно запустить вручную только на привязанном устройстве в настольной версии",
+    "description": "Локальная задача не может быть запущена вручную на неподключенном устройстве"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "Эта задача привязана к другому устройству",
+    "description": "Локальная задача не принадлежит текущему устройству"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Локальный планировщик не вошел в систему, пожалуйста, войдите и попробуйте снова",
+    "description": "демон не имеет учетных данных"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "Эта задача уже выполняется",
+    "description": "Задача уже в процессе выполнения"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Подтвердить",
+    "description": "Кнопка подтверждения в карточке подтверждения перед выполнением"
+  },
+  "actionConfirmation.cancel": {
+    "message": "Отмена",
+    "description": "Кнопка отмены в карточке подтверждения перед выполнением"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Подтверждено, выполняется",
+    "description": "Подтверждение действия: пользователь подтвердил, последующее действие выполняется"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Отменено",
+    "description": "Подсказка о сворачивании после отмены пользователем в карточке подтверждения перед выполнением"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Загрузка медиа-превью...",
+    "description": "Подтверждение перед выполнением: статус загрузки медиа"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Невозможно воспроизвести превью здесь",
+    "description": "Подтверждение перед выполнением: заголовок ошибки воспроизведения медиа"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "Ссылка на медиа могла устареть, или текущий браузер не поддерживает этот формат. Пожалуйста, откройте оригинальный файл для проверки перед публикацией.",
+    "description": "Подтверждение перед выполнением: объяснение ошибки воспроизведения медиа"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Открыть оригинальный файл",
+    "description": "Подтверждение перед выполнением: открыть ссылку на медиа"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Подтверждение перед публикацией",
+    "description": "Статус карточки подтверждения публикации в TikTok"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Публикация в TikTok",
+    "description": "Заголовок подтверждения публикации на TikTok"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "После подтверждения это видео будет опубликовано в вашем аккаунте TikTok.",
+    "description": "Сводка подтверждения публикации на TikTok"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Опубликовать",
+    "description": "Кнопка подтверждения публикации на TikTok"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Публикация в",
+    "description": "Метка аккаунта в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Подключено",
+    "description": "Подтверждение публикации в TikTok: статус подключения аккаунта"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Информация об аккаунте недоступна",
+    "description": "Подтверждение публикации в TikTok: текст-заполнитель при отсутствии ника аккаунта"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Настройки публикации еще не готовы",
+    "description": "Подтверждение публикации в TikTok: заголовок отсутствующей информации о создателе"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "Не удалось получить доступ к видимости, поддерживаемой этим аккаунтом. Пожалуйста, отмените и позвольте помощнику заново получить настройки публикации TikTok.",
+    "description": "Подтверждение публикации в TikTok: объяснение отсутствующей информации о создателе"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "Длительность видео не соответствует ограничению аккаунта",
+    "description": "Подтверждение публикации TikTok: заголовок для слишком длинного видео"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Содержимое публикации",
+    "description": "Подтверждение публикации в TikTok: заголовок группы настроек контента"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Обязательно",
+    "description": "Подтверждение публикации в TikTok: объяснение обязательных полей"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Подпись",
+    "description": "Метка поля ввода подписи в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Напишите описание — хештеги и упоминания поддерживаются",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Кто может видеть",
+    "description": "Метка выпадающего списка области видимости в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Пожалуйста, выберите…",
+    "description": "Заполнитель области видимости в подтверждении публикации TikTok, не может иметь значения по умолчанию согласно требованиям TikTok"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "Не удалось получить доступные параметры видимости, публикация временно невозможна",
+    "description": "Подтверждение публикации в TikTok: отсутствие видимости"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Все",
+    "description": "Область видимости TikTok: публичная"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Взаимные друзья",
+    "description": "Область видимости TikTok: видимость для взаимных друзей"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "Мои подписчики",
+    "description": "Область видимости TikTok: видимость для подписчиков"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Только я",
+    "description": "Область видимости TikTok: видимость только для себя"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Разрешить взаимодействие",
+    "description": "Метка группы переключателей взаимодействия в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Можно включить только те способы взаимодействия, которые в данный момент разрешены для этого аккаунта; по умолчанию все отключены.",
+    "description": "Подтверждение публикации в TikTok: объяснение переключателя взаимодействия"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "Этот аккаунт отключен: {list}",
+    "description": "Подтверждение публикации в TikTok: отключенные возможности взаимодействия аккаунта"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Комментарии",
+    "description": "Переключатель взаимодействия TikTok: разрешить комментарии"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Дуэт",
+    "description": "Переключатель взаимодействия TikTok: разрешить дуэты"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Сшивание",
+    "description": "Переключатель взаимодействия TikTok: разрешить сшивание"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Раскрытие контента",
+    "description": "Подтверждение публикации в TikTok: заголовок группы коммерческого контента"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "Это коммерческий контент",
+    "description": "Переключатель раскрытия коммерческого контента в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Если контент продвигает бренд, продукт или услугу, пожалуйста, раскройте информацию в соответствии с фактической ситуацией.",
+    "description": "Подтверждение публикации в TikTok: объяснение раскрытия коммерческого контента"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "Ваш бренд",
+    "description": "Коммерческий контент TikTok: продвижение собственного бизнеса"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Продвигайте себя или свой бизнес",
+    "description": "Коммерческий контент TikTok: объяснение продвижения собственного бизнеса"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Брендированный контент",
+    "description": "Коммерческий контент TikTok: платное сотрудничество"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Продвижение третьей стороны за счет оплаты, подарков или других выгод",
+    "description": "Коммерческое содержание TikTok: объяснение платного сотрудничества"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Видео будет помечено как «рекламный контент»",
+    "description": "Подсказка о маркировке после выбора вашего бренда в коммерческом контенте TikTok"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Видео будет помечено как «платное сотрудничество»",
+    "description": "Подсказка о маркировке после выбора брендированного контента в коммерческом контенте TikTok"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Область видимости брендированного контента не может быть установлена на «только я»",
+    "description": "Подсказка подтверждения публикации TikTok: конфликт между брендированным контентом и видимостью только для себя"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "Видео превышает лимит времени для этого аккаунта ({max} секунд)",
+    "description": "Ошибка превышения длины видео в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Пожалуйста, подтвердите перед публикацией",
+    "description": "Подтверждение публикации в TikTok: заголовок политики"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "Нажимая «Опубликовать», вы подтверждаете, что обладаете правами на использование контента и музыки, и соглашаетесь с условиями использования музыки TikTok.",
+    "description": "Подтверждение публикации в TikTok: объяснение политики обычного контента"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "Нажимая «Опубликовать», вы подтверждаете, что информация о раскрытии точна, и соглашаетесь с политикой брендированного контента и условиями использования музыки TikTok.",
+    "description": "Подтверждение публикации в TikTok: объяснение политики брендированного контента"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Посмотреть «Подтверждение использования музыки»",
+    "description": "Подтверждение публикации в TikTok: ссылка на подтверждение использования музыки"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Посмотреть «Политику брендированного контента»",
+    "description": "Подтверждение публикации в TikTok: ссылка на политику брендированного контента"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Информация о публикации неполная, пожалуйста, отмените и создайте подтверждение заново",
+    "description": "Подтверждение публикации в TikTok: причина отключения кнопки при отсутствии деталей"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Пожалуйста, используйте видео, соответствующее ограничению по времени для этого аккаунта",
+    "description": "Подтверждение публикации TikTok: причина отключения кнопки из-за слишком длинного видео"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Пожалуйста, выберите, кто может видеть это видео",
+    "description": "Подтверждение публикации в TikTok: причина отключения кнопки при отсутствии выбора видимости"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Пожалуйста, выберите тип коммерческого контента",
+    "description": "Подтверждение публикации в TikTok: причина отключения кнопки при отсутствии выбора типа раскрытия"
+  },
+  "scheduledTemplates.title": {
+    "message": "Шаблоны автоматизации",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Создать из шаблона",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Создать настраиваемый",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Позвольте ИИ выполнять вашу работу вовремя",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Выберите официальный шаблон и подключите необходимые аккаунты. После создания задачи её можно сразу запустить на карточке.",
+    "description": "Руководство по созданию и активации шаблона запланированной задачи"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Просмотреть шаблоны",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Выберите шаблон",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Простая настройка",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Подключить аккаунт",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.search": {
+    "message": "Поиск шаблонов",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Рекомендуемые",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Готово к использованию",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Необходимо подключить {count} элементов",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Время выполнения",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Подготовка необходимых подключений",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "Нет необходимости подключать другие аккаунты",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Подключено",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Еще не подключено",
+    "description": "Копия центра шаблонов запланированных задач"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Выберите аккаунт",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Подключиться",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.create": {
+    "message": "Создать задачу",
+    "description": "Руководство по созданию и активации шаблона запланированной задачи"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Не удалось создать задачу, проверьте настройки или соединение",
+    "description": "Руководство по созданию и активации шаблона запланированной задачи"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Задача создана и остается отключенной. Сначала запустите её на карточке, и после успешного выполнения включите.",
+    "description": "Руководство по созданию и активации шаблона запланированной задачи"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "Временно невозможно включить. Сначала запустите задачу и подтвердите успешное выполнение; некоторые шаблоны также требуют создания определенного черновика.",
+    "description": "Руководство по созданию и активации шаблона запланированной задачи"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Ошибка загрузки шаблона, пожалуйста, попробуйте позже",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "Все",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Маркетинг и рост",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Создание контента",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Рабочая эффективность",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Разведка и исследования",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Разработка и эксплуатация",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Личный помощник",
+    "description": "Центр шаблонов запланированных задач"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "Публикация означает, что вы соглашаетесь с «Подтверждением использования музыки» TikTok",
+    "description": "Заявление о использовании музыки в подтверждении публикации TikTok"
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "Публикация означает, что вы соглашаетесь с «Политикой брендированного контента» и «Подтверждением использования музыки» TikTok",
+    "description": "Заявление после выбора брендированного контента в подтверждении публикации TikTok"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "Название модели сервиса, то есть Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "На данный момент самая продвинутая модель",
     "description": "Описание модели Claude Opus 4.7"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "Часовой пояс"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "Новые задачи по умолчанию используют часовой пояс этого устройства: {timezone}. После сохранения он закрепляется за задачей."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Выберите допустимый часовой пояс IANA"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Назад",
+    "description": "Навигация по мастеру шаблонов и руководство по подключению"
+  },
+  "scheduledTemplates.next": {
+    "message": "Далее",
+    "description": "Навигация по мастеру шаблонов и руководство по подключению"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Мы будем использовать только те подключения, которые необходимы для этого шаблона; уже подключенные аккаунты будут автоматически повторно использоваться.",
+    "description": "Навигация по мастеру шаблонов и руководство по подключению"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "Этот шаблон использует только встроенные возможности, можно сразу создать задачу.",
+    "description": "Руководство по созданию и активации шаблона запланированной задачи"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Завершите подключение, чтобы продолжить.",
+    "description": "Навигация по мастеру шаблонов и руководство по подключению"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "Эта задача будет использовать выбранный вами аккаунт.",
+    "description": "Навигация по мастеру шаблонов и руководство по подключению"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Запуск через авторизованное подключение MCP, без необходимости дополнительной привязки аккаунта.",
+    "description": "Навигация по мастеру шаблонов и руководство по подключению"
   }
 }

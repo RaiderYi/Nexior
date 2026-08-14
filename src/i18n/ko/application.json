@@ -8,8 +8,8 @@
     "description": "서비스의 할당량."
   },
   "badge.shared": {
-    "message": "Shared",
-    "description": "Badge on the application list marking an application that has been authorized to the current user by someone else (not owned by them)."
+    "message": "공유됨",
+    "description": "애플리케이션 목록에서 이 배지는 현재 사용자가 소유하지 않고 다른 사람이 현재 사용자에게 사용을 허가한 애플리케이션을 표시합니다."
   },
   "field.expiredAt": {
     "message": "만료 시간",
@@ -60,8 +60,8 @@
     "description": "신청의 ID. 영어는 'App ID'로 번역해야 하며, 중국어는 '申请ID'입니다."
   },
   "field.remainingAmount": {
-    "message": "잔여 잔액",
-    "description": "신청의 잔액. 영어는 'Balance'로 번역해야 하며, 중국어는 '实例余额'입니다."
+    "message": "잔액",
+    "description": "신청의 잔액. 영어는 'Balance'로 번역해야 하며, 중국어는 '余额'입니다."
   },
   "field.usedAmount": {
     "message": "사용됨",
@@ -144,11 +144,11 @@
     "description": "전역 신청 자동 생성에 실패했을 때 표시되는 알림입니다."
   },
   "message.welcomeWithCredits": {
-    "message": "🎉 BigPlayer AI에 오신 것을 환영합니다! 귀하에게 {credits} 크레딧이 제공되었습니다. 사이트의 모든 서비스에서 체험해 보세요.",
+    "message": "🎉 {brand}에 오신 것을 환영합니다! 귀하에게 {credits} 크레딧이 제공되었습니다. 사이트의 모든 서비스에서 체험해 보세요.",
     "description": "전역 신청 자동 생성이 성공했거나 처음 방문할 때 표시되는 환영 메시지입니다. {credits}는 전역 신청의 남은 크레딧입니다."
   },
   "message.welcomeNoCredits": {
-    "message": "🎉 BigPlayer AI에 오신 것을 환영합니다! 귀하의 계정이 준비되었습니다. 사이트의 모든 서비스를 체험해 보세요.",
+    "message": "🎉 {brand}에 오신 것을 환영합니다! 귀하의 계정이 준비되었습니다. 사이트의 모든 서비스를 체험해 보세요.",
     "description": "전역 신청에 사용 가능한 무료 크레딧이 없을 때 표시되는 환영 메시지입니다."
   },
   "message.notApplied": {
@@ -157,7 +157,7 @@
   },
   "message.globalBalanceBuyDescription": {
     "message": "일반 잔액으로 충전할 수 있으며, 각 신청 인스턴스에 대해 개별적으로 충전할 수도 있습니다. 이번 충전은 일반 잔액으로 들어가며, 특정 신청 인스턴스의 잔액이 부족할 경우 자동으로 일반 잔액을 사용하여 보충됩니다.",
-    "description": "일반 잔액으로 충전하고 인스턴스 잔액이 부족할 때 자동으로 보충된다는 것을 설명하는 안내 문구. 용어: 일반 잔액 = General Balance (Global Balance로 번역하지 않도록 주의)."
+    "description": "일반 잔액으로 충전하고 전용 잔액이 부족할 때 자동으로 보충된다는 것을 설명하는 안내 문구. 용어: 일반 잔액 = General Balance (Global Balance로 번역하지 않도록 주의)."
   },
   "message.yourApplication": {
     "message": "귀하의 신청",
@@ -244,7 +244,7 @@
     "description": "사용자가 서비스를 구매하고자 할 때 페이지 제목."
   },
   "title.globalBuy": {
-    "message": "BigPlayer AI 일반 포인트 충전",
+    "message": "{brand} 일반 포인트 충전",
     "description": "사용자가 일반 서비스를 구매하고자 할 때 페이지 제목."
   },
   "title.applicationRemainingCount": {
@@ -256,7 +256,7 @@
     "description": "사용자가 신청을 관리하고자 할 때 페이지 제목."
   },
   "title.applicationBalance": {
-    "message": "전용 포인트 - {service}",
+    "message": "전용 잔액 - {service}",
     "description": "사용자가 신청 잔액을 확인할 때 사용자에게 표시되는 메시지."
   },
   "title.count": {
@@ -272,8 +272,8 @@
     "description": "사용자가 일반 잔액을 확인할 때 페이지 제목."
   },
   "message.globalBalanceDescription": {
-    "message": "‘일반 잔액 허용’이 활성화되면 인스턴스 잔액이 부족할 때 자동으로 일반 잔액이 사용됩니다.",
-    "description": "인스턴스 잔액이 부족할 때 일반 잔액이 자동으로 소모된다는 것을 설명하는 메시지."
+    "message": "‘일반 잔액 허용’이 활성화되면 전용 잔액이 부족할 때 자동으로 일반 잔액이 사용됩니다.",
+    "description": "전용 잔액이 부족할 때 일반 잔액이 자동으로 소모된다는 것을 설명하는 메시지."
   },
   "button.service": {
     "message": "전용 고객 지원",

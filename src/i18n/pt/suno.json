@@ -216,8 +216,8 @@
     "description": "Texto do botão para substituir um trecho da música"
   },
   "button.mashup": {
-    "message": "Mashup",
-    "description": "Texto do botão para fazer mashup de várias músicas"
+    "message": "Misturar",
+    "description": "Texto do botão para misturar várias músicas"
   },
   "button.generate_lyrics": {
     "message": "Gerar Letra",
@@ -240,8 +240,8 @@
     "description": "Modelo para geração de música"
   },
   "name.instrumental": {
-    "message": "Instrumental",
-    "description": "Geração de música instrumental sem vocal"
+    "message": "Música Instrumental",
+    "description": "Gerar música instrumental sem voz"
   },
   "name.referenceAudios": {
     "message": "Músicas de Referência",
@@ -319,6 +319,10 @@
     "message": "Influência do Estilo",
     "description": "Controla o impacto do estilo no resultado gerado"
   },
+  "name.duration": {
+    "message": "Duração da música",
+    "description": "Controla a duração alvo da música gerada"
+  },
   "name.variationCategory": {
     "message": "Tipo de Variação",
     "description": "Controla a diversidade das variações geradas"
@@ -335,9 +339,13 @@
     "message": "Razão da Falha",
     "description": "Razão pela qual a tarefa falhou"
   },
+  "name.failure": {
+    "message": "Falha na geração",
+    "description": "Título para falha na tarefa do Suno"
+  },
   "name.status": {
     "message": "Status",
-    "description": "Status da tarefa"
+    "description": "O status da tarefa"
   },
   "name.traceId": {
     "message": "ID de Rastreamento",
@@ -394,6 +402,10 @@
   "description.styleInfluence": {
     "message": "Quanto maior o valor, maior a influência do estilo sobre o resultado gerado (0-1)",
     "description": "Descrição do parâmetro de influência do estilo"
+  },
+  "description.duration": {
+    "message": "Especifique a duração desejada da música (segundos), o suporte varia entre os modelos, a duração real pode ter pequenas variações.",
+    "description": "Descrição do parâmetro de duração da música."
   },
   "description.audioWeight": {
     "message": "Peso da música original sobre o resultado ao fazer uma cover (0-1)",
@@ -825,11 +837,11 @@
   },
   "filter.typeVocal": {
     "message": "Vocal",
-    "description": "Tipo: Com vocal"
+    "description": "Tipo: Contém Voz"
   },
   "filter.typeInstrumental": {
-    "message": "Instrumental",
-    "description": "Tipo: Instrumental"
+    "message": "Música Instrumental",
+    "description": "Tipo: Música Instrumental"
   },
   "filter.duration": {
     "message": "Duração",

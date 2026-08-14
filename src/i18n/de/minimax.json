@@ -1,0 +1,142 @@
+{
+  "name.model": {
+    "message": "Modell",
+    "description": "Modell zur Videoerstellung"
+  },
+  "name.prompt": {
+    "message": "Stichwort",
+    "description": "Beschreibung des Videoinhalts, der Aktionen, der Szenen und des Stils"
+  },
+  "name.referenceImages": {
+    "message": "Referenzbilder",
+    "description": "Feld zum Hochladen von Referenzbildern"
+  },
+  "name.referenceAudios": {
+    "message": "Referenz-Audios",
+    "description": "Feld zum Hochladen von Referenz-Audios"
+  },
+  "name.ratio": {
+    "message": "Seitenverhältnis",
+    "description": "Seitenverhältnis des ausgegebenen Videos"
+  },
+  "name.duration": {
+    "message": "Dauer (Sekunden)",
+    "description": "Dauer des ausgegebenen Videos"
+  },
+  "name.resolution": {
+    "message": "Auflösung",
+    "description": "Ausgabevideoauflösung."
+  },
+  "name.watermark": {
+    "message": "AIGC Wasserzeichen",
+    "description": "Ob das AIGC-Logo als Wasserzeichen hinzugefügt werden soll."
+  },
+  "name.taskId": {
+    "message": "Aufgaben-ID",
+    "description": "Aufgabenidentifikation"
+  },
+  "name.failure": {
+    "message": "Fehlgeschlagen",
+    "description": "Status der fehlgeschlagenen Aufgabe"
+  },
+  "name.failureReason": {
+    "message": "Fehlermeldung",
+    "description": "Grund für das Scheitern der Aufgabe"
+  },
+  "placeholder.prompt": {
+    "message": "Beschreiben Sie die Szene, Aktionen, Einstellungen und den Stil (Hinweis: Die Eingabe ist erforderlich, unabhängig davon, ob Referenzmaterial hochgeladen wird)",
+    "description": "Platzhaltertext für Eingabeaufforderungen"
+  },
+  "description.model": {
+    "message": "MiniMax H3 Video-Generierungsmodell.",
+    "description": "Erläuterung zum Modell"
+  },
+  "description.prompt": {
+    "message": "Beschreiben Sie die Szenen, Aktionen, Aufnahmen und Stile im Video. Alle Generierungsmodi müssen ausgefüllt werden.",
+    "description": "Erläuterung zu den Eingabeaufforderungen"
+  },
+  "description.referenceImages": {
+    "message": "Laden Sie 1–9 Bilder hoch. Ein Bild als erstes Frame, mehrere Bilder als Referenzbilder.",
+    "description": "Erläuterung zu Referenzbildern"
+  },
+  "description.referenceAudios": {
+    "message": "Laden Sie 1–3 Audiodateien hoch. Bei Verwendung von Referenz-Audios muss gleichzeitig mindestens ein Referenzbild hochgeladen werden.",
+    "description": "Erläuterung zu Referenz-Audios"
+  },
+  "description.resolution": {
+    "message": "Wählen Sie die Auflösung des ausgegebenen Videos.",
+    "description": "Erläuterung zur Auflösung"
+  },
+  "description.ratio": {
+    "message": "Wählen Sie das Seitenverhältnis für Quer- oder Hochformat.",
+    "description": "Erläuterung zum Seitenverhältnis"
+  },
+  "description.duration": {
+    "message": "Setzen Sie die Videolänge auf 4–15 Sekunden.",
+    "description": "Erläuterung zur Dauer"
+  },
+  "description.watermark": {
+    "message": "Fügen Sie ein AIGC-Logo-Wasserzeichen im Video hinzu.",
+    "description": "Erläuterung zum Wasserzeichen"
+  },
+  "status.pending": {
+    "message": "Warten",
+    "description": "Wartezustand der Aufgabe"
+  },
+  "status.processing": {
+    "message": "Wird bearbeitet",
+    "description": "Bearbeitungszustand der Aufgabe"
+  },
+  "button.generate": {
+    "message": "Video generieren",
+    "description": "Generieren-Button"
+  },
+  "button.upload": {
+    "message": "Hochladen",
+    "description": "Button zum Hochladen von Materialien"
+  },
+  "button.download": {
+    "message": "Video herunterladen",
+    "description": "Herunterladen-Button"
+  },
+  "message.startingTask": {
+    "message": "Aufgabe wird gestartet...",
+    "description": "Hinweis zum Start der Aufgabe"
+  },
+  "message.startTaskSuccess": {
+    "message": "Aufgabe erfolgreich gestartet",
+    "description": "Aufgabenübermittlung erfolgreich"
+  },
+  "message.startTaskFailed": {
+    "message": "Aufgabe konnte nicht gestartet werden, bitte später erneut versuchen",
+    "description": "Aufgabenübermittlung fehlgeschlagen"
+  },
+  "message.usedUp": {
+    "message": "Guthaben unzureichend, bitte aufladen und weiter verwenden",
+    "description": "Hinweis auf unzureichendes Guthaben"
+  },
+  "message.downloadVideo": {
+    "message": "Dieses Video herunterladen",
+    "description": "Hinweis zum Video-Download"
+  },
+  "message.promptRequired": {
+    "message": "Alle Generierungsmodi müssen mit einem Eingabetext ausgefüllt werden.",
+    "description": "Eingabetext fehlt."
+  },
+  "message.textRatioRequired": {
+    "message": "Das Seitenverhältnis für generierte Videos muss ein spezifisches Verhältnis außer 'adaptive' wählen",
+    "description": "Das Seitenverhältnis für generierte Videos ist ungültig"
+  },
+  "message.imageLimit": {
+    "message": "Maximal 9 Referenz-Bilder",
+    "description": "Bildanzahl überschritten"
+  },
+  "message.audioLimit": {
+    "message": "Maximal 3 Referenz-Audios",
+    "description": "Audioanzahl überschritten"
+  },
+  "message.uploadError": {
+    "message": "Upload fehlgeschlagen, bitte versuchen Sie es später erneut",
+    "description": "Hinweis bei fehlgeschlagenem Material-Upload"
+  }
+}

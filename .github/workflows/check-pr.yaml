@@ -1,0 +1,72 @@
+name: Check · Pull request
+
+on:
+  pull_request:
+    branches: [main]
+
+# Cancel any in-flight `check` run on the same PR branch when a new commit
+# lands. Without this, every PR push leaves the previous check still running
+# to completion — fine for safety, costly for the org Actions minute budget.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # beachball check diffs the PR against the base branch, so it needs
+          # full history (not the default shallow fetch).
+          fetch-depth: 0
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify change file present (beachball)
+        # Fail any PR that touches publishable files but carries no change file.
+        # Without a change file Beachball does not create a product version, so
+        # Release · Daily has no new tag/assets to publish and mobile store jobs
+        # skip the duplicate version. Run `npm run change` to add one — use type
+        # "none" for changes that should not ship a new version
+        # (e.g. CI-only or tooling edits). This is the same `beachball check`
+        # the local .husky/pre-push hook runs, enforced in CI so it can't be
+        # bypassed with --no-verify or a web/squash merge.
+        run: |
+          git fetch origin "${{ github.base_ref }}"
+          npx beachball check --branch "origin/${{ github.base_ref }}"
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Release workflow contract
+        run: python3 scripts/check_release_workflows.py
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: i18n key coverage
+        # Block any PR (including auto-translate PRs) where any non-base
+        # locale is missing zh-CN keys. See translate_i18n.py for the
+        # diff-fill translator that prevents the gap in the first place.
+        run: python3 scripts/check_i18n_coverage.py
+
+      - name: Run tests
+        run: npm run test:run
+
+      - name: Build
+        run: npm run build

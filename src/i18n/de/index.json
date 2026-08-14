@@ -19,10 +19,6 @@
     "message": "AI-Video",
     "description": "AI 视频章节标题"
   },
-  "title.headshots": {
-    "message": "AI-Passfotos",
-    "description": "AI 证件照章节标题"
-  },
   "title.comments": {
     "message": "Kundenbewertungen",
     "description": "客户评价章节标题"
@@ -54,10 +50,6 @@
   "subtitle.luma": {
     "message": "Integriert das neueste Luma-Modell, generiert mit einem Klick benutzerdefinierte Videos und bietet flexible Videoerweiterungsoptionen.",
     "description": "AI 音乐章节标题"
-  },
-  "subtitle.headshots": {
-    "message": "Integriert das neueste AI-Modell, generiert mit einem Klick Passfotos nach benutzerdefinierten Vorlagen und unterstützt verschiedene Passfotostile.",
-    "description": "AI 证件照章节标题"
   },
   "subtitle.comments": {
     "message": "Wir freuen uns, diesen Kunden geholfen zu haben, die unsere Dienstleistungen sehr positiv bewertet haben.",
@@ -105,10 +97,298 @@
   },
   "customers.job3": {
     "message": "Designer",
-    "description": "客户的职位"
+    "description": "Die Position des Kunden"
   },
   "customers.comment3": {
     "message": "Es gibt viele AI-Plattformen, aber diese ist wirklich einfach zu bedienen und preiswert. Ich hoffe, sie wird noch besser!",
     "description": "客户的评论"
+  },
+  "badge.hero": {
+    "message": "Neu · All-in-One AI Kreativplattform",
+    "description": "Homepage Hero Badge"
+  },
+  "subtitle.hero": {
+    "message": "Chat · Malen · Musik · Video, alles auf einer Plattform",
+    "description": "Homepage Hero Untertitel mit einer erklärenden Zeile darunter"
+  },
+  "button.explore": {
+    "message": "Funktionen entdecken",
+    "description": "Homepage Hero sekundärer Button, klickt um zum Bereich der Dienstleistungsbeschreibung zu scrollen"
+  },
+  "button.learnBusiness": {
+    "message": "Vollständigen Plan anzeigen",
+    "description": "Link zu den öffentlichen Dokumenten der Geschäftsfähigkeiten auf der Startseite"
+  },
+  "title.models": {
+    "message": "Integrierte weltweit führende große Modelle",
+    "description": "Homepage große Modell Wandbereich Titel"
+  },
+  "subtitle.models": {
+    "message": "Sofortiger Zugang zu den weltweit führenden großen Modellen, kein Hin- und Herwechseln zwischen mehreren Tools nötig",
+    "description": "Homepage große Modell Wandbereich Untertitel"
+  },
+  "title.cta": {
+    "message": "Beginne jetzt mit deiner AI Kreation",
+    "description": "Homepage Fußbereich Handlungsaufforderung Titel"
+  },
+  "subtitle.cta": {
+    "message": "Kostenlos registrieren und sofort die All-in-One AI Fähigkeiten erleben",
+    "description": "Homepage Fußbereich Handlungsaufforderung Untertitel"
+  },
+  "stat.capabilities": {
+    "message": "Frei kombinierbare AI-Fähigkeiten",
+    "description": "Hinweis auf der Startseite über die Anzahl der Fähigkeiten"
+  },
+  "stat.subsite": {
+    "message": "Markensubsite erfolgreich online",
+    "description": "Hinweis auf der Startseite über die Geschwindigkeit der Subsite"
+  },
+  "stat.platforms": {
+    "message": "Vollständige Abdeckung für Desktop und Mobil",
+    "description": "Hinweis auf der Startseite über die plattformübergreifende Unterstützung"
+  },
+  "stat.commission": {
+    "message": "Höchste Vertriebsprovision",
+    "description": "Hinweis auf der Startseite über die höchste Vertriebsprovision"
+  },
+  "note.allInOne": {
+    "message": "Ein Konto, alle AI-Tools nutzen",
+    "description": "Hinweis auf der Startseite über die Screenshot-Overlay"
+  },
+  "note.customDomain": {
+    "message": "Benutzerdefinierte Domain und Marke",
+    "description": "Hinweis auf der Startseite über das benutzerdefinierte Domain-Overlay"
+  },
+  "eyebrow.business": {
+    "message": "Deine AI-Geschäftsinfrastruktur",
+    "description": "Überschrift des Geschäftsbereichs auf der Startseite"
+  },
+  "title.business": {
+    "message": "Nicht nur AI-Tools bereitstellen, sondern auch dein eigenes AI-Geschäft aufbauen",
+    "description": "Titel des Geschäftsbereichs auf der Startseite"
+  },
+  "subtitle.business": {
+    "message": "Erstellen von Subsites, Markenwechsel, Domainbindung, Auswahl von Fähigkeiten, Preisgestaltung und Vertriebsregeln alles in einem Backend, keine separate Entwicklung und Bereitstellung erforderlich.",
+    "description": "Untertitel im Abschnitt über die Geschäftsplattform auf der Startseite"
+  },
+  "eyebrow.subsites": {
+    "message": "In 5 Minuten online",
+    "description": "Überschrift für die Subsite-Funktionen auf der Startseite"
+  },
+  "title.subsites": {
+    "message": "Schnelles Erstellen von Markenunterseiten mit eigener Domain",
+    "description": "Titel des Unterseitenbereichs auf der Startseite"
+  },
+  "subtitle.subsites": {
+    "message": "Nach der Erstellung einer Subsite erhältst du ein eigenes Logo, einen Titel, ein Funktionsset und einen Benutzerzugang. Nach der Bindung einer benutzerdefinierten Domain bleiben die Kunden von der ersten Kontaktaufnahme bis zum Kauf in deiner Marke.",
+    "description": "Hinweis auf der Startseite über die Subsite-Funktionen"
+  },
+  "button.createSubsite": {
+    "message": "Meine Subsite erstellen",
+    "description": "Button zum Erstellen einer Subsite auf der Startseite"
+  },
+  "eyebrow.capabilities": {
+    "message": "Vollständig konfigurierbar",
+    "description": "Überschrift der Leistungsanpassung auf der Startseite"
+  },
+  "title.capabilities": {
+    "message": "Marke, Modell, Preis und Anmeldemöglichkeiten entscheidest du",
+    "description": "Titel des Kapazitätskonfigurationsbereichs auf der Startseite"
+  },
+  "subtitle.capabilities": {
+    "message": "Enable any of 31 AI capabilities and configure service names, descriptions, pricing, homepage visibility, SEO, contacts, and authentication. New capabilities join the same management experience.",
+    "description": "Homepage capabilities description"
+  },
+  "button.configure": {
+    "message": "Fähigkeitskonfiguration anzeigen",
+    "description": "Button zur Konfiguration der Fähigkeiten auf der Startseite"
+  },
+  "eyebrow.operations": {
+    "message": "Vollständiges Betriebs-Backend",
+    "description": "Überschrift für die Betriebsanpassungen auf der Startseite"
+  },
+  "title.operations": {
+    "message": "Von der Kundengewinnung bis zur Anmeldung, jeder Markenkontakt kann konfiguriert werden",
+    "description": "Titel des Betriebsbereichs auf der Startseite"
+  },
+  "subtitle.operations": {
+    "message": "Verwalte unabhängig die Suchanzeige, mehrsprachige Inhalte, Kontaktinformationen und Anmeldemethoden, damit die Subsite nicht nur online geht, sondern auch langfristig betrieben und wachsen kann.",
+    "description": "Hinweis auf der Startseite über die Betriebsanpassungen"
+  },
+  "button.operations": {
+    "message": "Betriebsconfiguration anzeigen",
+    "description": "Button zur Betriebsconfiguration auf der Startseite"
+  },
+  "eyebrow.distribution": {
+    "message": "Wachstum und Monetarisierung",
+    "description": "Überschrift für die Vertriebsfunktionen auf der Startseite"
+  },
+  "title.distribution": {
+    "message": "Gestaffelte Provisionen, Einladungslinks und Einnahmenabhebungen",
+    "description": "Titel des Vertriebsbereichs auf der Startseite"
+  },
+  "subtitle.distribution": {
+    "message": "Every user receives a referral link and QR code. The platform tracks orders, calculates tiered commissions, and aggregates withdrawable earnings so customer growth becomes a sustainable network.",
+    "description": "Homepage referral description"
+  },
+  "button.viewDistribution": {
+    "message": "Vertriebszentrum anzeigen",
+    "description": "Button zum Vertriebszentrum auf der Startseite"
+  },
+  "eyebrow.creation": {
+    "message": "Echte Produktoberfläche",
+    "description": "Überschrift der Kreativfähigkeiten auf der Startseite"
+  },
+  "title.creation": {
+    "message": "Von einer Idee zu einem vollständigen multimodalen Werk",
+    "description": "Titel des Kreativbereichs auf der Startseite"
+  },
+  "subtitle.creation": {
+    "message": "Ein Konto, ein Guthaben, ein einheitliches plattformübergreifendes Erlebnis, das Bild, Video, Musik, digitale Menschen und Workflows abdeckt.",
+    "description": "Untertitel im Abschnitt über die Kreativfähigkeiten auf der Startseite"
+  },
+  "eyebrow.chat": {
+    "message": "Gespräch und Suche",
+    "description": "Überschrift der Chatfähigkeiten auf der Startseite"
+  },
+  "eyebrow.image": {
+    "message": "Bildkreation",
+    "description": "Überschrift für die Bildfähigkeiten auf der Startseite"
+  },
+  "title.image": {
+    "message": "AI-Zeichnungen und professionelle Bildbearbeitung",
+    "description": "Titel des Bildbereichs auf der Startseite"
+  },
+  "subtitle.image": {
+    "message": "Deckt Text-zu-Bild, Bildbearbeitung, Multi-Bild-Fusion, partielle Neuzeichnung, künstlerische QR-Codes und Passbilder ab, unterstützt gängige Modelle und häufige Formate.",
+    "description": "Hinweis auf der Startseite über die Bildfähigkeiten"
+  },
+  "eyebrow.video": {
+    "message": "Videogenerierung",
+    "description": "Überschrift für die Video-Fähigkeiten auf der Startseite"
+  },
+  "title.video": {
+    "message": "AI-Videos, die durch Text, Bilder und Videos gesteuert werden",
+    "description": "Titel des Videobereichs auf der Startseite"
+  },
+  "subtitle.video": {
+    "message": "Nutze Modelle wie Kling, Veo, Sora, Seedance, Hailuo, Luma, um Generierung, Verlängerung, Kameraführung, Mundbewegungen und Multimaterialkreation abzuschließen.",
+    "description": "Hinweis auf der Startseite über die Video-Fähigkeiten"
+  },
+  "eyebrow.music": {
+    "message": "Musik und Klang",
+    "description": "Überschrift für die Musikfähigkeiten auf der Startseite"
+  },
+  "title.music": {
+    "message": "Songs, Musik, Texte und Stimmengenerierung",
+    "description": "Titel des Musikbereichs auf der Startseite"
+  },
+  "subtitle.music": {
+    "message": "Beginne mit einer Beschreibung oder benutzerdefinierten Texten, um vollständige Songs zu generieren, weiter zu verlängern, Coverversionen zu erstellen, Stimmen zu trennen oder durch Fish natürliche Sprache zu synthetisieren.",
+    "description": "Hinweis auf der Startseite über die Musikfähigkeiten"
+  },
+  "eyebrow.workflow": {
+    "message": "Digitale Menschen und Workflows",
+    "description": "Überschrift für die Workflow-Fähigkeiten auf der Startseite"
+  },
+  "title.workflow": {
+    "message": "Drehbücher in digitale Menschensprechstimmen und vollständige Videos umwandeln",
+    "description": "Titel des Workflow-Bereichs auf der Startseite"
+  },
+  "subtitle.workflow": {
+    "message": "Maestro und digitale Menschenfähigkeiten verbinden Skripte, Materialien, Stimmen, Kamerawinkel und Rendering zu einem wiederholbaren Inhaltserstellungsprozess.",
+    "description": "Hinweis auf der Startseite über die Workflow-Fähigkeiten"
+  },
+  "eyebrow.digitalHuman": {
+    "message": "Digitale Menschen",
+    "description": "Überschrift der digitalen Menschenfähigkeiten auf der Startseite"
+  },
+  "title.digitalHuman": {
+    "message": "Fotos, Stimmen und Skripte für digitale Menschenvideos generieren",
+    "description": "Titel des digitalen Menschbereichs auf der Startseite"
+  },
+  "subtitle.digitalHuman": {
+    "message": "Verwende echte Bilder und Stimmen, um natürliche Mundbewegungen und vollständige Sprachvideos zu erstellen, geeignet für Kurse, Marketing, Produktpräsentationen und die Produktion von Inhalten in großen Mengen.",
+    "description": "Hinweis auf der Startseite über die digitalen Menschenfähigkeiten"
+  },
+  "eyebrow.coding": {
+    "message": "Programmierungskollaboration",
+    "description": "Überschrift der Programmierfähigkeiten auf der Startseite"
+  },
+  "title.coding": {
+    "message": "AI-Programmierungsassistent für lokale Geräte",
+    "description": "Titel des Programmierungsbereichs auf der Startseite"
+  },
+  "subtitle.coding": {
+    "message": "Sichere Verbindung deiner Entwicklungsgeräte über Coding Bridge, damit AI mit klarer Genehmigung Projekte lesen, Aufgaben ausführen und kontinuierlich Fortschritte melden kann.",
+    "description": "Hinweis auf der Startseite über die Programmierfähigkeiten"
+  },
+  "eyebrow.directory": {
+    "message": "Fähigkeitsverzeichnis",
+    "description": "Überschrift für das Fähigkeitsverzeichnis auf der Startseite"
+  },
+  "title.directory": {
+    "message": "Vollständiges AI-Fähigkeitsverzeichnis, kontinuierlicher Zugang zu den neuesten Modellen",
+    "description": "Titel des Fähigkeitsverzeichnisses auf der Startseite"
+  },
+  "subtitle.directory": {
+    "message": "Hier sind die aktuell aktivierten vollständigen Fähigkeiten der Site. Die Hauptseite wird kontinuierlich neue Modelle integrieren, Subsite-Administratoren können frei entscheiden, welche Dienste den Kunden angezeigt werden.",
+    "description": "Hinweis auf der Startseite über das Fähigkeitsverzeichnis"
+  },
+  "eyebrow.cta": {
+    "message": "Jetzt starten",
+    "description": "Handlungsaufforderung am Ende der Startseite"
+  },
+  "benefit.subsites.noServer": {
+    "message": "Kein Kauf von Servern oder Aufbau von Systemen erforderlich, in 5 Minuten eine AI-Subsite erstellen und online gehen",
+    "description": "Subsites ohne Server auf der Startseite"
+  },
+  "benefit.subsites.customDomain": {
+    "message": "Eigenes Subdomain mit der Möglichkeit, eine eigene Marken-Domain und HTTPS zu binden",
+    "description": "Benutzerdefinierte Domains für Subsites auf der Startseite"
+  },
+  "benefit.subsites.branding": {
+    "message": "Logo, Name, Hauptfarbe, Kontaktinformationen und Markenlink können unabhängig eingestellt werden",
+    "description": "Markenanpassung für Subsites auf der Startseite"
+  },
+  "benefit.capabilities.catalog": {
+    "message": "Chat, Bilder, Videos, Musik, digitale Menschen, Workflows und Programmierfähigkeiten werden kontinuierlich aktualisiert",
+    "description": "Vollständiges Leistungsangebot auf der Startseite"
+  },
+  "benefit.capabilities.display": {
+    "message": "Jede Fähigkeit kann unabhängig ein- und ausgeblendet, umbenannt, beschrieben und in der Reihenfolge angepasst werden",
+    "description": "Konfiguration der Leistungsanzeige auf der Startseite"
+  },
+  "benefit.capabilities.pricing": {
+    "message": "Unterstützt einheitliche Preiserhöhungen für die gesamte Website und unabhängige Preisgestaltung für einzelne Dienste, die Preisstrategie liegt bei dir",
+    "description": "Preisgestaltung der Fähigkeiten auf der Startseite"
+  },
+  "benefit.operations.seo": {
+    "message": "Benutzerdefinierte SEO-Titel, Schlüsselwörter und Beschreibungen, um deine eigene Suchmarke aufzubauen",
+    "description": "SEO-Optionen auf der Startseite"
+  },
+  "benefit.operations.auth": {
+    "message": "Freie Aktivierung von E-Mail, Handy, GitHub, Google, WeChat, Apple und Passkeys zur Anmeldung",
+    "description": "Anmeldemethoden auf der Startseite"
+  },
+  "benefit.operations.localization": {
+    "message": "Servicenamen, Beschreibungen und Betriebsinhalte unterstützen mehrere Sprachen und automatische Übersetzungen",
+    "description": "Mehrsprachige Betriebsführung auf der Startseite"
+  },
+  "benefit.distribution.noBarrier": {
+    "message": "Keine Antragsbarrieren, registrierte Benutzer erhalten automatisch einen exklusiven Einladung-Link und QR-Code",
+    "description": "Barrierefreier Vertrieb auf der Startseite"
+  },
+  "benefit.distribution.levels": {
+    "message": "13-stufiges Wachstumssystem, Provisionen steigen mit der Leistung, bis zu 24% möglich",
+    "description": "Vertriebsebenen auf der Startseite"
+  },
+  "benefit.distribution.withdrawal": {
+    "message": "Bestellungen, eingeladene Personen und Belohnungen werden automatisch erfasst, Einnahmen können einheitlich beantragt und abgehoben werden",
+    "description": "Auszahlungsoptionen im Vertrieb auf der Startseite"
+  },
+  "nav.business": {
+    "message": "Geschäftliche Zusammenarbeit",
+    "description": "Navigation zur Seite für White-Label-Webseiten und geschäftliche Kooperationen"
   }
 }

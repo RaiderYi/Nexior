@@ -4,6 +4,7 @@ import { Status } from '@/models/common';
 import { applicationOperator, credentialOperator, serviceOperator } from '@/operators';
 import { mergeAndSortLists } from '@/utils/merge';
 import { IRootState } from '../common/models';
+import type { OperatorRequestOptions, PaymentMode } from '@/operators/x402';
 
 /**
  * Generic state shape every per-service Vuex module conforms to.
@@ -34,7 +35,14 @@ export interface ITaskServiceState<TConfig, TTask> {
 
 /** Minimal contract every per-service operator must satisfy. */
 export interface ITaskOperator<TFilter, TTask> {
-  tasks(filter: TFilter, options: { token: string }): Promise<{ data: { items: TTask[]; count?: number } }>;
+  tasks(
+    filter: TFilter,
+    options: OperatorRequestOptions
+  ): Promise<{ data: { items: TTask[]; count?: number; total?: number } }>;
+  delete?(
+    id: string,
+    options: { token: string; userId?: string; applicationId?: string }
+  ): Promise<{ data: { id: string; deleted: boolean } }>;
 }
 
 /** Optional argument bag the page-level `dispatch('xxx/getTasks', ...)` passes. */
@@ -43,6 +51,8 @@ export interface IGetTasksArgs {
   limit?: number;
   createdAtMin?: number;
   createdAtMax?: number;
+  ids?: string[];
+  mode?: PaymentMode;
 }
 
 /**
@@ -180,20 +190,74 @@ export function createTaskActions<TConfig, TTask, TFilter>(opts: {
     { commit, state, rootState }: ActionContext<S, IRootState>,
     args: IGetTasksArgs = {}
   ): Promise<TTask[]> => {
-    const credential = state.credential;
-    const token = credential?.token;
-    if (!token) {
-      throw new Error('no token');
+    const token = state.credential?.token;
+    const mode = args.mode || 'credits';
+    if (mode === 'credits' && !token) throw new Error('no token');
+    if (mode === 'x402' && !args.ids?.length) {
+      commit('setTasksItems', []);
+      commit('setTasksTotal', 0);
+      return [];
     }
-    const response = await opts.operator.tasks(buildFilter(rootState, args), { token });
+    const filter =
+      mode === 'x402'
+        ? ({
+            ids: args.ids,
+            offset: args.offset,
+            limit: args.limit,
+            createdAtMin: args.createdAtMin,
+            createdAtMax: args.createdAtMax
+          } as unknown as TFilter)
+        : buildFilter(rootState, args);
+    const response = await opts.operator.tasks(filter, { token, mode });
     const existingItems = state?.tasks?.items || [];
     const newItems = response.data.items || [];
     const mergedItems = mergeAndSortLists(existingItems, newItems);
     commit('setTasksItems', mergedItems);
-    if (response.data.count !== undefined) {
-      commit('setTasksTotal', response.data.count);
+    const total = response.data.count ?? response.data.total;
+    if (total !== undefined) {
+      commit('setTasksTotal', total);
     }
     return response.data.items;
+  };
+
+  // Hard-delete one of the caller's own tasks and drop it from the list.
+  // Optimistic: remove the card + decrement total FIRST so the ≤5s poll can't
+  // flash it back mid-flight; on failure, roll the snapshot back and rethrow.
+  const deleteTask = async (
+    { commit, state, rootState }: ActionContext<S, IRootState>,
+    payload: { id: string } | string
+  ): Promise<void> => {
+    const id = typeof payload === 'string' ? payload : payload?.id;
+    if (!id) {
+      return;
+    }
+    const token = state.credential?.token;
+    if (!token || !opts.operator.delete) {
+      throw new Error('delete not available');
+    }
+    const prevItems = state?.tasks?.items || [];
+    const prevTotal = state?.tasks?.total;
+    const nextItems = (prevItems as Array<{ id?: string }>).filter((t) => t?.id !== id) as TTask[];
+    commit('setTasksItems', nextItems);
+    if (typeof prevTotal === 'number') {
+      commit('setTasksTotal', Math.max(0, prevTotal - (prevItems.length - nextItems.length)));
+    }
+    try {
+      const response = await opts.operator.delete(id, { token, userId: rootState?.user?.id });
+      // A skip-auth worker answers 200 even when nothing matched {id, user_id}
+      // (blank/foreign user_id, or already gone). Treat only deleted===true as
+      // success so the row isn't optimistically dropped while it still exists
+      // server-side (the next poll would flash it back and the toast would lie).
+      if (!response?.data?.deleted) {
+        throw new Error('task not deleted');
+      }
+    } catch (error) {
+      commit('setTasksItems', prevItems);
+      if (typeof prevTotal === 'number') {
+        commit('setTasksTotal', prevTotal);
+      }
+      throw error;
+    }
   };
 
   // Trivial setters — match the per-service spelling exactly.
@@ -227,6 +291,7 @@ export function createTaskActions<TConfig, TTask, TFilter>(opts: {
     setTasksItems,
     setTasksTotal,
     setTasksActive,
-    getTasks
+    getTasks,
+    deleteTask
   };
 }

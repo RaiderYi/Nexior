@@ -1,61 +1,90 @@
 <template>
   <div
     :direction="direction"
-    :class="['navigator', { collapsed: direction === 'column', 'is-mac': isMacOS() && !isFullscreen }]"
+    :class="[
+      'navigator',
+      { collapsed: direction === 'column', 'is-mac': isMacOS() && !isFullscreen, 'dock-collapsed': dockCollapsed }
+    ]"
   >
+    <button
+      v-if="direction === 'row'"
+      type="button"
+      class="dock-handle"
+      :aria-expanded="!dockCollapsed"
+      :aria-label="dockCollapsed ? $t('common.nav.expandDock') : $t('common.nav.collapseDock')"
+      :title="dockCollapsed ? $t('common.nav.expandDock') : $t('common.nav.collapseDock')"
+      @click="onToggleDock"
+    >
+      <span class="dock-handle-grip" />
+    </button>
     <div v-if="direction === 'column'" class="brand">
       <logo collapsed @click.stop="onHome" />
     </div>
-    <div class="top">
-      <div ref="linksContainer" class="links">
-        <div
-          v-for="(link, linkIndex) in visibleLinks"
-          :key="linkIndex"
-          :class="{ link: true, active: link.routes.includes($route.name as string) }"
-        >
-          <el-tooltip effect="dark" :content="link.displayName" :placement="direction === 'row' ? 'top' : 'right'">
-            <el-image v-if="link.logo" :src="link.logo" class="avatar" @click="$router.push(link.route)" />
-          </el-tooltip>
-        </div>
-        <div v-if="overflowLinks.length > 0" :class="{ link: true, active: isOverflowActive }">
-          <el-popover
-            v-model:visible="showOverflow"
-            :placement="direction === 'row' ? 'top' : 'right-start'"
-            :width="180"
-            trigger="click"
-            :show-arrow="false"
-            popper-class="navigator-overflow-popover"
+    <div class="dock-body" :inert="dockCollapsed || undefined">
+      <div class="top">
+        <div ref="linksContainer" class="links">
+          <div
+            v-for="(link, linkIndex) in visibleLinks"
+            :key="linkIndex"
+            :class="{ link: true, active: link.routes.includes($route.name as string) }"
           >
-            <template #reference>
-              <div class="more-button" :class="{ active: isOverflowActive }" :title="$t('common.nav.more')">
-                <div class="folder-preview">
+            <el-tooltip effect="dark" :content="link.displayName" :placement="direction === 'row' ? 'top' : 'right'">
+              <el-image
+                v-if="link.logo"
+                :src="link.logo"
+                class="avatar"
+                @error="onCapabilityIconError(link)"
+                @click="$router.push(link.route)"
+              />
+            </el-tooltip>
+          </div>
+          <div v-if="overflowLinks.length > 0" :class="{ link: true, active: isOverflowActive }">
+            <el-popover
+              v-model:visible="showOverflow"
+              :placement="direction === 'row' ? 'top' : 'right-start'"
+              :width="180"
+              trigger="click"
+              :show-arrow="false"
+              popper-class="navigator-overflow-popover"
+            >
+              <template #reference>
+                <div class="more-button" :class="{ active: isOverflowActive }" :title="$t('common.nav.more')">
+                  <div class="folder-preview">
+                    <el-image
+                      v-for="(link, i) in overflowPreviewLinks"
+                      :key="i"
+                      :src="link.logo"
+                      class="folder-icon"
+                      fit="cover"
+                      @error="onCapabilityIconError(link)"
+                    />
+                  </div>
+                </div>
+              </template>
+              <div class="overflow-menu">
+                <div
+                  v-for="(link, linkIndex) in overflowLinks"
+                  :key="linkIndex"
+                  :class="{ 'overflow-item': true, active: link.routes.includes($route.name as string) }"
+                  @click="onOverflowItemClick(link)"
+                >
                   <el-image
-                    v-for="(link, i) in overflowPreviewLinks"
-                    :key="i"
+                    v-if="link.logo"
                     :src="link.logo"
-                    class="folder-icon"
+                    class="overflow-avatar"
                     fit="cover"
+                    @error="onCapabilityIconError(link)"
                   />
+                  <span class="overflow-name">{{ link.displayName }}</span>
                 </div>
               </div>
-            </template>
-            <div class="overflow-menu">
-              <div
-                v-for="(link, linkIndex) in overflowLinks"
-                :key="linkIndex"
-                :class="{ 'overflow-item': true, active: link.routes.includes($route.name as string) }"
-                @click="onOverflowItemClick(link)"
-              >
-                <el-image v-if="link.logo" :src="link.logo" class="overflow-avatar" fit="cover" />
-                <span class="overflow-name">{{ link.displayName }}</span>
-              </div>
-            </div>
-          </el-popover>
+            </el-popover>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="bottom">
-      <user-center />
+      <div class="bottom">
+        <user-center />
+      </div>
     </div>
   </div>
 </template>
@@ -91,6 +120,7 @@ import {
   ROUTE_VEO_HISTORY,
   ROUTE_SORA_INDEX,
   ROUTE_MAESTRO_INDEX,
+  ROUTE_POIVELLE_INDEX,
   ROUTE_DIGITALHUMAN_INDEX,
   ROUTE_SORA_HISTORY,
   ROUTE_NANOBANANA_INDEX,
@@ -98,6 +128,7 @@ import {
   ROUTE_SEEDREAM_INDEX,
   ROUTE_SEEDANCE_INDEX,
   ROUTE_GROKVIDEO_INDEX,
+  ROUTE_OMNI_INDEX,
   ROUTE_WAN_INDEX,
   ROUTE_PRODUCER_INDEX,
   ROUTE_FISH_TTS_INDEX,
@@ -126,6 +157,7 @@ import {
   SEEDREAM_LOGO,
   SEEDANCE_LOGO,
   GROKVIDEO_LOGO,
+  OMNI_LOGO,
   SUNO_LOGO,
   LUMA_LOGO,
   HAILUO_LOGO,
@@ -133,6 +165,7 @@ import {
   VEO_LOGO,
   SORA_LOGO,
   MAESTRO_LOGO,
+  POIVELLE_LOGO,
   DIGITALHUMAN_LOGO,
   PIXVERSE_LOGO,
   WAN_LOGO,
@@ -145,6 +178,8 @@ import Logo from './Logo.vue';
 import UserCenter from '@/components/user/Center.vue';
 import { isMacOS } from '@/utils/surface';
 import { desktopBridge } from '@/utils/desktop';
+import { type CapabilityKey } from '@/constants/capabilities';
+import { resolveCapabilityPresentation } from '@/utils/capabilityPresentation';
 
 interface NavLink {
   route: { name: string };
@@ -153,7 +188,43 @@ interface NavLink {
   icon?: string;
   routes: string[];
   category: string;
+  capability?: CapabilityKey;
+  defaultLogo?: string;
 }
+
+const NAV_CAPABILITY_BY_ROUTE: Partial<Record<string, CapabilityKey>> = {
+  [ROUTE_CHATGPT_CONVERSATION_NEW]: 'chatgpt',
+  [ROUTE_DEEPSEEK_CONVERSATION_NEW]: 'deepseek',
+  [ROUTE_GROK_CONVERSATION_NEW]: 'grok',
+  [ROUTE_GEMINI_CONVERSATION_NEW]: 'gemini',
+  [ROUTE_CLAUDE_CONVERSATION_NEW]: 'claude',
+  [ROUTE_KIMI_CONVERSATION_NEW]: 'kimi',
+  [ROUTE_GLM_CONVERSATION_NEW]: 'glm',
+  [ROUTE_MIDJOURNEY_INDEX]: 'midjourney',
+  [ROUTE_FLUX_INDEX]: 'flux',
+  [ROUTE_NANOBANANA_INDEX]: 'nanobanana',
+  [ROUTE_OPENAIIMAGE_INDEX]: 'openaiimage',
+  [ROUTE_SEEDREAM_INDEX]: 'seedream',
+  [ROUTE_SUNO_INDEX]: 'suno',
+  [ROUTE_PRODUCER_INDEX]: 'producer',
+  [ROUTE_FISH_TTS_INDEX]: 'fish',
+  [ROUTE_SEEDANCE_INDEX]: 'seedance',
+  [ROUTE_GROKVIDEO_INDEX]: 'grokvideo',
+  [ROUTE_OMNI_INDEX]: 'omni',
+  [ROUTE_LUMA_INDEX]: 'luma',
+  [ROUTE_HAILUO_INDEX]: 'hailuo',
+  [ROUTE_KLING_INDEX]: 'kling',
+  [ROUTE_VEO_INDEX]: 'veo',
+  [ROUTE_MAESTRO_INDEX]: 'maestro',
+  [ROUTE_POIVELLE_INDEX]: 'poivelle',
+  [ROUTE_DIGITALHUMAN_INDEX]: 'digitalhuman',
+  [ROUTE_SORA_INDEX]: 'sora',
+  [ROUTE_PIXVERSE_INDEX]: 'pixverse',
+  [ROUTE_WAN_INDEX]: 'wan',
+  [ROUTE_SERP_INDEX]: 'serp',
+  [ROUTE_WEBEXTRATOR_INDEX]: 'webextrator',
+  [ROUTE_CODING_BRIDGE_INDEX]: 'codingBridge'
+};
 
 export default defineComponent({
   name: 'Navigator',
@@ -180,6 +251,7 @@ export default defineComponent({
       containerHeight: 0,
       showOverflow: false,
       resizeObserver: null as ResizeObserver | null,
+      failedCapabilityIcons: {} as Partial<Record<CapabilityKey, boolean>>,
       // macOS native fullscreen hides the traffic lights, so the brand inset
       // must be dropped there. Fed by the Electron main fullscreen events.
       isFullscreen: false,
@@ -346,6 +418,15 @@ export default defineComponent({
           category: 'video'
         });
       }
+      if (this.$store?.state?.site?.features?.omni?.enabled) {
+        result.push({
+          route: { name: ROUTE_OMNI_INDEX },
+          displayName: this.$t('common.nav.omni'),
+          logo: OMNI_LOGO,
+          routes: [ROUTE_OMNI_INDEX],
+          category: 'video'
+        });
+      }
       if (this.$store?.state?.site?.features?.luma?.enabled) {
         result.push({
           route: { name: ROUTE_LUMA_INDEX },
@@ -389,6 +470,17 @@ export default defineComponent({
           logo: MAESTRO_LOGO,
           routes: [ROUTE_MAESTRO_INDEX],
           category: 'video'
+        });
+      }
+      if (this.$store?.state?.site?.features?.poivelle?.enabled) {
+        result.push({
+          route: { name: ROUTE_POIVELLE_INDEX },
+          displayName: this.$t('poivelle.nav.name'),
+          logo: POIVELLE_LOGO,
+          routes: [ROUTE_POIVELLE_INDEX],
+          category: 'video',
+          capability: 'poivelle',
+          defaultLogo: POIVELLE_LOGO
         });
       }
       if (this.$store?.state?.site?.features?.digitalhuman?.enabled) {
@@ -455,7 +547,24 @@ export default defineComponent({
           category: 'data'
         });
       }
-      return result;
+      return result.map((link) => {
+        const capability = NAV_CAPABILITY_BY_ROUTE[link.route.name];
+        if (!capability || !link.logo) return link;
+        const defaultLogo = link.logo;
+        const presentation = resolveCapabilityPresentation(
+          this.$store.state.site,
+          capability,
+          link.displayName,
+          defaultLogo
+        );
+        return {
+          ...link,
+          capability,
+          defaultLogo,
+          displayName: presentation.displayName,
+          logo: this.failedCapabilityIcons[capability] ? defaultLogo : presentation.iconUrl
+        };
+      });
     },
     authenticated() {
       return !!this.$store.state.token.access;
@@ -480,11 +589,22 @@ export default defineComponent({
     isOverflowActive(): boolean {
       const routeName = this.$route.name as string;
       return this.overflowLinks.some((link: { routes: string[] }) => link.routes.includes(routeName));
+    },
+    // Mobile-only. Persisted via the root `setting` slot, which is already in
+    // the vuex-persistedstate paths — the choice survives reloads.
+    dockCollapsed(): boolean {
+      return this.direction === 'row' && !!this.$store.state.setting?.dockCollapsed;
     }
   },
   watch: {
     $route() {
       this.showOverflow = false;
+    },
+    dockCollapsed: {
+      immediate: true,
+      handler(value: boolean) {
+        this.syncDockClass(value);
+      }
     }
   },
   mounted() {
@@ -514,8 +634,27 @@ export default defineComponent({
       this.offFullscreen();
       this.offFullscreen = null;
     }
+    // Deliberately NOT clearing `dock-collapsed` here: navigating between
+    // service pages unmounts this Navigator before the next (lazy-loaded) one
+    // mounts, so clearing would flash the dock open mid-navigation. The class
+    // tracks persisted store state, and the incoming Navigator re-syncs it.
   },
   methods: {
+    // The layouts reserve the dock's height with `var(--app-dock-height)`.
+    // Publishing the collapsed state on <html> keeps that single source of
+    // truth instead of threading a prop through Main/Console/Poivelle.
+    syncDockClass(collapsed: boolean): void {
+      if (typeof document === 'undefined') return;
+      document.documentElement.classList.toggle('dock-collapsed', collapsed);
+    },
+    onToggleDock(): void {
+      this.$store.commit('setSetting', { dockCollapsed: !this.$store.state.setting?.dockCollapsed });
+    },
+    onCapabilityIconError(link: NavLink): void {
+      if (link.capability && link.defaultLogo && link.logo !== link.defaultLogo) {
+        this.failedCapabilityIcons[link.capability] = true;
+      }
+    },
     // Frameless macOS desktop: the traffic lights sit over the top-left, so the
     // column rail insets its brand logo to clear them. isMacOS() reads the
     // Electron preload bridge, which only exists in the desktop shell.
@@ -532,6 +671,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+// Height of the mobile collapse handle. Mirrors `--app-dock-handle-height`
+// in _common.scss, which the layouts use to size the bar. It reserves its own
+// strip rather than overlaying the icons, so enlarging the touch target here
+// never steals taps from the first row of icons.
+$dock-handle-height: 22px;
+
 .navigator {
   display: flex;
   align-items: center;
@@ -556,12 +701,26 @@ export default defineComponent({
 
   &[direction='row'] {
     flex-direction: row;
-    overflow-x: scroll;
     border-right: none;
     border-top: 1px solid var(--app-border-subtle);
+    // The handle is absolutely positioned against this box. The horizontal
+    // scrolling therefore has to live on .dock-body — an abspos child of a
+    // scroll container is placed against its *content* box, so keeping
+    // overflow-x here would let the handle scroll off-screen with the icons.
+    position: relative;
+    padding-top: $dock-handle-height;
+    overflow: hidden;
 
     .brand {
       display: none;
+    }
+    .dock-body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 1;
+      min-width: 0;
+      transition: opacity 0.18s ease;
     }
     .top {
       padding-left: 10px;
@@ -570,6 +729,13 @@ export default defineComponent({
       align-items: center;
       gap: 10px;
       justify-content: space-evenly;
+      // Only the icon strip scrolls. Keeping the scroll off .dock-body leaves
+      // the user avatar in .bottom pinned to the right edge instead of
+      // sliding out of view with the icons.
+      flex: 1;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
       .links {
         display: flex;
         flex-direction: row;
@@ -590,14 +756,61 @@ export default defineComponent({
     .bottom {
       padding: 0 10px;
       display: flex;
-      flex: 1;
+      flex: none;
       justify-content: flex-end;
+    }
+
+    &.dock-collapsed {
+      .dock-body {
+        // Kept in the DOM (not v-if) so expanding never re-mounts the icon
+        // strip or the user dropdown; inert so it can't be tabbed into.
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Thin always-visible grab bar. Sits above the icon strip so the dock can
+  // shrink to just this handle instead of disappearing entirely.
+  .dock-handle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $dock-handle-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1;
+
+    .dock-handle-grip {
+      display: block;
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--el-text-color-placeholder);
+      opacity: 0.55;
+      transition: opacity 0.18s ease;
+    }
+
+    &:active .dock-handle-grip {
+      opacity: 0.9;
     }
   }
 
   &[direction='column'] {
     flex-direction: column;
     width: 60px;
+
+    // Column mode keeps the original flat layout: the wrapper must not become
+    // a flex box of its own or `.top`/`.bottom` lose their column sizing.
+    .dock-body {
+      display: contents;
+    }
 
     .brand {
       display: flex;

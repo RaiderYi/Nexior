@@ -4,7 +4,7 @@
       <text-input class="mb-4" />
       <model-selector class="mb-4" />
       <voice-picker class="mb-4" />
-      <div class="field mb-2">
+      <div class="field mb-4">
         <h2 class="title font-bold">{{ $t('fish.name.speed') }}</h2>
         <el-slider v-model="speed" :min="0.5" :max="2" :step="0.1" class="value" show-input />
       </div>
@@ -12,7 +12,7 @@
     <div class="flex flex-col items-center justify-center px-5 pb-5">
       <consumption :value="consumption" :service="service" />
       <el-button type="primary" class="btn w-full" round :disabled="!canGenerate" @click="onGenerate">
-        <font-awesome-icon icon="fa-solid fa-magic" class="mr-2" />
+        <magic-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('fish.button.generate') }}
       </el-button>
     </div>
@@ -20,22 +20,22 @@
 </template>
 
 <script lang="ts">
+import { MagicIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton, ElSlider } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import TextInput from './config/TextInput.vue';
 import ModelSelector from './config/ModelSelector.vue';
 import VoicePicker from './config/VoicePicker.vue';
 import Consumption from '../common/Consumption.vue';
 import { getConsumption } from '@/utils';
-import { FISH_DEFAULT_PROSODY_SPEED } from '@/constants';
+import { FISH_DEFAULT_PROSODY_SPEED, FISH_DEFAULT_TTS_MODEL } from '@/constants';
 
 export default defineComponent({
   name: 'FishConfigPanel',
   components: {
+    MagicIcon,
     ElButton,
     ElSlider,
-    FontAwesomeIcon,
     TextInput,
     ModelSelector,
     VoicePicker,
@@ -47,7 +47,15 @@ export default defineComponent({
       return this.$store.state.fish?.config;
     },
     consumption() {
-      return getConsumption(this.config, this.service?.cost);
+      const text = this.config?.text?.trim() ?? '';
+      return getConsumption(
+        {
+          ...this.config,
+          model: this.config?.model ?? FISH_DEFAULT_TTS_MODEL,
+          byte_count: new TextEncoder().encode(text).byteLength
+        },
+        this.service?.cost
+      );
     },
     service() {
       return this.$store.state.fish?.service;

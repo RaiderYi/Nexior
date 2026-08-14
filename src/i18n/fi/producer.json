@@ -17,7 +17,7 @@
   },
   "button.video": {
     "message": "Video",
-    "description": "Video -painikkeen teksti"
+    "description": "Video-painikkeen teksti"
   },
   "button.download_video": {
     "message": "Lataa video",
@@ -214,6 +214,10 @@
   "name.failureReason": {
     "message": "Epäonnistumisen syy",
     "description": "Tehtävän epäonnistumisen syy"
+  },
+  "name.failure": {
+    "message": "Luonti epäonnistui",
+    "description": "Tuottajan tehtävän epäonnistumisen otsikko"
   },
   "name.status": {
     "message": "Tila",

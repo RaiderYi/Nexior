@@ -27,29 +27,49 @@
     "message": "Epäonnistumisen syy",
     "description": "Epäonnistumisen syy"
   },
+  "name.mode": {
+    "message": "Tila",
+    "description": "Generointitila / toiminto"
+  },
+  "option.action.generate": {
+    "message": "Tuottaa",
+    "description": "Tuottamistoiminto"
+  },
+  "option.action.remix": {
+    "message": "Remixata",
+    "description": "Remix-toiminto"
+  },
+  "option.action.edit": {
+    "message": "Muokata",
+    "description": "Muokkaustoiminto"
+  },
+  "option.action.extend": {
+    "message": "Pidentää",
+    "description": "Pidentämistoiminto"
+  },
   "step.plan": {
     "message": "Suunnittelu & kuvakäsikirjoitus",
-    "description": "Pipeline step: plan"
+    "description": "Tuotantoputken vaihe: suunnittelu"
   },
   "step.source": {
     "message": "Kerää media",
-    "description": "Pipeline step: source media"
+    "description": "Tuotantoputken vaihe: mediahankinta"
   },
   "step.voice": {
     "message": "Selostus",
-    "description": "Pipeline step: voiceover"
+    "description": "Tuotantoputken vaihe: selostus"
   },
   "step.compose": {
     "message": "Kokoa kohtaukset",
-    "description": "Pipeline step: compose"
+    "description": "Tuotantoputken vaihe: kokoaminen"
   },
   "step.render": {
     "message": "Renderöi video",
-    "description": "Pipeline step: render"
+    "description": "Tuotantoputken vaihe: renderöinti"
   },
   "step.deliver": {
     "message": "Toimitus",
-    "description": "Pipeline step: deliver"
+    "description": "Tuotantoputken vaihe: toimitus"
   },
   "name.prompt": {
     "message": "Vihje",
@@ -63,6 +83,14 @@
     "message": "Kielet",
     "description": "Tuotettavat kielet -kenttä"
   },
+  "name.primaryLanguage": {
+    "message": "Pääkieli",
+    "description": "Pääkielen tulostuskenttä"
+  },
+  "name.additionalLanguages": {
+    "message": "Lisäkielet (valinnainen)",
+    "description": "Lisäkielten tulostuskenttä"
+  },
   "name.aspect": {
     "message": "Kuvan suhde",
     "description": "Kuvan suhde kenttä"
@@ -73,19 +101,43 @@
   },
   "name.quality": {
     "message": "Laatu",
-    "description": "Production quality tier field"
+    "description": "Tuotantolaadun tasokenttä"
   },
-  "option.quality.draft": {
-    "message": "Luonnos · nopea esikatselu",
-    "description": "Draft quality option"
+  "option.quality.lite": {
+    "message": "Lite",
+    "description": "Lite SKU vaihtoehto"
   },
   "option.quality.standard": {
     "message": "Vakio · tasapainoinen",
-    "description": "Standard quality option"
+    "description": "Vakiotason vaihtoehto"
   },
-  "option.quality.premium": {
-    "message": "Premium · enemmän yksityiskohtia",
-    "description": "Premium quality option"
+  "option.quality.pro": {
+    "message": "Pro",
+    "description": "Pro SKU vaihtoehto"
+  },
+  "description.quality.lite": {
+    "message": "Nopea ja yksinkertainen lyhytvideo, kevyet tehosteet, yksi kieli.",
+    "description": "Lite SKU yhteenveto"
+  },
+  "description.quality.standard": {
+    "message": "Tasapainoinen 1080p tuotanto, tukee digitaalista puhetta ja enintään kahta kieltä.",
+    "description": "Standard SKU yhteenveto"
+  },
+  "description.quality.pro": {
+    "message": "Tukee pitkiä videoita, lyhyitä esityksiä ja täydellisiä luovuusmahdollisuuksia.",
+    "description": "Pro SKU yhteenveto"
+  },
+  "name.upToSeconds": {
+    "message": "Enintään {seconds} sekuntia",
+    "description": "Maksimi SKU kesto"
+  },
+  "name.estimatedCredits": {
+    "message": "Arvioidut {credits} krediittiä",
+    "description": "Arvioidut tuotantokrediitit"
+  },
+  "name.requiresSku": {
+    "message": "Vaaditaan {sku}",
+    "description": "Vähimmäis SKU videotyypille"
   },
   "name.remixing": {
     "message": "Remix",
@@ -98,6 +150,10 @@
   "placeholder.select": {
     "message": "Valitse",
     "description": "Yleinen valintapaikka"
+  },
+  "placeholder.additionalLanguages": {
+    "message": "Lisää tulostuskielet",
+    "description": "Lisäkielten paikkamerkki"
   },
   "description.prompt": {
     "message": "Kerro selkeästi, mitä haluat, käsikirjoitus, kuvat, äänitys ja leikkaus ovat Maestroa varten.",
@@ -113,11 +169,11 @@
   },
   "description.duration": {
     "message": "Videon tavoitekesto – mitä pidempi, sitä enemmän aikaa ja pisteitä tuottaminen vie.",
-    "description": "Duration help"
+    "description": "Keston ohjeteksti"
   },
   "description.quality": {
     "message": "Mitä korkeampi tuotantotaso, sitä tarkempi kuva ja editointi, mutta enemmän aikaa ja pisteitä.",
-    "description": "Quality help"
+    "description": "Laadun ohjeteksti"
   },
   "status.pending": {
     "message": "Jonossa",
@@ -187,17 +243,41 @@
     "message": "Ei vielä videoita — luo ensimmäinen vasemmalla.",
     "description": "Ei tehtäviä"
   },
+  "name.customize": {
+    "message": "Mukauta",
+    "description": "Valinnaisten luovien ohjausten vaihtokytkentä"
+  },
+  "description.customize.auto": {
+    "message": "Automaattinen · Maestro päättää videon tyypin, visuaalisen tyylin ja ääninäytteen äänenvärin.",
+    "description": "Mukautuksen poistettu käytöstä -tila"
+  },
+  "description.customize.manual": {
+    "message": "Valitse videon tyyppi, visuaalinen tyyli ja ääninäytteen äänenväri.",
+    "description": "Mukautuksen käytössä -tila"
+  },
+  "name.customizeScenario": {
+    "message": "Mukauta videon tyyppiä",
+    "description": "Videotyypin mukautusvaihtokytkentä"
+  },
+  "name.customizeStyle": {
+    "message": "Mukauta visuaalista tyyliä",
+    "description": "Visuaalisen tyylin mukautusvaihtokytkentä"
+  },
+  "name.customizeVoice": {
+    "message": "Mukauta ääninäytteen äänenväriä",
+    "description": "Äänenvärinkentän mukautusvaihtokytkentä"
+  },
   "name.scenario": {
     "message": "Videon tyyppi",
-    "description": "Video type field"
+    "description": "Videotyypin kenttä"
   },
   "description.scenario": {
-    "message": "Valitse luotavan videon tyyppi. Automaattinen antaa Maestron päättää; tai pakota tyyli, kuten lyhytdraama, aito kuvamateriaali, selittävä tai tuote-esittely.",
-    "description": "Scenario field help"
+    "message": "Ota mukautus käyttöön valitaksesi videon tyypin. Kun se on pois käytöstä, Maestro päättää automaattisesti.",
+    "description": "Skenaariokentän ohjeteksti"
   },
   "option.scenario.auto": {
     "message": "Automaattinen · anna Maestron päättää",
-    "description": "Auto scenario option"
+    "description": "Automaattinen skenaariovaihtoehto"
   },
   "option.scenario.narrated": {
     "message": "Kuvateksteillä varustettu video",
@@ -205,26 +285,30 @@
   },
   "option.scenario.drama": {
     "message": "Lyhytdraama",
-    "description": "Short drama scenario option"
+    "description": "Lyhytelokuvan skenaariovaihtoehto"
   },
   "option.scenario.avatar": {
     "message": "Digitaalinen henkilö · Puhe",
     "description": "Avatar / puhuva pää -skenaario vaihtoehto"
   },
-  "option.scenario.motion": {
-    "message": "Liikegrafiikka",
-    "description": "Motion graphics scenario option"
-  },
   "option.scenario.captions": {
     "message": "Lisää tekstitykset",
     "description": "Add-captions scenario option"
+  },
+  "message.captionsNeedVideo": {
+    "message": "Kineettiset tekstitykset toimivat olemassa olevaan puhujavideoon — lataa ensin video yllä.",
+    "description": "Varoitus, kun tekstitysvideotyyppi on valittu mutta lähdevideota ei ole ladattu"
+  },
+  "message.avatarNeedsImage": {
+    "message": "Digitaalinen puhe tarvitsee henkilöhahmon kuvan, lataa se ensin ylhäältä.",
+    "description": "Varoitus, joka näytetään, kun avatar-video on valittu mutta kuvaa ei ole ladattu"
   },
   "name.style": {
     "message": "Visuaalinen tyyli",
     "description": "Visuaalisen tyylin kenttä"
   },
   "description.style": {
-    "message": "Valinnainen visuaalinen tyyli (vaikuttaa typografiaan, väreihin, animaatioihin, rytmiin), riippumaton videotyypistä. Valinnaiset esiasetukset tai oma syöttö.",
+    "message": "Ota mukautus käyttöön valitaksesi tai kirjoittaaksesi visuaalisen tyylin. Kun se on pois käytöstä, Maestro päättää automaattisesti.",
     "description": "Tyylikentän ohje"
   },
   "option.style.auto": {
@@ -236,60 +320,60 @@
     "description": "Elokuvamainen tyylivaihtoehto"
   },
   "option.style.glass": {
-    "message": "Frosted Glass",
-    "description": "Frosted glass style option"
+    "message": "Huurulasi",
+    "description": "Huurulasi-tyylivaihtoehto"
   },
   "option.style.luxury": {
-    "message": "Luxury",
-    "description": "Luxury style option"
+    "message": "Luksus",
+    "description": "Luksus-tyylivaihtoehto"
   },
   "option.style.swiss": {
-    "message": "Swiss Grid",
-    "description": "Swiss grid style option"
+    "message": "Sveitsi · Tarkka",
+    "description": "Sveitsi-ruudukko-tyylin vaihtoehto"
   },
   "option.style.modern": {
-    "message": "Modern",
-    "description": "Modern style option"
+    "message": "Moderni",
+    "description": "Moderni-tyylivaihtoehto"
   },
   "option.style.editorial": {
-    "message": "Editorial",
-    "description": "Editorial style option"
+    "message": "Toimituksellinen",
+    "description": "Toimituksellinen-tyylivaihtoehto"
   },
   "option.style.warm": {
-    "message": "Warm",
-    "description": "Warm style option"
+    "message": "Lämmin",
+    "description": "Lämmin-tyylivaihtoehto"
   },
   "option.style.vibrant": {
-    "message": "Vibrant",
-    "description": "Vibrant style option"
+    "message": "Värikäs",
+    "description": "Värikäs-tyylivaihtoehto"
   },
   "option.style.neon": {
-    "message": "Neon",
-    "description": "Neon-tyylivaihtoehto"
+    "message": "Neon tyyli",
+    "description": "Neon-tyylin vaihtoehto"
   },
   "option.style.mono": {
-    "message": "Monochrome",
-    "description": "Monochrome style option"
+    "message": "Mustavalkoinen",
+    "description": "Mustavalkoinen-tyylivaihtoehto"
   },
   "option.style.pastel": {
-    "message": "Pastel",
-    "description": "Pastel style option"
+    "message": "Pastelli",
+    "description": "Pastelli-tyylivaihtoehto"
   },
   "option.style.bold": {
-    "message": "Bold Type",
-    "description": "Bold type style option"
+    "message": "Lihavoitu teksti",
+    "description": "Lihavoitu teksti -tyylivaihtoehto"
   },
   "option.style.industrial": {
-    "message": "Industrial",
-    "description": "Industrial style option"
+    "message": "Teollinen",
+    "description": "Teollinen-tyylivaihtoehto"
   },
   "option.style.futuristic": {
-    "message": "Futuristic",
-    "description": "Futuristic style option"
+    "message": "Futuristinen",
+    "description": "Futuristinen-tyylivaihtoehto"
   },
   "option.style.retro": {
-    "message": "Retro Film",
-    "description": "Retro film style option"
+    "message": "Retro-filmi",
+    "description": "Retro-filmi-tyylivaihtoehto"
   },
   "name.voice": {
     "message": "Ääninäytteen äänenväri",
@@ -300,8 +384,8 @@
     "description": "Ääninäytteen esikatselu / toisto -painike"
   },
   "description.voice": {
-    "message": "Valitse ääninäytteen äänenväri. Äänenväri ei riipu kielestä - sama äänenväri lukee valitun kielen mukaan; napsauta toistaaksesi.",
-    "description": "Voice field help"
+    "message": "Ota mukautus käyttöön valitaksesi äänenvärin. Kun se on pois käytöstä, Maestro valitsee automaattisesti. Äänenväri ei riipu kielestä, ja voit kuunnella esikatselun.",
+    "description": "Äänenvärinkentän ohjeteksti"
   },
   "option.voice.auto": {
     "message": "Automaattinen · Maestro valitsee",

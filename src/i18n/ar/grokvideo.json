@@ -28,8 +28,8 @@
     "description": "تسمية لإدخال الصورة"
   },
   "name.referenceImages": {
-    "message": "Reference Images",
-    "description": "Label for reference images"
+    "message": "صور مرجعية",
+    "description": "تسمية لصور المرجعية"
   },
   "name.required": {
     "message": "مطلوب",
@@ -64,7 +64,7 @@
     "description": "تعليمات حول إدخال النص"
   },
   "description.model": {
-    "message": "اختر نموذج Grok Imagine. يدعم grok-imagine-video الفيديو الناتج عن النص والصورة؛ بينما 1.5-preview يدعم فقط الفيديو الناتج عن الصورة.",
+    "message": "اختر نموذج Grok Imagine. :reverse يستخدم نقطة النهاية السريعة/القياسية؛ :official يستخدم نقطة النهاية الرسمية (جودة أعلى، يتم احتساب الرسوم حسب الثواني). grok-imagine-video-1.5:official يدعم فقط إنشاء الفيديو من الصور.",
     "description": "تعليمات حول اختيار النموذج"
   },
   "description.ratio": {
@@ -76,16 +76,16 @@
     "description": "تعليمات حول الدقة"
   },
   "description.duration": {
-    "message": "مدة الفيديو (بالثواني)، يتم احتساب الرسوم حسب عدد الثواني.",
+    "message": "مدة الفيديو (بالثواني). يدعم 1.5-fast (عكسي) من 6 إلى 30 ثانية، ويتم احتساب الرسوم حسب المدة؛ بينما تدعم المتغيرات الأخرى من 1 إلى 15 ثانية، ويتم احتساب الرسوم حسب عدد الثواني الناتجة.",
     "description": "تعليمات حول المدة"
   },
   "description.image": {
-    "message": "صورة إدخال اختيارية، تستخدم لإنشاء الفيديو. grok-imagine-video-1.5-preview إلزامية.",
+    "message": "صورة إدخال اختيارية، تستخدم لإنشاء الفيديو. grok-imagine-video-1.5:official إلزامية.",
     "description": "تعليمات حول إدخال الصورة"
   },
   "description.referenceImages": {
-    "message": "Optional reference images to guide the style or content of the generated video (grok-imagine-video only).",
-    "description": "Instructions for reference images"
+    "message": "صور مرجعية اختيارية، تستخدم لتوجيه أسلوب أو محتوى الفيديو الناتج.",
+    "description": "تعليمات حول الصور المرجعية"
   },
   "placeholder.prompt": {
     "message": "وصف الفيديو الخاص بك…",
@@ -95,13 +95,21 @@
     "message": "يرجى الاختيار",
     "description": "نص بديل للاختيارات"
   },
-  "model.default": {
-    "message": "فيديو Grok Imagine",
-    "description": "تسمية النموذج الافتراضي"
+  "model.fastReverse": {
+    "message": "Grok Imagine فيديو 1.5 سريع (6–30 ثانية)",
+    "description": "تسمية نموذج 1.5-fast العكسي"
   },
-  "model.preview15": {
-    "message": "فيديو Grok Imagine 1.5 (معاينة، فيديو ناتج عن الصورة)",
-    "description": "تسمية نموذج المعاينة 1.5"
+  "model.reverse": {
+    "message": "Grok Imagine فيديو (قياسي، 1–15 ثانية)",
+    "description": "تسمية نموذج grok-imagine-video العكسي"
+  },
+  "model.official": {
+    "message": "Grok Imagine فيديو · رسمي (جودة أعلى، يتم احتساب الرسوم حسب الثواني)",
+    "description": "تسمية نموذج grok-imagine-video الرسمي"
+  },
+  "model.official15": {
+    "message": "Grok Imagine فيديو 1.5 · رسمي (إنشاء فيديو من الصور، حتى 1080p)",
+    "description": "تسمية النموذج الرسمي 1.5"
   },
   "button.upload": {
     "message": "رفع",
@@ -128,8 +136,8 @@
     "description": "تحذير تجاوز الرفع"
   },
   "message.uploadReferenceExceed": {
-    "message": "You can upload up to 4 reference images.",
-    "description": "Reference images upload exceed warning"
+    "message": "يمكنك رفع ما يصل إلى 4 صور مرجعية.",
+    "description": "تحذير بتجاوز عدد صور المرجعية المرفوعة"
   },
   "message.uploadError": {
     "message": "فشل رفع الصورة، يرجى المحاولة مرة أخرى.",

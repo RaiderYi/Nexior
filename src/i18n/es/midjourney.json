@@ -9,7 +9,7 @@
   },
   "style.original": {
     "message": "Original",
-    "description": "Texto en el botón que representa el estilo 'original'"
+    "description": "Texto del botón que representa el estilo 'original'."
   },
   "style.scenic": {
     "message": "Escénico",
@@ -49,7 +49,7 @@
   },
   "styleCategory.material": {
     "message": "Material",
-    "description": "Palabra de categoría utilizada para describir y generar imágenes, las imágenes generadas deben incluir la categoría de esta etiqueta"
+    "description": "Palabra de categoría utilizada para describir y generar imágenes; las imágenes generadas deben incluir la categoría de esta etiqueta."
   },
   "styleCategory.artists": {
     "message": "Artistas",
@@ -77,7 +77,7 @@
   },
   "styleTag.gouache": {
     "message": "Gouache",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben incluir el estilo de esta etiqueta"
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.filmStyle": {
     "message": "Estilo Cinematográfico",
@@ -209,7 +209,7 @@
   },
   "styleTag.anime": {
     "message": "Anime",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.arabic": {
     "message": "Árabe",
@@ -233,7 +233,7 @@
   },
   "styleTag.celestial": {
     "message": "Celestial",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.cellulose": {
     "message": "Celulosa",
@@ -249,7 +249,7 @@
   },
   "styleTag.coral": {
     "message": "Coral",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.conceptArt": {
     "message": "Arte conceptual",
@@ -257,7 +257,7 @@
   },
   "styleTag.fibonacci": {
     "message": "Fibonacci",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.cyberpunk": {
     "message": "Ciberpunk",
@@ -317,11 +317,11 @@
   },
   "styleTag.floral": {
     "message": "Floral",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.fractal": {
     "message": "Fractal",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.preHistoric": {
     "message": "Prehistórico",
@@ -333,7 +333,7 @@
   },
   "styleTag.horror": {
     "message": "Horror",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo de terror."
   },
   "styleTag.iceAge": {
     "message": "Era de hielo",
@@ -361,15 +361,15 @@
   },
   "styleTag.mandala": {
     "message": "Mandala",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora mandalas."
   },
   "styleTag.molecular": {
     "message": "Molecular",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora elementos moleculares."
   },
   "styleTag.merkaba": {
     "message": "Merkaba",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora el concepto de merkaba."
   },
   "styleTag.mitochondria": {
     "message": "Mitocondria",
@@ -385,7 +385,7 @@
   },
   "styleTag.multidimensional": {
     "message": "Multidimensional",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que es multidimensional."
   },
   "styleTag.nasa": {
     "message": "NASA",
@@ -401,7 +401,7 @@
   },
   "styleTag.nuclear": {
     "message": "Nuclear",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora elementos nucleares."
   },
   "styleTag.orbital": {
     "message": "Orbital",
@@ -429,7 +429,7 @@
   },
   "styleTag.origami": {
     "message": "Origami",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con un estilo específico; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.ornamental": {
     "message": "Ornamental",
@@ -481,11 +481,11 @@
   },
   "styleTag.tron": {
     "message": "Tron",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.tropical": {
     "message": "Tropical",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.ultraModern": {
     "message": "Ultra moderno",
@@ -677,151 +677,151 @@
   },
   "styleTag.monet": {
     "message": "Monet",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.paulCezanne": {
     "message": "Paul Cézanne",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.markRothko": {
     "message": "Mark Rothko",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.paulKlee": {
     "message": "Paul Klee",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.picasso": {
     "message": "Picasso",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.pietMondrian": {
     "message": "Piet Mondrian",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.pierreAugusteRer": {
     "message": "Pierre-Auguste Renoir",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.rembrandt": {
     "message": "Rembrandt",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.reneMagritte": {
     "message": "René Magritte",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.royLichtenstein": {
     "message": "Roy Lichtenstein",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.salvadorDali": {
     "message": "Salvador Dalí",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.sandroBotticelli": {
     "message": "Sandro Botticelli",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.takashiMurakami": {
     "message": "Takashi Murakami",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.vanGogh": {
     "message": "Van Gogh",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.wassilyKandinsky": {
     "message": "Wassily Kandinsky",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.matCollishaw": {
     "message": "Mat Collishaw",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.yayoiKusama": {
     "message": "Yayoi Kusama",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.igorMorski": {
     "message": "Igor Morski",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.shinkaiMakoto": {
     "message": "Makoto Shinkai",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.pixar": {
     "message": "Pixar",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.kyotoAnime": {
-    "message": "Kyoto Animation",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "Anime de Kioto",
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.jerryPinkney": {
     "message": "Jerry Pinkney",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.hayaoMiyazaki": {
     "message": "Hayao Miyazaki",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.beatrixPotter": {
     "message": "Beatrix Potter",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.jonKlassen": {
     "message": "Jon Klassen",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.kaySage": {
     "message": "Kay Sage",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.jeffreyCatherineJones": {
     "message": "Jeffrey Catherine Jones",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.yaacovAgam": {
     "message": "Yaacov Agam",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.davidHockney": {
     "message": "David Hockney",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.victorMoscoso": {
     "message": "Victor Moscoso",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.raphaelite": {
-    "message": "Raphaelite",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "Rafaelita",
+    "description": "Se utiliza para describir y generar imágenes con un estilo específico. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.stefanKoidl": {
     "message": "Stefan Koidl",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.suiIshida": {
     "message": "Sui Ishida",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.swoon": {
-    "message": "Swoon",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "Éxtasis",
+    "description": "Se utiliza para describir y generar imágenes con un estilo específico; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.tashaTudor": {
     "message": "Tasha Tudor",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.tintoretto": {
     "message": "Tintoretto",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.theodoreRobinsor": {
-    "message": "Theodore Robinson",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "Theodore Robinsor",
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.titian": {
     "message": "Tiziano",
@@ -833,15 +833,15 @@
   },
   "styleTag.yanjunCheng": {
     "message": "Yanjun Cheng",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.yojiShinkawa": {
     "message": "Yoji Shinkawa",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.zhelongXu": {
     "message": "Zhelong Xu",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.alenaAenami": {
     "message": "Alena Aenami",
@@ -853,7 +853,7 @@
   },
   "styleTag.charlieBowater": {
     "message": "Charlie Bowater",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.coryLoftis": {
     "message": "Cory Loftis",
@@ -901,7 +901,7 @@
   },
   "styleTag.andyWarhol": {
     "message": "Andy Warhol",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.banksy": {
     "message": "Banksy",
@@ -913,63 +913,63 @@
   },
   "styleTag.caravaggio": {
     "message": "Caravaggio",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.diegoRivera": {
     "message": "Diego Rivera",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.marcChagall": {
     "message": "Marc Chagall",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.edgarDegas": {
     "message": "Edgar Degas",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.eugeneDelacroix": {
     "message": "Eugène Delacroix",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.francisBacon": {
     "message": "Francis Bacon",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.fridaKahlo": {
     "message": "Frida Kahlo",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.garaldBrom": {
-    "message": "Gerald Brom",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "Garald Brom",
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.gustavKlimt": {
     "message": "Gustav Klimt",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.henriMatisse": {
     "message": "Henri Matisse",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.jackKirby": {
     "message": "Jack Kirby",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.jacksonPollock": {
     "message": "Jackson Pollock",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.johannesVermeer": {
     "message": "Johannes Vermeer",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.jeanMichelBasquiat": {
     "message": "Jean-Michel Basquiat",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.marcelDuchamp": {
     "message": "Marcel Duchamp",
-    "description": "Palabra de estilo para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en el estilo de este artista."
   },
   "styleTag.aluminum": {
     "message": "Aluminio",
@@ -1033,7 +1033,7 @@
   },
   "styleTag.magma": {
     "message": "Magma",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora magma."
   },
   "styleTag.metallic": {
     "message": "Metalizado",
@@ -1045,7 +1045,7 @@
   },
   "styleTag.nylon": {
     "message": "Nylon",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora nylon."
   },
   "styleTag.paper": {
     "message": "Papel",
@@ -1068,8 +1068,8 @@
     "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
   },
   "styleTag.slime": {
-    "message": "Slime",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "message": "Moco",
+    "description": "Se utiliza para describir y generar imágenes con un estilo específico; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.engraving": {
     "message": "Grabado",
@@ -1309,11 +1309,11 @@
   },
   "styleTag.brutal": {
     "message": "Brutal",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.hanfu": {
     "message": "Hanfu",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.cheongsam": {
     "message": "Qipao",
@@ -1329,7 +1329,7 @@
   },
   "styleTag.wuxia": {
     "message": "Wuxia",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, la imagen generada debe incluir el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.chinesePhoenix": {
     "message": "Fénix",
@@ -1337,7 +1337,7 @@
   },
   "styleTag.kungfu": {
     "message": "Kung Fu",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora elementos de kung fu."
   },
   "styleTag.kunquOpera": {
     "message": "Ópera Kunqu",
@@ -1345,7 +1345,7 @@
   },
   "styleTag.cloisonne": {
     "message": "Cloisonné",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Palabra de estilo utilizada para describir y generar imágenes; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.porcelain": {
     "message": "Porcelana",
@@ -1357,7 +1357,7 @@
   },
   "styleTag.jade": {
     "message": "Jade",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes en un estilo que incorpora jade."
   },
   "styleTag.chinesePavilion": {
     "message": "Pabellón Chino",
@@ -1377,7 +1377,7 @@
   },
   "styleTag.unrealEngine": {
     "message": "Unreal Engine",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "description": "Se utiliza para describir y generar imágenes con este estilo. Las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.octaneRender": {
     "message": "Octane Render",
@@ -1392,12 +1392,12 @@
     "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
   },
   "styleTag.coronaRender": {
-    "message": "Corona Render",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "Renderizado Corona",
+    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener este estilo"
   },
   "styleTag.vRay": {
-    "message": "V-Ray",
-    "description": "Palabra de estilo utilizada para describir y generar imágenes, las imágenes generadas deben contener el estilo de esta etiqueta."
+    "message": "V-ray",
+    "description": "Se utiliza para describir y generar imágenes con un estilo específico; las imágenes generadas deben incluir el estilo de esta etiqueta."
   },
   "styleTag.architecturalVisualisation": {
     "message": "Visualización Arquitectónica",
@@ -1764,12 +1764,12 @@
     "description": "Descripción del botón para desplazar hacia la derecha"
   },
   "action.zoom_in_2x": {
-    "message": "Zoom 2x",
-    "description": "Descripción del botón para hacer zoom 2x"
+    "message": "Ampliar 2x",
+    "description": "Descripción del botón para ampliar la imagen 2 veces"
   },
   "action.zoom_in_1_5x": {
-    "message": "Zoom 1.5x",
-    "description": "Descripción del botón para hacer zoom 1.5x"
+    "message": "Ampliar 1.5x",
+    "description": "Descripción del botón para ampliar la imagen 1.5 veces"
   },
   "action.upscale_2x": {
     "message": "Aumentar 2x",
@@ -1877,7 +1877,7 @@
   },
   "model.general": {
     "message": "General",
-    "description": "Nombre del modelo para generación de imágenes generales"
+    "description": "Nombre del modelo utilizado para la generación de imágenes generales."
   },
   "model.niji": {
     "message": "Niji",

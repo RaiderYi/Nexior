@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Ενέργεια",
+    "description": "Επιλογέας για τη δημιουργία ή επεξεργασία ενεργειών."
+  },
   "name.taskId": {
     "message": "ID εργασίας",
     "description": "Το ID της εργασίας"
@@ -131,6 +135,10 @@
     "message": "Αποτυχία ανέβασματος εικόνας, παρακαλώ δοκιμάστε ξανά αργότερα",
     "description": "Αποτυχία ανέβασματος"
   },
+  "message.referenceImageRequired": {
+    "message": "Απαιτείται τουλάχιστον μία αναφορά εικόνας σε λειτουργία επεξεργασίας.",
+    "description": "Εμφανίζεται προειδοποίηση ελέγχου όταν δεν υπάρχει αναφορά εικόνας σε λειτουργία επεξεργασίας."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Απαιτείται επιβεβαίωση",
     "description": "Τίτλος του πλαισίου διαλόγου σύγκρουσης δυνατοτήτων"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Επιλογή μοντέλου SeeDream 5.0 (υποστηρίζει ομαδική και ροή εξόδου)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Αριθμός εικόνων",

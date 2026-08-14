@@ -1,8 +1,2274 @@
 # Change Log - @acedatacloud/nexior
 
-<!-- This log was last generated on Wed, 08 Jul 2026 10:37:08 GMT and should not be manually modified. -->
+<!-- This log was last generated on Thu, 13 Aug 2026 20:21:54 GMT and should not be manually modified. -->
 
 <!-- Start content -->
+
+## 3.362.3
+
+Thu, 13 Aug 2026 20:21:54 GMT
+
+### Patches
+
+- Distribute desktop installers through GitHub downloads without the unused COS update feed (dev@acedata.cloud)
+
+## 3.362.2
+
+Wed, 12 Aug 2026 20:34:04 GMT
+
+### Patches
+
+- Fix desktop local-tool consent so Always allow (any path) applies to future invocations of the selected tool (dev@acedata.cloud)
+- Move Intel desktop builds to the supported macOS 15 Intel runner (dev@acedata.cloud)
+- Fix the desktop release pipeline to validate the generated Apple Silicon update ZIP (dev@acedata.cloud)
+
+## 3.362.1
+
+Tue, 11 Aug 2026 20:27:39 GMT
+
+### Patches
+
+- Show a clear support message when a restricted account cannot sign in (dev@acedata.cloud)
+- Add editable voice input to the Coding Bridge composer on web, iOS, and Android (dev@acedata.cloud)
+
+## 3.362.0
+
+Mon, 10 Aug 2026 20:22:20 GMT
+
+### Minor changes
+
+- Add Gemini 3.6 Flash to the chat model picker. (dev@acedata.cloud)
+- Add profile-based desktop update checks and signed installer replacement flow. (dev@acedata.cloud)
+
+### Patches
+
+- Add Lite, Standard, and Pro Maestro SKU selection with tier-aware limits and pricing estimates (dev@acedata.cloud)
+
+## 3.361.1
+
+Sun, 09 Aug 2026 20:16:39 GMT
+
+### Patches
+
+- Hide recharge actions for applications shared by another user (dev@acedata.cloud)
+
+## 3.361.0
+
+Sun, 09 Aug 2026 15:37:44 GMT
+
+### Minor changes
+
+- Add reusable Solana wallet authorization for continuous x402 payments. (dev@acedata.cloud)
+
+### Patches
+
+- Keep Fish voice clone submissions pending until completion and preserve failed form input (dev@acedata.cloud)
+- Restore complete daily releases and align desktop and mobile workflow names (dev@acedata.cloud)
+- Restore pre-mount web authentication bootstrap so refreshes preserve valid sessions (dev@acedata.cloud)
+- Add Base wallet payments for x402 generation flows (dev@acedata.cloud)
+
+## 3.360.0
+
+Sat, 08 Aug 2026 20:17:59 GMT
+
+### Minor changes
+
+- Add Solana x402 wallet payments to Suno generation and exact-priced secondary actions. (dev@acedata.cloud)
+- Add Solana x402 wallet payments to Midjourney image, video, describe, and custom actions. (dev@acedata.cloud)
+- Add Solana x402 wallet payments to Producer audio, lyrics, video, and WAV actions. (dev@acedata.cloud)
+
+### Patches
+
+- Reuse shared coding-agent contracts and transcript helpers. (dev@acedata.cloud)
+
+## 3.359.0
+
+Sat, 08 Aug 2026 16:15:23 GMT
+
+### Minor changes
+
+- Add Solana x402 wallet payments to Flux and QR Art. (dev@acedata.cloud)
+- Add Solana x402 wallet payments to SERP search. (dev@acedata.cloud)
+- Add Solana x402 wallet payments to Kling and Digital Human exact-priced flows. (dev@acedata.cloud)
+- Add Solana x402 wallet payments to standard video scenarios. (dev@acedata.cloud)
+
+### Patches
+
+- Limit console usage filters and application usage actions to API services. (dev@acedata.cloud)
+- Prevent Android startup from waiting on remote initialization and acknowledge the native update watchdog immediately. (dev@acedata.cloud)
+- Add smart logo and favicon processing with transparent backgrounds and light/dark logo variants. (dev@acedata.cloud)
+- Simplify scheduled-template creation and enforce gated activation from task cards. (dev@acedata.cloud)
+- Unify copy controls and code blocks on consistent success icons, timing, and accessible feedback. (dev@acedata.cloud)
+- Keep the usage API filter visible while its options preload and show loading inside the dropdown. (dev@acedata.cloud)
+- Apply account usage discounts to x402 quotes and improve settlement history layout. (dev@acedata.cloud)
+- Show settled USDC amounts and transaction links in API usage history. (dev@acedata.cloud)
+
+## 3.358.0
+
+Fri, 07 Aug 2026 20:23:40 GMT
+
+### Minor changes
+
+- Add the MiniMax H3 multimodal video creation workspace. (dev@acedata.cloud)
+- Add feature-gated Solana x402 payments to Nano Banana and GPT Image 2 generation. (dev@acedata.cloud)
+
+### Patches
+
+- Improve template connection guidance, translations, and actionable test errors. (dev@acedata.cloud)
+- Keep chat and accent-tinted surfaces readable with custom site colours in dark mode. (dev@acedata.cloud)
+- Default unresolved site login flows to a full-page redirect instead of an embedded popup. (dev@acedata.cloud)
+- Wrap MiniMax aspect ratio options into a balanced two-row layout. (dev@acedata.cloud)
+- Align MiniMax H3 requests, task responses, controls, and translations with the official V2 API contract. (dev@acedata.cloud)
+- Add MiniMax H3 resolution pricing and watermark controls. (dev@acedata.cloud)
+- Align the MiniMax H3 workspace with standard media uploads, help text, and video controls. (dev@acedata.cloud)
+- Align MiniMax resolution, aspect ratio, and duration controls with the compact video workspace UI. (dev@acedata.cloud)
+- Polish the scheduled template wizard with a compact layout, primary-colour steps, and clearer test-run spacing. (dev@acedata.cloud)
+- Use each site's own brand and copyright in the public footer. (dev@acedata.cloud)
+
+## 3.357.1
+
+Thu, 06 Aug 2026 22:20:15 GMT
+
+### Patches
+
+- serve dynamic white-label Open Graph cards (dev@acedata.cloud)
+- Open scheduled template deep links in the requested category. (dev@acedata.cloud)
+
+## 3.357.0
+
+Thu, 06 Aug 2026 04:54:04 GMT
+
+### Minor changes
+
+- Add guided scheduled-task templates and referral automation onboarding. (dev@acedata.cloud)
+
+## 3.356.14
+
+Thu, 06 Aug 2026 04:52:05 GMT
+
+### Patches
+
+- Preserve the exact Claude model selector when resuming Coding Bridge sessions so selector-only context profiles are not replaced by resolved model IDs. (dev@acedata.cloud)
+
+## 3.356.13
+
+Thu, 06 Aug 2026 03:48:34 GMT
+
+### Patches
+
+- Clarify that confirming an external action starts execution rather than proving it succeeded, and preserve structured continuation errors. (dev@acedata.cloud)
+
+## 3.356.12
+
+Thu, 06 Aug 2026 03:03:39 GMT
+
+### Patches
+
+- Let scheduled tasks select and display an IANA time zone, and make desktop-local schedules honor the saved zone across daylight-saving changes. (dev@acedata.cloud)
+
+## 3.356.11
+
+Thu, 06 Aug 2026 00:30:10 GMT
+
+### Patches
+
+- move the capability-first product presentation from /intro to /home and move the white-label business presentation from /home to /business (dev@acedata.cloud)
+
+## 3.356.10
+
+Wed, 05 Aug 2026 23:28:09 GMT
+
+### Patches
+
+- Use the official TikTok brand icon and localize the publish confirmation title, summary, and action label from the active Studio locale. (dev@acedata.cloud)
+
+## 3.356.9
+
+Wed, 05 Aug 2026 21:40:18 GMT
+
+### Patches
+
+- use each initialized Site's title and description as the /home and /intro hero copy, with default marketing text only as a fallback (dev@acedata.cloud)
+
+## 3.356.8
+
+Wed, 05 Aug 2026 20:43:54 GMT
+
+### Patches
+
+- Turn TikTok publishing confirmation into a complete review screen with reliable media fallback, validated account settings, clear disabled reasons, and linked policy guidance. (dev@acedata.cloud)
+
+## 3.356.7
+
+Wed, 05 Aug 2026 15:22:50 GMT
+
+### Patches
+
+- send Suno excluded styles through the canonical negative_tags API field while preserving prompt reuse from older tasks (dev@acedata.cloud)
+
+## 3.356.6
+
+Wed, 05 Aug 2026 15:00:28 GMT
+
+### Patches
+
+- render each white-label Site's configured logo on tenant subdomains and custom domains while keeping the built-in wordmark on exact official hosts (dev@acedata.cloud)
+
+## 3.356.5
+
+Wed, 05 Aug 2026 14:01:47 GMT
+
+### Patches
+
+- give /intro a logo-only presentation header, circular product marks, and balanced responsive card rows (dev@acedata.cloud)
+
+## 3.356.4
+
+Wed, 05 Aug 2026 13:53:00 GMT
+
+### Patches
+
+- Remove unavailable Seedream 3.0 models and migrate persisted selections to a supported model. (dev@acedata.cloud)
+
+## 3.356.3
+
+Wed, 05 Aug 2026 13:17:30 GMT
+
+### Patches
+
+- polish /intro with outward-facing campaign headlines and a recognizable logo on every product card (dev@acedata.cloud)
+
+## 3.356.2
+
+Wed, 05 Aug 2026 08:42:10 GMT
+
+### Patches
+
+- make /intro honor the enabled capability set on every site, including studio.acedata.cloud, and select matching screenshots and copy (dev@acedata.cloud)
+
+## 3.356.1
+
+Tue, 04 Aug 2026 17:08:26 GMT
+
+### Patches
+
+- gate /intro capability sections and model cards by the site's enabled features (dev@acedata.cloud)
+
+## 3.356.0
+
+Tue, 04 Aug 2026 15:00:18 GMT
+
+### Minor changes
+
+- add a capability-first /intro product tour covering chat, image, video, music, production, tools, and connectors, with localized desktop and mobile screenshots (dev@acedata.cloud)
+
+## 3.355.0
+
+Tue, 04 Aug 2026 07:13:48 GMT
+
+### Minor changes
+
+- Add a track-length control to Suno advanced params for custom-mode generations (dev@acedata.cloud)
+
+## 3.354.4
+
+Mon, 03 Aug 2026 17:39:11 GMT
+
+### Patches
+
+- Send size=auto explicitly for OpenAI Image instead of omitting the field, and give the option its own i18n key (dev@acedata.cloud)
+
+## 3.354.3
+
+Mon, 03 Aug 2026 02:14:09 GMT
+
+### Patches
+
+- fix(chat): 输入框加号菜单的技能/连接不再显示外链图标（已是站内页面） (dev@acedata.cloud)
+
+## 3.354.2
+
+Mon, 03 Aug 2026 01:03:10 GMT
+
+### Patches
+
+- fix(auth): 微信内置浏览器里内嵌登录选微信登录不再白屏 (dev@acedata.cloud)
+
+## 3.354.1
+
+Mon, 03 Aug 2026 00:51:24 GMT
+
+### Patches
+
+- fix(white-label): 子站首帧不再闪现 Ace Data Cloud 品牌 (dev@acedata.cloud)
+
+## 3.354.0
+
+Mon, 03 Aug 2026 00:41:07 GMT
+
+### Minor changes
+
+- 站点设置新增强制语言：设定后全站访客界面语言被固定，不设置则自动检测 (dev@acedata.cloud)
+
+## 3.353.5
+
+Sun, 02 Aug 2026 10:20:15 GMT
+
+### Patches
+
+- 修复刷新后界面语言被重置为英文 (dev@acedata.cloud)
+
+## 3.353.4
+
+Sun, 02 Aug 2026 04:06:33 GMT
+
+### Patches
+
+- register the Element Plus components each chat card actually uses, so the action confirmation and TikTok publish forms render real inputs, selects, checkboxes and buttons instead of bare text (dev@acedata.cloud)
+
+## 3.353.3
+
+Sun, 02 Aug 2026 01:16:08 GMT
+
+### Patches
+
+- polish the action confirmation card: match the connector consent card's house style, drop the duplicate tool row above it, and replay the submitted TikTok form read-only once resolved (dev@acedata.cloud)
+
+## 3.353.2
+
+Sat, 01 Aug 2026 18:40:32 GMT
+
+### Patches
+
+- fix iframe-login sites falling back to a full-page redirect (dev@acedata.cloud)
+
+## 3.353.1
+
+Sat, 01 Aug 2026 18:10:00 GMT
+
+### Patches
+
+- show the chat report action only while hovering or focusing the full message row (dev@acedata.cloud)
+
+## 3.353.0
+
+Sat, 01 Aug 2026 17:34:07 GMT
+
+### Minor changes
+
+- add an action confirmation card so irreversible actions (e.g. publishing to TikTok) are confirmed in a real UI before they run (dev@acedata.cloud)
+
+## 3.352.0
+
+Sat, 01 Aug 2026 17:33:12 GMT
+
+### Minor changes
+
+- add an action confirmation card so irreversible actions (e.g. publishing to TikTok) are confirmed in a real UI before they run (dev@acedata.cloud)
+
+### Patches
+
+- 支持站点管理员限制访客可选的界面语言 (dev@acedata.cloud)
+
+## 3.351.6
+
+Sat, 01 Aug 2026 17:32:32 GMT
+
+### Patches
+
+- 支持站点管理员限制访客可选的界面语言 (dev@acedata.cloud)
+
+## 3.351.5
+
+Sat, 01 Aug 2026 17:24:35 GMT
+
+### Patches
+
+- 优化生成任务预览间距并恢复口播文本展示 (dev@acedata.cloud)
+
+## 3.351.4
+
+Sat, 01 Aug 2026 16:28:13 GMT
+
+### Patches
+
+- 管理分站时优先打开已生效的绑定域名 (dev@acedata.cloud)
+
+## 3.351.3
+
+Sat, 01 Aug 2026 14:03:22 GMT
+
+### Patches
+
+- 数字人结果卡片：回显素材、补齐尺寸与追踪信息、给等待中的任务一个剩余时间 (dev@acedata.cloud)
+
+## 3.351.2
+
+Sat, 01 Aug 2026 13:52:37 GMT
+
+### Patches
+
+- 数字人配置面板重做：两步式输入、上传预览、音色簿，并收起引擎与分辨率参数 (dev@acedata.cloud)
+
+## 3.351.1
+
+Sat, 01 Aug 2026 13:02:07 GMT
+
+### Patches
+
+- 数字人：修好被吞掉的 API token、失效的 favicon 路径与上传中就能点生成，并换上新服务图标 (dev@acedata.cloud)
+
+## 3.351.0
+
+Sat, 01 Aug 2026 07:57:44 GMT
+
+### Minor changes
+
+- scheduled tasks: choose whether a task runs in the cloud or on this device, authorize the local tools it may use, and show where each run fired from (dev@acedata.cloud)
+- mobile: collapse the bottom app bar to a thin handle to free up screen space, and remember the choice (dev@acedata.cloud)
+- connectors, skills and browser devices are now managed in Studio for everyone (dev@acedata.cloud)
+- console: manage paired browser devices in Studio, matching the connector and skill pages (dev@acedata.cloud)
+- 新增 AI 生成内容举报入口：22 个生成结果卡片与聊天回复均可举报不良内容（Google Play AI 内容政策要求） (dev@acedata.cloud)
+- feat(local-tools): 工作目录持久化到主进程配置，并作为 shell 与项目约定的默认目录 (dev@acedata.cloud)
+- feat(chat): 桌面端发消息前必须先选工作目录，设置里可随时更改 (dev@acedata.cloud)
+
+### Patches
+
+- 托盘图标收小一档：18pt → 16pt (dev@acedata.cloud)
+- 托盘图标加粗提亮：先二值化再缩放，按高度铺满画布 (dev@acedata.cloud)
+- 桌面端修复：聊天顶栏的模型选择器等控件被窗口拖拽区吞掉、无法点击 (dev@acedata.cloud)
+- desktop: defer local MCP tool schemas behind load_mcp_server instead of re-sending them every turn (dev@acedata.cloud)
+- 举报按钮与相邻操作按钮垂直对齐，颜色改用次级文字色 (dev@acedata.cloud)
+- nginx: send security headers on every route and serve /auth/ variants uniformly (CASA remediation) (dev@acedata.cloud)
+- console: unify the sidebar and page layout — one source of truth for the sidebar width, nav rows that cannot overflow, and rounded workspace panels (dev@acedata.cloud)
+- build: strip comments from built HTML so scanners stop flagging them (CASA #6) (dev@acedata.cloud)
+- connectors: the authorization popup now closes itself on every outcome, including custom MCP servers, instead of leaving a window open that has to be dismissed by hand (dev@acedata.cloud)
+- skills: show the search field permanently and match the connector page's toolbar, instead of hiding it behind a magnifier toggle (dev@acedata.cloud)
+- coding bridge: collapse the secondary composer controls behind a compact toggle on mobile so only the backend picker stays on the main row (dev@acedata.cloud)
+- 桌面 CI 触发路径补上托盘图标 (dev@acedata.cloud)
+- 上传超过大小上限时立即提示，不再卡在进度条上导致发送按钮永久变灰 (dev@acedata.cloud)
+- connectors: connecting a service now works on desktop, iOS and Android — the consent page opens in the right browser for each and the list refreshes when you come back, instead of the click doing nothing (desktop) or leaving the screen stuck (mobile) (dev@acedata.cloud)
+- 上传体积天花板抬到 300m，消除超过上限时的残留卡死 (dev@acedata.cloud)
+- 下载页浏览器扩展改为通栏卡片 (dev@acedata.cloud)
+- coding bridge: open the secondary composer controls in a settings dialog on mobile instead of expanding them inline (dev@acedata.cloud)
+- desktop: ship the tray icon inside the app bundle so the menu-bar item is actually visible (dev@acedata.cloud)
+- fix(chat): 工作目录入口移到输入框下方，改为低调的页脚样式 (dev@acedata.cloud)
+- scheduled tasks: run a device-bound task through its own daemon so it can actually reach local tools, and make the tray icon legible at menu-bar size (dev@acedata.cloud)
+- 下载页新增浏览器扩展入口（Chrome / Edge 双图标） (dev@acedata.cloud)
+
+## 3.349.2
+
+Fri, 31 Jul 2026 03:03:23 GMT
+
+### Patches
+
+- fix(console): 弹窗收口视口、断点对齐、搜索框换 el-input (dev@acedata.cloud)
+
+## 3.350.0
+
+Fri, 31 Jul 2026 03:02:21 GMT
+
+### Minor changes
+
+- feat(local-tools): 新增目录级授权档，填补精确绑定与完全放开之间的空白 (dev@acedata.cloud)
+
+### Patches
+
+- fix(console): 弹窗收口视口、断点对齐、搜索框换 el-input (dev@acedata.cloud)
+
+## 3.349.0
+
+Fri, 31 Jul 2026 03:01:34 GMT
+
+### Minor changes
+
+- feat(local-tools): 新增目录级授权档，填补精确绑定与完全放开之间的空白 (dev@acedata.cloud)
+
+## 3.348.0
+
+Fri, 31 Jul 2026 03:00:38 GMT
+
+### Minor changes
+
+- feat(local-tools): 持久 shell、会话工作目录与项目约定加载 (dev@acedata.cloud)
+- feat(local-tools): 新增目录级授权档，填补精确绑定与完全放开之间的空白 (dev@acedata.cloud)
+
+## 3.347.0
+
+Fri, 31 Jul 2026 02:59:56 GMT
+
+### Minor changes
+
+- feat(local-tools): 持久 shell、会话工作目录与项目约定加载 (dev@acedata.cloud)
+
+## 3.346.0
+
+Fri, 31 Jul 2026 02:57:17 GMT
+
+### Minor changes
+
+- desktop: run locally-executed scheduled tasks from the main process — tray residency, start-at-login, and the client-tool loop without a window (dev@acedata.cloud)
+
+## 3.345.2
+
+Fri, 31 Jul 2026 02:55:17 GMT
+
+### Patches
+
+- share: center the brand in the shared-conversation header, drop the duplicate site title, and make the logo dark-mode aware (dev@acedata.cloud)
+
+## 3.345.1
+
+Thu, 30 Jul 2026 10:21:24 GMT
+
+### Patches
+
+- fix(console): 连接器/技能页样式对齐 Studio 控制台 (dev@acedata.cloud)
+
+## 3.345.0
+
+Thu, 30 Jul 2026 10:13:22 GMT
+
+### Minor changes
+
+- feat(local-tools): 新增 fs.glob / fs.grep 本地检索工具 (dev@acedata.cloud)
+
+## 3.344.0
+
+Thu, 30 Jul 2026 10:00:57 GMT
+
+### Minor changes
+
+- feat(local-tools): 新增 fs.edit_file 精确编辑与 fs.read_file 分页读 (dev@acedata.cloud)
+
+## 3.343.5
+
+Thu, 30 Jul 2026 09:43:42 GMT
+
+### Patches
+
+- desktop local tools: folder-scoped fs consent stated in the dialog, working PATH for shell.run_command, session grants honored for every tool, macOS folder TCC strings, crash-safe write_file (dev@acedata.cloud)
+
+## 3.343.4
+
+Thu, 30 Jul 2026 05:04:51 GMT
+
+### Patches
+
+- openaiimage: raise the reference-image ceiling from 5 to 16 to match the upstream limit (dev@acedata.cloud)
+
+## 3.343.3
+
+Thu, 30 Jul 2026 04:12:26 GMT
+
+### Patches
+
+- test(chat): 补浏览器工具卡片的流式回归测试 (dev@acedata.cloud)
+
+## 3.343.2
+
+Thu, 30 Jul 2026 04:07:42 GMT
+
+### Patches
+
+- desktop: surface MCP tool image results to the model instead of burying them in JSON (dev@acedata.cloud)
+
+## 3.343.1
+
+Thu, 30 Jul 2026 03:33:09 GMT
+
+### Patches
+
+- fix(chat): 浏览器工具卡片停在转圈且看不到结果 (dev@acedata.cloud)
+
+## 3.343.0
+
+Thu, 30 Jul 2026 02:15:56 GMT
+
+### Minor changes
+
+- feat(console): 技能管理搬进 Studio 控制台（feature flag 保护） (dev@acedata.cloud)
+
+## 3.342.0
+
+Thu, 30 Jul 2026 01:14:54 GMT
+
+### Minor changes
+
+- feat(console): 连接器管理搬进 Studio 控制台（feature flag 保护） (dev@acedata.cloud)
+
+## 3.341.0
+
+Wed, 29 Jul 2026 16:05:41 GMT
+
+### Minor changes
+
+- desktop: per-tool always-allow toggles for connected MCP tools (dev@acedata.cloud)
+
+## 3.340.12
+
+Wed, 29 Jul 2026 13:16:43 GMT
+
+### Patches
+
+- kling/flux/pixverse: 数字参数 setter 的类型标注改回 number (dev@acedata.cloud)
+
+## 3.340.11
+
+Wed, 29 Jul 2026 05:40:53 GMT
+
+### Patches
+
+- scheduled runs: render an unverifiable outcome as 待确认 instead of 失败 (dev@acedata.cloud)
+
+## 3.340.10
+
+Wed, 29 Jul 2026 04:49:09 GMT
+
+### Patches
+
+- fix(chat): restore blockquote spacing overridden by lazy-loaded github-markdown-css (dev@acedata.cloud)
+
+## 3.340.9
+
+Wed, 29 Jul 2026 04:14:35 GMT
+
+### Patches
+
+- surface rename/share/delete for the open conversation in a toolbar menu next to the model selector (dev@acedata.cloud)
+
+## 3.340.8
+
+Wed, 29 Jul 2026 03:43:07 GMT
+
+### Patches
+
+- show the scheduled task id under its name, click to copy (dev@acedata.cloud)
+
+## 3.340.7
+
+Wed, 29 Jul 2026 01:28:47 GMT
+
+### Patches
+
+- coding bridge: stop replaying the whole buffer on a re-keyed session, and clear the seq cursor when the relay renumbers it (dev@acedata.cloud)
+
+## 3.340.6
+
+Wed, 29 Jul 2026 00:41:33 GMT
+
+### Patches
+
+- retranslate i18n values left as English placeholders by the backfill script (dev@acedata.cloud)
+
+## 3.340.5
+
+Tue, 28 Jul 2026 16:13:38 GMT
+
+### Patches
+
+- coding bridge: open a conversation at its newest message instead of replaying the relay buffer oldest-first (dev@acedata.cloud)
+
+## 3.340.4
+
+Tue, 28 Jul 2026 15:00:11 GMT
+
+### Patches
+
+- coding bridge history: drop the unread red dot, show unread by bold title alone (dev@acedata.cloud)
+
+## 3.340.3
+
+Tue, 28 Jul 2026 13:00:47 GMT
+
+### Patches
+
+- mark finished, unopened coding bridge history sessions as unread (bold title + red dot) (dev@acedata.cloud)
+
+## 3.340.2
+
+Tue, 28 Jul 2026 11:09:19 GMT
+
+### Patches
+
+- filter coding bridge history by provider (Claude Code / Codex / GitHub Copilot) (dev@acedata.cloud)
+
+## 3.340.1
+
+Tue, 28 Jul 2026 08:46:44 GMT
+
+### Patches
+
+- restore the authorized Skills / MCP servers when editing a scheduled task (dev@acedata.cloud)
+
+## 3.340.0
+
+Tue, 28 Jul 2026 07:19:57 GMT
+
+### Minor changes
+
+- add a duplicate action to scheduled tasks that prefills the create form from an existing task (dev@acedata.cloud)
+
+## 3.339.1
+
+Tue, 28 Jul 2026 06:52:10 GMT
+
+### Patches
+
+- render coding bridge TodoWrite calls as a checklist instead of raw JSON (dev@acedata.cloud)
+
+## 3.339.0
+
+Tue, 28 Jul 2026 06:38:10 GMT
+
+### Minor changes
+
+- rename a Coding Bridge device; the name syncs to every signed-in client (dev@acedata.cloud)
+
+## 3.338.0
+
+Tue, 28 Jul 2026 06:11:42 GMT
+
+### Minor changes
+
+- Scheduled run lists now refresh themselves while a run is still queued or running, so a finished run stops showing as 运行中 and becomes clickable without leaving and re-entering the page. (dev@acedata.cloud)
+
+## 3.337.0
+
+Mon, 27 Jul 2026 23:39:30 GMT
+
+### Minor changes
+
+- Show which connector account each scheduled run used: run rows now carry a tag per pinned account (e.g. `zhihu · Germey`), falling back to the connector alone once the account is gone. (dev@acedata.cloud)
+
+## 3.336.5
+
+Mon, 27 Jul 2026 05:20:15 GMT
+
+### Patches
+
+- default the ChatGPT model picker to GPT-5.6 Sol (dev@acedata.cloud)
+
+## 3.336.4
+
+Mon, 27 Jul 2026 02:11:41 GMT
+
+### Patches
+
+- localize the run_abandoned scheduled-run reason (dev@acedata.cloud)
+
+## 3.336.3
+
+Sun, 26 Jul 2026 16:37:32 GMT
+
+### Patches
+
+- show whether a scheduled run achieved its goal (dev@acedata.cloud)
+
+## 3.336.2
+
+Sun, 26 Jul 2026 12:34:57 GMT
+
+### Patches
+
+- 定时任务支持为每个 connector 指定使用哪个账号 (dev@acedata.cloud)
+
+## 3.336.1
+
+Sun, 26 Jul 2026 12:25:20 GMT
+
+### Patches
+
+- chore(i18n): drop orphan menu.publishIndex key (publish center retired) (dev@acedata.cloud)
+
+## 3.336.0
+
+Sun, 26 Jul 2026 09:32:20 GMT
+
+### Minor changes
+
+- Add a Runs tab to the scheduled tasks page: a cross-task feed of every scheduled run, newest first, each row tagged with its parent task name and filterable by status. (dev@acedata.cloud)
+
+## 3.335.5
+
+Sun, 26 Jul 2026 06:46:35 GMT
+
+### Patches
+
+- Drop the cross-repo browser wire/facade digest gate: delete the generated browserContract module and the isCompatibleBrowserContract check, keeping the browser execution FSM, state forwarding and scheduled-task online/compatible validation intact. (dev@acedata.cloud)
+
+## 3.335.4
+
+Sun, 26 Jul 2026 01:48:09 GMT
+
+### Patches
+
+- Use new bank-card icon for Card pay-way (dev@acedata.cloud)
+
+## 3.335.3
+
+Sat, 25 Jul 2026 02:49:28 GMT
+
+### Patches
+
+- Make scenario-top tabs single-line and width-adaptive so long locales (English) no longer wrap; overflow scrolls horizontally instead. (dev@acedata.cloud)
+- Unify scenario-tab spacing: align tab side gutters with the p-5 (20px) content below and add top padding so the tabs no longer hug the panel edge, across all six config-panel tab bars. (dev@acedata.cloud)
+
+## 3.335.2
+
+Sat, 25 Jul 2026 01:38:45 GMT
+
+### Patches
+
+- Add Claude Opus 5 to the chat model picker (Claude group flagship). (dev@acedata.cloud)
+
+## 3.335.1
+
+Fri, 24 Jul 2026 23:32:23 GMT
+
+### Patches
+
+- Sync the browser contract with the 100MB Route A resource limit. (dev@acedata.cloud)
+
+## 3.335.0
+
+Fri, 24 Jul 2026 10:04:57 GMT
+
+### Minor changes
+
+- Grok video: add the ttapi Official endpoint via new :reverse / :official model variants (grok-imagine-video-1.5-fast:reverse, grok-imagine-video:reverse, grok-imagine-video:official, grok-imagine-video-1.5:official) with per-model duration bounds and updated pricing copy. (dev@acedata.cloud)
+
+## 3.334.3
+
+Fri, 24 Jul 2026 09:55:55 GMT
+
+### Patches
+
+- Browser execution: sync the canonical LocatorPlan wire contract digest. (dev@acedata.cloud)
+
+## 3.334.2
+
+Fri, 24 Jul 2026 02:25:40 GMT
+
+### Patches
+
+- Chat models: replace GPT 5.5 and 5.4 with the GPT 5.6 Sol, Terra, and Luna tiers, with Luna as the free default. (dev@acedata.cloud)
+
+## 3.334.1
+
+Thu, 23 Jul 2026 08:47:02 GMT
+
+### Patches
+
+- Chat conversations: remove the separate loading spinner and visible loading text while conversation history restores, leaving the message skeleton as the loading affordance. (dev@acedata.cloud)
+
+## 3.334.0
+
+Thu, 23 Jul 2026 08:07:56 GMT
+
+### Minor changes
+
+- Upload controls: add drag-and-drop. Drop a file onto any uploader (chat composer + all generator config panels) and it uploads through the normal el-upload pipeline. A drop overlay appears only while a file is dragged over that uploader — nothing is shown otherwise. Mirrors the existing paste-to-upload behavior. (dev@acedata.cloud)
+
+## 3.333.1
+
+Thu, 23 Jul 2026 05:44:17 GMT
+
+### Patches
+
+- Fix ChatGPT conversations freeze/OOM on send: never persist full message histories (base64 screenshots) into chat.conversations; keep summary-only in the persisted store. (dev@acedata.cloud)
+
+## 3.333.0
+
+Thu, 23 Jul 2026 05:38:21 GMT
+
+### Minor changes
+
+- Seedance generator: drop the confusing Talking-mode switch and instead spell out, per Volcengine's official docs, exactly what each input does — first-frame vs reference image vs reference audio — and how to make a character speak ({line} + Generate Audio). (dev@acedata.cloud)
+
+## 3.332.2
+
+Thu, 23 Jul 2026 05:04:50 GMT
+
+### Patches
+
+- Fix Fish TTS credit estimates by pricing UTF-8 text bytes and showing small positive costs instead of rounding them to zero. (dev@acedata.cloud)
+
+## 3.332.1
+
+Thu, 23 Jul 2026 04:53:10 GMT
+
+### Patches
+
+- Remove stale auth iframe message listeners when login panels close (dev@acedata.cloud)
+
+## 3.332.0
+
+Wed, 22 Jul 2026 18:24:01 GMT
+
+### Minor changes
+
+- Seedance generator: default to 2.0 Fast and add a Talking mode (口播) toggle that routes uploads to reference_image, forces audio, and guides dialogue phrasing so characters actually speak. (dev@acedata.cloud)
+
+## 3.331.0
+
+Wed, 22 Jul 2026 18:11:30 GMT
+
+### Minor changes
+
+- feat(tasks): per-card delete button on GPT-image + Nano Banana history — hover-reveal trash control hard-deletes a task server-side across all devices (dev@acedata.cloud)
+
+## 3.330.23
+
+Wed, 22 Jul 2026 18:03:59 GMT
+
+### Patches
+
+- Fix misaligned download & view-code buttons in the Fish TTS task card (the download button used mb-2, shifting its baseline vs the sibling; use btn-action like the other cards). (dev@acedata.cloud)
+
+## 3.330.22
+
+Wed, 22 Jul 2026 17:35:42 GMT
+
+### Patches
+
+- Preserve owner-bound browser resource metadata across chat attachment submission and retry. (dev@acedata.cloud)
+
+## 3.330.21
+
+Wed, 22 Jul 2026 13:22:56 GMT
+
+### Patches
+
+- Unify the per-service balance label to 专属余额 / Dedicated Balance across all locales. (dev@acedata.cloud)
+
+## 3.330.20
+
+Wed, 22 Jul 2026 12:37:25 GMT
+
+### Patches
+
+- Keep assistant text contiguous when an early tool announcement arrives mid-stream, while preserving live tool progress (dev@acedata.cloud)
+
+## 3.330.19
+
+Wed, 22 Jul 2026 11:27:09 GMT
+
+### Patches
+
+- Fish TTS voice picker: search Fish's public voice library (self=false) with grouped results and inline audio preview, not just the user's own cloned voices (dev@acedata.cloud)
+
+## 3.330.18
+
+Wed, 22 Jul 2026 11:21:13 GMT
+
+### Patches
+
+- Fix chat tool-call rows spinning forever: clone rebuilt content parts so a settled tool block gets a fresh ref and Vue re-renders its icon (dev@acedata.cloud)
+
+## 3.330.17
+
+Wed, 22 Jul 2026 06:03:36 GMT
+
+### Patches
+
+- Align BrowserDevice activity, scheduled authorization, artifacts, and Desktop execution with the final browser contract (dev@acedata.cloud)
+
+## 3.330.16
+
+Wed, 22 Jul 2026 05:05:03 GMT
+
+### Patches
+
+- Replace Poivelle's graph-first entry with a guided production overview (dev@acedata.cloud)
+
+## 3.330.15
+
+Wed, 22 Jul 2026 01:18:06 GMT
+
+### Patches
+
+- Render failed Fish TTS tasks with their error reason instead of showing them as pending forever (dev@acedata.cloud)
+
+## 3.330.14
+
+Tue, 21 Jul 2026 17:56:23 GMT
+
+### Patches
+
+- Replace Arabic English placeholders with localized UI copy (dev@acedata.cloud)
+
+## 3.330.13
+
+Tue, 21 Jul 2026 16:48:50 GMT
+
+### Patches
+
+- Add playable finished films to the Poivelle discovery gallery (dev@acedata.cloud)
+
+## 3.330.12
+
+Tue, 21 Jul 2026 15:38:34 GMT
+
+### Patches
+
+- Remove Claude Fable 5 from the Claude model picker. (dev@acedata.cloud)
+
+## 3.330.11
+
+Tue, 21 Jul 2026 15:14:25 GMT
+
+### Patches
+
+- Fix large empty band above the Veo config tabs by aligning ActionSelector with the shared 48px scenario-tabs pattern. (dev@acedata.cloud)
+
+## 3.330.10
+
+Tue, 21 Jul 2026 14:54:51 GMT
+
+### Patches
+
+- fix(scenarios): align upload actions and preserve field spacing (dev@acedata.cloud)
+
+## 3.330.9
+
+Tue, 21 Jul 2026 14:53:03 GMT
+
+### Patches
+
+- fix(fish): create voice models as private by default and remove the visibility picker (dev@acedata.cloud)
+
+## 3.330.8
+
+Tue, 21 Jul 2026 14:50:00 GMT
+
+### Patches
+
+- Add a prompt-first Poivelle creator home with real works and one-click project copying (dev@acedata.cloud)
+
+## 3.330.7
+
+Tue, 21 Jul 2026 14:47:39 GMT
+
+### Patches
+
+- Hide unsupported Quality and Turbo controls when Midjourney V8.1 is selected. (dev@acedata.cloud)
+
+## 3.330.6
+
+Tue, 21 Jul 2026 14:13:16 GMT
+
+### Patches
+
+- Show Nano Banana task metadata while generated images are still pending. (dev@acedata.cloud)
+
+## 3.330.5
+
+Tue, 21 Jul 2026 13:58:45 GMT
+
+### Patches
+
+- fix(fish): render voice model visibility & train-mode controls at normal size (dev@acedata.cloud)
+
+## 3.330.4
+
+Tue, 21 Jul 2026 11:32:37 GMT
+
+### Patches
+
+- Route Poivelle provider runs through standard user Credentials, API cost rules, and usage recording. (dev@acedata.cloud)
+
+## 3.330.3
+
+Tue, 21 Jul 2026 10:20:45 GMT
+
+### Patches
+
+- Add Poivelle production recovery, quality evidence, Take comparison, and timeline editing workflows. (dev@acedata.cloud)
+
+## 3.330.2
+
+Mon, 20 Jul 2026 16:16:39 GMT
+
+### Patches
+
+- Align the Poivelle studio with Nexior design tokens, responsive surfaces, and keyboard focus states. (dev@acedata.cloud)
+
+## 3.330.1
+
+Mon, 20 Jul 2026 16:09:07 GMT
+
+### Patches
+
+- Show pending and processing states for unfinished Hailuo video tasks. (dev@acedata.cloud)
+
+## 3.330.0
+
+Mon, 20 Jul 2026 14:44:59 GMT
+
+### Minor changes
+
+- Add the Poivelle professional AI film production workspace. (dev@acedata.cloud)
+
+## 3.329.53
+
+Mon, 20 Jul 2026 04:09:30 GMT
+
+### Patches
+
+- Add Claude Fable 5 to the Claude model picker. (dev@acedata.cloud)
+
+## 3.329.52
+
+Sun, 19 Jul 2026 16:23:19 GMT
+
+### Patches
+
+- Label unfinished Nano Banana responses with pending semantics instead of failure copy. (dev@acedata.cloud)
+- Show accurate pending and processing semantics for Pika tasks. (dev@acedata.cloud)
+
+## 3.329.51
+
+Sun, 19 Jul 2026 16:22:56 GMT
+
+### Patches
+
+- Label unfinished Nano Banana responses with pending semantics instead of failure copy. (dev@acedata.cloud)
+- Show accurate pending and processing semantics for Pika tasks. (dev@acedata.cloud)
+- Label queued and processing Wan tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+
+## 3.329.50
+
+Sun, 19 Jul 2026 16:22:11 GMT
+
+### Patches
+
+- Label unfinished Nano Banana responses with pending semantics instead of failure copy. (dev@acedata.cloud)
+- Show accurate pending and processing semantics for Pika tasks. (dev@acedata.cloud)
+- Label queued and processing Wan tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Show pending and processing states for unfinished Kling video tasks. (dev@acedata.cloud)
+
+## 3.329.49
+
+Sun, 19 Jul 2026 16:21:33 GMT
+
+### Patches
+
+- Label queued and processing Luma tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Label queued and processing Sora tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Label queued and processing Wan tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Show pending and processing states for unfinished Kling video tasks. (dev@acedata.cloud)
+
+## 3.329.48
+
+Sun, 19 Jul 2026 16:21:08 GMT
+
+### Patches
+
+- Show pending and processing states for unfinished Kling video tasks. (dev@acedata.cloud)
+- Label queued and processing Luma tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Label queued and processing Sora tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+
+## 3.329.47
+
+Sun, 19 Jul 2026 16:20:31 GMT
+
+### Patches
+
+- Label queued and processing Sora tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Label queued and processing Luma tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+
+## 3.329.46
+
+Sun, 19 Jul 2026 16:19:43 GMT
+
+### Patches
+
+- Label queued and processing Luma tasks with waiting semantics instead of failure copy. (dev@acedata.cloud)
+- Cover Veo task metadata across pending, successful, and failed generations. (dev@acedata.cloud)
+
+## 3.329.45
+
+Sun, 19 Jul 2026 16:18:56 GMT
+
+### Patches
+
+- Cover Veo task metadata across pending, successful, and failed generations. (dev@acedata.cloud)
+
+## 3.329.44
+
+Sun, 19 Jul 2026 13:10:33 GMT
+
+### Patches
+
+- Add Kimi K3 and K2.6 to the chat model picker. (dev@acedata.cloud)
+
+## 3.329.43
+
+Sun, 19 Jul 2026 12:33:52 GMT
+
+### Patches
+
+- Consolidate shared scenario tab baseline styles while preserving specialized overflow behavior. (dev@acedata.cloud)
+
+## 3.329.42
+
+Sun, 19 Jul 2026 12:33:28 GMT
+
+### Patches
+
+- Consolidate shared scenario tab baseline styles while preserving specialized overflow behavior. (dev@acedata.cloud)
+
+## 3.329.41
+
+Sun, 19 Jul 2026 12:32:35 GMT
+
+### Patches
+
+- Consolidate shared scenario tab baseline styles while preserving specialized overflow behavior. (dev@acedata.cloud)
+- Unify inter-item spacing across image generation task previews. (dev@acedata.cloud)
+- Align Midjourney task state metadata to a consistent top-spacing rhythm. (dev@acedata.cloud)
+
+## 3.329.40
+
+Sun, 19 Jul 2026 12:32:08 GMT
+
+### Patches
+
+- Move generated image result spacing from the shared media primitive to its parent task layouts. (dev@acedata.cloud)
+- Align Midjourney task state metadata to a consistent top-spacing rhythm. (dev@acedata.cloud)
+- Unify inter-item spacing across image generation task previews. (dev@acedata.cloud)
+
+## 3.329.39
+
+Sun, 19 Jul 2026 12:31:40 GMT
+
+### Patches
+
+- Unify inter-item spacing across image generation task previews. (dev@acedata.cloud)
+- Move generated image result spacing from the shared media primitive to its parent task layouts. (dev@acedata.cloud)
+- Align Midjourney task state metadata to a consistent top-spacing rhythm. (dev@acedata.cloud)
+- Cover Seedream failure spacing when legacy requests contain a null prompt. (dev@acedata.cloud)
+
+## 3.329.38
+
+Sun, 19 Jul 2026 12:30:56 GMT
+
+### Patches
+
+- Move generated image result spacing from the shared media primitive to its parent task layouts. (dev@acedata.cloud)
+- Cover Seedream failure spacing when legacy requests contain a null prompt. (dev@acedata.cloud)
+
+## 3.329.37
+
+Sun, 19 Jul 2026 12:30:28 GMT
+
+### Patches
+
+- Cover Seedream failure spacing when legacy requests contain a null prompt. (dev@acedata.cloud)
+
+## 3.329.36
+
+Sun, 19 Jul 2026 10:33:06 GMT
+
+### Patches
+
+- Show Producer task-level failures when generation returns no audio rows. (dev@acedata.cloud)
+
+## 3.329.35
+
+Sun, 19 Jul 2026 08:16:24 GMT
+
+### Patches
+
+- Show Suno task-level failures when generation returns no audio rows. (dev@acedata.cloud)
+
+## 3.329.34
+
+Sun, 19 Jul 2026 07:42:55 GMT
+
+### Patches
+
+- Show failed Fish TTS tasks separately from pending tasks with failure reason and trace details. (dev@acedata.cloud)
+
+## 3.329.33
+
+Sun, 19 Jul 2026 07:41:24 GMT
+
+### Patches
+
+- Label OpenAI Image pending and unknown tasks without failure copy. (dev@acedata.cloud)
+
+## 3.329.32
+
+Sun, 19 Jul 2026 07:40:42 GMT
+
+### Patches
+
+- Label OpenAI Image pending and unknown tasks without failure copy. (dev@acedata.cloud)
+- Label Flux tasks without a response as pending instead of failed. (dev@acedata.cloud)
+
+## 3.329.31
+
+Sun, 19 Jul 2026 07:39:43 GMT
+
+### Patches
+
+- Label Flux tasks without a response as pending instead of failed. (dev@acedata.cloud)
+
+## 3.329.30
+
+Sun, 19 Jul 2026 06:09:40 GMT
+
+### Patches
+
+- Render failed Pixverse tasks with failure alert semantics. (dev@acedata.cloud)
+
+## 3.329.29
+
+Sun, 19 Jul 2026 05:03:23 GMT
+
+### Patches
+
+- Improve local media field spacing in Seedance, Kling, and Midjourney. (dev@acedata.cloud)
+
+## 3.329.28
+
+Sun, 19 Jul 2026 04:29:01 GMT
+
+### Patches
+
+- Improve local Suno variation controls and Seedance frame field spacing. (dev@acedata.cloud)
+
+## 3.329.27
+
+Sun, 19 Jul 2026 04:19:50 GMT
+
+### Patches
+
+- Align Seedream task spacing and result containment with Nano Banana, and add missing spacing above failures without a prompt. (dev@acedata.cloud)
+
+## 3.329.26
+
+Sat, 18 Jul 2026 21:10:12 GMT
+
+### Patches
+
+- Remove the Seedream watermark option and always generate images without a watermark. (dev@acedata.cloud)
+
+## 3.329.25
+
+Sat, 18 Jul 2026 20:49:36 GMT
+
+### Patches
+
+- Automatically switch Seedream between image creation and editing based on reference images. (dev@acedata.cloud)
+
+## 3.329.24
+
+Sat, 18 Jul 2026 18:30:47 GMT
+
+### Patches
+
+- Migrate production non-brand icons to shared semantic Lucide components. (dev@acedata.cloud)
+
+## 3.329.23
+
+Sat, 18 Jul 2026 11:38:03 GMT
+
+### Patches
+
+- Align Pika ingredient and image labels with their controls without magic offsets. (dev@acedata.cloud)
+
+## 3.329.22
+
+Sat, 18 Jul 2026 11:35:22 GMT
+
+### Patches
+
+- Align top-level generator fields to a consistent 16px vertical rhythm. (dev@acedata.cloud)
+
+## 3.329.21
+
+Sat, 18 Jul 2026 09:21:49 GMT
+
+### Patches
+
+- Unify generator sidebar scrolling and 20px content padding across services. (dev@acedata.cloud)
+
+## 3.329.20
+
+Sat, 18 Jul 2026 07:44:13 GMT
+
+### Patches
+
+- Make shared audio previews keyboard-accessible and show load failures. (dev@acedata.cloud)
+
+## 3.329.19
+
+Sat, 18 Jul 2026 07:43:21 GMT
+
+### Patches
+
+- Keep all Kling scenario tab labels readable in narrow parameter panels. (dev@acedata.cloud)
+- Make Seedream Generate and Edit modes explicit while preserving uploaded references. (dev@acedata.cloud)
+- Make shared audio previews keyboard-accessible and show load failures. (dev@acedata.cloud)
+
+## 3.329.18
+
+Sat, 18 Jul 2026 07:42:29 GMT
+
+### Patches
+
+- Make Seedream Generate and Edit modes explicit while preserving uploaded references. (dev@acedata.cloud)
+- Keep all Kling scenario tab labels readable in narrow parameter panels. (dev@acedata.cloud)
+
+## 3.329.17
+
+Sat, 18 Jul 2026 07:42:03 GMT
+
+### Patches
+
+- Keep all Kling scenario tab labels readable in narrow parameter panels. (dev@acedata.cloud)
+
+## 3.329.16
+
+Sat, 18 Jul 2026 06:17:45 GMT
+
+### Patches
+
+- Align task response names and avatars with Service capability presentation overrides. (dev@acedata.cloud)
+
+## 3.329.15
+
+Fri, 17 Jul 2026 09:04:00 GMT
+
+### Patches
+
+- Use a stable 6-second default for Grok video generation. (dev@acedata.cloud)
+
+## 3.329.14
+
+Thu, 16 Jul 2026 17:17:28 GMT
+
+### Patches
+
+- Add canonical Kling O1 and V3 Omni image/video reference controls. (dev@acedata.cloud)
+
+## 3.329.13
+
+Thu, 16 Jul 2026 15:43:05 GMT
+
+### Patches
+
+- Emphasize homepage business-story headings with a stronger visual weight (dev@acedata.cloud)
+
+## 3.329.12
+
+Thu, 16 Jul 2026 15:01:57 GMT
+
+### Patches
+
+- Showcase branded subsites, referrals, and the complete responsive AI capability catalog on the homepage (dev@acedata.cloud)
+
+## 3.329.11
+
+Thu, 16 Jul 2026 10:08:56 GMT
+
+### Patches
+
+- Improve Veo action labels, reference previews, and task metadata. (dev@acedata.cloud)
+
+## 3.329.10
+
+Thu, 16 Jul 2026 06:08:15 GMT
+
+### Patches
+
+- Add per-site custom names and icons for capability apps (dev@acedata.cloud)
+
+## 3.329.9
+
+Thu, 16 Jul 2026 00:54:34 GMT
+
+### Patches
+
+- Stop polling the removed Desktop Agent endpoint from chat pages (dev@acedata.cloud)
+
+## 3.329.8
+
+Wed, 15 Jul 2026 17:09:13 GMT
+
+### Patches
+
+- Use solid primary and danger buttons for Memory settings actions. (dev@acedata.cloud)
+
+## 3.329.7
+
+Wed, 15 Jul 2026 15:57:01 GMT
+
+### Patches
+
+- Improve Veo action tabs and model-aware generation inputs (dev@acedata.cloud)
+
+## 3.329.6
+
+Wed, 15 Jul 2026 15:45:08 GMT
+
+### Patches
+
+- Run long memory imports asynchronously and resume status polling after reloads. (dev@acedata.cloud)
+
+## 3.329.5
+
+Wed, 15 Jul 2026 14:46:17 GMT
+
+### Patches
+
+- Remove the unused AI ID Photo feature and its implementation from Nexior. (dev@acedata.cloud)
+
+## 3.329.4
+
+Wed, 15 Jul 2026 13:18:52 GMT
+
+### Patches
+
+- Add Omni to Capabilities and give AI ID Photo a dedicated favicon. (dev@acedata.cloud)
+
+## 3.329.3
+
+Wed, 15 Jul 2026 11:22:28 GMT
+
+### Patches
+
+- Add a guided flow for importing saved memory from other AI assistants. (dev@acedata.cloud)
+
+## 3.329.2
+
+Wed, 15 Jul 2026 10:01:22 GMT
+
+### Patches
+
+- Add service icons and localized capability summaries to Capabilities settings (dev@acedata.cloud)
+
+## 3.329.1
+
+Wed, 15 Jul 2026 08:22:49 GMT
+
+### Patches
+
+- Show loading feedback while historical conversations are restored (dev@acedata.cloud)
+
+## 3.329.0
+
+Wed, 15 Jul 2026 05:48:21 GMT
+
+### Minor changes
+
+- Add Omni video module (omni-flash text/image/video-to-video and video editing) (dev@acedata.cloud)
+
+## 3.328.3
+
+Wed, 15 Jul 2026 05:30:32 GMT
+
+### Patches
+
+- Show Kling image, video, and audio inputs in task history (dev@acedata.cloud)
+
+## 3.328.2
+
+Wed, 15 Jul 2026 04:59:17 GMT
+
+### Patches
+
+- Add a persisted setting to disable long-term memory in chats and scheduled tasks. (dev@acedata.cloud)
+
+## 3.328.1
+
+Wed, 15 Jul 2026 04:52:40 GMT
+
+### Patches
+
+- Show durable BrowserDevice execution states in chat and scheduled task history. (dev@acedata.cloud)
+
+## 3.328.0
+
+Wed, 15 Jul 2026 04:44:24 GMT
+
+### Minor changes
+
+- Add reference-video uploader for kling-video-o1 (Omni video editing) (dev@acedata.cloud)
+
+## 3.327.14
+
+Wed, 15 Jul 2026 04:02:30 GMT
+
+### Patches
+
+- Localize the latest error code shown on scheduled task cards (dev@acedata.cloud)
+
+## 3.327.13
+
+Wed, 15 Jul 2026 02:21:09 GMT
+
+### Patches
+
+- Use native Element Plus control sizes in the Edit Support Contacts dialog (remove explicit size="small") (dev@acedata.cloud)
+
+## 3.327.12
+
+Wed, 15 Jul 2026 02:15:39 GMT
+
+### Patches
+
+- feat(setting): white-label per-site SMS webhook config (auth.sms) in the Auth panel (dev@acedata.cloud)
+
+## 3.327.11
+
+Tue, 14 Jul 2026 18:03:19 GMT
+
+### Patches
+
+- Use Element Plus native control sizes (drop --el-component-size override) so el-input/el-select/el-button align (dev@acedata.cloud)
+
+## 3.327.10
+
+Tue, 14 Jul 2026 17:16:56 GMT
+
+### Patches
+
+- Pin @acedatacloud scope to public npmjs so proxied registries can't serve a stale core (missing controls.css) (dev@acedata.cloud)
+
+## 3.327.9
+
+Tue, 14 Jul 2026 17:15:45 GMT
+
+### Patches
+
+- fix(chat): remove square focus outline on the composer textarea (shared-adapter :focus-visible rule) (dev@acedata.cloud)
+- Pin @acedatacloud scope to public npmjs so proxied registries can't serve a stale core (missing controls.css) (dev@acedata.cloud)
+
+## 3.327.8
+
+Tue, 14 Jul 2026 17:14:57 GMT
+
+### Patches
+
+- fix(chat): remove square focus outline on the composer textarea (shared-adapter :focus-visible rule) (dev@acedata.cloud)
+
+## 3.327.7
+
+Tue, 14 Jul 2026 16:45:58 GMT
+
+### Patches
+
+- Migrate scheduled-task actions to the shared semantic Lucide icon entries. (dev@acedata.cloud)
+
+## 3.327.6
+
+Tue, 14 Jul 2026 14:30:51 GMT
+
+### Patches
+
+- Adopt the shared core control adapter and remove duplicate global control rules. (dev@acedata.cloud)
+
+## 3.327.5
+
+Tue, 14 Jul 2026 11:45:51 GMT
+
+### Patches
+
+- fix(auth): present native/desktop login as a floating popup over the app instead of a full-screen page (dev@acedata.cloud)
+
+## 3.327.4
+
+Tue, 14 Jul 2026 11:21:31 GMT
+
+### Patches
+
+- fix(site): only the bare main official host (studio.acedata.cloud) shows the "View Code" affordance; drop the per-site toggle (dev@acedata.cloud)
+
+## 3.327.3
+
+Tue, 14 Jul 2026 10:48:05 GMT
+
+### Patches
+
+- Format the application extras route imports so the repository lint gate passes. (dev@acedata.cloud)
+
+## 3.327.2
+
+Tue, 14 Jul 2026 06:10:16 GMT
+
+### Patches
+
+- feat(site): make the per-generation "View Code" button configurable per-site (hidden by default on white-label subsites, shown on the official site) (dev@acedata.cloud)
+
+## 3.327.1
+
+Tue, 14 Jul 2026 06:04:22 GMT
+
+### Patches
+
+- polish(contacts): icons on summary chips + smaller editor inputs/buttons (dev@acedata.cloud)
+
+## 3.327.0
+
+Tue, 14 Jul 2026 05:52:06 GMT
+
+### Minor changes
+
+- Add a /home marketing landing page introducing the one-stop AI capabilities (chat, image, music, video), a model wall, and CTAs (dev@acedata.cloud)
+
+## 3.326.3
+
+Tue, 14 Jul 2026 05:25:42 GMT
+
+### Patches
+
+- fix(about): show saved contacts on reopen + per-row channel icon (dev@acedata.cloud)
+
+## 3.326.2
+
+Tue, 14 Jul 2026 05:21:36 GMT
+
+### Patches
+
+- Adopt the shared focus, density, elevation, motion, and layer baseline. (dev@acedata.cloud)
+- Use site brand instead of hardcoded Nexior in first-time welcome toast (dev@acedata.cloud)
+
+## 3.326.1
+
+Tue, 14 Jul 2026 05:19:58 GMT
+
+### Patches
+
+- Use site brand instead of hardcoded Nexior in first-time welcome toast (dev@acedata.cloud)
+
+## 3.326.0
+
+Tue, 14 Jul 2026 05:05:25 GMT
+
+### Minor changes
+
+- feat(site): add site-config toggle to disable recharge, hiding all top-up entries and guarding pay pages (dev@acedata.cloud)
+
+## 3.325.2
+
+Tue, 14 Jul 2026 04:54:53 GMT
+
+### Patches
+
+- feat(nexior): show app download page only on official main host (dev@acedata.cloud)
+
+## 3.325.1
+
+Tue, 14 Jul 2026 04:38:40 GMT
+
+### Patches
+
+- feat(nexior): use site brand name in global recharge title (dev@acedata.cloud)
+
+## 3.325.0
+
+Tue, 14 Jul 2026 03:58:03 GMT
+
+### Minor changes
+
+- feat(about): site support contacts + official-only first-party trio (dev@acedata.cloud)
+
+## 3.324.35
+
+Tue, 14 Jul 2026 03:43:13 GMT
+
+### Patches
+
+- fix(site): vertically center service-override dropdown hover (dev@acedata.cloud)
+
+## 3.324.34
+
+Tue, 14 Jul 2026 03:39:37 GMT
+
+### Patches
+
+- Replace the dormant purple Tailwind theme with runtime semantic design tokens. (dev@acedata.cloud)
+
+## 3.324.33
+
+Tue, 14 Jul 2026 03:10:25 GMT
+
+### Patches
+
+- Keep setting section notice text readable in dark mode (dev@acedata.cloud)
+
+## 3.324.32
+
+Mon, 13 Jul 2026 17:41:17 GMT
+
+### Patches
+
+- Fix custom domain settings tab going blank: escape bare '@' in i18n messages (vue-i18n linked-format crash) (dev@acedata.cloud)
+
+## 3.324.31
+
+Mon, 13 Jul 2026 17:28:41 GMT
+
+### Patches
+
+- Align global colors, borders, radii, spacing, and typography with shared design tokens. (dev@acedata.cloud)
+
+## 3.324.30
+
+Mon, 13 Jul 2026 17:11:42 GMT
+
+### Patches
+
+- feat(settings): add send-message shortcut, remove source-code link (dev@acedata.cloud)
+
+## 3.324.29
+
+Mon, 13 Jul 2026 17:09:34 GMT
+
+### Patches
+
+- feat(settings): add System theme option that follows the OS colour scheme (dev@acedata.cloud)
+
+## 3.324.28
+
+Mon, 13 Jul 2026 12:18:56 GMT
+
+### Patches
+
+- Show the applied VIP discount and true final price before creating a top-up order. (dev@acedata.cloud)
+
+## 3.324.27
+
+Mon, 13 Jul 2026 11:38:39 GMT
+
+### Patches
+
+- Localize scheduled-run failure reason codes (dev@acedata.cloud)
+
+## 3.324.26
+
+Mon, 13 Jul 2026 11:29:07 GMT
+
+### Patches
+
+- Use shared core translation DTOs and remove the duplicate local models. (dev@acedata.cloud)
+
+## 3.324.25
+
+Mon, 13 Jul 2026 10:47:05 GMT
+
+### Patches
+
+- Use the shared core currency mappings and remove the duplicate local constants. (dev@acedata.cloud)
+
+## 3.324.24
+
+Mon, 13 Jul 2026 09:50:16 GMT
+
+### Patches
+
+- Use the shared core Pagination component and remove the duplicate local implementation. (dev@acedata.cloud)
+
+## 3.324.23
+
+Mon, 13 Jul 2026 01:14:19 GMT
+
+### Patches
+
+- Maestro: control video type, visual style, and voice with independent toggles (dev@acedata.cloud)
+- Align purchase previews with effective site and service markup while failing closed when pricing is unavailable. (dev@acedata.cloud)
+
+## 3.324.22
+
+Mon, 13 Jul 2026 01:12:53 GMT
+
+### Patches
+
+- Maestro: control video type, visual style, and voice with independent toggles (dev@acedata.cloud)
+
+## 3.324.21
+
+Sun, 12 Jul 2026 15:19:17 GMT
+
+### Patches
+
+- Show localized Maestro language names and make the primary output language explicit (dev@acedata.cloud)
+
+## 3.324.20
+
+Sun, 12 Jul 2026 14:43:53 GMT
+
+### Patches
+
+- Maestro: localize customization controls across all supported languages (dev@acedata.cloud)
+
+## 3.324.19
+
+Sun, 12 Jul 2026 14:43:14 GMT
+
+### Patches
+
+- Group site-wide and per-service pricing in a dedicated Price settings section and remove the sample price input. (dev@acedata.cloud)
+- Maestro: localize customization controls across all supported languages (dev@acedata.cloud)
+
+## 3.324.18
+
+Sun, 12 Jul 2026 14:42:09 GMT
+
+### Patches
+
+- Group site-wide and per-service pricing in a dedicated Price settings section and remove the sample price input. (dev@acedata.cloud)
+
+## 3.324.17
+
+Sun, 12 Jul 2026 14:03:45 GMT
+
+### Patches
+
+- Show the referenced source video on Maestro remix results (dev@acedata.cloud)
+
+## 3.324.16
+
+Sun, 12 Jul 2026 13:59:29 GMT
+
+### Patches
+
+- Scheduled tasks: open New with a fresh form after editing an existing task (dev@acedata.cloud)
+
+## 3.324.15
+
+Sun, 12 Jul 2026 13:56:58 GMT
+
+### Patches
+
+- Maestro: hide optional creative controls behind a default-off customization toggle (dev@acedata.cloud)
+
+## 3.324.14
+
+Sun, 12 Jul 2026 13:20:04 GMT
+
+### Patches
+
+- Unify the Artifacts page with Scheduled Tasks styling and add count-aware artifact filters (dev@acedata.cloud)
+
+## 3.324.13
+
+Sun, 12 Jul 2026 10:57:12 GMT
+
+### Patches
+
+- Scheduled tasks: force page background with background-color !important (dev@acedata.cloud)
+
+## 3.324.12
+
+Sun, 12 Jul 2026 06:58:24 GMT
+
+### Patches
+
+- Site service override: filter picker to non-private services with a favicon, fine-print markup helper, per-locale auto-translate toggles for display name/summary, fix sort-order tip spacing (dev@acedata.cloud)
+
+## 3.324.11
+
+Sun, 12 Jul 2026 06:54:25 GMT
+
+### Patches
+
+- Scheduled tasks: use --el-bg-color-page for the page background; keep default white cards (dev@acedata.cloud)
+
+## 3.324.10
+
+Sun, 12 Jul 2026 06:50:22 GMT
+
+### Patches
+
+- Add a Run now button to scheduled tasks to trigger a run immediately (dev@acedata.cloud)
+
+## 3.324.9
+
+Sun, 12 Jul 2026 06:00:13 GMT
+
+### Patches
+
+- Move Login Mode into the renamed Auth tab as site config (server-driven redirect vs iframe) (dev@acedata.cloud)
+
+## 3.324.8
+
+Sun, 12 Jul 2026 05:56:35 GMT
+
+### Patches
+
+- Scheduled tasks: flatten cards onto page background, drop border, remove lift-on-hover (dev@acedata.cloud)
+
+## 3.324.7
+
+Sun, 12 Jul 2026 03:30:58 GMT
+
+### Patches
+
+- Scheduled tasks: advanced schedule builder (every N min/h/day, hourly-at-minute) with live preview (dev@acedata.cloud)
+
+## 3.324.6
+
+Sun, 12 Jul 2026 03:15:58 GMT
+
+### Patches
+
+- maestro: show the agent's live activity line (and render %) as the progress detail (dev@acedata.cloud)
+
+## 3.324.5
+
+Sun, 12 Jul 2026 02:15:13 GMT
+
+### Patches
+
+- View docs opens the service documents landing page (dev@acedata.cloud)
+- Maestro: display task trace IDs from the task response top level (dev@acedata.cloud)
+
+## 3.324.4
+
+Sun, 12 Jul 2026 02:13:54 GMT
+
+### Patches
+
+- Maestro: display task trace IDs from the task response top level (dev@acedata.cloud)
+
+## 3.324.3
+
+Sun, 12 Jul 2026 02:08:08 GMT
+
+### Patches
+
+- fix(maestro): enable Run again in the API code dialog (add maestro to PATH_TO_STORE so the dialog resolves the API token) (dev@acedata.cloud)
+
+## 3.324.2
+
+Sun, 12 Jul 2026 02:07:11 GMT
+
+### Patches
+
+- Gate iframe login solely on the LOGIN_METHOD setting; stop reading the auth-iframe/iframe feature flag for the login decision. Default is redirect. The general featureFlag util (URL + /config) is retained for other features. (dev@acedata.cloud)
+- fix(maestro): enable Run again in the API code dialog (add maestro to PATH_TO_STORE so the dialog resolves the API token) (dev@acedata.cloud)
+
+## 3.324.1
+
+Sun, 12 Jul 2026 02:06:21 GMT
+
+### Patches
+
+- Gate iframe login solely on the LOGIN_METHOD setting; stop reading the auth-iframe/iframe feature flag for the login decision. Default is redirect. The general featureFlag util (URL + /config) is retained for other features. (dev@acedata.cloud)
+
+## 3.324.0
+
+Sat, 11 Jul 2026 17:58:34 GMT
+
+### Minor changes
+
+- feat(settings): per-service pricing/display overrides tab for site admins + editable markup previews (dev@acedata.cloud)
+
+## 3.323.16
+
+Sat, 11 Jul 2026 17:42:46 GMT
+
+### Patches
+
+- Remove seedance service_tier (flex) selector; always use realtime tier (dev@acedata.cloud)
+
+## 3.323.15
+
+Sat, 11 Jul 2026 17:28:06 GMT
+
+### Patches
+
+- Add configurable login mode (iframe popup vs redirect) in settings (dev@acedata.cloud)
+
+## 3.323.14
+
+Sat, 11 Jul 2026 17:09:17 GMT
+
+### Patches
+
+- Honor the server-side auth-iframe feature flag from GET /config so in-app iframe login can be enabled for everyone. (dev@acedata.cloud)
+
+## 3.323.13
+
+Sat, 11 Jul 2026 15:32:59 GMT
+
+### Patches
+
+- Update the Maestro bot logo to the selected Holo Window CDN asset. (dev@acedata.cloud)
+
+## 3.323.12
+
+Sat, 11 Jul 2026 10:28:28 GMT
+
+### Patches
+
+- Maestro: regenerate the Video Type thumbnails as a cohesive set of purpose-made 3:4 portrait images so each type reads at a glance (dev@acedata.cloud)
+
+## 3.323.11
+
+Sat, 11 Jul 2026 10:23:24 GMT
+
+### Patches
+
+- Retire Veo ops actions (upsample/extend/reshoot/objects) from the UI (dev@acedata.cloud)
+
+## 3.323.10
+
+Sat, 11 Jul 2026 10:15:00 GMT
+
+### Patches
+
+- Make task image thumbnails clickable to open a full-screen preview lightbox (dev@acedata.cloud)
+
+## 3.323.9
+
+Sat, 11 Jul 2026 06:11:41 GMT
+
+### Patches
+
+- Maestro: show full heads in Video Type cards with compact vertical (3:4) thumbnails instead of a 16:9 crop that hid faces (dev@acedata.cloud)
+
+## 3.323.8
+
+Sat, 11 Jul 2026 06:05:05 GMT
+
+### Patches
+
+- Even out Maestro task-card metadata row spacing to match the nanobanana/kling convention (uniform mb-2, last row mb-0). (dev@acedata.cloud)
+
+## 3.323.7
+
+Sat, 11 Jul 2026 03:44:25 GMT
+
+### Patches
+
+- Maestro: remove the Motion Graphics video type and require a source video before generating Captions (dev@acedata.cloud)
+
+## 3.323.6
+
+Sat, 11 Jul 2026 03:44:01 GMT
+
+### Patches
+
+- Loosen row spacing on the in-progress Maestro task card so the request-params list is less cramped. (dev@acedata.cloud)
+- Maestro: remove the Motion Graphics video type and require a source video before generating Captions (dev@acedata.cloud)
+
+## 3.323.5
+
+Sat, 11 Jul 2026 03:42:55 GMT
+
+### Patches
+
+- Loosen row spacing on the in-progress Maestro task card so the request-params list is less cramped. (dev@acedata.cloud)
+
+## 3.323.4
+
+Sat, 11 Jul 2026 02:45:56 GMT
+
+### Patches
+
+- Refresh the macOS desktop app icon with a white badge background. (dev@acedata.cloud)
+
+## 3.323.3
+
+Fri, 10 Jul 2026 14:00:39 GMT
+
+### Patches
+
+- Reload after iframe login completes. (dev@acedata.cloud)
+
+## 3.323.2
+
+Fri, 10 Jul 2026 13:06:18 GMT
+
+### Patches
+
+- Move iframe login entry into the bottom user menu. (dev@acedata.cloud)
+
+## 3.323.1
+
+Fri, 10 Jul 2026 12:18:37 GMT
+
+### Patches
+
+- Route iframe feature logins through the global auth modal. (dev@acedata.cloud)
+
+## 3.323.0
+
+Fri, 10 Jul 2026 07:47:16 GMT
+
+### Minor changes
+
+- feat(maestro): show request params (mode/scenario/style/quality/aspect/duration/langs) and trace_id/elapsed on task detail cards (dev@acedata.cloud)
+
+## 3.322.5
+
+Thu, 09 Jul 2026 16:39:53 GMT
+
+### Patches
+
+- Gate web iframe login behind auth-iframe feature flag. (dev@acedata.cloud)
+
+## 3.322.4
+
+Thu, 09 Jul 2026 14:09:22 GMT
+
+### Patches
+
+- Use embedded AuthFrontend iframe for web login. (dev@acedata.cloud)
+
+## 3.322.3
+
+Thu, 09 Jul 2026 09:55:46 GMT
+
+### Patches
+
+- feat(white-label): keep the neutral short-URL domain on white-label distribution links (no share.acedata.cloud rebrand) (dev@acedata.cloud)
+
+## 3.322.2
+
+Thu, 09 Jul 2026 09:29:12 GMT
+
+### Patches
+
+- feat(white-label): let a site hide our brand traces (View Code + About) via Site.branding (dev@acedata.cloud)
+
+## 3.322.1
+
+Thu, 09 Jul 2026 02:50:48 GMT
+
+### Patches
+
+- show credential name for each usage record (dev@acedata.cloud)
+
+## 3.322.0
+
+Thu, 09 Jul 2026 01:11:55 GMT
+
+### Minor changes
+
+- Add Seedream 5.0 Pro (doubao-seedream-5-0-pro-260628) model option (dev@acedata.cloud)
+
+## 3.321.4
+
+Wed, 08 Jul 2026 15:57:40 GMT
+
+### Patches
+
+- fix(seedance): expose official auto duration option (dev@acedata.cloud)
+
+## 3.321.3
+
+Wed, 08 Jul 2026 15:22:11 GMT
+
+### Patches
+
+- Show a friendly message when AI chat uploads are too large. (dev@acedata.cloud)
 
 ## 3.321.2
 

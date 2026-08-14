@@ -1,24 +1,16 @@
 html,
-body {
+html body {
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: var(--el-bg-color);
-  color: var(--el-text-color-primary);
+  background-color: var(--adc-color-surface);
+  color: var(--adc-color-text-primary);
   color-scheme: light;
-  font-family:
-    'Inter',
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-  letter-spacing: -0.01em;
+  font-family: var(--adc-font-family-sans);
+  line-height: var(--adc-line-height-normal);
+  letter-spacing: var(--adc-letter-spacing);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,9 +24,7 @@ html.dark body {
   box-sizing: border-box;
 }
 
-html,
-html.dark,
-:root {
+html:root {
   // Default brand colour (Ace Data Cloud teal). Sites can override these at
   // runtime via `applyAccentColor()` (see `src/utils/theme.ts`), which writes
   // the same CSS variables on `:root` from the site admin's chosen colour.
@@ -43,7 +33,9 @@ html.dark,
   --el-color-primary-light-5: #93b8c3;
   --el-color-primary-light-7: #bed4db;
   --el-color-primary-light-8: #d4e3e7;
-  --el-color-primary-light-9: #e9f1f3;
+  --app-brand-bg-light: #e9f1f3;
+  --app-brand-bg-dark: #0e2a33;
+  --el-color-primary-light-9: var(--app-brand-bg-light);
   --el-color-primary-dark-2: #1f5a6b;
   // Channel + hex form of the brand colour. Use `rgba(var(--app-brand-rgb), …)`
   // for translucent fills / glows so they automatically follow the picked
@@ -53,29 +45,37 @@ html.dark,
   --app-brand-hex: #277186;
   --app-brand-hex-dark-2: #1f5a6b;
   --app-brand-hex-light-7: #bed4db;
-  --el-border-radius-base: 12px;
-  --el-border-radius-small: 8px;
-  --el-border-radius-round: 9999px;
+  --el-border-radius-base: var(--adc-radius-control);
+  --el-border-radius-small: var(--adc-radius-small);
+  --el-border-radius-round: var(--adc-radius-full);
 
   --app-safe-area-top: env(safe-area-inset-top, 0px);
   --app-safe-area-bottom: env(safe-area-inset-bottom, 0px);
 
+  /* Mobile bottom app dock. `--app-dock-height` is what the layouts reserve;
+     collapsing shrinks it to just the grab handle (see html.dock-collapsed).
+     The expanded height is unchanged from before the handle existed — the
+     28px icons fit under it with room to spare. Keep --app-dock-handle-height
+     in sync with $dock-handle-height in Navigator.vue. */
+  --app-dock-handle-height: 22px;
+  --app-dock-height: 60px;
+
   /* WalletConnect (Reown AppKit/Web3Modal) overlay stacking */
-  --w3m-z-index: 1000000;
-  --apkt-z-index: 1000000;
+  --w3m-z-index: var(--adc-layer-third-party);
+  --apkt-z-index: var(--adc-layer-third-party);
 
   /* Custom dark-mode aware variables */
   --app-bg-surface: #ffffff;
   --app-bg-section: #f8fafc;
-  --app-border-subtle: #e2e8f0;
+  --app-border-subtle: var(--adc-color-border-light);
   --app-badge-bg: var(--el-color-primary-light-8);
   --app-badge-border: var(--app-brand-hex);
 
   /* Elevation / shadow system */
-  --app-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --app-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --app-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
-  --app-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --app-shadow-xs: var(--adc-shadow-xs);
+  --app-shadow-sm: var(--adc-shadow-sm);
+  --app-shadow-md: var(--adc-shadow-md);
+  --app-shadow-lg: var(--adc-shadow-lg);
 
   /* Surface levels (wider contrast for depth) */
   --app-nav-bg: #f1f5f9;
@@ -107,11 +107,21 @@ html.dark,
   /* Glow */
   --app-glow-primary: 0 0 20px rgba(var(--app-brand-rgb), 0.15);
   --app-glow-primary-lg: 0 0 40px rgba(var(--app-brand-rgb), 0.25);
+  --adc-control-card-border: 1px solid var(--app-glass-border);
+  --adc-control-card-shadow: var(--app-shadow-sm);
+  --adc-control-card-shadow-hover: var(--app-shadow-md);
 }
 
 html.surface-android {
   --app-safe-area-top: max(env(safe-area-inset-top, 0px), 24px);
   --app-safe-area-bottom: max(env(safe-area-inset-bottom, 0px), 12px);
+}
+
+// Collapsed mobile dock: the bar shrinks to its grab handle and the layouts,
+// which all size the navigator off --app-dock-height, hand the space back to
+// the page content.
+html.dock-collapsed {
+  --app-dock-height: var(--app-dock-handle-height);
 }
 
 html.dark {
@@ -122,12 +132,9 @@ html.dark {
   // a slight cool undertone, but the canvas itself is GitHub-style cool-gray
   // (#0d1117 / #161b22) and the brand stays as accent only (`primary-light-9`,
   // hero gradient, glows).
-  // NOTE: in dark mode we override `--el-color-primary-light-9` to a darker
-  // teal so it works as a code-block / inline-token background. This is
-  // intentionally NOT runtime-driven from the picked accent colour, because
-  // the dark-mode tinted background relies on the relative-luminance contrast
-  // with #0d1117 which an unconstrained user-picked hex would break.
-  --el-color-primary-light-9: #0e2a33;
+  // Keep light-9 semantic: runtime accent colours provide a dark-surface tint
+  // separately from their near-white light-mode derivative.
+  --el-color-primary-light-9: var(--app-brand-bg-dark);
   --el-bg-color: #0d1117;
   --el-bg-color-page: #08090c;
   --el-card-bg-color: #161b22;
@@ -162,7 +169,7 @@ html.dark {
 }
 
 w3m-modal {
-  z-index: 1000000 !important;
+  z-index: var(--adc-layer-third-party) !important;
 }
 
 #app {
@@ -184,24 +191,66 @@ w3m-modal {
 }
 
 .el-popper {
-  border-radius: 16px;
+  border-radius: var(--adc-radius-card);
   overflow: hidden;
   backdrop-filter: blur(var(--app-glass-blur));
 }
 
 .el-popover.el-popper {
-  border-radius: 16px;
+  border-radius: var(--adc-radius-card);
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(24, 24, 27, 0.88);
+  color: #f4f4f5;
+  cursor: pointer;
+  transition:
+    background-color var(--adc-motion-duration-fast),
+    color var(--adc-motion-duration-fast);
+
+  &:hover {
+    background: #3f3f46;
+    color: #fff;
+  }
+
+  &:focus-visible {
+    outline: var(--adc-focus-outline);
+    outline-offset: var(--adc-focus-outline-offset);
+  }
+
+  &.is-copied {
+    color: var(--el-color-success);
+  }
+
+  svg {
+    display: block;
+  }
 }
 
 .el-main {
   padding: 0 !important;
 }
 
+.el-drawer.generator-drawer .el-drawer__body {
+  padding: 0;
+  overflow: hidden;
+}
+
 .el-button {
-  border-radius: var(--el-border-radius-round);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  transition: all 0.2s ease;
+  font-weight: var(--adc-font-weight-medium);
+  letter-spacing: var(--adc-letter-spacing);
 }
 
 // Drop the gradient (its 100% stop is `--el-color-primary-light-3`, which makes
@@ -216,7 +265,7 @@ w3m-modal {
 // in `X402Pay.vue`). `is-disabled` is excluded so disabled buttons keep their
 // lighter "disabled" tint.
 .el-button--primary:not(.is-link, .is-text, .is-plain, .is-disabled) {
-  background: var(--el-color-primary);
+  background: var(--adc-color-primary);
   border: none;
   color: var(--el-color-primary-light-9);
   &:hover,
@@ -303,22 +352,13 @@ html.dark .el-button--primary:not(.is-link, .is-text, .is-plain, .is-disabled) {
 }
 
 .el-card {
-  word-wrap: break-word;
-  border-radius: 1rem;
-  border: 1px solid var(--app-glass-border);
-  --el-card-padding: 20px;
-  box-shadow: var(--app-shadow-sm);
-  transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+  --el-card-padding: var(--adc-space-5);
+  transition: transform var(--adc-motion-duration-normal) var(--adc-motion-easing-standard);
   // Use the standard Element Plus card background (white in light mode) so
   // console panels (Applications / Orders / Top Up) read as clean white
   // surfaces instead of being tinted by the brand gradient. The dark-mode
   // override below restores the glass effect.
   background: var(--el-card-bg-color);
-  &:hover {
-    box-shadow: var(--app-shadow-md);
-  }
 }
 
 html.dark .el-card {
@@ -329,11 +369,11 @@ html.dark .el-card {
 
 .el-breadcrumb__inner a,
 .el-breadcrumb__inner.is-link {
-  color: var(--el-text-color-regular);
+  color: var(--adc-color-text-regular);
 }
 
 .el-radio-group {
-  --el-border-radius-base: 12px;
+  --el-border-radius-base: var(--adc-radius-control);
 }
 
 .el-slider {
@@ -347,35 +387,20 @@ html.dark .el-card {
 }
 
 .el-textarea {
-  border-radius: 12px;
   .el-textarea__inner {
-    border-radius: 12px;
     resize: none;
     box-shadow:
-      0 0 0 1px var(--el-border-color) inset,
+      0 0 0 1px var(--adc-color-border) inset,
       var(--app-shadow-xs);
-    transition: box-shadow 0.2s ease;
-    &:focus {
-      box-shadow:
-        0 0 0 1px var(--el-color-primary) inset,
-        0 0 0 3px var(--el-color-primary-light-8);
-    }
   }
 }
 
 .el-input {
   .el-input__wrapper {
-    border-radius: var(--el-border-radius-base);
     width: 100%;
     box-shadow:
-      0 0 0 1px var(--el-border-color) inset,
+      0 0 0 1px var(--adc-color-border) inset,
       var(--app-shadow-xs);
-    transition: box-shadow 0.2s ease;
-    &.is-focus {
-      box-shadow:
-        0 0 0 1px var(--el-color-primary) inset,
-        0 0 0 3px var(--el-color-primary-light-8);
-    }
     textarea:focus,
     input:focus {
       outline: none;
@@ -384,15 +409,14 @@ html.dark .el-card {
 }
 
 .el-dialog {
-  --el-dialog-border-radius: 1.25rem;
   .el-dialog__body {
     color: var(--el-text-color-primary);
   }
 }
 
 // Mobile clamp: most dialogs in the codebase pass a fixed pixel width
-// (e.g. PaypalPay/StripePay/AliPay/WechatPay use 500px, Status 450px,
-// chat ConfirmationDialog 480px). On a 360px phone these overflow the
+// (e.g. PaypalPay/StripePay/AliPay/WechatPay use 500px, Status 450px).
+// On a 360px phone these overflow the
 // viewport horizontally and clip their content. We let those values
 // stand on tablet/desktop and only constrain on small screens.
 //
@@ -446,10 +470,6 @@ html.dark .el-dialog {
   }
 }
 
-.el-message-box {
-  --el-messagebox-border-radius: 1.25rem;
-}
-
 .el-tabs--border-card {
   border-radius: 1rem;
   overflow: hidden;
@@ -463,19 +483,56 @@ html.dark .el-dialog {
   }
 }
 
+.scenario-tabs {
+  > .el-tabs__header {
+    margin: 0;
+
+    // Align the first/last tab labels flush with the tab strip's own gutters so
+    // they line up with the p-5 (20px) content below, instead of being pushed in
+    // by each item's symmetric 16px whitespace. The nav's first child is the
+    // absolutely-positioned `.el-tabs__active-bar`, so the first real item is the
+    // one right after it (`:first-child` alone would miss it); the last item is a
+    // genuine `:last-child`.
+    .el-tabs__active-bar + .el-tabs__item,
+    .el-tabs__item:first-child {
+      padding-left: 0;
+    }
+
+    .el-tabs__item:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &.scenario-tabs--scrollable {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > .el-tabs__header {
+      flex: none;
+      // Match the 20px side gutters of the p-5 content below and add top
+      // breathing room so the tabs don't hug the panel's top edge.
+      padding: 12px 20px 0;
+    }
+
+    > .el-tabs__content {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
+  }
+
+  &.scenario-tabs--divided > .el-tabs__header > .el-tabs__nav-wrap::after {
+    height: 1px;
+  }
+}
+
 .el-select {
   .el-select__wrapper {
-    border-radius: var(--el-border-radius-base);
     width: 100%;
     box-shadow:
       0 0 0 1px var(--el-border-color) inset,
       var(--app-shadow-xs);
-    transition: box-shadow 0.2s ease;
-    &.is-focused {
-      box-shadow:
-        0 0 0 1px var(--el-color-primary) inset,
-        0 0 0 3px var(--el-color-primary-light-8);
-    }
   }
 }
 
@@ -522,4 +579,66 @@ html.dark {
   .el-message-box {
     border: 1px solid var(--app-glass-border);
   }
+}
+
+/* Drag-and-drop upload overlay: created by `dropUploadMixin` and appended to an
+   uploader's root only while a file is dragged over THAT uploader. Hidden the
+   rest of the time — there is no permanent drop area. */
+/* A drop zone reserved on the uploader's root only while a file is being
+   dragged. `min-height` guarantees a real, aim-able box even when the root is
+   just a thin title+button row (e.g. nano-banana 参考图片). */
+.drop-upload-host--dragging {
+  min-height: 88px;
+}
+
+.drop-upload-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* let the drop event reach the uploader beneath */
+  border-radius: var(--adc-radius-control, 8px);
+  border: 2px dashed rgba(var(--app-brand-rgb), 0.55);
+  background-color: rgba(var(--app-brand-rgb), 0.06);
+  backdrop-filter: blur(1px);
+  opacity: 0;
+  transition:
+    opacity 0.12s ease,
+    background-color 0.12s ease,
+    border-color 0.12s ease;
+
+  /* Shown on every uploader as soon as a drag begins, so the user can see and
+     aim at each target. */
+  &--visible {
+    opacity: 1;
+  }
+
+  /* The one target the cursor is over — highlighted so the drop location is
+     unambiguous. */
+  &--active {
+    border-color: rgba(var(--app-brand-rgb), 0.9);
+    border-style: solid;
+    background-color: rgba(var(--app-brand-rgb), 0.16);
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--app-brand-hex, #277186);
+    padding: 4px 10px;
+    border-radius: var(--adc-radius-full, 999px);
+    background: var(--app-glass-bg, rgba(255, 255, 255, 0.7));
+    transform: scale(0.96);
+    transition: transform 0.12s ease;
+  }
+
+  &--active &__label {
+    transform: scale(1);
+  }
+}
+
+html.dark .drop-upload-overlay__label {
+  color: #fff;
 }

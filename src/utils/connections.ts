@@ -1,33 +1,25 @@
 /**
- * Centralized OAuth connection management lives at AuthFrontend
- * (auth.acedata.cloud/user/connections). Nexior shows a read-only
- * list of the user's existing connections; any connect / disconnect
- * action redirects to AuthFrontend, which knows how to come back
- * via the `return_url` query parameter.
+ * Where "manage my connections" goes.
+ *
+ * Studio owns the connector UI at `/console/connectors`. auth.acedata.cloud
+ * stays the OAuth broker and credential vault — only the UI lives here.
  */
 
-import { withCurrentUserIdAndSite } from './crossSiteUser';
-
-const CONNECTIONS_MANAGER_URL = 'https://auth.acedata.cloud/user/connections';
+import type { Router } from 'vue-router';
 
 /**
- * Open the centralized connections management page in a new tab.
- * Passes `return_url` so AuthFrontend can offer a "back to Nexior" link.
+ * Open connection management.
  *
- * Use a new tab (vs same-tab navigation) so the user does not lose
- * their current Nexior context (chat draft, scroll position, etc.).
- *
- * Also annotates the URL with `?user_id=<currentUserId>` so AuthFrontend
- * can detect a cross-site identity mismatch and re-auth, and `?site=`
- * so AuthFrontend renders the calling subsite's white-label logo (no-op
- * on the bare main official host).
+ * `router` is optional so existing callers keep working; without it this
+ * falls back to a same-origin navigation.
  */
-export function openConnectionsManager(provider?: string): void {
-  const returnUrl = window.location.href;
-  const url = new URL(CONNECTIONS_MANAGER_URL);
-  url.searchParams.set('return_url', returnUrl);
-  if (provider) {
-    url.searchParams.set('provider', provider);
+export function openConnectionsManager(provider?: string, router?: Router): void {
+  const query = provider ? { connect: provider } : undefined;
+  if (router) {
+    void router.push({ path: '/console/connectors', query });
+    return;
   }
-  window.open(withCurrentUserIdAndSite(url.toString()), '_blank', 'noopener,noreferrer');
+  const target = new URL('/console/connectors', window.location.origin);
+  if (provider) target.searchParams.set('connect', provider);
+  window.location.href = target.toString();
 }

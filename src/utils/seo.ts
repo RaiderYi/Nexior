@@ -1,5 +1,5 @@
-import { I18N_SUPPORTED_LOCALES } from '@/constants/i18n';
 import store from '@/store';
+import { getSiteLocaleOptions } from '@/utils/siteLocales';
 
 // Resolve the current site origin at runtime so that the same bundle can be
 // served independently from multiple official hostnames (e.g. hub.acedata.cloud,
@@ -18,7 +18,10 @@ function getCurrentOrigin(): string {
 // so subsites can fully white-label their <title>, og:*, JSON-LD, etc.
 const FALLBACK_SITE_NAME = 'Ace Data Cloud - AI Hub';
 const FALLBACK_BRAND_NAME = 'Ace Data Cloud';
-const FALLBACK_IMAGE = 'https://cdn.acedata.cloud/fdc04a4248.png';
+function getShareImage(): string {
+  const host = typeof window !== 'undefined' ? window.location.hostname : 'studio.acedata.cloud';
+  return `https://platform.acedata.cloud/api/v1/og/${host}.png`;
+}
 const FALLBACK_DESCRIPTION =
   'AI-powered creative hub — generate images with Midjourney & Flux, create music with Suno, produce videos with Luma & Sora, chat with GPT, Claude, Gemini & DeepSeek.';
 
@@ -26,16 +29,15 @@ const FALLBACK_DESCRIPTION =
 // the AceDataCloud defaults so first-party origins keep working unchanged.
 function brand() {
   const site = (store.state as { site?: Record<string, unknown> } | undefined)?.site as
-    | { title?: string; description?: string; logo?: string }
+    | { title?: string; description?: string }
     | undefined;
   const title = (site?.title || '').trim();
   const description = (site?.description || '').trim();
-  const logo = (site?.logo || '').trim();
   return {
     siteName: title || FALLBACK_SITE_NAME,
     brandName: title || FALLBACK_BRAND_NAME,
     description: description || FALLBACK_DESCRIPTION,
-    image: logo || FALLBACK_IMAGE
+    image: getShareImage()
   };
 }
 
@@ -112,7 +114,7 @@ function removeJsonLd(id: string) {
 function setHreflang(url: string) {
   removeHreflang();
   const baseUrl = new URL(url);
-  for (const { value: locale } of I18N_SUPPORTED_LOCALES) {
+  for (const { value: locale } of getSiteLocaleOptions(store.state.site?.supported_locales)) {
     const hreflang = HREFLANG_MAP[locale];
     if (!hreflang) continue;
     const link = document.createElement('link');

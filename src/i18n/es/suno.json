@@ -217,7 +217,7 @@
   },
   "button.mashup": {
     "message": "Mashup",
-    "description": "Texto del botón para hacer un mashup de varias canciones"
+    "description": "Texto del botón para mezclar varias canciones"
   },
   "button.generate_lyrics": {
     "message": "Generar letras",
@@ -319,6 +319,10 @@
     "message": "Influencia del estilo",
     "description": "Controlar el grado de influencia del estilo en el resultado generado"
   },
+  "name.duration": {
+    "message": "Duración de la canción",
+    "description": "Controla la duración objetivo de la canción generada"
+  },
   "name.variationCategory": {
     "message": "Tipo de variación",
     "description": "Controlar la diversidad de las variaciones generadas"
@@ -334,6 +338,10 @@
   "name.failureReason": {
     "message": "Razón de fallo",
     "description": "Razón del fallo de la tarea"
+  },
+  "name.failure": {
+    "message": "Error de generación",
+    "description": "Título de tarea fallida de Suno"
   },
   "name.status": {
     "message": "Estado",
@@ -394,6 +402,10 @@
   "description.styleInfluence": {
     "message": "Cuanto mayor sea el valor, mayor será la influencia de la etiqueta de estilo en el resultado generado (0-1)",
     "description": "Descripción del parámetro de influencia de estilo"
+  },
+  "description.duration": {
+    "message": "Especifica la duración deseada de la canción (segundos), el soporte varía según el modelo, la duración real puede tener ligeras variaciones",
+    "description": "Descripción del parámetro de duración de la canción"
   },
   "description.audioWeight": {
     "message": "Peso de la canción original en el resultado al hacer una versión (0-1)",
@@ -712,7 +724,7 @@
     "description": "Mensaje al extraer la voz con éxito"
   },
   "mode.simple": {
-    "message": "Simple",
+    "message": "Sencillo",
     "description": "Etiqueta del modo de creación simple"
   },
   "mode.custom": {
@@ -825,11 +837,11 @@
   },
   "filter.typeVocal": {
     "message": "Vocal",
-    "description": "Tipo: Con vocales"
+    "description": "Tipo: con voz"
   },
   "filter.typeInstrumental": {
     "message": "Instrumental",
-    "description": "Tipo: Solo instrumental"
+    "description": "Tipo: música instrumental"
   },
   "filter.duration": {
     "message": "Duración",
@@ -853,7 +865,7 @@
   },
   "filter.video": {
     "message": "Video",
-    "description": "Sección de filtrado: Contiene video"
+    "description": "Filtro de sección: si incluye video"
   },
   "filter.videoAll": {
     "message": "Todo",

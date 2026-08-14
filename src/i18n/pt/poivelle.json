@@ -1,0 +1,690 @@
+{
+  "nav.name": {
+    "message": "Poivelle",
+    "description": "Poivelle product name in navigation"
+  },
+  "status.synced": {
+    "message": "O gráfico do projeto foi sincronizado",
+    "description": "Status de sincronização do gráfico do projeto"
+  },
+  "status.loading": {
+    "message": "Carregando o status da execução",
+    "description": "Status de carregamento da área de trabalho"
+  },
+  "action.commit": {
+    "message": "Enviar revisão",
+    "description": "Enviar revisão do projeto gráfico"
+  },
+  "action.runSkill": {
+    "message": "Executar Skill",
+    "description": "Executar o nó selecionado com a Skill do projeto"
+  },
+  "action.retry": {
+    "message": "Tentar novamente",
+    "description": "Tentar carregar novamente"
+  },
+  "discovery.kicker": {
+    "message": "Produção de Filmes com IA",
+    "description": "Título da página inicial de criação"
+  },
+  "discovery.title": {
+    "message": "O que você deseja criar?",
+    "description": "Campo de entrada de título na página inicial de criação"
+  },
+  "discovery.skills": {
+    "message": "Fluxo de Trabalho de Produção",
+    "description": "Nome acessível do seletor de fluxo de trabalho"
+  },
+  "discovery.placeholder": {
+    "message": "Descreva o filme, produto, história ou atmosfera que você deseja criar...",
+    "description": "Texto de espaço reservado para o campo de entrada de criação"
+  },
+  "discovery.create": {
+    "message": "Criar projeto",
+    "description": "Enviar entrada para criação"
+  },
+  "discovery.commercial": {
+    "message": "TVC comercial",
+    "description": "Fluxo de trabalho para anúncios comerciais"
+  },
+  "discovery.musicVideo": {
+    "message": "Vídeo Musical",
+    "description": "Fluxo de trabalho para vídeos musicais"
+  },
+  "discovery.narrative": {
+    "message": "Curta Narrativo",
+    "description": "Categoria de curtas narrativos"
+  },
+  "discovery.documentary": {
+    "message": "Documentário",
+    "description": "Fluxo de trabalho para documentários"
+  },
+  "discovery.starterProduct": {
+    "message": "Um filme de produto com iluminação de estúdio precisa",
+    "description": "Palavras-chave para anúncio comercial"
+  },
+  "discovery.starterMusic": {
+    "message": "Uma apresentação de luz da lua sobre memórias e retornos",
+    "description": "Palavras-chave para vídeo musical"
+  },
+  "discovery.starterDocumentary": {
+    "message": "Um filme sobre marcos empresariais e invenções da equipe",
+    "description": "Palavras-chave para documentário"
+  },
+  "discovery.galleryKicker": {
+    "message": "Copiar fluxo de trabalho maduro",
+    "description": "Título do fluxo de obras"
+  },
+  "discovery.gallery": {
+    "message": "Obras e threads de produção",
+    "description": "Título do fluxo de obras"
+  },
+  "discovery.search": {
+    "message": "Pesquisar Obras",
+    "description": "Texto de espaço reservado para pesquisa de obras"
+  },
+  "discovery.all": {
+    "message": "Todos",
+    "description": "Todas as categorias de obras"
+  },
+  "discovery.community": {
+    "message": "Comunidade",
+    "description": "Categoria de obras da comunidade"
+  },
+  "discovery.copy": {
+    "message": "Copiar com um clique",
+    "description": "Ação para copiar uma obra"
+  },
+  "discovery.play": {
+    "message": "Reproduzir",
+    "description": "Ação para reproduzir o filme de forma compacta"
+  },
+  "discovery.playFilm": {
+    "message": "Reproduzir Filme Completo",
+    "description": "Ação para reproduzir o filme completo"
+  },
+  "discovery.finishedFilm": {
+    "message": "Filme finalizado",
+    "description": "Identificação e título do reprodutor para filme finalizado"
+  },
+  "discovery.copyPrefix": {
+    "message": "Criar nova versão baseada neste fluxo de trabalho",
+    "description": "Prefixo padrão da mensagem ao copiar uma obra"
+  },
+  "discovery.back": {
+    "message": "Voltar para a página de descoberta",
+    "description": "Retornar à página inicial de criação a partir da área de trabalho"
+  },
+  "section.projects": {
+    "message": "Projetos",
+    "description": "Título da seção de projetos"
+  },
+  "section.assets": {
+    "message": "Biblioteca de ativos",
+    "description": "Título da seção de ativos"
+  },
+  "section.revisions": {
+    "message": "Revisões",
+    "description": "Título da seção de revisões"
+  },
+  "section.inspector": {
+    "message": "Inspetor",
+    "description": "Título do inspetor de nós"
+  },
+  "workspace.create": {
+    "message": "Criar espaço de trabalho",
+    "description": "Comando para criar um espaço de trabalho"
+  },
+  "workspace.name": {
+    "message": "Nome do espaço de trabalho",
+    "description": "Campo para o nome do espaço de trabalho"
+  },
+  "workspace.budget": {
+    "message": "Limite mensal (microcálculos)",
+    "description": "Campo de orçamento mensal do espaço de trabalho"
+  },
+  "project.create": {
+    "message": "Criar novo projeto",
+    "description": "Comando para criar um projeto"
+  },
+  "project.empty": {
+    "message": "Este espaço de trabalho ainda não tem projetos.",
+    "description": "Mensagem de projeto vazio"
+  },
+  "project.noProject": {
+    "message": "Selecionar projeto",
+    "description": "Etiqueta para quando nenhum projeto está selecionado"
+  },
+  "project.workspace": {
+    "message": "Espaço de trabalho",
+    "description": "Campo de espaço de trabalho do projeto"
+  },
+  "project.title": {
+    "message": "Nome do projeto",
+    "description": "Campo de nome do projeto"
+  },
+  "project.skill": {
+    "message": "Skill de produção",
+    "description": "Campo de Skill do projeto"
+  },
+  "project.workflow": {
+    "message": "Fluxo de trabalho do projeto",
+    "description": "Campo de tipo de fluxo de trabalho do projeto"
+  },
+  "project.blankWorkflow": {
+    "message": "Diagrama de projeto em branco",
+    "description": "Opção de projeto profissional em branco"
+  },
+  "project.commercialTVC": {
+    "message": "TVC comercial · 40 segundos",
+    "description": "Opção de blueprint para TVC comercial"
+  },
+  "project.productName": {
+    "message": "Nome do produto",
+    "description": "Campo de nome do produto comercial"
+  },
+  "project.productCategory": {
+    "message": "Categoria do produto",
+    "description": "Campo de categoria do produto comercial"
+  },
+  "project.brandTone": {
+    "message": "Tom da marca",
+    "description": "Campo de tom da marca comercial"
+  },
+  "project.aspectRatio": {
+    "message": "Proporção da tela",
+    "description": "Proporção da tela para saída comercial"
+  },
+  "asset.import": {
+    "message": "Importar ativo",
+    "description": "Comando para importar ativos"
+  },
+  "asset.all": {
+    "message": "Todos",
+    "description": "Filtro para todos os ativos"
+  },
+  "asset.empty": {
+    "message": "Não há ativos de produção correspondentes.",
+    "description": "Mensagem quando não há ativos disponíveis"
+  },
+  "asset.title": {
+    "message": "Nome do ativo",
+    "description": "Campo para o nome do ativo"
+  },
+  "asset.url": {
+    "message": "URL de origem",
+    "description": "Endereço de origem do ativo"
+  },
+  "asset.hash": {
+    "message": "Hash do conteúdo",
+    "description": "Hash do conteúdo do ativo"
+  },
+  "revision.empty": {
+    "message": "Ainda não há revisões submetidas.",
+    "description": "Mensagem de ausência de revisões"
+  },
+  "revision.committed": {
+    "message": "Revisão submetida",
+    "description": "Mensagem de sucesso ao submeter a revisão"
+  },
+  "node.create": {
+    "message": "Adicionar nó",
+    "description": "Criar um nó no gráfico do projeto"
+  },
+  "node.delete": {
+    "message": "Excluir nó",
+    "description": "Excluir um nó no gráfico do projeto"
+  },
+  "node.deleteConfirm": {
+    "message": "Tem certeza de que deseja excluir este nó do projeto? Nós relacionados precisam ser desconectados primeiro.",
+    "description": "Confirmação de exclusão do nó"
+  },
+  "field.title": {
+    "message": "Título",
+    "description": "Campo de título do nó"
+  },
+  "field.type": {
+    "message": "Tipo",
+    "description": "Campo de tipo do nó ou ativo"
+  },
+  "field.prompt": {
+    "message": "Palavras-chave de Produção",
+    "description": "Palavras-chave para a produção do nó"
+  },
+  "projection.label": {
+    "message": "Vista de projeção do diagrama do projeto",
+    "description": "Nome acessível para a etiqueta de projeção"
+  },
+  "projection.overview": {
+    "message": "Visão geral do projeto",
+    "description": "Etiqueta de visão geral do projeto guiada"
+  },
+  "projection.canvas": {
+    "message": "Tela",
+    "description": "Vista de projeção da tela"
+  },
+  "projection.advanced": {
+    "message": "Nó avançado",
+    "description": "Etiqueta para nós avançados do diagrama"
+  },
+  "projection.storyboard": {
+    "message": "Storyboard",
+    "description": "Visão do storyboard de projeção"
+  },
+  "projection.timeline": {
+    "message": "Linha do tempo",
+    "description": "Vista de projeção da linha do tempo"
+  },
+  "projection.review": {
+    "message": "Revisão",
+    "description": "Vista de projeção da revisão"
+  },
+  "guide.kicker": {
+    "message": "O plano de produção está pronto",
+    "description": "Título de guia do projeto"
+  },
+  "guide.title": {
+    "message": "Transforme \"{title}\" em um filme completo",
+    "description": "Título de guia do projeto"
+  },
+  "guide.body": {
+    "message": "Os requisitos e o plano de tomadas estão prontos. Gere o primeiro quadro do storyboard, confirme a direção e, em seguida, continue com as tomadas dinâmicas e o filme final.",
+    "description": "Descrição do guia do projeto"
+  },
+  "guide.duration": {
+    "message": "Duração Alvo",
+    "description": "Informação sobre a duração do projeto"
+  },
+  "guide.shots": {
+    "message": "Plano de cenas",
+    "description": "Informações sobre o número de cenas do projeto"
+  },
+  "guide.format": {
+    "message": "Proporção da Tela",
+    "description": "Informação sobre a largura do projeto"
+  },
+  "guide.continue": {
+    "message": "Continuar Produção",
+    "description": "Ação principal do projeto"
+  },
+  "guide.generateNextFrame": {
+    "message": "Gerar o próximo quadro do storyboard",
+    "description": "Operação para o próximo quadro do storyboard"
+  },
+  "guide.generateNextMotion": {
+    "message": "Gerar o próximo movimento dinâmico",
+    "description": "Operação para o próximo movimento dinâmico"
+  },
+  "guide.generateFrame": {
+    "message": "Gerar Storyboard {current}/{total}",
+    "description": "Gerar o próximo quadro do storyboard"
+  },
+  "guide.generateMotion": {
+    "message": "Gerar movimento dinâmico {current}/{total}",
+    "description": "Gerar o próximo movimento dinâmico"
+  },
+  "guide.generateScore": {
+    "message": "Gerar trilha sonora",
+    "description": "Gerar a trilha sonora do projeto"
+  },
+  "guide.reviewPlan": {
+    "message": "Ver plano de cenas",
+    "description": "Abrir o plano do storyboard"
+  },
+  "guide.reviewResults": {
+    "message": "Ver resultados gerados",
+    "description": "Abrir os resultados da geração do storyboard"
+  },
+  "guide.chooseResults": {
+    "message": "Ver e Selecionar Resultados",
+    "description": "Ver e selecionar candidatos gerados antes de continuar a produção"
+  },
+  "guide.generated": {
+    "message": "Gerado",
+    "description": "Sufixo de progresso de geração"
+  },
+  "guide.selected": {
+    "message": "Selecionado",
+    "description": "Sufixo de progresso de seleção"
+  },
+  "guide.costNote": {
+    "message": "O custo máximo será exibido antes da execução, não será cobrado diretamente na geração.",
+    "description": "Aviso de segurança sobre custos de produção"
+  },
+  "guide.stepPlan": {
+    "message": "Requisitos e plano de cenas",
+    "description": "Fase de plano de produção"
+  },
+  "guide.stepPlanBody": {
+    "message": "{shots} cenas foram divididas, você pode começar a produção.",
+    "description": "Descrição da fase de plano de produção"
+  },
+  "guide.stepFrames": {
+    "message": "Quadros do storyboard",
+    "description": "Fase de geração do storyboard"
+  },
+  "guide.stepFramesBody": {
+    "message": "Gere quadro a quadro e escolha a direção visual que mais gosta.",
+    "description": "Descrição da fase de geração do storyboard"
+  },
+  "guide.stepMotion": {
+    "message": "Movimento dinâmico",
+    "description": "Fase de geração dinâmica"
+  },
+  "guide.stepMotionBody": {
+    "message": "Transforme o storyboard confirmado em trechos dinâmicos.",
+    "description": "Descrição da fase de geração dinâmica"
+  },
+  "guide.stepMaster": {
+    "message": "Trilha sonora e edição final",
+    "description": "Fase final da produção"
+  },
+  "guide.stepMasterBody": {
+    "message": "Combine os trechos selecionados, a trilha sonora e finalize a verificação de entrega.",
+    "description": "Descrição da fase final da produção"
+  },
+  "guide.ready": {
+    "message": "Pronto",
+    "description": "Estado de conclusão da fase de produção"
+  },
+  "guide.waiting": {
+    "message": "Aguardando",
+    "description": "Estado de espera na fase de produção"
+  },
+  "graph.emptyTitle": {
+    "message": "Construir Gráfico de Projeto de Produção",
+    "description": "Título do gráfico de projeto vazio"
+  },
+  "graph.emptyBody": {
+    "message": "Adicione roteiros, personagens, cenas, tomadas, mídias e saídas. A edição humana e a Skill colaboram através do mesmo histórico de comandos do projeto.",
+    "description": "Descrição do gráfico de projeto vazio"
+  },
+  "storyboard.noPrompt": {
+    "message": "Ainda não há palavras-chave para a cena.",
+    "description": "Falta de palavras-chave para o storyboard"
+  },
+  "storyboard.emptyTitle": {
+    "message": "Ainda não há quadros no storyboard",
+    "description": "Título do storyboard vazio"
+  },
+  "storyboard.emptyBody": {
+    "message": "Os nós de cena, imagem ou vídeo serão projetados aqui após a criação.",
+    "description": "Descrição do storyboard vazio"
+  },
+  "storyboard.product": {
+    "message": "Produto",
+    "description": "Rótulo do produto do storyboard"
+  },
+  "storyboard.duration": {
+    "message": "Duração",
+    "description": "Etiqueta de duração do storyboard"
+  },
+  "storyboard.shots": {
+    "message": "Número de cenas",
+    "description": "Quantidade de cenas no storyboard"
+  },
+  "storyboard.action": {
+    "message": "Ação",
+    "description": "Etiqueta de ação do personagem da cena"
+  },
+  "storyboard.emotion": {
+    "message": "Emoção",
+    "description": "Etiqueta de emoção da cena"
+  },
+  "storyboard.lighting": {
+    "message": "Luz e atmosfera",
+    "description": "Etiqueta de luz e sombra da cena"
+  },
+  "storyboard.audio": {
+    "message": "Design de som",
+    "description": "Etiqueta de design de som da cena"
+  },
+  "storyboard.imagePrompt": {
+    "message": "Palavras-chave de imagem estática",
+    "description": "Etiqueta de palavras-chave de imagem da cena"
+  },
+  "storyboard.motionPrompt": {
+    "message": "Palavras-chave de movimento",
+    "description": "Etiqueta de palavras-chave de movimento da cena"
+  },
+  "storyboard.frames": {
+    "message": "Candidatos a quadros",
+    "description": "Título dos candidatos a imagens do storyboard"
+  },
+  "storyboard.motion": {
+    "message": "Candidatos a vídeo",
+    "description": "Título dos candidatos a vídeo do storyboard"
+  },
+  "storyboard.openNode": {
+    "message": "Abrir nó",
+    "description": "Abrir o nó do projeto de mídia"
+  },
+  "storyboard.selectTake": {
+    "message": "Selecionar Take",
+    "description": "Ação de selecionar um Take de mídia"
+  },
+  "storyboard.selected": {
+    "message": "Selecionado",
+    "description": "Rótulo do Take selecionado"
+  },
+  "storyboard.noCandidates": {
+    "message": "Ainda não foram gerados candidatos",
+    "description": "Mensagem de aviso sobre a falta de candidatos de mídia"
+  },
+  "storyboard.failedTake": {
+    "message": "Geração falhou · Ver registros de execução",
+    "description": "Status da tomada falhada"
+  },
+  "storyboard.restrictedTake": {
+    "message": "Candidatos restritos por política de direitos autorais",
+    "description": "Estado de Take restrito"
+  },
+  "storyboard.selectionSaved": {
+    "message": "Take selecionado, a produção subsequente será reutilizada diretamente",
+    "description": "Mensagem de sucesso para seleção de Take"
+  },
+  "storyboard.compare": {
+    "message": "Adicionar à comparação",
+    "description": "Adicionar a tomada ao conjunto de comparação"
+  },
+  "storyboard.comparing": {
+    "message": "Comparando",
+    "description": "A tomada foi adicionada ao conjunto de comparação"
+  },
+  "timeline.emptyTitle": {
+    "message": "Ainda não há combinação de linha do tempo",
+    "description": "Título para linha do tempo vazia"
+  },
+  "timeline.emptyBody": {
+    "message": "Primeiro, envie os Takes e selecione os resultados, depois monte os clipes na linha do tempo.",
+    "description": "Descrição para linha do tempo vazia"
+  },
+  "timeline.deliverable": {
+    "message": "Entregável submetido",
+    "description": "Título da saída do Master"
+  },
+  "timeline.masterTitle": {
+    "message": "Master",
+    "description": "Título da saída do Master"
+  },
+  "timeline.download": {
+    "message": "Baixar master",
+    "description": "Ação para baixar o Master"
+  },
+  "timeline.duration": {
+    "message": "Duração",
+    "description": "Rótulo da duração do Master"
+  },
+  "timeline.frame": {
+    "message": "Formato",
+    "description": "Rótulo da resolução do Master"
+  },
+  "timeline.videoClips": {
+    "message": "Clipes de vídeo",
+    "description": "Número de clipes de vídeo do Master"
+  },
+  "timeline.audioClips": {
+    "message": "Clipes de áudio",
+    "description": "Número de clipes de áudio do Master"
+  },
+  "timeline.playerLabel": {
+    "message": "Vídeo do master",
+    "description": "Nome acessível do reprodutor de vídeo do Master"
+  },
+  "timeline.loading": {
+    "message": "Carregando o master",
+    "description": "Estado de carregamento do vídeo do Master"
+  },
+  "timeline.loadError": {
+    "message": "Falha ao carregar o master.",
+    "description": "Mensagem de erro ao carregar o vídeo do Master"
+  },
+  "inspector.noSelection": {
+    "message": "Nenhum conteúdo selecionado",
+    "description": "Título do inspetor quando nenhum nó está selecionado"
+  },
+  "inspector.empty": {
+    "message": "Selecione um nó na tela ou no storyboard para editar as propriedades de produção tipificadas.",
+    "description": "Descrição do inspetor vazio"
+  },
+  "agent.title": {
+    "message": "Agente Skill",
+    "description": "Título da seção do agente"
+  },
+  "agent.noProposals": {
+    "message": "Não há propostas pendentes. Selecione um nó para que a Skill sugira a próxima ação de produção.",
+    "description": "Mensagem de aviso quando não há propostas do agente"
+  },
+  "agent.propose": {
+    "message": "Sugerir próximo passo",
+    "description": "Solicitar proposta ao agente"
+  },
+  "agent.plan": {
+    "message": "Planejar ação selecionada",
+    "description": "Planejar a ação da Skill para o nó gráfico selecionado"
+  },
+  "agent.proposal": {
+    "message": "Proposta",
+    "description": "Etiqueta de sugestão de proposta"
+  },
+  "review.heading": {
+    "message": "Criar revisão",
+    "description": "Título do resumo da revisão"
+  },
+  "review.noRevision": {
+    "message": "Nenhum projeto submetido",
+    "description": "Título da revisão quando não há revisões"
+  },
+  "review.nodes": {
+    "message": "Nós",
+    "description": "Número de nós na revisão"
+  },
+  "review.proposals": {
+    "message": "Propostas",
+    "description": "Número de propostas na revisão"
+  },
+  "review.runs": {
+    "message": "Execuções",
+    "description": "Número de execuções na revisão"
+  },
+  "review.finalCost": {
+    "message": "Créditos finais",
+    "description": "Etiqueta de custo de liquidação do projeto"
+  },
+  "review.qualityChecks": {
+    "message": "Verificações de qualidade",
+    "description": "Etiqueta do número de avaliações automáticas aprovadas"
+  },
+  "review.forensics": {
+    "message": "Verificação forense",
+    "description": "Etiqueta de status da verificação forense mais recente"
+  },
+  "review.pendingProposals": {
+    "message": "Propostas do Agente",
+    "description": "Área de revisão de propostas"
+  },
+  "review.noProposals": {
+    "message": "Não há propostas aguardando revisão.",
+    "description": "Mensagem de ausência de propostas"
+  },
+  "review.execution": {
+    "message": "Executar livro de contas",
+    "description": "Área de revisão de execução"
+  },
+  "review.noRuns": {
+    "message": "Este projeto ainda não tem execuções.",
+    "description": "Mensagem de ausência de execuções"
+  },
+  "review.reject": {
+    "message": "Rejeitar",
+    "description": "Ação para rejeitar proposta do Agente"
+  },
+  "review.rejectConfirm": {
+    "message": "Tem certeza de que deseja rejeitar esta proposta do Agente?",
+    "description": "Confirmação para rejeitar proposta"
+  },
+  "review.approvalTokenRequired": {
+    "message": "A aprovação requer o token original emitido na criação da proposta.",
+    "description": "Descrição da confiança na aprovação da proposta"
+  },
+  "review.runDetail": {
+    "message": "Detalhes da execução",
+    "description": "Título dos detalhes da execução selecionada"
+  },
+  "review.attempts": {
+    "message": "Tentativas",
+    "description": "Etiqueta para o número de tentativas do fornecedor"
+  },
+  "review.retryStep": {
+    "message": "Reexecutar nó",
+    "description": "Criar nova execução para o nó que falhou"
+  },
+  "onboarding.title": {
+    "message": "Estação de trabalho para produção cinematográfica profissional com IA",
+    "description": "Título de orientação do Poivelle"
+  },
+  "onboarding.body": {
+    "message": "Permita que humanos, Skills, Agentes e ferramentas de produção editem o mesmo diagrama de projeto. A tela, o storyboard, a linha do tempo e a revisão são projeções sincronizadas, não documentos separados.",
+    "description": "Instruções de orientação do Poivelle"
+  },
+  "run.confirmTitle": {
+    "message": "Confirmar execução",
+    "description": "Título da caixa de diálogo de confirmação da execução"
+  },
+  "run.targets": {
+    "message": "Dependências de fechamento",
+    "description": "Número de alvos da execução simulada"
+  },
+  "run.maximum": {
+    "message": "Custo máximo",
+    "description": "Custo máximo para execução de teste"
+  },
+  "run.approval": {
+    "message": "Nível de aprovação",
+    "description": "Nível de aprovação para execução de teste"
+  },
+  "run.confirmBody": {
+    "message": "O compilador usará credenciais de API de curto prazo para executar este fechamento de dependência imutável; cada chamada de fornecedor seguirá as regras de custo e registros de uso existentes.",
+    "description": "Explicação da confirmação da execução"
+  },
+  "run.confirm": {
+    "message": "Confirmar execução",
+    "description": "Comando para confirmar a execução"
+  },
+  "run.queued": {
+    "message": "A execução foi colocada na fila",
+    "description": "Mensagem de sucesso ao colocar a execução na fila"
+  },
+  "run.cancel": {
+    "message": "Cancelar",
+    "description": "Ação para cancelar a execução"
+  },
+  "run.cancelConfirm": {
+    "message": "Tem certeza de que deseja cancelar esta execução?",
+    "description": "Confirmação para cancelar a execução"
+  },
+  "error.generic": {
+    "message": "Poivelle não conseguiu completar o pedido.",
+    "description": "Erro genérico do Poivelle"
+  }
+}

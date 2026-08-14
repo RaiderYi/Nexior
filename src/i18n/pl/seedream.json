@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Akcja",
+    "description": "Wybór akcji do generowania lub edytowania."
+  },
   "name.taskId": {
     "message": "ID zadania",
     "description": "ID zadania"
@@ -131,6 +135,10 @@
     "message": "Nie udało się przesłać obrazu, spróbuj ponownie później",
     "description": "Błąd przesyłania"
   },
+  "message.referenceImageRequired": {
+    "message": "W trybie edycji należy przesłać co najmniej jeden obraz referencyjny.",
+    "description": "Komunikat walidacyjny wyświetlany, gdy w trybie edycji brakuje obrazu referencyjnego."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Wymagana potwierdzenie",
     "description": "Tytuł okna konfliktu funkcji"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Opcja modelu SeeDream 5.0 (obsługuje generowanie serii i strumieniowe wyjście)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "Opcja modelu SeeDream 5.0 Pro (flagowy tryb pojedynczego obrazu; bez zestawów obrazów / streamingu / wyszukiwania w sieci)"
   },
   "name.maxImages": {
     "message": "Liczba obrazów",

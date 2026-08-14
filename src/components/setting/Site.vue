@@ -51,13 +51,13 @@
       </div>
       <div class="settings-content">
         <el-image :src="site.logo" class="settings-media" fit="contain" />
-        <edit-image
-          :model-value="site.logo"
+        <brand-asset-studio
+          kind="logo"
           :title="$t('site.title.editLogo')"
           :tip="$t('site.message.editLogoTip')"
           :width="240"
           :height="72"
-          @confirm="onSave({ logo: $event })"
+          @confirm="onLogoProcessed"
         />
       </div>
     </section>
@@ -71,13 +71,13 @@
       </div>
       <div class="settings-content">
         <el-image :src="site.favicon" class="settings-media favicon" fit="contain" />
-        <edit-image
-          :model-value="site.favicon"
+        <brand-asset-studio
+          kind="favicon"
           :title="$t('site.title.editFavicon')"
           :tip="$t('site.message.editFaviconTip')"
           :width="128"
           :height="128"
-          @confirm="onSave({ favicon: $event })"
+          @confirm="onFaviconProcessed"
         />
       </div>
     </section>
@@ -105,19 +105,43 @@
 
     <section class="settings-item">
       <div class="settings-label">
-        <p class="settings-title">{{ $t('site.field.markupRatio') }}</p>
+        <p class="settings-title">{{ $t('site.field.supportedLocales') }}</p>
         <p class="settings-tip">
-          {{ $t('site.message.markupRatioTip') }}
+          {{ $t('site.message.supportedLocalesTip') }}
         </p>
       </div>
-      <div class="settings-content markup-content">
-        <div class="markup-input">
-          <el-input-number :model-value="markupPercent" :min="0" :max="500" :step="5" @change="onSaveMarkup" />
-          <span class="markup-suffix">%</span>
-        </div>
-        <p class="markup-example">
-          {{ $t('site.message.markupExample', { from: markupExampleFrom, to: markupExampleTo }) }}
+      <div class="settings-content">
+        <span class="settings-value">{{ supportedLocalesSummary }}</span>
+        <edit-locales
+          :model-value="supportedLocaleValues"
+          :title="$t('site.title.editSupportedLocales')"
+          @confirm="onSaveSupportedLocales"
+        />
+      </div>
+    </section>
+
+    <section class="settings-item">
+      <div class="settings-label">
+        <p class="settings-title">{{ $t('site.field.forcedLocale') }}</p>
+        <p class="settings-tip">
+          {{ $t('site.message.forcedLocaleTip') }}
         </p>
+      </div>
+      <div class="settings-content">
+        <el-select
+          :model-value="forcedLocaleValue"
+          class="forced-locale-select"
+          clearable
+          :placeholder="$t('site.placeholder.autoDetectLocale')"
+          @update:model-value="onSaveForcedLocale"
+        >
+          <el-option
+            v-for="locale in forcedLocaleOptions"
+            :key="locale.value"
+            :label="locale.label"
+            :value="locale.value"
+          />
+        </el-select>
       </div>
     </section>
 
@@ -141,21 +165,55 @@
         />
       </div>
     </section>
+
+    <section class="settings-item">
+      <div class="settings-label">
+        <p class="settings-title">{{ $t('site.field.contacts') }}</p>
+        <p class="settings-tip">
+          {{ $t('site.message.contactsTip') }}
+        </p>
+      </div>
+      <div class="settings-content">
+        <div v-if="hasContacts" class="contacts-summary">
+          <el-tag v-for="(c, i) in contacts" :key="i" size="small" round class="contact-chip">
+            <font-awesome-icon v-if="contactUsesFontAwesome(c.type)" :icon="contactIconFor(c.type)" class="chip-icon" />
+            <component
+              :is="contactIconFor(c.type)"
+              v-else
+              class="chip-icon"
+              :size="'1em' as any"
+              aria-hidden="true"
+              focusable="false"
+            />
+            {{ contactSummary(c) }}
+          </el-tag>
+        </div>
+        <span v-else class="settings-value">{{ $t('site.message.contactsEmpty') }}</span>
+        <edit-contacts :model-value="contacts" :title="$t('site.title.editContacts')" @confirm="onSaveContacts" />
+      </div>
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ElButton, ElColorPicker, ElImage, ElInputNumber } from 'element-plus';
+import { ElButton, ElColorPicker, ElImage, ElOption, ElSelect, ElTag } from 'element-plus';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import EditText from '@/components/site/EditText.vue';
-import EditImage from '@/components/site/EditImage.vue';
+import BrandAssetStudio, { type BrandAssetStudioResult } from '@/components/site/BrandAssetStudio.vue';
 import EditUsers from '@/components/site/EditUsers.vue';
+import EditLocales from '@/components/site/EditLocales.vue';
+import EditContacts from '@/components/site/EditContacts.vue';
 import UserChip from '@/components/site/UserChip.vue';
 import AutoTranslateToggle from '@/components/site/AutoTranslateToggle.vue';
 import SectionNotice from '@/components/setting/SectionNotice.vue';
 import { siteOperator } from '@/operators';
+import { getBrandContacts, hasBrandContacts, toWritableSitePayload } from '@/utils';
+import { contactIcon, contactBrand, contactTypeI18nKey, contactUsesFontAwesome } from '@/utils/contactTypes';
+import { ISiteContact } from '@/models';
 import { DEFAULT_PRIMARY_COLOR, applyAccentColor } from '@/utils/theme';
-import { getPriceString, applyMarkup, getSiteMarkupRatio } from '@/utils';
+import { I18N_SUPPORTED_LOCALES } from '@/constants/i18n';
+import { getSiteLocaleOptions } from '@/utils/siteLocales';
 
 // A small curated palette to make picking a "good" colour easy. The picker
 // still accepts any hex via its colour wheel; these are just shortcuts.
@@ -176,14 +234,19 @@ export default defineComponent({
   name: 'SiteSetting',
   components: {
     EditText,
-    EditImage,
+    BrandAssetStudio,
     EditUsers,
+    EditLocales,
+    EditContacts,
     UserChip,
     AutoTranslateToggle,
     ElButton,
     ElColorPicker,
     ElImage,
-    ElInputNumber,
+    ElOption,
+    ElSelect,
+    ElTag,
+    FontAwesomeIcon,
     SectionNotice
   },
   data() {
@@ -216,22 +279,57 @@ export default defineComponent({
       const c = this.storedPrimaryColor;
       return !!c && c.toLowerCase() !== DEFAULT_PRIMARY_COLOR.toLowerCase();
     },
-    // Site-wide markup shown to the 站长 as a percentage (0..500). Stored as a
-    // ratio (0..5) under metadata.pricing.markup_ratio.
-    markupPercent(): number {
-      return Math.round(getSiteMarkupRatio(this.site) * 100);
+    supportedLocaleValues(): string[] {
+      return this.site?.supported_locales?.length
+        ? [...this.site.supported_locales]
+        : I18N_SUPPORTED_LOCALES.map((locale) => locale.value);
     },
-    markupExampleFrom(): string {
-      return getPriceString({ value: 10 });
+    supportedLocalesSummary(): string {
+      if (!this.site?.supported_locales?.length) return this.$t('site.message.allLocales') as string;
+      const selected = new Set(this.site.supported_locales);
+      return I18N_SUPPORTED_LOCALES.filter((locale) => selected.has(locale.value))
+        .map((locale) => locale.label)
+        .join('、');
     },
-    markupExampleTo(): string {
-      return getPriceString({ value: applyMarkup(10, this.markupPercent / 100) });
+    contacts(): ISiteContact[] {
+      return getBrandContacts(this.site);
+    },
+    forcedLocaleValue(): string {
+      return this.site?.forced_locale || '';
+    },
+    forcedLocaleOptions() {
+      // Only languages the site actually offers — the backend rejects pinning
+      // one that isn't in supported_locales.
+      return getSiteLocaleOptions(this.site?.supported_locales);
+    },
+    hasContacts(): boolean {
+      return hasBrandContacts(this.site);
     }
   },
   methods: {
+    contactUsesFontAwesome,
+    contactIconFor(type: string) {
+      return contactIcon(type);
+    },
+    contactSummary(c: ISiteContact): string {
+      // Short chip label: prefer the owner's label, then the value, then a
+      // brand/type name.
+      if (c.label) return c.label;
+      if (c.value) return c.value;
+      const brand = contactBrand(c.type);
+      if (brand) return brand;
+      const key = contactTypeI18nKey(c.type);
+      return key ? (this.$t(key) as string) : c.type;
+    },
+    onLogoProcessed(result: BrandAssetStudioResult) {
+      this.onSave({ logo: result.color, logo_light: result.light, logo_dark: result.dark });
+    },
+    onFaviconProcessed(result: BrandAssetStudioResult) {
+      this.onSave({ favicon: result.color });
+    },
     onSave(data: any) {
       const payload = {
-        ...this.site,
+        ...toWritableSitePayload(this.site),
         ...data
       };
       siteOperator.update(this.site?.id, payload).then(() => {
@@ -239,19 +337,31 @@ export default defineComponent({
         this.$store.dispatch('getSite');
       });
     },
-    onSaveMarkup(percent: number | undefined) {
-      // Clamp to 0..500% and store as a 0..5 ratio; merge into the existing
-      // metadata so unrelated keys (icp / support_url / ...) are preserved.
-      const p = Math.min(500, Math.max(0, Math.round(Number(percent) || 0)));
-      const existing = (this.site?.metadata || {}) as Record<string, any>;
-      const metadata = {
-        ...existing,
-        pricing: {
-          ...((existing.pricing as Record<string, any>) || {}),
-          markup_ratio: p / 100
-        }
-      };
-      this.onSave({ metadata });
+    onSaveContacts(contacts: ISiteContact[]) {
+      // Merge into the existing branding so other white-label keys
+      // (company / links / hide_*) are preserved. Drop the key entirely
+      // when cleared so ``Site.branding`` stays tidy.
+      const branding = { ...(this.site?.branding || {}) };
+      if (Array.isArray(contacts) && contacts.length > 0) {
+        branding.contacts = contacts;
+      } else {
+        delete branding.contacts;
+      }
+      this.onSave({ branding });
+    },
+    onSaveSupportedLocales(locales: string[]) {
+      const supportedLocales = locales.length === I18N_SUPPORTED_LOCALES.length ? null : locales;
+      const payload: Record<string, unknown> = { supported_locales: supportedLocales };
+      // Dropping the pinned language from the offered set would fail the
+      // backend's cross-field check, so clear the pin along with it.
+      const forced = this.site?.forced_locale;
+      if (forced && supportedLocales && !supportedLocales.includes(forced)) {
+        payload.forced_locale = null;
+      }
+      this.onSave(payload);
+    },
+    onSaveForcedLocale(locale: string | null) {
+      this.onSave({ forced_locale: locale || null });
     },
     onTranslationChanged() {
       // Toggle endpoints mutate the row server-side; refresh so the
@@ -302,29 +412,6 @@ export default defineComponent({
   gap: 4px;
 }
 
-.markup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-}
-
-.markup-input {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.markup-suffix {
-  color: var(--el-text-color-secondary);
-}
-
-.markup-example {
-  margin: 0;
-  font-size: 12px;
-  color: var(--el-text-color-secondary);
-}
-
 .favicon {
   max-width: 64px;
 }
@@ -341,6 +428,23 @@ export default defineComponent({
   max-width: 100%;
 }
 
+.contacts-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: 100%;
+
+  .contact-chip {
+    max-width: 100%;
+
+    .chip-icon {
+      margin-right: 5px;
+      font-size: 11px;
+    }
+  }
+}
+
 .primary-color-content {
   display: flex;
   align-items: center;
@@ -353,6 +457,11 @@ export default defineComponent({
     color: var(--el-text-color-regular);
     text-transform: uppercase;
   }
+}
+
+.forced-locale-select {
+  width: 200px;
+  max-width: 100%;
 }
 
 @media (max-width: 640px) {

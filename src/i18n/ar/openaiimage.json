@@ -51,6 +51,10 @@
     "message": "الحجم",
     "description": "حجم الصورة الناتجة"
   },
+  "size.auto": {
+    "message": "تلقائي",
+    "description": "خيارات الحجم: تلقائي، يتم اختيار نسبة العرض إلى الارتفاع المناسبة بواسطة النموذج بناءً على نص التوجيه."
+  },
   "description.size": {
     "message": "حجم الإخراج المستخدم لإنشاء الصورة، القيم الشائعة: 1024x1024، 1536x1024، 1024x1536.",
     "description": "وصف الحجم"
@@ -112,7 +116,7 @@
     "description": "وصف معلمة النموذج"
   },
   "description.imageUrls": {
-    "message": "قم بتحميل 1-5 صور مرجعية للدخول في وضع التحرير.",
+    "message": "قم بتحميل 1-16 صور مرجعية للدخول في وضع التحرير.",
     "description": "وصف معلمة image_urls"
   },
   "status.pending": {
@@ -156,7 +160,7 @@
     "description": "رسالة نفاد النقاط"
   },
   "message.uploadImageExceed": {
-    "message": "يمكنك تحميل ما يصل إلى 5 صور",
+    "message": "يمكنك تحميل ما يصل إلى {count} صور",
     "description": "تجاوز عدد الصور الحد المسموح به"
   },
   "message.uploadImageError": {

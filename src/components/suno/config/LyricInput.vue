@@ -7,18 +7,36 @@
       </div>
       <div class="flex items-center gap-1">
         <el-tooltip v-if="lyricHistory.length > 0" :content="$t('suno.button.undo')" placement="top">
-          <el-button size="small" circle @click="onUndo">
-            <font-awesome-icon icon="fa-solid fa-rotate-left" />
+          <el-button
+            size="small"
+            circle
+            :aria-label="$t('suno.button.undo')"
+            :title="$t('suno.button.undo')"
+            @click="onUndo"
+          >
+            <undo-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           </el-button>
         </el-tooltip>
         <el-tooltip v-if="lyric" :content="$t('suno.button.clear_lyrics')" placement="top">
-          <el-button size="small" circle @click="onClear">
-            <font-awesome-icon icon="fa-solid fa-eraser" />
+          <el-button
+            size="small"
+            circle
+            :aria-label="$t('suno.button.clear_lyrics')"
+            :title="$t('suno.button.clear_lyrics')"
+            @click="onClear"
+          >
+            <clear-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           </el-button>
         </el-tooltip>
         <el-tooltip :content="$t('suno.button.expand_lyrics')" placement="top">
-          <el-button size="small" circle @click="expanded = true">
-            <font-awesome-icon icon="fa-solid fa-expand" />
+          <el-button
+            size="small"
+            circle
+            :aria-label="$t('suno.button.expand_lyrics')"
+            :title="$t('suno.button.expand_lyrics')"
+            @click="expanded = true"
+          >
+            <fullscreen-icon :size="'1em' as any" aria-hidden="true" focusable="false" />
           </el-button>
         </el-tooltip>
         <el-button
@@ -28,7 +46,7 @@
           round
           @click="onGenerateLyrics"
         >
-          <font-awesome-icon v-if="!generatingLyrics" icon="fa-solid fa-wand-magic-sparkles" class="mr-1" />
+          <magic-icon v-if="!generatingLyrics" class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
           {{ $t('suno.button.generate_lyrics') }}
         </el-button>
       </div>
@@ -63,7 +81,13 @@
       >
         <template #append>
           <el-button :loading="enhancingLyrics" @click="onEnhanceLyrics">
-            <font-awesome-icon v-if="!enhancingLyrics" icon="fa-solid fa-wand-magic-sparkles" class="mr-1" />
+            <magic-icon
+              v-if="!enhancingLyrics"
+              class="mr-1"
+              :size="'1em' as any"
+              aria-hidden="true"
+              focusable="false"
+            />
             {{ $t('suno.button.enhance_lyrics') }}
           </el-button>
         </template>
@@ -96,7 +120,13 @@
         >
           <template #append>
             <el-button :loading="enhancingLyrics" @click="onEnhanceLyrics">
-              <font-awesome-icon v-if="!enhancingLyrics" icon="fa-solid fa-wand-magic-sparkles" class="mr-1" />
+              <magic-icon
+                v-if="!enhancingLyrics"
+                class="mr-1"
+                :size="'1em' as any"
+                aria-hidden="true"
+                focusable="false"
+              />
               {{ $t('suno.button.enhance_lyrics') }}
             </el-button>
           </template>
@@ -106,11 +136,11 @@
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-1">
             <el-button v-if="lyricHistory.length > 0" size="small" @click="onUndo">
-              <font-awesome-icon icon="fa-solid fa-rotate-left" class="mr-1" />
+              <undo-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
               {{ $t('suno.button.undo') }}
             </el-button>
             <el-button v-if="lyric" size="small" @click="onClear">
-              <font-awesome-icon icon="fa-solid fa-eraser" class="mr-1" />
+              <clear-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
               {{ $t('suno.button.clear_lyrics') }}
             </el-button>
             <el-button
@@ -119,7 +149,13 @@
               :loading="generatingLyrics"
               @click="onGenerateLyrics"
             >
-              <font-awesome-icon v-if="!generatingLyrics" icon="fa-solid fa-wand-magic-sparkles" class="mr-1" />
+              <magic-icon
+                v-if="!generatingLyrics"
+                class="mr-1"
+                :size="'1em' as any"
+                aria-hidden="true"
+                focusable="false"
+              />
               {{ $t('suno.button.generate_lyrics') }}
             </el-button>
           </div>
@@ -133,22 +169,27 @@
 </template>
 
 <script lang="ts">
+import { ClearIcon, FullscreenIcon, MagicIcon, UndoIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElInput, ElButton, ElMessage, ElMessageBox, ElTooltip, ElDialog } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import InfoIcon from '@/components/common/InfoIcon.vue';
-import { sunoOperator } from '@/operators';
+import { sunoOperator } from '@/operators/suno';
+import { sunoPaymentOptions } from '@/utils/x402/sunoPayment';
+import { X402PaymentCancelledError } from '@/operators/x402';
 
 export const DEFAULT_LYRIC = '';
 
 export default defineComponent({
   name: 'LyricInput',
   components: {
+    ClearIcon,
+    FullscreenIcon,
+    MagicIcon,
+    UndoIcon,
     ElInput,
     ElButton,
     ElTooltip,
     ElDialog,
-    FontAwesomeIcon,
     InfoIcon
   },
   data() {
@@ -202,30 +243,31 @@ export default defineComponent({
       this.lyric = '';
     },
     async onEnhanceLyrics() {
-      const token = this.credential?.token;
-      if (!token || !this.lyric || !this.enhancePrompt) return;
+      const options = sunoPaymentOptions(this);
+      if (!options || !this.lyric || !this.enhancePrompt) return;
 
       this.pushHistory();
       this.enhancingLyrics = true;
       ElMessage.info(this.$t('suno.message.enhancingLyrics'));
       try {
         const prompt = `${this.enhancePrompt}\n\nOriginal lyrics:\n${this.lyric}`;
-        const response = await sunoOperator.lyric({ prompt }, { token });
+        const response = await sunoOperator.lyric({ prompt }, options);
         const data = response.data?.data;
         if (data?.text) {
           this.lyric = data.text;
           this.enhancePrompt = '';
           ElMessage.success(this.$t('suno.message.enhanceLyricsSuccess'));
         }
-      } catch {
+      } catch (error) {
+        if (error instanceof X402PaymentCancelledError) return;
         ElMessage.error(this.$t('suno.message.enhanceLyricsFailed'));
       } finally {
         this.enhancingLyrics = false;
       }
     },
     async onGenerateLyrics() {
-      const token = this.credential?.token;
-      if (!token) return;
+      const options = sunoPaymentOptions(this);
+      if (!options) return;
 
       let theme: string;
       try {
@@ -253,7 +295,7 @@ export default defineComponent({
       ElMessage.info(this.$t('suno.message.generatingLyrics'));
 
       try {
-        const response = await sunoOperator.lyric({ prompt: theme }, { token });
+        const response = await sunoOperator.lyric({ prompt: theme }, options);
         const data = response.data?.data;
         if (data?.text) {
           this.lyric = data.text;
@@ -266,7 +308,8 @@ export default defineComponent({
           }
           ElMessage.success(this.$t('suno.message.generateLyricsSuccess'));
         }
-      } catch {
+      } catch (error) {
+        if (error instanceof X402PaymentCancelledError) return;
         ElMessage.error(this.$t('suno.message.generateLyricsFailed'));
       } finally {
         this.generatingLyrics = false;

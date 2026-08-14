@@ -1,7 +1,7 @@
 {
   "name.bot": {
-    "message": "Grok Video Bot",
-    "description": "Name des Grok Video Generators"
+    "message": "Grok Video-Bot",
+    "description": "Name des Grok Video-Generators"
   },
   "name.prompt": {
     "message": "Eingabeaufforderung",
@@ -28,8 +28,8 @@
     "description": "Label für das Eingabebild"
   },
   "name.referenceImages": {
-    "message": "Reference Images",
-    "description": "Label for reference images"
+    "message": "Referenzbilder",
+    "description": "Bezeichnung für Referenzbilder"
   },
   "name.required": {
     "message": "Pflichtfeld",
@@ -57,14 +57,14 @@
   },
   "name.status": {
     "message": "Status",
-    "description": "Statusüberschrift"
+    "description": "Status Titel"
   },
   "description.prompt": {
     "message": "Beschreiben Sie das Video, das Sie generieren möchten (Szene, Subjekt, Aktion, Kamera, Licht, Stil).",
     "description": "Anweisungen zur Eingabe des Prompts"
   },
   "description.model": {
-    "message": "Wählen Sie das Grok Imagine Modell. grok-imagine-video unterstützt Text-zu-Video und Bild-zu-Video; 1.5-preview unterstützt nur Bild-zu-Video.",
+    "message": "Wählen Sie das Grok Imagine Modell. :reverse nutzt den schnellen/standard Endpunkt; :official nutzt den offiziellen Endpunkt (höhere Qualität, nach Sekunden abgerechnet). grok-imagine-video-1.5:official unterstützt nur Bild-zu-Video.",
     "description": "Anweisungen zur Modellauswahl"
   },
   "description.ratio": {
@@ -76,16 +76,16 @@
     "description": "Anweisungen zur Auflösung"
   },
   "description.duration": {
-    "message": "Videodauer (Sekunden), Abrechnung nach ausgegebenen Sekunden.",
+    "message": "Videolänge (Sekunden). 1.5-fast (rückwärts) unterstützt 6-30 Sekunden, nach Länge gestaffelt abgerechnet; andere Varianten unterstützen 1-15 Sekunden, nach ausgegebenen Sekunden abgerechnet.",
     "description": "Anweisungen zur Dauer"
   },
   "description.image": {
-    "message": "Optionales Eingabebild für die Videoerstellung. grok-imagine-video-1.5-preview ist erforderlich.",
-    "description": "Anweisungen für die Bild-Eingabe"
+    "message": "Optionales Eingabebild zur Videoerstellung. grok-imagine-video-1.5:official ist erforderlich.",
+    "description": "Anweisungen zur Bild-Eingabe"
   },
   "description.referenceImages": {
-    "message": "Optional reference images to guide the style or content of the generated video (grok-imagine-video only).",
-    "description": "Instructions for reference images"
+    "message": "Optionale Referenzbilder zur Anleitung bei der Erstellung des Videos in Bezug auf Stil oder Inhalt.",
+    "description": "Anweisungen zu Referenzbildern"
   },
   "placeholder.prompt": {
     "message": "Beschreibe dein Video…",
@@ -95,13 +95,21 @@
     "message": "Bitte auswählen",
     "description": "Platzhalter für Auswahlfelder"
   },
-  "model.default": {
-    "message": "Grok Imagine Video",
-    "description": "Standardmodellbezeichnung"
+  "model.fastReverse": {
+    "message": "Grok Imagine Video 1.5 Fast (schnell, 6–30 Sekunden)",
+    "description": "Bezeichnung für das 1.5-fast Rückwärtsmodell"
   },
-  "model.preview15": {
-    "message": "Grok Imagine Video 1.5 (Vorschau, Bild-zu-Video)",
-    "description": "1.5 Vorschau Modellbezeichnung"
+  "model.reverse": {
+    "message": "Grok Imagine Video (Standard, 1–15 Sekunden)",
+    "description": "Bezeichnung für das grok-imagine-video Rückwärtsmodell"
+  },
+  "model.official": {
+    "message": "Grok Imagine Video · Offiziell (höhere Qualität, nach Sekunden abgerechnet)",
+    "description": "Bezeichnung für das grok-imagine-video offizielle Modell"
+  },
+  "model.official15": {
+    "message": "Grok Imagine Video 1.5 · Offiziell (Bild-zu-Video, bis zu 1080p)",
+    "description": "Bezeichnung für das 1.5 offizielle Modell"
   },
   "button.upload": {
     "message": "Hochladen",
@@ -128,8 +136,8 @@
     "description": "Warnung, dass das Upload-Limit überschritten wurde"
   },
   "message.uploadReferenceExceed": {
-    "message": "You can upload up to 4 reference images.",
-    "description": "Reference images upload exceed warning"
+    "message": "Sie können bis zu 4 Referenzbilder hochladen.",
+    "description": "Warnung, dass das Upload-Limit für Referenzbilder überschritten wurde"
   },
   "message.uploadError": {
     "message": "Bild-Upload fehlgeschlagen, bitte erneut versuchen.",

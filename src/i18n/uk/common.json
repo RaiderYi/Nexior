@@ -1,4 +1,8 @@
 {
+  "message.mediaPreviewUnavailable": {
+    "message": "Попередній перегляд недоступний",
+    "description": "Не вдалося завантажити попередній перегляд медіа."
+  },
   "button.setup": {
     "message": "Налаштування",
     "description": "Текст у кнопці, що використовується для налаштувань"
@@ -66,6 +70,46 @@
   "button.close": {
     "message": "Закрити",
     "description": "Текст у кнопці, що використовується для закриття діалогового вікна або панелі"
+  },
+  "button.send": {
+    "message": "Відправити",
+    "description": "Текст кнопки для відправлення вмісту."
+  },
+  "button.stop": {
+    "message": "Зупинити",
+    "description": "Текст кнопки для зупинки дії."
+  },
+  "button.openMenu": {
+    "message": "Відкрити меню",
+    "description": "Текст кнопки для відкриття навігаційного або конфігураційного меню."
+  },
+  "button.more": {
+    "message": "Більше дій",
+    "description": "Текст кнопки для відкриття меню дій."
+  },
+  "button.remove": {
+    "message": "Видалити",
+    "description": "Текст кнопки для видалення елемента."
+  },
+  "player.previous": {
+    "message": "Попередня",
+    "description": "Альтернативна мітка кнопки попередньої пісні в плеєрі"
+  },
+  "player.play": {
+    "message": "Відтворити",
+    "description": "Альтернативна мітка кнопки відтворення в плеєрі"
+  },
+  "player.pause": {
+    "message": "Пауза",
+    "description": "Альтернативна мітка кнопки паузи в плеєрі"
+  },
+  "player.next": {
+    "message": "Наступна",
+    "description": "Альтернативна мітка кнопки наступної пісні в плеєрі"
+  },
+  "player.volume": {
+    "message": "Гучність",
+    "description": "Альтернативна мітка елемента управління гучністю в плеєрі"
   },
   "button.expand": {
     "message": "Розгорнути",
@@ -135,6 +179,14 @@
     "message": "Завантажити для macOS",
     "description": "Text in button for downloading the macOS desktop installer"
   },
+  "button.downloadBrowserExtension": {
+    "message": "Завантажити розширення для браузера",
+    "description": "Text in button for downloading the Chrome / Edge browser extension package"
+  },
+  "button.viewExtensionGuide": {
+    "message": "Переглянути посібник з установки",
+    "description": "Додатковий кнопка на картці розширення браузера, що веде до документації з установки плагіна"
+  },
   "button.installIos": {
     "message": "Встановити iOS",
     "description": "Текст у кнопці, що використовується для встановлення iOS додатку"
@@ -200,7 +252,7 @@
     "description": "Тип сутності"
   },
   "entity.website": {
-    "message": "BigPlayer AI",
+    "message": "Ace Data Cloud",
     "description": "Назва сайту, не потребує перекладу, залишити 'Ace Data Cloud'"
   },
   "entity.copyright": {
@@ -232,8 +284,8 @@
     "description": "Error toast shown when native Apple sign-in fails for a reason other than user cancellation"
   },
   "error.loginLinkExpired": {
-    "message": "Login link expired. Please sign in again.",
-    "description": "Shown on the desktop client when an OAuth callback is dropped (state mismatch or expired)."
+    "message": "Посилання для входу стало недійсним, будь ласка, увійдіть знову.",
+    "description": "Повідомлення про помилку, яке відображається, коли OAuth зворотний виклик настільного клієнта скидається через невдалу/протерміновану перевірку state."
   },
   "entity.operation": {
     "message": "Операція",
@@ -268,7 +320,7 @@
     "description": "Для відображення суми, що була використана для послуги"
   },
   "message.mobileAppDescription": {
-    "message": "Використовуйте BigPlayer AI на телефоні, наразі доступно завантаження Android APK, пакет для iOS буде доступний після підписання.",
+    "message": "Використовуйте AceData на телефоні, наразі доступно завантаження Android APK, пакет для iOS буде доступний після підписання.",
     "description": "Опис на сторінці завантаження мобільного додатку"
   },
   "message.mobileAndroidHint": {
@@ -299,6 +351,14 @@
     "message": "Спільний акаунт та ліміти з веб-версією",
     "description": "Для пояснення, що мобільна версія використовує спільний акаунт з веб-версією"
   },
+  "message.extensionAvailableNow": {
+    "message": "Безкоштовно",
+    "description": "Status chip on the browser extension card"
+  },
+  "message.extensionHint": {
+    "message": "Авторизуйте обліковий запис соціальних мереж, підключіть локальний браузер для виконання завдань. Після завантаження розпакуйте, на сторінці управління розширеннями виберіть «Завантажити розпаковане розширення» для установки.",
+    "description": "Текст опису на картці розширення браузера"
+  },
   "message.mobileIosHint": {
     "message": "Для iPhone та iPad, можна встановити безпосередньо онлайн; якщо система блокує, можна спочатку завантажити IPA, а потім розповсюдити.",
     "description": "Опис картки завантаження iOS"
@@ -312,8 +372,8 @@
     "description": "Short status label shown on a platform card (e.g. iOS) while its build is being prepared"
   },
   "message.mobileNowOnAppStore": {
-    "message": "Now on the App Store",
-    "description": "Status label shown on the iOS card when the app is live on the App Store"
+    "message": "Доступно в App Store",
+    "description": "Мітка статусу, що відображається на картці iOS, коли додаток доступний в App Store."
   },
   "message.desktopWindowsHint": {
     "message": "Для Windows 10 і новіших (64-біт). Завантажте інсталятор і двічі клацніть, щоб установити.",
@@ -332,8 +392,8 @@
     "description": "Button label that opens the app's Google Play Store listing"
   },
   "button.getOnAppStore": {
-    "message": "Get it on the App Store",
-    "description": "Button label that opens the app's Apple App Store listing"
+    "message": "Завантажити в App Store",
+    "description": "Напис кнопки, яка відкриває список додатку в Apple App Store."
   },
   "message.mobileApkFallback": {
     "message": "Немає доступу до Google Play? Завантажте APK напряму.",
@@ -344,8 +404,8 @@
     "description": "Hint under the QR code explaining that scanning it opens the Google Play listing"
   },
   "message.mobileAppStoreHint": {
-    "message": "Scan to open the App Store",
-    "description": "Hint under the QR code explaining that scanning it opens the App Store listing"
+    "message": "Скануйте QR-код для переходу до App Store",
+    "description": "Підказка під QR-кодом, що пояснює, що сканування відкриває список в App Store."
   },
   "message.mobileInstallNote": {
     "message": "При першому встановленні корпоративного або Ad Hoc пакету на iOS, система може вимагати спочатку довірити сертифікат у 'Налаштування > Загальні > VPN та управління пристроями'.",
@@ -398,6 +458,18 @@
   "message.confirmDelete": {
     "message": "Ви впевнені, що хочете видалити?",
     "description": "Повідомлення для підтвердження видалення вмісту"
+  },
+  "message.deleteTaskConfirm": {
+    "message": "Ви впевнені, що хочете видалити цей запис генерації? Після видалення він буде видалений з усіх пристроїв і не підлягає відновленню.",
+    "description": "Повідомлення підтвердження, яке відображається перед видаленням окремого запису завдання."
+  },
+  "message.deleteTaskSuccess": {
+    "message": "Запис видалено.",
+    "description": "Повідомлення, яке відображається після успішного видалення запису завдання."
+  },
+  "message.deleteTaskFailed": {
+    "message": "Не вдалося видалити, будь ласка, спробуйте ще раз пізніше.",
+    "description": "Повідомлення, яке відображається, коли видалення запису завдання зазнало невдачі."
   },
   "message.expiredAt": {
     "message": "Час закінчення",
@@ -568,8 +640,8 @@
     "description": "Текст у навігаційній панелі сайту для відображення сторінки SeeDance, не перекладати, має залишатися 'SeeDance'"
   },
   "nav.grokvideo": {
-    "message": "Grok Video",
-    "description": "Text in the website navigation bar to display the Grok Imagine video page"
+    "message": "Grok відео",
+    "description": "Текст у навігаційній панелі для відображення сторінки Grok Imagine відео."
   },
   "nav.luma": {
     "message": "Luma",
@@ -587,6 +659,10 @@
     "message": "Hailuo",
     "description": "Текст у навігаційній панелі сайту для відображення сторінки Hailuo, не перекладати, має залишатися 'Hailuo'"
   },
+  "nav.minimax": {
+    "message": "MiniMax H3",
+    "description": "Navigation name for the MiniMax H3 video generation service"
+  },
   "nav.wan": {
     "message": "Wan",
     "description": "Текст у навігаційній панелі сайту для відображення сторінки Wan, не перекладати, має залишатися 'Wan'"
@@ -602,6 +678,10 @@
   "nav.kimi": {
     "message": "Kimi",
     "description": "Текст у навігаційній панелі сайту для відображення сторінки Kimi, не перекладати, має залишатися 'Kimi'"
+  },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
   },
   "nav.serp": {
     "message": "SERP",
@@ -655,13 +735,17 @@
     "message": "Налаштування",
     "description": "Текст у навігаційній панелі сайту для відображення сторінки налаштувань"
   },
-  "nav.headshots": {
-    "message": "AI фото",
-    "description": "Текст у навігаційній панелі сайту для відображення сторінки налаштувань сайту"
-  },
   "nav.more": {
     "message": "Більше",
     "description": "Текст у навігаційній панелі сайту для розгортання додаткових послуг"
+  },
+  "nav.collapseDock": {
+    "message": "Сховати панель додатків",
+    "description": "Кнопка для сховування панелі додатків внизу на мобільному пристрої"
+  },
+  "nav.expandDock": {
+    "message": "Розгорнути панель додатків",
+    "description": "Кнопка для розгортання панелі додатків внизу на мобільному пристрої"
   },
   "nav.locale": {
     "message": "Налаштування мови",
@@ -744,7 +828,7 @@
     "description": "Адреса компанії"
   },
   "about.email": {
-    "message": "office@acedata.cloud",
+    "message": "office{'@'}acedata.cloud",
     "description": "Електронна пошта компанії"
   },
   "about.link1": {
@@ -807,6 +891,30 @@
     "message": "Тема",
     "description": "Заголовок секції налаштувань теми на сторінці налаштувань"
   },
+  "settings.sendShortcut": {
+    "message": "Надсилання повідомлення",
+    "description": "Title of the send-message shortcut row in General settings: choose Enter or modifier+Enter to send."
+  },
+  "sendShortcut.enter": {
+    "message": "Надсилання за Enter",
+    "description": "Send-shortcut option: press Enter to send the message."
+  },
+  "sendShortcut.modEnter": {
+    "message": "Надсилання за {key} + Enter",
+    "description": "Send-shortcut option: press the platform modifier (⌘ or Ctrl) plus Enter to send. {key} is the modifier symbol."
+  },
+  "settings.loginMode": {
+    "message": "Спосіб входу",
+    "description": "Login-mode row title in general settings"
+  },
+  "loginMode.iframe": {
+    "message": "Вбудоване спливаюче вікно",
+    "description": "Login mode option: embedded iframe popup"
+  },
+  "loginMode.redirect": {
+    "message": "Перенаправлення на сторінку",
+    "description": "Login mode option: full-page redirect"
+  },
   "settings.seo": {
     "message": "Налаштування SEO",
     "description": "Заголовок секції налаштувань SEO на сторінці налаштувань"
@@ -820,11 +928,11 @@
     "description": "Заголовок секції налаштувань розподілу на сторінці налаштувань"
   },
   "settings.function": {
-    "message": "Налаштування функцій",
-    "description": "Заголовок секції налаштувань функцій на сторінці налаштувань"
+    "message": "Можливості",
+    "description": "Title for the site capabilities section in the settings page"
   },
   "settings.auth": {
-    "message": "Спосіб входу",
+    "message": "Автентифікація",
     "description": "Заголовок вкладки 'Спосіб входу' на бічній панелі налаштувань — налаштуйте способи входу, які дозволені на сайті, та спосіб входу за замовчуванням, видимий лише для адміністраторів сайту."
   },
   "settings.apiKey": {
@@ -839,6 +947,14 @@
     "message": "Асистент запам'ятає корисну інформацію, яку ви згадуєте в розмові, щоб надавати більш персоналізовані відповіді в різних бесідах. Ви маєте повний контроль — можете переглядати збережений контент і видаляти те, що не хочете, щоб він запам'ятав.",
     "description": "Вступний текст у верхній частині вкладки налаштувань пам'яті."
   },
+  "settings.memoryEnabled": {
+    "message": "Використовувати пам'ять",
+    "description": "Перемикач для контролю, чи використовує помічник збережену пам'ять у чаті та продовжує навчатися новій пам'яті."
+  },
+  "settings.memoryEnabledHint": {
+    "message": "При вимкненні помічник не читатиме збережену пам'ять і не зберігатиме пам'ять з нових розмов. Існуючий вміст не буде видалено.",
+    "description": "Опис поведінки під перемикачем пам'яті."
+  },
   "settings.memoryNeedsChat": {
     "message": "Будь ласка, спочатку розпочніть розмову, щоб активувати функцію пам'яті.",
     "description": "Відображається на вкладці налаштувань пам'яті, коли чат-додаток/токен ще не завантажено."
@@ -846,6 +962,58 @@
   "settings.memoryStored": {
     "message": "Збережені спогади",
     "description": "Заголовок розділу над списком збережених спогадів."
+  },
+  "settings.memoryImport": {
+    "message": "Імпортувати",
+    "description": "Кнопка для відкриття вікна імпорту пам'яті."
+  },
+  "settings.memoryImportTitle": {
+    "message": "Імпорт пам'яті з інших AI",
+    "description": "Заголовок спливаючого вікна імпорту пам'яті"
+  },
+  "settings.memoryImportExportStep": {
+    "message": "1. Нехай поточний AI експортує пам'ять",
+    "description": "Заголовок першого кроку в спливаючому вікні імпорту пам'яті"
+  },
+  "settings.memoryImportPrompt": {
+    "message": "Я хочу перейти на іншу AI службу. Будь ласка, перерахуй всі твої збережені спогади про мене, а також постійну інформацію, отриману з попередніх розмов. Помістіть весь вміст в один блок коду, пишучи по одному спогаду в рядку, формат: [дата збереження, якщо є] - вміст спогаду. Будь ласка, включіть уподобання щодо відповідей, особисту інформацію, проекти, цілі, звичайні інструменти, мови, фреймворки, а також виправлення, які я робив для вас. Намагайтеся зберегти мої оригінальні слова, не включайте паролі, ключі та іншу чутливу інформацію.",
+    "description": "Підказка для експорту пам'яті для копіювання в інші AI служби"
+  },
+  "settings.memoryImportCopy": {
+    "message": "Копіювати підказки",
+    "description": "Кнопка для копіювання підказок експорту пам'яті"
+  },
+  "settings.memoryImportCopied": {
+    "message": "Підказка скопійована",
+    "description": "Повідомлення після успішного копіювання підказки експорту пам'яті."
+  },
+  "settings.memoryImportPasteStep": {
+    "message": "2. Вставте експортовану пам'ять",
+    "description": "Заголовок другого кроку в спливаючому вікні імпорту пам'яті"
+  },
+  "settings.memoryImportPlaceholder": {
+    "message": "Вставте вміст пам'яті, отриманий від ChatGPT, Claude, Gemini або інших AI...",
+    "description": "Текст заповнювача для поля введення, де вставляється експортований вміст пам'яті"
+  },
+  "settings.memoryImportSubmit": {
+    "message": "Додати до пам'яті",
+    "description": "Кнопка для подання вставленого вмісту для імпорту"
+  },
+  "settings.memoryImportSuccess": {
+    "message": "Imported {count} memory entries",
+    "description": "Success toast after importing memory; count is the number of accepted entries"
+  },
+  "settings.memoryImportPartial": {
+    "message": "Оброблено {processed} записів, ще {rejected} небезпечних або недійсних записів пропущено.",
+    "description": "Попередження, що відображається, коли частковий імпорт пам'яті успішний"
+  },
+  "settings.memoryImportInvalid": {
+    "message": "Не вдалося імпортувати пам'ять. Будь ласка, підтвердіть, що пам'ять увімкнена, і вставте в форматі одна звичайна факти на рядок.",
+    "description": "Оперативне повідомлення про помилку, яке відображається, коли запит на імпорт пам'яті є недійсним"
+  },
+  "settings.memoryImportInProgress": {
+    "message": "Вже виконується завдання імпорту пам'яті, будь ласка, залиште спливаюче вікно відкритим і спробуйте пізніше.",
+    "description": "Попередження, що відображається, коли виконується інше завдання імпорту пам'яті"
   },
   "settings.memoryEmpty": {
     "message": "Немає збережених спогадів. З часом асистент запам'ятає ваші постійні уподобання та інформацію.",
@@ -924,7 +1092,7 @@
     "description": "Професія клієнта"
   },
   "customers.comment1": {
-    "message": "BigPlayer AI надав нашій команді чудові послуги, що допомогли підвищити продуктивність. Дуже подобається!",
+    "message": "Ace Data Cloud надав нашій команді чудові послуги, що допомогли підвищити продуктивність. Дуже подобається!",
     "description": "Відгук клієнта"
   },
   "customers.name2": {
@@ -936,7 +1104,7 @@
     "description": "Професія клієнта"
   },
   "customers.comment2": {
-    "message": "BigPlayer AI — це чудова інтеграційна платформа з відмінною якістю обслуговування.",
+    "message": "Ace Data Cloud — це чудова інтеграційна платформа з відмінною якістю обслуговування.",
     "description": "Відгук клієнта"
   },
   "customers.name3": {
@@ -948,7 +1116,7 @@
     "description": "Професія клієнта"
   },
   "customers.comment3": {
-    "message": "Мені подобається сервіс BigPlayer AI, зручний у використанні, ціна розумна, сподіваюся, що буде ще краще!",
+    "message": "Мені подобається сервіс Ace Data Cloud, зручний у використанні, ціна розумна, сподіваюся, що буде ще краще!",
     "description": "Відгук клієнта"
   },
   "nav.github": {
@@ -980,12 +1148,12 @@
     "description": "Help text under the authorized-folders heading."
   },
   "settings.localToolsComputerUseTitle": {
-    "message": "Computer Use (experimental)",
-    "description": "Heading for the opt-in Computer Use (screen + mouse/keyboard control) toggle."
+    "message": "Операції на комп'ютері (експериментально)",
+    "description": "Заголовок для перемикача використання комп'ютера (керування екраном + мишею/клавіатурою)."
   },
   "settings.localToolsComputerUseHint": {
-    "message": "Let the AI see your screen and control the mouse and keyboard on this computer. Off by default — turn it on only when you need it. On macOS, grant Screen Recording and Accessibility permissions below. Each action still asks for your confirmation.",
-    "description": "Help text under the Computer Use toggle."
+    "message": "Дайте AI можливість бачити ваш екран та контролювати мишу і клавіатуру на вашому комп'ютері. За замовчуванням вимкнено, вмикайте за потребою. На macOS потрібно надати дозволи «Запис екрану» та «Доступність» нижче. Кожна операція все ще вимагатиме вашого підтвердження.",
+    "description": "Текст допомоги під перемикачем використання комп'ютера."
   },
   "settings.localToolsAndroidSkillsTitle": {
     "message": "Навички автоматизації телефону",
@@ -1077,96 +1245,96 @@
     "description": "Save the authorized folders."
   },
   "settings.localToolsMcpTitle": {
-    "message": "MCP servers",
-    "description": "Section title for local MCP server configuration in Local Tools settings."
+    "message": "Сервер MCP",
+    "description": "Заголовок розділу налаштувань локального сервера MCP."
   },
   "settings.localToolsMcpHint": {
-    "message": "Connect local MCP servers over stdio. Their tools become available to the AI, gated by the same per-call confirmation. Changes take effect immediately.",
-    "description": "Explains what local MCP servers do and that changes apply without a restart."
+    "message": "Підключайте локальний сервер MCP через stdio. Інструменти будуть доступні для використання AI та захищені тією ж підтвердженням поетапних викликів. Зміни набирають чинності одразу.",
+    "description": "Описує призначення локального сервера MCP та те, що зміни набирають чинності без перезавантаження."
   },
   "settings.localToolsMcpAdd": {
-    "message": "Add server",
-    "description": "Button to add a new local MCP server row."
+    "message": "Додати сервер",
+    "description": "Кнопка для додавання нового рядка локального сервера MCP."
   },
   "settings.localToolsMcpName": {
-    "message": "Name",
-    "description": "Label for the MCP server name/id field."
+    "message": "Ім'я",
+    "description": "Мітка для поля імені/ідентифікатора сервера MCP."
   },
   "settings.localToolsMcpCommand": {
-    "message": "Command",
-    "description": "Label for the MCP server launch command field."
+    "message": "Команда",
+    "description": "Мітка для поля команди запуску сервера MCP."
   },
   "settings.localToolsMcpArgs": {
-    "message": "Arguments",
-    "description": "Label for the MCP server command arguments field."
+    "message": "Параметри",
+    "description": "Мітка для поля командних параметрів сервера MCP."
   },
   "settings.localToolsMcpArgsHint": {
-    "message": "One argument per line.",
-    "description": "Placeholder/hint for the MCP arguments textarea."
+    "message": "Кожен параметр на новому рядку.",
+    "description": "Підказка для текстового поля параметрів MCP."
   },
   "settings.localToolsMcpEnv": {
-    "message": "Environment",
-    "description": "Label for the MCP server environment variables field."
+    "message": "Змінні середовища",
+    "description": "Мітка для поля змінних середовища сервера MCP."
   },
   "settings.localToolsMcpEnvHint": {
-    "message": "One KEY=VALUE per line.",
-    "description": "Placeholder/hint for the MCP environment variables textarea."
+    "message": "Кожна змінна на новому рядку у форматі KEY=VALUE.",
+    "description": "Підказка для текстового поля змінних середовища MCP."
   },
   "settings.localToolsMcpNoServers": {
-    "message": "No MCP servers configured.",
-    "description": "Empty state shown when no MCP servers are configured."
+    "message": "Сервери MCP ще не налаштовані.",
+    "description": "Показується, коли жоден сервер MCP не налаштовано."
   },
   "settings.localToolsMcpNamePlaceholder": {
-    "message": "e.g. filesystem",
-    "description": "Placeholder for the MCP server name input."
+    "message": "Наприклад, filesystem",
+    "description": "Підказка для поля введення імені сервера MCP."
   },
   "settings.localToolsMcpCommandPlaceholder": {
-    "message": "e.g. npx",
-    "description": "Placeholder for the MCP server command input."
+    "message": "Наприклад, npx",
+    "description": "Підказка для поля введення команди сервера MCP."
   },
   "settings.localToolsMcpNameRequired": {
-    "message": "Each server needs a name and a command.",
-    "description": "Validation error when a server row is missing a name or command."
+    "message": "Кожен сервер потребує імені та команди.",
+    "description": "Помилка перевірки, коли рядок сервера не має імені або команди."
   },
   "settings.localToolsMcpDuplicateName": {
-    "message": "Server names must be unique.",
-    "description": "Validation error when two servers share the same name."
+    "message": "Ім'я сервера повинно бути унікальним.",
+    "description": "Помилка перевірки, коли два імені серверів збігаються."
   },
   "settings.localToolsMcpNameInvalid": {
-    "message": "Name may only contain letters, numbers, hyphens and underscores.",
-    "description": "Validation error when a server name contains invalid characters."
+    "message": "Ім'я може містити лише літери, цифри, дефіси та підкреслення.",
+    "description": "Помилка перевірки, коли ім'я сервера містить недопустимі символи."
   },
   "settings.localToolsMcpEnabled": {
-    "message": "On",
-    "description": "Toggle label to enable/disable a local MCP server."
+    "message": "Увімкнено",
+    "description": "Мітка перемикача для увімкнення/вимкнення певного локального сервера MCP."
   },
   "settings.localToolsMcpReconnect": {
-    "message": "Test / Reconnect",
-    "description": "Button to re-spawn one MCP server and refresh its status."
+    "message": "Тестувати / Перепідключити",
+    "description": "Кнопка для перезапуску певного сервера MCP та оновлення його стану."
   },
   "settings.localToolsMcpConnecting": {
-    "message": "Connecting…",
-    "description": "Badge while an MCP server is being (re)connected."
+    "message": "Підключення…",
+    "description": "Мітка стану, коли сервер MCP підключається (або перепідключається)."
   },
   "settings.localToolsMcpNotSaved": {
-    "message": "Not saved yet",
-    "description": "Badge for an MCP server row that hasn't been saved/connected yet."
+    "message": "Ще не збережено",
+    "description": "Мітка стану для рядка сервера MCP, який ще не збережено/підключено."
   },
   "settings.localToolsMcpConnected": {
-    "message": "Connected · {n} tools",
-    "description": "Badge when an MCP server connected; {n} is the tool count."
+    "message": "Підключено · {n} інструментів",
+    "description": "Мітка, коли з'єднання з сервером MCP успішне; {n} - кількість інструментів."
   },
   "settings.localToolsMcpDisabled": {
-    "message": "Disabled",
-    "description": "Badge when an MCP server is turned off."
+    "message": "Вимкнено",
+    "description": "Мітка, коли сервер MCP вимкнено."
   },
   "settings.localToolsMcpFailed": {
-    "message": "Failed to connect",
-    "description": "Badge when an MCP server failed to start; the reason is shown below."
+    "message": "Не вдалося підключитися",
+    "description": "Мітка, коли запуск сервера MCP не вдався; причина буде вказана нижче."
   },
   "settings.localToolsMcpPlatformHint": {
-    "message": "Tip: use a command on your PATH such as npx or uvx (e.g. npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). On Windows, npx/node resolve automatically. If a server shows \"spawn … ENOENT\", set the command to a full path.",
-    "description": "Cross-platform hint for configuring the MCP launch command."
+    "message": "Підказка: використовуйте команди з PATH, такі як npx або uvx (наприклад, npx -y {'@'}modelcontextprotocol/server-filesystem ~/Documents). На Windows npx/node автоматично розпізнається. Якщо якийсь сервер показує “spawn … ENOENT”, змініть команду на повний шлях.",
+    "description": "Кросплатформна підказка для налаштування команди запуску MCP."
   },
   "settings.localToolsSaved": {
     "message": "Збережено",
@@ -1253,7 +1421,7 @@
     "description": "Заголовок, що показує, на якому відкритому проекті базується цей сайт на сторінці 'Про нас'"
   },
   "settings.poweredByTip": {
-    "message": "Цей сайт побудований на відкритому проекті BigPlayer AI, код повністю відкритий.",
+    "message": "Цей сайт побудований на відкритому проекті Nexior, код повністю відкритий.",
     "description": "Опис, що показує, на якому відкритому проекті базується цей сайт на сторінці 'Про нас'"
   },
   "settings.apiService": {
@@ -1261,7 +1429,7 @@
     "description": "Заголовок, що показує постачальника API сервісу на сторінці 'Про нас'"
   },
   "settings.apiServiceTip": {
-    "message": "API сервіс цього сайту надається BigPlayer AI.",
+    "message": "API сервіс цього сайту надається Ace Data Cloud.",
     "description": "Опис, що показує постачальника API сервісу на сторінці 'Про нас'"
   },
   "settings.buildYourOwn": {
@@ -1276,6 +1444,86 @@
     "message": "Зв'язатися з підтримкою",
     "description": "Текст кнопки для зв'язку з підтримкою"
   },
+  "settings.contactSupport": {
+    "message": "Звʼязатися з підтримкою",
+    "description": "Section title on the About page listing the site owner's customer-service channels"
+  },
+  "settings.contactSupportTip": {
+    "message": "Звʼяжіться з нашою службою підтримки будь-яким із наведених нижче каналів.",
+    "description": "Subtitle under the support contacts section on the About page"
+  },
+  "settings.contactInvalidUrl": {
+    "message": "{field} має бути дійсним посиланням http(s)",
+    "description": "Validation error shown when a contact URL is not a valid http(s) link"
+  },
+  "settings.contactInvalidPhone": {
+    "message": "Введіть дійсний номер телефону",
+    "description": "Validation error shown when the phone number is invalid"
+  },
+  "settings.contactInvalidEmail": {
+    "message": "Введіть дійсну адресу електронної пошти",
+    "description": "Validation error shown when the email address is invalid"
+  },
+  "settings.contactType": {
+    "message": "Тип",
+    "description": "Placeholder for the contact type picker in the editor"
+  },
+  "settings.contactType_phone": {
+    "message": "Телефон",
+    "description": "Display name for the phone contact type"
+  },
+  "settings.contactType_email": {
+    "message": "Електронна пошта",
+    "description": "Display name for the email contact type"
+  },
+  "settings.contactType_website": {
+    "message": "Вебсайт",
+    "description": "Display name for the website contact type"
+  },
+  "settings.contactType_wechat": {
+    "message": "WeChat",
+    "description": "Відображуване ім'я для типу контакту WeChat"
+  },
+  "settings.contactLabelPlaceholder": {
+    "message": "Примітка (необов'язково), наприклад: передпродаж",
+    "description": "Заповнювач для необов'язкового поля введення мітки контакту"
+  },
+  "settings.contactValuePlaceholder": {
+    "message": "Обліковий запис / Текст для відображення",
+    "description": "Заповнювач для загального поля введення значення контакту"
+  },
+  "settings.contactQr": {
+    "message": "QR-код",
+    "description": "Label for a contact's QR-code image"
+  },
+  "settings.contactQrTip": {
+    "message": "Завантажте QR-код, користувач може додати вас, відсканувавши його.",
+    "description": "Підказка для завантажувача QR-коду контакту"
+  },
+  "settings.contactAdd": {
+    "message": "Додати контакт",
+    "description": "Button to add another contact entry"
+  },
+  "settings.contactEditorHint": {
+    "message": "Виберіть тип для кожного каналу та заповніть принаймні одне з: значення / посилання / QR-код; можна додати кілька.",
+    "description": "Підказка вгорі діалогового вікна редактора контактів"
+  },
+  "settings.contactInvalidType": {
+    "message": "Тип може містити лише малі літери, цифри, - та _",
+    "description": "Помилка валідації для недійсного слугу типу контакту"
+  },
+  "settings.contactRowNeedsValue": {
+    "message": "Кожен контакт повинен містити принаймні одне з: значення, посилання або QR-код",
+    "description": "Помилка валідації, коли рядок контакту не має значення/URL/QR"
+  },
+  "settings.contactInvalidValue": {
+    "message": "Зміст контактної інформації недійсний або занадто довгий",
+    "description": "Помилка валідації, коли значення/мітка контакту недійсні або занадто довгі"
+  },
+  "settings.contactTooMany": {
+    "message": "Максимум можна додати {max} контактів",
+    "description": "Помилка валідації, коли додано занадто багато контактів"
+  },
   "message.viewOnGithub": {
     "message": "Переглянути на GitHub",
     "description": "Текст посилання для перегляду проекту на GitHub"
@@ -1285,7 +1533,7 @@
     "description": "Заголовок 404 сторінки"
   },
   "message.notFound": {
-    "message": "Сторінка, яку ви відвідали, не існує, можливо, посилання було змінено або видалено. Поверніться на головну, щоб продовжити дослідження AI послуг BigPlayer AI.",
+    "message": "Сторінка, яку ви відвідали, не існує, можливо, посилання було змінено або видалено. Поверніться на головну, щоб продовжити дослідження AI послуг AceData.",
     "description": "Опис підзаголовка 404 сторінки"
   },
   "message.notFoundEyebrow": {
@@ -1305,24 +1553,24 @@
     "description": "Текст кнопки для повернення на попередню сторінку в історії перегляду"
   },
   "title.apiCode": {
-    "message": "API code for this request",
-    "description": "Title of the dialog that shows the equivalent API code (curl / Python / Node) that would reproduce a result generated inside the product"
+    "message": "API код для цього запиту",
+    "description": "Заголовок діалогового вікна: показує код API виклику curl / Python / Node, що відповідає поточному результату"
   },
   "message.viewCodeHint": {
-    "message": "Show API code for this request",
-    "description": "Tooltip text on the View Code button shown alongside result-card action buttons (U1/U2/Download/Extend/...). Clicking the button opens a dialog with curl / Python / Node snippets that reproduce the same generation via the public API."
+    "message": "Переглянути код API, відповідний до цього запиту",
+    "description": "Підказка, що з'являється поруч із кнопкою View Code на картці результатів (U1/U2/завантажити/розширити…). Натискання кнопки відкриває діалогове вікно, що показує код виклику API на curl / Python / Node, що відповідає поточному результату."
   },
   "button.viewCode": {
-    "message": "View code",
-    "description": "Button text that opens a dialog with the equivalent API code (curl / Python / Node) for the current result, similar to the OpenAI Playground 'View code' affordance"
+    "message": "Переглянути код",
+    "description": "Текст кнопки: відкриває діалогове вікно, що показує код виклику API на curl / Python / Node, відповідний до поточного результату (аналогічно кнопці View code в OpenAI Playground)."
   },
   "button.getApiKey": {
-    "message": "Get an API key",
-    "description": "Link text in the API code dialog footer that opens the platform console page where users can create an API key"
+    "message": "Отримати API Key",
+    "description": "Текст посилання внизу діалогу API: натискання переходить на сторінку платформи для створення API Key."
   },
   "button.apiPlatform": {
-    "message": "API Platform",
-    "description": "API code dialog footer button label. Clicking opens https://platform.acedata.cloud/ in a new tab so users can manage their API keys, balance and usage."
+    "message": "API платформа",
+    "description": "Напис кнопки в нижній частині діалогу API code. Натискання відкриває https://platform.acedata.cloud/ в новій вкладці, щоб користувачі могли керувати своїми API ключами, балансом і використанням."
   },
   "message.apiCodeIntro": {
     "message": "Run this from your own code to produce the same result. Replace <YOUR_API_KEY> with a key from your platform console.",
@@ -1380,60 +1628,235 @@
     "message": "Завантаження довідкових файлів ще триває — зачекайте, будь ласка.",
     "description": "Toast shown when the user clicks the Generate button while one or more reference uploads are still in flight. Asks them to wait for uploads to complete before retrying."
   },
+  "message.uploadTooLarge": {
+    "message": "Розмір файлу {size} перевищує ліміт {max}, будь ласка, стисніть його та спробуйте знову",
+    "description": "Підказка, що з'являється, коли вибраний користувачем файл перевищує максимальний розмір для завантаження, вказуючи поточний розмір файлу та дозволений ліміт."
+  },
+  "message.dropToUpload": {
+    "message": "Перетягніть сюди для завантаження",
+    "description": "Текст підказки, що з'являється, коли файл перетягується над елементом управління завантаження, повідомляючи користувача, що можна відпустити для завантаження."
+  },
   "appUpgrade.title": {
-    "message": "Update required",
-    "description": "Title of the native-app version gate modal shown at startup when the installed build is older than what the backend supports."
+    "message": "Необхідне оновлення",
+    "description": "Заголовок вікна версійного контролю при запуску рідного додатку. Відображається, коли версія клієнта нижча за вимоги сервера, повідомляє користувача про необхідність оновлення додатку."
   },
   "appUpgrade.blockMessage": {
-    "message": "This version is no longer supported. Please update from the app store to continue.",
-    "description": "Body text of the hard-block upgrade modal shown when the installed version is below min_supported. The modal has no dismiss affordance — the only button opens the app store."
+    "message": "Поточна версія занадто стара, будь ласка, перейдіть до магазину додатків, щоб оновити до останньої версії перед використанням.",
+    "description": "Текст примусового вікна оновлення. Відображається, коли версія клієнта нижча за min_supported, не може бути закрита, єдина кнопка веде до магазину додатків."
   },
   "appUpgrade.softMessage": {
-    "message": "A newer version is available. Update from the app store for the best experience.",
-    "description": "Body text of the soft upgrade prompt shown when the installed version is below latest but above min_supported. The user can dismiss and keep using the app."
+    "message": "Доступна нова версія, рекомендуємо перейти до магазину додатків для оновлення для кращого досвіду.",
+    "description": "Текст необов'язкового повідомлення про оновлення. Відображається, коли версія клієнта нижча за latest, але вища за min_supported, користувач може вибрати сказати пізніше і продовжити використання."
   },
   "appUpgrade.openStore": {
-    "message": "Update now",
-    "description": "Primary button on the upgrade modal — opens the App Store / Play Store URL in the system browser."
+    "message": "Перейти до оновлення",
+    "description": "Головна кнопка вікна оновлення: відкриває посилання на App Store / Play Store у системному браузері."
   },
   "appUpgrade.later": {
-    "message": "Later",
-    "description": "Secondary button on the soft upgrade prompt — dismisses the modal and lets the user keep using the current version. Only shown for non-forced upgrades."
+    "message": "Сказати пізніше",
+    "description": "Кнопка другого порядку в м'якому вікні оновлення: ігнорує це повідомлення і продовжує використання, з'являється лише в не примусових сценаріях оновлення."
   },
   "nav.maestro": {
     "message": "Maestro",
     "description": "Текст на сторінці перетворення статей Maestro на відео в навігаційній панелі, залишити як 'Maestro'"
   },
   "nav.digitalhuman": {
-    "message": "Digital Human",
-    "description": "Text in the website navigation bar for the Digital Human talking-head page"
+    "message": "Цифрова людина",
+    "description": "Текст на сторінці цифрової людини в навігаційній панелі."
   },
   "settings.localToolsAndroidPermHint": {
-    "message": "Enable the accessibility service so the assistant can see and control your screen. You can pre-authorize individual actions below.",
-    "description": "Hint for the Android Computer Use accessibility permission section in Settings."
+    "message": "Після активації служби доступності AI помічник зможе переглядати та керувати вашим екраном. Ви можете заздалегідь надати дозвіл на конкретні операції нижче.",
+    "description": "Опис блоку дозволів доступності Computer Use в налаштуваннях Android."
   },
   "settings.cuConsentTitle": {
-    "message": "Allow action?",
-    "description": "Title of the on-demand consent dialog shown when the assistant requests a screen action."
+    "message": "Дозволити операцію?",
+    "description": "Заголовок діалогового вікна запиту дозволу (з'являється, коли модель запитує виконання певної операції на екрані)."
   },
   "settings.cuConsentMessage": {
-    "message": "The assistant wants to run \"{action}\" on your phone. Allow it?",
-    "description": "Body of the on-demand consent dialog; {action} is the computer.* action name."
+    "message": "AI помічник хоче виконати операцію «{action}» на вашому телефоні, чи дозволити?",
+    "description": "Основний текст діалогового вікна запиту дозволу; {action} - це конкретна назва операції computer.*."
   },
   "settings.cuConsentAllow": {
-    "message": "Allow once",
-    "description": "Allow button of the on-demand consent dialog."
+    "message": "Дозволити один раз",
+    "description": "Кнопка дозволу в діалоговому вікні запиту дозволу"
   },
   "settings.cuConsentAlways": {
-    "message": "Always allow",
-    "description": "Always-allow button of the on-demand consent dialog; persists a grant so this action never prompts again."
+    "message": "Завжди дозволяти",
+    "description": "Кнопка завжди дозволяти в діалоговому вікні запиту дозволу; постійний дозвіл, це запит більше не з'явиться."
   },
   "settings.cuConsentDeny": {
-    "message": "Deny",
-    "description": "Deny button of the on-demand consent dialog."
+    "message": "Відмовити",
+    "description": "Кнопка відмови в діалоговому вікні запиту дозволу"
   },
-  "nav.glm": {
-    "message": "GLM",
-    "description": "网站导航栏中的文本，用于显示 GLM 模型服务"
+  "settings.siteServices": {
+    "message": "Ціна"
+  },
+  "nav.omni": {
+    "message": "Omni відео",
+    "description": "Навігаційна вкладка модуля Omni відео"
+  },
+  "settings.localToolsMcpToolsTitle": {
+    "message": "Інструменти MCP",
+    "description": "Заголовок блоку інструментів MCP у налаштуваннях локальних інструментів."
+  },
+  "settings.localToolsMcpToolsHint": {
+    "message": "Підключено інструменти, надані сервером MCP. Після відкриття AI більше не буде запитувати по черзі. Сервер MCP є сторонньою програмою, яка не підлягає обмеженням авторизованих папок — інструменти, позначені як «повний доступ», можуть змінювати або публікувати дані, будьте обережні при їх відкритті.",
+    "description": "Опис тексту блоку інструментів MCP, що підкреслює ризики сторонніх програм."
+  },
+  "settings.localToolsWorkingDirTitle": {
+    "message": "Робочий каталог",
+    "description": "Заголовок розділу в налаштуваннях локальних інструментів: папка проєкту, в якій наразі працює ШІ"
+  },
+  "settings.localToolsWorkingDirHint": {
+    "message": "ШІ за замовчуванням працює в цьому проєкті: команди терміналу виконуються звідси, а проєктні угоди (AGENTS.md / CLAUDE.md) також читаються звідси. Після вибору ця папка автоматично отримає права на читання та запис, без необхідності додавати їх знову.",
+    "description": "Опис тексту для розділу робочого каталогу"
+  },
+  "settings.localToolsWorkingDirNone": {
+    "message": "Ще не вибрано",
+    "description": "Стан порожнього, коли робочий каталог не налаштовано"
+  },
+  "settings.localToolsWorkingDirChange": {
+    "message": "Змінити",
+    "description": "Кнопка для зміни робочого каталогу"
+  },
+  "button.report": {
+    "message": "Поскаржитися",
+    "description": "Текст на кнопці для повідомлення про неналежний контент, згенерований ШІ"
+  },
+  "title.reportContent": {
+    "message": "Скарга на контент",
+    "description": "Назва діалогу для повідомлення про неналежний контент, згенерований ШІ"
+  },
+  "message.reportIntro": {
+    "message": "Будь ласка, виберіть причину скарги, ми швидко перевіримо і покращимо фільтрацію контенту.",
+    "description": "Вступне повідомлення в діалозі скарги на контент"
+  },
+  "message.reportDetailPlaceholder": {
+    "message": "Додаткова інформація (необов'язково)",
+    "description": "Заповнювальне поле для необов'язкового текстового поля в діалозі скарги на контент"
+  },
+  "message.reportSuccess": {
+    "message": "Скарга надіслана, дякуємо за ваш відгук.",
+    "description": "Повідомлення, яке відображається після успішної подачі скарги на контент"
+  },
+  "message.reportFailed": {
+    "message": "Не вдалося надіслати скаргу, будь ласка, спробуйте ще раз пізніше.",
+    "description": "Повідомлення, яке відображається, коли подача скарги на контент не вдалася"
+  },
+  "message.reportReasonRequired": {
+    "message": "Будь ласка, виберіть причину скарги.",
+    "description": "Повідомлення валідації, коли не вибрано причину скарги"
+  },
+  "reportReason.sexual": {
+    "message": "Порнографічний або сексуальний контент",
+    "description": "Причина скарги на контент: сексуальний контент"
+  },
+  "reportReason.violence": {
+    "message": "Насильство або криваві сцени",
+    "description": "Причина скарги на контент: насильство або криваві сцени"
+  },
+  "reportReason.hate": {
+    "message": "Мова ненависті або переслідування",
+    "description": "Причина скарги на контент: мова ненависті або переслідування"
+  },
+  "reportReason.child_safety": {
+    "message": "Загроза неповнолітнім",
+    "description": "Причина скарги на контент: безпека дітей"
+  },
+  "reportReason.self_harm": {
+    "message": "Самопошкодження або небезпечні дії",
+    "description": "Причина скарги на контент: самопошкодження або небезпечні дії"
+  },
+  "reportReason.deception": {
+    "message": "Неправдива або оманлива інформація",
+    "description": "Причина скарги на контент: оманливий або неправдивий контент"
+  },
+  "reportReason.illegal": {
+    "message": "Незаконний контент",
+    "description": "Причина скарги на контент: незаконна діяльність"
+  },
+  "reportReason.ip": {
+    "message": "Порушення інтелектуальної власності",
+    "description": "Причина скарги на контент: порушення прав інтелектуальної власності"
+  },
+  "reportReason.other": {
+    "message": "Інше",
+    "description": "Причина скарги на контент: інше"
+  },
+  "x402Scenario.paymentMethod": {
+    "message": "Спосіб оплати",
+    "description": "Мітка для вибору балансу або гаманця Solana USDC у сценарії генерації зображень."
+  },
+  "x402Scenario.credits": {
+    "message": "Бали",
+    "description": "Опція оплати балами у сценарії генерації."
+  },
+  "x402Scenario.wallet": {
+    "message": "Гаманець USDC",
+    "description": "Опція оплати через гаманець Solana USDC у сценарії генерації."
+  },
+  "x402Scenario.quoteBeforeSigning": {
+    "message": "Перед підписанням гаманця буде показана точна ціна USDC, надана сервером.",
+    "description": "Підказка, що сервер надасть авторитетну ціну в режимі оплати через гаманець."
+  },
+  "x402Scenario.connectWalletFirst": {
+    "message": "Спочатку підключіть гаманець Solana, перш ніж генерувати.",
+    "description": "Підказка, коли вибрано режим гаманця, але гаманець ще не підключено."
+  },
+  "x402Scenario.confirmPayment": {
+    "message": "Підтвердити оплату {amount} USDC (Solana) за цю генерацію?",
+    "description": "Підтвердження оплати після отримання виклику x402; {amount} - точна ціна від сервера."
+  },
+  "x402Scenario.paymentFailed": {
+    "message": "Оплата через гаманець не вдалася.",
+    "description": "Префікс для підказки про невдалу генерацію в режимі гаманця."
+  },
+  "x402Scenario.gptEditCreditsOnly": {
+    "message": "Оплата через гаманець наразі підтримує лише генерацію зображень GPT; для редагування ескізу, будь ласка, перемкніться на бали.",
+    "description": "Підказка для користувачів на етапі MVP, які намагаються редагувати ескізи GPT Image в режимі гаманця."
+  },
+  "x402Scenario.payEachTime": {
+    "message": "Підтверджувати кожного разу",
+    "description": "Опція, яка вимагає підтвердження користувача перед кожним платежем з гаманця."
+  },
+  "x402Scenario.continuousPayments": {
+    "message": "Безперервні платежі",
+    "description": "Варіант використання повторного дозволу на оплату Solana USDC."
+  },
+  "x402Scenario.continuousPaymentsDescription": {
+    "message": "Дозволити Studio оплачувати фактичне використання з гаманця Solana USDC в межах встановленого вами щоденного ліміту.",
+    "description": "Опис, що відображається перед увімкненням безперервних платежів."
+  },
+  "x402Scenario.dailyPaymentLimit": {
+    "message": "Щоденний ліміт платежу",
+    "description": "Максимальна сума USDC, яку можна використовувати щодня для безперервних платежів."
+  },
+  "x402Scenario.validUntil": {
+    "message": "Дійсно до",
+    "description": "Дата закінчення дії авторизації безперервних платежів."
+  },
+  "x402Scenario.validDays": {
+    "message": "Дні дії",
+    "description": "Кількість днів до закінчення дії авторизації безперервних платежів."
+  },
+  "x402Scenario.enableContinuousPayments": {
+    "message": "Увімкнути безперервні платежі",
+    "description": "Кнопка для створення повторно використовуваної авторизації платежів Solana."
+  },
+  "x402Scenario.disableContinuousPayments": {
+    "message": "Вимкнути",
+    "description": "Кнопка для зупинки використання безперервних платежів, але без скасування авторизації на блокчейні."
+  },
+  "x402Scenario.revokeAuthorization": {
+    "message": "Скасувати авторизацію",
+    "description": "Кнопка для скасування повторно використовуваної авторизації платежів на Solana."
+  },
+  "x402Scenario.continuousPaymentsEnabled": {
+    "message": "Безперервні платежі увімкнено.",
+    "description": "Повідомлення після успішного створення авторизації платежу в гаманці."
+  },
+  "error.userRestricted": {
+    "message": "Цей обліковий запис наразі обмежений, не можна увійти. Якщо ви не згодні, будь ласка, зверніться до служби підтримки.",
+    "description": "Підказка, що відображається, коли виявлено ізольований обліковий запис під час входу в iOS, не показує внутрішні причини обмеження."
   }
 }

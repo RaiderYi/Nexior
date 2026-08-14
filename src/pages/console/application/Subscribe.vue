@@ -18,6 +18,12 @@
                   {{ $t('console.subscription.title') }}
                 </p>
                 <el-skeleton v-if="loading" />
+                <div v-else-if="loadFailed" class="text-center">
+                  <el-empty :description="$t('common.message.noData')" />
+                  <el-button type="primary" round @click="onInitialize">
+                    {{ $t('common.button.refresh') }}
+                  </el-button>
+                </div>
                 <el-row v-else :gutter="15" class="subscriptions">
                   <el-col
                     v-for="(item, index) in subscriptions"
@@ -27,21 +33,40 @@
                   >
                     <el-card
                       shadow="hover"
-                      :class="{ subscription: true, active: subscription?.name === item.name }"
-                      @click="subscription = item"
+                      :class="{
+                        subscription: true,
+                        active: subscription?.name === item.name,
+                        disabled: !item.available
+                      }"
+                      @click="item.available && (subscription = item)"
                     >
                       <h4 class="name">
                         {{ item.label }}
                         <el-tag v-if="item.tag" type="warning">{{ item.tag }}</el-tag>
                       </h4>
                       <h2 class="price">
-                        {{ getPriceString({ value: item.price }) }}
+                        <template v-if="item.price !== undefined">{{ getPriceString({ value: item.price }) }}</template>
+                        <span v-else class="text-[var(--el-text-color-secondary)]">{{
+                          $t('common.message.noData')
+                        }}</span>
                       </h2>
                       <p class="description">{{ item.description }}</p>
                       <div class="benefits">
                         <div v-for="(benefit, benefitIndex) in item.benefits" :key="benefitIndex" class="benefit">
-                          <font-awesome-icon v-if="benefit.enabled" icon="fa-solid fa-check" class="icon icon-check" />
-                          <font-awesome-icon v-else icon="fa-solid fa-xmark" class="icon icon-xmark" />
+                          <confirm-icon
+                            v-if="benefit.enabled"
+                            class="icon icon-check"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
+                          <close-icon
+                            v-else
+                            class="icon icon-xmark"
+                            :size="'1em' as any"
+                            aria-hidden="true"
+                            focusable="false"
+                          />
                           <span> {{ benefit.content }}</span>
                         </div>
                       </div>
@@ -50,6 +75,7 @@
                           v-if="showPayment"
                           class="btn btn-subscribe"
                           :type="subscription?.name === item?.name ? 'primary' : ''"
+                          :disabled="!item.available"
                           round
                           @click="onCreateOrder(item)"
                           >{{ $t('common.button.buy') }}</el-button
@@ -58,9 +84,16 @@
                     </el-card>
                   </el-col>
                 </el-row>
-                <div v-if="!loading && showPayment" class="extra">
+                <div v-if="!loading && !loadFailed && showPayment" class="extra">
                   <span>{{ $t('console.message.doNotWantSubscribe') }}</span>
-                  <el-button type="primary" class="btn btn-extra" round size="small" @click="onBuyExtra">
+                  <el-button
+                    type="primary"
+                    class="btn btn-extra"
+                    round
+                    size="small"
+                    :loading="creatingUsageApplication"
+                    @click="onBuyExtra"
+                  >
                     {{ $t('console.message.buyExtra') }}
                   </el-button>
                 </div>
@@ -74,15 +107,16 @@
 </template>
 
 <script lang="ts">
+import { CloseIcon, ConfirmIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { IService, IApplication, IApplicationType, IOrderDetailResponse, IPackageType, IPackage } from '@/models';
 import { ElRow, ElCol, ElCard, ElSkeleton, ElMessage, ElButton, ElTag, ElEmpty } from 'element-plus';
 import { applicationOperator, orderOperator, serviceOperator } from '@/operators';
-import { getPriceString, applyMarkup, getSiteMarkupRatio } from '@/utils';
-import { isIOS } from '@/utils';
+import { getPriceString, applyMarkup, getApplicationMarkupRatio } from '@/utils';
+import { isIOS, isRechargeDisabled } from '@/utils';
 import { track } from '@/plugins/telemetry';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { ROUTE_CONSOLE_APPLICATION_EXTRA, ROUTE_CONSOLE_ORDER_DETAIL } from '@/router';
+import { ERROR_CODE_DUPLICATION } from '@/constants';
+import { ROUTE_CONSOLE_APPLICATION_EXTRA, ROUTE_CONSOLE_ORDER_DETAIL, ROUTE_CONSOLE_APPLICATION_LIST } from '@/router';
 
 interface ISubscription {
   name: string;
@@ -92,28 +126,33 @@ interface ISubscription {
   duration: number;
   benefits?: { enabled: boolean; content: string }[];
   description?: string;
+  available?: boolean;
 }
 
 interface IData {
   application: IApplication | undefined;
   application2: IApplication | undefined;
+  usageApplication: IApplication | undefined;
   services: IService[];
   type: string;
   loading: boolean;
+  loadFailed: boolean;
   creating: boolean;
+  creatingUsageApplication: boolean;
   subscription: ISubscription | undefined;
 }
 
 export default defineComponent({
   name: 'ConsoleSubscriptionBuy',
   components: {
+    CloseIcon,
+    ConfirmIcon,
     ElSkeleton,
     ElRow,
     ElTag,
     ElCol,
     ElCard,
     ElEmpty,
-    FontAwesomeIcon,
     ElButton
   },
   data(): IData {
@@ -121,10 +160,13 @@ export default defineComponent({
       application: undefined,
       // the application which used for subscription
       application2: undefined,
+      usageApplication: undefined,
       type: IApplicationType.PERIOD,
       services: [],
       loading: false,
+      loadFailed: false,
       creating: false,
+      creatingUsageApplication: false,
       subscription: undefined
     };
   },
@@ -140,6 +182,12 @@ export default defineComponent({
     // displaying non-IAP paid content, not just the purchase action.
     showPayment(): boolean {
       return !isIOS();
+    },
+    effectiveMarkupRatio(): number | undefined {
+      return getApplicationMarkupRatio(this.application2, this.site);
+    },
+    pricingAvailable(): boolean {
+      return this.effectiveMarkupRatio !== undefined;
     },
     subscriptions(): ISubscription[] {
       const items: ISubscription[] = [
@@ -167,11 +215,10 @@ export default defineComponent({
         console.log('item', item);
         const pkgs = this.getPackages(item.duration);
         console.log('pkgs', pkgs);
-        if (pkgs) {
+        item.available = pkgs.length > 0 && this.effectiveMarkupRatio !== undefined;
+        if (item.available) {
           const subtotal = pkgs.reduce((acc, pkg) => acc + pkg.price, 0);
-          // Display the marked-up price so the sub-site card matches what the
-          // gateway charges at order time (backend re-applies the same markup).
-          item.price = applyMarkup(subtotal, getSiteMarkupRatio(this.site));
+          item.price = applyMarkup(subtotal, this.effectiveMarkupRatio!);
         }
         for (const pkg of pkgs) {
           if (!item.benefits) {
@@ -198,23 +245,73 @@ export default defineComponent({
     }
   },
   async mounted() {
-    this.loading = true;
-    await this.onFetchApplication();
-    // fetch the real period application
-    await this.onFetchApplication2();
-    await this.onCreateApplications();
-    this.loading = false;
-    this.subscription = this.subscriptions[2];
+    // Site admin disabled recharge: block the direct/bookmarked subscribe
+    // page too, not just the entry buttons.
+    if (isRechargeDisabled(this.$store.getters.site)) {
+      this.$router.replace({ name: ROUTE_CONSOLE_APPLICATION_LIST });
+      return;
+    }
+    await this.onInitialize();
   },
   methods: {
-    getPriceString,
-    onBuyExtra() {
-      this.$router.push({
-        name: ROUTE_CONSOLE_APPLICATION_EXTRA,
-        params: {
-          id: this.applicationId
+    async onInitialize() {
+      this.loading = true;
+      this.loadFailed = false;
+      try {
+        await this.onFetchApplication();
+        if (this.application?.role === 'grantee') {
+          this.$router.replace({ name: ROUTE_CONSOLE_APPLICATION_LIST });
+          return;
         }
-      });
+        // Fetch or create the Period Application used by order creation.
+        await this.onFetchApplication2();
+        void this.onFetchUsageApplication();
+        await this.onCreateApplications();
+        this.subscription = this.subscriptions.find((item) => item.available);
+      } catch {
+        this.loadFailed = true;
+      } finally {
+        this.loading = false;
+      }
+    },
+    getPriceString,
+    async onBuyExtra() {
+      if (this.creatingUsageApplication) return;
+      this.creatingUsageApplication = true;
+      try {
+        if (!this.usageApplication?.id && this.service?.id) {
+          try {
+            const { data } = await applicationOperator.create({
+              service_id: this.service.id,
+              type: IApplicationType.USAGE
+            });
+            this.usageApplication = data;
+          } catch (error: any) {
+            if (error?.response?.data?.code !== ERROR_CODE_DUPLICATION) {
+              ElMessage.error(this.$t('application.message.createFailed'));
+              return;
+            }
+            try {
+              await this.onFetchUsageApplication();
+            } catch {
+              ElMessage.error(this.$t('application.message.fetchFailed'));
+              return;
+            }
+          }
+        }
+        if (!this.usageApplication?.id) {
+          ElMessage.error(this.$t('console.message.applicationNotFound'));
+          return;
+        }
+        this.$router.push({
+          name: ROUTE_CONSOLE_APPLICATION_EXTRA,
+          params: {
+            id: this.usageApplication.id
+          }
+        });
+      } finally {
+        this.creatingUsageApplication = false;
+      }
     },
     getPackages(duration: number): IPackage[] {
       let result = [];
@@ -279,7 +376,20 @@ export default defineComponent({
       this.application2 = data.items?.[0];
       console.debug('application2', this.application2);
     },
+    async onFetchUsageApplication() {
+      const { data } = await applicationOperator.getAll({
+        limit: 1,
+        offset: 0,
+        user_id: this.$store.getters.user.id,
+        ordering: '-created_at',
+        service_id: this.serviceIds,
+        type: IApplicationType.USAGE
+      });
+      this.usageApplication = data.items?.[0];
+    },
     onCreateOrder(subscription: ISubscription) {
+      const packages = this.getPackages(subscription.duration);
+      if (!this.pricingAvailable || !subscription.available || packages.length === 0) return;
       this.subscription = subscription;
       this.creating = true;
       if (!this.application2 || !this.application2.id) {
@@ -295,7 +405,7 @@ export default defineComponent({
       orderOperator
         .create({
           application_ids: [this.application2.id],
-          package_ids: this.getPackages(subscription.duration).map((p) => p.id),
+          package_ids: packages.map((p) => p.id),
           description: this.service?.title + ' - ' + subscription.label
         })
         .then(({ data: data }: { data: IOrderDetailResponse }) => {

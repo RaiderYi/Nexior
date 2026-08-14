@@ -1,0 +1,690 @@
+{
+  "nav.name": {
+    "message": "Poivelle",
+    "description": "Poivelle product name in navigation"
+  },
+  "status.synced": {
+    "message": "تم مزامنة مخطط المشروع",
+    "description": "حالة مزامنة مخطط المشروع"
+  },
+  "status.loading": {
+    "message": "جارٍ تحميل حالة التشغيل",
+    "description": "حالة تحميل لوحة العمل"
+  },
+  "action.commit": {
+    "message": "تقديم التعديل",
+    "description": "تقديم تعديل على مشروع الرسم"
+  },
+  "action.runSkill": {
+    "message": "تشغيل المهارة",
+    "description": "تشغيل العقدة المحددة باستخدام مهارة المشروع"
+  },
+  "action.retry": {
+    "message": "إعادة المحاولة",
+    "description": "إعادة محاولة التحميل"
+  },
+  "discovery.kicker": {
+    "message": "إنتاج الأفلام بالذكاء الاصطناعي",
+    "description": "عنوان الصفحة الرئيسية للإبداع"
+  },
+  "discovery.title": {
+    "message": "ماذا تريد أن تخلق؟",
+    "description": "إدخال عنوان الإبداع في الصفحة الرئيسية"
+  },
+  "discovery.skills": {
+    "message": "سير عمل الإنتاج",
+    "description": "اسم الوصول لمنتقي سير العمل"
+  },
+  "discovery.placeholder": {
+    "message": "وصف الفيلم أو المنتج أو القصة أو الأجواء التي ترغب في إنشائها...",
+    "description": "نص العنصر النائب في حقل الإدخال للإبداع"
+  },
+  "discovery.create": {
+    "message": "إنشاء مشروع",
+    "description": "تقديم إدخال الإبداع"
+  },
+  "discovery.commercial": {
+    "message": "إعلانات تجارية",
+    "description": "سير العمل للإعلانات التجارية"
+  },
+  "discovery.musicVideo": {
+    "message": "فيديو موسيقي",
+    "description": "سير عمل الفيديو الموسيقي"
+  },
+  "discovery.narrative": {
+    "message": "فيلم قصير سردي",
+    "description": "فئة الأفلام القصيرة السردية"
+  },
+  "discovery.documentary": {
+    "message": "وثائقي",
+    "description": "سير العمل الوثائقي"
+  },
+  "discovery.starterProduct": {
+    "message": "فيلم منتج مع إضاءة استوديو دقيقة",
+    "description": "كلمات مفتاحية للإعلانات التجارية"
+  },
+  "discovery.starterMusic": {
+    "message": "عرض ضوء القمر حول الذكريات والعودة",
+    "description": "كلمات مفتاحية للفيديو الموسيقي"
+  },
+  "discovery.starterDocumentary": {
+    "message": "فيلم يروي إنجازات الفريق والاختراعات",
+    "description": "كلمات مفتاحية للوثائقي"
+  },
+  "discovery.galleryKicker": {
+    "message": "نسخ سير العمل الناضج",
+    "description": "عنوان تدفق الأعمال"
+  },
+  "discovery.gallery": {
+    "message": "الأعمال وخيوط الإنتاج",
+    "description": "عنوان تدفق الأعمال"
+  },
+  "discovery.search": {
+    "message": "بحث عن الأعمال",
+    "description": "نص العنصر النائب في حقل بحث الأعمال"
+  },
+  "discovery.all": {
+    "message": "الكل",
+    "description": "تصنيف جميع الأعمال"
+  },
+  "discovery.community": {
+    "message": "المجتمع",
+    "description": "تصنيف الأعمال المجتمعية"
+  },
+  "discovery.copy": {
+    "message": "نسخ بنقرة واحدة",
+    "description": "عملية نسخ العمل"
+  },
+  "discovery.play": {
+    "message": "تشغيل",
+    "description": "عملية تشغيل الفيلم بشكل مضغوط"
+  },
+  "discovery.playFilm": {
+    "message": "تشغيل الفيلم الكامل",
+    "description": "عملية تشغيل الفيلم الكامل"
+  },
+  "discovery.finishedFilm": {
+    "message": "الفيلم النهائي",
+    "description": "علامة الفيلم النهائي وعنوان مشغل الفيديو"
+  },
+  "discovery.copyPrefix": {
+    "message": "إنشاء نسخة جديدة بناءً على هذا سير العمل",
+    "description": "بادئة تنبيه النسخ الافتراضية"
+  },
+  "discovery.back": {
+    "message": "العودة إلى صفحة الاكتشاف",
+    "description": "العودة إلى الصفحة الرئيسية للإبداع من لوحة العمل"
+  },
+  "section.projects": {
+    "message": "المشاريع",
+    "description": "عنوان قسم المشاريع"
+  },
+  "section.assets": {
+    "message": "مكتبة الأصول",
+    "description": "عنوان قسم الأصول"
+  },
+  "section.revisions": {
+    "message": "المراجعات",
+    "description": "عنوان قسم المراجعات"
+  },
+  "section.inspector": {
+    "message": "المفتش",
+    "description": "عنوان مفتش العقد"
+  },
+  "workspace.create": {
+    "message": "إنشاء مساحة عمل",
+    "description": "أمر إنشاء مساحة عمل"
+  },
+  "workspace.name": {
+    "message": "اسم مساحة العمل",
+    "description": "حقل اسم مساحة العمل"
+  },
+  "workspace.budget": {
+    "message": "الحد الأقصى الشهري (حساب التفاضل)",
+    "description": "حقل ميزانية العمل الشهري"
+  },
+  "project.create": {
+    "message": "إنشاء مشروع جديد",
+    "description": "أمر إنشاء مشروع"
+  },
+  "project.empty": {
+    "message": "لا توجد مشاريع في هذه المساحة العمل.",
+    "description": "إشعار مشروع فارغ"
+  },
+  "project.noProject": {
+    "message": "اختر مشروعًا",
+    "description": "علامة عدم اختيار مشروع"
+  },
+  "project.workspace": {
+    "message": "مساحة العمل",
+    "description": "حقل مساحة العمل للمشروع"
+  },
+  "project.title": {
+    "message": "اسم المشروع",
+    "description": "حقل اسم المشروع"
+  },
+  "project.skill": {
+    "message": "مهارة الإنتاج",
+    "description": "حقل مهارة المشروع"
+  },
+  "project.workflow": {
+    "message": "سير عمل المشروع",
+    "description": "حقل نوع سير عمل المشروع"
+  },
+  "project.blankWorkflow": {
+    "message": "مخطط مشروع فارغ",
+    "description": "خيار مشروع احترافي فارغ"
+  },
+  "project.commercialTVC": {
+    "message": "إعلان تجاري TVC · 40 ثانية",
+    "description": "خيار مخطط إعلان تجاري TVC"
+  },
+  "project.productName": {
+    "message": "اسم المنتج",
+    "description": "حقل اسم المنتج التجاري"
+  },
+  "project.productCategory": {
+    "message": "فئة المنتج",
+    "description": "حقل فئة المنتج التجاري"
+  },
+  "project.brandTone": {
+    "message": "نبرة العلامة التجارية",
+    "description": "حقل نبرة العلامة التجارية التجارية"
+  },
+  "project.aspectRatio": {
+    "message": "نسبة العرض إلى الارتفاع",
+    "description": "نسبة العرض إلى الارتفاع للإنتاج التجاري"
+  },
+  "asset.import": {
+    "message": "استيراد الأصل",
+    "description": "أمر استيراد الأصل"
+  },
+  "asset.all": {
+    "message": "الكل",
+    "description": "تصفية جميع الأصول"
+  },
+  "asset.empty": {
+    "message": "لا توجد أصول إنتاج مطابقة.",
+    "description": "تنبيه فارغ للأصول"
+  },
+  "asset.title": {
+    "message": "اسم الأصل",
+    "description": "حقل اسم الأصل"
+  },
+  "asset.url": {
+    "message": "رابط المصدر",
+    "description": "عنوان مصدر الأصل"
+  },
+  "asset.hash": {
+    "message": "هاش المحتوى",
+    "description": "هاش محتوى الأصل"
+  },
+  "revision.empty": {
+    "message": "لا توجد مراجعات مقدمة بعد.",
+    "description": "إشعار بالمراجعات الفارغة"
+  },
+  "revision.committed": {
+    "message": "تم تقديم المراجعة",
+    "description": "إشعار بنجاح تقديم المراجعة"
+  },
+  "node.create": {
+    "message": "إضافة عقدة",
+    "description": "إنشاء عقدة في مخطط المشروع"
+  },
+  "node.delete": {
+    "message": "حذف عقدة",
+    "description": "حذف عقدة في مخطط المشروع"
+  },
+  "node.deleteConfirm": {
+    "message": "هل أنت متأكد من حذف عقدة المشروع هذه؟ يجب فصل العقد المرتبطة أولاً.",
+    "description": "تأكيد حذف العقدة"
+  },
+  "field.title": {
+    "message": "العنوان",
+    "description": "حقل عنوان العقدة"
+  },
+  "field.type": {
+    "message": "النوع",
+    "description": "حقل نوع العقدة أو الأصل"
+  },
+  "field.prompt": {
+    "message": "كلمات مفتاحية للإنتاج",
+    "description": "كلمات مفتاحية لإنتاج العقدة"
+  },
+  "projection.label": {
+    "message": "عرض مخطط المشروع",
+    "description": "اسم الوصول لعلامة العرض"
+  },
+  "projection.overview": {
+    "message": "نظرة عامة على المشروع",
+    "description": "علامة نظرة عامة إرشادية على المشروع"
+  },
+  "projection.canvas": {
+    "message": "قماش",
+    "description": "عرض قماش المشروع"
+  },
+  "projection.advanced": {
+    "message": "عقدة متقدمة",
+    "description": "علامة عقدة مخطط متقدمة"
+  },
+  "projection.storyboard": {
+    "message": "لوحة قصصية",
+    "description": "عرض لوحة القصص"
+  },
+  "projection.timeline": {
+    "message": "جدول زمني",
+    "description": "عرض الجدول الزمني"
+  },
+  "projection.review": {
+    "message": "مراجعة",
+    "description": "عرض مراجعة المشروع"
+  },
+  "guide.kicker": {
+    "message": "تم إعداد خطة الإنتاج",
+    "description": "عنوان توجيه المشروع"
+  },
+  "guide.title": {
+    "message": "حوّل \"{title}\" إلى فيلم كامل",
+    "description": "عنوان توجيه المشروع"
+  },
+  "guide.body": {
+    "message": "تم إعداد المتطلبات وخطط اللقطات. قم بإنشاء أول لوحة قصص، وبعد تأكيد الاتجاه، تابع إنتاج اللقطات الديناميكية والفيلم النهائي.",
+    "description": "وصف إرشادات المشروع"
+  },
+  "guide.duration": {
+    "message": "المدة المستهدفة",
+    "description": "معلومات عن مدة المشروع"
+  },
+  "guide.shots": {
+    "message": "خطة اللقطات",
+    "description": "معلومات عدد اللقطات في المشروع"
+  },
+  "guide.format": {
+    "message": "نسبة العرض إلى الارتفاع",
+    "description": "معلومات عن عرض المشروع"
+  },
+  "guide.continue": {
+    "message": "متابعة الإنتاج",
+    "description": "العملية الرئيسية للمشروع"
+  },
+  "guide.generateNextFrame": {
+    "message": "إنشاء اللوحة التالية",
+    "description": "عملية اللوحة التالية في الأعلى"
+  },
+  "guide.generateNextMotion": {
+    "message": "إنشاء اللقطة الديناميكية التالية",
+    "description": "عملية اللقطة الديناميكية التالية في الأعلى"
+  },
+  "guide.generateFrame": {
+    "message": "إنشاء لوحة قصص {current}/{total}",
+    "description": "إنشاء اللوحة التالية من القصة"
+  },
+  "guide.generateMotion": {
+    "message": "إنشاء لقطة ديناميكية {current}/{total}",
+    "description": "إنشاء اللقطة الديناميكية التالية"
+  },
+  "guide.generateScore": {
+    "message": "إنشاء الموسيقى التصويرية",
+    "description": "إنشاء الموسيقى التصويرية للمشروع"
+  },
+  "guide.reviewPlan": {
+    "message": "عرض خطة اللقطات",
+    "description": "فتح خطة اللوحة"
+  },
+  "guide.reviewResults": {
+    "message": "عرض نتائج الإنشاء",
+    "description": "فتح نتائج إنشاء اللوحة"
+  },
+  "guide.chooseResults": {
+    "message": "عرض واختيار النتائج",
+    "description": "عرض واختيار المرشحات الناتجة قبل المتابعة"
+  },
+  "guide.generated": {
+    "message": "تم الإنشاء",
+    "description": "لاحقة تقدم الإنشاء"
+  },
+  "guide.selected": {
+    "message": "تم الاختيار",
+    "description": "لاحقة تقدم الاختيار"
+  },
+  "guide.costNote": {
+    "message": "سيتم عرض أعلى تكلفة قبل التشغيل، ولن يبدأ الخصم مباشرة.",
+    "description": "تنبيه أمان تكلفة الإنتاج"
+  },
+  "guide.stepPlan": {
+    "message": "المتطلبات وخطة اللقطات",
+    "description": "مرحلة خطة الإنتاج"
+  },
+  "guide.stepPlanBody": {
+    "message": "تم تقسيم {shots} لقطة، يمكنك البدء في الإنتاج.",
+    "description": "شرح مرحلة خطة الإنتاج"
+  },
+  "guide.stepFrames": {
+    "message": "صور اللوحة",
+    "description": "مرحلة إنشاء اللوحة"
+  },
+  "guide.stepFramesBody": {
+    "message": "قم بإنشاء كل لقطة واختر الاتجاه البصري الذي يعجبك.",
+    "description": "شرح مرحلة إنشاء اللوحة"
+  },
+  "guide.stepMotion": {
+    "message": "لقطة ديناميكية",
+    "description": "مرحلة الإنشاء الديناميكي"
+  },
+  "guide.stepMotionBody": {
+    "message": "قم بتحويل اللوحة المؤكدة إلى مقاطع ديناميكية.",
+    "description": "شرح مرحلة الإنشاء الديناميكي"
+  },
+  "guide.stepMaster": {
+    "message": "الموسيقى التصويرية والمونتاج النهائي",
+    "description": "المرحلة النهائية للإنتاج"
+  },
+  "guide.stepMasterBody": {
+    "message": "اجمع المقاطع المختارة والموسيقى التصويرية، وأكمل فحص التسليم.",
+    "description": "شرح المرحلة النهائية للإنتاج"
+  },
+  "guide.ready": {
+    "message": "جاهز",
+    "description": "حالة اكتمال مرحلة الإنتاج"
+  },
+  "guide.waiting": {
+    "message": "في انتظار",
+    "description": "حالة الانتظار في مرحلة الإنتاج"
+  },
+  "graph.emptyTitle": {
+    "message": "بناء رسم مشروع الإنتاج",
+    "description": "عنوان الرسم البياني الفارغ"
+  },
+  "graph.emptyBody": {
+    "message": "أضف نصوص، شخصيات، مشاهد، لقطات، وسائط وإخراج. يتعاون المحررون البشر مع Skill عبر نفس مجموعة أوامر تاريخ المشروع.",
+    "description": "وصف الرسم البياني الفارغ"
+  },
+  "storyboard.noPrompt": {
+    "message": "لا توجد كلمات مفتاحية لللقطة بعد.",
+    "description": "عدم وجود كلمات مفتاحية للوحة"
+  },
+  "storyboard.emptyTitle": {
+    "message": "لا توجد مشاهد للوحة بعد",
+    "description": "عنوان اللوحة الفارغة"
+  },
+  "storyboard.emptyBody": {
+    "message": "سيتم عرض المشاهد، اللقطات، الصور أو عقد الفيديو هنا بعد إنشائها.",
+    "description": "وصف اللوحة الفارغة"
+  },
+  "storyboard.product": {
+    "message": "المنتج",
+    "description": "علامة المنتج في لوحة القصة"
+  },
+  "storyboard.duration": {
+    "message": "المدة",
+    "description": "علامة مدة اللوحة"
+  },
+  "storyboard.shots": {
+    "message": "عدد اللقطات",
+    "description": "عدد لقطات لوحة القصة"
+  },
+  "storyboard.action": {
+    "message": "الإجراء",
+    "description": "علامة إجراء شخصية اللقطة"
+  },
+  "storyboard.emotion": {
+    "message": "العاطفة",
+    "description": "علامة عاطفة اللقطة"
+  },
+  "storyboard.lighting": {
+    "message": "الإضاءة والجو",
+    "description": "علامة إضاءة اللقطة"
+  },
+  "storyboard.audio": {
+    "message": "تصميم الصوت",
+    "description": "علامة تصميم صوت اللقطة"
+  },
+  "storyboard.imagePrompt": {
+    "message": "كلمات مفتاحية للصورة الثابتة",
+    "description": "علامة كلمات مفتاحية لصورة اللقطة"
+  },
+  "storyboard.motionPrompt": {
+    "message": "كلمات مفتاحية للحركة",
+    "description": "علامة كلمات مفتاحية لحركة اللقطة"
+  },
+  "storyboard.frames": {
+    "message": "مرشحات المشهد",
+    "description": "عنوان مرشحات الصور للوحة"
+  },
+  "storyboard.motion": {
+    "message": "مرشحات الفيديو",
+    "description": "عنوان مرشحات الفيديو للوحة"
+  },
+  "storyboard.openNode": {
+    "message": "فتح العقدة",
+    "description": "فتح عقدة مشروع الوسائط"
+  },
+  "storyboard.selectTake": {
+    "message": "اختر Take",
+    "description": "عملية اختيار Take الوسائط"
+  },
+  "storyboard.selected": {
+    "message": "تم الاختيار",
+    "description": "علامة Take المختارة"
+  },
+  "storyboard.noCandidates": {
+    "message": "لا توجد مرشحات تم إنشاؤها بعد",
+    "description": "إشعار اللوحة الفارغة للمرشحات"
+  },
+  "storyboard.failedTake": {
+    "message": "فشل الإنشاء · عرض سجل التشغيل",
+    "description": "حالة اللقطة الفاشلة"
+  },
+  "storyboard.restrictedTake": {
+    "message": "المرشح مقيد بسبب سياسة حقوق الطبع والنشر",
+    "description": "حالة Take المقيدة"
+  },
+  "storyboard.selectionSaved": {
+    "message": "تم اختيار Take، سيتم إعادة استخدامه في الإنتاج لاحقًا",
+    "description": "إشعار نجاح اختيار Take"
+  },
+  "storyboard.compare": {
+    "message": "إضافة إلى المقارنة",
+    "description": "إضافة اللقطة إلى مجموعة المقارنة"
+  },
+  "storyboard.comparing": {
+    "message": "جارٍ المقارنة",
+    "description": "تمت إضافة اللقطة إلى مجموعة المقارنة"
+  },
+  "timeline.emptyTitle": {
+    "message": "لا توجد تركيبات زمنية بعد",
+    "description": "عنوان الخط الزمني الفارغ"
+  },
+  "timeline.emptyBody": {
+    "message": "يرجى تقديم Take ونتائج الاختيار أولاً، ثم تجميع المقاطع في المسار.",
+    "description": "وصف الخط الزمني الفارغ"
+  },
+  "timeline.deliverable": {
+    "message": "تم تقديم التسليم",
+    "description": "عنوان الإخراج الرئيسي"
+  },
+  "timeline.masterTitle": {
+    "message": "النسخة الرئيسية",
+    "description": "عنوان الإخراج الرئيسي"
+  },
+  "timeline.download": {
+    "message": "تحميل النسخة الأصلية",
+    "description": "عملية تحميل النسخة الرئيسية"
+  },
+  "timeline.duration": {
+    "message": "المدة",
+    "description": "علامة مدة النسخة الرئيسية"
+  },
+  "timeline.frame": {
+    "message": "الإطار",
+    "description": "علامة دقة النسخة الرئيسية"
+  },
+  "timeline.videoClips": {
+    "message": "مقاطع الفيديو",
+    "description": "عدد مقاطع الفيديو الرئيسية"
+  },
+  "timeline.audioClips": {
+    "message": "مقاطع الصوت",
+    "description": "عدد مقاطع الصوت الرئيسية"
+  },
+  "timeline.playerLabel": {
+    "message": "فيديو النسخة الرئيسية",
+    "description": "اسم مشغل الفيديو الرئيسي لذوي الاحتياجات الخاصة"
+  },
+  "timeline.loading": {
+    "message": "جارٍ تحميل النسخة الرئيسية",
+    "description": "حالة تحميل الفيديو الرئيسي"
+  },
+  "timeline.loadError": {
+    "message": "فشل تحميل النسخة الرئيسية.",
+    "description": "إشعار فشل تحميل الفيديو الرئيسي"
+  },
+  "inspector.noSelection": {
+    "message": "لا يوجد محتوى محدد",
+    "description": "عنوان الفاحص عند عدم تحديد عقدة"
+  },
+  "inspector.empty": {
+    "message": "اختر عقدة في اللوحة أو القصة، يمكنك تحرير خصائص الإنتاج النوعية.",
+    "description": "شرح الفاحص الفارغ"
+  },
+  "agent.title": {
+    "message": "وكيل المهارة",
+    "description": "عنوان منطقة الوكيل"
+  },
+  "agent.noProposals": {
+    "message": "لا توجد مقترحات معلقة. اختر عقدة، ودع المهارة تقترح الخطوة التالية.",
+    "description": "تنبيه فارغ لمقترحات الوكيل"
+  },
+  "agent.propose": {
+    "message": "اقترح الخطوة التالية",
+    "description": "طلب اقتراح من الوكيل"
+  },
+  "agent.plan": {
+    "message": "تخطيط الإجراء المحدد",
+    "description": "تخطيط إجراء المهارة لعقدة الرسم المحددة"
+  },
+  "agent.proposal": {
+    "message": "اقتراح",
+    "description": "علامة تنبيه الاقتراح"
+  },
+  "review.heading": {
+    "message": "إنشاء مراجعة",
+    "description": "عنوان ملخص المراجعة"
+  },
+  "review.noRevision": {
+    "message": "لا توجد مخططات مشاريع مقدمة",
+    "description": "عنوان المراجعة عند عدم وجود مراجعات"
+  },
+  "review.nodes": {
+    "message": "العقد",
+    "description": "عدد عقد المراجعة"
+  },
+  "review.proposals": {
+    "message": "المقترحات",
+    "description": "عدد المقترحات للمراجعة"
+  },
+  "review.runs": {
+    "message": "التشغيلات",
+    "description": "عدد التشغيلات للمراجعة"
+  },
+  "review.finalCost": {
+    "message": "الاعتمادات النهائية",
+    "description": "علامة تكلفة تسوية المشروع"
+  },
+  "review.qualityChecks": {
+    "message": "فحوصات الجودة",
+    "description": "علامة عدد التقييمات التلقائية الناجحة"
+  },
+  "review.forensics": {
+    "message": "التحقق من الأدلة",
+    "description": "علامة حالة التحقق من الأدلة الأخيرة"
+  },
+  "review.pendingProposals": {
+    "message": "مقترحات الوكيل",
+    "description": "منطقة مراجعة المقترحات"
+  },
+  "review.noProposals": {
+    "message": "لا توجد مقترحات في انتظار المراجعة.",
+    "description": "إشعار بعدم وجود مقترحات"
+  },
+  "review.execution": {
+    "message": "تنفيذ الدفتر",
+    "description": "منطقة مراجعة التنفيذ"
+  },
+  "review.noRuns": {
+    "message": "لم يتم تنفيذ أي تشغيل لهذا المشروع بعد.",
+    "description": "إشعار بعدم وجود عمليات تشغيل"
+  },
+  "review.reject": {
+    "message": "رفض",
+    "description": "عملية رفض مقترح الوكيل"
+  },
+  "review.rejectConfirm": {
+    "message": "هل أنت متأكد أنك تريد رفض هذا الاقتراح من الوكيل؟",
+    "description": "تأكيد رفض الاقتراح"
+  },
+  "review.approvalTokenRequired": {
+    "message": "تتطلب الموافقة إصدار رمز أصلي عند إنشاء الاقتراح.",
+    "description": "وصف حدود الثقة لموافقة الاقتراح"
+  },
+  "review.runDetail": {
+    "message": "تفاصيل التشغيل",
+    "description": "عنوان تفاصيل التشغيل المحدد"
+  },
+  "review.attempts": {
+    "message": "محاولة",
+    "description": "علامة عدد محاولات المورد"
+  },
+  "review.retryStep": {
+    "message": "إعادة تشغيل العقد",
+    "description": "إنشاء تشغيل جديد للعقد الفاشل"
+  },
+  "onboarding.title": {
+    "message": "منصة مخصصة لإنتاج الأفلام بالذكاء الاصطناعي",
+    "description": "عنوان إرشادات Poivelle"
+  },
+  "onboarding.body": {
+    "message": "يمكن للبشر وSkill وAgent وأدوات الإنتاج تحرير نفس مشروع المواصفات معًا. القماش، اللوحات القصصية، الجدول الزمني والمراجعة هي مشروعات متزامنة وليست مستندات منفصلة.",
+    "description": "إرشادات Poivelle"
+  },
+  "run.confirmTitle": {
+    "message": "تأكيد إنشاء التشغيل",
+    "description": "عنوان مربع حوار تأكيد التشغيل"
+  },
+  "run.targets": {
+    "message": "اعتماد الإغلاق",
+    "description": "عدد أهداف التشغيل الجاف"
+  },
+  "run.maximum": {
+    "message": "أقصى تكلفة",
+    "description": "أقصى تكلفة لتشغيل جاف"
+  },
+  "run.approval": {
+    "message": "مستوى الموافقة",
+    "description": "مستوى الموافقة لتشغيل جاف"
+  },
+  "run.confirmBody": {
+    "message": "سيستخدم المترجم بيانات اعتماد API قصيرة الأجل لتنفيذ هذا الإغلاق الثابت؛ كل استدعاء من المورد سيستخدم قواعد التكلفة الحالية وسجلات الاستخدام.",
+    "description": "شرح تأكيد التشغيل"
+  },
+  "run.confirm": {
+    "message": "تأكيد التشغيل",
+    "description": "تأكيد أمر التشغيل"
+  },
+  "run.queued": {
+    "message": "تم إدخال التشغيل في قائمة الانتظار",
+    "description": "إشعار بنجاح إدخال التشغيل في قائمة الانتظار"
+  },
+  "run.cancel": {
+    "message": "إلغاء",
+    "description": "عملية إلغاء تشغيل التنفيذ"
+  },
+  "run.cancelConfirm": {
+    "message": "هل أنت متأكد أنك تريد إلغاء هذا التشغيل؟",
+    "description": "تأكيد إلغاء التشغيل"
+  },
+  "error.generic": {
+    "message": "فشل Poivelle في إتمام الطلب.",
+    "description": "خطأ عام من Poivelle"
+  }
+}

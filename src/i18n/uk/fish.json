@@ -27,6 +27,18 @@
     "message": "Час витрачено",
     "description": "Мітка часу витрачання завдання Fish"
   },
+  "name.failure": {
+    "message": "Не вдалося згенерувати",
+    "description": "Заголовок про невдачу завдання у Fish"
+  },
+  "name.failureReason": {
+    "message": "Причина невдачі",
+    "description": "Мітка причини невдачі завдання у Fish"
+  },
+  "name.traceId": {
+    "message": "ID відстеження",
+    "description": "Мітка ID відстеження завдання у Fish"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Мітка робота картки завдання Fish"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Немає доступних голосових моделей",
     "description": "Підказка, що вибір голосів Fish порожній"
+  },
+  "group.publicVoices": {
+    "message": "Публічна бібліотека звуків",
+    "description": "Заголовок групи публічних звуків у виборнику звуків Fish"
+  },
+  "message.searching": {
+    "message": "Пошук…",
+    "description": "Підказка про завантаження під час віддаленого пошуку у виборнику звуків Fish"
+  },
+  "message.searchVoiceHint": {
+    "message": "Введіть ключові слова для пошуку публічних звуків",
+    "description": "Підказка про стан пошуку у виборнику звуків Fish"
   },
   "name.voiceTitle": {
     "message": "Назва",

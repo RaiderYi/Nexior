@@ -27,6 +27,18 @@
     "message": "Χρόνος εκτέλεσης",
     "description": "Ετικέτα χρόνου εκτέλεσης εργασίας για το Fish"
   },
+  "name.failure": {
+    "message": "Αποτυχία δημιουργίας",
+    "description": "Τίτλος αποτυχίας εργασίας στον Fish"
+  },
+  "name.failureReason": {
+    "message": "Αιτία αποτυχίας",
+    "description": "Ετικέτα αιτίας αποτυχίας εργασίας στον Fish"
+  },
+  "name.traceId": {
+    "message": "ID παρακολούθησης",
+    "description": "Ετικέτα ID παρακολούθησης εργασίας στον Fish"
+  },
   "name.fishBot": {
     "message": "Fish Audio",
     "description": "Ετικέτα ρομπότ κάρτας εργασίας για το Fish"
@@ -90,6 +102,18 @@
   "message.noVoices": {
     "message": "Δεν υπάρχουν διαθέσιμα μοντέλα ήχου",
     "description": "Μήνυμα όταν ο επιλογέας ήχου του Fish είναι κενός"
+  },
+  "group.publicVoices": {
+    "message": "Δημόσια βιβλιοθήκη ήχων",
+    "description": "Τίτλος ομάδας δημόσιων ήχων στον επιλογέα ήχων Fish"
+  },
+  "message.searching": {
+    "message": "Αναζητώ…",
+    "description": "Υπόδειξη φόρτωσης για την απομακρυσμένη αναζήτηση στον επιλογέα ήχων Fish"
+  },
+  "message.searchVoiceHint": {
+    "message": "Εισάγετε λέξεις-κλειδιά για αναζήτηση δημόσιων ήχων",
+    "description": "Υπόδειξη κατάστασης κενής αναζήτησης στον επιλογέα ήχων Fish"
   },
   "name.voiceTitle": {
     "message": "Όνομα",

@@ -79,36 +79,36 @@
     "message": "Μεγάλο γλωσσικό μοντέλο που αναπτύχθηκε από την Zhiyu AI",
     "description": "Περιγραφή της ομάδας μοντέλων GLM"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "Το πιο πρόσφατο μοντέλο ναυαρχίδα GPT 5.5",
-    "description": "Περιγραφή του μοντέλου GPT 5.5"
+  "model.56SolDescription": {
+    "message": "Το πιο πρόσφατο μοντέλο ναυαρχίδα GPT 5.6 Sol",
+    "description": "Περιγραφή του μοντέλου GPT 5.6 Sol"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.6"
   },
-  "model.54Description": {
-    "message": "Το πιο πρόσφατο μοντέλο ναυαρχίδα GPT 5.4",
-    "description": "Περιγραφή του μοντέλου GPT 5.4"
+  "model.56TerraDescription": {
+    "message": "Το πιο πρόσφατο μοντέλο ναυαρχίδα GPT 5.6",
+    "description": "Περιγραφή του μοντέλου GPT 5.6"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "Ταχύτερο και ελαφρύτερο μοντέλο GPT 5.4",
-    "description": "Περιγραφή του μοντέλου GPT 5.4 Mini"
+  "model.56LunaDescription": {
+    "message": "Ταχύτερο και ελαφρύτερο μοντέλο GPT 5.6",
+    "description": "Περιγραφή του μοντέλου GPT 5.6 Luna"
   },
   "model.freeTag": {
     "message": "Δωρεάν",
     "description": "Σήμα που εμφανίζεται δίπλα στα δωρεάν μοντέλα στον επιλογέα μοντέλων"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "Περιγραφή του μοντέλου DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "Περιγραφή του μοντέλου DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "Περιγραφή του πειραματικού μοντέλου DeepSeek V3.2"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,15 +140,15 @@
     "description": "Περιγραφή του μοντέλου DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Grok 4"
   },
   "model.grok4Description": {
-    "message": "Το πιο προηγμένο μοντέλο αυτή τη στιγμή",
+    "message": "General-purpose K2 model for compatible workflows",
     "description": "Περιγραφή του μοντέλου Grok 4"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "Όνομα του μοντέλου υπηρεσίας"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "Ταχύτερο και ελαφρύτερο μοντέλο",
     "description": "Περιγραφή του μοντέλου Gemini 2.5 Flash"
   },
+  "model.gemini36Flash": {
+    "message": "gemini-3.6-flash",
+    "description": "Το όνομα του μοντέλου υπηρεσίας, δηλαδή Gemini 3.6 Flash"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "Το πιο πρόσφατο γρήγορο μοντέλο, υποστηρίζει συμπεράσματα, οπτική και κλήσεις εργαλείων",
+    "description": "Περιγραφή του μοντέλου Gemini 3.6 Flash"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "Ταχύτερο και ελαφρύτερο μοντέλο",
     "description": "Περιγραφή του μοντέλου Gemini 2.5 Flash"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "Το πιο προηγμένο μοντέλο μέχρι στιγμής",
+    "description": "Περιγραφή του μοντέλου Claude Opus 5."
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,16 +235,24 @@
     "message": "Ελαφρύ και γρήγορο μοντέλο",
     "description": "Περιγραφή του μοντέλου Claude Haiku 4.5"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "Εξαιρετικό για μακρύ πλαίσιο, σύνθετη συλλογισμό και δημιουργική γραφή",
-    "description": "Περιγραφή του μοντέλου Claude Fable 5"
+  "model.kimiK3Description": {
+    "message": "Υποστηρίζει αναγνώριση, οπτική και 1 εκατομμύριο Token συμφραζόμενα, ναυαρχίδα μοντέλου",
+    "description": "Περιγραφή του μοντέλου Kimi K3"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "Μοντέλο λογικής και οπτικής κατάλληλο για συμβατότητα με ροές εργασίας K2",
+    "description": "Περιγραφή του μοντέλου Kimi K2.6."
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +260,7 @@
     "description": "Περιγραφή του μοντέλου Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 σκέψη",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2 σκέψη"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "Περιγραφή του μοντέλου Kimi K2 σκέψη"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 ταχύτατη σκέψη",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Kimi K2 ταχύτατη σκέψη"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "Περιγραφή του μοντέλου Kimi K2 ταχύτατη σκέψη"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "Περιγραφή του μοντέλου GLM 5.1"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "Η ανέβασμα αρχείου απέτυχε, παρακαλώ δοκιμάστε ξανά αργότερα",
     "description": "Μήνυμα στην ιστοσελίδα που ενημερώνει τον χρήστη ότι η ανέβασμα αρχείου απέτυχε, παρακαλώ δοκιμάστε ξανά αργότερα"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "Το μέγεθος του αρχείου {size} υπερβαίνει το όριο {max}. Παρακαλώ συμπιέστε το και δοκιμάστε ξανά.",
+    "description": "Μήνυμα στην ιστοσελίδα που ενημερώνει τον χρήστη ότι το αρχείο υπερβαίνει το μέγιστο μέγεθος ανάρτησης και χρειάζεται συμπίεση πριν την επαναφόρτωση."
   },
   "message.notApplied": {
     "message": "Δεν έχετε ζητήσει αυτή την υπηρεσία, παρακαλώ ζητήστε πρώτα",
@@ -583,114 +611,374 @@
     "message": "Η εξουσιοδότηση συνδέσεων παραλείφθηκε",
     "description": "Σημείωση στο κάτω μέρος της κάρτας όταν ο χρήστης παραλείψει την εξουσιοδότηση"
   },
+  "browserTool.title": {
+    "message": "Δραστηριότητα προγράμματος περιήγησης",
+    "description": "Ο προεπιλεγμένος τίτλος για τη δραστηριότητα του εργαλείου BrowserDevice."
+  },
+  "browserTool.state.starting_session": {
+    "message": "Εκκίνηση συνεδρίας προγράμματος περιήγησης",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "Σύνδεση καρτέλας προγράμματος περιήγησης",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "Το πρόγραμμα περιήγησης είναι έτοιμο",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "Η συσκευή προγράμματος περιήγησης είναι εκτός σύνδεσης",
+    "description": "Η επιλεγμένη συσκευή προγράμματος περιήγησης δεν είναι online."
+  },
+  "browserTool.state.device_busy": {
+    "message": "Η συσκευή προγράμματος περιήγησης είναι απασχολημένη",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "Απαιτείται επιβεβαίωση έγκρισης στο Studio",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "Εκτελείται στο πρόγραμμα περιήγησης",
+    "description": "Η συσκευή προγράμματος περιήγησης εκτελεί το εργαλείο."
+  },
+  "browserTool.state.completed": {
+    "message": "Ολοκληρώθηκε",
+    "description": "Η εκτέλεση του εργαλείου προγράμματος περιήγησης έχει ολοκληρωθεί."
+  },
+  "browserTool.state.stopped": {
+    "message": "Η συνεδρία προγράμματος περιήγησης έχει σταματήσει",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "Η αίτηση προγράμματος περιήγησης έχει λήξει",
+    "description": "Η αίτηση εκτέλεσης εργαλείου προγράμματος περιήγησης έχει λήξει."
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "Παρακαλώ κλείστε τα εργαλεία προγραμματιστή για να συνεχίσετε",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "Το αποτέλεσμα εκτέλεσης είναι άγνωστο, παρακαλώ ελέγξτε και δοκιμάστε ξανά",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "Η λειτουργία του προγράμματος περιήγησης απέτυχε",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "Σταμάτησε",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "Διαχείριση συσκευών",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "Σταμάτησε άλλες συνεδρίες",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "Κλείσιμο εργαλείων προγραμματιστή",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "Δείτε την έγκριση",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "Προγραμματισμένες εργασίες",
+    "description": "Είσοδος προγραμματισμένων εργασιών στην πλαϊνή μπάρα"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "Προγραμματισμένες Εργασίες",
+    "description": "Σελίδα προγραμματισμένων εργασιών - Καρτέλα εργασιών"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "Καταγραφή Εκτελέσεων",
+    "description": "Σελίδα προγραμματισμένων εργασιών - Καρτέλα όλων των καταγραφών εκτέλεσης"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "Όλα",
+    "description": "Φίλτρο κατάστασης εκτέλεσης - Όλα"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "Προγραμματισμένα καθήκοντα",
+    "description": "Τίτλος σελίδας"
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "Δημιουργία",
+    "description": "Κουμπί για τη δημιουργία προγραμματισμένου καθήκοντος"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "Επεξεργασία καθήκοντος",
+    "description": "Τίτλος διαλόγου επεξεργασίας"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "Αντιγραφή καθήκοντος",
+    "description": "Κουμπί για την αντιγραφή καθήκοντος, προ-συμπλήρωση νέας φόρμας βασισμένης σε υπάρχον καθήκον"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "Δεν υπάρχουν προγραμματισμένα καθήκοντα, κάντε κλικ στο «Δημιουργία» για να δημιουργήσετε ένα",
+    "description": "Μήνυμα κατάστασης κενής"
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "Δεν έχουν εκτελεστεί ακόμη",
+    "description": "Δεν υπάρχει ιστορικό εκτέλεσης"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "Αποτυχία φόρτωσης",
+    "description": "Μήνυμα σφάλματος φόρτωσης"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "Επιβεβαίωση διαγραφής «{name}»; Μετά τη διαγραφή, το καθήκον θα σταματήσει να εκτελείται.",
+    "description": "Επιβεβαίωση διαγραφής"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "Ενεργοποίηση τώρα",
+    "description": "Χειροκίνητη εκτέλεση της εργασίας αμέσως"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "Έχει ενεργοποιηθεί, μπορείτε να δείτε το αποτέλεσμα στα αρχεία εκτέλεσης αργότερα.",
+    "description": "Μήνυμα επιτυχίας χειροκίνητης ενεργοποίησης"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "Η ενεργοποίηση απέτυχε, παρακαλώ δοκιμάστε ξανά αργότερα.",
+    "description": "Μήνυμα αποτυχίας χειροκίνητης ενεργοποίησης"
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "Δείτε το αποτέλεσμα",
+    "description": "Μετάβαση στη συνομιλία"
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "Αρχεία εκτέλεσης",
+    "description": "Δείτε την ιστορία εκτέλεσης στο κάτω μέρος της κάρτας"
   },
   "scheduledTasks.noConversation": {
     "message": "Δεν υπάρχουν καταγεγραμμένες συνομιλίες",
     "description": "Η λειτουργία δεν έχει συσχετιστεί με συνομιλίες (παλαιά έκδοση λειτουργίας)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60s τζιτζίκι",
+    "description": "Εξήγηση τζιτζικιού χρόνου εκτέλεσης"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "Έχει εκτελεστεί {count} φορές",
+    "description": "Αριθμός εκτελέσεων"
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "Εκτελείται",
+    "description": "Κατάσταση ενεργοποίησης"
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "Έχει ανασταλεί",
+    "description": "Κατάσταση απενεργοποίησης"
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "Σφάλμα",
+    "description": "Κατάσταση σφάλματος"
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "Σε αναμονή",
+    "description": "Κατάσταση σε αναμονή"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "Εκτελείται",
+    "description": "Κατάσταση εκτέλεσης"
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "Επιτυχία",
+    "description": "Κατάσταση επιτυχίας"
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "Αποτυχία",
+    "description": "Κατάσταση αποτυχίας"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "Μη επιβεβαιωμένο",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "Επιτεύχθηκε το όριο βημάτων"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "Επιτεύχθηκε το όριο προϋπολογισμού"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "Εντοπίστηκε βρόχος κλήσεων εργαλείων"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "Πολύ μεγάλο prompt"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "Διακόπηκε"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "Διακόπηκε"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "Αναμονή για την εισαγωγή σας"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "Σφάλμα"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "Άγνωστο σφάλμα"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "Ανεπαρκές υπόλοιπο"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "Η εξουσιοδότηση χρέωσης απέτυχε"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "Μη εξουσιοδοτημένο"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "Λήξη χρόνου"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "Εσωτερικό σφάλμα"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "Απαιτείται ενέργεια",
+    "description": "Κατάσταση που απαιτεί ενέργεια από τον χρήστη"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "Η συσκευή του προγράμματος περιήγησης είναι εκτός σύνδεσης",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "Η εξουσιοδότηση του προγράμματος περιήγησης έχει αλλάξει, παρακαλώ επεξεργαστείτε αυτή την εργασία",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "Καθημερινά",
+    "description": "Εκτέλεση καθημερινά"
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "Κάθε λεπτό"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "Κάθε ώρα",
+    "description": "Εκτέλεση κάθε ώρα"
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "Κάθε εβδομάδα",
+    "description": "Εκτέλεση κάθε εβδομάδα"
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "Έκφραση Cron",
+    "description": "Προσαρμοσμένο cron"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "Κάθε",
+    "description": "Εκτέλεση σε σταθερά διαστήματα"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "Λεπτό",
+    "description": "Μονάδα διαστήματος: λεπτό"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "Ώρα",
+    "description": "Μονάδα διαστήματος: ώρα"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "Ημέρα",
+    "description": "Μονάδα διαστήματος: ημέρα"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "Λεπτό ενεργοποίησης",
+    "description": "Ποιο λεπτό της ώρας θα ενεργοποιηθεί"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "Ποιο λεπτό της ώρας θα ενεργοποιηθεί (0–59)",
+    "description": "Επεξήγηση λεπτού ανά ώρα"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "Από την τελευταία εκτέλεση, εκτελείται μία φορά σε σταθερό χρόνο (τουλάχιστον 1 λεπτό)",
+    "description": "Επεξήγηση σταθερού διαστήματος"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "Τυπική 5-τμήματική έκφραση Cron: Λεπτά Ώρες Ημέρα Μήνας Εβδομάδα",
+    "description": "Επεξήγηση Cron"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "Συχνότητα εκτέλεσης: {text}",
+    "description": "Προεπισκόπηση συχνότητας"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "Κάθε {n} λεπτά",
+    "description": "Αναγνώσιμο από ανθρώπους: Κάθε N λεπτά"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "Κάθε {n} ώρες",
+    "description": "Αναγνώσιμο από ανθρώπους: Κάθε N ώρες"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "Κάθε {n} ημέρες",
+    "description": "Αναγνώσιμο από ανθρώπους: Κάθε N ημέρες"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "Κάθε ώρα στην {n} λεπτό",
+    "description": "Αναγνώσιμο από ανθρώπους: Κάθε ώρα στην N λεπτό"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "Κάθε μέρα {time}",
+    "description": "Αναγνώσιμο από ανθρώπους: Κάθε μέρα σε συγκεκριμένη ώρα"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "Κάθε εβδομάδα {weekday} {time}",
+    "description": "Αναγνώσιμο από ανθρώπους: Κάθε εβδομάδα σε συγκεκριμένη ημέρα και ώρα"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "Cron：{cron}",
+    "description": "Ανθρώπινα αναγνώσιμο: Αρχικό Cron"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "Μία φορά {time}",
+    "description": "Αναγνώσιμο από ανθρώπους: Μία φορά"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "Όνομα καθήκοντος",
+    "description": "Πεδίο ονόματος"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "π.χ.: Συλλογή καθημερινών ειδήσεων",
+    "description": "Καταληκτική θέση ονόματος"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "Μοντέλο",
+    "description": "Επιλογή μοντέλου"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "Λέξη-κλειδί",
+    "description": "Πεδίο λέξης-κλειδί"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "Εισάγετε την ερώτηση ή εντολή που θα εκτελείται προγραμματισμένα, υποστηρίζει τις μεταβλητές {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'",
+    "description": "Καταληκτική θέση λέξης-κλειδί"
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "Υποστηρίζει μεταβλητές προτύπου: {'{{date}}'} σημερινή ημερομηνία, {'{{run_count}}'} πόσες φορές εκτελείται, {'{{last_output}}'} περίληψη τελευταίου αποτελέσματος",
+    "description": "Επεξήγηση λέξης-κλειδί"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "Συχνότητα εκτέλεσης",
+    "description": "Επιλογή συχνότητας"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "Χρόνος εκτέλεσης",
+    "description": "Πεδίο χρόνου"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "Ημέρα της εβδομάδας",
+    "description": "Πεδίο ημέρας της εβδομάδας"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "Έκφραση Cron",
+    "description": "Πεδίο έκφρασης cron"
   },
   "scheduledTasks.form.skills": {
     "message": "Εξουσιοδοτημένες Δεξιότητες",
@@ -704,6 +992,25 @@
     "message": "Οι επιλεγμένες Δεξιότητες μπορούν να παρακάμψουν την ανθρώπινη επιβεβαίωση κατά την εκτέλεση στο παρασκήνιο. Οι μη επιλεγμένες Δεξιότητες μπορούν μόνο να προβάλλονται ή να περιμένουν επιβεβαίωση.",
     "description": "Περιγραφή εξουσιοδότησης δεξιοτήτων"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "Σύνδεση περιηγητή",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "Μπορεί να εκτελέσει τις εξής εξωτερικές παρενέργειες: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "Η εξουσιοδότηση χωρίς επιτήρηση λήγει στις: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "Παρακαλώ επιλέξτε μια συμβατή και συνδεδεμένη περιήγηση πριν αποθηκεύσετε",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "Μη συνδεδεμένο",
     "description": "Η δεξιότητα λείπει σύνδεση"
@@ -737,19 +1044,20 @@
     "description": "Κείμενο επιβεβαίωσης εξουσιοδότησης"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "Πρέπει πρώτα να δεσμεύσετε τη δεξιότητα",
+    "description": "Τίτλος διαλόγου που εμφανίζεται όταν μια εξουσιοδοτημένη δεξιότητα/MCP της προγραμματισμένης εργασίας δεν έχει ακόμη δεσμευτεί για τον χρήστη."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "Η δεξιότητα «{name}» δεν έχει ακόμη δεσμευτεί ή ενεργοποιηθεί στον λογαριασμό σας. Αν δεν δεσμευτεί πρώτα, η προγραμματισμένη εργασία μπορεί να μην μπορεί να τη χρησιμοποιήσει κατά την αυτόματη εκτέλεση στο παρασκήνιο. Συνιστάται να πάτε πρώτα για δέσμευση και μετά να αποθηκεύσετε ή να κάνετε κλικ στο παρακάτω κουμπί για να συνεχίσετε την αποθήκευση.",
+    "description": "Σώμα προειδοποίησης; {name} είναι το όνομα της δεξιότητας/MCP. Εξηγεί ότι δεν είναι δεσμευμένη και προσφέρει την επιλογή να αποθηκεύσετε ούτως ή άλλως."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "Να συνεχίσω την αποθήκευση",
+    "description": "Κουμπί επιβεβαίωσης που αποθηκεύει την προγραμματισμένη εργασία ούτως ή άλλως, παρακάμπτοντας τον έλεγχο δέσμευσης (αναγκαστικά)."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "Παρακαλώ συμπληρώστε το όνομα καθήκοντος και τη λέξη-κλειδί",
+    "description": "Επικύρωση υποχρεωτικών πεδίων"
   },
   "artifacts.navTitle": {
     "message": "Παραγωγές",
@@ -786,6 +1094,18 @@
   "artifacts.hide": {
     "message": "Απόκρυψη",
     "description": "Κουμπί απόκρυψης παραγωγής"
+  },
+  "artifacts.unhide": {
+    "message": "Αναίρεση κρυψίματος",
+    "description": "Κουμπί για την αποκατάσταση κρυφών Artifact."
+  },
+  "artifacts.showHidden": {
+    "message": "Εμφάνιση κρυφών",
+    "description": "Διακόπτης για την εμφάνιση κρυφών Artifact στην γραμμή φίλτρων."
+  },
+  "artifacts.hiddenBadge": {
+    "message": "Έχει κρυφτεί",
+    "description": "Σημείωση ότι το Artifact έχει κρυφτεί."
   },
   "artifacts.delete": {
     "message": "Διαγραφή",
@@ -824,8 +1144,8 @@
     "description": "Τύπος παραγωγής - έγγραφο"
   },
   "artifacts.kind.email": {
-    "message": "Email",
-    "description": "Τύπος παραγωγής - email"
+    "message": "Ηλεκτρονικό ταχυδρομείο",
+    "description": "Τύπος παραγωγής - Ηλεκτρονικό ταχυδρομείο"
   },
   "artifacts.kind.message": {
     "message": "Μήνυμα",
@@ -915,24 +1235,532 @@
     "message": "Βρίσκεστε σε μια κοινοποιημένη συνομιλία. Κάντε κλικ παραπάνω για να συνομιλήσετε με τον AI.",
     "description": "Επεξήγηση κάτω από τη δημόσια σελίδα συνομιλίας."
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "Ο στόχος δεν έχει επιτευχθεί",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "Το αποτέλεσμα αναμένεται να επιβεβαιωθεί",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "Άγνωστη κατάσταση εκτέλεσης"
+  },
+  "actions.rename": {
+    "message": "Μετονομασία",
+    "description": "Στοιχείο μενού μετονομασίας στο μενού λειτουργιών συνομιλίας."
+  },
+  "actions.renameTitle": {
+    "message": "Μετονομασία συνομιλίας",
+    "description": "Τίτλος του διαλόγου μετονομασίας συνομιλίας."
+  },
+  "actions.renameEmpty": {
+    "message": "Παρακαλώ εισάγετε όνομα",
+    "description": "Μήνυμα που υποδεικνύει ότι το όνομα είναι κενό κατά τη διαδικασία μετονομασίας."
+  },
+  "actions.renameSuccess": {
+    "message": "Μετονομάστηκε",
+    "description": "Μήνυμα που υποδεικνύει ότι η μετονομασία της συνομιλίας ήταν επιτυχής."
+  },
+  "actions.renameFailed": {
+    "message": "Η μετονομασία απέτυχε, παρακαλώ δοκιμάστε ξανά αργότερα",
+    "description": "Μήνυμα που υποδεικνύει ότι η μετονομασία της συνομιλίας απέτυχε."
+  },
+  "actions.deleteConfirm": {
+    "message": "Επιβεβαίωση διαγραφής αυτής της συνομιλίας; Μετά τη διαγραφή δεν μπορεί να ανακτηθεί.",
+    "description": "Επιβεβαίωση πριν από τη διαγραφή της συνομιλίας."
+  },
+  "actions.deleteSuccess": {
+    "message": "Διαγράφηκε",
+    "description": "Μήνυμα που υποδεικνύει ότι η διαγραφή της συνομιλίας ήταν επιτυχής."
+  },
+  "actions.deleteFailed": {
+    "message": "Η διαγραφή απέτυχε, παρακαλώ δοκιμάστε ξανά αργότερα",
+    "description": "Μήνυμα που υποδεικνύει ότι η διαγραφή της συνομιλίας απέτυχε."
+  },
+  "actions.tokenMissing": {
+    "message": "Το Token δεν υπάρχει, παρακαλώ συνδεθείτε ξανά",
+    "description": "Σφάλμα που υποδεικνύει ότι λείπει η πιστοποίηση κατά τη διάρκεια της λειτουργίας συνομιλίας."
+  },
+  "actions.conversationMissing": {
+    "message": "Η συνομιλία δεν υπάρχει",
+    "description": "Σφάλμα που υποδεικνύει ότι η στοχοθετημένη συνομιλία δεν υπάρχει κατά τη διάρκεια της λειτουργίας συνομιλίας."
+  },
+  "scheduledTasks.form.execution": {
+    "message": "Θέση εκτέλεσης",
+    "description": "Επιλέξτε αν η εργασία θα εκτελείται στο σύννεφο ή τοπικά"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "Σύννεφο",
+    "description": "Λειτουργία εκτέλεσης στο σύννεφο"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "Αυτή η συσκευή",
+    "description": "Λειτουργία εκτέλεσης τοπικά"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "Αυτή η συσκευή ({device})",
+    "description": "Λειτουργία εκτέλεσης τοπικά, με όνομα συσκευής"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "Θα ενεργοποιηθεί εγκαίρως από την πλατφόρμα, θα συνεχίσει να εκτελείται και αν κλείσετε τον υπολογιστή.",
+    "description": "Εξήγηση λειτουργίας στο σύννεφο"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "Θα ενεργοποιηθεί εγκαίρως από αυτή τη συσκευή, μπορεί να διαβάσει και να γράψει αρχεία τοπικά, να εκτελεί εντολές τοπικά. Δεν θα εκτελείται όταν η συσκευή είναι κλειστή ή η εφαρμογή είναι κλειστή, οι χαμένες εκτελέσεις θα καταγράφονται αλλά δεν θα αναπληρώνονται.",
+    "description": "Εξήγηση λειτουργίας τοπικά"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "Η εκτέλεση τοπικά δεν υποστηρίζεται σε κινητές συσκευές",
+    "description": "Αιτία που η κινητή εφαρμογή δεν υποστηρίζει τοπική εκτέλεση"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "Η τοπική εκτέλεση απαιτεί επιτραπέζια εφαρμογή",
+    "description": "Αιτία που η διαδικτυακή εφαρμογή δεν υποστηρίζει τοπική εκτέλεση"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "Δεν είναι δυνατή η λήψη πληροφοριών από τη συσκευή, παρακαλώ επανεκκινήστε την εφαρμογή και δοκιμάστε ξανά",
+    "description": "Πληροφορίες συσκευής επιτραπέζιου υπολογιστή δεν είναι διαθέσιμες"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "Εξουσιοδότηση τοπικών εργαλείων",
+    "description": "Πεδίο εξουσιοδότησης τοπικών εργαλείων"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "Επιλέξτε τα τοπικά εργαλεία που επιτρέπεται να χρησιμοποιήσει αυτή η εργασία",
+    "description": "Placeholder επιλογής τοπικών εργαλείων"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "Κατά την εκτέλεση χωρίς επίβλεψη δεν θα εμφανιστεί επιβεβαίωση εξουσιοδότησης, μόνο τα εργαλεία που επισημαίνονται εδώ θα είναι διαθέσιμα.",
+    "description": "Εξήγηση εξουσιοδότησης τοπικών εργαλείων"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "Παραλείφθηκε",
+    "description": "Κατάσταση εκτέλεσης: Η συσκευή δεν ήταν online τη στιγμή εκείνη, δεν εκτελέστηκε"
+  },
+  "workingDir.choose": {
+    "message": "Επιλέξτε τον φάκελο εργασίας",
+    "description": "Κουμπί πάνω από το πεδίο εισόδου συνομιλίας στην επιφάνεια εργασίας: Επιλέξτε τον φάκελο έργου που θα χρησιμοποιήσει η AI. Δεν μπορείτε να στείλετε μήνυμα πριν την επιλογή."
+  },
+  "workingDir.switchHint": {
+    "message": "Κάντε κλικ για να αλλάξετε τον φάκελο εργασίας",
+    "description": "Όταν έχει επιλεγεί φάκελος εργασίας, εμφανίζεται μια αναδυόμενη υπόδειξη για την διαδρομή."
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "Αυτή είναι μια τοπική εργασία, μπορεί να εκτελείται χειροκίνητα μόνο στην επιφάνεια εργασίας της συνδεδεμένης συσκευής",
+    "description": "Η τοπική εργασία δεν μπορεί να ενεργοποιηθεί χειροκίνητα σε μη συνδεδεμένες συσκευές"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "Αυτή η εργασία είναι συνδεδεμένη σε άλλη συσκευή",
+    "description": "Η τοπική εργασία δεν ανήκει στη τρέχουσα συσκευή"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "Η τοπική προγραμματισμένη εργασία δεν είναι συνδεδεμένη, παρακαλώ συνδεθείτε ξανά και δοκιμάστε",
+    "description": "Ο daemon δεν έχει έγκυρα διαπιστευτήρια"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "Αυτή η εργασία εκτελείται ήδη",
+    "description": "Η εργασία είναι ήδη σε εκτέλεση"
+  },
+  "actionConfirmation.confirm": {
+    "message": "Επιβεβαίωση",
+    "description": "Το κουμπί επιβεβαίωσης της κάρτας επιβεβαίωσης πριν από την εκτέλεση"
+  },
+  "actionConfirmation.cancel": {
+    "message": "Ακύρωση",
+    "description": "Το κουμπί ακύρωσης της κάρτας επιβεβαίωσης πριν από την εκτέλεση"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "Επιβεβαιώθηκε, εκτελείται",
+    "description": "Επιβεβαίωση πριν την εκτέλεση: Ο χρήστης έχει επιβεβαιώσει, οι επόμενες ενέργειες εκτελούνται."
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "Έχει ακυρωθεί",
+    "description": "Κάρτα επιβεβαίωσης πριν από την εκτέλεση: Υπόδειξη μετά την ακύρωση από τον χρήστη"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "Φορτώνει την προεπισκόπηση πολυμέσων…",
+    "description": "Επιβεβαίωση πριν από την εκτέλεση: κατάσταση φόρτωσης πολυμέσων"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "Δεν είναι δυνατή η αναπαραγωγή προεπισκόπησης εδώ",
+    "description": "Επιβεβαίωση πριν από την εκτέλεση: τίτλος αποτυχίας αναπαραγωγής πολυμέσων"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "Ο σύνδεσμος πολυμέσων μπορεί να έχει λήξει ή ο τρέχων περιηγητής δεν υποστηρίζει αυτή τη μορφή. Παρακαλώ ανοίξτε το αρχικό αρχείο πριν από την δημοσίευση.",
+    "description": "Επιβεβαίωση πριν από την εκτέλεση: περιγραφή αποτυχίας αναπαραγωγής πολυμέσων"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "Άνοιγμα αρχικού αρχείου",
+    "description": "Επιβεβαίωση πριν από την εκτέλεση: άνοιγμα συνδέσμου πολυμέσων"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "Επιβεβαίωση πριν από την δημοσίευση",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: ετικέτα κατάστασης κάρτας"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "Δημοσίευση στο TikTok",
+    "description": "Τίτλος της κάρτας επιβεβαίωσης δημοσίευσης TikTok"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "Μετά την επιβεβαίωση, αυτό το βίντεο θα δημοσιευτεί στον λογαριασμό σας TikTok.",
+    "description": "Περίληψη της κάρτας επιβεβαίωσης δημοσίευσης TikTok"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "Δημοσίευση",
+    "description": "Το κουμπί υποβολής της κάρτας επιβεβαίωσης δημοσίευσης TikTok"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "Δημοσίευση σε",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Ετικέτα λογαριασμού"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "Συνδεδεμένο",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: κατάσταση σύνδεσης λογαριασμού"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "Πληροφορίες λογαριασμού μη διαθέσιμες",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: κείμενο κράτησης θέσης όταν λείπει το ψευδώνυμο λογαριασμού"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "Οι ρυθμίσεις δημοσίευσης δεν είναι έτοιμες",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: τίτλος έλλειψης πληροφοριών δημιουργού"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση της ορατότητας που υποστηρίζει αυτός ο λογαριασμός. Παρακαλώ ακυρώστε και αφήστε τον βοηθό να ανακτήσει ξανά τις ρυθμίσεις δημοσίευσης TikTok.",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: περιγραφή έλλειψης πληροφοριών δημιουργού"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "Η διάρκεια του βίντεο δεν πληροί τους περιορισμούς του λογαριασμού",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Τίτλος υπερβολικής διάρκειας βίντεο"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "Περιεχόμενο δημοσίευσης",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: τίτλος ομάδας ρυθμίσεων περιεχομένου"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* Υποχρεωτικό",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: περιγραφή υποχρεωτικών πεδίων"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "Κείμενο",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Ετικέτα πεδίου εισαγωγής κειμένου"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "Γράψτε μια λεζάντα — υποστηρίζονται hashtag και αναφορές",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "Ποιος μπορεί να δει",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Ετικέτα αναπτυσσόμενου μενού ορατότητας"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "Επιλέξτε…",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Θέση κράτησης για την ορατότητα, σύμφωνα με τις απαιτήσεις του TikTok δεν μπορεί να έχει προεπιλεγμένη τιμή"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "Δεν ελήφθη διαθέσιμη ορατότητα, δεν μπορεί να δημοσιευθεί προς το παρόν",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: ορατότητα κενή"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "Όλοι",
+    "description": "Ορατότητα TikTok: Δημόσια"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "Φίλοι που ακολουθούμε ο ένας τον άλλον",
+    "description": "Ορατότητα TikTok: Ορατότητα για τους αμοιβαίους φίλους"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "Οι θαυμαστές μου",
+    "description": "Ορατότητα TikTok: Ορατότητα για τους θαυμαστές"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "Μόνο εγώ",
+    "description": "Ορατότητα TikTok: Ορατότητα μόνο για τον εαυτό"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "Επιτρέπεται η αλληλεπίδραση",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Ετικέτα ομάδας διακόπτη αλληλεπίδρασης"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "Μπορείτε να ενεργοποιήσετε μόνο τους τρέχοντες επιτρεπόμενους τρόπους αλληλεπίδρασης αυτού του λογαριασμού; προεπιλογή όλα κλειστά.",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: περιγραφή διακόπτη αλληλεπίδρασης"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "Αυτός ο λογαριασμός έχει απενεργοποιηθεί: {list}",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: αλληλεπιδραστικές δυνατότητες απενεργοποιημένες"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "Σχόλια",
+    "description": "Διακόπτης αλληλεπίδρασης TikTok: Επιτρέπεται η σχόλια"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "Ντουέτο",
+    "description": "Διακόπτης αλληλεπίδρασης TikTok: Επιτρέπεται το ντουέτο"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "Ράψιμο",
+    "description": "Διακόπτης αλληλεπίδρασης TikTok: Επιτρέπεται το ράψιμο"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "Αποκάλυψη περιεχομένου",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: τίτλος ομάδας εμπορικού περιεχομένου"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "Αυτό είναι εμπορικό περιεχόμενο",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Διακόπτης αποκάλυψης εμπορικού περιεχομένου"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "Εάν το περιεχόμενο προωθεί μια μάρκα, προϊόν ή υπηρεσία, παρακαλώ αποκαλύψτε την πραγματική κατάσταση.",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: περιγραφή αποκάλυψης εμπορικού περιεχομένου"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "Η μάρκα σας",
+    "description": "Περιεχόμενο TikTok για επιχειρήσεις: Προώθηση της δικής σας επιχείρησης"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "Προωθήστε τον εαυτό σας ή την επιχείρησή σας",
+    "description": "Εμπορικό περιεχόμενο TikTok: Περιγραφή προώθησης της δικής σας επιχείρησης"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "Περιεχόμενο μάρκας",
+    "description": "Εμπορικό περιεχόμενο TikTok: Πληρωμένη συνεργασία"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "Προώθηση τρίτου μέρους λόγω πληρωμής, δώρων ή άλλων ωφελημάτων",
+    "description": "Εμπορικό περιεχόμενο TikTok: περιγραφή πληρωμένης συνεργασίας"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "Το βίντεο θα επισημανθεί ως «προωθητικό περιεχόμενο»",
+    "description": "Εμπορικό περιεχόμενο TikTok: Υπόδειξη μετά την επιλογή της μάρκας σας"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "Το βίντεο θα επισημανθεί ως «πληρωμένη συνεργασία»",
+    "description": "Εμπορικό περιεχόμενο TikTok: Υπόδειξη μετά την επιλογή περιεχομένου μάρκας"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "Η ορατότητα του περιεχομένου μάρκας δεν μπορεί να οριστεί σε «μόνο εγώ»",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Υπόδειξη ότι το περιεχόμενο μάρκας είναι ασυμβίβαστο με την ορατότητα μόνο για τον εαυτό"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "Το βίντεο υπερβαίνει το όριο διάρκειας αυτού του λογαριασμού ({max} δευτερόλεπτα)",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Σφάλμα υπερβολικής διάρκειας βίντεο"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "Παρακαλώ επιβεβαιώστε πριν από την δημοσίευση",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: τίτλος πολιτικής"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "Κάνοντας κλικ στο «Δημοσίευση» επιβεβαιώνετε ότι έχετε τα δικαιώματα χρήσης του περιεχομένου και της μουσικής και συμφωνείτε με τους όρους χρήσης μουσικής του TikTok.",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: περιγραφή πολιτικής κανονικού περιεχομένου"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "Κάνοντας κλικ στο «Δημοσίευση» επιβεβαιώνετε ότι οι πληροφορίες αποκάλυψης είναι ακριβείς και συμφωνείτε με την πολιτική εμπορικού περιεχομένου και τους όρους χρήσης μουσικής του TikTok.",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: περιγραφή πολιτικής εμπορικού περιεχομένου"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "Δείτε την «Επιβεβαίωση Χρήσης Μουσικής»",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: σύνδεσμος επιβεβαίωσης χρήσης μουσικής"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "Δείτε την «Πολιτική Εμπορικού Περιεχομένου»",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: σύνδεσμος πολιτικής εμπορικού περιεχομένου"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "Οι πληροφορίες δημοσίευσης είναι ελλιπείς, παρακαλώ ακυρώστε και ξαναδημιουργήστε την κάρτα επιβεβαίωσης",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: λόγος απενεργοποίησης κουμπιού λόγω έλλειψης λεπτομερειών"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "Παρακαλώ χρησιμοποιήστε ένα βίντεο που να πληροί τους περιορισμούς διάρκειας αυτού του λογαριασμού",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Λόγος απενεργοποίησης κουμπιού λόγω υπερβολικής διάρκειας βίντεο"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "Παρακαλώ επιλέξτε ποιος μπορεί να δει αυτό το βίντεο",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: λόγος απενεργοποίησης κουμπιού λόγω μη επιλογής ορατότητας"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "Παρακαλώ επιλέξτε τύπο εμπορικής αποκάλυψης",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: λόγος απενεργοποίησης κουμπιού λόγω μη επιλογής τύπου αποκάλυψης"
+  },
+  "scheduledTemplates.title": {
+    "message": "Πρότυπα αυτοματισμού",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "Δημιουργία από πρότυπο",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "Δημιουργία προσαρμοσμένου",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "Αφήστε την AI να ολοκληρώνει τις εργασίες σας εγκαίρως",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "Επιλέξτε ένα επίσημο πρότυπο και συνδέστε τον απαιτούμενο λογαριασμό. Μετά τη δημιουργία της εργασίας, μπορείτε να την εκτελέσετε αμέσως στην κάρτα.",
+    "description": "Οδηγίες για τη δημιουργία και ενεργοποίηση προτύπου προγραμματισμένης εργασίας"
+  },
+  "scheduledTemplates.browse": {
+    "message": "Περιήγηση σε πρότυπα",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "Επιλέξτε πρότυπο",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "Απλή ρύθμιση",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "Σύνδεση λογαριασμού",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.search": {
+    "message": "Αναζήτηση προτύπων",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.featured": {
+    "message": "Προτεινόμενα",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.ready": {
+    "message": "Διαθέσιμο προς χρήση",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "Χρειάζονται σύνδεση {count} στοιχείων",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "Χρόνος εκτέλεσης",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "Ετοιμάστε τις απαραίτητες συνδέσεις",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "Δεν απαιτείται σύνδεση με άλλους λογαριασμούς",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.connected": {
+    "message": "Συνδεδεμένο",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "Δεν έχει συνδεθεί ακόμα",
+    "description": "Κείμενο κέντρου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "Επιλέξτε λογαριασμό",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.connect": {
+    "message": "Συνδεθείτε",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.create": {
+    "message": "Δημιουργία εργασίας",
+    "description": "Οδηγίες για τη δημιουργία και ενεργοποίηση προτύπου προγραμματισμένης εργασίας"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "Η δημιουργία εργασίας απέτυχε, παρακαλώ ελέγξτε τη ρύθμιση ή τη σύνδεση",
+    "description": "Οδηγίες για τη δημιουργία και ενεργοποίηση προτύπου προγραμματισμένης εργασίας"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "Η εργασία έχει δημιουργηθεί και παραμένει απενεργοποιημένη. Παρακαλώ εκτελέστε την αμέσως στην κάρτα και, αν είναι επιτυχής, ενεργοποιήστε την.",
+    "description": "Οδηγίες για τη δημιουργία και ενεργοποίηση προτύπου προγραμματισμένης εργασίας"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "Δεν είναι δυνατή η ενεργοποίηση αυτή τη στιγμή. Παρακαλώ εκτελέστε την εργασία αμέσως και επιβεβαιώστε την επιτυχία; Ορισμένα πρότυπα απαιτούν επίσης τη δημιουργία συγκεκριμένου προσχεδίου.",
+    "description": "Οδηγίες για τη δημιουργία και ενεργοποίηση προτύπου προγραμματισμένης εργασίας"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "Αποτυχία φόρτωσης προτύπου, παρακαλώ δοκιμάστε ξανά αργότερα",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "Όλα",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "Μάρκετινγκ και Ανάπτυξη",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "Δημιουργία περιεχομένου",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "Αποτελεσματικότητα εργασίας",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "Πληροφορίες και Έρευνα",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "Ανάπτυξη και Συντήρηση",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "Προσωπικός Βοηθός",
+    "description": "Κέντρο αντιγράφου προτύπων προγραμματισμένων εργασιών"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "Η δημοσίευση σημαίνει ότι συμφωνείτε με την «Επιβεβαίωση Χρήσης Μουσικής» του TikTok",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Δήλωση χρήσης μουσικής"
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "Η δημοσίευση σημαίνει ότι συμφωνείτε με την «Πολιτική Περιεχομένου Μάρκας» και την «Επιβεβαίωση Χρήσης Μουσικής» του TikTok",
+    "description": "Επιβεβαίωση δημοσίευσης TikTok: Δήλωση μετά την επιλογή περιεχομένου μάρκας"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "Όνομα του μοντέλου υπηρεσίας, δηλαδή Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "Το πιο προηγμένο μοντέλο αυτή τη στιγμή",
     "description": "Περιγραφή του μοντέλου Claude Opus 4.7"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "Ζώνη ώρας"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "Οι νέες εργασίες χρησιμοποιούν από προεπιλογή τη ζώνη ώρας αυτής της συσκευής: {timezone}. Μετά την αποθήκευση παραμένει σταθερή για την εργασία."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "Επιλέξτε έγκυρη ζώνη ώρας IANA"
+  },
+  "scheduledTemplates.previous": {
+    "message": "Προηγούμενο βήμα",
+    "description": "Καθοδήγηση πλοήγησης και σύνδεσης για τον οδηγό προγραμματισμένων προτύπων"
+  },
+  "scheduledTemplates.next": {
+    "message": "Επόμενο βήμα",
+    "description": "Καθοδήγηση πλοήγησης και σύνδεσης για τον οδηγό προγραμματισμένων προτύπων"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "Θα χρησιμοποιήσουμε μόνο τη σύνδεση που απαιτεί αυτό το πρότυπο. Οι συνδεδεμένοι λογαριασμοί θα επαναχρησιμοποιηθούν αυτόματα.",
+    "description": "Καθοδήγηση πλοήγησης και σύνδεσης για τον οδηγό προγραμματισμένων προτύπων"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "Αυτό το πρότυπο χρησιμοποιεί μόνο ενσωματωμένες δυνατότητες, μπορείτε να δημιουργήσετε την εργασία απευθείας.",
+    "description": "Οδηγίες για τη δημιουργία και ενεργοποίηση προτύπου προγραμματισμένης εργασίας"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "Ολοκληρώστε τη σύνδεση για να συνεχίσετε.",
+    "description": "Καθοδήγηση πλοήγησης και σύνδεσης για τον οδηγό προγραμματισμένων προτύπων"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "Αυτή η εργασία θα χρησιμοποιεί σταθερά τον επιλεγμένο λογαριασμό σας.",
+    "description": "Καθοδήγηση πλοήγησης και σύνδεσης για τον οδηγό προγραμματισμένων προτύπων"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "Εκτελέστε μέσω της εξουσιοδοτημένης σύνδεσης MCP, χωρίς επιπλέον σύνδεση λογαριασμού.",
+    "description": "Καθοδήγηση πλοήγησης και σύνδεσης για τον οδηγό προγραμματισμένων προτύπων"
   }
 }

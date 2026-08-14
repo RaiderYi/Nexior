@@ -1,52 +1,56 @@
 <template>
-  <div class="field flex items-center justify-between">
-    <h2 class="title font-bold text-[14px] mb-[10px]">{{ $t('openaiimage.name.imageUrls') }}</h2>
-    <div class="upload-wrapper flex flex-col items-start gap-[8px]">
-      <div class="controls flex items-center">
-        <el-upload
-          v-model:file-list="fileList"
-          accept=".png,.jpg,.jpeg,.gif,.bmp,.webp"
-          name="file"
-          class="value"
-          :limit="5"
-          :multiple="true"
-          :show-file-list="false"
-          :action="uploadUrl"
-          :on-exceed="onExceed"
-          :on-error="onError"
-          :on-success="onSuccess"
-          :on-change="onChange"
-          :on-remove="onRemove"
-          :headers="headers"
-        >
-          <el-button size="small" type="primary" round>
-            <font-awesome-icon icon="fa-solid fa-upload" class="mr-1" />
-            {{ $t('openaiimage.button.uploadImageUrls') }}
-          </el-button>
-        </el-upload>
-        <info-icon :content="$t('openaiimage.description.imageUrls')" class="ml-2" />
+  <div>
+    <div class="field flex min-h-8 w-full items-center justify-between gap-3">
+      <div class="flex min-w-0 items-center">
+        <h2 class="title m-0 text-[14px] font-bold">{{ $t('openaiimage.name.imageUrls') }}</h2>
+        <info-icon :content="$t('openaiimage.description.imageUrls')" />
       </div>
+      <el-upload
+        ref="uploader"
+        v-model:file-list="fileList"
+        accept=".png,.jpg,.jpeg,.gif,.bmp,.webp"
+        name="file"
+        class="value shrink-0"
+        :limit="maxImages"
+        :multiple="true"
+        :show-file-list="false"
+        :before-upload="beforeUploadSizeGuard"
+        :action="uploadUrl"
+        :on-exceed="onExceed"
+        :on-error="onError"
+        :on-success="onSuccess"
+        :on-change="onChange"
+        :on-remove="onRemove"
+        :headers="headers"
+      >
+        <el-button size="small" type="primary" round>
+          <upload-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
+          {{ $t('openaiimage.button.uploadImageUrls') }}
+        </el-button>
+      </el-upload>
     </div>
-  </div>
-  <div class="file-list flex flex-wrap gap-[10px]">
-    <image-preview
-      v-for="(file, idx) in fileList"
-      :key="(file as any).uid || (file as any)?.response?.file_url || (file as any).url || idx"
-      :url="(file as any).url || (file as any)?.response?.file_url"
-      :name="(file as any).name"
-      :percentage="(file as any).percentage"
-      @remove="onRemovePreview(idx, file)"
-    />
+    <div class="file-list flex flex-wrap gap-[10px]">
+      <image-preview
+        v-for="(file, idx) in fileList"
+        :key="(file as any).uid || (file as any)?.response?.file_url || (file as any).url || idx"
+        :url="(file as any).url || (file as any)?.response?.file_url"
+        :name="(file as any).name"
+        :percentage="(file as any).percentage"
+        @remove="onRemovePreview(idx, file)"
+      />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
+import { UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton, ElUpload, ElMessage, UploadFiles, UploadFile } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { getBaseUrlPlatform, uploadTrackerMixin } from '@/utils';
+import { getBaseUrlPlatform, uploadTrackerMixin, uploadSizeGuardMixin } from '@/utils';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import ImagePreview from '@/components/common/ImagePreview.vue';
+import { pasteUploadMixin, dropUploadMixin } from '@/utils';
+import { OPENAIIMAGE_MAX_REFERENCE_IMAGES } from '@/constants/openaiimage';
 
 interface IData {
   fileList: UploadFiles;
@@ -57,13 +61,13 @@ interface IData {
 export default defineComponent({
   name: 'ImageUrlsInput',
   components: {
+    UploadIcon,
     ElUpload,
     ElButton,
     InfoIcon,
-    ImagePreview,
-    FontAwesomeIcon
+    ImagePreview
   },
-  mixins: [uploadTrackerMixin],
+  mixins: [pasteUploadMixin, dropUploadMixin, uploadTrackerMixin, uploadSizeGuardMixin],
   data(): IData {
     return {
       fileList: [],
@@ -74,6 +78,9 @@ export default defineComponent({
     };
   },
   computed: {
+    maxImages(): number {
+      return OPENAIIMAGE_MAX_REFERENCE_IMAGES;
+    },
     headers() {
       return {
         Authorization: `Bearer ${this.$store.state.token.access}`
@@ -161,7 +168,7 @@ export default defineComponent({
       this.onSetImageUrls();
     },
     onExceed() {
-      ElMessage.warning(this.$t('openaiimage.message.uploadImageExceed'));
+      ElMessage.warning(this.$t('openaiimage.message.uploadImageExceed', { count: OPENAIIMAGE_MAX_REFERENCE_IMAGES }));
     },
     onError() {
       ElMessage.error(this.$t('openaiimage.message.uploadImageError'));

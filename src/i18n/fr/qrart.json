@@ -5,7 +5,7 @@
   },
   "name.type": {
     "message": "Type",
-    "description": "Type de contenu du QR code à générer, comme 'lien', 'texte', etc."
+    "description": "Type de contenu du code QR à générer, comme 'lien', 'texte', etc."
   },
   "name.failure": {
     "message": "Échec",
@@ -61,7 +61,7 @@
   },
   "name.position": {
     "message": "Position",
-    "description": "Position du QR code à générer"
+    "description": "Position du code QR à générer."
   },
   "name.prompt": {
     "message": "Invite",
@@ -185,7 +185,7 @@
   },
   "preset.floral": {
     "message": "Floral",
-    "description": "Style prédéfini du QR code à générer"
+    "description": "Style prédéfini du code QR à générer."
   },
   "preset.snowflakes": {
     "message": "Flocons de neige",
@@ -337,7 +337,7 @@
   },
   "markerShape.plus": {
     "message": "Plus",
-    "description": "Forme de marqueur utilisée pour générer le code QR"
+    "description": "Forme de marqueur utilisée pour générer un code QR."
   },
   "markerShape.box": {
     "message": "Boîte",
@@ -365,7 +365,7 @@
   },
   "subMarker.plus": {
     "message": "Plus",
-    "description": "Forme de sous-marqueur utilisée pour générer le code QR"
+    "description": "Forme de sous-marqueur utilisée pour générer un code QR."
   },
   "subMarker.box": {
     "message": "Boîte",
@@ -432,8 +432,8 @@
     "description": "Style de pixel pour générer le QR code"
   },
   "pixelStyle.squircle": {
-    "message": "Squircle",
-    "description": "Style de pixel pour générer le QR code"
+    "message": "Rectangle arrondi",
+    "description": "Style de pixel utilisé pour générer un code QR."
   },
   "type.text": {
     "message": "Texte",
@@ -445,7 +445,7 @@
   },
   "type.email": {
     "message": "Email",
-    "description": "Type de contenu pour générer le QR code"
+    "description": "Type de contenu utilisé pour générer un code QR."
   },
   "type.phone": {
     "message": "Téléphone",
@@ -453,7 +453,7 @@
   },
   "type.sms": {
     "message": "SMS",
-    "description": "Type de contenu pour générer le QR code"
+    "description": "Type de contenu utilisé pour générer un code QR."
   },
   "name.rawurl": {
     "message": "Lien brut",

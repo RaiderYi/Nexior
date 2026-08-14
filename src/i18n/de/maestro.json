@@ -27,29 +27,49 @@
     "message": "Fehlerursache",
     "description": "Grund für den Fehler"
   },
+  "name.mode": {
+    "message": "Modus",
+    "description": "Generierungsmodus / Aktion"
+  },
+  "option.action.generate": {
+    "message": "Generieren",
+    "description": "Generierungsaktionsoption"
+  },
+  "option.action.remix": {
+    "message": "Remixen",
+    "description": "Remix-Aktionsoption"
+  },
+  "option.action.edit": {
+    "message": "Bearbeiten",
+    "description": "Bearbeitungsaktionsoption"
+  },
+  "option.action.extend": {
+    "message": "Erweitern",
+    "description": "Erweiterungsaktionsoption"
+  },
   "step.plan": {
     "message": "Planung & Storyboard",
-    "description": "Pipeline step: plan"
+    "description": "Pipeline-Schritt: Planung"
   },
   "step.source": {
     "message": "Medien sammeln",
-    "description": "Pipeline step: source media"
+    "description": "Pipeline-Schritt: Medien sammeln"
   },
   "step.voice": {
-    "message": "Voiceover",
-    "description": "Pipeline step: voiceover"
+    "message": "Sprachaufnahme generieren",
+    "description": "Pipeline-Schritt: Sprachübertragung"
   },
   "step.compose": {
     "message": "Szenen komponieren",
-    "description": "Pipeline step: compose"
+    "description": "Pipeline-Schritt: Szenen komponieren"
   },
   "step.render": {
     "message": "Video rendern",
-    "description": "Pipeline step: render"
+    "description": "Pipeline-Schritt: Video rendern"
   },
   "step.deliver": {
     "message": "Bereitstellen",
-    "description": "Pipeline step: deliver"
+    "description": "Pipeline-Schritt: Bereitstellen"
   },
   "name.prompt": {
     "message": "Eingabeaufforderung",
@@ -63,6 +83,14 @@
     "message": "Sprachen",
     "description": "Feld für Ausgabesprachen"
   },
+  "name.primaryLanguage": {
+    "message": "Primärsprache",
+    "description": "Feld für die Primärsprache"
+  },
+  "name.additionalLanguages": {
+    "message": "Weitere Sprachen (optional)",
+    "description": "Feld für weitere Ausgabesprachen"
+  },
   "name.aspect": {
     "message": "Seitenverhältnis",
     "description": "Feld für das Seitenverhältnis"
@@ -73,19 +101,43 @@
   },
   "name.quality": {
     "message": "Qualität",
-    "description": "Production quality tier field"
+    "description": "Feld für die Produktionsqualität"
   },
-  "option.quality.draft": {
-    "message": "Entwurf · schnelle Vorschau",
-    "description": "Draft quality option"
+  "option.quality.lite": {
+    "message": "Lite",
+    "description": "Lite SKU-Option"
   },
   "option.quality.standard": {
     "message": "Standard · ausgewogen",
-    "description": "Standard quality option"
+    "description": "Option für Standardqualität"
   },
-  "option.quality.premium": {
-    "message": "Premium · mehr Details",
-    "description": "Premium quality option"
+  "option.quality.pro": {
+    "message": "Pro",
+    "description": "Pro SKU-Option"
+  },
+  "description.quality.lite": {
+    "message": "Schnelle Erstellung von einfachen Kurzvideos, leichte Effekte, einsprachige Ausgabe.",
+    "description": "Zusammenfassung des Lite SKU"
+  },
+  "description.quality.standard": {
+    "message": "Ausgewogene 1080p-Produktion, unterstützt digitale Sprachsynthese und bis zu zwei Sprachen.",
+    "description": "Zusammenfassung des Standard SKU"
+  },
+  "description.quality.pro": {
+    "message": "Unterstützt lange Videos, Kurzfilme und die umfassendsten kreativen Produktionsfähigkeiten.",
+    "description": "Zusammenfassung des Pro SKU"
+  },
+  "name.upToSeconds": {
+    "message": "Maximal {seconds} Sekunden",
+    "description": "Maximale SKU-Dauer"
+  },
+  "name.estimatedCredits": {
+    "message": "Geschätzte {credits} Credits",
+    "description": "Geschätzte Generierungsguthaben"
+  },
+  "name.requiresSku": {
+    "message": "Benötigt {sku}",
+    "description": "Minimales SKU für einen Videotyp"
   },
   "name.remixing": {
     "message": "Remix",
@@ -98,6 +150,10 @@
   "placeholder.select": {
     "message": "Bitte auswählen",
     "description": "Allgemeiner Platzhalter für Auswahl"
+  },
+  "placeholder.additionalLanguages": {
+    "message": "Ausgabesprachen hinzufügen",
+    "description": "Platzhalter für weitere Sprachen"
   },
   "description.prompt": {
     "message": "Formulieren Sie klar, was Sie möchten. Skript, Bilder, Sprachübertragung und Schnitt übernimmt Maestro.",
@@ -113,11 +169,11 @@
   },
   "description.duration": {
     "message": "Ziel-Videolänge – je länger, desto mehr Zeit und Punkte erfordert die Produktion.",
-    "description": "Duration help"
+    "description": "Hilfe zur Dauer"
   },
   "description.quality": {
     "message": "Höhere Produktionsstufen liefern feinere Bilder und Schnitt, kosten aber mehr Zeit und Punkte.",
-    "description": "Quality help"
+    "description": "Hilfe zur Qualität"
   },
   "status.pending": {
     "message": "In der Warteschlange",
@@ -187,17 +243,41 @@
     "message": "Noch keine Videos — erstelle dein erstes auf der linken Seite.",
     "description": "Keine Aufgaben vorhanden"
   },
+  "name.customize": {
+    "message": "Anpassen",
+    "description": "Schalter für optionale kreative Einstellungen"
+  },
+  "description.customize.auto": {
+    "message": "Auto · Maestro bestimmt Videotyp, visuellen Stil und Erzählstimme.",
+    "description": "Zustand bei deaktivierter Anpassung"
+  },
+  "description.customize.manual": {
+    "message": "Videotyp, visuellen Stil und Erzählstimme auswählen.",
+    "description": "Zustand bei aktivierter Anpassung"
+  },
+  "name.customizeScenario": {
+    "message": "Videotyp anpassen",
+    "description": "Schalter zum Anpassen des Videotyps"
+  },
+  "name.customizeStyle": {
+    "message": "Visuellen Stil anpassen",
+    "description": "Schalter zum Anpassen des visuellen Stils"
+  },
+  "name.customizeVoice": {
+    "message": "Erzählstimme anpassen",
+    "description": "Schalter zum Anpassen der Erzählstimme"
+  },
   "name.scenario": {
     "message": "Videotyp",
-    "description": "Video type field"
+    "description": "Feld für den Videotyp"
   },
   "description.scenario": {
-    "message": "Wähle die Art des Videos. Auto lässt Maestro entscheiden; oder erzwinge einen Stil wie Kurzdrama, Realaufnahmen, Erklärvideo oder Produktwerbung.",
-    "description": "Scenario field help"
+    "message": "Aktiviere die Anpassung, um den Videotyp auszuwählen. Ist sie ausgeschaltet, entscheidet Maestro automatisch.",
+    "description": "Hilfe zum Videotypfeld"
   },
   "option.scenario.auto": {
     "message": "Auto · Maestro entscheiden lassen",
-    "description": "Auto scenario option"
+    "description": "Option für automatischen Videotyp"
   },
   "option.scenario.narrated": {
     "message": "Erzähltes Multi-Szenen-Video",
@@ -205,26 +285,30 @@
   },
   "option.scenario.drama": {
     "message": "Kurzdrama",
-    "description": "Short drama scenario option"
+    "description": "Option für Kurzdrama-Szenario"
   },
   "option.scenario.avatar": {
     "message": "Digitale Person · Sprachübertragung",
     "description": "Avatar / Talking-Head-Szenario-Option"
   },
-  "option.scenario.motion": {
-    "message": "Motion Graphics",
-    "description": "Motion graphics scenario option"
-  },
   "option.scenario.captions": {
     "message": "Untertitel hinzufügen",
     "description": "Add-captions scenario option"
+  },
+  "message.captionsNeedVideo": {
+    "message": "Kinetische Untertitel arbeiten mit einem vorhandenen Talking-Head-Video – lade oben zuerst eines hoch.",
+    "description": "Warnung, wenn der Videotyp „Untertitel hinzufügen“ ausgewählt ist, aber kein Quellvideo hochgeladen wurde"
+  },
+  "message.avatarNeedsImage": {
+    "message": "Für die digitale Sprachsynthese wird ein Porträt benötigt, bitte laden Sie es oben hoch.",
+    "description": "Warnung, die angezeigt wird, wenn ein Avatar-Video ausgewählt ist, aber kein Porträt hochgeladen wurde"
   },
   "name.style": {
     "message": "Visueller Stil",
     "description": "Feld für visuellen Stil"
   },
   "description.style": {
-    "message": "Optionale visuelle Stilhinweise (wirken sich auf Typografie, Farbgebung, Animationen, Rhythmus aus), unabhängig vom Video-Typ. Wählen Sie eine vordefinierte Einstellung oder geben Sie Ihre eigene ein.",
+    "message": "Aktiviere die Anpassung, um einen visuellen Stil auszuwählen oder einzugeben. Ist sie ausgeschaltet, entscheidet Maestro automatisch.",
     "description": "Hilfe zum Stilfeld"
   },
   "option.style.auto": {
@@ -236,60 +320,60 @@
     "description": "Option für filmischen Stil"
   },
   "option.style.glass": {
-    "message": "Frosted Glass",
-    "description": "Frosted glass style option"
+    "message": "Frosted Glass · Flüssigglas",
+    "description": "Option für mattes Glas-Stil"
   },
   "option.style.luxury": {
-    "message": "Luxury",
-    "description": "Luxury style option"
+    "message": "Luxus · Weißraum",
+    "description": "Option für luxuriösen Stil"
   },
   "option.style.swiss": {
-    "message": "Swiss Grid",
-    "description": "Swiss grid style option"
+    "message": "Schweizer Raster · Präzise",
+    "description": "Option für Schweizer Raster-Stil"
   },
   "option.style.modern": {
-    "message": "Modern",
-    "description": "Modern style option"
+    "message": "Minimalistisch Modern · SaaS",
+    "description": "Option für modernen Stil"
   },
   "option.style.editorial": {
-    "message": "Editorial",
-    "description": "Editorial style option"
+    "message": "Magazin-Layout",
+    "description": "Option für redaktionellen Stil"
   },
   "option.style.warm": {
-    "message": "Warm",
-    "description": "Warm style option"
+    "message": "Warm und Nah",
+    "description": "Option für warmen Stil"
   },
   "option.style.vibrant": {
-    "message": "Vibrant",
-    "description": "Vibrant style option"
+    "message": "Lebendig und Bunt",
+    "description": "Option für lebendigen Stil"
   },
   "option.style.neon": {
-    "message": "Neon",
+    "message": "Neonlicht",
     "description": "Option für Neon-Stil"
   },
   "option.style.mono": {
-    "message": "Monochrome",
-    "description": "Monochrome style option"
+    "message": "Minimalistisch Schwarz-Weiß",
+    "description": "Option für monochromen Stil"
   },
   "option.style.pastel": {
-    "message": "Pastel",
-    "description": "Pastel style option"
+    "message": "Pastellfarben",
+    "description": "Option für pastellfarbigen Stil"
   },
   "option.style.bold": {
-    "message": "Bold Type",
-    "description": "Bold type style option"
+    "message": "Fett · Hochenergie",
+    "description": "Option für fetten Schriftstil"
   },
   "option.style.industrial": {
-    "message": "Industrial",
-    "description": "Industrial style option"
+    "message": "Industrieller Fehler",
+    "description": "Option für industriellen Stil"
   },
   "option.style.futuristic": {
-    "message": "Futuristic",
-    "description": "Futuristic style option"
+    "message": "Zukunftstechnologie",
+    "description": "Option für futuristischen Stil"
   },
   "option.style.retro": {
-    "message": "Retro Film",
-    "description": "Retro film style option"
+    "message": "Retro-Film",
+    "description": "Option für retro Filmstil"
   },
   "name.voice": {
     "message": "Erzählstimme",
@@ -300,7 +384,7 @@
     "description": "Button für Sprachvorschau / Abspielen einer Probe"
   },
   "description.voice": {
-    "message": "Wählen Sie den Klang der Erzählstimme. Der Klang ist unabhängig von der Sprache – derselbe Klang wird in der oben gewählten Sprache vorgelesen; klicken Sie auf Abspielen, um eine Vorschau zu hören.",
+    "message": "Aktiviere die Anpassung, um die Erzählstimme auszuwählen. Ist sie ausgeschaltet, wählt Maestro automatisch. Die Stimme ist sprachunabhängig, und du kannst sie über die Wiedergabetaste vorhören.",
     "description": "Hilfe für das Sprachfeld"
   },
   "option.voice.auto": {

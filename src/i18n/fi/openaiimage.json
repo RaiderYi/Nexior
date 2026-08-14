@@ -112,7 +112,7 @@
     "description": "malli-parametrin kuvaus"
   },
   "description.imageUrls": {
-    "message": "Lataa 1-5 viittauskuvaa päästäksesi muokkaustilaan.",
+    "message": "Lataa 1-16 viittauskuvaa päästäksesi muokkaustilaan.",
     "description": "image_urls-parametrin kuvaus"
   },
   "status.pending": {
@@ -156,7 +156,7 @@
     "description": "Oikeudet käytetty loppuun -viesti"
   },
   "message.uploadImageExceed": {
-    "message": "Voit ladata enintään 5 kuvaa",
+    "message": "Voit ladata enintään {count} kuvaa",
     "description": "Kuvien määrä ylittää rajan"
   },
   "message.uploadImageError": {
@@ -182,5 +182,9 @@
   "model.gptImage2Official": {
     "message": "gpt-image-2 (Virallinen)",
     "description": "gpt-image-2-mallivaihtoehto (virallinen välitys)"
+  },
+  "size.auto": {
+    "message": "Automaattinen",
+    "description": "Kokovalinta: automaattinen — malli valitsee kuvasuhteen kehotteesi perusteella"
   }
 }

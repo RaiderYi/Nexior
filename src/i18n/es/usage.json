@@ -19,6 +19,10 @@
     "message": "API",
     "description": "API llamada, no necesita traducción."
   },
+  "field.credential": {
+    "message": "Credencial",
+    "description": "La clave API (credencial) que generó este registro de uso."
+  },
   "field.usedAmount": {
     "message": "Cantidad utilizada",
     "description": "Cantidad de recursos utilizados."
@@ -121,42 +125,102 @@
   },
   "field.consumed": {
     "message": "Consumido",
-    "description": "Column header in the usage breakdown table for the total points a single API consumed within the selected time range."
+    "description": "Encabezado de columna en la tabla de desglose de uso: total de puntos consumidos por una llamada API."
   },
   "field.share": {
     "message": "Proporción",
-    "description": "Column header in the usage breakdown table for a single API's percentage of the total consumption."
+    "description": "Encabezado de columna en la tabla de desglose de uso: porcentaje del total de una sola API."
   },
   "field.autoRefresh": {
     "message": "Actualización automática",
-    "description": "Toggle label at the top-right of the usage table; when on, the latest records refresh automatically on an interval."
+    "description": "Etiqueta del conmutador en la parte superior derecha de la tabla de uso; cuando está activado, los registros más recientes se recargan automáticamente."
   },
   "value.processing": {
     "message": "Procesando",
-    "description": "Placeholder shown in the status code column while an async task has not yet returned a final status code."
+    "description": "Marcador de posición en la columna de código de estado mientras una tarea asíncrona aún no ha devuelto respuesta."
   },
   "value.others": {
     "message": "Otros",
-    "description": "Series name in the usage-trend chart that aggregates all APIs outside the top spenders."
+    "description": "Nombre de la serie en el gráfico de tendencias de uso que agrupa todas las APIs fuera de las principales."
   },
   "title.usageAnalytics": {
     "message": "Análisis de uso",
-    "description": "Title of the usage analytics card, which contains trend, share, and breakdown view tabs."
+    "description": "Título de la tarjeta de análisis de uso, que contiene vistas de tendencias, distribución y desglose."
   },
   "view.trend": {
     "message": "Tendencia",
-    "description": "View switch button in the usage analytics card: stacked bar chart of per-API consumption over time."
+    "description": "Botón de cambio de vista en la tarjeta de análisis: gráfico de barras apiladas del consumo por API."
   },
   "view.distribution": {
     "message": "Proporción",
-    "description": "View switch button in the usage analytics card: doughnut chart of each API's consumption share."
+    "description": "Botón de cambio de vista en la tarjeta de análisis: gráfico de dona de la contribución de cada API."
   },
   "view.breakdown": {
     "message": "Desglose",
-    "description": "View switch button in the usage analytics card: a table listing every API's exact consumption and share."
+    "description": "Botón de cambio de vista en la tarjeta de análisis: tabla con el consumo exacto de cada API."
   },
   "message.exportFailed": {
     "message": "Error al exportar. Reduzca el rango de fechas e inténtelo de nuevo.",
-    "description": "Error toast shown when the CSV export request fails (network or server error)."
+    "description": "Notificación de error cuando la solicitud de exportación CSV falla (error de red o servidor)."
+  },
+  "field.paidAmount": {
+    "message": "Cantidad pagada",
+    "description": "La cantidad efectivamente liquidada en el pago en cadena."
+  },
+  "field.network": {
+    "message": "Red de pago",
+    "description": "La red utilizada para el pago en cadena."
+  },
+  "field.transaction": {
+    "message": "ID de transacción",
+    "description": "El hash o firma de la transacción del pago en cadena."
+  },
+  "field.payer": {
+    "message": "Dirección de pago",
+    "description": "La dirección de la billetera que inicia el pago en cadena."
+  },
+  "button.viewTransaction": {
+    "message": "Ver transacción",
+    "description": "Ver transacción en un explorador de bloques de confianza."
+  },
+  "dialog.payment": {
+    "message": "Pagar",
+    "description": "Usar la pestaña de información de pago en el cuadro de diálogo."
+  },
+  "value.balanceNotApplicable": {
+    "message": "No aplicable (pago en cadena)",
+    "description": "Se muestra cuando el pago en cadena no utiliza el saldo de puntos de la plataforma."
+  },
+  "value.paymentUnavailable": {
+    "message": "Información de pago no disponible",
+    "description": "Se muestra cuando faltan datos de pago confiables en el historial o en liquidaciones no confirmadas."
+  },
+  "value.paymentSettled": {
+    "message": "Pagado",
+    "description": "El pago en la cadena ha sido confirmado como liquidado."
+  },
+  "value.paymentUnconfirmed": {
+    "message": "Pendiente de confirmación",
+    "description": "El pago en la cadena ha sido devuelto como exitoso, pero los hechos de la liquidación aún necesitan ser conciliados."
+  },
+  "value.paymentFailed": {
+    "message": "Pago fallido",
+    "description": "El pago en la cadena ha fallado o ha sido omitido."
+  },
+  "value.attemptTransaction": {
+    "message": "Intentar transacción",
+    "description": "Intento de transacción que aún no ha sido confirmado como exitoso."
+  },
+  "value.onChainBalanceNote": {
+    "message": "Pago en cadena, sin usar saldo de puntos",
+    "description": "Indica que el registro de uso x402 no ha deducido el saldo de puntos."
+  },
+  "value.aceDiscount": {
+    "message": "Descuento ACE {percent}%",
+    "description": "Etiqueta para el descuento de uso de API obtenido al poseer ACE."
+  },
+  "value.accountDiscount": {
+    "message": "Descuento de cuenta {percent}%",
+    "description": "Etiqueta neutral para el descuento de uso manual de la cuenta."
   }
 }

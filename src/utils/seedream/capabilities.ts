@@ -11,12 +11,10 @@
 //     supported (image upload, custom seed, group generation, etc.)
 
 import {
-  SEEDREAM_GUIDANCE_SCALE_DEFAULTS,
-  SEEDREAM_MODEL_3_0_T2I,
   SEEDREAM_MODEL_4_0,
   SEEDREAM_MODEL_4_5,
   SEEDREAM_MODEL_5_0,
-  SEEDREAM_MODEL_SEEDEDIT_3_0_I2I,
+  SEEDREAM_MODEL_5_0_PRO,
   SEEDREAM_SIZE_1K,
   SEEDREAM_SIZE_2K,
   SEEDREAM_SIZE_3K,
@@ -69,6 +67,21 @@ const FALLBACK: ISeedreamCapability = {
 /** Return the support matrix for a given model. */
 export function getSeedreamCapabilities(model?: string): ISeedreamCapability {
   switch (model) {
+    case SEEDREAM_MODEL_5_0_PRO:
+      // 5.0 Pro: flagship single-image. Size presets 1K/2K only. No group
+      // generation / stream / web_search tools. Supports output_format.
+      return {
+        image: true,
+        imageRequired: false,
+        sizeTiers: [SEEDREAM_SIZE_1K, SEEDREAM_SIZE_2K],
+        sizeAdaptive: true,
+        sizePixel: true,
+        groupGeneration: false,
+        seed: false,
+        guidanceScale: false,
+        outputFormat: true,
+        tools: false
+      };
     case SEEDREAM_MODEL_5_0:
       // 5.0-lite: tier presets 2K/3K/4K (no 1K — min ~3.7M pixels).
       return {
@@ -113,44 +126,25 @@ export function getSeedreamCapabilities(model?: string): ISeedreamCapability {
         outputFormat: false,
         tools: false
       };
-    case SEEDREAM_MODEL_3_0_T2I:
-      // 3.0-t2i: text-to-image only, pixel-only sizes.
-      return {
-        image: false,
-        imageRequired: false,
-        sizeTiers: [],
-        sizeAdaptive: false,
-        sizePixel: true,
-        sizePixelDefault: '1024x1024',
-        groupGeneration: false,
-        seed: true,
-        guidanceScale: true,
-        guidanceScaleDefault: SEEDREAM_GUIDANCE_SCALE_DEFAULTS[SEEDREAM_MODEL_3_0_T2I],
-        outputFormat: false,
-        tools: false
-      };
-    case SEEDREAM_MODEL_SEEDEDIT_3_0_I2I:
-      // seededit-3.0-i2i: image-to-image only, pixel-only sizes.
-      // Note: official Volcengine docs limit `seed` to 3.0-t2i only — our
-      // worker is permissive but upstream Volcengine rejects seed on
-      // seededit-3.0-i2i. Keep seed=false here.
-      return {
-        image: true,
-        imageRequired: true,
-        sizeTiers: [],
-        sizeAdaptive: false,
-        sizePixel: true,
-        sizePixelDefault: '1024x1024',
-        groupGeneration: false,
-        seed: false,
-        guidanceScale: true,
-        guidanceScaleDefault: SEEDREAM_GUIDANCE_SCALE_DEFAULTS[SEEDREAM_MODEL_SEEDEDIT_3_0_I2I],
-        outputFormat: false,
-        tools: false
-      };
     default:
       return FALLBACK;
   }
+}
+
+export function getCompatibleSeedreamAction(
+  action: 'generate' | 'edit' | undefined,
+  model?: string
+): 'generate' | 'edit' {
+  const capabilities = getSeedreamCapabilities(model);
+  if (capabilities.imageRequired) return 'edit';
+  if (!capabilities.image) return 'generate';
+  return action === 'edit' ? 'edit' : 'generate';
+}
+
+export function getSeedreamAction(model?: string, image?: string[]): 'generate' | 'edit' {
+  const capabilities = getSeedreamCapabilities(model);
+  if (capabilities.imageRequired) return 'edit';
+  return capabilities.image && image?.length ? 'edit' : 'generate';
 }
 
 export type SeedreamConflictField =

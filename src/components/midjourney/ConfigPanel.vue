@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex-1 overflow-y-auto p-5">
-      <el-tabs v-model="type" class="demo-tabs" stretch>
+    <div class="flex-1 min-h-0 overflow-hidden">
+      <el-tabs v-model="type" class="demo-tabs scenario-tabs scenario-tabs--scrollable">
         <el-tab-pane :label="$t('midjourney.tab.images')" name="imagine">
-          <div class="pt-2 px-1">
+          <div class="p-5">
             <model-selector class="mb-2" />
             <prompt-input class="mb-4" />
-            <reference-image class="mb-2" />
+            <reference-image class="mb-4" />
             <ratio-selector class="mb-4" />
-            <quality-selector class="mb-4" />
+            <quality-selector v-if="config?.version !== '8.1'" class="mb-4" />
             <version-selector v-if="!isNiji" class="mb-4" />
             <hd-selector v-if="isV8 && !isNiji" class="mb-4" />
             <elements-selector class="mb-2" />
@@ -23,24 +23,25 @@
           </div>
         </el-tab-pane>
         <el-tab-pane :label="$t('midjourney.tab.videos')" name="videos">
-          <div class="pt-2 px-1">
+          <div class="p-5">
             <video-from-input v-show="config?.action === 'extend'" class="mb-4" />
-            <image-url-input class="mb-2" />
-            <end-image-url-input class="mb-2" />
+            <image-url-input class="mb-4" />
+            <end-image-url-input class="mb-4" />
             <loop-selector class="mb-2" />
             <resolution-selector class="mb-4" />
             <prompt-input class="mb-4" />
           </div>
         </el-tab-pane>
         <el-tab-pane :label="$t('midjourney.tab.describe')" name="describe">
-          <div class="pt-2 px-1">
-            <image-url-input2 class="mb-2" />
+          <div class="p-5">
+            <image-url-input2 class="mb-4" />
           </div>
         </el-tab-pane>
       </el-tabs>
     </div>
     <div class="flex flex-col px-5 pb-5">
-      <consumption :value="consumption" :service="service" />
+      <scenario-payment-mode scenario="midjourney" />
+      <consumption v-if="!walletMode" :value="consumption" :service="service" />
       <div class="flex gap-1">
         <mode-selector v-if="type !== 'describe'" />
         <el-button v-if="config.action === 'extend'" type="primary" class="btn w-full" round @click="$emit('generate')">
@@ -81,6 +82,14 @@ import { ElButton, ElTabs, ElTabPane } from 'element-plus';
 import Consumption from '../common/Consumption.vue';
 import { getConsumption } from '@/utils';
 import { MIDJOURNEY_DEFAULT_TYPE } from '@/constants';
+import ScenarioPaymentMode from '../common/ScenarioPaymentMode.vue';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import {
+  buildMidjourneyDescribeRequest,
+  buildMidjourneyImagineRequest,
+  buildMidjourneyVideosRequest,
+  midjourneyOperator
+} from '@/operators/midjourney';
 
 export default defineComponent({
   name: 'ConfigPanel',
@@ -109,9 +118,13 @@ export default defineComponent({
     Consumption,
     VideoFromInput,
     ElTabs,
-    ElTabPane
+    ElTabPane,
+    ScenarioPaymentMode
   },
   emits: ['generate'],
+  data() {
+    return { quoteTimer: 0, quoteRunId: 0 };
+  },
   computed: {
     config() {
       return this.$store.state.midjourney.config;
@@ -139,12 +152,66 @@ export default defineComponent({
     },
     service() {
       return this.$store.state.midjourney?.service;
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('midjourney').mode === 'wallet';
+    }
+  },
+  watch: {
+    walletMode: {
+      handler(enabled: boolean) {
+        if (enabled) this.scheduleQuote();
+      },
+      immediate: true
+    },
+    config: {
+      handler() {
+        if (this.walletMode) this.scheduleQuote();
+      },
+      deep: true
     }
   },
   mounted() {
-    if (!this.config.type) {
-      this.type = MIDJOURNEY_DEFAULT_TYPE;
+    if (!this.config.type) this.type = MIDJOURNEY_DEFAULT_TYPE;
+  },
+  beforeUnmount() {
+    window.clearTimeout(this.quoteTimer);
+    this.quoteRunId += 1;
+  },
+  methods: {
+    scheduleQuote() {
+      window.clearTimeout(this.quoteTimer);
+      this.quoteTimer = window.setTimeout(this.refreshQuote, 350);
+    },
+    async refreshQuote() {
+      const state = scenarioPaymentState('midjourney');
+      const runId = ++this.quoteRunId;
+      state.quoteLoading = true;
+      state.quoteUsdc = undefined;
+      try {
+        const quote =
+          this.type === 'videos'
+            ? await midjourneyOperator.quoteVideos(buildMidjourneyVideosRequest(this.config))
+            : this.type === 'describe'
+              ? await midjourneyOperator.quoteDescribe(buildMidjourneyDescribeRequest(this.config))
+              : await midjourneyOperator.quoteImagine(buildMidjourneyImagineRequest(this.config));
+        if (runId === this.quoteRunId && state.mode === 'wallet') state.quoteUsdc = quote.amountUsdc;
+      } catch (error) {
+        console.warn('x402 quote failed', error);
+      } finally {
+        if (runId === this.quoteRunId) state.quoteLoading = false;
+      }
     }
   }
 });
 </script>
+
+<style lang="scss" scoped>
+.demo-tabs {
+  :deep(.el-tabs__item) {
+    // Width follows the label with fixed whitespace; no wrap.
+    padding: 0 16px;
+    white-space: nowrap;
+  }
+}
+</style>

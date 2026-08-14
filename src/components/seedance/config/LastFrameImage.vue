@@ -1,6 +1,6 @@
 <template>
   <div v-if="capability.acceptsLastFrame" class="relative">
-    <div class="flex justify-between">
+    <div class="flex min-h-8 items-center pr-20">
       <div class="flex justify-start items-center">
         <span class="text-sm font-bold">{{ $t('seedance.name.lastFrame') }}</span>
         <info-icon :content="$t('seedance.description.lastFrame')" />
@@ -14,6 +14,7 @@
       :limit="1"
       class="upload-wrapper"
       :multiple="false"
+      :before-upload="beforeUploadSizeGuard"
       :action="uploadUrl"
       list-type="picture"
       :on-exceed="onExceed"
@@ -32,7 +33,7 @@
         />
       </template>
       <el-button round type="primary" size="small" class="btn btn-upload">
-        <font-awesome-icon icon="fa-solid fa-upload" class="icon mr-1" />
+        <upload-icon class="icon mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
         {{ $t('seedance.button.upload') }}
       </el-button>
     </el-upload>
@@ -40,10 +41,16 @@
 </template>
 
 <script lang="ts">
+import { UploadIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElUpload, ElButton, UploadFiles, UploadFile, ElMessage } from 'element-plus';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { getBaseUrlPlatform, pasteUploadMixin, uploadTrackerMixin } from '@/utils';
+import {
+  getBaseUrlPlatform,
+  pasteUploadMixin,
+  dropUploadMixin,
+  uploadTrackerMixin,
+  uploadSizeGuardMixin
+} from '@/utils';
 import InfoIcon from '@/components/common/InfoIcon.vue';
 import ImagePreview from '@/components/common/ImagePreview.vue';
 import { ISeedanceImageInput } from '@/models';
@@ -57,13 +64,13 @@ interface IData {
 export default defineComponent({
   name: 'SeedanceLastFrameImage',
   components: {
+    UploadIcon,
     ElUpload,
     ElButton,
     ImagePreview,
-    InfoIcon,
-    FontAwesomeIcon
+    InfoIcon
   },
-  mixins: [pasteUploadMixin, uploadTrackerMixin],
+  mixins: [pasteUploadMixin, dropUploadMixin, uploadTrackerMixin, uploadSizeGuardMixin],
   data(): IData {
     return {
       fileList: [],

@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex-1 overflow-y-auto p-5">
-      <el-tabs v-model="mode" class="suno-mode-tabs" stretch>
+    <div class="flex-1 min-h-0 overflow-hidden">
+      <el-tabs v-model="mode" class="suno-mode-tabs scenario-tabs scenario-tabs--scrollable">
         <el-tab-pane :label="$t('suno.mode.simple')" name="simple">
-          <div class="pt-2 px-1">
+          <div class="p-5">
             <type-selector class="mb-4" />
             <upload-audio class="mb-4" />
             <prompt-input class="mb-4" />
@@ -18,7 +18,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane :label="$t('suno.mode.custom')" name="custom">
-          <div class="pt-2 px-1">
+          <div class="p-5">
             <type-selector class="mb-4" />
             <upload-audio class="mb-4" />
             <lyric-input v-if="!config?.instrumental" class="mb-4" />
@@ -39,14 +39,15 @@
       </el-tabs>
     </div>
     <div class="flex flex-col items-center justify-center px-5 pb-5 gap-2">
-      <consumption :value="consumption" :service="service" />
+      <scenario-payment-mode scenario="suno" />
+      <consumption v-if="!walletMode" :value="consumption" :service="service" />
       <div class="flex gap-2 w-full">
         <el-button class="flex-1" @click="onClearAll">
-          <font-awesome-icon icon="fa-solid fa-broom" class="mr-1" />
+          <cleanup-icon class="mr-1" :size="'1em' as any" aria-hidden="true" focusable="false" />
           {{ $t('suno.button.clear_all') }}
         </el-button>
         <el-button type="primary" class="flex-1" round @click="onGenerate">
-          <font-awesome-icon icon="fa-solid fa-magic" class="mr-2" />
+          <magic-icon class="mr-2" :size="'1em' as any" aria-hidden="true" focusable="false" />
           {{ generateButtonText }}
         </el-button>
       </div>
@@ -55,6 +56,7 @@
 </template>
 
 <script lang="ts">
+import { CleanupIcon, MagicIcon } from '@acedatacloud/core/icons/components';
 import { defineComponent } from 'vue';
 import { ElButton, ElTabs, ElTabPane } from 'element-plus';
 import TypeSelector from './config/TypeSelector.vue';
@@ -73,13 +75,17 @@ import UnderpaintingInput from './config/UnderpaintingInput.vue';
 import SamplesInput from './config/SamplesInput.vue';
 import AdjustSpeedInput from './config/AdjustSpeedInput.vue';
 import PersonaInput from './config/PersonaInput.vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Consumption from '../common/Consumption.vue';
 import { getConsumption } from '@/utils';
+import ScenarioPaymentMode from '../common/ScenarioPaymentMode.vue';
+import { isScenarioX402Enabled, scenarioPaymentState } from '@/utils/x402/scenarioPayment';
+import { buildSunoAudioRequest, sunoOperator } from '@/operators/suno';
 
 export default defineComponent({
   name: 'PresetPanel',
   components: {
+    CleanupIcon,
+    MagicIcon,
     TypeSelector,
     PromptInput,
     LyricInput,
@@ -96,13 +102,16 @@ export default defineComponent({
     SamplesInput,
     AdjustSpeedInput,
     PersonaInput,
-    FontAwesomeIcon,
     ElButton,
     ElTabs,
     ElTabPane,
-    Consumption
+    Consumption,
+    ScenarioPaymentMode
   },
   emits: ['generate'],
+  data() {
+    return { quoteTimer: 0, quoteRunId: 0 };
+  },
   computed: {
     config() {
       return this.$store.state.suno?.config;
@@ -123,6 +132,9 @@ export default defineComponent({
     },
     service() {
       return this.$store.state.suno?.service;
+    },
+    walletMode(): boolean {
+      return isScenarioX402Enabled() && scenarioPaymentState('suno').mode === 'wallet';
     },
     supportsVocalGender() {
       const model = this.config?.model || '';
@@ -151,7 +163,43 @@ export default defineComponent({
       return this.$t('suno.button.generate');
     }
   },
+  watch: {
+    walletMode: {
+      handler(enabled: boolean) {
+        if (enabled) this.scheduleQuote();
+      },
+      immediate: true
+    },
+    config: {
+      handler() {
+        if (this.walletMode) this.scheduleQuote();
+      },
+      deep: true
+    }
+  },
+  beforeUnmount() {
+    window.clearTimeout(this.quoteTimer);
+    this.quoteRunId += 1;
+  },
   methods: {
+    scheduleQuote() {
+      window.clearTimeout(this.quoteTimer);
+      this.quoteTimer = window.setTimeout(this.refreshQuote, 350);
+    },
+    async refreshQuote() {
+      const state = scenarioPaymentState('suno');
+      const runId = ++this.quoteRunId;
+      state.quoteLoading = true;
+      state.quoteUsdc = undefined;
+      try {
+        const quote = await sunoOperator.quoteAudio(buildSunoAudioRequest(this.config));
+        if (runId === this.quoteRunId && state.mode === 'wallet') state.quoteUsdc = quote.amountUsdc;
+      } catch (error) {
+        console.warn('x402 quote failed', error);
+      } finally {
+        if (runId === this.quoteRunId) state.quoteLoading = false;
+      }
+    },
     onGenerate() {
       this.$emit('generate');
     },
@@ -172,6 +220,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.suno-mode-tabs {
+  :deep(.el-tabs__item) {
+    // Width follows the label with fixed whitespace; no wrap.
+    padding: 0 16px;
+    white-space: nowrap;
+  }
+}
 .panel {
   height: 100%;
   padding: 20px;

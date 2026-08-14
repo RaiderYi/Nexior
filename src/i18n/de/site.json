@@ -27,29 +27,53 @@
     "message": "Themenfarbe",
     "description": "Der Titel, der im Bearbeitungsfeld angezeigt wird."
   },
+  "field.supportedLocales": {
+    "message": "Standortsprache",
+    "description": "Die Benutzeroberflächensprache, die Besucher im Standort-Setup auswählen können."
+  },
+  "field.forcedLocale": {
+    "message": "Festgelegte Sprache",
+    "description": "Option zur Festlegung der gesamten Benutzeroberflächensprache auf der Website"
+  },
+  "placeholder.autoDetectLocale": {
+    "message": "Automatische Erkennung",
+    "description": "Platzhaltertext, wenn die festgelegte Sprache nicht gesetzt ist"
+  },
   "field.qr": {
     "message": "QR-Code",
     "description": "Anzeige im Bearbeitungsfeld"
   },
   "field.url": {
     "message": "Link",
-    "description": "Anzeige im Bearbeitungsfeld"
+    "description": "Titel, der im Bearbeitungsfeld angezeigt wird"
   },
   "field.admins": {
     "message": "Seiten-Admin-ID",
     "description": "Anzeige im Bearbeitungsfeld"
   },
+  "field.contacts": {
+    "message": "Support-Kontakte",
+    "description": "Field title for the customer-service contacts in site settings"
+  },
   "field.markupRatio": {
-    "message": "Aufschlagsquote",
+    "message": "Einheitlicher Aufschlag für die gesamte Website",
     "description": "Website-Einstellungen: Der einheitliche Aufschlag für alle Aufladepakete auf dieser Website (Prozentsatz)"
   },
   "message.markupRatioTip": {
-    "message": "Einheitlicher Aufschlag für alle Aufladepakete (0%~500%). 0% bedeutet, dass zum Plattform-Originalpreis verkauft wird; der Aufschlag ist der Gewinn, den du erzielst, die Provisionsrate bleibt unverändert.",
+    "message": "Lege einen einheitlichen Aufschlag für alle Dienste dieser Website fest (0%–500%). Ein benutzerdefinierter Aufschlag pro Dienst unten überschreibt diesen Wert.",
     "description": "Erklärungstext zur Aufschlagsquote-Einstellung"
   },
   "message.markupExample": {
     "message": "Beispiel: offizieller Preis {from} → dein Verkaufspreis {to}",
     "description": "Echtzeitbeispiel unter dem Aufschlagsquote-Einstellungsfeld, {from} ist der offizielle Preis, {to} ist der Preis nach Aufschlag"
+  },
+  "field.disableRecharge": {
+    "message": "Aufladen deaktivieren",
+    "description": "Site settings: when on, hide all recharge/top-up entries on this site"
+  },
+  "message.disableRechargeTip": {
+    "message": "Wenn aktiviert, werden alle Auflade-Schaltflächen auf dieser Website ausgeblendet und Benutzer können ihr Guthaben nicht mehr aufladen.",
+    "description": "Help text for the disable-recharge toggle"
   },
   "field.distributionDefaultInviterId": {
     "message": "Standard-Einladungs-ID",
@@ -89,7 +113,103 @@
   },
   "field.authProvider_wechat": {
     "message": "WeChat",
-    "description": "Name der Anmeldemethode: WeChat-Third-Party-Anmeldung."
+    "description": "Name der Anmeldemethode: WeChat-Drittanbieteranmeldung"
+  },
+  "field.authSmsWebhook": {
+    "message": "Benutzerdefinierte SMS-Absenderadresse",
+    "description": "Site-Einstellungen / Anmeldung: Titel für die eigene benutzerdefinierte SMS-Verifizierungscode-Zustell-Webhooks"
+  },
+  "message.authSmsWebhookTip": {
+    "message": "Nach der Aktivierung werden die von der Plattform gesendeten SMS-Bestätigungscodes von Ihrer eigenen Schnittstelle mit Ihrer eigenen Signatur gesendet; bei Deaktivierung wird die standardmäßige Signatur der Plattform verwendet. Sie müssen die „Telefonnummer“-Anmeldemethode aktivieren.",
+    "description": "Erklärt das benutzerdefinierte SMS-Absender-Webhook"
+  },
+  "placeholder.authSmsWebhookUrl": {
+    "message": "https://deinedomain/sms-webhook",
+    "description": "Platzhalter im Eingabefeld für die SMS-Webhook-URL"
+  },
+  "placeholder.authSmsWebhookSecret": {
+    "message": "Signaturschlüssel (leer lassen, um unverändert zu bleiben)",
+    "description": "Platzhalter für das Eingabefeld des Signaturschlüssels für das SMS-Webhook; schreibgeschützt, leer behält den bestehenden Wert"
+  },
+  "field.authSmsWebhookEnable": {
+    "message": "Benutzerdefinierte Absenderadresse aktivieren",
+    "description": "Bezeichnung neben dem Umschalter für den benutzerdefinierten SMS-Absender"
+  },
+  "field.authSmsWebhookDoc": {
+    "message": "Dokument anzeigen",
+    "description": "Link, der den Dialog zur SMS-Webhook-Spezifikation öffnet"
+  },
+  "field.authSmsWebhookTest": {
+    "message": "Test",
+    "description": "Schaltfläche, die den Dialog zum Testen des SMS-Webhooks öffnet"
+  },
+  "message.authSmsWebhookNeedsPhone": {
+    "message": "Sie müssen die „Telefonnummer“-Anmeldemethode aktivieren, um die benutzerdefinierte SMS-Absenderadresse zu konfigurieren.",
+    "description": "Tooltip, der angezeigt wird, wenn der Umschalter deaktiviert ist, weil die Telefonanmeldung deaktiviert ist"
+  },
+  "field.authSmsWebhookDocTitle": {
+    "message": "Benutzerdefinierte SMS-Absenderadresse · Schnittstellenerklärung",
+    "description": "Titel des Dialogs zur SMS-Webhook-Spezifikation"
+  },
+  "message.authSmsWebhookDocIntro": {
+    "message": "Die Plattform sendet eine signierte HTTPS-POST-Anfrage an die von Ihnen angegebene Adresse, und Ihr Dienst ist für den Versand der SMS verantwortlich. Bitte stellen Sie sicher, dass Ihre Schnittstelle die folgenden Anforderungen erfüllt:",
+    "description": "Einleitender Absatz des Dialogs zur SMS-Webhook-Spezifikation"
+  },
+  "field.authSmsWebhookDocRequest": {
+    "message": "Anfrage",
+    "description": "Überschrift: Anfrageabschnitt der SMS-Webhook-Spezifikation"
+  },
+  "message.authSmsWebhookDocRequest": {
+    "message": "Die Methode ist POST, der Content-Type ist application/json. Der Zweck kann login / register / test sein (test ist ein Verbindungstest, SMS müssen nicht tatsächlich gesendet werden). Die Struktur des Anfragekörpers ist wie folgt:",
+    "description": "Beschreibt die Anfragemethode und den Körper des SMS-Webhook"
+  },
+  "field.authSmsWebhookDocHeaders": {
+    "message": "Signaturprüfung",
+    "description": "Überschrift: Signaturabschnitt der SMS-Webhook-Spezifikation"
+  },
+  "message.authSmsWebhookDocHeaders": {
+    "message": "Fügen Sie bei jeder Anfrage die folgenden Header hinzu. Bitte führen Sie die HMAC-SHA256-Überprüfung mit Ihrem Signaturschlüssel gemäß den Standard-Webhooks durch und verwenden Sie den konstanten Zeitvergleich:",
+    "description": "Beschreibt die Signaturüberprüfung für das SMS-Webhook"
+  },
+  "field.authSmsWebhookDocResponse": {
+    "message": "Antwort",
+    "description": "Überschrift: Antwortabschnitt der SMS-Webhook-Spezifikation"
+  },
+  "message.authSmsWebhookDocResponse": {
+    "message": "Bei erfolgreichem Versand geben Sie 2xx zurück; um einen Fehler explizit anzuzeigen, können Sie HTTP 200 zurückgeben, wobei das Feld success im Body false ist (siehe Beispiel unten). Bitte antworten Sie innerhalb von 5 Sekunden.",
+    "description": "Beschreibt die erwartete Antwort des SMS-Webhook"
+  },
+  "field.authSmsWebhookTestTitle": {
+    "message": "Benutzerdefinierte SMS-Absenderadresse testen",
+    "description": "Titel des Testdialogs für das SMS-Webhook"
+  },
+  "field.authSmsWebhookTestRegion": {
+    "message": "Ländervorwahl",
+    "description": "Bezeichnung für das Vorwahlfeld im Testdialog"
+  },
+  "field.authSmsWebhookTestNumber": {
+    "message": "Testtelefonnummer (optional)",
+    "description": "Bezeichnung für das Telefonnummernfeld im Testdialog"
+  },
+  "field.authSmsWebhookTestSend": {
+    "message": "Test senden",
+    "description": "Schaltfläche, die die Testanfrage für das SMS-Webhook sendet"
+  },
+  "message.authSmsWebhookTestOk": {
+    "message": "Die Testanfrage wurde erfolgreich an Ihre Schnittstelle gesendet.",
+    "description": "Erfolgsmeldung nach einem Webhook-Test"
+  },
+  "message.authSmsWebhookTestFailed": {
+    "message": "Test fehlgeschlagen, bitte überprüfen Sie die Adresse, den Signaturschlüssel und die Schnittstellenantwort.",
+    "description": "Fehlermeldung nach einem Webhook-Test"
+  },
+  "field.authSmsWebhookDisableTitle": {
+    "message": "Benutzerdefinierte SMS-Absenderadresse deaktivieren",
+    "description": "Titel des Bestätigungsdialogs, der angezeigt wird, wenn der benutzerdefinierte SMS-Absender deaktiviert wird"
+  },
+  "message.authSmsWebhookDisableConfirm": {
+    "message": "Durch das Deaktivieren werden die gespeicherten Absenderadressen und der Signaturschlüssel gelöscht (Schlüssel sind nicht wiederherstellbar), und die Plattform verwendet die standardmäßige Signatur. Möchten Sie wirklich deaktivieren?",
+    "description": "Inhalt des Bestätigungsdialogs, der angezeigt wird, wenn der benutzerdefinierte SMS-Absender deaktiviert wird"
   },
   "field.featuresChat": {
     "message": "Chat",
@@ -115,9 +235,13 @@
     "message": "Maestro",
     "description": "Wird als Titel im Bearbeitungsfeld angezeigt"
   },
-  "field.featuresDigitalhuman": {
-    "message": "Digital Human",
+  "field.featuresPoivelle": {
+    "message": "Poivelle",
     "description": "Displayed as the title in the editing box"
+  },
+  "field.featuresDigitalhuman": {
+    "message": "Digitaler Mensch",
+    "description": "Wird als Titel im Bearbeitungsfeld angezeigt"
   },
   "field.featuresDeepseek": {
     "message": "Deepseek",
@@ -159,9 +283,9 @@
     "message": "Hailuo",
     "description": "Anzeige im Bearbeitungsfeld"
   },
-  "field.featuresHeadshots": {
-    "message": "AI-Porträt",
-    "description": "Anzeige im Bearbeitungsfeld"
+  "field.featuresMinimax": {
+    "message": "MiniMax H3",
+    "description": "Displayed as the title in the editing box"
   },
   "field.featuresSuno": {
     "message": "Suno",
@@ -186,6 +310,10 @@
   "field.featuresSeedance": {
     "message": "SeeDance",
     "description": "Anzeige im Bearbeitungsfeld"
+  },
+  "field.featuresOmni": {
+    "message": "Omni",
+    "description": "Wird als Titel im Bearbeitungsfeld angezeigt"
   },
   "field.featuresWan": {
     "message": "Wan",
@@ -234,6 +362,10 @@
   "title.editAdmins": {
     "message": "Admins bearbeiten",
     "description": "Anzeige im Bearbeitungsfeld"
+  },
+  "title.editContacts": {
+    "message": "Support-Kontakte bearbeiten",
+    "description": "Title of the edit-support-contacts dialog"
   },
   "title.featuresConfig": {
     "message": "Funktionskonfiguration",
@@ -371,6 +503,74 @@
     "message": "Bild-Upload fehlgeschlagen.",
     "description": "Fehler beim Hochladen im Bild-Zuschneider"
   },
+  "logoStudio.analysisReady": {
+    "message": "Bildanalyse abgeschlossen",
+    "description": "Statusüberschrift oben im zweiten Schritt der intelligenten Markenbildverarbeitung"
+  },
+  "logoStudio.analysisSummary": {
+    "message": "{width}×{height} px · Hintergrundvertrauen {confidence}%",
+    "description": "Größe und Hintergrundvertrauenswert im Bildanalyseergebnis"
+  },
+  "logoStudio.backgroundDetected": {
+    "message": "Einfarbiger Hintergrund erkannt",
+    "description": "Statusanzeige, wenn der Rand des Bildes einen ausreichend einheitlichen Hintergrund hat"
+  },
+  "logoStudio.transparentOrComplex": {
+    "message": "Transparenter oder komplexer Hintergrund",
+    "description": "Statusanzeige, wenn das Bild bereits transparent ist oder der Hintergrund nicht automatisch entfernt werden kann"
+  },
+  "logoStudio.removeBackground": {
+    "message": "Hintergrund automatisch entfernen",
+    "description": "Schalterbeschriftung zum Entfernen des Markenbild-Hintergrunds"
+  },
+  "logoStudio.backgroundColor": {
+    "message": "Hintergrundfarbe",
+    "description": "Farbkennzeichnung für das Entfernen des Markenbild-Hintergrunds"
+  },
+  "logoStudio.edgeTolerance": {
+    "message": "Kantentoleranz",
+    "description": "Beschriftung des Schiebereglers für die Toleranz beim Entfernen des Hintergrunds"
+  },
+  "logoStudio.refreshPreview": {
+    "message": "Vorschau aktualisieren",
+    "description": "Button zum erneuten Verarbeiten des Bildes mit neuen Hintergrundentfernungsparametern"
+  },
+  "logoStudio.modeBrand": {
+    "message": "Markenfarben beibehalten",
+    "description": "Anzeigemodus, bei dem das farbige Logo in hellem und dunklem Thema verwendet wird"
+  },
+  "logoStudio.modeBalanced": {
+    "message": "Intelligente Anpassung",
+    "description": "Empfohlener Modus, der bei hellem Hintergrund Markenfarben erhält und bei dunklem weißen Logo verwendet"
+  },
+  "logoStudio.modeMono": {
+    "message": "Schwarzweiß-Modus",
+    "description": "Anzeigemodus, bei dem im hellen Thema schwarzes und im dunklen weißes Logo verwendet wird"
+  },
+  "logoStudio.lightTheme": {
+    "message": "Helles Thema",
+    "description": "Vorschau-Label für Markenbild mit hellem Hintergrund"
+  },
+  "logoStudio.darkTheme": {
+    "message": "Dunkles Thema",
+    "description": "Vorschau-Label für Markenbild mit dunklem Hintergrund"
+  },
+  "logoStudio.previewOutdated": {
+    "message": "Parameter wurden geändert. Bitte Vorschau aktualisieren, bevor Sie anwenden.",
+    "description": "Hinweis, wenn die Verarbeitungsparameter nicht mit der aktuellen Vorschau übereinstimmen"
+  },
+  "logoStudio.back": {
+    "message": "Zum Zuschneiden zurück",
+    "description": "Button zum Zurückkehren vom Verarbeitungs-Vorschau-Schritt zum Zuschneiden"
+  },
+  "logoStudio.analyze": {
+    "message": "Erkennen und Vorschau",
+    "description": "Button zum Abschließen des Zuschneidens und zum Fortfahren mit der intelligenten Verarbeitung"
+  },
+  "logoStudio.apply": {
+    "message": "Bild anwenden",
+    "description": "Button zur Bestätigung des Ergebnisses der Markenbildverarbeitung"
+  },
   "message.editLogoTip": {
     "message": "Empfohlene Größe: 200*60px",
     "description": "Hinweis zur Bildgröße beim Hochladen"
@@ -435,6 +635,30 @@
     "message": "Die Themenmarkenfarbe der Website, die auf alle Schaltflächen, Links, Hervorhebungen und Farbverläufe der Marke angewendet wird.",
     "description": "Hinweis für den Farbauswahl-Widget der Themenfarbe der Website."
   },
+  "message.supportedLocalesTip": {
+    "message": "Wählen Sie die Benutzeroberflächensprache, die auf dieser Website für Besucher angeboten wird. Standardmäßig werden alle Sprachen unterstützt.",
+    "description": "Hinweis zur Einstellung der verfügbaren Sprachen auf der Website."
+  },
+  "message.forcedLocaleTip": {
+    "message": "Die Benutzeroberflächensprache für alle Besucher festlegen. Nach der Einstellung können Besucher nicht selbst wechseln. Bei leerer Eingabe erfolgt eine automatische Erkennung.",
+    "description": "Hinweis zur Einstellung der festgelegten Sprache auf der Website"
+  },
+  "message.allLocales": {
+    "message": "Alle Sprachen",
+    "description": "Zusammenfassung, wenn keine Einschränkungen für die auswählbaren Sprachen auf der Website bestehen."
+  },
+  "message.atLeastOneLocale": {
+    "message": "Bitte mindestens eine Sprache beibehalten",
+    "description": "Überprüfungshinweis, wenn die Mehrfachauswahl der Standortsprachen leer ist."
+  },
+  "placeholder.supportedLocales": {
+    "message": "Standortsprache auswählen",
+    "description": "Platzhaltertext für die Mehrfachauswahl der Standortsprache."
+  },
+  "title.editSupportedLocales": {
+    "message": "Standortsprache bearbeiten",
+    "description": "Titel des Pop-ups zum Bearbeiten der Standortsprache."
+  },
   "message.adminsTip": {
     "message": "Administrator-ID der Seite. Standardmäßig wird der Benutzer, der die Seite zuerst erstellt, Administrator. Nur Administratoren können die Seite verwalten.",
     "description": "Hinweis zu den Administratoren der Seite"
@@ -442,6 +666,14 @@
   "message.adminsTip2": {
     "message": "Hier können Administrator-IDs hinzugefügt oder entfernt werden. Benutzer-IDs können unter https://auth.acedata.cloud eingesehen werden.",
     "description": "Hinweis zu den Administratoren der Seite"
+  },
+  "message.contactsTip": {
+    "message": "Geben Sie Ihre Kundendienst-Kontakte an (Discord, X, WeChat, Telefon, E-Mail). Sie erscheinen auf der Info-Seite, damit Nutzer Sie erreichen.",
+    "description": "Tip for the support-contacts field"
+  },
+  "message.contactsEmpty": {
+    "message": "Nicht festgelegt",
+    "description": "Placeholder shown when no support contact has been filled in"
   },
   "message.keywordsTip": {
     "message": "Schlüsselwörter der Seite, befinden sich in den Metadaten der Seite und dienen der SEO-Optimierung.",
@@ -456,124 +688,132 @@
     "description": "Beschreibung der Chat-Funktion"
   },
   "message.featuresGrok": {
-    "message": "Grok-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Grok-Funktion"
+    "message": "xAI-Assistent für Wissen in Echtzeit, Denken, Schreiben und Programmieren.",
+    "description": "Concise capability introduction: xAI assistant for real-time knowledge, reasoning, writing, and coding."
   },
   "message.featuresGrokvideo": {
-    "message": "Aktivieren oder Deaktivieren des Grok Video Funktionsmoduls.",
-    "description": "Beschreibung der Grok Video Funktion"
+    "message": "xAI-Videogenerierung für kurze Clips aus Textprompts oder Referenzbildern.",
+    "description": "Concise capability introduction: xAI video generation for short clips from text prompts or reference images."
   },
   "message.featuresMaestro": {
-    "message": "Aktivieren oder Deaktivieren des Maestro Funktionsmoduls.",
-    "description": "Beschreibung der Maestro Funktion"
+    "message": "Erstelle komplette Videos aus einer Idee, inklusive Planung, Sprechertext, Szenen und Auslieferung.",
+    "description": "Concise capability introduction: Produce complete videos from an idea, including planning, voiceover, scenes, and delivery."
+  },
+  "message.featuresPoivelle": {
+    "message": "Professionelle KI-Filmproduktion durch gemeinsame Projektgrafiken, Storyboards, Zeitachsen, Überprüfungen und Skill-Agent-Workflows koordinieren.",
+    "description": "Einführung in die Fähigkeit zur professionellen KI-Filmproduktion durch gemeinsame Projektgrafiken, Storyboards, Zeitachsen, Überprüfungen und Skill-Agent-Workflows."
   },
   "message.featuresDigitalhuman": {
-    "message": "Enable or disable the Digital Human feature module.",
-    "description": "Description of the Digital Human feature"
+    "message": "Erstelle Talking-Head-Videos mit synthetischer Sprache und natürlicher Lippensynchronität.",
+    "description": "Concise capability introduction: Create talking-head videos with synthesized speech and natural lip sync."
   },
   "message.featuresDeepseek": {
-    "message": "Deepseek-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Deepseek-Funktion"
+    "message": "DeepSeek-Assistent für fortgeschrittenes Denken, Programmieren, Mathematik und alltägliche Fragen.",
+    "description": "Concise capability introduction: DeepSeek assistant for advanced reasoning, coding, math, and everyday questions."
   },
   "message.featuresChatgpt": {
-    "message": "ChatGPT-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der ChatGPT-Funktion"
+    "message": "OpenAI-Assistent für Schreiben, Denken, Programmieren und multimodale Gespräche.",
+    "description": "Concise capability introduction: OpenAI assistant for writing, reasoning, coding, and multimodal conversations."
   },
   "message.featuresMidjourney": {
-    "message": "Midjourney-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Midjourney-Funktion"
+    "message": "Erstelle aus Text oder visuellen Vorlagen hochwertige Bilder und kreative Varianten.",
+    "description": "Concise capability introduction: Create polished images and creative variations from text or visual references."
   },
   "message.featuresChatdoc": {
     "message": "Chatdoc-Funktion aktivieren oder deaktivieren.",
     "description": "Beschreibung der Chatdoc-Funktion"
   },
   "message.featuresQrart": {
-    "message": "Qrart-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Qrart-Funktion"
+    "message": "Verwandle Links in scannbare künstlerische QR-Codes mit eigenen Stilen und Bildern.",
+    "description": "Concise capability introduction: Turn links into scannable artistic QR codes with custom styles and imagery."
   },
   "message.featuresVeo": {
-    "message": "Veo-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Veo-Funktion"
+    "message": "Google-Videogenerierung für filmische Clips mit starker Steuerung von Prompt und Bewegung.",
+    "description": "Concise capability introduction: Google video generation for cinematic clips with strong prompt and motion control."
   },
   "message.featuresSora": {
-    "message": "Sora-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Sora-Funktion"
+    "message": "OpenAI-Videogenerierung für realistische Szenen, Storytelling und visuelle Transformationen.",
+    "description": "Concise capability introduction: OpenAI video generation for realistic scenes, storytelling, and visual transformations."
   },
   "message.featuresSuno": {
-    "message": "Suno-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Suno-Funktion"
+    "message": "Erzeuge komplette Songs, Texte, Gesang und Instrumentals aus einer Eingabe.",
+    "description": "Concise capability introduction: Generate complete songs, lyrics, vocals, and instrumentals from a prompt."
   },
   "message.featuresPixverse": {
-    "message": "Pixverse-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Pixverse-Funktion"
+    "message": "Erstelle stilisierte Videos aus Prompts und Bildern mit Vorlagen und Effekten.",
+    "description": "Concise capability introduction: Generate stylized videos from prompts and images with templates and effects."
   },
   "message.featuresFlux": {
-    "message": "FLux-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der FLux-Funktion"
+    "message": "Erstelle detailreiche Bilder und bearbeite vorhandene Visuals mit Anweisungen in natürlicher Sprache.",
+    "description": "Concise capability introduction: Create detailed images and edit existing visuals with natural-language instructions."
   },
   "message.featuresNanobanana": {
-    "message": "Nano Banana-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Nano Banana-Funktion"
+    "message": "Von Google unterstützte Bilderzeugung und -bearbeitung mit präziser Befolgung von Anweisungen.",
+    "description": "Concise capability introduction: Google-powered image generation and editing with precise instruction following."
   },
   "message.featuresOpenaiimage": {
-    "message": "OpenAI-Bildfunktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der OpenAI-Bildfunktion"
+    "message": "OpenAI-Bilderzeugung und -bearbeitung für hochwertige Visuals, Texte und Kompositionen.",
+    "description": "Concise capability introduction: OpenAI image generation and editing for polished visuals, text, and compositions."
   },
   "message.featuresSeedream": {
-    "message": "SeeDream-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der SeeDream-Funktion"
+    "message": "ByteDance-Bilderzeugung und -bearbeitung für hochwertige kreative Visuals.",
+    "description": "Concise capability introduction: ByteDance image generation and editing for high-quality creative visuals."
   },
   "message.featuresSeedance": {
-    "message": "SeeDance-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der SeeDance-Funktion"
+    "message": "ByteDance-Videogenerierung für dynamische Szenen, Kamerabewegungen und optionalen Ton.",
+    "description": "Concise capability introduction: ByteDance video generation for dynamic scenes, camera motion, and optional audio."
+  },
+  "message.featuresOmni": {
+    "message": "Erstelle oder bearbeite Videos mit Omni-Modellen aus Texten, Bildern und Videoreferenzen.",
+    "description": "Erstelle oder bearbeite Videos mit Omni-Modellen aus Texten, Bildern und Videoreferenzen."
   },
   "message.featuresWan": {
-    "message": "Wan-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Wan-Funktion"
+    "message": "Alibaba-Videogenerierung aus Text, Bildern oder Referenzen in mehreren Auflösungen.",
+    "description": "Concise capability introduction: Alibaba video generation from text, images, or references at multiple resolutions."
   },
   "message.featuresProducer": {
-    "message": "Producer-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Producer-Funktion"
+    "message": "Erstelle Songs, Cover, Erweiterungen sowie Gesangs- oder Instrumentalvarianten.",
+    "description": "Concise capability introduction: Create songs, covers, extensions, and vocal or instrumental variations."
   },
   "message.featuresKimi": {
-    "message": "Kimi-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Kimi-Funktion"
+    "message": "Moonshot AI-Assistent für Recherche über lange Kontexte, Denken, Schreiben und Programmieren.",
+    "description": "Concise capability introduction: Moonshot AI assistant for long-context research, reasoning, writing, and coding."
   },
   "message.featuresSerp": {
-    "message": "SERP-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der SERP-Funktion"
+    "message": "Durchsuche Web, Bilder, Nachrichten, Karten und Videos mit strukturierten Google-Ergebnissen.",
+    "description": "Concise capability introduction: Search the web, images, news, maps, and videos with structured Google results."
   },
   "message.featuresFish": {
-    "message": "Aktivieren oder Deaktivieren des Fisch Audio Funktionsmoduls.",
-    "description": "Beschreibung der Fisch Audio Funktion"
+    "message": "Erzeuge natürliche Sprache und klone Stimmen für mehrsprachige Audioproduktion.",
+    "description": "Concise capability introduction: Generate natural speech and clone voices for multilingual audio production."
   },
   "message.featuresCodingBridge": {
-    "message": "Enable or disable the Coding Bridge feature module.",
-    "description": "Description of the Coding Bridge feature"
+    "message": "Verbinde KI-Coding-Assistenten mit lokalen Projekten für geführte Entwicklungsabläufe.",
+    "description": "Concise capability introduction: Connect AI coding assistants to local projects for guided development workflows."
   },
   "message.featuresWebextrator": {
-    "message": "Enable or disable the WebExtrator feature module.",
-    "description": "Description of the WebExtrator feature"
+    "message": "Extrahiere saubere, strukturierte Inhalte und Daten aus Webseiten.",
+    "description": "Concise capability introduction: Extract clean, structured content and data from web pages."
   },
   "message.featuresLuma": {
-    "message": "Luma-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Luma-Funktion"
+    "message": "Erstelle filmische Videos aus Text oder Bildern mit natürlicher Bewegung.",
+    "description": "Concise capability introduction: Create cinematic videos from text or images with natural motion."
   },
   "message.featuresPika": {
-    "message": "Pika-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Pika-Funktion"
+    "message": "Erstelle und bearbeite kurze kreative Videos mit Effekten, Szenen und Transformationen.",
+    "description": "Concise capability introduction: Generate and edit short creative videos with effects, scenes, and transformations."
   },
   "message.featuresKling": {
-    "message": "Kling-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Kling-Funktion"
+    "message": "Erstelle hochwertige Videos aus Text, Bildern oder Bewegungsreferenzen.",
+    "description": "Concise capability introduction: Create high-quality videos from text, images, or motion references."
   },
   "message.featuresHailuo": {
-    "message": "Hailuo-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Hailuo-Funktion"
+    "message": "Erstelle aus Text oder Bildern ausdrucksstarke Videos mit flüssiger Charakterbewegung.",
+    "description": "Concise capability introduction: Generate expressive videos from text or images with smooth character motion."
   },
-  "message.featuresHeadshots": {
-    "message": "AI-Passfoto-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der AI-Passfoto-Funktion"
+  "message.featuresMinimax": {
+    "message": "Generieren Sie 768P oder 2K Videos durch Text, Bilder und Audio.",
+    "description": "Einführung in die Fähigkeiten von MiniMax H3"
   },
   "message.featuresSupport": {
     "message": "Kundensupport aktivieren oder deaktivieren.",
@@ -604,16 +844,16 @@
     "description": "Als Titel im Bearbeitungsfeld angezeigt"
   },
   "message.featuresGemini": {
-    "message": "Gemini-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Gemini-Funktion"
+    "message": "Google-Assistent für Kontext über lange Strecken, Recherche, Programmieren und multimodale Aufgaben.",
+    "description": "Concise capability introduction: Google assistant for long-context reasoning, research, coding, and multimodal work."
   },
   "field.featuresClaude": {
     "message": "Claude",
     "description": "Als Titel im Bearbeitungsfeld angezeigt"
   },
   "message.featuresClaude": {
-    "message": "Claude-Funktion aktivieren oder deaktivieren.",
-    "description": "Beschreibung der Claude-Funktion"
+    "message": "Anthropic-Assistent für sorgfältiges Denken, Schreiben, Programmieren und Dokumentenanalyse.",
+    "description": "Concise capability introduction: Anthropic assistant for careful reasoning, writing, coding, and document analysis."
   },
   "placeholder.admins": {
     "message": "Bitte geben Sie die Administrator-Benutzer-ID ein",
@@ -670,5 +910,184 @@
   "autoTranslate.error": {
     "message": "Umschalten der automatischen Übersetzung fehlgeschlagen, bitte erneut versuchen",
     "description": "Fallback error toast when the enable/disable HTTP call fails with no detail"
+  },
+  "services.title": {
+    "message": "Benutzerdefinierter Aufschlag & Anzeige je Dienst"
+  },
+  "services.tip": {
+    "message": "Einzelne Dienste ausblenden, umbenennen, bepreisen oder sortieren. Ein leerer Aufschlag erbt den Standard der Website. Das Löschen einer Zeile stellt die Katalog-Standards wieder her."
+  },
+  "services.addButton": {
+    "message": "Hinzufügen"
+  },
+  "services.empty": {
+    "message": "Noch keine Überschreibungen — jeder Dienst nutzt seine Standardwerte."
+  },
+  "services.field.service": {
+    "message": "Dienst"
+  },
+  "services.field.visible": {
+    "message": "Sichtbar"
+  },
+  "services.field.customMarkupRatio": {
+    "message": "Benutzerdefinierter Aufschlag pro Dienst"
+  },
+  "services.field.displayTitle": {
+    "message": "Anzeigename"
+  },
+  "services.field.displaySummary": {
+    "message": "Anzeige-Beschreibung"
+  },
+  "services.field.sortOrder": {
+    "message": "Sortierung"
+  },
+  "services.field.action": {
+    "message": "Aktionen"
+  },
+  "services.status.visible": {
+    "message": "Angezeigt"
+  },
+  "services.status.hidden": {
+    "message": "Ausgeblendet"
+  },
+  "services.status.inherit": {
+    "message": "Geerbt"
+  },
+  "services.dialog.create": {
+    "message": "Dienst-Überschreibung hinzufügen"
+  },
+  "services.dialog.edit": {
+    "message": "Dienst-Überschreibung bearbeiten"
+  },
+  "services.placeholder.service": {
+    "message": "Dienst aus dem Katalog wählen"
+  },
+  "services.placeholder.markup": {
+    "message": "Leer lassen, um den Website-Standard zu erben"
+  },
+  "services.placeholder.displayTitle": {
+    "message": "Leer lassen, um den Katalognamen zu verwenden"
+  },
+  "services.placeholder.displaySummary": {
+    "message": "Leer lassen, um die Katalogbeschreibung zu verwenden"
+  },
+  "services.tip.visible": {
+    "message": "Deaktiviert wird der Dienst auf der Startseite ausgeblendet (bestehende Nutzer behalten den Zugriff)."
+  },
+  "services.tip.markup": {
+    "message": "0 % = Plattformpreis; 0,5 = +50 %; max. +500 %. Leer = Website-Standard."
+  },
+  "services.tip.sortOrder": {
+    "message": "Kleinere Zahlen zuerst."
+  },
+  "services.preview.sampleLabel": {
+    "message": "Beispiel-Basispreis"
+  },
+  "services.preview.inherit": {
+    "message": "(erbt den Standardaufschlag der Website {percent})"
+  },
+  "services.message.alreadyOverridden": {
+    "message": "Bereits hinzugefügt"
+  },
+  "services.message.serviceRequired": {
+    "message": "Bitte zuerst einen Dienst wählen"
+  },
+  "services.message.saved": {
+    "message": "Gespeichert"
+  },
+  "services.message.deleted": {
+    "message": "Gelöscht"
+  },
+  "services.message.deleteConfirm": {
+    "message": "Überschreibung für „{name}“ löschen? Der Dienst kehrt zu den Katalog-Standards zurück."
+  },
+  "services.message.saveFailed": {
+    "message": "Speichern fehlgeschlagen, bitte erneut versuchen"
+  },
+  "services.message.deleteFailed": {
+    "message": "Löschen fehlgeschlagen, bitte erneut versuchen"
+  },
+  "services.message.fetchFailed": {
+    "message": "Dienst-Überschreibungen konnten nicht geladen werden"
+  },
+  "capabilityOverride.edit": {
+    "message": "Benutzerdefinierte Anwendung",
+    "description": "Hinweis und Barrierefreiheitslabel zum Bearbeiten des Namens und Symbols der Anwendung"
+  },
+  "capabilityOverride.dialogTitle": {
+    "message": "Benutzerdefiniert {name}",
+    "description": "Titel des Dialogs, {name} ist der Standardname der Plattformanwendung"
+  },
+  "capabilityOverride.displayName": {
+    "message": "Benutzerdefinierter Name",
+    "description": "Feld für den angezeigten Namen der Unterseitenanwendung"
+  },
+  "capabilityOverride.displayNameTip": {
+    "message": "Leer lassen, um {name} zu verwenden. Nach dem ersten Speichern kann die automatische Übersetzung aktiviert werden.",
+    "description": "Hinweis zum Namen, {name} ist der Standardname der Plattformanwendung"
+  },
+  "capabilityOverride.icon": {
+    "message": "Benutzerdefiniertes Symbol",
+    "description": "Feld für das Symbol der Unterseitenanwendung"
+  },
+  "capabilityOverride.defaultIcon": {
+    "message": "Standard",
+    "description": "Vorschau-Label für das Standard-Symbol der Plattform"
+  },
+  "capabilityOverride.currentIcon": {
+    "message": "Aktuelles Symbol",
+    "description": "Vorschau-Label für das aktuell aktive Symbol"
+  },
+  "capabilityOverride.replaceIcon": {
+    "message": "Symbol ersetzen",
+    "description": "Befehl zum Hochladen eines Ersatzsymbols"
+  },
+  "capabilityOverride.uploadIcon": {
+    "message": "Symbol hochladen",
+    "description": "Befehl zum ersten Hochladen eines benutzerdefinierten Symbols"
+  },
+  "capabilityOverride.useDefaultIcon": {
+    "message": "Standard-Symbol verwenden",
+    "description": "Befehl zum Löschen des Entwurfs des benutzerdefinierten Symbols"
+  },
+  "capabilityOverride.iconTip": {
+    "message": "Unterstützt PNG, JPEG oder WebP, wird auf quadratisch zugeschnitten; transparentes PNG behält den transparenten Hintergrund.",
+    "description": "Anforderungen zum Hochladen des Symbols der Anwendung"
+  },
+  "capabilityOverride.editIcon": {
+    "message": "Symbol der Anwendung bearbeiten",
+    "description": "Titel des Dialogs zum Zuschneiden des Symbols"
+  },
+  "capabilityOverride.resetAll": {
+    "message": "Auf Standard zurücksetzen",
+    "description": "Befehl zum gleichzeitigen Löschen des benutzerdefinierten Namens und Symbols"
+  },
+  "capabilityOverride.empty": {
+    "message": "Bitte geben Sie zuerst einen benutzerdefinierten Namen ein oder laden Sie ein Symbol hoch.",
+    "description": "Hinweis beim Versuch, eine leere Überschreibung zu erstellen"
+  },
+  "capabilityOverride.saved": {
+    "message": "Benutzerdefinierte Anwendung gespeichert",
+    "description": "Erfolgshinweis nach dem Speichern der Anwendungsüberschreibung"
+  },
+  "capabilityOverride.savedEnableTranslation": {
+    "message": "Gespeichert, jetzt kann die automatische Übersetzung für den benutzerdefinierten Namen aktiviert werden.",
+    "description": "Hinweis nach dem ersten Speichern und Erhalt der Überschreibungs-ID"
+  },
+  "capabilityOverride.saveFailed": {
+    "message": "Speichern der benutzerdefinierten Anwendung fehlgeschlagen",
+    "description": "Fallback-Fehler beim Schreiben der Anwendungsüberschreibung"
+  },
+  "capabilityOverride.resetConfirm": {
+    "message": "Standardname und -symbol von {name} wiederherstellen?",
+    "description": "Bestätigungstext für die Wiederherstellung, {name} ist der Standardname der Plattformanwendung"
+  },
+  "capabilityOverride.resetDone": {
+    "message": "Standardname und -symbol wiederhergestellt",
+    "description": "Erfolgshinweis nach dem Löschen der Anwendungsüberschreibung"
+  },
+  "capabilityOverride.fetchFailed": {
+    "message": "Laden der benutzerdefinierten Anwendung fehlgeschlagen",
+    "description": "Fehler beim Lesen der Verwaltungsaufzeichnungen der Anwendungsüberschreibung"
   }
 }

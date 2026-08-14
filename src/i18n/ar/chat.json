@@ -79,36 +79,36 @@
     "message": "نموذج اللغة الكبير الذي طورته شركة Zhiyu AI",
     "description": "وصف مجموعة نماذج GLM"
   },
-  "model.55": {
-    "message": "GPT-5.5",
-    "description": "اسم النموذج للخدمة، أي GPT 5.5"
+  "model.56Sol": {
+    "message": "gpt-5.6-sol",
+    "description": "اسم النموذج للخدمة، أي GPT 5.6 Sol"
   },
-  "model.55Description": {
-    "message": "نموذج GPT 5.5 الرائد من الجيل الأحدث",
-    "description": "وصف نموذج GPT 5.5"
+  "model.56SolDescription": {
+    "message": "نموذج GPT 5.6 Sol الرائد من الجيل الأحدث",
+    "description": "وصف نموذج GPT 5.6 Sol"
   },
-  "model.54": {
-    "message": "GPT-5.4",
-    "description": "اسم النموذج للخدمة، أي GPT 5.4"
+  "model.56Terra": {
+    "message": "gpt-5.6-terra",
+    "description": "اسم النموذج للخدمة، أي GPT 5.6 Terra"
   },
-  "model.54Description": {
-    "message": "نموذج GPT 5.4 الرائد من الجيل الأحدث",
-    "description": "وصف نموذج GPT 5.4"
+  "model.56TerraDescription": {
+    "message": "نموذج GPT 5.6 متوازن للعمل اليومي",
+    "description": "وصف نموذج GPT 5.6 Terra"
   },
-  "model.54Mini": {
-    "message": "GPT-5.4 Mini",
-    "description": "اسم النموذج للخدمة، أي GPT 5.4 Mini"
+  "model.56Luna": {
+    "message": "gpt-5.6-luna",
+    "description": "اسم النموذج للخدمة، أي GPT 5.6 Luna"
   },
-  "model.54MiniDescription": {
-    "message": "نموذج GPT 5.4 الأسرع والأخف",
-    "description": "وصف نموذج GPT 5.4 Mini"
+  "model.56LunaDescription": {
+    "message": "نموذج GPT 5.6 الأسرع والأخف",
+    "description": "وصف نموذج GPT 5.6 Luna"
   },
   "model.freeTag": {
     "message": "مجاني",
     "description": "شارة تظهر بجانب النماذج المجانية في محدد النموذج"
   },
   "model.deepseekChat": {
-    "message": "DeepSeek-V3",
+    "message": "3.0",
     "description": "اسم النموذج للخدمة، أي DeepSeek Chat"
   },
   "model.deepseekChatDescription": {
@@ -116,7 +116,7 @@
     "description": "وصف نموذج DeepSeek Chat"
   },
   "model.deepseekReasoner": {
-    "message": "DeepSeek-R1",
+    "message": "R1",
     "description": "اسم النموذج للخدمة، أي DeepSeek Reasoner"
   },
   "model.deepseekReasonerDescription": {
@@ -124,7 +124,7 @@
     "description": "وصف نموذج DeepSeek Reasoner"
   },
   "model.deepseekChat32": {
-    "message": "DeepSeek-V3.2",
+    "message": "3.2",
     "description": "اسم النموذج للخدمة، أي DeepSeek V3.2 Exp"
   },
   "model.deepseekChat32Description": {
@@ -132,7 +132,7 @@
     "description": "وصف نموذج DeepSeek V3.2 التجريبي"
   },
   "model.deepseekV4Flash": {
-    "message": "DeepSeek-V4 Flash",
+    "message": "4.0",
     "description": "اسم النموذج للخدمة، أي DeepSeek V4 Flash"
   },
   "model.deepseekV4FlashDescription": {
@@ -140,15 +140,15 @@
     "description": "وصف نموذج DeepSeek V4 Flash"
   },
   "model.grok4": {
-    "message": "Grok-4",
+    "message": "grok-4",
     "description": "اسم النموذج للخدمة، أي Grok 4"
   },
   "model.grok4Description": {
-    "message": "النموذج الأكثر تقدمًا حاليًا",
+    "message": "General-purpose K2 model for compatible workflows",
     "description": "وصف نموذج Grok 4"
   },
   "model.grok3": {
-    "message": "Grok-3",
+    "message": "grok-3",
     "description": "اسم النموذج للخدمة"
   },
   "model.grok3Description": {
@@ -187,6 +187,14 @@
     "message": "نموذج أسرع وأخف",
     "description": "وصف نموذج Gemini 2.5 Flash"
   },
+  "model.gemini36Flash": {
+    "message": "جمني-3.6-فلاش",
+    "description": "اسم نموذج الخدمة، وهو جمني 3.6 فلاش"
+  },
+  "model.gemini36FlashDescription": {
+    "message": "أحدث نموذج سريع، يدعم الاستدلال والرؤية واستدعاء الأدوات",
+    "description": "وصف نموذج جمني 3.6 فلاش"
+  },
   "model.gemini35Flash": {
     "message": "gemini-3.5-flash",
     "description": "اسم النموذج للخدمة، أي Gemini 2.5 Flash"
@@ -194,6 +202,14 @@
   "model.gemini35FlashDescription": {
     "message": "نموذج أسرع وأخف",
     "description": "وصف نموذج Gemini 2.5 Flash"
+  },
+  "model.claudeOpus5": {
+    "message": "claude-opus-5",
+    "description": "Name of the service model, i.e., Claude Opus 5"
+  },
+  "model.claudeOpus5Description": {
+    "message": "النموذج الأكثر تقدمًا حاليًا",
+    "description": "وصف نموذج Claude Opus 5"
   },
   "model.claudeOpus48": {
     "message": "claude-opus-4.8",
@@ -219,16 +235,24 @@
     "message": "نموذج خفيف وسريع",
     "description": "وصف نموذج Claude Haiku 4.5"
   },
-  "model.claudeFable5": {
-    "message": "claude-fable-5",
-    "description": "اسم نموذج الخدمة، أي Claude Fable 5"
+  "model.kimiK3": {
+    "message": "kimi-k3",
+    "description": "Name of Moonshot AI's Kimi K3 flagship model"
   },
-  "model.claudeFable5Description": {
-    "message": "ممتاز للسياق الطويل والاستدلال المعقد والكتابة الإبداعية",
-    "description": "وصف نموذج Claude Fable 5"
+  "model.kimiK3Description": {
+    "message": "نموذج رائد يدعم الاستنتاج والرؤية وسياق 1 مليون توكن",
+    "description": "وصف نموذج Kimi K3"
+  },
+  "model.kimiK26": {
+    "message": "kimi-k2.6",
+    "description": "Name of the Kimi K2.6 model"
+  },
+  "model.kimiK26Description": {
+    "message": "نموذج استنتاج ورؤية متوافق مع سير عمل K2",
+    "description": "وصف نموذج Kimi K2.6"
   },
   "model.kimiK25": {
-    "message": "Kimi K2.5",
+    "message": "kimi-k2.5",
     "description": "اسم النموذج للخدمة، وهو Kimi K2.5"
   },
   "model.kimiK25Description": {
@@ -236,7 +260,7 @@
     "description": "وصف نموذج Kimi K2.5"
   },
   "model.kimiK2Thinking": {
-    "message": "Kimi K2 Thinking",
+    "message": "kimi-k2 استدلال",
     "description": "اسم النموذج للخدمة، وهو Kimi K2 استدلال"
   },
   "model.kimiK2ThinkingDescription": {
@@ -244,7 +268,7 @@
     "description": "وصف نموذج Kimi K2 استدلال"
   },
   "model.kimiK2ThinkingTurbo": {
-    "message": "Kimi K2 Thinking Turbo",
+    "message": "kimi-k2 استدلال سريع",
     "description": "اسم النموذج للخدمة، وهو Kimi K2 استدلال سريع"
   },
   "model.kimiK2ThinkingTurboDescription": {
@@ -252,7 +276,7 @@
     "description": "وصف نموذج Kimi K2 استدلال سريع"
   },
   "model.glm51": {
-    "message": "GLM-5.1",
+    "message": "glm-5.1",
     "description": "اسم النموذج للخدمة، وهو GLM 5.1"
   },
   "model.glm51Description": {
@@ -260,7 +284,7 @@
     "description": "وصف نموذج GLM 5.1"
   },
   "model.glm47": {
-    "message": "GLM-4.7",
+    "message": "glm-4.7",
     "description": "اسم النموذج للخدمة، وهو GLM 4.7"
   },
   "model.glm47Description": {
@@ -294,6 +318,10 @@
   "message.uploadReferencesError": {
     "message": "فشل رفع الملف، يرجى المحاولة لاحقًا",
     "description": "رسالة في الصفحة تخبر المستخدم بفشل رفع الملف، يرجى المحاولة لاحقًا"
+  },
+  "message.uploadReferencesTooLarge": {
+    "message": "حجم الملف {size} يتجاوز الحد الأقصى {max}، يرجى الضغط والمحاولة مرة أخرى",
+    "description": "رسالة في الموقع تخبر المستخدم أن حجم الملف يتجاوز الحد الأقصى للتحميل، ويجب ضغط الملف ثم إعادة المحاولة"
   },
   "message.notApplied": {
     "message": "لم تتقدم لهذه الخدمة بعد، يرجى التقدم أولاً",
@@ -583,114 +611,374 @@
     "message": "تم تخطي تفويض الموصل",
     "description": "شرح أسفل البطاقة بعد أن يتخطى المستخدم التفويض"
   },
+  "browserTool.title": {
+    "message": "نشاط المتصفح",
+    "description": "العنوان الافتراضي لنشاط أداة جهاز المتصفح"
+  },
+  "browserTool.state.starting_session": {
+    "message": "جارٍ بدء جلسة المتصفح",
+    "description": ""
+  },
+  "browserTool.state.attaching_tab": {
+    "message": "جارٍ الاتصال بصفحة المتصفح",
+    "description": ""
+  },
+  "browserTool.state.ready": {
+    "message": "المتصفح جاهز",
+    "description": ""
+  },
+  "browserTool.state.device_offline": {
+    "message": "جهاز المتصفح غير متصل",
+    "description": "جهاز المتصفح المختار غير متصل بالإنترنت"
+  },
+  "browserTool.state.device_busy": {
+    "message": "جهاز المتصفح مشغول",
+    "description": ""
+  },
+  "browserTool.state.authorization_required": {
+    "message": "يتطلب تأكيد التفويض في الاستوديو",
+    "description": ""
+  },
+  "browserTool.state.executing": {
+    "message": "يتم التنفيذ في المتصفح",
+    "description": "جهاز المتصفح يقوم بتنفيذ الأداة"
+  },
+  "browserTool.state.completed": {
+    "message": "تم الانتهاء",
+    "description": "تم تنفيذ أداة المتصفح بنجاح"
+  },
+  "browserTool.state.stopped": {
+    "message": "تم إيقاف جلسة المتصفح",
+    "description": ""
+  },
+  "browserTool.state.expired": {
+    "message": "انتهت صلاحية الطلب",
+    "description": "انتهت صلاحية طلب تنفيذ أداة المتصفح"
+  },
+  "browserTool.state.debugger_unavailable": {
+    "message": "يرجى إغلاق أدوات المطور للمتابعة",
+    "description": ""
+  },
+  "browserTool.state.unknown_outcome": {
+    "message": "نتيجة التنفيذ غير معروفة، يرجى التحقق وإعادة المحاولة",
+    "description": ""
+  },
+  "browserTool.state.failed": {
+    "message": "فشل عملية المتصفح",
+    "description": ""
+  },
+  "browserTool.stop": {
+    "message": "إيقاف",
+    "description": ""
+  },
+  "browserTool.recovery.open-device-manager": {
+    "message": "إدارة الأجهزة",
+    "description": ""
+  },
+  "browserTool.recovery.stop-other-session": {
+    "message": "إيقاف جلسات أخرى",
+    "description": ""
+  },
+  "browserTool.recovery.close-devtools": {
+    "message": "إغلاق أدوات المطور",
+    "description": ""
+  },
+  "browserTool.recovery.open-consent-card": {
+    "message": "عرض التفويض",
+    "description": ""
+  },
   "scheduledTasks.navTitle": {
-    "message": "Scheduled Tasks"
+    "message": "المهام المجدولة",
+    "description": "مدخل المهام المجدولة في الشريط الجانبي"
+  },
+  "scheduledTasks.tab.tasks": {
+    "message": "المهام المجدولة",
+    "description": "صفحة المهام المجدولة - علامة تبويب المهام"
+  },
+  "scheduledTasks.tab.runs": {
+    "message": "سجلات التشغيل",
+    "description": "صفحة المهام المجدولة - علامة تبويب جميع سجلات التشغيل"
+  },
+  "scheduledTasks.filterAll": {
+    "message": "الكل",
+    "description": "تصفية حالة سجل التشغيل - الكل"
   },
   "scheduledTasks.title": {
-    "message": "Scheduled Tasks"
+    "message": "المهام المجدولة",
+    "description": "عنوان الصفحة"
   },
   "scheduledTasks.create": {
-    "message": "New"
+    "message": "إنشاء جديد",
+    "description": "زر لإنشاء مهمة مجدولة جديدة"
   },
   "scheduledTasks.edit": {
-    "message": "Edit Task"
+    "message": "تحرير المهمة",
+    "description": "عنوان نافذة التحرير"
+  },
+  "scheduledTasks.duplicate": {
+    "message": "نسخ المهمة",
+    "description": "زر نسخ المهمة، يقوم بملء النموذج الجديد بناءً على المهمة الحالية"
   },
   "scheduledTasks.empty": {
-    "message": "No scheduled tasks yet. Click \"New\" to create one."
+    "message": "لا توجد مهام مجدولة بعد، انقر على «إنشاء جديد» لإنشاء واحدة",
+    "description": "رسالة حالة فارغة"
   },
   "scheduledTasks.noRuns": {
-    "message": "No runs yet"
+    "message": "لم يتم التشغيل بعد",
+    "description": "لا توجد سجلات تشغيل"
   },
   "scheduledTasks.loadError": {
-    "message": "Failed to load"
+    "message": "فشل التحميل",
+    "description": "رسالة خطأ التحميل"
   },
   "scheduledTasks.deleteConfirm": {
-    "message": "Delete \"{name}\"? The task will stop running."
+    "message": "هل تريد تأكيد حذف «{name}»؟ بعد الحذف، ستتوقف المهمة عن العمل.",
+    "description": "تأكيد الحذف"
+  },
+  "scheduledTasks.triggerNow": {
+    "message": "تشغيل الآن",
+    "description": "تشغيل المهمة يدويًا على الفور"
+  },
+  "scheduledTasks.triggerSuccess": {
+    "message": "تم التشغيل، يمكنك التحقق من النتائج لاحقًا في سجل التشغيل.",
+    "description": "رسالة نجاح التشغيل اليدوي"
+  },
+  "scheduledTasks.triggerError": {
+    "message": "فشل في التشغيل، يرجى المحاولة لاحقًا.",
+    "description": "رسالة فشل التشغيل اليدوي"
   },
   "scheduledTasks.viewResult": {
-    "message": "View Result"
+    "message": "عرض النتائج",
+    "description": "الانتقال إلى المحادثة"
   },
   "scheduledTasks.viewRuns": {
-    "message": "Run history"
+    "message": "سجل التشغيل",
+    "description": "عرض تاريخ التشغيل في أسفل البطاقة"
   },
   "scheduledTasks.noConversation": {
     "message": "لا توجد سجلات محادثة",
     "description": "تشير إلى أن التشغيل غير مرتبط بمحادثة (نسخة قديمة من التشغيل)"
   },
   "scheduledTasks.jitterHint": {
-    "message": "±60s jitter"
+    "message": "±60 ثانية تذبذب",
+    "description": "شرح تذبذب وقت التشغيل"
   },
   "scheduledTasks.runCount": {
-    "message": "Ran {count} time(s)"
+    "message": "تم التشغيل {count} مرات",
+    "description": "عدد مرات التشغيل"
   },
   "scheduledTasks.state.enabled": {
-    "message": "Active"
+    "message": "قيد التشغيل",
+    "description": "حالة مفعلة"
   },
   "scheduledTasks.state.disabled": {
-    "message": "Paused"
+    "message": "معلق",
+    "description": "حالة معطلة"
   },
   "scheduledTasks.state.error": {
-    "message": "Error"
+    "message": "خطأ",
+    "description": "حالة الخطأ"
   },
   "scheduledTasks.run.queued": {
-    "message": "Queued"
+    "message": "قيد الانتظار",
+    "description": "حالة الانتظار"
   },
   "scheduledTasks.run.running": {
-    "message": "Running"
+    "message": "قيد التشغيل",
+    "description": "حالة التشغيل"
   },
   "scheduledTasks.run.success": {
-    "message": "Success"
+    "message": "نجاح",
+    "description": "حالة النجاح"
   },
   "scheduledTasks.run.failed": {
-    "message": "Failed"
+    "message": "فشل",
+    "description": "حالة الفشل"
+  },
+  "scheduledTasks.run.indeterminate": {
+    "message": "غير مؤكد",
+    "description": "Indeterminate run status (judge could not verify; not a failure)"
+  },
+  "scheduledTasks.run.reason.max_turns": {
+    "message": "تم بلوغ حد الخطوات"
+  },
+  "scheduledTasks.run.reason.max_budget_usd": {
+    "message": "تم بلوغ حد الميزانية"
+  },
+  "scheduledTasks.run.reason.tool_call_loop": {
+    "message": "تم اكتشاف حلقة استدعاء الأدوات"
+  },
+  "scheduledTasks.run.reason.prompt_too_long": {
+    "message": "المطالبة طويلة جدًا"
+  },
+  "scheduledTasks.run.reason.aborted_streaming": {
+    "message": "تم الإيقاف"
+  },
+  "scheduledTasks.run.reason.aborted_tools": {
+    "message": "تم الإيقاف"
+  },
+  "scheduledTasks.run.reason.awaiting_user_input": {
+    "message": "في انتظار إدخالك"
+  },
+  "scheduledTasks.run.reason.error": {
+    "message": "خطأ"
+  },
+  "scheduledTasks.run.reason.unknown": {
+    "message": "خطأ غير معروف"
+  },
+  "scheduledTasks.run.reason.balance_insufficient": {
+    "message": "رصيد غير كافٍ"
+  },
+  "scheduledTasks.run.reason.billing_gate_failed": {
+    "message": "فشل تفويض الفوترة"
+  },
+  "scheduledTasks.run.reason.unauthorized": {
+    "message": "غير مصرّح"
+  },
+  "scheduledTasks.run.reason.timeout": {
+    "message": "انتهت المهلة"
+  },
+  "scheduledTasks.run.reason.internal_error": {
+    "message": "خطأ داخلي"
   },
   "scheduledTasks.run.needs_user_input": {
-    "message": "Needs action"
+    "message": "تحتاج إلى إجراء",
+    "description": "حالة تحتاج إلى تدخل المستخدم"
+  },
+  "scheduledTasks.run.reason.browser_device_offline": {
+    "message": "جهاز المتصفح غير متصل بالإنترنت",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.browser_authorization_stale": {
+    "message": "تم تغيير تفويض المتصفح، يرجى تعديل هذه المهمة",
+    "description": ""
   },
   "scheduledTasks.scheduleType.daily": {
-    "message": "Daily"
+    "message": "يوميًا",
+    "description": "يتم التنفيذ يوميًا"
   },
   "scheduledTasks.scheduleType.minutely": {
     "message": "كل دقيقة"
   },
   "scheduledTasks.scheduleType.hourly": {
-    "message": "Hourly"
+    "message": "ساعة",
+    "description": "يتم التنفيذ كل ساعة"
   },
   "scheduledTasks.scheduleType.weekly": {
-    "message": "Weekly"
+    "message": "أسبوعيًا",
+    "description": "يتم التنفيذ أسبوعيًا"
   },
   "scheduledTasks.scheduleType.cron": {
-    "message": "Cron expression"
+    "message": "تعبير Cron",
+    "description": "Cron مخصص"
+  },
+  "scheduledTasks.scheduleType.interval": {
+    "message": "كل فترة",
+    "description": "يتم التنفيذ كل فترة زمنية محددة"
+  },
+  "scheduledTasks.form.intervalUnit.minute": {
+    "message": "دقيقة",
+    "description": "وحدة الفاصل: دقيقة"
+  },
+  "scheduledTasks.form.intervalUnit.hour": {
+    "message": "ساعة",
+    "description": "وحدة الفاصل: ساعة"
+  },
+  "scheduledTasks.form.intervalUnit.day": {
+    "message": "يوم",
+    "description": "وحدة الفاصل: يوم"
+  },
+  "scheduledTasks.form.hourlyMinute": {
+    "message": "دقيقة التفعيل",
+    "description": "الدقيقة التي يتم فيها التفعيل كل ساعة"
+  },
+  "scheduledTasks.form.hourlyMinuteHint": {
+    "message": "الدقيقة التي يتم فيها التفعيل كل ساعة (0–59)",
+    "description": "شرح دقيقة كل ساعة"
+  },
+  "scheduledTasks.form.intervalHint": {
+    "message": "تنفيذ مرة واحدة كل فترة ثابتة منذ آخر تشغيل (أقل فترة 1 دقيقة)",
+    "description": "شرح الفترات الثابتة"
+  },
+  "scheduledTasks.form.cronHint": {
+    "message": "تعبير كرون القياسي 5 أجزاء: دقيقة ساعة يوم شهر أسبوع",
+    "description": "شرح تعبير كرون"
+  },
+  "scheduledTasks.form.schedulePreview": {
+    "message": "تكرار التنفيذ: {text}",
+    "description": "معاينة التكرار"
+  },
+  "scheduledTasks.humanize.everyNMinutes": {
+    "message": "كل {n} دقائق",
+    "description": "قابل للقراءة البشرية: كل N دقيقة"
+  },
+  "scheduledTasks.humanize.everyNHours": {
+    "message": "كل {n} ساعات",
+    "description": "قابل للقراءة البشرية: كل N ساعة"
+  },
+  "scheduledTasks.humanize.everyNDays": {
+    "message": "كل {n} أيام",
+    "description": "قابل للقراءة البشرية: كل N يوم"
+  },
+  "scheduledTasks.humanize.hourlyAtMinute": {
+    "message": "كل ساعة في الدقيقة {n}",
+    "description": "قابل للقراءة البشرية: في الدقيقة N من كل ساعة"
+  },
+  "scheduledTasks.humanize.dailyAt": {
+    "message": "يوميًا {time}",
+    "description": "قابل للقراءة البشرية: في وقت معين كل يوم"
+  },
+  "scheduledTasks.humanize.weeklyAt": {
+    "message": "كل أسبوع {weekday} {time}",
+    "description": "قابل للقراءة البشرية: في يوم معين من الأسبوع في وقت معين"
+  },
+  "scheduledTasks.humanize.cronRaw": {
+    "message": "كرون: {cron}",
+    "description": "قابل للقراءة البشرية: كرون الأصلي"
+  },
+  "scheduledTasks.humanize.once": {
+    "message": "مرة واحدة {time}",
+    "description": "قابل للقراءة البشرية: مرة واحدة"
   },
   "scheduledTasks.form.name": {
-    "message": "Task name"
+    "message": "اسم المهمة",
+    "description": "حقل الاسم"
   },
   "scheduledTasks.form.namePlaceholder": {
-    "message": "e.g. Daily news summary"
+    "message": "مثال: ملخص الأخبار اليومية",
+    "description": "نموذج الاسم"
   },
   "scheduledTasks.form.model": {
-    "message": "Model"
+    "message": "نموذج",
+    "description": "اختيار النموذج"
   },
   "scheduledTasks.form.prompt": {
-    "message": "Prompt"
+    "message": "كلمة التوجيه",
+    "description": "حقل كلمة التوجيه"
   },
   "scheduledTasks.form.promptPlaceholder": {
-    "message": "Enter your scheduled question or instruction. Supports {'{{date}}'}, {'{{run_count}}'}, {'{{last_output}}'} variables."
+    "message": "أدخل السؤال أو الأمر الذي سيتم تنفيذه بشكل دوري، يدعم متغيرات {'{{date}}'}، {'{{run_count}}'}، {'{{last_output}}'}",
+    "description": "نموذج كلمة التوجيه"
   },
   "scheduledTasks.form.promptHint": {
-    "message": "Variables: {'{{date}}'} today, {'{{run_count}}'} run number, {'{{last_output}}'} last output snippet"
+    "message": "يدعم متغيرات القالب: {'{{date}}'} تاريخ اليوم، {'{{run_count}}'} عدد مرات التشغيل، {'{{last_output}}'} ملخص النتيجة الأخيرة",
+    "description": "شرح كلمة التوجيه"
   },
   "scheduledTasks.form.schedule": {
-    "message": "Frequency"
+    "message": "تكرار التنفيذ",
+    "description": "اختيار التكرار"
   },
   "scheduledTasks.form.time": {
-    "message": "Time"
+    "message": "وقت التنفيذ",
+    "description": "حقل الوقت"
   },
   "scheduledTasks.form.weekday": {
-    "message": "Weekday"
+    "message": "يوم الأسبوع",
+    "description": "حقل يوم الأسبوع"
   },
   "scheduledTasks.form.cron": {
-    "message": "Cron expression"
+    "message": "تعبير كرون",
+    "description": "حقل تعبير كرون"
   },
   "scheduledTasks.form.skills": {
     "message": "تفويض المهارات",
@@ -704,6 +992,25 @@
     "message": "يمكن للمهارات المحددة تخطي التأكيد البشري عند تنفيذ المهام المجدولة في الخلفية؛ بينما المهارات غير المحددة لا تزال قادرة على المعاينة أو الانتظار للتأكيد.",
     "description": "وصف تفويض المهارات"
   },
+  "scheduledTasks.form.browserConnection": {
+    "message": "اتصال المتصفح",
+    "description": ""
+  },
+  "scheduledTasks.form.browserEffects": {
+    "message": "قد يتم تنفيذ الآثار الخارجية التالية: {effects}",
+    "description": ""
+  },
+  "scheduledTasks.form.authorizationExpires": {
+    "message": "وقت انتهاء التفويض غير المراقب: {time}",
+    "description": ""
+  },
+  "scheduledTasks.form.browserBindingInvalid": {
+    "message": "يرجى اختيار اتصال متصفح متوافق ومتصل بالإنترنت قبل الحفظ",
+    "description": ""
+  },
+  "scheduledTasks.form.connectionAccount": "Account for {connector}",
+  "scheduledTasks.form.connectionAccountDefault": "Use the default account",
+  "scheduledTasks.form.accountIsDefault": "default",
   "scheduledTasks.form.skillMissing": {
     "message": "غير متصل",
     "description": "تفتقر المهارة إلى الاتصال"
@@ -737,19 +1044,20 @@
     "description": "نص تأكيد التفويض"
   },
   "scheduledTasks.form.skillNotActiveTitle": {
-    "message": "Bind the skill first",
-    "description": "Dialog title shown when a scheduled-task authorized skill/MCP is not yet bound for the user."
+    "message": "يجب ربط المهارة أولاً",
+    "description": "عنوان الحوار الذي يظهر عندما لا تكون المهارة/MCP المصرح بها للمهمة المجدولة مرتبطة بعد بالمستخدم."
   },
   "scheduledTasks.form.skillNotActiveMessage": {
-    "message": "The skill \"{name}\" is not bound or active in your account yet. Without binding it, the scheduled task may not be able to use it during unattended background runs. We recommend binding it first, or you can save anyway.",
-    "description": "Warning body; {name} is the skill/MCP name. Explains it is not bound and offers to save anyway."
+    "message": "المهارة «{name}» لم يتم ربطها أو تفعيلها في حسابك. إذا لم تقم بالربط أولاً، قد لا تعمل المهمة المجدولة في الخلفية. يُنصح بالذهاب للربط أولاً ثم الحفظ، أو النقر على الزر أدناه للاستمرار في الحفظ.",
+    "description": "نص تحذير؛ {name} هو اسم المهارة/MCP. يشرح أنها غير مرتبطة ويعرض خيار الحفظ على أي حال."
   },
   "scheduledTasks.form.skillNotActiveForce": {
-    "message": "Save anyway",
-    "description": "Confirm button that saves the scheduled task anyway, bypassing the binding check (force)."
+    "message": "هل تريد الاستمرار في الحفظ",
+    "description": "زر التأكيد الذي يحفظ المهمة المجدولة على أي حال، متجاوزًا تحقق الربط (إجباري)."
   },
   "scheduledTasks.form.required": {
-    "message": "Please fill in task name and prompt"
+    "message": "يرجى ملء اسم المهمة وكلمة التوجيه",
+    "description": "تحقق من الحقول المطلوبة"
   },
   "artifacts.navTitle": {
     "message": "الإنتاج",
@@ -786,6 +1094,18 @@
   "artifacts.hide": {
     "message": "إخفاء",
     "description": "زر إخفاء الإنتاج"
+  },
+  "artifacts.unhide": {
+    "message": "إلغاء الإخفاء",
+    "description": "زر لاستعادة العنصر المخفي"
+  },
+  "artifacts.showHidden": {
+    "message": "عرض العناصر المخفية",
+    "description": "زر لتفعيل عرض العناصر المخفية في شريط الفلترة"
+  },
+  "artifacts.hiddenBadge": {
+    "message": "تم إخفاؤه",
+    "description": "علامة تشير إلى أن العنصر قد تم إخفاؤه"
   },
   "artifacts.delete": {
     "message": "حذف",
@@ -915,24 +1235,532 @@
     "message": "أنت تشاهد محادثة تم مشاركتها. انقر أعلاه للدردشة مع AI بنفسك.",
     "description": "شرح أسفل المحادثة في الصفحة العامة المشاركة"
   },
+  "scheduledTasks.run.reason.goal_not_achieved": {
+    "message": "لم يتم تحقيق الهدف",
+    "description": ""
+  },
+  "scheduledTasks.run.reason.outcome_unknown": {
+    "message": "النتيجة قيد التأكيد",
+    "description": "تشير هذه الرسالة إلى أن نتيجة المهمة المجدولة لم تتأكد بعد."
+  },
+  "scheduledTasks.run.reason.run_abandoned": {
+    "message": "حالة التشغيل غير معروفة"
+  },
+  "actions.rename": {
+    "message": "إعادة تسمية",
+    "description": "عنصر قائمة إعادة التسمية في قائمة إجراءات المحادثة."
+  },
+  "actions.renameTitle": {
+    "message": "إعادة تسمية المحادثة",
+    "description": "عنوان نافذة حوار إعادة تسمية المحادثة."
+  },
+  "actions.renameEmpty": {
+    "message": "يرجى إدخال اسم",
+    "description": "رسالة تشير إلى أن الاسم فارغ أثناء إعادة التسمية."
+  },
+  "actions.renameSuccess": {
+    "message": "تمت إعادة التسمية",
+    "description": "رسالة تشير إلى نجاح إعادة تسمية المحادثة."
+  },
+  "actions.renameFailed": {
+    "message": "فشل إعادة التسمية، يرجى المحاولة لاحقًا",
+    "description": "رسالة تشير إلى فشل إعادة تسمية المحادثة."
+  },
+  "actions.deleteConfirm": {
+    "message": "هل أنت متأكد من حذف هذه المحادثة؟ لن يمكن استعادتها بعد الحذف.",
+    "description": "تأكيد قبل حذف المحادثة."
+  },
+  "actions.deleteSuccess": {
+    "message": "تم الحذف",
+    "description": "رسالة تشير إلى نجاح حذف المحادثة."
+  },
+  "actions.deleteFailed": {
+    "message": "فشل الحذف، يرجى المحاولة لاحقًا",
+    "description": "رسالة تشير إلى فشل حذف المحادثة."
+  },
+  "actions.tokenMissing": {
+    "message": "التوكن غير موجود، يرجى تسجيل الدخول مرة أخرى",
+    "description": "رسالة خطأ تشير إلى نقص الشهادة أثناء إجراء العملية."
+  },
+  "actions.conversationMissing": {
+    "message": "المحادثة غير موجودة",
+    "description": "رسالة خطأ تشير إلى أن المحادثة المستهدفة غير موجودة أثناء إجراء العملية."
+  },
+  "scheduledTasks.form.execution": {
+    "message": "مكان التشغيل",
+    "description": "اختر ما إذا كان يجب تشغيل المهمة في السحابة أو محليًا"
+  },
+  "scheduledTasks.execution.cloud": {
+    "message": "السحابة",
+    "description": "وضع التشغيل السحابي"
+  },
+  "scheduledTasks.execution.local": {
+    "message": "هذا الجهاز",
+    "description": "وضع التشغيل المحلي"
+  },
+  "scheduledTasks.execution.localNamed": {
+    "message": "هذا الجهاز ({device})",
+    "description": "وضع التشغيل المحلي مع اسم الجهاز"
+  },
+  "scheduledTasks.form.executionCloudHint": {
+    "message": "يتم تشغيله في الوقت المحدد بواسطة النظام، وسيستمر في العمل حتى لو تم إيقاف تشغيل الكمبيوتر.",
+    "description": "شرح وضع السحابة"
+  },
+  "scheduledTasks.form.executionLocalHint": {
+    "message": "يتم تشغيله في الوقت المحدد بواسطة هذا الجهاز، ويمكنه قراءة وكتابة الملفات المحلية، وتنفيذ الأوامر المحلية. لن يعمل عند إيقاف تشغيل الجهاز أو الخروج من التطبيق، وسيتم تسجيل المحاولات الفائتة دون إعادة التشغيل.",
+    "description": "شرح وضع التشغيل المحلي"
+  },
+  "scheduledTasks.form.executionMobileUnsupported": {
+    "message": "لا يدعم الهاتف المحمول التشغيل المحلي حاليًا",
+    "description": "سبب عدم دعم التنفيذ المحلي على الأجهزة المحمولة"
+  },
+  "scheduledTasks.form.executionWebUnsupported": {
+    "message": "يتطلب التشغيل المحلي تطبيق سطح المكتب",
+    "description": "سبب عدم دعم التنفيذ المحلي على الويب"
+  },
+  "scheduledTasks.form.executionDeviceUnavailable": {
+    "message": "تعذر الحصول على معلومات الجهاز المحلي، يرجى إعادة تشغيل التطبيق والمحاولة مرة أخرى",
+    "description": "معلومات الجهاز على سطح المكتب غير متاحة"
+  },
+  "scheduledTasks.form.localTools": {
+    "message": "تفويض أدوات محلية",
+    "description": "حقل تفويض الأدوات المحلية"
+  },
+  "scheduledTasks.form.localToolsPlaceholder": {
+    "message": "اختر الأدوات المحلية التي يُسمح لهذه المهمة باستخدامها",
+    "description": "نموذج اختيار الأدوات المحلية"
+  },
+  "scheduledTasks.form.localToolsHint": {
+    "message": "لن تظهر تأكيدات التفويض أثناء التشغيل غير المراقب، فقط الأدوات المحددة هنا ستكون متاحة.",
+    "description": "شرح تفويض الأدوات المحلية"
+  },
+  "scheduledTasks.run.skipped": {
+    "message": "تم تخطيه",
+    "description": "حالة التشغيل: الجهاز لم يكن متصلًا في ذلك الوقت، ولم يتم التشغيل"
+  },
+  "workingDir.choose": {
+    "message": "اختر دليل العمل",
+    "description": "زر فوق مربع إدخال الدردشة على سطح المكتب: اختر مجلد الملفات للمشروع الذي ستعمل عليه الذكاء الاصطناعي؛ لا يمكن إرسال الرسائل قبل الاختيار."
+  },
+  "workingDir.switchHint": {
+    "message": "انقر لتبديل دليل العمل",
+    "description": "عند اختيار دليل العمل، يظهر تلميح عائم على كبسولة المسار."
+  },
+  "scheduledTasks.triggerLocalUnavailable": {
+    "message": "هذه مهمة محلية، يمكن تشغيلها يدويًا فقط على نسخة سطح المكتب للجهاز المرتبط",
+    "description": "لا يمكن تشغيل المهمة المحلية يدويًا على الأجهزة غير المرتبطة"
+  },
+  "scheduledTasks.triggerWrongDevice": {
+    "message": "هذه المهمة مرتبطة بجهاز آخر",
+    "description": "المهمة المحلية لا تنتمي إلى الجهاز الحالي"
+  },
+  "scheduledTasks.triggerSignedOut": {
+    "message": "لم يتم تسجيل الدخول إلى الجدولة المحلية، يرجى تسجيل الدخول مرة أخرى والمحاولة",
+    "description": "العميل لا يحمل بيانات الاعتماد"
+  },
+  "scheduledTasks.triggerAlreadyRunning": {
+    "message": "هذه المهمة قيد التشغيل بالفعل",
+    "description": "المهمة قيد التنفيذ"
+  },
+  "actionConfirmation.confirm": {
+    "message": "تأكيد",
+    "description": "زر تأكيد في بطاقة تأكيد التنفيذ قبل التنفيذ"
+  },
+  "actionConfirmation.cancel": {
+    "message": "إلغاء",
+    "description": "زر إلغاء في بطاقة تأكيد التنفيذ قبل التنفيذ"
+  },
+  "actionConfirmation.resolvedConfirmed": {
+    "message": "تم التأكيد، جاري التنفيذ",
+    "description": "تأكيد تنفيذ الإجراء: المستخدم قد أكد، والإجراءات التالية قيد التنفيذ"
+  },
+  "actionConfirmation.resolvedCancelled": {
+    "message": "تم الإلغاء",
+    "description": "بطاقة تأكيد التنفيذ: رسالة الانهيار بعد إلغاء المستخدم"
+  },
+  "actionConfirmation.mediaLoading": {
+    "message": "جارٍ تحميل معاينة الوسائط...",
+    "description": "تأكيد قبل التنفيذ: حالة تحميل الوسائط"
+  },
+  "actionConfirmation.mediaUnavailable": {
+    "message": "لا يمكن تشغيل المعاينة هنا",
+    "description": "تأكيد قبل التنفيذ: عنوان فشل تشغيل الوسائط"
+  },
+  "actionConfirmation.mediaUnavailableHint": {
+    "message": "قد تكون روابط الوسائط قد انتهت صلاحيتها، أو أن المتصفح الحالي لا يدعم هذا التنسيق. يرجى فتح الملف الأصلي للتأكيد قبل النشر.",
+    "description": "تأكيد قبل التنفيذ: وصف فشل تشغيل الوسائط"
+  },
+  "actionConfirmation.openMedia": {
+    "message": "فتح الملف الأصلي",
+    "description": "تأكيد قبل التنفيذ: فتح رابط الوسائط"
+  },
+  "actionConfirmation.tiktok.reviewBadge": {
+    "message": "تأكيد قبل النشر",
+    "description": "تأكيد نشر TikTok: علامة حالة بطاقة التأكيد"
+  },
+  "actionConfirmation.tiktok.publishTitle": {
+    "message": "نشر على TikTok",
+    "description": "عنوان بطاقة تأكيد النشر على TikTok"
+  },
+  "actionConfirmation.tiktok.publishSummary": {
+    "message": "بعد التأكيد، سيتم نشر هذا الفيديو على حسابك في TikTok.",
+    "description": "ملخص بطاقة تأكيد النشر على TikTok"
+  },
+  "actionConfirmation.tiktok.publishButton": {
+    "message": "نشر",
+    "description": "زر تقديم تأكيد النشر على بطاقة تأكيد TikTok"
+  },
+  "actionConfirmation.tiktok.postingTo": {
+    "message": "نشر إلى",
+    "description": "تأكيد نشر TikTok: علامة الحساب"
+  },
+  "actionConfirmation.tiktok.connected": {
+    "message": "متصل",
+    "description": "تأكيد نشر TikTok: حالة اتصال الحساب"
+  },
+  "actionConfirmation.tiktok.unknownAccount": {
+    "message": "معلومات الحساب غير متاحة",
+    "description": "تأكيد نشر TikTok: نص موضع عند نقص اسم الحساب"
+  },
+  "actionConfirmation.tiktok.detailsUnavailable": {
+    "message": "إعدادات النشر غير جاهزة بعد",
+    "description": "تأكيد نشر TikTok: عنوان نقص معلومات المنشئ"
+  },
+  "actionConfirmation.tiktok.detailsUnavailableHint": {
+    "message": "فشل في قراءة نطاق الرؤية المدعوم من هذا الحساب. يرجى إلغاء الطلب والسماح للمساعد بإعادة الحصول على إعدادات نشر TikTok.",
+    "description": "تأكيد نشر TikTok: وصف نقص معلومات المنشئ"
+  },
+  "actionConfirmation.tiktok.videoTooLongTitle": {
+    "message": "مدة الفيديو لا تتوافق مع حد الحساب",
+    "description": "تأكيد نشر TikTok: عنوان الفيديو الطويل"
+  },
+  "actionConfirmation.tiktok.postDetails": {
+    "message": "محتوى النشر",
+    "description": "تأكيد نشر TikTok: عنوان مجموعة إعدادات المحتوى"
+  },
+  "actionConfirmation.tiktok.requiredNote": {
+    "message": "* مطلوب",
+    "description": "تأكيد نشر TikTok: وصف الحقول المطلوبة"
+  },
+  "actionConfirmation.tiktok.caption": {
+    "message": "نص",
+    "description": "تأكيد نشر TikTok: علامة حقل إدخال النص"
+  },
+  "actionConfirmation.tiktok.captionPlaceholder": {
+    "message": "اكتب وصفًا — الوسوم والإشارات مدعومة",
+    "description": "TikTok publish confirmation: caption placeholder"
+  },
+  "actionConfirmation.tiktok.privacy": {
+    "message": "من يمكنه الرؤية",
+    "description": "تأكيد نشر TikTok: علامة قائمة النطاق المرئي"
+  },
+  "actionConfirmation.tiktok.privacyPlaceholder": {
+    "message": "يرجى الاختيار…",
+    "description": "تأكيد نشر TikTok: نص العنصر النائب للنطاق المرئي، لا يمكن أن يكون له قيمة افتراضية حسب متطلبات TikTok"
+  },
+  "actionConfirmation.tiktok.noPrivacyOptions": {
+    "message": "لم يتم الحصول على نطاق رؤية متاح، لا يمكن النشر حالياً",
+    "description": "تأكيد نشر TikTok: نطاق الرؤية فارغ"
+  },
+  "actionConfirmation.tiktok.privacyPublic": {
+    "message": "الجميع",
+    "description": "النطاق المرئي في TikTok: عام"
+  },
+  "actionConfirmation.tiktok.privacyFriends": {
+    "message": "الأصدقاء المتبادلون",
+    "description": "النطاق المرئي في TikTok: مرئي للأصدقاء المتبادلين"
+  },
+  "actionConfirmation.tiktok.privacyFollowers": {
+    "message": "متابعيني",
+    "description": "النطاق المرئي في TikTok: مرئي للمتابعين"
+  },
+  "actionConfirmation.tiktok.privacySelf": {
+    "message": "خاص فقط",
+    "description": "النطاق المرئي في TikTok: مرئي فقط لنفسه"
+  },
+  "actionConfirmation.tiktok.interactions": {
+    "message": "السماح بالتفاعلات",
+    "description": "تأكيد نشر TikTok: علامة مجموعة زر التفاعل"
+  },
+  "actionConfirmation.tiktok.interactionsHint": {
+    "message": "يمكن فقط تفعيل طرق التفاعل المسموح بها حالياً لهذا الحساب؛ بشكل افتراضي جميعها مغلقة.",
+    "description": "تأكيد نشر TikTok: وصف مفتاح التفاعل"
+  },
+  "actionConfirmation.tiktok.disabledByAccount": {
+    "message": "تم تعطيل هذا الحساب: {list}",
+    "description": "تأكيد نشر TikTok: قدرة التفاعل المعطلة للحساب"
+  },
+  "actionConfirmation.tiktok.allowComment": {
+    "message": "تعليق",
+    "description": "زر التفاعل في TikTok: السماح بالتعليقات"
+  },
+  "actionConfirmation.tiktok.allowDuet": {
+    "message": "دويتو",
+    "description": "زر التفاعل في TikTok: السماح بالدويتو"
+  },
+  "actionConfirmation.tiktok.allowStitch": {
+    "message": "تجميع",
+    "description": "زر التفاعل في TikTok: السماح بالتجميع"
+  },
+  "actionConfirmation.tiktok.disclosure": {
+    "message": "الإفصاح عن المحتوى",
+    "description": "تأكيد نشر TikTok: عنوان مجموعة المحتوى التجاري"
+  },
+  "actionConfirmation.tiktok.commercial": {
+    "message": "هذا محتوى تجاري",
+    "description": "تأكيد نشر TikTok: زر الكشف عن المحتوى التجاري"
+  },
+  "actionConfirmation.tiktok.commercialHint": {
+    "message": "إذا كان المحتوى يروج لعلامة تجارية أو منتج أو خدمة، يرجى الإفصاح حسب الواقع.",
+    "description": "تأكيد نشر TikTok: وصف الإفصاح عن المحتوى التجاري"
+  },
+  "actionConfirmation.tiktok.yourBrand": {
+    "message": "علامتك التجارية",
+    "description": "محتوى تجاري على تيك توك: ترويج للأعمال الخاصة بك"
+  },
+  "actionConfirmation.tiktok.yourBrandHint": {
+    "message": "قم بالترويج لنفسك أو للعمل الذي تديره",
+    "description": "محتوى تجاري على TikTok: توضيح لترويج الأعمال الخاصة"
+  },
+  "actionConfirmation.tiktok.brandedContent": {
+    "message": "محتوى العلامة التجارية",
+    "description": "محتوى تجاري في TikTok: تعاون مدفوع"
+  },
+  "actionConfirmation.tiktok.brandedContentHint": {
+    "message": "الترويج لطرف ثالث مقابل الدفع أو الهدايا أو فوائد أخرى",
+    "description": "محتوى تجاري TikTok: شرح التعاون المدفوع"
+  },
+  "actionConfirmation.tiktok.labelPromotional": {
+    "message": "سيتم وضع علامة على الفيديو كـ \"محتوى ترويجي\"",
+    "description": "محتوى تجاري في TikTok: رسالة العلامة بعد اختيار علامتك التجارية"
+  },
+  "actionConfirmation.tiktok.labelPaidPartnership": {
+    "message": "سيتم وضع علامة على الفيديو كـ \"شراكة مدفوعة\"",
+    "description": "محتوى تجاري في TikTok: رسالة العلامة بعد اختيار محتوى العلامة التجارية"
+  },
+  "actionConfirmation.tiktok.brandedNotPrivate": {
+    "message": "لا يمكن تعيين نطاق رؤية محتوى العلامة التجارية على \"خاص فقط\"",
+    "description": "تأكيد نشر TikTok: رسالة تعارض محتوى العلامة التجارية مع الرؤية الخاصة"
+  },
+  "actionConfirmation.tiktok.tooLong": {
+    "message": "الفيديو يتجاوز الحد الأقصى للمدة لهذا الحساب ({max} ثانية)",
+    "description": "تأكيد نشر TikTok: خطأ طول الفيديو الزائد"
+  },
+  "actionConfirmation.tiktok.beforePublishing": {
+    "message": "يرجى التأكيد قبل النشر",
+    "description": "تأكيد نشر TikTok: عنوان شرح السياسة"
+  },
+  "actionConfirmation.tiktok.policyIntro": {
+    "message": "بالنقر على \"نشر\"، فإنك تؤكد أنك تمتلك حقوق استخدام المحتوى والموسيقى، وتوافق على شروط استخدام الموسيقى الخاصة بـ TikTok.",
+    "description": "تأكيد نشر TikTok: شرح سياسة المحتوى العادي"
+  },
+  "actionConfirmation.tiktok.policyIntroBranded": {
+    "message": "بالنقر على \"نشر\"، فإنك تؤكد أن المعلومات التي تم الإفصاح عنها دقيقة، وتوافق على سياسة المحتوى العلامة التجارية وشروط استخدام الموسيقى الخاصة بـ TikTok.",
+    "description": "تأكيد نشر TikTok: شرح سياسة المحتوى العلامة التجارية"
+  },
+  "actionConfirmation.tiktok.musicUsageLink": {
+    "message": "عرض \"تأكيد استخدام الموسيقى\"",
+    "description": "تأكيد نشر TikTok: رابط تأكيد استخدام الموسيقى"
+  },
+  "actionConfirmation.tiktok.brandedPolicyLink": {
+    "message": "عرض \"سياسة المحتوى العلامة التجارية\"",
+    "description": "تأكيد نشر TikTok: رابط سياسة المحتوى العلامة التجارية"
+  },
+  "actionConfirmation.tiktok.fixDetailsFirst": {
+    "message": "معلومات النشر غير مكتملة، يرجى إلغاء الطلب وإعادة إنشاء بطاقة التأكيد",
+    "description": "تأكيد نشر TikTok: سبب تعطيل الزر عند نقص التفاصيل"
+  },
+  "actionConfirmation.tiktok.useShorterVideo": {
+    "message": "يرجى استخدام فيديو يتوافق مع حد الطول لهذا الحساب",
+    "description": "تأكيد نشر TikTok: سبب تعطيل الزر بسبب طول الفيديو الزائد"
+  },
+  "actionConfirmation.tiktok.selectPrivacyFirst": {
+    "message": "يرجى اختيار من يمكنه رؤية هذا الفيديو",
+    "description": "تأكيد نشر TikTok: سبب تعطيل الزر عند عدم اختيار نطاق الرؤية"
+  },
+  "actionConfirmation.tiktok.selectDisclosureType": {
+    "message": "يرجى اختيار نوع المحتوى التجاري",
+    "description": "تأكيد نشر TikTok: سبب تعطيل الزر عند عدم اختيار نوع الإفصاح التجاري"
+  },
+  "scheduledTemplates.title": {
+    "message": "قوالب الأتمتة",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.createFromTemplate": {
+    "message": "إنشاء جديد من قالب",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.createCustom": {
+    "message": "إنشاء مخصص",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.emptyTitle": {
+    "message": "دع الذكاء الاصطناعي يكمل العمل في الوقت المحدد",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.emptyDescription": {
+    "message": "اختر نموذجًا رسميًا وقم بتوصيل الحساب المطلوب. يمكن تشغيل المهمة على البطاقة بعد إنشائها.",
+    "description": "إرشادات لإنشاء وتفعيل نموذج مهمة مجدولة"
+  },
+  "scheduledTemplates.browse": {
+    "message": "تصفح القوالب",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.step.choose": {
+    "message": "اختر قالبًا",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.step.configure": {
+    "message": "تكوين بسيط",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.step.connect": {
+    "message": "اتصل بالحساب",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.search": {
+    "message": "بحث عن القوالب",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.featured": {
+    "message": "مميز",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.ready": {
+    "message": "جاهز للاستخدام",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.missingCount": {
+    "message": "يجب الاتصال بـ {count} عنصر",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.schedule": {
+    "message": "وقت التنفيذ",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.connectionTitle": {
+    "message": "استعد للاتصال المطلوب",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.noConnections": {
+    "message": "لا حاجة للاتصال بحسابات أخرى",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.connected": {
+    "message": "متصل",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.notConnected": {
+    "message": "لم يتم الاتصال بعد",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.chooseAccount": {
+    "message": "اختر حسابًا",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.connect": {
+    "message": "اذهب للاتصال",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.create": {
+    "message": "إنشاء مهمة",
+    "description": "إرشادات لإنشاء وتفعيل نموذج مهمة مجدولة"
+  },
+  "scheduledTemplates.createFailed": {
+    "message": "فشل إنشاء المهمة، يرجى التحقق من الإعدادات أو الاتصال",
+    "description": "إرشادات لإنشاء وتفعيل نموذج مهمة مجدولة"
+  },
+  "scheduledTemplates.createdDisabled": {
+    "message": "تم إنشاء المهمة ولكنها تبقى مغلقة. يرجى تشغيلها على البطاقة أولاً، وبعد النجاح يمكن تفعيلها.",
+    "description": "إرشادات لإنشاء وتفعيل نموذج مهمة مجدولة"
+  },
+  "scheduledTemplates.enableFailed": {
+    "message": "لا يمكن التفعيل مؤقتًا. يرجى تشغيل المهمة على الفور والتأكد من نجاحها؛ بعض النماذج تحتاج أيضًا إلى إنشاء مسودة محددة.",
+    "description": "إرشادات لإنشاء وتفعيل نموذج مهمة مجدولة"
+  },
+  "scheduledTemplates.loadError": {
+    "message": "فشل تحميل القالب، يرجى المحاولة لاحقًا",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.all": {
+    "message": "الكل",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.marketing": {
+    "message": "نمو التسويق",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.content": {
+    "message": "إنشاء المحتوى",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.productivity": {
+    "message": "كفاءة العمل",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.research": {
+    "message": "المعلومات والبحث",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.development": {
+    "message": "التطوير والصيانة",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "scheduledTemplates.category.personal": {
+    "message": "مساعد شخصي",
+    "description": "نسخة مركز قوالب المهام المجدولة"
+  },
+  "actionConfirmation.tiktok.music": {
+    "message": "نشر يعني أنك توافق على \"تأكيد استخدام الموسيقى\" من TikTok",
+    "description": "تأكيد نشر TikTok: بيان استخدام الموسيقى"
+  },
+  "actionConfirmation.tiktok.musicBranded": {
+    "message": "نشر يعني أنك توافق على \"سياسة محتوى العلامة التجارية\" و \"تأكيد استخدام الموسيقى\" من TikTok",
+    "description": "تأكيد نشر TikTok: بيان بعد تحديد محتوى العلامة التجارية"
+  },
   "model.claudeOpus47": {
-    "message": "Claude Opus 4.7",
-    "description": "Model display name"
+    "message": "claude-opus-4.7",
+    "description": "اسم النموذج للخدمة، أي Claude Opus 4.7"
   },
   "model.claudeOpus47Description": {
     "message": "النموذج الأكثر تقدمًا حاليًا",
     "description": "وصف نموذج Claude Opus 4.7"
   },
-  "artifacts.unhide": {
-    "message": "Unhide",
-    "description": "Restore a hidden artifact"
+  "scheduledTasks.form.timezone": {
+    "message": "المنطقة الزمنية"
   },
-  "artifacts.showHidden": {
-    "message": "Show hidden",
-    "description": "Toggle in the filter bar to include hidden artifacts"
+  "scheduledTasks.form.timezoneHint": {
+    "message": "تستخدم المهام الجديدة المنطقة الزمنية لهذا الجهاز افتراضيًا: {timezone}. وبعد الحفظ تبقى ثابتة للمهمة."
   },
-  "artifacts.hiddenBadge": {
-    "message": "Hidden",
-    "description": "Badge shown on artifacts that are currently hidden"
+  "scheduledTasks.form.timezoneInvalid": {
+    "message": "اختر منطقة زمنية صالحة وفق IANA"
+  },
+  "scheduledTemplates.previous": {
+    "message": "الخطوة السابقة",
+    "description": "إرشادات التنقل في معالج القالب المجدول والاتصال"
+  },
+  "scheduledTemplates.next": {
+    "message": "الخطوة التالية",
+    "description": "إرشادات التنقل في معالج القالب المجدول والاتصال"
+  },
+  "scheduledTemplates.connectionDescription": {
+    "message": "سنستخدم فقط الاتصالات التي يحتاجها هذا القالب؛ سيتم إعادة استخدام الحسابات المتصلة تلقائيًا.",
+    "description": "إرشادات التنقل في معالج القالب المجدول والاتصال"
+  },
+  "scheduledTemplates.noConnectionsHint": {
+    "message": "هذا النموذج يستخدم فقط القدرات المدمجة، ويمكن إنشاء المهمة مباشرة.",
+    "description": "إرشادات لإنشاء وتفعيل نموذج مهمة مجدولة"
+  },
+  "scheduledTemplates.connectionMissingHint": {
+    "message": "يمكنك المتابعة بعد إتمام الاتصال.",
+    "description": "إرشادات التنقل في معالج القالب المجدول والاتصال"
+  },
+  "scheduledTemplates.connectionBoundHint": {
+    "message": "ستستخدم هذه المهمة الحساب الذي اخترته بشكل ثابت.",
+    "description": "إرشادات التنقل في معالج القالب المجدول والاتصال"
+  },
+  "scheduledTemplates.connectionMcpHint": {
+    "message": "تشغيل عبر اتصال MCP المصرح به، دون الحاجة لربط حساب إضافي.",
+    "description": "إرشادات التنقل في معالج القالب المجدول والاتصال"
   }
 }

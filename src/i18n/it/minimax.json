@@ -1,0 +1,142 @@
+{
+  "name.model": {
+    "message": "Modello",
+    "description": "Modello per la generazione video"
+  },
+  "name.prompt": {
+    "message": "Parole chiave",
+    "description": "Descrizione del contenuto, azioni, inquadrature e stile del video"
+  },
+  "name.referenceImages": {
+    "message": "Immagini di riferimento",
+    "description": "Campo per il caricamento delle immagini di riferimento"
+  },
+  "name.referenceAudios": {
+    "message": "Audio di riferimento",
+    "description": "Campo per il caricamento degli audio di riferimento"
+  },
+  "name.ratio": {
+    "message": "Rapporto d'aspetto",
+    "description": "Rapporto d'aspetto del video in output"
+  },
+  "name.duration": {
+    "message": "Durata (secondi)",
+    "description": "Durata del video in output"
+  },
+  "name.resolution": {
+    "message": "Risoluzione",
+    "description": "Risoluzione del video in output"
+  },
+  "name.watermark": {
+    "message": "Watermark AIGC",
+    "description": "Se aggiungere un watermark di identificazione AIGC"
+  },
+  "name.taskId": {
+    "message": "ID attività",
+    "description": "Identificatore dell'attività"
+  },
+  "name.failure": {
+    "message": "Fallito",
+    "description": "Stato di fallimento del compito"
+  },
+  "name.failureReason": {
+    "message": "Motivo del fallimento",
+    "description": "Motivo del fallimento del compito"
+  },
+  "placeholder.prompt": {
+    "message": "Descrivi scena, azioni, inquadrature e stile (i suggerimenti sono obbligatori, indipendentemente dal caricamento di materiali di riferimento)",
+    "description": "Testo segnaposto per i suggerimenti"
+  },
+  "description.model": {
+    "message": "Modello di generazione video MiniMax H3.",
+    "description": "Descrizione del modello"
+  },
+  "description.prompt": {
+    "message": "Descrivi le scene, le azioni, le inquadrature e lo stile del video; tutti i modelli di generazione richiedono di essere compilati.",
+    "description": "Descrizione del prompt"
+  },
+  "description.referenceImages": {
+    "message": "Carica da 1 a 9 immagini. Un'immagine come fotogramma iniziale, più immagini come immagini di riferimento.",
+    "description": "Descrizione delle immagini di riferimento"
+  },
+  "description.referenceAudios": {
+    "message": "Carica da 1 a 3 tracce audio. Quando utilizzi audio di riferimento, devi caricare almeno un'immagine di riferimento contemporaneamente.",
+    "description": "Descrizione degli audio di riferimento"
+  },
+  "description.resolution": {
+    "message": "Seleziona la qualità del video in output.",
+    "description": "Descrizione della risoluzione"
+  },
+  "description.ratio": {
+    "message": "Seleziona il formato orizzontale o verticale.",
+    "description": "Descrizione del rapporto d'aspetto"
+  },
+  "description.duration": {
+    "message": "Imposta la durata del video tra 4 e 15 secondi.",
+    "description": "Descrizione della durata"
+  },
+  "description.watermark": {
+    "message": "Aggiungi un watermark con il logo AIGC nel video.",
+    "description": "Descrizione del watermark"
+  },
+  "status.pending": {
+    "message": "In attesa",
+    "description": "Stato di attesa dell'attività"
+  },
+  "status.processing": {
+    "message": "In elaborazione",
+    "description": "Stato di elaborazione dell'attività"
+  },
+  "button.generate": {
+    "message": "Genera video",
+    "description": "Pulsante per generare"
+  },
+  "button.upload": {
+    "message": "Carica",
+    "description": "Pulsante per caricare materiali"
+  },
+  "button.download": {
+    "message": "Scarica video",
+    "description": "Pulsante per scaricare"
+  },
+  "message.startingTask": {
+    "message": "Avvio del compito in corso...",
+    "description": "Messaggio di avvio del compito"
+  },
+  "message.startTaskSuccess": {
+    "message": "Compito di generazione avviato con successo",
+    "description": "Compito inviato con successo"
+  },
+  "message.startTaskFailed": {
+    "message": "Avvio del compito fallito, riprova più tardi",
+    "description": "Errore nell'invio del compito"
+  },
+  "message.usedUp": {
+    "message": "Credito insufficiente, ricarica per continuare a usare",
+    "description": "Messaggio di credito insufficiente"
+  },
+  "message.downloadVideo": {
+    "message": "Scarica questo video",
+    "description": "Messaggio di download video"
+  },
+  "message.promptRequired": {
+    "message": "È necessario inserire un prompt per tutte le modalità di generazione",
+    "description": "Manca un prompt"
+  },
+  "message.textRatioRequired": {
+    "message": "Il rapporto di aspetto del video generato deve essere un rapporto di larghezza e altezza specifico diverso da adaptive",
+    "description": "Il rapporto di aspetto del video generato è invalido"
+  },
+  "message.imageLimit": {
+    "message": "Massimo 9 immagini di riferimento",
+    "description": "Limite sul numero di immagini"
+  },
+  "message.audioLimit": {
+    "message": "Massimo 3 audio di riferimento",
+    "description": "Limite sul numero di audio"
+  },
+  "message.uploadError": {
+    "message": "Caricamento fallito, riprova più tardi",
+    "description": "Messaggio di errore per il caricamento dei materiali"
+  }
+}

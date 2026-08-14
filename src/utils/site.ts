@@ -1,4 +1,4 @@
-import { ISite } from '@/models';
+import { IApplication, ISite, ISiteContact } from '@/models';
 import { v4 as uuid } from 'uuid';
 import { BASE_HOST_HUB } from '@/constants/endpoint';
 import { isNative, isDesktop } from './surface';
@@ -27,6 +27,17 @@ import { isNative, isDesktop } from './surface';
  *     to studio's bare host instead.
  */
 const STUDIO_HOST = 'studio.acedata.cloud';
+
+export const toWritableSitePayload = (site: ISite): ISite => {
+  const {
+    capability_overrides: _capabilityOverrides,
+    title_source: _titleSource,
+    description_source: _descriptionSource,
+    auto_translated_fields: _autoTranslatedFields,
+    ...writableSite
+  } = site;
+  return writableSite;
+};
 
 export const getSiteOrigin = (site?: ISite) => {
   // If we already have a Site row, trust its stored origin.
@@ -61,11 +72,69 @@ export const getSiteOrigin = (site?: ISite) => {
   return host.split(':')[0];
 };
 
+/**
+ * White-label brand-hide switches. Reads `site.branding.hide_*`
+ * (PlatformBackend `Site.branding`, PR #919). Default — column unset or the
+ * flag not exactly `true` — is `false`, i.e. we keep showing our brand,
+ * matching the "unset = use our default" principle. Only an explicit `true`
+ * hides the surface.
+ */
+export const isBrandingHidden = (site: ISite | null | undefined, key: 'powered_by'): boolean => {
+  const branding = site?.branding;
+  if (!branding) return false;
+  if (key === 'powered_by') return branding.hide_powered_by === true;
+  return false;
+};
+
+export const getBrandName = (site?: ISite | null): string => {
+  return site?.title?.trim() || 'Ace Data Cloud';
+};
+
+export const getBrandCopyright = (site?: ISite | null): string | undefined => {
+  return site?.branding?.copyright?.trim() || undefined;
+};
+
+/**
+ * Resolve the reseller's support URL: `branding.links.support` first, then
+ * the legacy `metadata.support_url`. Returns '' when neither is set so
+ * callers can hide the entry instead of leaking our own domain.
+ */
+export const getBrandSupportUrl = (site?: ISite | null): string => {
+  return site?.branding?.links?.support || site?.metadata?.support_url || '';
+};
+
+/**
+ * Ordered list of customer-service entries the site owner configured
+ * (`branding.contacts`, PlatformBackend). Returns `[]` when unset / malformed
+ * so callers can treat "no contacts" uniformly.
+ */
+export const getBrandContacts = (site?: ISite | null): ISiteContact[] => {
+  const contacts = site?.branding?.contacts;
+  return Array.isArray(contacts) ? contacts : [];
+};
+
+/**
+ * True when the site owner filled in at least one contact entry.
+ */
+export const hasBrandContacts = (site?: ISite | null): boolean => {
+  return getBrandContacts(site).length > 0;
+};
+
 // Site-wide markup ceiling, mirroring PlatformBackend
 // `app/utils/site_pricing.py` (MARKUP_RATIO_MIN/MAX). 0 = sell at platform
 // price; 5 = +500% (6x).
 export const MARKUP_RATIO_MIN = 0;
 export const MARKUP_RATIO_MAX = 5;
+
+/**
+ * White-label switch to hide every top-up / recharge entry. Reads
+ * `site.metadata.disable_recharge` (PlatformBackend passes unknown
+ * `metadata` keys through verbatim). Default — unset or not exactly
+ * `true` — is `false`, i.e. recharge stays enabled.
+ */
+export const isRechargeDisabled = (site?: ISite | null): boolean => {
+  return site?.metadata?.disable_recharge === true;
+};
 
 /**
  * Read the site-wide markup ratio from `site.metadata.pricing.markup_ratio`
@@ -81,6 +150,35 @@ export const getSiteMarkupRatio = (site?: ISite | null): number => {
   if (typeof raw !== 'number' || !Number.isFinite(raw)) return 0;
   if (raw < MARKUP_RATIO_MIN) return 0;
   if (raw > MARKUP_RATIO_MAX) return MARKUP_RATIO_MAX;
+  return raw;
+};
+
+/**
+ * Use the backend's order-consistent per-service markup when available.
+ * Individual-service applications fail closed when an older backend omits the
+ * field; only global applications fall back because their order pricing uses
+ * the site-wide default directly.
+ */
+export const getApplicationMarkupRatio = (
+  application?: IApplication | null,
+  site?: ISite | null
+): number | undefined => {
+  if (!application) return undefined;
+  const raw = application?.effective_markup_ratio;
+  if (typeof raw !== 'number' || !Number.isFinite(raw)) {
+    const hasService = !!(application.service_id || application.service?.id);
+    return hasService || !site?.id ? undefined : getSiteMarkupRatio(site);
+  }
+  if (raw < MARKUP_RATIO_MIN) return undefined;
+  if (raw > MARKUP_RATIO_MAX) return MARKUP_RATIO_MAX;
+  return raw;
+};
+
+export const getApplicationCallerOrderDiscountRate = (application?: IApplication | null): number | undefined => {
+  if (!application) return undefined;
+  const raw = application?.effective_caller_order_discount_rate;
+  if (raw === undefined || raw === null) return 0;
+  if (typeof raw !== 'number' || !Number.isFinite(raw) || raw < 0 || raw > 1) return undefined;
   return raw;
 };
 

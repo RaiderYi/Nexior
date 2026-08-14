@@ -1,6 +1,13 @@
+import type { IMaestroSku } from '@/constants/maestro';
+
 export type IMaestroAction = 'generate' | 'remix' | 'edit' | 'extend';
 
 export interface IMaestroConfig {
+  /** Legacy in-memory flag; normalized into the three field flags. */
+  customization_enabled?: boolean;
+  scenario_customization_enabled?: boolean;
+  style_customization_enabled?: boolean;
+  voice_customization_enabled?: boolean;
   prompt?: string;
   action?: IMaestroAction;
   ref_task_id?: string;
@@ -8,15 +15,20 @@ export interface IMaestroConfig {
   langs?: string[];
   aspect?: string; // '9:16' | '16:9' | '1:1'
   duration?: number;
-  quality?: string; // 'draft' | 'standard' | 'premium'
-  scenario?: string; // 'auto' | 'narrated' | 'drama' | 'avatar' | 'motion' | 'captions'
+  quality?: IMaestroSku;
+  scenario?: string; // 'auto' | 'narrated' | 'drama' | 'avatar' | 'captions'
   style?: string; // freeform visual hint (e.g. 'auto' | 'cinematic' | 'minimal' | 'neon' | 'corporate'); orthogonal to scenario
   voice?: string; // narration timbre: 'auto' (director picks) | a preset key (constants) | a 32-hex Fish reference_id
-  startable?: boolean; // two-phase: estimate first, park, and only generate on Start
   callback_url?: string;
 }
 
-export type IMaestroGenerateRequest = IMaestroConfig;
+export type IMaestroGenerateRequest = Omit<
+  IMaestroConfig,
+  | 'customization_enabled'
+  | 'scenario_customization_enabled'
+  | 'style_customization_enabled'
+  | 'voice_customization_enabled'
+>;
 
 export interface IMaestroVariant {
   lang?: string;
@@ -39,39 +51,12 @@ export interface IMaestroProject {
   outputs?: string[];
 }
 
-// Bottom-up cost estimate (from POST /maestro/estimates). USD is at the volume credit rate;
-// `credits` is the rate-independent figure. `upper_bound` = the HIGH band (取上限).
-export interface IMaestroEstimatePrice {
-  low?: number;
-  expected?: number;
-  high?: number;
-  upper_bound?: number;
-  currency?: string;
-  credits?: { low?: number; expected?: number; high?: number };
-  credit_to_usd?: number;
-  basis?: string; // 'live' | 'partial'
-}
-
-export interface IMaestroEstimateLine {
-  item?: string;
-  kind?: string; // 'agent' | 'api'
-  unit_credits?: number;
-  count?: number;
-  credits?: number;
-  usd?: number;
-  live_price?: boolean;
-  turns?: number | null;
-}
-
-export interface IMaestroEstimate {
-  schema?: string;
-  currency?: string;
-  price?: IMaestroEstimatePrice;
-  breakdown?: IMaestroEstimateLine[];
-  flow?: string;
-  confidence?: string; // 'high' | 'medium' | 'low'
-  assumptions?: string[];
-  risks?: string[];
+// Live per-frame render telemetry (worker parses it from the HyperFrames render output) so the
+// UI can move the bar and show "1194/2388 frames" during a long render instead of freezing.
+export interface IMaestroRender {
+  percent?: number;
+  frames_done?: number;
+  frames_total?: number;
 }
 
 export interface IMaestroData {
@@ -79,7 +64,11 @@ export interface IMaestroData {
   project?: IMaestroProject;
   progress?: IMaestroProgress[];
   stage?: string;
-  estimate?: IMaestroEstimate;
+  percent?: number;
+  // Latest "what the agent is doing right now" one-liner (the director's own narration), shown as
+  // the live detail under the active step so a long stage exposes real, moving progress.
+  activity?: string;
+  render?: IMaestroRender;
 }
 
 export interface IMaestroGenerateResponse {
@@ -100,9 +89,8 @@ export interface IMaestroAgentStats {
 
 export interface IMaestroTask {
   id: string;
-  status?: string; // ... | 'estimated' (parked, awaiting Start) | 'expired'
-  phase?: string; // 'estimate' | 'generate' (two-phase tasks)
-  startable?: boolean;
+  trace_id?: string;
+  status?: string;
   created_at?: number;
   elapsed?: number;
   request?: IMaestroGenerateRequest;
@@ -111,12 +99,6 @@ export interface IMaestroTask {
 }
 
 export type IMaestroTaskResponse = IMaestroTask;
-
-export interface IMaestroEstimateResponse {
-  success: boolean;
-  estimate_id: string;
-  trace_id?: string;
-}
 
 export interface IMaestroTasksResponse {
   count: number;

@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "操作",
+    "description": "生成或编辑操作选择器"
+  },
   "name.taskId": {
     "message": "任务 ID",
     "description": "任务的 ID"
@@ -131,6 +135,10 @@
     "message": "上传图片失败，请稍后重试",
     "description": "上传失败"
   },
+  "message.referenceImageRequired": {
+    "message": "编辑模式至少需要上传一张参考图片。",
+    "description": "编辑模式没有参考图片时显示的校验提示"
+  },
   "message.featureNotSupportedTitle": {
     "message": "需要确认",
     "description": "能力冲突提示框标题"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "SeeDream 5.0 模型选项（支持组图与流式输出）"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro 模型选项（旗舰单图，不支持组图/流式/联网）"
   },
   "name.maxImages": {
     "message": "图片张数",

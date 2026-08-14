@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Åtgärd",
+    "description": "Välj åtgärd för att generera eller redigera."
+  },
   "name.taskId": {
     "message": "Uppgift ID",
     "description": "Uppgiftens ID"
@@ -29,7 +33,7 @@
   },
   "name.status": {
     "message": "Status",
-    "description": "Uppgiftens status"
+    "description": "Status för uppgiften"
   },
   "name.traceId": {
     "message": "Spårnings ID",
@@ -131,6 +135,10 @@
     "message": "Misslyckades med att ladda upp bild, vänligen försök igen senare",
     "description": "Misslyckades med uppladdning"
   },
+  "message.referenceImageRequired": {
+    "message": "Redigeringsläget kräver att minst en referensbild laddas upp.",
+    "description": "Visas som en valideringsprompt när det inte finns någon referensbild i redigeringsläget."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Bekräftelse krävs",
     "description": "Titel i varningsdialog för funktionskonflikt"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "Val av SeeDream 5.0-modell (stöder bildserie och strömmande utdata)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Antal bilder",

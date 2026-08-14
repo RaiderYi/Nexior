@@ -1,4 +1,8 @@
 {
+  "name.action": {
+    "message": "Toiminto",
+    "description": "Generoi tai muokkaa toimintovalitsinta."
+  },
   "name.taskId": {
     "message": "Tehtävä ID",
     "description": "Tehtävän ID"
@@ -131,6 +135,10 @@
     "message": "Kuvan lataus epäonnistui, yritä myöhemmin uudelleen",
     "description": "Lataus epäonnistui"
   },
+  "message.referenceImageRequired": {
+    "message": "Muokkaustilassa on ladattava vähintään yksi viittauskuva.",
+    "description": "Näytetään tarkistushälytyksenä, kun muokkaustilassa ei ole viittauskuvaa."
+  },
   "message.featureNotSupportedTitle": {
     "message": "Vahvistus vaaditaan",
     "description": "Kykyjen ristiriita -ilmoituksen otsikko"
@@ -166,6 +174,10 @@
   "model.seedream50": {
     "message": "doubao-seedream-5.0",
     "description": "SeeDream 5.0 mallivaihtoehto (tukee sarjakuvia ja jatkuvaa tuotantoa)"
+  },
+  "model.seedream50pro": {
+    "message": "doubao-seedream-5.0-pro",
+    "description": "SeeDream 5.0 Pro model option (flagship single image; no image sets / streaming / web search)"
   },
   "name.maxImages": {
     "message": "Kuvien määrä",

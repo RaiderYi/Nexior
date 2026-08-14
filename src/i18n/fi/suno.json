@@ -177,7 +177,7 @@
   },
   "button.video": {
     "message": "Video",
-    "description": "Videopainikkeen teksti"
+    "description": "Videon painikkeen teksti"
   },
   "button.download_video": {
     "message": "Lataa video",
@@ -216,8 +216,8 @@
     "description": "Korvaa kappaleen osa painike"
   },
   "button.mashup": {
-    "message": "Mashup",
-    "description": "Mashup useista kappaleista painike"
+    "message": "Yhdistä",
+    "description": "Yhdistä useita kappaleita -painikkeen teksti"
   },
   "button.generate_lyrics": {
     "message": "AI luo sanoitukset",
@@ -319,6 +319,10 @@
     "message": "Tyylin vaikutus",
     "description": "Säädä tyylin vaikutusta luotavaan tulokseen"
   },
+  "name.duration": {
+    "message": "Kappaleen kesto",
+    "description": "Säätelee luotavan kappaleen tavoitekestoa"
+  },
   "name.variationCategory": {
     "message": "Muunnelman tyyppi",
     "description": "Säädä luotavien muunnelmien monimuotoisuutta"
@@ -334,6 +338,10 @@
   "name.failureReason": {
     "message": "Epäonnistumisen syy",
     "description": "Tehtävän epäonnistumisen syy"
+  },
+  "name.failure": {
+    "message": "Luonti epäonnistui",
+    "description": "Suno-tehtävän epäonnistumisen otsikko"
   },
   "name.status": {
     "message": "Tila",
@@ -394,6 +402,10 @@
   "description.styleInfluence": {
     "message": "Korkeampi arvo tarkoittaa, että tyylilaput vaikuttavat enemmän tulokseen (0-1)",
     "description": "Tyylin vaikutusparametrin kuvaus"
+  },
+  "description.duration": {
+    "message": "Määritä toivottu kappaleen kesto (sekunteina), eri mallit tukevat eri määriä, todellinen kesto voi vaihdella hieman",
+    "description": "Kappaleen keston parametrin kuvaus"
   },
   "description.audioWeight": {
     "message": "Alkuperäisen kappaleen vaikutus paino (0-1)",
@@ -853,7 +865,7 @@
   },
   "filter.video": {
     "message": "Video",
-    "description": "Suodatusosio: Sisältääkö videoita"
+    "description": "Suodatinosio: sisältääkö videoita"
   },
   "filter.videoAll": {
     "message": "Kaikki",
