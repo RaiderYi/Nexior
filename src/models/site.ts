@@ -35,6 +35,7 @@ export interface ISiteFeatures {
   wan?: any;
   producer?: any;
   kimi?: any;
+  glm?: any;
   serp?: any;
   fish?: any;
   webextrator?: any;

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 750px; height: 1000px;
+  background: linear-gradient(170deg, #0a0e1a 0%, #131830 40%, #0a0e1a 100%);
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #e2e8f0; overflow: hidden; position: relative;
+}
+body::before {
+  content: ''; position: absolute; bottom: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(236,72,153,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.page-title { font-size: 30px; font-weight: 900; text-align: center; padding: 45px 40px 5px; color: #fff; }
+.page-sub { font-size: 14px; color: #6b7394; text-align: center; margin-bottom: 30px; }
+.podium {
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: 12px; padding: 0 40px; margin-bottom: 30px;
+}
+.podium-item { flex: 1; text-align: center; border-radius: 12px 12px 0 0; padding: 16px 8px 12px; position: relative; }
+.podium-1 {
+  background: linear-gradient(180deg, rgba(251,191,36,0.2), rgba(251,191,36,0.05));
+  border: 1px solid rgba(251,191,36,0.3); height: 200px;
+}
+.podium-2 {
+  background: linear-gradient(180deg, rgba(148,163,184,0.15), rgba(148,163,184,0.04));
+  border: 1px solid rgba(148,163,184,0.25); height: 165px;
+}
+.podium-3 {
+  background: linear-gradient(180deg, rgba(205,127,50,0.15), rgba(205,127,50,0.04));
+  border: 1px solid rgba(205,127,50,0.25); height: 140px;
+}
+.podium-crown { font-size: 28px; margin-bottom: 2px; }
+.podium-rank { font-size: 12px; font-weight: 700; color: #6b7394; }
+.podium-name { font-size: 16px; font-weight: 800; color: #fff; margin: 4px 0; }
+.podium-tag { font-size: 11px; color: #8b95b8; }
+.recommend-section { padding: 0 40px; }
+.recommend-title {
+  font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.recommend-title::before {
+  content: ''; width: 3px; height: 18px;
+  background: linear-gradient(180deg, #6366f1, #8b5cf6); border-radius: 2px;
+}
+.rec-card {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 12px 16px; margin-bottom: 8px;
+}
+.rec-icon { font-size: 22px; width: 32px; text-align: center; }
+.rec-content { flex: 1; }
+.rec-label { font-size: 14px; color: #6b7394; }
+.rec-model { font-size: 16px; font-weight: 700; color: #fff; }
+.rec-reason { font-size: 12px; color: #8b95b8; }
+.warning-box {
+  margin: 16px 40px;
+  background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2);
+  border-radius: 10px; padding: 12px 16px;
+}
+.warning-title { font-size: 13px; font-weight: 700; color: #f87171; margin-bottom: 6px; }
+.warning-item { font-size: 12px; color: #cbd5e1; line-height: 1.7; padding-left: 12px; }
+.footer {
+  position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 20px;
+  background: linear-gradient(to top, rgba(10,14,26,0.95), transparent);
+}
+.footer-slogan { font-size: 15px; font-weight: 700; color: #8b95b8; }
+</style>
+</head>
+<body>
+<div class="page-title">🏆 综合排名</div>
+<div class="page-sub">6维度实测后的最终结论</div>
+<div class="podium">
+  <div class="podium-item podium-2">
+    <div class="podium-crown">🥈</div>
+    <div class="podium-rank">亚军</div>
+    <div class="podium-name">GPT-5.5</div>
+    <div class="podium-tag">数学+中文双冠</div>
+  </div>
+  <div class="podium-item podium-1">
+    <div class="podium-crown">👑</div>
+    <div class="podium-rank">总冠军</div>
+    <div class="podium-name">Claude<br>Fable 5</div>
+    <div class="podium-tag">全均衡无短板</div>
+  </div>
+  <div class="podium-item podium-3">
+    <div class="podium-crown">🥉</div>
+    <div class="podium-rank">季军</div>
+    <div class="podium-name">DeepSeek<br>V4-Pro</div>
+    <div class="podium-tag">性价比之王</div>
+  </div>
+</div>
+<div class="recommend-section">
+  <div class="recommend-title">不同场景该怎么选？</div>
+  <div class="rec-card">
+    <div class="rec-icon">✍️</div>
+    <div class="rec-content"><div class="rec-label">写文案 / 做创意</div><div class="rec-model">Claude Fable 5</div></div>
+    <div class="rec-reason">文学性天花板<br>每个字都在发光</div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-icon">🧮</div>
+    <div class="rec-content"><div class="rec-label">算数 / 写代码</div><div class="rec-model">GPT-5.5</div></div>
+    <div class="rec-reason">2.5秒出正确答案<br>代码最精简</div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-icon">🇨🇳</div>
+    <div class="rec-content"><div class="rec-label">中文场景 / 日常</div><div class="rec-model">GPT-5.5 或 Kimi</div></div>
+    <div class="rec-reason">最有网感<br>中文理解最地道</div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-icon">💰</div>
+    <div class="rec-content"><div class="rec-label">预算有限 / 学生党</div><div class="rec-model">DeepSeek V4-Pro</div></div>
+    <div class="rec-reason">最快+最便宜<br>创意能力惊艳</div>
+  </div>
+</div>
+<div class="warning-box">
+  <div class="warning-title">⚠️ 翻车提醒</div>
+  <div class="warning-item">• Gemini 3.5 Flash：速度不错但输出不稳定，部分题回答极短</div>
+  <div class="warning-item">• GLM-5.2：6道题全部写到字数上限，输出太啰嗦</div>
+  <div class="warning-item">• Kimi K2.7：中文场景突然切换英文答题，体验割裂</div>
+</div>
+<div class="footer"><div class="footer-slogan">独立测评 · 真实数据 · 不吹不黑</div></div>
+</body>
+</html>

@@ -59,6 +59,10 @@
     "message": "Kling 3.0 oferuje wyższą jakość, ale wyższą cenę za sekundę; Kling 2.6 jest bardziej opłacalny.",
     "description": "Opis wersji modelu ruchu"
   },
+  "description.motionModel": {
+    "message": "Kling 3.0 oferuje wyższą jakość, ale wyższą cenę za sekundę; Kling 2.6 jest bardziej opłacalny.",
+    "description": "motion model version description"
+  },
   "description.keepOriginalSound": {
     "message": "Włączając, zachowujesz oryginalny dźwięk z wideo referencyjnego; wyłączając, wideo wyjściowe nie zawiera oryginalnego dźwięku.",
     "description": "Opis pola keep_original_sound"
@@ -78,6 +82,10 @@
   "message.motionPricingNote": {
     "message": "Rozliczenie za sekundę wygenerowanego wideo; ostateczna kwota zależy od długości wideo referencyjnego.",
     "description": "Wyjaśnia, że Kontrola ruchu jest rozliczana za sekundę"
+  },
+  "message.motionPricingNote": {
+    "message": "Rozliczenie za sekundę wygenerowanego wideo; ostateczna kwota zależy od długości wideo referencyjnego.",
+    "description": "Explains that Motion Control is billed per second"
   },
   "inspiration.title": {
     "message": "Inspiracje i ustawienia",

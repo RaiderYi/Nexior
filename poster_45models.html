@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigPlayer AI - 45 Models</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0a0f;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bg-glow { position: absolute; border-radius: 50%; filter: blur(140px); z-index: 0; }
+  .g1 { width: 800px; height: 800px; background: radial-gradient(circle, #6366f1, transparent 70%); top: -300px; right: -200px; opacity: 0.4; }
+  .g2 { width: 800px; height: 800px; background: radial-gradient(circle, #ec4899, transparent 70%); bottom: -300px; left: -200px; opacity: 0.32; }
+  .g3 { width: 600px; height: 600px; background: radial-gradient(circle, #06b6d4, transparent 70%); top: 400px; left: 300px; opacity: 0.2; }
+  .grid { position: absolute; inset: 0; z-index: 1;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 45px 45px; }
+  .c { position: relative; z-index: 2; padding: 56px 60px; height: 100%; display: flex; flex-direction: column; }
+
+  .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .bi { width: 56px; height: 56px; border-radius: 15px; background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 900; color: white; box-shadow: 0 6px 24px rgba(99,102,241,0.45); }
+  .bn { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+  .badge { background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.4); color: #a5b4fc; padding: 8px 18px; border-radius: 22px; font-size: 15px; font-weight: 600; }
+
+  .hero { text-align: center; margin-bottom: 30px; }
+  .hn { font-size: 80px; font-weight: 900; line-height: 1; background: linear-gradient(135deg, #818cf8, #c084fc 50%, #f0abfc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -3px; }
+  .hl { color: #94a3b8; font-size: 18px; font-weight: 600; margin-top: 10px; letter-spacing: 3px; text-transform: uppercase; }
+
+  .groups { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; flex: 1; align-items: stretch; }
+  .gp { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 22px 10px 18px; display: flex; flex-direction: column; align-items: center; gap: 9px; backdrop-filter: blur(10px); }
+  .gl { width: 62px; height: 62px; border-radius: 16px; object-fit: cover; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+  .gn { color: #e2e8f0; font-size: 18px; font-weight: 700; }
+  .gc { background: rgba(255,255,255,0.07); color: #cbd5e1; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 11px; margin-top: -2px; }
+  .mlist { display: flex; flex-direction: column; gap: 4px; align-items: center; margin-top: 6px; flex: 1; }
+  .mp { color: #94a3b8; font-size: 13px; font-weight: 600; line-height: 1.4; text-align: center; }
+  .more { color: #818cf8; font-size: 13px; font-weight: 700; margin-top: 2px; padding-top: 4px; border-top: 1px solid rgba(129,140,248,0.2); width: 80%; text-align: center; }
+
+  .footer { display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .fl { display: flex; align-items: center; gap: 22px; }
+  .ft { display: flex; align-items: center; gap: 7px; color: #94a3b8; font-size: 16px; font-weight: 600; }
+  .fd { width: 7px; height: 7px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981; }
+  .url { font-size: 28px; font-weight: 800; background: linear-gradient(90deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.5px; }
+</style>
+</head>
+<body>
+  <div class="bg-glow g1"></div>
+  <div class="bg-glow g2"></div>
+  <div class="bg-glow g3"></div>
+  <div class="grid"></div>
+  <div class="c">
+    <div class="header">
+      <div class="brand"><div class="bi">B</div><div class="bn">BigPlayer AI</div></div>
+      <div class="badge">✦ 18 语言 · 7 大厂商</div>
+    </div>
+    <div class="hero">
+      <div class="hn">45+ 模型</div>
+      <div class="hl">One Platform · All Frontier Models</div>
+    </div>
+    <div class="groups">
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/7dljuv.png" alt="OpenAI">
+        <div class="gn">OpenAI</div><div class="gc">11 模型</div>
+        <div class="mlist">
+          <div class="mp">GPT-5.5</div><div class="mp">GPT-5.4</div><div class="mp">GPT-5.4 Mini</div>
+          <div class="mp">GPT-5.1 / 5.2</div><div class="mp">GPT-5 Mini</div><div class="mp">GPT-5 Nano</div>
+          <div class="mp">GPT-4.1 / 4o</div><div class="mp">o1 / o3</div>
+        </div>
+      </div>
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/8fnw4v.jpg" alt="Claude">
+        <div class="gn">Claude</div><div class="gc">8 模型</div>
+        <div class="mlist">
+          <div class="mp">Fable 5</div><div class="mp">Opus 4.8</div><div class="mp">Sonnet 5</div>
+          <div class="mp">Sonnet 4.6</div><div class="mp">Opus 4.7</div><div class="mp">Opus 4.6</div>
+          <div class="mp">Haiku 4.5</div><div class="mp">3.7 Sonnet</div>
+        </div>
+      </div>
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/psfx0g.jpg" alt="Gemini">
+        <div class="gn">Gemini</div><div class="gc">8 模型</div>
+        <div class="mlist">
+          <div class="mp">3.1 Pro</div><div class="mp">3.0 Pro</div><div class="mp">3.5 Flash</div>
+          <div class="mp">2.5 Pro</div><div class="mp">2.5 Flash</div><div class="mp">2.0 Flash</div>
+          <div class="mp">2.5 Flash Lite</div><div class="mp">3 Flash Preview</div>
+        </div>
+      </div>
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/zv0360.jpg" alt="DeepSeek">
+        <div class="gn">DeepSeek</div><div class="gc">6 模型</div>
+        <div class="mlist">
+          <div class="mp">V4 Flash</div><div class="mp">V3</div><div class="mp">V3.2 Exp</div>
+          <div class="mp">R1</div><div class="mp">R1-0528</div><div class="mp">V3-250324</div>
+        </div>
+      </div>
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/57ebgy.png" alt="Kimi">
+        <div class="gn">Kimi</div><div class="gc">5 模型</div>
+        <div class="mlist">
+          <div class="mp">K2.5</div><div class="mp">K2 Thinking</div>
+          <div class="mp">K2 Thinking Turbo</div><div class="mp">K2 Instruct</div>
+          <div class="mp">K2 Turbo</div>
+        </div>
+      </div>
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/jqi3nv.png" alt="GLM">
+        <div class="gn">GLM</div><div class="gc">5 模型</div>
+        <div class="mlist">
+          <div class="mp">GLM-5.1</div><div class="mp">GLM-4.7</div><div class="mp">GLM-5</div>
+          <div class="mp">GLM-5 Turbo</div><div class="mp">GLM-4.6</div>
+        </div>
+      </div>
+      <div class="gp">
+        <img class="gl" src="https://cdn.acedata.cloud/p1ge98.png" alt="Grok">
+        <div class="gn">Grok</div><div class="gc">2 模型</div>
+        <div class="mlist">
+          <div class="mp">Grok-4</div><div class="mp">Grok-3</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="fl">
+        <div class="ft"><div class="fd"></div>18 种语言</div>
+        <div class="ft"><div class="fd"></div>无需多开会员</div>
+        <div class="ft"><div class="fd"></div>最新型号同步</div>
+      </div>
+      <div class="url">aibigplayer.top</div>
+    </div>
+  </div>
+</body>
+</html>

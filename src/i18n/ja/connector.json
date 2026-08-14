@@ -68,7 +68,7 @@
     "description": "ツールの権限セクションのタイトル"
   },
   "detail.toolPermissions.help": {
-    "message": "Nexiorがこれらのツールを使用するタイミングを選択します。",
+    "message": "BigPlayer AIがこれらのツールを使用するタイミングを選択します。",
     "description": "ツールの権限セクションの説明"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "ベータラベル"
   },
   "custom.intro": {
-    "message": "Nexiorをあなたのデータとツールに接続します。",
+    "message": "BigPlayer AIをあなたのデータとツールに接続します。",
     "description": "カスタムコネクタダイアログのイントロ"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "ベアラートークンのプレースホルダー"
   },
   "custom.warning": {
-    "message": "信頼できる開発者からのコネクタのみを追加してください。Nexiorは開発者が提供するツールを管理しておらず、期待通りに動作することや変更がないことを保証できません。",
+    "message": "信頼できる開発者からのコネクタのみを追加してください。BigPlayer AIは開発者が提供するツールを管理しておらず、期待通りに動作することや変更がないことを保証できません。",
     "description": "カスタムコネクタ警告"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "ディレクトリ検索ボックスのプレースホルダー"
   },
   "browse.subtitle": {
-    "message": "AceDataCloudとパートナーによる提供",
+    "message": "BigPlayer AICloudとパートナーによる提供",
     "description": "ディレクトリページのサブタイトル"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "組み込みMCPグループのタイトル"
   },
   "browse.builtinDesc": {
-    "message": "AceDataCloud提供、ワンクリックでインストール可能。",
+    "message": "BigPlayer AICloud提供、ワンクリックでインストール可能。",
     "description": "組み込みMCPグループの説明"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "カスタムMCPグループのタイトル"
   },
   "browse.customDesc": {
-    "message": "Nexiorで使用するために独自のMCPサーバーを追加します。",
+    "message": "BigPlayer AIで使用するために独自のMCPサーバーを追加します。",
     "description": "カスタムMCPグループの説明"
   },
   "browse.installSuccess": {

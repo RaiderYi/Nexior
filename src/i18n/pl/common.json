@@ -679,6 +679,10 @@
     "message": "Kimi",
     "description": "Tekst w nawigacji strony, który wyświetla stronę Kimi, nie tłumaczyć, musi pozostać 'Kimi'"
   },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
+  },
   "nav.serp": {
     "message": "SERP",
     "description": "Tekst w nawigacji strony, który wyświetla stronę SERP, nie tłumaczyć, musi pozostać 'SERP'"

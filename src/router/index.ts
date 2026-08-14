@@ -1,4 +1,4 @@
-import { type RouteLocationGeneric, type Router } from 'vue-router';
+import { type Router } from 'vue-router';
 import store from '@/store';
 import auth from './auth';
 import console from './console';
@@ -42,6 +42,7 @@ import webextrator from './webextrator';
 import codingBridge from './codingBridge';
 import settings from './settings';
 import share from './share';
+import glm from './glm';
 
 import {
   ROUTE_CHATGPT_CONVERSATION_NEW,
@@ -375,7 +376,8 @@ export const getDefaultRoute = (): { name: string } => {
 export const routes = [
   {
     path: '/',
-    redirect: (to: RouteLocationGeneric) => ({ ...getDefaultRoute(), query: to.query })
+    component: () => import('@/pages/index/Index.vue'),
+    meta: { auth: false }
   },
   home,
   business,
@@ -388,6 +390,7 @@ export const routes = [
   claude,
   deepseek,
   kimi,
+  glm,
   qrart,
   luma,
   pika,

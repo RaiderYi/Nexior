@@ -135,6 +135,8 @@ import {
   ROUTE_FISH_MODEL_INDEX,
   ROUTE_KIMI_CONVERSATION,
   ROUTE_KIMI_CONVERSATION_NEW,
+  ROUTE_GLM_CONVERSATION,
+  ROUTE_GLM_CONVERSATION_NEW,
   ROUTE_WEBEXTRATOR_INDEX,
   ROUTE_CODING_BRIDGE_INDEX
 } from '@/router/constants';
@@ -169,7 +171,8 @@ import {
   WAN_LOGO,
   PRODUCER_LOGO,
   FISH_LOGO,
-  CHAT_MODEL_ICON_KIMI
+  CHAT_MODEL_ICON_KIMI,
+  CHAT_MODEL_ICON_GLM
 } from '@/constants';
 import Logo from './Logo.vue';
 import UserCenter from '@/components/user/Center.vue';
@@ -196,6 +199,7 @@ const NAV_CAPABILITY_BY_ROUTE: Partial<Record<string, CapabilityKey>> = {
   [ROUTE_GEMINI_CONVERSATION_NEW]: 'gemini',
   [ROUTE_CLAUDE_CONVERSATION_NEW]: 'claude',
   [ROUTE_KIMI_CONVERSATION_NEW]: 'kimi',
+  [ROUTE_GLM_CONVERSATION_NEW]: 'glm',
   [ROUTE_MIDJOURNEY_INDEX]: 'midjourney',
   [ROUTE_FLUX_INDEX]: 'flux',
   [ROUTE_NANOBANANA_INDEX]: 'nanobanana',
@@ -309,6 +313,15 @@ export default defineComponent({
           displayName: this.$t('common.nav.kimi'),
           logo: CHAT_MODEL_ICON_KIMI,
           routes: [ROUTE_KIMI_CONVERSATION, ROUTE_KIMI_CONVERSATION_NEW],
+          category: 'chat'
+        });
+      }
+      if (this.$store?.state?.site?.features?.glm?.enabled) {
+        result.push({
+          route: { name: ROUTE_GLM_CONVERSATION_NEW },
+          displayName: this.$t('common.nav.glm'),
+          logo: CHAT_MODEL_ICON_GLM,
+          routes: [ROUTE_GLM_CONVERSATION, ROUTE_GLM_CONVERSATION_NEW],
           category: 'chat'
         });
       }

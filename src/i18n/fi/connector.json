@@ -68,7 +68,7 @@
     "description": "Työkalulupien osion otsikko"
   },
   "detail.toolPermissions.help": {
-    "message": "Valitse, milloin sallia Nexiorin käyttää näitä työkaluja.",
+    "message": "Valitse, milloin sallia BigPlayer AIin käyttää näitä työkaluja.",
     "description": "Työkalulupien osion kuvaus"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "Beta-tunnus"
   },
   "custom.intro": {
-    "message": "Yhdistä Nexior tietosi ja työkalusi.",
+    "message": "Yhdistä BigPlayer AI tietosi ja työkalusi.",
     "description": "Mukautetun liittimen dialogin johdanto"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "Bearer token -paikkamerkki"
   },
   "custom.warning": {
-    "message": "Lisää vain liittimiä, jotka ovat luotettavilta kehittäjiltä. Nexior ei hallitse kehittäjien tarjoamia työkaluja, eikä voi taata niiden toimivan odotetusti tai ettei niissä tapahtuisi muutoksia.",
+    "message": "Lisää vain liittimiä, jotka ovat luotettavilta kehittäjiltä. BigPlayer AI ei hallitse kehittäjien tarjoamia työkaluja, eikä voi taata niiden toimivan odotetusti tai ettei niissä tapahtuisi muutoksia.",
     "description": "Mukautetun liittimen varoitus"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "Hakemiston hakukentän paikkamerkki"
   },
   "browse.subtitle": {
-    "message": "AceDataCloudin ja kumppaneiden tarjoama",
+    "message": "BigPlayer AICloudin ja kumppaneiden tarjoama",
     "description": "Hakemistosivun alaotsikko"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "Sisäänrakennettujen MCP-ryhmän otsikko"
   },
   "browse.builtinDesc": {
-    "message": "AceDataCloudin tarjoama, asennus yhdellä napsautuksella.",
+    "message": "BigPlayer AICloudin tarjoama, asennus yhdellä napsautuksella.",
     "description": "Sisäänrakennettujen MCP-ryhmän kuvaus"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "Mukautettujen MCP-ryhmän otsikko"
   },
   "browse.customDesc": {
-    "message": "Lisää omat MCP-palvelimesi käytettäväksi Nexiorissa.",
+    "message": "Lisää omat MCP-palvelimesi käytettäväksi BigPlayer AIissa.",
     "description": "Mukautettujen MCP-ryhmän kuvaus"
   },
   "browse.installSuccess": {

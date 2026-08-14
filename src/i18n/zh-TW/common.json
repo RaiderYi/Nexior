@@ -679,6 +679,10 @@
     "message": "Kimi",
     "description": "網站導航欄中的文字，用於顯示Kimi頁面，請不要翻譯此欄位，必須保持為'Kimi'"
   },
+  "nav.glm": {
+    "message": "GLM",
+    "description": "网站导航栏中的文本，用于显示GLM页面，请不要翻译此字段，必须保持为'GLM'"
+  },
   "nav.serp": {
     "message": "SERP",
     "description": "網站導航欄中的文字，用於顯示SERP頁面，請不要翻譯此欄位，必須保持為'SERP'"

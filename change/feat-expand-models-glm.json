@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Expand to 45 chat models and enable GLM group",
+  "packageName": "@acedatacloud/nexior",
+  "email": "raider@github",
+  "dependentChangeType": "patch"
+}

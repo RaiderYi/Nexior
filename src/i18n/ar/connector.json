@@ -68,7 +68,7 @@
     "description": "عنوان قسم أذونات الأدوات"
   },
   "detail.toolPermissions.help": {
-    "message": "اختر متى يسمح لـ Nexior باستخدام هذه الأدوات.",
+    "message": "اختر متى يسمح لـ BigPlayer AI باستخدام هذه الأدوات.",
     "description": "وصف قسم أذونات الأدوات"
   },
   "detail.readOnlyTools": {
@@ -128,7 +128,7 @@
     "description": "علامة بيتا"
   },
   "custom.intro": {
-    "message": "قم بربط Nexior ببياناتك وأدواتك.",
+    "message": "قم بربط BigPlayer AI ببياناتك وأدواتك.",
     "description": "مقدمة مربع حوار الموصل المخصص"
   },
   "custom.name": {
@@ -184,7 +184,7 @@
     "description": "نص العنصر النائب لرمز Bearer"
   },
   "custom.warning": {
-    "message": "يرجى إضافة الموصلات من المطورين الذين تثق بهم فقط. لا تتحكم Nexior في الأدوات المقدمة من المطورين، ولا يمكنها ضمان عملها كما هو متوقع أو عدم تغييرها.",
+    "message": "يرجى إضافة الموصلات من المطورين الذين تثق بهم فقط. لا تتحكم BigPlayer AI في الأدوات المقدمة من المطورين، ولا يمكنها ضمان عملها كما هو متوقع أو عدم تغييرها.",
     "description": "تحذير الموصلات المخصصة"
   },
   "custom.add": {
@@ -240,7 +240,7 @@
     "description": "نص العنصر النائب في مربع البحث"
   },
   "browse.subtitle": {
-    "message": "مقدمة من AceDataCloud بالشراكة مع",
+    "message": "مقدمة من BigPlayer AICloud بالشراكة مع",
     "description": "العنوان الفرعي لصفحة الدليل"
   },
   "browse.install": {
@@ -260,7 +260,7 @@
     "description": "عنوان مجموعة MCP المدمجة"
   },
   "browse.builtinDesc": {
-    "message": "مقدمة من AceDataCloud، يمكن استخدامها بنقرة واحدة.",
+    "message": "مقدمة من BigPlayer AICloud، يمكن استخدامها بنقرة واحدة.",
     "description": "وصف مجموعة MCP المدمجة"
   },
   "browse.providersTitle": {
@@ -276,7 +276,7 @@
     "description": "عنوان مجموعة MCP المخصصة"
   },
   "browse.customDesc": {
-    "message": "أضف خادم MCP الخاص بك لاستخدامه في Nexior.",
+    "message": "أضف خادم MCP الخاص بك لاستخدامه في BigPlayer AI.",
     "description": "وصف مجموعة MCP المخصصة"
   },
   "browse.installSuccess": {

@@ -1,0 +1,211 @@
+{
+  "results": {
+    "glm-5.1": {
+      "logic": {
+        "elapsed": 9.63,
+        "tokens_out": 200,
+        "note": "max_tokens用满，回答被截断"
+      },
+      "math": {
+        "elapsed": 5.48,
+        "tokens_out": 200,
+        "note": "max_tokens用满"
+      },
+      "code": {
+        "elapsed": 10.64,
+        "tokens_out": 500,
+        "note": "max_tokens用满"
+      },
+      "creative": {
+        "elapsed": 7.96,
+        "tokens_out": 200,
+        "note": "max_tokens用满"
+      },
+      "knowledge": {
+        "elapsed": 6.73,
+        "tokens_out": 200,
+        "note": "max_tokens用满"
+      },
+      "chinese": {
+        "elapsed": 9.63,
+        "tokens_out": 300,
+        "note": "max_tokens用满"
+      }
+    },
+    "kimi-k2.6": {
+      "logic": {
+        "elapsed": 2.55,
+        "tokens_out": 46,
+        "answer_correct": true,
+        "note": "答对9只，简洁清晰"
+      },
+      "math": {
+        "elapsed": 7.04,
+        "tokens_out": 200,
+        "note": "用英文+LaTeX，max_tokens用满，未给最终答案"
+      },
+      "code": {
+        "elapsed": 7.35,
+        "tokens_out": 500,
+        "note": "大段思维链分析，max_tokens用满，代码可能被截断"
+      },
+      "creative": {
+        "elapsed": 7.43,
+        "tokens_out": 200,
+        "note": "分析要求而非直接创作，max_tokens用满"
+      },
+      "knowledge": {
+        "elapsed": 6.07,
+        "tokens_out": 200,
+        "note": "max_tokens用满"
+      },
+      "chinese": {
+        "elapsed": 4.56,
+        "tokens_out": 68,
+        "answer": "深层含义：用自欺欺人的方式掩饰，反而暴露真相。现代例子：员工上班摸鱼，特意在工位贴'今日事今日毕'便签",
+        "note": "精炼到位"
+      }
+    },
+    "claude-sonnet-4-5": {
+      "logic": {
+        "elapsed": 3.88,
+        "tokens_out": 66,
+        "answer_correct": true,
+        "note": "答对9只，简洁"
+      },
+      "math": {
+        "elapsed": 4.33,
+        "tokens_out": 165,
+        "answer": "9.6÷0.5=19.2",
+        "note": "步骤清晰，答对"
+      },
+      "code": {
+        "elapsed": 4.22,
+        "tokens_out": 144,
+        "note": "代码精简，直接给函数"
+      },
+      "creative": {
+        "elapsed": 10.52,
+        "tokens_out": 68,
+        "answer": "路灯在积水里碎成琥珀色的鳞片，伞骨敲打出归人的心跳。巷口那盏昏黄的窗，正煮着一壶等待的热茶。",
+        "note": "意境最佳，文学性最强"
+      },
+      "knowledge": {
+        "elapsed": 5.57,
+        "tokens_out": 106,
+        "answer": "叠加态=一个粒子同时多状态；纠缠=两个粒子无视距离共享状态",
+        "note": "骰子比喻精准"
+      },
+      "chinese": {
+        "elapsed": 7.98,
+        "tokens_out": 186,
+        "answer": "高管发朋友圈'绝对没跳槽打算'反被怀疑",
+        "note": "现代例子很巧妙"
+      }
+    },
+    "gemini-3-flash-preview": {
+      "logic": {
+        "elapsed": 7.3,
+        "tokens_out": 19,
+        "note": "极短输出"
+      },
+      "math": {
+        "elapsed": 5.27,
+        "tokens_out": 8,
+        "note": "极短输出"
+      },
+      "code": {
+        "elapsed": 7.7,
+        "tokens_out": 18,
+        "note": "极短输出"
+      },
+      "creative": {
+        "elapsed": 5.09,
+        "tokens_out": 7,
+        "note": "极短输出"
+      },
+      "knowledge": {
+        "elapsed": 7.26,
+        "tokens_out": 6,
+        "note": "极短输出"
+      },
+      "chinese": {
+        "elapsed": 7.22,
+        "tokens_out": 12,
+        "note": "极短输出"
+      }
+    },
+    "deepseek-v3.2-exp": {
+      "logic": {
+        "elapsed": 7.61,
+        "tokens_out": 200,
+        "note": "max_tokens用满，大段思维链"
+      },
+      "math": {
+        "elapsed": 7.19,
+        "tokens_out": 200,
+        "note": "max_tokens用满，未给最终答案"
+      },
+      "code": {
+        "elapsed": 4.96,
+        "tokens_out": 109,
+        "note": "代码精简，直接给"
+      },
+      "creative": {
+        "elapsed": 4.07,
+        "tokens_out": 46,
+        "answer": "青石巷里，伞骨承不住绵密的黑。路灯浮在积水洼中，忽长忽短，像几尾溺水的光。鞋跟叩响时，整座城市的倒影轻轻摇晃。",
+        "note": "文学性极强，画面感最佳"
+      },
+      "knowledge": {
+        "elapsed": 3.08,
+        "tokens_out": 45,
+        "note": "最简洁准确"
+      },
+      "chinese": {
+        "elapsed": 3.93,
+        "tokens_out": 51,
+        "answer": "网红宣称'绝对没整容'却删评论",
+        "note": "例子犀利"
+      }
+    },
+    "gpt-5.2": {
+      "logic": {
+        "elapsed": 4.25,
+        "tokens_out": 121,
+        "answer_correct": true,
+        "note": "答对9只"
+      },
+      "math": {
+        "elapsed": 2.5,
+        "tokens_out": 75,
+        "answer": "19.2",
+        "answer_correct": true,
+        "note": "最快，步骤清晰，答对"
+      },
+      "code": {
+        "elapsed": 13.47,
+        "tokens_out": 148,
+        "note": "代码完整，用了consecutive递增逻辑"
+      },
+      "creative": {
+        "elapsed": 3.72,
+        "tokens_out": 49,
+        "answer": "伞沿滴成细线，路灯把雨织成金网。鞋底轻响踩碎水镜，巷口一盏窗火不言，替我把夜领回家。",
+        "note": "意境好，但略套路"
+      },
+      "knowledge": {
+        "elapsed": 5.06,
+        "tokens_out": 138,
+        "note": "解释完整，通俗易懂"
+      },
+      "chinese": {
+        "elapsed": 4.32,
+        "tokens_out": 108,
+        "answer": "发朋友圈'我真的没在意前任'连发三条",
+        "note": "例子接地气，有网感"
+      }
+    }
+  },
+  "findings": "\n1. 速度王者：gpt-5.2 —— 数学仅2.5秒，6题平均5.65秒最快（gemini-3-flash虽快但输出异常短）\n\n2. 数学精度：gpt-5.2=19.2(✓对) | claude-sonnet-4.5=19.2(✓对) | 其余被max_tokens截断未给结果\n   ⚠ 真实答案：3.14×2.5=7.85, +1.75=9.6, ÷0.5=19.2（gpt和claude都对）\n\n3. 创意写作TOP3：\n   🥇 Claude Sonnet 4.5：\"路灯在积水里碎成琥珀色的鳞片\" —— 意象密度最高\n   🥈 DeepSeek V3.2：\"几尾溺水的光\" —— 画面最先锋\n   🥉 GPT-5.2：\"伞沿滴成细线\" —— 工整但略套路\n\n4. 中文理解TOP3：\n   🥇 GPT-5.2：前任朋友圈例子——最接地气、最有网感\n   🥈 Claude Sonnet 4.5：高管跳槽例子——讽刺感最强\n   🥉 DeepSeek V3.2：网红整容例子——犀利简洁\n\n5. 最大问题：\n   ⚠ GLM-5.1：6题全部打满max_tokens，输出冗长，效率低\n   ⚠ Kimi-K2.6：数学题用英文+LaTeX回答，中文场景下体验差\n   ⚠ Gemini-3-flash-preview：所有题输出7-19 tokens，严重异常（疑似API端问题）\n\n6. 综合排名：\n   🥇 Claude Sonnet 4.5 —— 精度+创意+中文全均衡，无短板\n   🥈 GPT-5.2 —— 速度+数学+网感，代码稍慢\n   🥉 DeepSeek V3.2 —— 创意惊艳+速度好，但思维链冗长\n   4. Kimi-K2.6 —— 中文精炼，但数学/代码场景弱\n   5. GLM-5.1 —— 全面但输出太啰嗦\n   6. Gemini-3-flash —— 本轮异常，需重测\n"
+}
