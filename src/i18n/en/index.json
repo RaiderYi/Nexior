@@ -416,27 +416,27 @@
     "description": "Sign up"
   },
   "landing.hero.badge": {
-    "message": "New · GPT-5.5 / Claude Fable-5 / Gemini 3.5 Now Available",
+    "message": "One account · 45+ top AI models · Pay-as-you-go",
     "description": "Hero badge"
   },
   "landing.hero.titleAccent": {
-    "message": "AI Creative Engine",
+    "message": "One account, every top AI",
     "description": "Hero title accent"
   },
   "landing.hero.titleMain": {
-    "message": "Launch From Here",
+    "message": "No subscriptions · No VPN · No foreign credit card",
     "description": "Hero title main"
   },
   "landing.hero.subtitle": {
-    "message": "46+ top AI models for chat, image, video, and music — all in one platform. No VPN, no separate subscriptions, ready to use.",
+    "message": "GPT-5.6, Claude Opus 5, Gemini 3.6, Midjourney, Suno — 45+ premium models in one place. One balance, pay only for what you use.",
     "description": "Hero subtitle"
   },
   "landing.hero.ctaPrimary": {
-    "message": "Start Free Now",
+    "message": "Start free now",
     "description": "Hero CTA primary"
   },
   "landing.hero.ctaSecondary": {
-    "message": "Browse All Models",
+    "message": "Browse all models",
     "description": "Hero CTA secondary"
   },
   "landing.stats.models": {
@@ -728,15 +728,15 @@
     "description": "UC music tag"
   },
   "landing.bottomCta.title": {
-    "message": "Ready?",
+    "message": "Still paying a subscription for every AI?",
     "description": "Bottom CTA title"
   },
   "landing.bottomCta.subtitle": {
-    "message": "Sign up for free, no credit card required",
+    "message": "One balance for 45+ models on BigPlayer. Pay-as-you-go, register free, no credit card required.",
     "description": "Bottom CTA subtitle"
   },
   "landing.bottomCta.button": {
-    "message": "Get Started Free",
+    "message": "Get started free",
     "description": "Bottom CTA button"
   },
   "landing.footer.download": {
