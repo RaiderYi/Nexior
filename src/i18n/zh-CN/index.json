@@ -416,27 +416,27 @@
     "description": "Sign up"
   },
   "landing.hero.badge": {
-    "message": "全新上线 · GPT-5.5 / Claude Fable-5 / Gemini 3.5 已就绪",
+    "message": "一个账号 · 45+ 全球顶级 AI · 按量付费",
     "description": "Hero badge"
   },
   "landing.hero.titleAccent": {
-    "message": "AI 创作引擎",
+    "message": "一个账号，用遍全球 AI",
     "description": "Hero title accent"
   },
   "landing.hero.titleMain": {
-    "message": "从这里启航",
+    "message": "不用订阅 · 不用翻墙 · 不用海外信用卡",
     "description": "Hero title main"
   },
   "landing.hero.subtitle": {
-    "message": "46+ 顶级AI模型，一站式搞定对话、绘画、视频、音乐。不用翻墙，不用分别订阅，开箱即用。",
+    "message": "GPT-5.6、Claude Opus 5、Gemini 3.6、Midjourney、Suno……45+ 顶级模型聚在一个站里。充一个余额，按实际用量付费——用多少算多少，不用的不花一分钱。",
     "description": "Hero subtitle"
   },
   "landing.hero.ctaPrimary": {
-    "message": "立即免费使用",
+    "message": "免费注册，立即体验",
     "description": "Hero CTA primary"
   },
   "landing.hero.ctaSecondary": {
-    "message": "浏览全部模型",
+    "message": "看看有哪些模型",
     "description": "Hero CTA secondary"
   },
   "landing.stats.models": {
@@ -728,11 +728,11 @@
     "description": "UC music tag"
   },
   "landing.bottomCta.title": {
-    "message": "准备好了吗？",
+    "message": "还在为每个 AI 单独掏订阅费？",
     "description": "Bottom CTA title"
   },
   "landing.bottomCta.subtitle": {
-    "message": "注册即可免费体验，无需信用卡",
+    "message": "BigPlayer 一个余额用遍 45+ 模型，按量付费，用多少算多少。注册免费，无需信用卡。",
     "description": "Bottom CTA subtitle"
   },
   "landing.bottomCta.button": {
