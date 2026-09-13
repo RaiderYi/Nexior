@@ -1,7 +1,0 @@
-node_modules/
-dist/
-docker-compose.yaml
-.env
-.env.local
-.env.production
-.env.test

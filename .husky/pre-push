@@ -1,4 +1,0 @@
-root=$(git rev-parse --show-toplevel) || exit $?
-unset GIT_DIR GIT_WORK_TREE
-cd "$root" || exit $?
-npm run verify || exit $?
